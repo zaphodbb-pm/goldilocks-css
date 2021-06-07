@@ -11,7 +11,7 @@
 .page-wrapper {
     grid-template-columns: 1fr 4fr;
     grid-template-areas:
-      "header  header"
+      "main-nav  main-nav"
       "sidebar content"
       "footer footer";
 }
