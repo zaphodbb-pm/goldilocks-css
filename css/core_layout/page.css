@@ -17,7 +17,12 @@
 }
 nav ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+nav ul li {
+    margin-bottom: 0.75rem;
 }
 
 
