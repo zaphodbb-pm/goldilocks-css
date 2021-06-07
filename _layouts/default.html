@@ -32,8 +32,6 @@
 <nav class="main-nav">Header Nav</nav>
 
 <nav class="sidenav">
-    <p>Side Nav</p>
-
     <ul>
         <li><a href="{{ "index.html" | absolute_url }}">Home</a></li>
         <li><a href="{{ "/pages/about.html" | absolute_url }}">About</a></li>
@@ -43,10 +41,7 @@
 </nav>
 
 <main class="content">
-    main
     {{ content }}
-
-    <p>{{ site.url }}</p>
 </main>
 
 <footer class="main-footer">footer</footer>
