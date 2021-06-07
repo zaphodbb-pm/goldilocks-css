@@ -32,14 +32,16 @@ body{
 }
 
 /** set key html tags */
-main {
+main,
+.sidenav {
     margin: 0;
     padding: 12px;
     overflow-x: hidden;
 }
 
 @media screen and (min-width: 769px) {
-    main {
+    main,
+    .sidenav {
         padding: 24px;
     }
 }
