@@ -1,0 +1,38 @@
+.page-wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+    "main-nav"
+    "sidebar"
+    "content"
+    "footer";
+}
+
+.page-wrapper {
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas:
+      "header  header"
+      "sidebar content"
+      "footer footer";
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.main-nav {
+    grid-area: main-nav;
+}
+
+.sidenav {
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: content;
+}
+
+.main-footer {
+    grid-area: footer;
+}
