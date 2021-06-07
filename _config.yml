@@ -1,6 +1,6 @@
 ---
 title: Goldilocks-CSS
-food: Pizza
+baseurl: /goldilocks-css
 ---
 
 theme: jekyll-theme-minimal
