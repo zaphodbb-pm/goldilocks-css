@@ -1,5 +1,5 @@
 # goldilocks-css
-Pure CSS light weight framworks using modern CSS3
+Lightweight pure CSS framework using modern CSS3
 
 
 **Under Construction - Don't use.**
