@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="css/core_layout/flexbox.css">
     <link rel="stylesheet" href="css/core_layout/level.css">
 
+    <link rel="stylesheet" href="css/core_components/navbar.css">
+
 
     <!--
   <link rel="stylesheet" href="css/normalize.css">
@@ -29,7 +31,41 @@
 
 <body class="page-wrapper">
 
-<nav class="main-nav">Header Nav</nav>
+<nav class="navbar is-primary main-nav" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="#page-top">
+            <img src="/images/yoga1.png" width="305" height="256" alt="">
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item">
+                Home
+            </a>
+
+            <a class="navbar-item">
+                Documentation
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <button class="is-warning">
+                        <strong>Button</strong>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
 
 <nav class="sidenav">
     <ul>
