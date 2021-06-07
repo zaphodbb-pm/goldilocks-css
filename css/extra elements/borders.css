@@ -1,0 +1,58 @@
+/* additional decorations */
+.has-border-none {
+    border: none;
+    box-shadow: none;
+}
+
+.has-border {
+    border: 1px solid var(--border-main);
+    box-shadow: none;
+}
+
+.has-border-top {
+    border-top: 1px solid var(--border-main);
+    box-shadow: none;
+}
+
+.has-border-bottom {
+    border-bottom: 1px solid var(--border-main);
+    box-shadow: none;
+}
+
+.has-border-left {
+    border-left: 1px solid var(--border-main);
+    box-shadow: none;
+}
+
+.has-border-right {
+    border-right: 1px solid var(--border-main);
+    box-shadow: none;
+}
+
+.has-border-primary { border-color: var(--primary) !important; }
+.has-border-primary-light { border-color: var(--primary-light) !important; }
+.has-border-primary-dark { border-color: var(--primary-dark) !important; }
+
+.has-border-secondary { border-color: var(--secondary) !important; }
+.has-border-secondary-light { border-color: var(--secondary-light) !important; }
+.has-border-secondary-dark { border-color: var(--secondary-dark) !important; }
+
+.has-border-info { border-color: var(--info) !important; }
+.has-border-info-light { border-color: var(--info-light) !important; }
+.has-border-info-dark { border-color: var(--info-dark) !important; }
+
+.has-border-link { border-color: var(--link) !important; }
+.has-border-link-light { border-color: var(--link-light) !important; }
+.has-border-link-dark { border-color: var(--link-dark) !important; }
+
+.has-border-success { border-color: var(--success) !important; }
+.has-border-success-light { border-color: var(--success-light) !important; }
+.has-border-success-dark { border-color: var(--success-dark) !important; }
+
+.has-border-warning { border-color: var(--warning) !important; }
+.has-border-warning-light { border-color: var(--warning-light) !important; }
+.has-border-warning-dark { border-color: var(--warning-dark) !important; }
+
+.has-border-danger { border-color: var(--danger) !important; }
+.has-border-danger-light { border-color: var(--danger-light) !important; }
+.has-border-danger-dark { border-color: var(--danger-dark) !important; }

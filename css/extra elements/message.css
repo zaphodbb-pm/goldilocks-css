@@ -1,0 +1,51 @@
+.message {
+    background-color: var(--grey-lightest);
+    border-radius: var(--radius-large);
+    position: relative;
+    pointer-events: none;
+    font-size: var(--size-6);
+    border: none;
+}
+
+.message > .delete {
+    right: .5rem;
+    position: absolute;
+    top: .5rem;
+    pointer-events: bounding-box;
+}
+
+.message > p {
+    padding: 0;
+    margin: 0;
+}
+
+.message-header {
+    align-items: center;
+    border-top-left-radius: var(--radius-large);
+    border-top-right-radius: var(--radius-large);
+    display: flex;
+    font-weight: var(--weight-bold);
+    justify-content: space-between;
+    line-height: var(--line-height-125);
+    margin: 0;
+    padding: .75em .5em .75em 1.25em;
+    position: relative;
+    pointer-events: none;
+}
+
+.message-body {
+    padding: 1.25em 1.5em;
+    pointer-events: none;
+    border-bottom-left-radius: var(--radius-large);
+    border-bottom-right-radius: var(--radius-large);
+}
+
+.message-body-only {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0 0 0 4px;
+    color: inherit;
+
+    padding:  var(--pad-horz-large) var(--padding-wide);
+    border-radius: inherit;
+}

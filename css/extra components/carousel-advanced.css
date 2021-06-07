@@ -1,0 +1,235 @@
+.wrapper {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 10px;
+    margin: var(--mar-vert-large) 0;
+
+    --thumbnail: 5rem;
+}
+
+.gallery {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.gallery__img {
+    margin-bottom: 10px;
+    scroll-snap-align: start;
+
+    width: auto;
+    object-fit: contain;
+    -o-object-fit: contain;
+}
+
+.lil-nav {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: block;
+    grid-row-start: auto;
+    justify-content: flex-start;
+    height: 55vw;
+}
+
+.lil-nav a {
+    margin-bottom: var(--mar-vert);
+}
+
+.lil-nav__img {
+    object-fit: cover;
+    filter: saturate(0);
+    transition: 0.3s ease all;
+    height: var(--thumbnail);
+    margin-bottom: var(--mar-vert);
+}
+
+.lil-nav__img:hover {
+     transform: scale(1.05);
+     filter: saturate(1);
+ }
+
+
+
+@media screen and (min-width: 1200px) {
+
+    .wrapper {
+        grid-template-columns: auto;
+        grid-template-rows: minmax(min-content, max-content) minmax(4rem, max-content);
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+
+    .gallery {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        display: flex;
+    }
+
+    .gallery__img {
+        scroll-snap-align: start;
+        width: 80vw;
+        height: auto;
+        object-fit: cover;
+        -o-object-fit: contain;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    .lil-nav {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        display: flex;
+        grid-row-start: 2;
+        justify-content: center;
+    }
+
+    .lil-nav a {
+        display: flex;
+        margin-right: 10px;
+        width: var(--thumbnail);
+    }
+
+
+    .lil-nav__img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        filter: saturate(0);
+        transition: 0.3s ease all;
+    }
+
+    .lil-nav__img:hover {
+        transform: scale(1.05);
+        filter: saturate(1);
+    }
+
+
+}
+
+
+/*
+.wrapper {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: minmax(min-content, max-content) minmax(4rem, max-content);
+    grid-gap: 10px;
+    margin: var(--mar-vert-large) 0;
+
+    --thumbnail: 5rem;
+}
+
+.gallery {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    display: flex;
+}
+
+.gallery__img {
+    scroll-snap-align: start;
+    margin-bottom: 10px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.lil-nav {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    grid-row-start: 2;
+    justify-content: center;
+}
+
+.lil-nav a {
+    display: flex;
+    margin-right: 10px;
+    width: var(--thumbnail);
+}
+
+
+.lil-nav__img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    filter: saturate(0);
+    transition: 0.3s ease all;
+}
+
+.lil-nav__img:hover {
+    transform: scale(1.05);
+    filter: saturate(1);
+}
+
+
+@media screen and (min-width: 575px) {
+    .wrapper {
+        grid-template-rows: 1fr minmax(4rem, max-content);
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+
+    .gallery__img {
+        max-height: 80vw;
+    }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .wrapper {
+        grid-template-columns: minmax(var(--thumbnail), 1fr) 5fr;
+        grid-template-rows: auto;
+        justify-items: end;
+
+        height: 50vh;
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
+
+    .gallery {
+        display: block;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scroll-snap-type: y mandatory;
+        width: 100%;
+    }
+
+    .gallery__img {
+        width: auto;
+        height: 50vh;
+        object-fit: contain;
+    }
+
+    .lil-nav {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: block;
+        grid-row-start: auto;
+        justify-content: flex-start;
+    }
+
+    .lil-nav a {
+        margin-bottom: var(--mar-vert);
+    }
+}
+
+
+ */

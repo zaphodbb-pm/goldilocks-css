@@ -1,0 +1,161 @@
+/* Pure css html base elements */
+
+
+/** set global environment **/
+html {
+    margin: 0;
+    padding: 0;
+
+    font-size: var(--base-font-size);
+    background-color: var(--bg-main);
+
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+}
+
+/** set display environment */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--family-sans-serif);
+    font-size: 1rem;
+    font-weight: var(--weight-normal);
+    line-height: var(--line-height-150);
+    color: var(--text);
+    background-color: var(--bg-main);
+}
+
+/** set key html tags */
+main {
+    margin: 0;
+    padding: 12px;
+    overflow-x: hidden;
+}
+
+@media screen and (min-width: 769px) {
+    main {
+        padding: 24px;
+    }
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+hr {
+    padding: 0;
+    margin: 1rem 0;
+    border: 1px solid var(--grey-lightest);
+}
+
+ul, ol, dl {
+    padding: 0;
+    margin: 0;
+    color: var(--text-lighter);
+}
+
+ul li {
+    list-style: disc;
+    margin: 0 0 0.75rem 0;
+}
+
+ol li {
+    list-style: decimal;
+    margin: 0 0 0.75rem 0;
+}
+
+dl dd {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0.75rem;
+    margin-inline-start: 1rem;
+}
+
+ul.text-block,
+ol.text-block,
+dl.text-block{
+    margin: var(--mar-vert-large);
+    padding: var(--padding);
+}
+
+blockquote {
+    border-left: 0.3rem solid var(--grey-lighter);
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    font-style: italic;
+}
+
+pre {
+    font-family: var(--family-monospace);
+    font-size: 1rem;
+    background-color: var(--white-ter);
+    border-left: 0.3rem solid var(--info);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+
+code {
+    font-family: var(--family-monospace);
+    font-size: 0.8rem;
+    font-weight: normal;
+
+    color: var(--info-dark);
+    background-color: var(--bg-main-ter);
+    border-radius: var(--radius);
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+}
+
+pre > code {
+    font-size: 1em;
+    color: currentColor;
+    background-color: transparent;
+    padding: 0;
+
+    border-radius: 0;
+    display: block;
+    margin: -1rem 0;
+    white-space: pre;
+    max-width: 100%;
+    overflow-x: scroll;
+}
+
+
+input, select, textarea {
+   margin: 0;
+}
+
+
+textarea,
+iframe {
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    font-family: inherit;
+}

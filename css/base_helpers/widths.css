@@ -1,0 +1,54 @@
+.has-width-1 {
+    width: 1rem !important;
+}
+
+.has-width-3 {
+    width: 3rem !important;
+}
+
+
+.has-width-5 {
+    width: 5rem !important;
+}
+
+.has-width-10 {
+    width: 10rem !important;
+}
+
+.has-width-15 {
+    width: 15rem !important;
+}
+
+.has-width-20 {
+    width: 20rem !important;
+}
+
+.has-width-25 {
+    width: 25rem !important;
+}
+
+.has-width-30 {
+    width: 30rem !important;
+}
+
+
+
+.width-75 {
+    width: 75%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-33 {
+    width: 33%;
+}
+
+.width-25 {
+    width: 25%;
+}
+
+.width-full {
+    width: 100%;
+}

@@ -1,0 +1,200 @@
+progress {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 9999px;
+    display: block;
+    height: 1rem;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--grey-lightest);
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--grey-darker);
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--grey-darker);
+}
+
+progress::-ms-fill {
+    background-color: var(--grey-darker);
+    border: none;
+}
+
+
+
+progress.is-progress-primary::-webkit-progress-value {
+    background-color: var(--primary);
+}
+
+progress.is-progress-primary::-moz-progress-bar {
+    background-color: var(--primary);
+}
+
+progress.is-progress-primary::-ms-fill {
+    background-color: var(--primary);
+}
+
+progress.is-progress-primary:indeterminate {
+    background-image: linear-gradient(to right, var(--primary) 30%, var(--grey-lightest) 30%);
+}
+
+progress.is-progress-secondary::-webkit-progress-value {
+    background-color: var(--secondary);
+}
+
+progress.is-progress-secondary::-moz-progress-bar {
+    background-color: var(--secondary);
+}
+
+progress.is-progress-secondary::-ms-fill {
+    background-color: var(--secondary);
+}
+
+progress.is-progress-secondary:indeterminate {
+    background-image: linear-gradient(to right, var(--secondary) 30%, var(--grey-lightest) 30%);
+}
+
+progress.is-progress-link::-webkit-progress-value {
+    background-color: var(--link);
+}
+
+progress.is-progress-link::-moz-progress-bar {
+    background-color: var(--link);
+}
+
+progress.is-progress-link::-ms-fill {
+    background-color: var(--link);
+}
+
+progress.is-progress-link:indeterminate {
+    background-image: linear-gradient(to right, var(--link) 30%, var(--grey-lightest) 30%);
+}
+
+progress.is-progress-info::-webkit-progress-value {
+    background-color: var(--info);
+}
+
+progress.is-progress-info::-moz-progress-bar {
+    background-color: var(--info);
+}
+
+progress.is-progress-info::-ms-fill {
+    background-color: var(--info);
+}
+
+progress.is-progress-info:indeterminate {
+    background-image: linear-gradient(to right, var(--info) 30%, var(--grey-lightest) 30%);
+}
+
+progress.is-progress-success::-webkit-progress-value {
+    background-color: var(--success);
+}
+
+progress.is-progress-success::-moz-progress-bar {
+    background-color: var(--success);
+}
+
+progress.is-progress-success::-ms-fill {
+    background-color: var(--success);
+}
+
+progress.is-progress-success:indeterminate {
+    background-image: linear-gradient(to right, var(--success) 30%, var(--grey-lightest) 30%);
+}
+
+progress.is-progress-warning::-webkit-progress-value {
+    background-color: var(--warning);
+}
+
+progress.is-progress-warning::-moz-progress-bar {
+    background-color: var(--warning);
+}
+
+progress.is-progress-warning::-ms-fill {
+    background-color: var(--warning);
+}
+
+progress.is-progress-warning:indeterminate {
+    background-image: linear-gradient(to right, var(--warning) 30%, var(--grey-lightest) 30%);
+}
+
+progress.is-progress-danger::-webkit-progress-value {
+    background-color: var(--danger);
+}
+
+progress.is-progress-danger::-moz-progress-bar {
+    background-color: var(--danger);
+}
+
+progress.is-progress-danger::-ms-fill {
+    background-color: var(--danger);
+}
+
+progress.is-progress-danger:indeterminate {
+    background-image: linear-gradient(to right, var(--danger) 30%, var(--grey-lightest) 30%);
+}
+
+progress:indeterminate {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: moveIndeterminate;
+    animation-name: moveIndeterminate;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    background-color: var(--grey-lightest);
+    background-image: linear-gradient(to right, var(--black-bis) 30%, var(--grey-lightest) 30%);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 150% 150%;
+}
+
+progress:indeterminate::-webkit-progress-bar {
+    background-color: transparent;
+}
+
+progress:indeterminate::-moz-progress-bar {
+    background-color: transparent;
+}
+
+progress:indeterminate::-ms-fill {
+    animation-name: none;
+}
+
+progress.is-small {
+    height: var(--size-7);
+}
+
+progress.is-medium {
+    height: var(--size-5);
+}
+
+progress.is-large {
+    height: var(--size-4);
+}
+
+@-webkit-keyframes moveIndeterminate {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes moveIndeterminate {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
+    }
+}

@@ -1,0 +1,83 @@
+/* Background Colour Helpers */
+
+.has-bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.has-bg-primary-light {
+    background-color: var(--primary-light) !important;
+}
+
+
+
+.has-bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.has-bg-secondary-light {
+    background-color: var(--secondary-light) !important;
+}
+
+
+
+.has-bg-link {
+    background-color: var(--link) !important;
+}
+
+.has-bg-link-light {
+    background-color: var(--link-light) !important;
+}
+
+
+
+.has-bg-info {
+    background-color: var(--info) !important;
+}
+
+.has-bg-info-light {
+    background-color: var(--info-light) !important;
+}
+
+
+
+.has-bg-success {
+    background-color: var(--success) !important;
+}
+
+.has-bg-success-light {
+    background-color: var(--success-light) !important;
+}
+
+
+
+.has-bg-warning {
+    background-color: var(--warning) !important;
+}
+
+.has-bg-warning-light {
+    background-color: var(--warning-light) !important;
+}
+
+
+
+.has-bg-danger {
+    background-color: var(--danger) !important;
+}
+
+.has-bg-danger-light {
+    background-color: var(--danger-light) !important;
+}
+
+
+
+.has-bg-dark {
+    background-color: var(--grey-darker) !important;
+}
+
+.has-bg-grey {
+    background-color: var(--grey-lighter) !important;
+}
+
+.has-bg-white {
+    background-color: var(--white) !important;
+}

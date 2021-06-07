@@ -1,0 +1,54 @@
+table {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    overflow-x: auto;
+    text-align: left;
+
+    background-color: inherit;
+    color: inherit;
+}
+
+
+td, th {
+    padding: var(--pad-vert) var(--pad-horz);
+    vertical-align: top;
+}
+
+td span, th span {
+    padding: var(--pad-vert) var(--pad-horz);
+    margin: var(--mar-vert) var(--mar-horz) ;
+}
+
+thead th {
+    border-bottom: 2px solid var(--border-main-darker);
+}
+
+tbody td {
+    border-bottom: 1px solid var(--border-main-darker);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tfoot td {
+    border-top: 2px solid var(--border-main-darker);
+    font-weight: var(--weight-semibold);
+}
+
+
+/** add in other table styling */
+.table-scroll {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+table.is-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--info-light);
+}
+
+table.has-hover tbody tr:hover {
+    background-color: var(--info);
+}

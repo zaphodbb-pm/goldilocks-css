@@ -1,0 +1,101 @@
+
+.card {
+    background-color: var(--bg-main);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    color: var(--text);
+    max-width: 100%;
+    position: relative;
+}
+
+.card-header:first-child, .card-content:first-child, .card-footer:first-child {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.card-header:last-child, .card-content:last-child, .card-footer:last-child {
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.card-header {
+    background-color: transparent;
+    align-items: stretch;
+    box-shadow: 0 0.125em 0.25em rgba(10, 10, 10, 0.1);
+    display: flex;
+}
+
+.card-header-title {
+    align-items: center;
+    color: var(--text-stronger);
+    display: flex;
+    flex-grow: 1;
+    font-weight: var(--weight-bold);
+    padding:  var(--pad-vert-med)  var(--pad-horz-med);
+}
+
+.card-header-title.is-centered {
+    justify-content: center;
+}
+
+.card-header-icon {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    color: currentColor;
+    font-family: inherit;
+    font-size: 1em;
+    margin: 0;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: var(--pad-vert-med)  var(--pad-horz-med);
+}
+
+.card-image {
+    display: block;
+    position: relative;
+}
+
+.card-image:first-child img {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.card-image:last-child img {
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.card-content {
+    background-color: transparent;
+    padding: var(--padding-wide);
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: 1px solid var(--border-main);
+    align-items: stretch;
+    display: flex;
+}
+
+.card-footer-item {
+    align-items: center;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: var(--padding);
+}
+
+.card-footer-item:not(:last-child) {
+    border-right: 1px solid var(--border-main);
+}
+
+.card .media:not(:last-child) {
+    margin-bottom: var(--space-5);
+}

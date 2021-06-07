@@ -1,0 +1,245 @@
+.row {
+    display: block;
+    margin: var(--mar-vert-large) 0;
+}
+
+.row .column {
+    padding: 0;
+    margin: var(--mar-vert-large) 0;
+}
+
+
+/* vertical align items in cell */
+.row.align-vert-top {
+    align-items: start;
+}
+
+.row.align-vert-center {
+    align-items: center;
+}
+
+.row.align-vert-stretch {
+    align-items: stretch;
+}
+
+.row.align-vert-bottom {
+    align-items: end;
+}
+
+
+
+/* grid only: horizontal align items in cell */
+.row.align-horz-left {
+    justify-items: start;
+}
+
+.row.align-horz-center {
+    justify-items: center;
+}
+
+.row.align-horz-stretch {
+    justify-items: stretch;
+}
+
+.row.align-horz-right {
+    justify-items: end;
+}
+
+
+/* grid only: vertical item alignments in grid cell */
+.row .column.align-self-top {
+    align-self: start;
+}
+
+.row .column.align-self-center {
+    align-self: center;
+}
+
+.row .column.align-self-bottom {
+    align-self: end;
+}
+
+.row .column.align-self-stretch {
+    align-self: stretch;
+}
+
+/* grid only: horizontal item alignments in grid cell */
+.row .column.justify-self-left {
+    justify-self: start;
+}
+
+.row .column.justify-self-center {
+    justify-self: center;
+}
+
+.row .column.justify-self-right {
+    justify-self: end;
+}
+
+.row .column.justify-self-stretch {
+    justify-self: stretch;
+}
+
+
+
+
+/* define basic grid if is-mobile setting; allows mobile to also have grid control */
+@media screen and (max-width: 768px){
+
+    .row.is-mobile-half,
+    .row.is-mobile-thirds,
+    .row.is-mobile-fourths {
+        display: grid;
+        margin: 0;
+        grid-template-columns: repeat( auto-fit,  minmax(1rem, 1fr) );
+        gap: var(--gutter);
+        justify-items: stretch;
+    }
+
+    .row.is-mobile-half .column,
+    .row.is-mobile-thirds .column,
+    .row.is-mobile-fourths .column {
+        margin: 0;
+    }
+
+    .row.is-mobile-half {
+        grid-template-columns:  repeat(2, 1fr);
+    }
+
+    .row.is-mobile-thirds {
+        grid-template-columns:  repeat(2, 1fr);
+    }
+
+    .row.is-mobile-fourths {
+        grid-template-columns:  repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 769px){
+
+    /* define basic grid and over-ride mobile setting*/
+    .row {
+        display: grid;
+        margin: 0;
+        grid-template-columns: repeat( auto-fit,  minmax(1rem, 1fr) );
+        gap: var(--gutter);
+        justify-items: stretch;
+    }
+
+    .row .column {
+        margin: 0;
+    }
+
+    /* halfs */
+    .row.is-half {
+        grid-template-columns:  repeat(2, 1fr);
+    }
+
+    .row.is-half-tablet {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--tablet) / 2), 1fr) );
+    }
+
+    .row.is-half-desktop {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--desktop) / 2), 1fr) );
+    }
+
+    .row.is-half-widescreen {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--widescreen) / 2), 1fr) );
+    }
+
+    .row.is-half-fullhd {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--fullhd) / 2), 1fr) );
+    }
+
+
+    /* thirds */
+    .row.is-thirds {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .row.is-thirds-tablet {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--tablet) / 3), 1fr) );
+    }
+
+    .row.is-thirds-desktop {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--desktop) / 3), 1fr) );
+    }
+
+    .row.is-thirds-widescreen {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--widescreen) / 3), 1fr) );
+    }
+
+    .row.is-thirds-fullhd {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--fullhd) / 3), 1fr) );
+    }
+
+    /* fourths */
+    .row.is-fourths {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .row.is-fourths-tablet {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--tablet) / 4), 1fr) );
+    }
+
+    .row.is-fourths-desktop {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--desktop) / 4), 1fr) );
+    }
+
+    .row.is-fourths-widescreen {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--widescreen) / 4), 1fr) );
+    }
+
+    .row.is-fourths-fullhd {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--fullhd) / 4), 1fr) );
+    }
+
+    /* fifths */
+    .row.is-fifths {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .row.is-fifths-tablet {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--tablet) / 5), 1fr) );
+    }
+
+    .row.is-fifths-desktop {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--desktop) / 5), 1fr) );
+    }
+
+    .row.is-fifths-widescreen {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--widescreen) / 5), 1fr) );
+    }
+
+    .row.is-fifths-fullhd {
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--fullhd) / 5), 1fr) );
+    }
+
+
+    /* children defined widths */
+    .column.span-one {
+        grid-template-columns: 1fr;
+        grid-column: auto / span 1;
+    }
+
+    .column.span-two {
+        grid-template-columns: repeat( 2, 1fr );
+        grid-column: auto / span 2;
+    }
+
+    .column.span-three {
+        grid-template-columns: repeat( 3, 1fr );
+        grid-column: auto / span 3;
+    }
+
+    .column.span-four {
+        grid-template-columns: repeat( 4, 1fr );
+        grid-column: auto / span 4;
+    }
+
+    .column.span-five {
+        grid-template-columns: repeat( 5, 1fr );
+        grid-column: auto / span 5;
+    }
+}

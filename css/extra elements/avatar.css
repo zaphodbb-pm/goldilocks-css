@@ -1,0 +1,91 @@
+.avatar {
+    background: var(--secondary);
+    border-radius: 50%;
+    color: rgba(255,255,255,.85);
+    display: inline-block;
+
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+
+    height: 1rem;
+    width: 1rem;
+}
+
+
+.avatar.avatar-xl {
+    font-size: calc(var(--base-font-size) * 5 / 3);
+    height: calc(var(--base-font-size) * 5);
+    width: calc(var(--base-font-size) * 5);
+}
+
+.avatar.avatar-lg {
+    font-size: calc(var(--base-font-size) * 4 / 3);
+    height: calc(var(--base-font-size) * 4);
+    width: calc(var(--base-font-size) * 4);
+}
+
+.avatar.avatar-nm {
+    font-size: var(--base-font-size);
+    height: calc(var(--base-font-size) * 3);
+    width: calc(var(--base-font-size) * 3);
+}
+
+.avatar.avatar-sm {
+    font-size: calc(var(--base-font-size) * 2 / 3);
+    height: calc(var(--base-font-size) * 2);
+    width: calc(var(--base-font-size) * 2);
+}
+
+.avatar.avatar-xs {
+    font-size: calc(var(--base-font-size) / 3);
+    height: var(--base-font-size);
+    width: var(--base-font-size);
+}
+
+.avatar img {
+    border-radius: 50%;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.avatar .avatar-presence {
+    background-color: var(--grey-light);
+    padding: .1rem;
+    position: absolute;
+    transform: translate(50%,50%);
+    z-index: 2;
+    bottom: 14.64%;
+    right: 14.64%;
+    height: .5em;
+    width: .5em;
+
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.1rem var(--bg-main);
+}
+
+.avatar[data-initial]::before {
+    color: currentColor;
+    content: attr(data-initial);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+.avatar .avatar-presence.online {
+    background-color: var(--success);
+}
+
+.avatar .avatar-presence.busy {
+    background-color: var(--danger);
+}
+
+.avatar .avatar-presence.away {
+    background-color: var(--warning);
+}
+
+

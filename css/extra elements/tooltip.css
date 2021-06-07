@@ -1,0 +1,70 @@
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    background: var(--bg-main-invert-bis);
+    border-radius: var(--radius);
+    bottom: 100%;
+    color: var(--text-invert);
+    content: attr(data-tooltip);
+    display: block;
+    font-size: var(--size-7);
+    left: 50%;
+    max-width: 20rem;
+    opacity: 0;
+    overflow: hidden;
+    padding:  var(--pad-vert) var(--pad-horz-sm);
+    pointer-events: none;
+    position: absolute;
+    text-overflow: ellipsis;
+    transform: translate(-50%, var(--pad-vert));
+    transition: opacity .2s, transform .2s;
+    white-space: pre;
+    z-index: 300;
+}
+
+.tooltip:focus::after,
+.tooltip:hover::after {
+    opacity: 1;
+    transform: translate(-50%, calc(-1 * var(--pad-horz-sm)));
+}
+
+.tooltip[disabled],
+.tooltip.disabled {
+    pointer-events: auto;
+}
+
+.tooltip.tooltip-right::after {
+    bottom: 50%;
+    left: 100%;
+    transform: translate( calc(-1 * var(--pad-horz-sm)), 50%);
+}
+
+.tooltip.tooltip-right:focus::after,
+.tooltip.tooltip-right:hover::after {
+    transform: translate( var(--pad-horz-sm), 50%);
+}
+
+.tooltip.tooltip-bottom::after {
+    bottom: auto;
+    top: 100%;
+    transform: translate(-50%, calc(-1 * var(--pad-vert)));
+}
+
+.tooltip.tooltip-bottom:focus::after,
+.tooltip.tooltip-bottom:hover::after {
+    transform: translate(-50%, var(--pad-horz-sm));
+}
+
+.tooltip.tooltip-left::after {
+    bottom: 50%;
+    left: auto;
+    right: 100%;
+    transform: translate(var(--pad-horz-sm), 50%);
+}
+
+.tooltip.tooltip-left:focus::after,
+.tooltip.tooltip-left:hover::after {
+    transform: translate(calc(-1 * var(--pad-horz-sm)), 50%);
+}
