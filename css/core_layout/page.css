@@ -1,6 +1,6 @@
 .page-wrapper {
     display: grid;
-    gap: 20px;
+    gap: 10px;
     grid-template-areas:
     "main-nav"
     "sidebar"
@@ -9,7 +9,7 @@
 }
 
 .page-wrapper {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: auto 4fr;
     grid-template-areas:
       "main-nav  main-nav"
       "sidebar content"
