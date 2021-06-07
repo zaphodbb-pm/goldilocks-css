@@ -14,73 +14,77 @@
     <link rel="stylesheet" href="css/base/initial-variables.css">
     <link rel="stylesheet" href="css/base/setup_base_html.css">
 
+    <link rel="stylesheet" href="css/base_helpers/backgrounds.css">
+    <link rel="stylesheet" href="css/base_helpers/element-colors.css">
+    <link rel="stylesheet" href="css/base_helpers/heights.css">
+    <link rel="stylesheet" href="css/base_helpers/shadows.css">
+    <link rel="stylesheet" href="css/base_helpers/widths.css">
+
     <link rel="stylesheet" href="css/core_layout/page.css">
     <link rel="stylesheet" href="css/core_layout/box.css">
     <link rel="stylesheet" href="css/core_layout/flexbox.css">
     <link rel="stylesheet" href="css/core_layout/level.css">
 
-    <link rel="stylesheet" href="css/core_components/navbar.css">
-
-
-    <!--
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  -->
+    <link rel="stylesheet" href="css/core_elements/buttons.css">
+    <link rel="stylesheet" href="css/core_elements/delete.css">
+    <link rel="stylesheet" href="css/core_elements/image.css">
+    <link rel="stylesheet" href="css/core_elements/table.css">
+    <link rel="stylesheet" href="css/core_elements/typography.css">
 
 </head>
 
-<body class="page-wrapper">
+<body class="page-wrapper" id="page-top">
 
-<nav class="navbar is-primary main-nav" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="#page-top">
-            <img src="/images/yoga1.png" width="305" height="256" alt="">
-        </a>
-
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-            <a class="navbar-item">
-                Home
+    <nav class="navbar is-primary main-nav" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#page-top">
+                <img src="/images/yoga1.png" width="16" height="16" alt="">
             </a>
 
-            <a class="navbar-item">
-                Documentation
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
         </div>
 
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <button class="is-warning">
-                        <strong>Button</strong>
-                    </button>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Home
+                </a>
+
+                <a class="navbar-item">
+                    Documentation
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <button class="is-warning">
+                            <strong>Button</strong>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<nav class="sidenav">
-    <ul>
-        <li><a href="{{ "index.html" | absolute_url }}">Home</a></li>
-        <li><a href="{{ "/pages/about.html" | absolute_url }}">About</a></li>
-        <li><a href="{{ "/pages/about.html" | absolute_url }}">Another</a></li>
-    </ul>
+    <nav class="sidenav">
+        <ul>
+            <li><a href="{{ "index.html" | absolute_url }}">Home</a></li>
+            <li><a href="{{ "/pages/about.html" | absolute_url }}">About</a></li>
+            <li><a href="{{ "/pages/about.html" | absolute_url }}">Another</a></li>
+        </ul>
 
-</nav>
+    </nav>
 
-<main class="content">
-    {{ content }}
-</main>
+    <main class="content">
+        {{ content }}
+    </main>
 
-<footer class="main-footer">footer</footer>
+    <footer class="main-footer">footer</footer>
 
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
