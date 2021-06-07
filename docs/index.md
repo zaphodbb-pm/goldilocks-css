@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages - test two
+## Welcome to GitHub Pages - three
 
 You can use the [editor on GitHub](https://github.com/zaphodbb-pm/goldilocks-css/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
