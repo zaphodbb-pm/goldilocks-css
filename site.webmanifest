@@ -1,6 +1,6 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "goldilocks-css",
+  "name": "goldilocks-css",
   "icons": [{
     "src": "icon.png",
     "type": "image/png",
