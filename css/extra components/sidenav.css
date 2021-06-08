@@ -1,0 +1,72 @@
+/* Fixed Sidenav styles */
+.sidenavs {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.sidenav {
+    width: 100%;
+    color: var(--text);
+    background: transparent;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    text-indent: 0;
+    list-style: none;
+}
+
+.sidenav-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1em;
+    background: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sidenav-label:hover {
+    background-color: var(--bg-main-ter);
+    color: inherit;
+}
+
+.sidenav-content {
+    max-height: 0;
+    margin-left: 1rem;
+    color: var(--text);
+    background: var(--bg-main);
+    transition: all 0.5s;
+}
+
+.sidenav-content > li {
+    font-size: 0.9em;
+    font-weight: var(--weight-medium);
+    padding: 0 0.5rem 0 0.75rem;
+}
+
+.sidenav-content > li:hover{
+    border-right: 2px solid var(--link);
+    background-color: var(--bg-main-ter);
+}
+
+.sidenav-content > li a{
+    text-decoration: none;
+}
+
+
+
+/* react to user actions */
+input:checked + .sidenav-label {
+    background: inherit;
+    color: inherit;
+}
+
+input:checked + .sidenav-label:hover {
+    background-color: var(--bg-main-ter);
+    color: inherit;
+}
+
+input:checked ~ .sidenav-content {
+    max-height: 100vh;
+    padding-bottom: 1rem;
+}

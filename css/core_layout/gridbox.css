@@ -84,7 +84,7 @@
 
 
 /* define basic grid if is-mobile setting; allows mobile to also have grid control */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 575px){
 
     .row.is-mobile-half,
     .row.is-mobile-thirds,
@@ -116,7 +116,7 @@
 }
 
 
-@media screen and (min-width: 769px){
+@media screen and (min-width: 576px){
 
     /* define basic grid and over-ride mobile setting*/
     .row {
@@ -148,10 +148,6 @@
         grid-template-columns: repeat( auto-fit, minmax( calc(var(--widescreen) / 2), 1fr) );
     }
 
-    .row.is-half-fullhd {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--fullhd) / 2), 1fr) );
-    }
-
 
     /* thirds */
     .row.is-thirds {
@@ -168,10 +164,6 @@
 
     .row.is-thirds-widescreen {
         grid-template-columns: repeat( auto-fit, minmax( calc(var(--widescreen) / 3), 1fr) );
-    }
-
-    .row.is-thirds-fullhd {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--fullhd) / 3), 1fr) );
     }
 
     /* fourths */
@@ -191,10 +183,6 @@
         grid-template-columns: repeat( auto-fit, minmax( calc(var(--widescreen) / 4), 1fr) );
     }
 
-    .row.is-fourths-fullhd {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--fullhd) / 4), 1fr) );
-    }
-
     /* fifths */
     .row.is-fifths {
         grid-template-columns: repeat(5, 1fr);
@@ -210,10 +198,6 @@
 
     .row.is-fifths-widescreen {
         grid-template-columns: repeat( auto-fit, minmax( calc(var(--widescreen) / 5), 1fr) );
-    }
-
-    .row.is-fifths-fullhd {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--fullhd) / 5), 1fr) );
     }
 
 
