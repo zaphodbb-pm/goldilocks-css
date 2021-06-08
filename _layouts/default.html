@@ -36,58 +36,69 @@
 
 </head>
 
-<body class="page-wrapper" id="page-top">
+<body>
 
-    <nav class="navbar is-primary main-nav" role="navigation" aria-label="main navigation">
+<div class="page-wrapper" id="page-top">
+
+    <nav class="navbar main-nav" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="#page-top">
-                <img src="/images/yoga1.png" width="16" height="16" alt="">
-            </a>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <img src="/img/goldi2-logo.png" alt="Project Logo">
             </a>
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
-                    Home
-                </a>
-
-                <a class="navbar-item">
-                    Documentation
-                </a>
+                <div class="navbar-item">
+                    <h1 class="m-0">Goldilocks-CSS</h1>
+                </div>
             </div>
 
             <div class="navbar-end">
                 <div class="navbar-item">
-                    <div class="buttons">
-                        <button class="is-warning">
-                            <strong>Button</strong>
-                        </button>
-                    </div>
+                    <button class="is-primary mr-3">
+                        <a href="#page-top">Download</a>
+                    </button>
+
+                    <button class="is-primary">
+                        <a href="#page-top">View on Github</a>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <nav class="sidenav">
-        <ul>
-            <li><a href="{{ "index.html" | absolute_url }}">Home</a></li>
-            <li><a href="{{ "/pages/about.html" | absolute_url }}">About</a></li>
-            <li><a href="{{ "/pages/about.html" | absolute_url }}">Another</a></li>
-        </ul>
+    <nav class="sidenav-items">
+        <ul class="sidenavs">
+            <li class="sidenav">
+                <input type="checkbox" id="chck1">
+                <label class="sidenav-label" for="chck1">Item 1</label>
+                <ul class="sidenav-content">
+                    <li><a href="#page-top">Home</a></li>
+                    <li><a href="#page-top">About</a></li>
+                    <li><a href="#page-top">Another</a></li>
+                </ul>
+            </li>
 
+            <li class="sidenav">
+                <input type="checkbox" id="chck2">
+                <label class="sidenav-label" for="chck2">Item 2</label>
+                <ul class="sidenav-content">
+                    <li><a href="#page-top">Home</a></li>
+                    <li><a href="#page-top">About</a></li>
+                    <li><a href="#page-top">Another</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
 
-    <main class="content">
+    <main class="main-content">
         {{ content }}
     </main>
 
     <footer class="main-footer">footer</footer>
+
+</div>
 
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
