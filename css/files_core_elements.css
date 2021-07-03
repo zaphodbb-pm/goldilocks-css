@@ -1,0 +1,16 @@
+@import './core/elements/buttons.css';
+@import './core/elements/delete.css';
+@import './core/elements/image.css';
+@import './core/elements/table.css';
+@import './core/elements/typography.css';
+
+
+
+
+/*
+    <link rel="stylesheet" href="css/core/elements/buttons.css">
+    <link rel="stylesheet" href="css/core/elements/delete.css">
+    <link rel="stylesheet" href="css/core/elements/image.css">
+    <link rel="stylesheet" href="css/core/elements/table.css">
+    <link rel="stylesheet" href="css/core/elements/typography.css">
+ */
