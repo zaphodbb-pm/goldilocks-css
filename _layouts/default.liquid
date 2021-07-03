@@ -18,41 +18,16 @@
 
 <div class="page-wrapper" id="page-top">
 
-
-    <!--
-    <nav class="navbar main-nav" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="{{site.url}}">
-                <img src="{{site.url}}/img/goldi2-logo.png" alt="Project Logo">
-            </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <div class="navbar-item">
-                    <p class="is-size-2 m-0">Goldilocks-CSS</p>
-                </div>
-            </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <button class="is-primary mr-3">
-                        <a href="#page-top">Download</a>
-                    </button>
-
-                    <button class="is-primary">
-                        <a href="#page-top">View on Github</a>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-    -->
-
     {% include site-navbar.liquid %}
 
     <nav class="sidenav-items">
         <ul class="sidenavs">
+
+            {% include sidenav-overview.liquid %}
+
+            {% include sidenav-config.liquid %}
+
+            <!--
             <li class="sidenav">
                 <input type="checkbox" id="topic1" {% if page.parent-tab == 'overview' %}checked{% endif %}>
                 <label class="sidenav-label" for="topic1">Overview</label>
@@ -63,7 +38,9 @@
                     <li><a href="{{site.url}}/pages/overview/comparisons.html">Comparisons</a></li>
                 </ul>
             </li>
+            -->
 
+            <!--
             <li class="sidenav">
                 <input type="checkbox" id="config" {% if page.parent-tab == 'config' %}checked{% endif %}>
                 <label class="sidenav-label" for="config">Core Config</label>
@@ -73,6 +50,7 @@
                     <li><a href='{{site.url}}/pages/configs/colors.html'>Colors</a></li>
                 </ul>
             </li>
+            -->
 
             <li class="sidenav">
                 <input type="checkbox" id="layout" {% if page.parent-tab == 'layout' %}checked{% endif %}>
