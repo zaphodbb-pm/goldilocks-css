@@ -63,10 +63,10 @@
             </li>
 
             <li class="sidenav">
-                <input type="checkbox" id="topic2">
-                <label class="sidenav-label" for="topic2">Core Config</label>
+                <input type="checkbox" id="config" {% if page.parent-tab == 'config' %}checked{% endif %}>
+                <label class="sidenav-label" for="config">Core Config</label>
                 <ul class="sidenav-content">
-                    <li><a href="#page-top">Base HTML</a></li>
+                    <li><a href='{{site.url}}/pages/base-config.html'>Base HTML Config</a></li>
                     <li><a href="#page-top">Variables</a></li>
                     <li><a href="#page-top">Colors</a></li>
                 </ul>
