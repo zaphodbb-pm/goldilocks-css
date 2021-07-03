@@ -49,10 +49,10 @@
     <nav class="sidenav-items">
         <ul class="sidenavs">
             <li class="sidenav">
-                <input type="checkbox" id="topic1">
-                <label class="sidenav-label" for="topic1">Overview</label>
+                <input type="checkbox" id="overview" {% if page.parent-tab == 'overview' %}checked{% endif %}>
+                <label class="sidenav-label" for="overview">Overview</label>
                 <ul class="sidenav-content">
-                    <li><a href='{{site.url}}/pages/about.html'>Introduction</a></li>
+                    <li><a href='../pages/introduction.html'>Introduction</a></li>
                     <li><a href="#page-top">Accessibility</a></li>
                     <li><a href="#page-top">Consistency</a></li>
                     <li><a href="#page-top">Performant</a></li>
