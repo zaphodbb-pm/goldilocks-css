@@ -44,7 +44,9 @@
     padding: 0 0.5rem 0 0.75rem;
 }
 
-.sidenav-content > li:hover{
+.sidenav-content > li:hover,
+.sidenav-content > li:active
+{
     border-right: 2px solid var(--link);
     background-color: var(--bg-main-ter);
 }
