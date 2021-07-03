@@ -48,13 +48,13 @@ main,
 
 
 section {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 article {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 p {
@@ -66,11 +66,6 @@ p:last-child {
     margin-bottom: 0;
 }
 
-hr {
-    padding: 0;
-    margin: 1rem 0;
-    border: 1px solid var(--grey-lightest);
-}
 
 ul, ol, dl {
     padding: 0;
@@ -161,4 +156,10 @@ iframe {
 
 textarea {
     font-family: inherit;
+}
+
+hr {
+    padding: 0;
+    margin: 1rem 0;
+    border: 1px solid var(--grey-lightest);
 }

@@ -1,4 +1,10 @@
 /* spacing options */
+
+.m-element {
+    margin: var(--margin-elements) 0;
+}
+
+
 .m-0 {
     margin: var(--space-0) !important;
 }

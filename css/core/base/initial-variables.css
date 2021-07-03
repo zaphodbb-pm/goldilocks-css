@@ -91,6 +91,10 @@
     --padding-wide: 1.5rem;
 
     /* margin values */
+    --margin-elements: 2rem;
+
+
+
     --mar-horz-sm: 0.25rem;
     --mar-horz: 0.5rem;
     --mar-horz-med: 0.75rem;
