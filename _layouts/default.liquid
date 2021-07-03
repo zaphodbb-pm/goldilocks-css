@@ -22,86 +22,21 @@
 
     <nav class="sidenav-items">
         <ul class="sidenavs">
-
             {% include sidenavs/overview.liquid %}
 
             {% include sidenavs/config.liquid %}
 
             {% include sidenavs/layout.liquid %}
 
+            {% include sidenavs/elements.liquid %}
 
-            <li class="sidenav">
-                <input type="checkbox" id="elements" {% if page.parent-tab == 'elements' %}checked{% endif %}>
-                <label class="sidenav-label" for="elements">Core Elements</label>
-                <ul class="sidenav-content">
-                    <li><a href="#page-top">Buttons</a></li>
-                    <li><a href="#page-top">Delete</a></li>
-                    <li><a href="#page-top">Image</a></li>
-                    <li><a href="#page-top">Table</a></li>
-                    <li><a href="#page-top">Typography</a></li>
-                </ul>
-            </li>
+            {% include sidenavs/helpers.liquid %}
 
-            <li class="sidenav">
-                <input type="checkbox" id="helpers" {% if page.parent-tab == 'helpers' %}checked{% endif %}>
-                <label class="sidenav-label" for="helpers">Core Helpers</label>
-                <ul class="sidenav-content">
-                    <li><a href="#page-top">Backgrounds</a></li>
-                    <li><a href="#page-top">Element Colors</a></li>
-                    <li><a href="#page-top">Heights</a></li>
-                    <li><a href="#page-top">Shadows</a></li>
-                    <li><a href="#page-top">Spacing</a></li>
-                    <li><a href="#page-top">Widths</a></li>
-                </ul>
-            </li>
+            {% include sidenavs/components.liquid %}
 
-            <li class="sidenav">
-                <input type="checkbox" id="components" {% if page.parent-tab == 'components' %}checked{% endif %}>
-                <label class="sidenav-label" for="components">Core Components</label>
-                <ul class="sidenav-content">
-                    <li><a href="#page-top">Nav Bar</a></li>
-                    <li><a href="#page-top">Form</a></li>
-                    <li><a href="#page-top">Breadcrumb</a></li>
-                </ul>
-            </li>
+            {% include sidenavs/extra-elements.liquid %}
 
-            <li class="sidenav">
-                <input type="checkbox" id="extra-elements" {% if page.parent-tab == 'extra-elements' %}checked{% endif %}>
-                <label class="sidenav-label" for="extra-elements">Extra Elements</label>
-                <ul class="sidenav-content">
-                    <li><a href="#page-top">Avatar</a></li>
-                    <li><a href="#page-top">Badge</a></li>
-                    <li><a href="#page-top">Borders</a></li>
-                    <li><a href="#page-top">Divider</a></li>
-                    <li><a href="#page-top">Icons</a></li>
-                    <li><a href="#page-top">Media</a></li>
-                    <li><a href="#page-top">Message</a></li>
-                    <li><a href="#page-top">Notification</a></li>
-                    <li><a href="#page-top">Popover</a></li>
-                    <li><a href="#page-top">Progress Bar</a></li>
-                    <li><a href="#page-top">Ribbon</a></li>
-                    <li><a href="#page-top">Tag</a></li>
-                    <li><a href="#page-top">Tooltip</a></li>
-                </ul>
-            </li>
-
-            <li class="sidenav">
-                <input type="checkbox" id="extra-components" {% if page.parent-tab == 'extra-components' %}checked{% endif %}>
-                <label class="sidenav-label" for="extra-components">Extra Components</label>
-                <ul class="sidenav-content">
-                    <li><a href="#page-top">Accordians</a></li>
-                    <li><a href="#page-top">card</a></li>
-                    <li><a href="#page-top">Carousel</a></li>
-                    <li><a href="#page-top">Carousel Advanced</a></li>
-                    <li><a href="#page-top">Dropdown</a></li>
-                    <li><a href="#page-top">Modal</a></li>
-                    <li><a href="#page-top">Pagination</a></li>
-                    <li><a href="#page-top">Sidebar</a></li>
-                    <li><a href="#page-top">Side Nav</a></li>
-                    <li><a href="#page-top">Tabs</a></li>
-                    <li><a href="#page-top">Tabs Grid</a></li>
-                </ul>
-            </li>
+            {% include sidenavs/extra-componnets.liquid %}
         </ul>
     </nav>
 
