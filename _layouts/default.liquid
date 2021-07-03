@@ -73,7 +73,7 @@
             </li>
 
             <li class="sidenav">
-                <input type="checkbox" id="layout">
+                <input type="checkbox" id="layout" {% if page.parent-tab == 'layout' %}checked{% endif %}>
                 <label class="sidenav-label" for="layout">Core Layout</label>
                 <ul class="sidenav-content">
                     <li><a href="#page-top">Page</a></li>
@@ -86,8 +86,8 @@
             </li>
 
             <li class="sidenav">
-                <input type="checkbox" id="topic4">
-                <label class="sidenav-label" for="topic4">Core Elements</label>
+                <input type="checkbox" id="elements" {% if page.parent-tab == 'elements' %}checked{% endif %}>
+                <label class="sidenav-label" for="elements">Core Elements</label>
                 <ul class="sidenav-content">
                     <li><a href="#page-top">Buttons</a></li>
                     <li><a href="#page-top">Delete</a></li>
@@ -98,8 +98,8 @@
             </li>
 
             <li class="sidenav">
-                <input type="checkbox" id="topic5">
-                <label class="sidenav-label" for="topic5">Core Helpers</label>
+                <input type="checkbox" id="helpers" {% if page.parent-tab == 'helpers' %}checked{% endif %}>
+                <label class="sidenav-label" for="helpers">Core Helpers</label>
                 <ul class="sidenav-content">
                     <li><a href="#page-top">Backgrounds</a></li>
                     <li><a href="#page-top">Element Colors</a></li>
@@ -111,8 +111,8 @@
             </li>
 
             <li class="sidenav">
-                <input type="checkbox" id="topic6">
-                <label class="sidenav-label" for="topic6">Core Components</label>
+                <input type="checkbox" id="components" {% if page.parent-tab == 'components' %}checked{% endif %}>
+                <label class="sidenav-label" for="components">Core Components</label>
                 <ul class="sidenav-content">
                     <li><a href="#page-top">Nav Bar</a></li>
                     <li><a href="#page-top">Form</a></li>
@@ -121,8 +121,8 @@
             </li>
 
             <li class="sidenav">
-                <input type="checkbox" id="topic7">
-                <label class="sidenav-label" for="topic7">Extras Elements</label>
+                <input type="checkbox" id="extra-elements" {% if page.parent-tab == 'extra-elements' %}checked{% endif %}>
+                <label class="sidenav-label" for="extra-elements">Extras Elements</label>
                 <ul class="sidenav-content">
                     <li><a href="#page-top">Avatar</a></li>
                     <li><a href="#page-top">Badge</a></li>
@@ -141,8 +141,8 @@
             </li>
 
             <li class="sidenav">
-                <input type="checkbox" id="topic8">
-                <label class="sidenav-label" for="topic8">Extras Components</label>
+                <input type="checkbox" id="extra-components" {% if page.parent-tab == 'extra-components' %}checked{% endif %}>
+                <label class="sidenav-label" for="extra-components">Extras Components</label>
                 <ul class="sidenav-content">
                     <li><a href="#page-top">Accordians</a></li>
                     <li><a href="#page-top">card</a></li>
