@@ -15,13 +15,7 @@
 </head>
 
 
-<!--
-<body class="main-grid">
-
-<div class="page-wrapper test" id="page-top">
--->
-
-<body class="page-wrapper test" id="page-top">
+<body class="page-wrapper" id="page-top">
 
     {% include site-navbar.liquid %}
 
@@ -45,13 +39,15 @@
         </ul>
     </nav>
 
+    {{ content }}
+
+    <!--
     <main class="main-content">
         {{ content }}
     </main>
+    -->
 
     <footer class="main-footer">footer</footer>
-
-<!--</div>-->
 
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
