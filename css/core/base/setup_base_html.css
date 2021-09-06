@@ -16,7 +16,6 @@ html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    text-size-adjust: 100%;
 }
 
 /** set display environment */
@@ -35,16 +34,24 @@ body{
 main,
 .sidenav {
     margin: 0;
-    padding: 12px;
+    /*padding: 12px;*/
+    padding: max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48)));
+
+
     overflow-x: hidden;
 }
 
+
+
+/*
 @media screen and (min-width: 769px) {
     main,
     .sidenav {
         padding: 24px;
     }
 }
+
+ */
 
 
 section {
