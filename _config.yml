@@ -3,3 +3,5 @@ title: Goldilocks-CSS
 baseurl: /goldilocks-css
 url:    https://zaphodbb-pm.github.io/goldilocks-css
 ---
+
+theme: jekyll-theme-minimal
