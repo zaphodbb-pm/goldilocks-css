@@ -1,10 +1,5 @@
 :root {
 
-    /* Key Break Points - from bulma.io */
-    /* Note:  @media cannot use var() values!! */
-
-
-
     --gap: 32px;        /* The container horizontal gap, which acts as the offset for breakpoints */
     --double-gap: 64px;
 

@@ -3,4 +3,7 @@
     margin-top: 2rem;
     padding: 1rem 1.5rem 1.5rem 1.5rem;
     border-top: 1px solid var(--border-main-darker);
+
+    display: flex;
+    justify-content: space-between;
 }
