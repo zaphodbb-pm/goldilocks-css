@@ -6,10 +6,10 @@
     grid-template-columns: auto 4fr;
     grid-template-rows: auto auto auto auto;
 
-    grid-template-areas:    "main-nav" "main-nav"
-                            "side-nav" "header"
-                            "side-nav" "main-content"
-                            "side-nav" "footer";
+    grid-template-areas:    "main_nav main_nav"
+                            "side-nav header"
+                            "side-nav main-content"
+                            "side-nav footer";
 }
 
 .page-wrapper > .main-nav {
