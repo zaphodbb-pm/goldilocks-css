@@ -32,27 +32,12 @@ body{
 
 /** set key html tags */
 main,
+header,
 .sidenav {
     margin: 0;
-    /*padding: 12px;*/
     padding: max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48)));
-
-
     overflow-x: hidden;
 }
-
-
-
-/*
-@media screen and (min-width: 769px) {
-    main,
-    .sidenav {
-        padding: 24px;
-    }
-}
-
- */
-
 
 section {
     padding: 0;
