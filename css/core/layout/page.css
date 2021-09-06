@@ -16,8 +16,9 @@
     grid-area: main-nav;
 }
 
-.page-wrapper > h1 {
+.page-wrapper > header {
     grid-area: header;
+    margin: var(--margin-elements) 0;
 }
 
 .page-wrapper > .sidenav {
