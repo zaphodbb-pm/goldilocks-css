@@ -42,6 +42,10 @@
     justify-content: center;
 }
 
+.row .column ul {
+    margin-left: 1rem;
+}
+
 
 /* Also sadly, @media does not support variables and so we need to hard code the mobile breakpoint */
 @media screen and (min-width: 576px){
