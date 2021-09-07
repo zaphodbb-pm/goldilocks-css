@@ -1,9 +1,8 @@
 :root {
-
-    --gap: 32px;        /* The container horizontal gap, which acts as the offset for breakpoints */
-    --double-gap: 64px;
-
-    --gutter: 1.5rem;   /* grid column gutter
+    /* grid key variables */
+    --gutter: 24px;                 /* grid column gutter */
+    --grid-min-px-width: 100px;     /* minimum absolute column width in a grid layout */
+    --grid-min-width: 5rem;         /* minimum relative column width in a grid layout */
 
     /* 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16 */
 
