@@ -134,6 +134,19 @@ pre > code {
     overflow-x: scroll;
 }
 
+/* fix for prism code highlighter */
+pre > code .tag {
+    background: transparent;
+    align-items: baseline;
+    border-radius: unset;
+    display: unset;
+    font-size: unset;
+    height: auto;
+    justify-content: unset;
+    line-height: normal;
+    padding: 0;
+    white-space: nowrap;
+}
 
 input, select, textarea {
    margin: 0;
