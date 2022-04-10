@@ -7,11 +7,8 @@
   "author": "Zaphod Beeblebrox",
   "repository": {
       "type": "git",
-      "url": "urlToYourRepository"
+      "url": "https://github.com/zaphodbb-pm/goldilocks-css.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/zaphodbb-pm"
-  
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
