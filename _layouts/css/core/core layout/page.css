@@ -1,0 +1,183 @@
+.page-wrapper {
+    display: grid;
+    column-gap: 0;
+    row-gap: 0;
+
+    grid-template-columns: auto 4fr;
+    grid-template-rows: repeat(5, auto);
+
+    grid-template-areas:    "main-nav main-nav"
+                            "side-nav header"
+                            "side-nav main-content"
+                            "side-nav footer"
+                            "side-nav .";
+}
+
+.page-wrapper-widgets {
+    display: grid;
+    column-gap: 0;
+    row-gap: 0;
+
+    grid-template-columns: auto 4fr;
+    grid-template-rows: repeat(6, auto);
+
+    grid-template-areas:    "widgets widgets"
+                            "main-nav main-nav"
+                            "side-nav header"
+                            "side-nav main-content"
+                            "side-nav footer"
+                            "side-nav .";
+}
+
+
+.page-wrapper-widgets > .page-widgets {
+    grid-area: widgets;
+}
+
+.page-wrapper > .page-main-nav,
+.page-wrapper-widgets > .page-main-nav {
+    grid-area: main-nav;
+}
+
+/* add sticky nav and / or widget bar */
+.page-wrapper > .page-main-nav.is-sticky {
+    position: sticky;
+    top: 0;
+    height: auto;
+}
+
+.page-wrapper-widgets > .page-widgets.is-sticky {
+    position: sticky;
+    top: 0;
+    height: auto;
+}
+
+.page-wrapper-widgets  > .page-main-nav.is-sticky {
+    position: sticky;
+    top: var(--widgetbar-height);
+    height: auto;
+}
+
+/* add fixed nav and / or widget bar */
+.page-wrapper > .page-main-nav.is-fixed {
+    position: fixed;
+    top: 0;
+    height: auto;
+}
+
+.page-wrapper-widgets > .page-widgets.is-fixed {
+    position: fixed;
+    top: 0;
+    height: auto;
+}
+
+.page-wrapper-widgets  > .page-main-nav.is-fixed {
+    position: fixed;
+    top: var(--widgetbar-height);
+    width: calc( 100% - 2 * var(--pad-horz));
+    height: auto;
+}
+
+/* place other items */
+.page-wrapper > .page-header,
+.page-wrapper-widgets > .page-header {
+    grid-area: header;
+}
+
+.page-wrapper > .page-sidenav,
+.page-wrapper-widgets > .page-sidenav {
+    grid-area: side-nav;
+}
+
+.page-wrapper > .main-content,
+.page-wrapper-widgets > .main-content {
+    grid-area: main-content;
+}
+
+.page-wrapper > .page-footer,
+.page-wrapper-widgets > .page-footer {
+    grid-area: footer;
+}
+
+.page-sidenav {
+    border-right: 1px solid var(--border-main);
+}
+
+.page-footer {
+    background-color: var(--bg-element);
+    margin-top: var(--margin);
+    padding: var(--padding-medium) var(--padding-large);
+    border-top: 1px solid var(--border-main-darker);
+
+    display: flex;
+    justify-content: space-between;
+    column-gap: calc( 2 * var(--gap-col) );
+    row-gap: var(--gap-row);
+}
+
+.page-footer section {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gap-row);
+    margin: 0;
+}
+
+.page-footer section.is-wide {
+    width: 30rem;
+}
+
+.page-footer section.is-medium {
+    width: 20rem;
+}
+
+.page-footer section p {
+    margin: 0;
+}
+
+.page-footer section p:first-child {
+    font-size: var(--size-5);
+    font-weight: var(--weight-semibold);
+}
+
+@media screen and (max-width: 576px) {
+    .page-sidenav .sidenav-block > label{
+        padding-right: 3rem;
+    }
+
+    .page-sidenav .icon-nav-horz span{
+        display: none;
+    }
+
+    .page-main-nav:not(.is-mobile) .navbar-center {
+        display: none;
+    }
+
+    .page-wrapper.has-slidebar {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+
+        grid-template-areas:    "main-nav"
+                                "header"
+                                "main-content"
+                                "footer"
+    }
+
+    .page-wrapper-widgets.has-slidebar {
+
+    }
+
+    .page-wrapper.has-slidebar .page-sidenav,
+    .page-wrapper-widgets.has-slidebar .page-sidenav{
+        display: none;
+    }
+
+    .page-footer {
+        flex-direction: column;
+    }
+
+    .page-footer section.is-wide,
+    .page-footer section.is-medium
+    {
+        width: 100%;
+    }
+}

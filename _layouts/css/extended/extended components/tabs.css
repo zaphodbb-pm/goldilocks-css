@@ -1,0 +1,160 @@
+/* from https://levelup.gitconnected.com/tabbed-interfaces-without-javascript-661bab1eaec8 */
+
+.tabs {
+    overflow-x: scroll;
+}
+
+.tabs > input {
+    display:block; /* "enable" hidden elements in IE/edge */
+    position:absolute; /* then hide them off-screen */
+    left:-100%;
+}
+
+.tabs > ul {
+    position:relative;
+    z-index:999;
+    list-style:none;
+    display:flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-main-darker);
+    margin: 0;
+    padding: 0;
+    font-size: var(--size-6);
+}
+
+.tabs > ul li{
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-indent: 0;
+}
+
+.tabs > ul label {
+    text-decoration: none;
+    color: var(--text-comp);
+    line-height: 1;
+
+    display:inline-flex;
+    align-items: center;
+    padding:0.5em 1em;
+    border-right-width:0;
+    cursor: pointer;
+}
+
+.tabs > ul label:hover {
+    margin-bottom: -2px;
+    border-bottom: 3px solid var(--bg-main-invert);
+    color: var(--text-darker);
+}
+
+.tabs.is-boxed > ul label:hover {
+    background-color: var(--bg-main-ter);
+    border-bottom: 1px solid var(--border-main-darker);
+    margin-bottom: 0;
+    color: var(--text-darker);
+}
+
+.tabs  > ul label svg:last-child {
+    margin: 0 0 0 0.5em;
+    font-size:1em;
+}
+
+.tabs > ul label svg:first-child {
+    margin: 0 0.5em 0 0;
+    font-size:1em;
+}
+
+
+.tabs .tab-content {
+    position:relative;
+    padding: var(--padding);
+}
+
+.tabs .tab-content > section,
+.tabs .tab-content > section h2 {
+    position:absolute;
+    top:-999em;
+    left:-999em;
+}
+
+
+.tabs > ul label {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+
+.tabs.tabs-centered > ul {
+    justify-content: center;
+}
+
+.tabs.tabs-right > ul {
+    justify-content: flex-end;
+}
+
+.tabs.is-small > ul {
+    font-size: var(--size-7);
+}
+
+.tabs.is-medium > ul {
+    font-size: var(--size-5);
+}
+
+.tabs.is-large > ul {
+    font-size: var(--size-4);
+}
+
+.tabs.is-fullwidth > ul > li {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+
+.tabs > input:nth-child(1):checked ~  ul li:nth-child(1) label,
+.tabs > input:nth-child(2):checked ~  ul li:nth-child(2) label,
+.tabs > input:nth-child(3):checked ~  ul li:nth-child(3) label,
+.tabs > input:nth-child(4):checked ~  ul li:nth-child(4) label,
+.tabs > input:nth-child(5):checked ~  ul li:nth-child(5) label,
+.tabs > input:nth-child(6):checked ~  ul li:nth-child(6) label,
+.tabs > input:nth-child(7):checked ~  ul li:nth-child(7) label,
+.tabs > input:nth-child(8):checked ~  ul li:nth-child(8) label,
+.tabs > input:nth-child(9):checked ~  ul li:nth-child(9) label {
+    border-bottom: 3px solid var(--link);
+    color: var(--link);
+    margin-bottom: -2px;
+}
+
+
+.tabs.is-boxed > input:nth-child(1):checked ~  ul li:nth-child(1) label,
+.tabs.is-boxed > input:nth-child(2):checked ~  ul li:nth-child(2) label,
+.tabs.is-boxed > input:nth-child(3):checked ~  ul li:nth-child(3) label,
+.tabs.is-boxed > input:nth-child(4):checked ~  ul li:nth-child(4) label,
+.tabs.is-boxed > input:nth-child(5):checked ~  ul li:nth-child(5) label,
+.tabs.is-boxed > input:nth-child(6):checked ~  ul li:nth-child(6) label,
+.tabs.is-boxed > input:nth-child(7):checked ~  ul li:nth-child(7) label,
+.tabs.is-boxed > input:nth-child(8):checked ~  ul li:nth-child(8) label,
+.tabs.is-boxed > input:nth-child(9):checked ~  ul li:nth-child(9) label {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-main-darker) !important;
+    border-bottom-color: var(--bg-main) !important;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-bottom: -1px;
+}
+
+
+.tabs > input:nth-child(1):checked ~ div.tab-content > section:nth-child(1),
+.tabs > input:nth-child(2):checked ~ div.tab-content > section:nth-child(2),
+.tabs > input:nth-child(3):checked ~ div.tab-content > section:nth-child(3),
+.tabs > input:nth-child(4):checked ~ div.tab-content > section:nth-child(4),
+.tabs > input:nth-child(5):checked ~ div.tab-content > section:nth-child(5),
+.tabs > input:nth-child(6):checked ~ div.tab-content > section:nth-child(6),
+.tabs > input:nth-child(7):checked ~ div.tab-content > section:nth-child(7),
+.tabs > input:nth-child(8):checked ~ div.tab-content > section:nth-child(8),
+.tabs > input:nth-child(9):checked ~ div.tab-content > section:nth-child(9) {
+    position: static;
+}

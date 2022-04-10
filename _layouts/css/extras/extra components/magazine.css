@@ -1,0 +1,55 @@
+/** large volume text layouts **/
+.magazine {
+    padding: var(--padding);
+    column-width: var(--magazine-width);
+    column-gap: calc(1.5 *  var(--gutter) );
+    orphans: 2;
+    widows: 3;
+    font-family: var(--family-sans-serif);
+    line-height: 1.6em;
+}
+
+.magazine h2,
+.magazine h3,
+.magazine h4,
+.magazine h5,
+.magazine h6 {
+    margin-bottom: 0.5em;
+}
+
+.magazine > div {
+    margin-bottom: var(--margin-medium);
+}
+
+.magazine.has-serif {
+    font-family: var(--family-serif);
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
+
+.magazine.is-wide {
+    column-width: calc( var(--magazine-width) * 1.33);
+}
+
+.magazine.is-narrow {
+    column-width: calc( var(--magazine-width) / 1.33);
+}
+
+.magazine .mag-block {
+    display: block;
+    margin: 2rem 0;
+    break-inside: avoid;
+}
+
+.magazine .mag-block:first-child {
+    margin-top: 0;
+}
+
+.magazine .mag-block:last-child {
+    margin-bottom: 0;
+}
+
+.magazine .is-highlighted {
+    padding: var(--padding);
+    background-color: var(--bg-highlight);
+}

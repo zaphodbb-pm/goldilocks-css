@@ -1,0 +1,290 @@
+/* navbar slide out menu */
+/* inspired from https://codepen.io/plavookac/pen/qomrMw and https://freefrontend.com/css-sliding-menus/ */
+
+/* navbar setup and control */
+.main-slide-bar {
+    position: relative;
+    height: calc( 0.5 * var(--navbar-height) );
+    width: calc( 0.5 * var(--navbar-height) );
+    display: none;
+    align-items: center;
+}
+
+.main-slide-bar.show-always {
+    display: flex;
+}
+
+.main-slide-bar input[type="checkbox"] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+
+.main-slide-bar input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(-5.5rem);
+}
+
+.main-slide-bar input[type="checkbox"]:checked ~ #sidebarMenuRight {
+    transform: translateX(5.5rem);
+}
+
+
+
+
+/* hamburger target */
+.sidebarIconToggle {
+    position: absolute;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: auto;
+    width: calc( 0.5 * var(--navbar-height) );
+}
+
+.sidebarIconToggle > div {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    height: 3px;
+    width: 100%;
+    background-color: currentColor;
+    position: relative;
+}
+
+.sidebarIconToggle > div:nth-child(2) {
+    margin-top: 6px;
+}
+
+.sidebarIconToggle > div:nth-child(3) {
+    margin-top: 6px;
+}
+
+.main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > div:nth-child(2) {
+    opacity: 0;
+}
+.main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > div:nth-child(1) {
+    transform: rotate(135deg);
+    margin-top: 9px;
+}
+.main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > div:nth-child(3) {
+    transform: rotate(-135deg);
+    margin-top: -12px;
+}
+
+
+
+
+/* sliding menu */
+#sidebarMenu {
+    position: absolute;
+    height: auto;
+    width: 20rem;
+    left: 4.5rem;
+    top: calc( 0.75 * var(--navbar-height) );
+    background: var(--bg-main-comp);
+    max-height: calc(100vh - var(--navbar-height) );
+    overflow-y: scroll;
+    transform: translateX(-30rem);
+    transition: transform 250ms ease-in-out;
+}
+
+.sidebarMenuInner {
+    margin:0;
+    padding: var(--padding-medium) 0 var(--padding-medium) var(--padding-medium);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    background: var(--bg-element);
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    justify-content: flex-start;
+    overflow: hidden;
+    background-color: var(--bg-element) ;
+}
+
+.sidebarMenuInner a {
+    color: var(--link);
+    padding: 0.25rem 0 0.25rem 0.5rem;
+    margin: 0 0 0 calc(0.5 * var(--mar-horz));
+    background: transparent;
+    overflow: hidden;
+    text-indent: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebarMenuInner a.icon-nav-horz {
+    margin-left: 0;
+}
+
+.sidebarMenuInner a:hover {
+    border-right: 2px solid var(--link);
+    background-color: var(--bg-component);
+    padding-right: calc(0.5rem - 2px);
+}
+
+
+
+/* Content area for block of links */
+.sidebar-block {
+    position: relative;
+    color: var(--text);
+    padding: 0;
+    margin: var(--mar-horz) 0 0 0;
+    width: 100%;
+    background: transparent;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.sidebar-block > label {
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+
+    position: relative;
+    padding: 0;
+}
+
+
+.sidebar-block > label::after {
+    content: "";
+    height: 1.5rem;
+    width: 2.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    /* adds right chevron */
+    transition: all 0.3s;
+    background-color: currentColor;
+    mask-image: var(--indicator-right);
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    -webkit-mask-image: var(--indicator-right);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+}
+
+
+.sidebar-block > label:hover {
+    background-color: var(--bg-component);
+    color: inherit;
+}
+
+.sidebar-block > section {
+    max-height: 0;
+    padding: 0;
+    color: var(--text);
+    background-color: inherit;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    row-gap: calc( 0.5 * var(--gap-row) );
+}
+
+
+
+
+/* right side slider block */
+#sidebarMenuRight {
+    position: absolute;
+    height: auto;
+    width: 15rem;
+    right: 4.5rem;
+    top: calc( 0.75 * var(--navbar-height) );
+    background: var(--bg-main-ter);
+    max-height: calc(100vh - var(--navbar-height) );
+    overflow-y: scroll;
+    transform: translateX(30rem);
+    transition: transform 250ms ease-in-out;
+}
+
+.main-slide-bar.is-right .sidebar-block {
+    width: calc( 15rem - var(--padding-medium) );
+    position: relative;
+    left: -1.5rem;
+    padding-left: 0;
+}
+
+.main-slide-bar.is-right .sidebar-block > label {
+    padding-left: 0;
+    margin-left: 2rem;
+}
+
+.main-slide-bar.is-right .sidebar-block  > section {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.main-slide-bar.is-right .sidebar-block > section a {
+    margin-left: 0;
+    padding-left: calc( 2rem + var(--pad-horz) );
+}
+
+.main-slide-bar.is-right .sidebar-block > section  a:hover {
+    margin-left: 0;
+    border-left: 2px solid var(--link);
+    padding-left: calc(2rem + var(--pad-horz) - 2px);
+}
+
+.main-slide-bar.is-right .sidebar-block > section  a.icon-nav-horz {
+    margin-left: 0;
+}
+
+.main-slide-bar.is-right .sidebarMenuInner {
+    padding: var(--padding-medium);
+}
+
+.main-slide-bar.is-right .sidebarMenuInner a {
+    padding: 0 0 0 2rem;
+    margin-left: calc( 8px - 2rem);
+}
+
+.main-slide-bar.is-right .sidebarMenuInner a.icon-nav-horz {
+    margin-left: calc( 8px - 2rem);
+}
+
+.main-slide-bar.is-right .sidebarMenuInner a:hover {
+    border-left: 2px solid var(--link);
+    border-right: none;
+    background-color: var(--bg-component);
+    padding-left: calc(2rem - 2px);
+}
+
+
+
+
+/* react to user actions */
+.sidebar-block input[type="checkbox"]{
+    display: none;
+}
+
+.sidebar-block input:checked + label {
+    background: inherit;
+    color: inherit;
+}
+
+.sidebar-block input:checked + label::after {
+    transform: rotate(90deg);
+    top: 0;
+    right: 0.5em
+}
+
+.sidebar-block input:checked + label:hover {
+    background-color: var(--bg-component);
+    color: inherit;
+}
+
+.sidebar-block input:checked ~ section {
+    max-height: 100vh;
+    padding: var(--pad-vert) 0 var(--pad-vert) var(--pad-vert);
+}
+
+
+@media screen and (max-width: 576px) {
+
+    .main-slide-bar {
+        display: flex;
+    }
+}

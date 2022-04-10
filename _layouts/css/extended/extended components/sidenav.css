@@ -1,0 +1,109 @@
+/* Fixed Sidenav styles */
+.sidenavs {
+    margin: 0;
+    padding: var(--padding) 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 0.5rem;
+}
+
+.sidenavs a {
+    color: var(--link);
+    margin: 0;
+    padding: var(--pad-vert) var(--pad-horz);
+    background: transparent;
+    overflow: hidden;
+    text-indent: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidenav-block {
+    color: var(--text-elem);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: transparent;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.sidenav-block > label {
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding: var(--pad-vert) 2.5rem var(--pad-vert) var(--pad-horz);
+}
+
+.sidenav-block > label::after {
+    content: "";
+    height: 1.5rem;
+    width: 2.5rem;
+    position: absolute;
+
+    /* adds right chevron */
+    top: 0.5em;
+    right: 0;
+    background-color: currentColor;
+    mask-image: var(--indicator-right);
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    -webkit-mask-image: var(--indicator-right);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    transition: all 0.3s;
+}
+
+.sidenav-block > nav {
+    max-height: 0;
+    padding: 0;
+    color: var(--text-elem);
+    background-color: inherit;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenavs a:hover,
+.sidenav-block a:hover {
+    border-right: 2px solid var(--link);
+    background-color: var(--bg-main-ter);
+    padding-right: calc(var(--pad-horz) - 2px);
+}
+
+.sidenav-block > label:hover {
+    background-color: var(--bg-main-ter);
+    color: inherit;
+}
+
+
+/* react to user actions */
+.sidenav-block input[type="checkbox"]{
+    display: none;
+}
+
+.sidenav-block input:checked + label {
+    color: inherit;
+}
+
+.sidenav-block input:checked + label::after {
+    transform: rotate(90deg);
+    top: 0.5em;
+    right: 0;
+}
+
+.sidenav-block input:checked + label:hover {
+    background-color: var(--bg-main-ter);
+    color: inherit;
+}
+
+.sidenav-block input:checked ~ nav {
+    max-height: 100vh;
+    padding: var(--pad-vert) 0 var(--pad-vert) var(--pad-vert);
+    margin-bottom: 1rem;
+}

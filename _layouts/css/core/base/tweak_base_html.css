@@ -1,0 +1,31 @@
+/* fix for prism code highlighter */
+pre > code .tag {
+    background: transparent !important;
+    align-items: baseline;
+    border-radius: unset;
+    display: unset;
+    font-size: unset;
+    height: auto;
+    justify-content: unset;
+    line-height: normal;
+    padding: 0;
+    white-space: nowrap;
+}
+
+pre > code[class*=language-] {
+    margin: 0 !important;
+    padding: 1rem 1.5rem;
+    max-height: 30rem;
+    overflow: auto;
+}
+
+pre {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* adjustments for testing / development only */
+
+main {
+    border-bottom: 1px solid slategray;
+}

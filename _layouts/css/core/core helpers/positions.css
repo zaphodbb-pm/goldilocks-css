@@ -1,0 +1,29 @@
+/* positions.css */
+
+.is-fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.is-fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.is-fixed-left {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    height: 100%;
+}
+
+.is-fixed-right {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    height: 100%;
+}

@@ -1,0 +1,229 @@
+/* Typography elements */
+
+/** define characteristics of heading text **/
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-darker);
+    font-weight: var(--weight-semibold);
+    margin: 0 0 0 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+h1 {font-size: var(--size-1); margin-bottom: var(--size-1); }
+h2 {font-size: var(--size-2); margin-bottom: var(--size-2); }
+h3 {font-size: var(--size-3); margin-bottom: var(--size-3); }
+h4 {font-size: var(--size-4); margin-bottom: var(--size-4); }
+h5 {font-size: var(--size-5); margin-bottom: var(--size-5); }
+h6 {font-size: var(--size-6); margin-bottom: var(--size-6); }
+
+/* sub-titles for headings for only three top headings */
+h1 + .sub-title {
+    font-size: var(--size-4);
+    margin-top: -1em;
+    margin-bottom: var(--size-1);
+}
+
+h2 + .sub-title {
+    font-size: var(--size-5);
+    margin-top: -1.2em;
+    margin-bottom: var(--size-2);
+}
+
+h3 + .sub-title {
+    font-size: var(--size-5);
+    margin-top: -1.2em;
+    margin-bottom: var(--size-3);
+}
+
+h4 + .sub-title {
+    font-size: var(--size-6);
+    margin-top: -1.4em;
+    margin-bottom: var(--size-4);
+}
+
+
+/* define font families */
+.is-family-primary {
+    font-family: var(--family-sans-serif);
+}
+
+.is-family-secondary {
+    font-family: var(--family-serif);
+}
+
+.is-family-code {
+    font-family: var(--family-monospace);
+}
+
+/* sets font-size is any element */
+.is-title-1,
+.is-title-2,
+.is-title-3,
+.is-title-4,
+.is-title-5,
+.is-title-6,
+.is-title-7 {
+    font-weight: var(--weight-semibold);
+    margin: 0 0 1rem 0;
+}
+
+.is-title-1,
+.is-size-1 {
+    font-size: var(--size-1);
+}
+
+.is-title-2,
+.is-size-2 {
+    font-size: var(--size-2);
+}
+
+.is-title-3,
+.is-size-3 {
+    font-size: var(--size-3);
+}
+
+.is-title-4,
+.is-size-4 {
+    font-size: var(--size-4);
+}
+
+.is-title-5,
+.is-size-5 {
+    font-size: var(--size-5);
+}
+
+.is-title-6,
+.is-size-6 {
+    font-size: var(--size-6);
+}
+
+.is-title-7,
+.is-size-7 {
+    font-size: var(--size-7);
+}
+
+/* defines margin controls */
+.is-indented-1 {
+    margin-left: calc(2 * var(--margin) );
+}
+
+.is-indented-1:dir(rtl) {
+    margin-right: calc(2 * var(--margin) );
+}
+
+.is-indented-2 {
+    margin-left: calc( 4 * var(--margin) );
+}
+
+.is-indented-2:dir(rtl) {
+    margin-right: calc( 4 * var(--margin) );
+}
+
+.is-indented-3 {
+    margin-left: calc( 6 * var(--margin) );
+}
+
+.is-indented-3:dir(rtl) {
+    margin-right: calc( 6 * var(--margin) );
+}
+
+
+/** define text modifiers **/
+.has-text-centered {
+    text-align: center;
+}
+
+.has-text-start {
+    text-align: start;
+}
+
+.has-text-end {
+    text-align: end;
+}
+
+.has-text-justified {
+    text-align: justify;
+}
+
+/* defines text weights */
+.is-text-light {
+    font-weight: var(--weight-light);
+}
+
+.is-text-normal {
+    font-weight: var(--weight-normal);
+}
+
+.is-text-medium {
+    font-weight: var(--weight-medium);
+}
+
+.is-text-semibold {
+    font-weight: var(--weight-semibold);
+}
+
+.is-text-bold {
+    font-weight: var(--weight-bold);
+}
+
+
+/* define text colours */
+.has-text-primary {
+    color: var(--primary);
+    background-color: var(--bg-main);
+}
+
+.has-text-secondary {
+    color: var(--secondary);
+    background-color: var(--bg-main);
+}
+
+.has-text-tertiary {
+    color: var(--tertiary);
+    background-color: var(--bg-main);
+}
+
+.has-text-link {
+    color: var(--link);
+    background-color: var(--bg-main);
+}
+
+.has-text-success {
+    color: var(--success);
+    background-color: var(--bg-main);
+}
+
+.has-text-warning {
+    color: var(--warning);
+    background-color: var(--bg-main);
+}
+
+.has-text-danger {
+    color: var(--danger);
+    background-color: var(--bg-main);
+}
+
+.has-text-white {
+    color: var(--bg-main);
+    background-color: var(--grey-dark);
+}
+
+.has-text-black {
+    color: var(--bg-main-invert);
+    background-color: var(--bg-main);
+}
+
+.has-text-grey {
+    color: var(--grey);
+    background-color: var(--bg-main);
+}
+
+.has-text-dark {
+    color: var(--grey-dark);
+    background-color: var(--bg-main);
+}
+
+.has-text-light {
+    color: var(--grey);
+    background-color: var(--bg-main);
+}

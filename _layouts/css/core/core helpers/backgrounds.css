@@ -1,0 +1,68 @@
+/* Background Colour Helpers */
+.has-bg-primary {
+    background-color: var(--primary);
+}
+
+.has-bg-primary-light {
+    background-color: var(--primary-light);
+}
+
+.has-bg-secondary {
+    background-color: var(--secondary);
+}
+
+.has-bg-secondary-light {
+    background-color: var(--secondary-light);
+}
+
+.has-bg-tertiary {
+    background-color: var(--tertiary);
+}
+
+.has-bg-tertiary-light {
+    background-color: var(--tertiary-light);
+}
+
+.has-bg-link {
+    background-color: var(--link);
+}
+
+.has-bg-link-light {
+    background-color: var(--link-light);
+}
+
+.has-bg-success {
+    background-color: var(--success);
+}
+
+.has-bg-success-light {
+    background-color: var(--success-light);
+}
+
+.has-bg-warning {
+    background-color: var(--warning);
+}
+
+.has-bg-warning-light {
+    background-color: var(--warning-light);
+}
+
+.has-bg-danger {
+    background-color: var(--danger);
+}
+
+.has-bg-danger-light {
+    background-color: var(--danger-light);
+}
+
+.has-bg-dark {
+    background-color: var(--grey-dark);
+}
+
+.has-bg-grey {
+    background-color: var(--grey-lighter);
+}
+
+.has-bg-white {
+    background-color: var(--white);
+}

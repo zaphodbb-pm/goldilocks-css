@@ -1,0 +1,23 @@
+.notification {
+    border-radius: var(--radius);
+    position: relative;
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+    pointer-events: none;
+}
+
+.notification:not([class*=" is-"]), .notification.is-delete {
+    background-color: var(--bg-element);
+    color: var(--text);
+}
+
+.notification > .delete {
+    right: .5rem;
+    position: absolute;
+    top: .5rem;
+    pointer-events: bounding-box;
+}
+
+.notification > p {
+    padding: 0;
+    margin: 0;
+}

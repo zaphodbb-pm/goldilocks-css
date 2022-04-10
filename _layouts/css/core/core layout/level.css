@@ -1,0 +1,129 @@
+.level,
+.level-centered,
+.level-start,
+.level-end {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin:0;
+    column-gap: var(--gap-col);
+    row-gap: var(--gap-row);
+}
+
+.level {
+    justify-content: space-between;
+}
+
+.level-centered {
+    justify-content: center;
+}
+
+.level-start {
+    justify-content: flex-start;
+}
+
+.level-end {
+    justify-content: flex-end;
+}
+
+.level.align-top,
+.level-centered.align-top,
+.level-start.align-top,
+.level-end.align-top {
+    align-items: flex-start;
+}
+
+.level.align-bottom,
+.level-centered.align-bottom,
+.level-start.align-bottom,
+.level-end.align-bottom {
+    align-items: flex-end;
+}
+
+
+.level a,
+.level-centered a,
+.level-start a,
+.level-end a {
+    text-decoration: none;
+}
+
+
+/* controls icons + text when used for navigation links */
+.level .icon-nav,
+.level-centered .icon-nav,
+.level-start .icon-nav,
+.level-end .icon-nav
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    margin: 0;
+    padding: var(--pad-vert) 0;
+}
+
+
+@media screen and (max-width: 576px) {
+    .level:not(.is-mobile),
+    .level:not(.is-mobile) .level-left,
+    .level:not(.is-mobile) .level-right,
+    .level:not(.is-mobile) .level-centered,
+    .level-start:not(.is-mobile),
+    .level-centered:not(.is-mobile),
+    .level-end:not(.is-mobile)
+    {
+        display: flex;
+        flex-direction: column;
+        column-gap: var(--gap-col);
+        row-gap: var(--gap-row);
+        align-items: flex-start;
+        padding-left: var(--gap-col);
+    }
+
+    .level:not(.is-mobile) > *,
+    .level:not(.is-mobile) .level-left > *,
+    .level:not(.is-mobile) .level-right > *,
+    .level:not(.is-mobile) .level-centered > *,
+    .level-start:not(.is-mobile) > *,
+    .level-centered:not(.is-mobile) > *,
+    .level-end:not(.is-mobile) > *
+    {
+        display: flex;
+        flex-direction: row;
+        gap: var(--gap-col);
+        margin:0;
+    }
+
+    .level:not(.is-mobile) .icon-nav,
+    .level:not(.is-mobile) .level-left .icon-nav,
+    .level:not(.is-mobile) .level-right .icon-nav,
+    .level:not(.is-mobile) .level-centered .icon-nav,
+    .level-start:not(.is-mobile) .icon-nav,
+    .level-centered:not(.is-mobile) .icon-nav,
+    .level-end:not(.is-mobile) .icon-nav
+    {
+        padding-right: var(--pad-horz);
+    }
+
+
+    .level.is-mobile,
+    .level-centered.is-mobile,
+    .level-start.is-mobile,
+    .level-end.is-mobile {
+        column-gap: calc( 0.75 * var(--gap-col) );
+        row-gap: calc( 0.75 * var(--gap-row) );
+    }
+
+    /* hides associated text when at the mobile break point */
+    .level.is-mobile .icon-nav > p,
+    .level-start.is-mobile .icon-nav > p,
+    .level-centered.is-mobile .icon-nav > p,
+    .level-end.is-mobile .icon-nav > p{
+        display: none;
+    }
+}

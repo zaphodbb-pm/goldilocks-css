@@ -1,0 +1,65 @@
+.divider-box,
+.divider-box-horz {
+    background-color: var(--bg-main-comp);
+    padding: var(--padding-normal);
+}
+
+.divider-box-horz {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    column-gap: calc( 3 * var(--gap-col) );
+}
+
+.divider, .divider-vert {
+    display: block;
+    position: relative;
+    background-color: inherit;
+}
+
+.divider {
+    border-top: 1px solid var(--border-main-darker);
+    height: 1px;
+    margin: var(--margin-form) 0;
+    text-align: center;
+    overflow: unset;
+}
+
+.divider[data-content] {
+    margin: var(--margin-form) 0;
+}
+
+.divider-vert {
+    display: block;
+    padding: var(--pad-vert);
+}
+
+.divider-vert[data-content]::after,
+.divider[data-content]::after {
+    background-color: inherit;
+    color: var(--text-light);
+    content: attr(data-content);
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 0 .4rem;
+    transform: translateY(-.85rem);
+}
+
+.divider-vert::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: .4rem;
+    bottom: .4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 1px solid var(--border-main-darker);
+}
+
+.divider-vert[data-content]::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: .2rem 0;
+    transform: translate(-50%,-50%);
+}

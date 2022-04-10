@@ -1,0 +1,61 @@
+.has-ribbon,
+.has-ribbon-left,
+.has-ribbon-bottom
+{
+    position: relative;
+}
+
+.ribbon {
+    border-right: none;
+
+    font-size: var(--size-6);
+    justify-content: center;
+    padding-left:  var(--pad-horz);
+    padding-right: var(--pad-horz);
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    font-weight: var(--weight-normal);
+    z-index: 2;
+
+    border-top-left-radius: var(--radius-small);
+    border-bottom-left-radius: var(--radius-small);
+}
+
+.has-ribbon-left .ribbon {
+    right: auto;
+    left: 0;
+    border-left: none;
+    border-right: 0.1rem solid var(--bg-main-ter);
+    border-radius: 0 var(--radius-small) var(--radius-small) 0;
+}
+
+.has-ribbon-bottom .ribbon {
+    top: auto;
+    bottom: 0.5em;
+}
+
+
+.ribbon.has-shadow {
+    box-shadow: var(--shadow);
+    right: -0.25rem;
+}
+
+.ribbon.is-small {
+    font-size: var(--size-7);
+}
+.ribbon.is-medium {
+    font-size: var(--size-5);
+    padding-top: calc(0.5 * var(--pad-vert) );
+    padding-bottom: calc(0.5 * var(--pad-vert) );
+}
+.ribbon.is-large {
+    font-size: var(--size-4);
+    padding-top: var(--pad-vert);
+    padding-bottom: var(--pad-vert);
+}
+.ribbon.is-outlined {
+    background-color: transparent;
+}

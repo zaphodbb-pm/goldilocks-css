@@ -1,0 +1,54 @@
+.message {
+    margin:0;
+    position: relative;
+    border-radius: var(--radius);
+    pointer-events: none;
+    font-size: var(--size-6);
+}
+
+.message:not([class*=" is-"]) {
+    background-color: var(--bg-element);
+    color: var(--text-comp);
+    border-color: var(--grey-dark);
+}
+
+.message:not([class*=" is-"]) > header {
+    background-color: var(--grey-dark);
+    color: var(--text-btn-invert);
+}
+
+.message > .delete {
+    right: .5rem;
+    position: absolute;
+    top: .5rem;
+    pointer-events: bounding-box;
+}
+
+.message > header {
+    align-items: center;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    display: flex;
+    font-weight: var(--weight-bold);
+    justify-content: space-between;
+    line-height: var(--line-height-125);
+    margin: 0;
+    padding: .75em .5em .75em 1.25em;
+    position: relative;
+    pointer-events: none;
+}
+
+.message > .message-body {
+    padding: 1.25em 1.5em;
+    pointer-events: none;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.message > .message-body:first-child {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0 0 0 var(--radius);
+    color: inherit;
+    border-radius: inherit;
+}

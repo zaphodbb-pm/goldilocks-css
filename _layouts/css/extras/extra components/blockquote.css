@@ -1,0 +1,38 @@
+.blockquote {
+    display: block;
+    padding: var(--pad-vert) var(--pad-horz);
+    margin: var(--margin-form) auto;
+    max-width: 67%;
+
+    background-color: var(--bg-component);
+    border-left: 0.3rem solid var(--secondary);
+}
+
+.blockquote > blockquote {
+    color: var(--text-darker);
+    font-size: var(--size-5);
+    font-weight: var(--weight-medium);
+    font-family: var(--family-serif);
+    line-height: var(--line-height-150);
+}
+
+.blockquote > figcaption {
+    text-align: left;
+    line-height: var(--line-height-125);
+    padding: var(--pad-vert) var(--pad-horz);
+}
+
+.blockquote > figcaption::before {
+    content: "— ";
+}
+
+@media screen and (max-width: 576px){
+    .blockquote {
+        max-width: 100%;
+    }
+
+    .blockquote > figcaption cite {
+        display: block;
+        padding-left: 1rem;
+    }
+}

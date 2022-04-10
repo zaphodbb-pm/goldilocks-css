@@ -1,0 +1,161 @@
+/* Pure css html base elements and reset */
+/** note that some html tags are set in other element files **/
+
+
+/** set global environment **/
+html {
+    margin: 0;
+    padding: 0;
+
+    font-size: var(--base-font-size);
+    background-color: var(--bg-main);
+
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/** set display environment */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--family-sans-serif);
+    font-weight: var(--weight-normal);
+    line-height: var(--line-height-150);
+    color: var(--text);
+    background-color: var(--bg-main);
+}
+
+/** set key html tags */
+main,
+header {
+    margin: 0;
+    padding: max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48)));
+    overflow-x: hidden;
+}
+
+section,
+article,
+textarea,
+iframe,
+input,
+select
+{
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: inherit;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--link);
+}
+
+ul, ol, dl {
+    padding: 0;
+    margin: 0;
+}
+
+P + ul, p + ol, p + dl {
+    margin-bottom: 1.5rem;
+}
+
+ul > li {
+    list-style: disc;
+    margin: 0 0 0.75rem 1rem;
+}
+
+ol > li {
+    list-style: decimal;
+    margin: 0 0 0.75rem 1.5rem;
+}
+
+dl > dd {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0.75rem;
+    margin-inline-start: 1rem;
+}
+
+
+blockquote {
+    margin: 0;
+}
+
+hr {
+    padding: 0;
+    margin: 1rem 0;
+    border: 1px solid var(--grey-light);
+}
+
+small {
+    font-size: 80%;
+    font-weight: 400; /* (added) */
+}
+
+details {
+    margin: 0;
+    padding: 0;
+}
+
+details summary {
+    cursor: pointer;
+}
+
+details summary > * {
+    display: inline;
+}
+
+pre {
+    font-family: var(--family-monospace);
+    font-size: 1rem;
+    background-color: var(--white-ter);
+    border-left: var(--pad-vert) solid var(--tertiary);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin: 0;
+    padding: 0;
+}
+
+code {
+    font-family: var(--family-monospace);
+    font-weight: normal;
+
+    color: var(--text-code);
+    background-color: var(--bg-main-code);
+    border-radius: var(--radius);
+    margin: 0;
+    padding: 0.125em 0.5em;
+    white-space: nowrap;
+}
+
+pre > code {
+    font-size: 1em;
+    color: currentColor;
+    background-color: transparent;
+    padding: 0;
+
+    border-radius: 0;
+    display: block;
+    white-space: pre;
+    max-width: 100%;
+    overflow-x: scroll;
+}
+

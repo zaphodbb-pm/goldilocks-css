@@ -1,0 +1,264 @@
+.form {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    background-color: var(--bg-main-elem);
+    color: var(--text-elem);
+}
+
+.has-form-shadow {
+    padding: var(--padding-medium) var(--padding-large);
+    border-radius: var(--radius-comp);
+    box-shadow: var(--shadow);
+}
+
+.form fieldset {
+    margin:  var(--margin-form) 0;
+    padding: 0;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--gap-row) var(--gap-col);
+}
+
+.form legend {
+    margin: 0;
+    padding: 0;
+}
+
+.form fieldset > * {
+    flex-grow: 1;
+}
+
+
+.form label {
+    position: relative;
+    display: block;
+    margin:  var(--margin-form) 0;
+}
+
+.form fieldset label {
+    margin:  0;
+}
+
+.adjust-label {
+    left: 3.5rem;
+}
+
+.form label > span:first-child {
+    position: absolute;
+    left: var(--margin);
+    top:  calc( -0.75 * var(--margin));
+    background-color: var(--bg-main-elem);
+    padding: 0  calc( 0.5 * var(--pad-horz) );
+    font-weight: var(--weight-medium);
+    font-size: var(--size-7);
+    color: var(--text-elem);
+    z-index: 10;
+}
+
+
+.form label > input,
+.form label > textarea,
+.form label > select,
+.form label > div
+{
+    background-color: var(--bg-main-elem);
+    border: 1px solid var(--border-main-darker);
+    border-radius: var(--radius-elem);
+
+    position: relative;
+    color: var(--text-elem);
+    font-size: var(--size-6);
+    display: block;
+    box-sizing: border-box;
+
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    box-shadow: none;
+    margin: 0;
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+
+    width: 100%;
+}
+
+
+.form label select {
+    /* builds "chevron down" svg image for select box */
+    background-image: var(--indicator);
+    background-position: right 1em center;
+    background-size: 1.5em 1.5em;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-attachment: scroll;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.form label > div {
+    display: flex;
+    justify-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--gap-row) var(--gap-col);
+    align-items: center;
+}
+
+.form label > div span {
+    margin-left: calc( -0.5 * var(--gap-col) );
+}
+
+
+.form label > input:focus-visible,
+.form label > textarea:focus-visible,
+.form label > select:focus-visible,
+.form label > div:focus-visible {
+    outline: none;
+    border: 2px solid var(--primary);
+}
+
+.form label .icon:last-child,
+.form label .icon:first-child {
+    margin: 0;
+}
+
+.field-error {
+    border: 1px solid var(--danger);
+    border-radius: var(--radius-elem);
+}
+
+.form label.has-field-addons {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    margin:  var(--margin-form) 0;
+    align-items: center;
+}
+
+.form label.has-field-addons > * {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    box-shadow: none;
+    font-size: var(--size-6);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    border-radius: 0;
+    height: 3em;
+    width: auto;
+    border: 1px solid var(--border-main-darker);
+    cursor: pointer;
+}
+
+.form label.has-field-addons > input {
+    width: 100%;
+}
+
+.form label.has-field-addons > :first-child {
+    border-top-left-radius: var(--radius-elem);
+    border-bottom-left-radius: var(--radius-elem);
+    border-right: none;
+}
+
+.form label.has-field-addons > :last-child {
+    border-top-right-radius: var(--radius-elem);
+    border-bottom-right-radius: var(--radius-elem);
+    border-left: none;
+}
+
+.form label.has-field-addons select {
+    position: relative;
+    padding: 0.5rem 3.5rem 0.5rem 0.75rem;
+    font-size: inherit;
+    color: inherit;
+}
+
+.form input{
+    height: 2.5em;
+    line-height: 1.5;
+}
+
+.form textarea{
+    resize: vertical;
+}
+
+.form .form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--margin);
+}
+
+.form input[type="submit"] {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: var(--weight-semibold);
+}
+
+
+/* controls and decoration for switch /toggle element */
+.form .switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form .switch input {
+    display: none;
+}
+
+
+.form .switch span {
+    display: flex;
+    align-items: center;
+    padding-left: 4.5rem;
+    border: none;
+}
+
+.form .switch span::before {
+    position: absolute;
+    display: block;
+    top: 0.75rem;
+    left: 2rem;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: var(--radius-elem);
+    background: var(--grey-light);
+    content: '';
+    transform: translate(-1rem, 0);
+    cursor:pointer;
+}
+
+.form .switch span::after {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1.25rem;
+    width: 1rem;
+    height: 1rem;
+    transform: translate(0, 0);
+    border-radius: var(--radius-elem);
+    background: var(--white);
+    transition: all 0.25s ease-out;
+    content: '';
+    cursor:pointer;
+}
+
+.form .switch input:checked + span::before {
+    background-color: var(--secondary);
+}
+
+.form .switch input:checked + span::after {
+    left: 2.75rem;
+}

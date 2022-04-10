@@ -1,0 +1,60 @@
+.comments {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    column-gap: var(--gap-col);
+    border-top: 1px solid var(--border-main);
+    padding-top: var(--padding-normal);
+}
+
+.comments:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.comments > div {
+    width: 100%;
+}
+
+.comments > div > * {
+    padding: 0;
+    margin: 0 0 var(--mar-vert) 0;
+}
+
+.comments > div > *:last-child {
+    margin: 0;
+}
+
+.comments > div > time {
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: -0.75rem;
+    display: block;
+}
+
+
+/* indent follow on responses to primary comment */
+.comments.is-level-2 {
+    border-top: 1px solid var(--border-main);
+    padding-top: var(--padding);
+    margin: var(--mar-vert) 0 0 3rem;
+}
+
+.comments.is-level-3 {
+    border-top: 1px solid var(--border-main);
+    padding-top: var(--padding);
+    margin: var(--mar-vert) 0 0 6rem;
+}
+
+
+/* standard input form needs some adjustments */
+.comments.with-form > form {
+    width: 100%;
+    padding: 0 var(--pad-horz);
+    border-radius: var(--radius-comp)
+}
+
+.comments.with-form > figure {
+    margin-top: 1.5rem;
+}

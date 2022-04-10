@@ -1,0 +1,94 @@
+/*
+main dark theme color definitions
+use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
+ */
+
+
+.main-theme-dark {
+
+    --shadow: 0 0.1em 0.1em 0.1em rgba(240, 245, 245, 0.25), 0 0 0 1px rgba(245, 245, 245, 0.02);
+
+    /* main theme colour parameters
+        - based on split complementary color selection
+        - for triadic color selection, set --main-color-offset to 120 degrees
+    */
+    --main-color: 170;                  /** primary hue value **/
+    --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
+    --main-color-sl: 53%, 60%;          /** saturation and lightness **/
+    --main-color-sl-light: 100%, 92%;   /** color lightening saturation and lightness **/
+    --main-color-sl-dark: 100%, 40%;    /** color lightening saturation and lightness **/
+
+    --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
+    --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
+
+    /* build main theme colours */
+    --primary: hsl( var(--main-color), var(--main-color-sl) );
+    --secondary: hsl( var(--main-color-complement-low), var(--main-color-sl) );
+    --tertiary: hsl( var(--main-color-complement-high), var(--main-color-sl) );
+
+
+    /* optional light colors; use carefully as accessibility is hard to achieve */
+    --primary-light:  hsl( var(--main-color), var(--main-color-sl-light));
+    --secondary-light:  hsl( var(--main-color-complement-low), var(--main-color-sl-light));
+    --tertiary-light:  hsl( var(--main-color-complement-high), var(--main-color-sl-light));
+
+
+    --primary-dark:  hsl( var(--main-color), var(--main-color-sl-dark) );
+    --secondary-dark:  hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
+    --tertiary-dark:  hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
+
+    --link: hsl(217, 75%, 65%);
+    --link-light:  hsl(217, 75%, 93%);
+    --link-dark: hsl(217, 75%, 55%);
+
+    --success: hsl(141, 53%, 53%);
+    --success-light:  hsl(141, 53%, 96%);
+    --success-dark: hsl(141, 53%, 31%);
+
+    --warning: hsl(48, 100%, 48%);
+    --warning-light:  hsl(48, 100%, 95%);
+    --warning-dark: hsl(48, 100%, 40%);
+
+    --danger: hsl(348, 86%, 61%);
+    --danger-light:  hsl(348, 90%, 97%);
+    --danger-dark: hsl(348, 86%, 33%);
+
+    --grey-light: hsl(0, 0%, 75%);
+    --grey-lighter: hsl(0, 0%, 85%);
+
+
+    /** invert colours for elements and components **/
+    --border-main: var(--grey);
+    --border-main-darker: var(--grey-light);
+
+
+    --bg-main: var(--black);
+    --bg-main-elem: var(--grey-darker);
+    --bg-main-comp: var(--black-ter);
+    --bg-main-bis: var(--black-bis);
+    --bg-main-ter: var(--black-ter) ;
+    --bg-main-invert: var(--white);
+    --bg-main-invert-ter: var(--white-ter);
+    --bg-main-code: var(--grey-darker);
+
+    --bg-grid: var(--grey-darker);
+    --bg-element: var(--grey-darker);
+    --bg-component: var(--black-ter);
+    --bg-highlight: hsl(48, 100%, 15%);;
+    --bg-hover: var(--grey-dark);
+
+    /** invert or adjust colours for text **/
+    --text: var(--white-bis);
+    --text-invert: var(--black);
+    --text-light: var(--grey);
+    --text-darker: var(--white-ter);
+
+    --text-elem: var(--white-bis);
+    --text-comp: var(--white-bis);
+    --text-invert-ter: var(--black-ter);
+
+    --text-btn: var(--black-bis);
+    --text-btn-invert: var(--white-ter);
+    --text-bg: var(--black-bis);
+    --text-code: var(--secondary-light);
+}
