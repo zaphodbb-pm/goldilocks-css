@@ -1,6 +1,8 @@
 .breadcrumb {
     font-size: 1rem;
     white-space: nowrap;
+    margin: 0;
+    padding: 0;
 }
 
 .breadcrumb a {
@@ -8,7 +10,8 @@
     color: var(--link);
     display: flex;
     justify-content: center;
-    padding: 0 var(--pad-horz);
+    padding: 0;
+    margin: 0;
     text-decoration: none;
 }
 
@@ -21,8 +24,8 @@
     text-indent: 0;
     align-items: center;
     display: flex;
-    padding-right: 0;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .breadcrumb li:first-child a {
@@ -38,6 +41,7 @@
 .breadcrumb li + li::before {
     color: var(--text-lighter);
     content: "\0002f";
+    padding: 0 var(--pad-horz);
 }
 
 .breadcrumb ul,
@@ -48,6 +52,8 @@
     justify-content: flex-start;
 }
 
+
+/*
 .breadcrumb .icon:first-child {
     margin-right: var(--mar-horz);
 }
@@ -55,6 +61,8 @@
 .breadcrumb .icon:last-child {
     margin-left: var(--mar-horz);
 }
+
+ */
 
 .breadcrumb.is-centered ol,
 .breadcrumb.is-centered ul {

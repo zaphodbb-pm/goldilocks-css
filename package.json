@@ -1,10 +1,16 @@
 {
-  "name": "goldilocks-css",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": ["css"],
-  "license": "",
-  "author": "",
+  "name": "@zaphodbb-pm/goldilocks-css",
+  "version": "0.1.0",
+  "description": "Modern CSS3 and HTML5 small framework",
+  "keywords": [
+    "css"
+  ],
+  "license": "MIT",
+  "author": "Zaphod Beeblebrox",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zaphodbb-pm/goldilocks-css.git"
+  },
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
@@ -12,6 +18,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
     "parcel-bundler": "^1.12.4"
   }
 }
