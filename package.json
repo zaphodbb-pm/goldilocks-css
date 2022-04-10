@@ -1,10 +1,17 @@
 {
-  "name": "goldilocks-css",
-  "version": "0.0.1",
-  "description": "",
+  "name": "@zaphodbb-pm/goldilocks-css",
+  "version": "0.1.0",
+  "description": "Modern CSS3 and HTML5 small framework",
   "keywords": ["css"],
   "license": "",
-  "author": "",
+  "author": "Zaphod Beeblebrox",
+  "repository": {
+      "type": "git",
+      "url": "urlToYourRepository"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/zaphodbb-pm"
+  
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
