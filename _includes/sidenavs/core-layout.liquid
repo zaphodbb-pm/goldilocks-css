@@ -1,5 +1,5 @@
 <div class="sidenav-block">
-    <input type="checkbox" id="core-layout">
+    <input type="checkbox" id="core-layout" {% if page.parent-tab == 'core-layout' %}checked{% endif %}>
     <label for="core-layout">Core Layout</label>
     <nav>
         <a href="{{site.url}}/pages/core-layout/box.html">Box</a>
