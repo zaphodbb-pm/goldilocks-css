@@ -18,12 +18,56 @@
 <!-- set up main page navbar -->
 <div class="page-wrapper-widgets has-slidebar" id="page-main-navbar">
 
-    {% include main_page/widget-bar.liquid %}
-    
+    <section class="widgetbar page-widgets is-fixed">
+
+        <form class="widgetbar-radios">
+            <span>Theme</span>
+
+            <label>
+                <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')">
+                <svg class="icon"><use href="#icon-day"></use></svg>
+            </label>
+
+            <label>
+                <input type="radio" name="heading-sizes" onchange="setTheme('Dark')">
+                <svg class="icon"><use href="#icon-night"></use></svg>
+            </label>
+        </form>
+
+        <script>
+            function setTheme(theme){
+                if(theme === "Dark"){
+                    document.body.classList.add('main-theme-dark');
+                }else{
+                    document.body.classList.remove('main-theme-dark');
+                }
+            }
+        </script>
+
+        <form class="widgetbar-radios">
+            <label>
+                <input type="radio" name="text-sizes" checked onchange="setTextSize('1')"><span>T1</span>
+            </label>
+
+            <label>
+                <input type="radio" name="text-sizes" onchange="setTextSize('1.5')"><span>T2</span>
+            </label>
+
+            <label>
+                <input type="radio" name="text-sizes" onchange="setTextSize('2.25')"><span>T3</span>
+            </label>
+        </form>
+
+        <script>
+            function setTextSize(size){
+                document.querySelector(':root').style.setProperty("--base-scale", size);
+            }
+        </script>
+    </section>
 
     <nav class="page-main-nav navbar is-primary is-fixed" aria-label="Main Site Navigation Bar">
         <div class="navbar-left">
-            <div class="main-slide-bar show-always">
+            <div class="main-slide-bar">
                 <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu-main">
 
                 <label for="openSidebarMenu-main" class="sidebarIconToggle">
