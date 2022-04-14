@@ -23,9 +23,3 @@ pre {
     padding: 0 !important;
     margin: 0 !important;
 }
-
-/* adjustments for testing / development only */
-
-main {
-    border-bottom: 1px solid slategray;
-}

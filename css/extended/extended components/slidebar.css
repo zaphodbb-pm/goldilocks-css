@@ -20,11 +20,11 @@
     display: none;
 }
 
-.main-slide-bar input[type="checkbox"]:checked ~ #sidebarMenu {
+.main-slide-bar input[type="checkbox"]:checked ~ .sidebarMenu {
     transform: translateX(-5.5rem);
 }
 
-.main-slide-bar input[type="checkbox"]:checked ~ #sidebarMenuRight {
+.main-slide-bar input[type="checkbox"]:checked ~ .sidebarMenuRight {
     transform: translateX(5.5rem);
 }
 
@@ -41,31 +41,32 @@
     width: calc( 0.5 * var(--navbar-height) );
 }
 
-.sidebarIconToggle > div {
+.sidebarIconToggle > span {
     transition: all 0.3s;
     box-sizing: border-box;
     height: 3px;
     width: 100%;
     background-color: currentColor;
     position: relative;
+    display: block;
 }
 
-.sidebarIconToggle > div:nth-child(2) {
+.sidebarIconToggle > span:nth-child(2) {
     margin-top: 6px;
 }
 
-.sidebarIconToggle > div:nth-child(3) {
+.sidebarIconToggle > span:nth-child(3) {
     margin-top: 6px;
 }
 
-.main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > div:nth-child(2) {
+.main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > span:nth-child(2) {
     opacity: 0;
 }
-.main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > div:nth-child(1) {
+.main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > span:nth-child(1) {
     transform: rotate(135deg);
     margin-top: 9px;
 }
-.main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > div:nth-child(3) {
+.main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > span:nth-child(3) {
     transform: rotate(-135deg);
     margin-top: -12px;
 }
@@ -74,7 +75,7 @@
 
 
 /* sliding menu */
-#sidebarMenu {
+.sidebarMenu {
     position: absolute;
     height: auto;
     width: 20rem;
@@ -187,7 +188,7 @@
 
 
 /* right side slider block */
-#sidebarMenuRight {
+.sidebarMenuRight {
     position: absolute;
     height: auto;
     width: 15rem;

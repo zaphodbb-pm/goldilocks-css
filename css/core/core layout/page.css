@@ -82,6 +82,7 @@
 .page-wrapper > .page-header,
 .page-wrapper-widgets > .page-header {
     grid-area: header;
+    margin: 0.75rem 1.5rem;
 }
 
 .page-wrapper > .page-sidenav,
@@ -104,7 +105,7 @@
 }
 
 .page-footer {
-    background-color: var(--bg-element);
+    background-color: var(--bg-component);
     margin-top: var(--margin);
     padding: var(--padding-medium) var(--padding-large);
     border-top: 1px solid var(--border-main-darker);
