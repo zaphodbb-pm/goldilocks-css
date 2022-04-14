@@ -2,7 +2,7 @@
     display: block;
     padding: var(--pad-vert) var(--pad-horz);
     margin: var(--margin-form) auto;
-    max-width: 67%;
+    max-width: 40ch;
 
     background-color: var(--bg-component);
     border-left: 0.3rem solid var(--secondary);
