@@ -1,19 +1,9 @@
-<li class="sidenav">
+<div class="sidenav-block">
     <input type="checkbox" id="extra-elements" {% if page.parent-tab == 'extra-elements' %}checked{% endif %}>
-    <label class="sidenav-label" for="extra-elements">Extra Elements</label>
-    <ul class="sidenav-content">
-        <li><a href="{{site.url}}/pages/extra-elements/avatars.html">Avatar</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/badge.html">Badge</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/borders.html">Borders</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/divider.html">Divider</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/icons.html">Icons</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/media.html">Media</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/message.html">Message</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/notification.html">Notification</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/popover.html">Popover</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/progress-bar.html">Progress Bar</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/ribbon.html">Ribbon</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/tags.html">Tags</a></li>
-        <li><a href="{{site.url}}/pages/extra-elements/tooltip.html">Tooltips</a></li>
-    </ul>
-</li>
+    <label for="extra-elements">Extra Elements</label>
+    <nav>
+        <a href="{{site.url}}/pages/extra-elements/progress-bar.html">Progress Bars</a>
+        <a href="{{site.url}}/pages/extra-elements/ribbon.html">Ribbons</a>
+        <a href="{{site.url}}/pages/extra-elements/tooltip.html">Tool Tips</a>
+    </nav>
+</div>
