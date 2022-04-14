@@ -3085,6 +3085,7 @@ h4 + .sub-title
     -moz-column-gap: calc( 2 * var(--gap-col) );
          column-gap: calc( 2 * var(--gap-col) );
     row-gap: var(--gap-row);
+    flex-wrap: wrap;
 }
 
 .page-footer section

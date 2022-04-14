@@ -5,6 +5,108 @@ parent-tab: core-layout
 
 <h1 class="page-header">Box</h1>
 
-<main class="main-content">
-    Content
+<main id="core-layout_box">
+
+    <h1>Box</h1>
+
+    <div class="row has-5x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>box</strong> <em>layout component</em> is a simple container that holds items for display.  Box provides its own padding. </p>
+            <p>Using the <code>.box-shadow</code> class instead, a border and shadow is added to provide a more distinctive look. </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.box</code></td>
+                    <td>sets up a parent HTML <code>section</code></td>
+                </tr>
+
+                <tr>
+                    <td><code>.box-shadow</code></td>
+                    <td>same as box but adds a shadow and corners with radius.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table  is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>box.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-component, --padding-normal, --radius, --shadow, --text</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <section class="row">
+        <section class="column">
+
+            <div class="stack">
+                <section class="box">
+                    <p>Basic Box Example</p>
+                </section>
+
+                <section class="box-shadow">
+                    <p>Box with shadow</p>
+                </section>
+
+                <section class="box-shadow">
+                    <p>Box Boxed Example with shadow and Content</p>
+
+                    <label class="progress-wrapper">
+                        Some Interesting Relationship
+                        <progress class="is-progress-primary" value="25" max="100" data-show="25%"></progress>
+                    </label>
+                </section>
+            </div>
+
+        </section>
+
+        <section class="column">
+            <pre><code class="language-html">
+                <section class="box">
+                    <p>Basic Box Example</p>
+                </section>
+
+                <section class="box-shadow">
+                    <p>Box with shadow</p>
+                </section>
+
+                <section class="box-shadow">
+                    <p>Box Boxed Example with shadow and Content</p>
+
+                    <label class="progress-wrapper">
+                        Some Interesting Relationship
+                        <progress class="is-progress-primary" value="25" max="100" data-show="25%"></progress>
+                    </label>
+                </section>
+            </code></pre>
+        </section>
+
+    </section>
+
 </main>
+
