@@ -114,6 +114,7 @@
     justify-content: space-between;
     column-gap: calc( 2 * var(--gap-col) );
     row-gap: var(--gap-row);
+    flex-wrap: wrap;
 }
 
 .page-footer section {
