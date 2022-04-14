@@ -1,27 +1,12 @@
-<nav class="navbar main-nav" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="{{site.url}}">
-            <img src="{{site.url}}/icon.png" alt="Project Logo">
-        </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-            <div class="navbar-item">
-                <p class="is-size-2 m-0">Goldilocks-CSS</p>
-            </div>
-        </div>
-
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <button class="is-primary mr-3">
-                    <a href="{{site.url}}#page-top">Download</a>
-                </button>
-
-                <button class="is-primary">
-                    <a href="{{site.url}}#page-top">View on Github</a>
-                </button>
-            </div>
-        </div>
+<nav class="page-sidenav" aria-label="Extended Side Bar Navigation">
+    <div class="sidenavs">
+        {% include sidenavs/get-started.liquid %}
+        {% include sidenavs/core-layout.liquid %}
+        {% include sidenavs/core-elements.liquid %}
+        {% include sidenavs/core-helpers.liquid %}
+        {% include sidenavs/extend-elements.liquid %}
+        {% include sidenavs/extend-components.liquid %}
+        {% include sidenavs/extras-elements.liquid %}
+        {% include sidenavs/extras-components.liquid %}
     </div>
 </nav>
