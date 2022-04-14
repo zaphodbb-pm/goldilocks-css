@@ -1,14 +1,15 @@
-const cli = require("gulp-cli");
 const gulpit = require("gulp");
 const cleancss = require('gulp-clean-css');
 const csscomb = require('gulp-csscomb');
 const rename = require('gulp-rename');
+const autoprefixer = require('gulp-autoprefixer');
+const concat = require("gulp-concat")
 
-function build() {
-    console.log("build", cli, gulpit);
-
+function buildCore() {
     return gulpit
-        .src('./client/css/*.css')
+        .src('./css/core/**/*.css')
+        .pipe(autoprefixer())
+        .pipe(concat("goldilocks.core.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
         .pipe(cleancss())
@@ -18,12 +19,71 @@ function build() {
         .pipe(gulpit.dest('./dist'));
 }
 
-
-function watch() {
-    console.log("watch");
-    gulp.watch('./client/*.css', build);
+function buildExtended() {
+    return gulpit
+        .src('./css/extended/**/*.css')
+        .pipe(autoprefixer())
+        .pipe(concat("goldilocks.extended.css"))
+        .pipe(csscomb())
+        .pipe(gulpit.dest('./dist'))
+        .pipe(cleancss())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulpit.dest('./dist'));
 }
 
-exports.watch = watch;
-exports.build = build;
-exports.default = build;
+function buildExtras() {
+    return gulpit
+        .src('./css/extras/**/*.css')
+        .pipe(autoprefixer())
+        .pipe(concat("goldilocks.extras.css"))
+        .pipe(csscomb())
+        .pipe(gulpit.dest('./dist'))
+        .pipe(cleancss())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulpit.dest('./dist'));
+}
+
+function buildCoreExtended() {
+    return gulpit
+        .src(['./css/core/**/*.css', './css/extended/**/*.css'])
+        .pipe(autoprefixer())
+        .pipe(concat("goldilocks.core-extended.css"))
+        .pipe(csscomb())
+        .pipe(gulpit.dest('./dist'))
+        .pipe(cleancss())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulpit.dest('./dist'));
+}
+
+function buildAll() {
+    return gulpit
+        .src('./css/**/*.css')
+        .pipe(autoprefixer())
+        .pipe(concat("goldilocks.all.css"))
+        .pipe(csscomb())
+        .pipe(gulpit.dest('./dist'))
+        .pipe(cleancss())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulpit.dest('./dist'));
+}
+
+function watch() {
+
+    gulpit.watch('./**/*.css', buildCore);
+}
+
+//exports.watch = watch;
+exports.buildCore = buildCore;
+exports.buildExtended = buildExtended;
+exports.buildExtras = buildExtras;
+exports.buildCoreExtended = buildCoreExtended;
+exports.buildAll = buildAll;
+exports.default = buildAll;
