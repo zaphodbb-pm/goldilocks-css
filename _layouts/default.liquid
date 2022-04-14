@@ -13,20 +13,19 @@
     <link rel="stylesheet" href='{{site.url}}/dist/goldilocks.all.min.css' media="screen">
 </head>
 
-<body id="page-top" class="page-wrapper-widgets">
+<body id="page-top" class="page-wrapper-widgets has-slidebar">
 
     {{ content }}
 
     {% include main_page/footer.liquid %}
 
-    <!-- set up main page navbar -->
-    <div id="page-main-navbar" class="has-slidebar" >
-        {% include main_page/widget-bar.liquid %}
 
-        {% include main_page/site-navbar.liquid %}
+    <!-- set up main page navbar with widget bar -->
+    {% include main_page/widget-bar.liquid %}
 
-        {% include main_page/site-sidenav_links.liquid %}
-    </div>
+    {% include main_page/site-navbar.liquid %}
+    {% include main_page/site-sidenav_links.liquid %}
+
 
 
 
