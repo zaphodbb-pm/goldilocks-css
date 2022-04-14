@@ -15,58 +15,56 @@
 
 <body id="page-top">
 
-<!-- set up main page navbar -->
-<div id="page-main-navbar" class="page-wrapper-widgets has-slidebar" >
-
     {{ content }}
-
-    {% include main_page/widget-bar.liquid %}
-
-    {% include main_page/site-navbar.liquid %}
-
-    {% include main_page/site-sidenav_links.liquid %}
 
     {% include main_page/footer.liquid %}
 
-</div>
+    <!-- set up main page navbar -->
+    <div id="page-main-navbar" class="page-wrapper-widgets has-slidebar" >
+        {% include main_page/widget-bar.liquid %}
+
+        {% include main_page/site-navbar.liquid %}
+
+        {% include main_page/site-sidenav_links.liquid %}
+    </div>
 
 
 
-<!--
-    Loads svg based icons that can be referenced on any page.
-    Make sure that the icons definition file is publicly accessable.
- -->
+    <!--
+        Loads svg based icons that can be referenced on any page.
+        Make sure that the icons definition file is publicly accessable.
+     -->
 
-<script type="text/javascript">
-    fetch("{{site.url}}/public/icon-definitions.html")
-        .then( response => response.text() )
-        .then((data) => {
-            let svgElements = document.createElement('div');
-            svgElements.innerHTML = data;
-            document.body.appendChild(svgElements);
-        })
+    <script type="text/javascript">
+        fetch("{{site.url}}/public/icon-definitions.html")
+            .then( response => response.text() )
+            .then((data) => {
+                let svgElements = document.createElement('div');
+                svgElements.innerHTML = data;
+                document.body.appendChild(svgElements);
+            })
 
-    fetch("{{site.url}}/public/icon-la-definitions.html")
-        .then( response => response.text() )
-        .then((data) => {
-            let svgElements = document.createElement('div');
-            svgElements.innerHTML = data;
-            document.body.appendChild(svgElements);
-        })
-</script>
+        fetch("{{site.url}}/public/icon-la-definitions.html")
+            .then( response => response.text() )
+            .then((data) => {
+                let svgElements = document.createElement('div');
+                svgElements.innerHTML = data;
+                document.body.appendChild(svgElements);
+            })
+    </script>
 
-<!-- For prism.js only: convert html tags in <code class="language-html"> to &lt; and &gt; -->
-<script type="text/javascript">
-    const getBlockReady = function(){
-        const getCode = document.querySelectorAll("code.language-html");
+    <!-- For prism.js only: convert html tags in <code class="language-html"> to &lt; and &gt; -->
+    <script type="text/javascript">
+        const getBlockReady = function(){
+            const getCode = document.querySelectorAll("code.language-html");
 
-        getCode.forEach( el => {
-            el.innerHTML = el.innerHTML.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-        });
-    };
+            getCode.forEach( el => {
+                el.innerHTML = el.innerHTML.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+            });
+        };
 
-    document.addEventListener('DOMContentLoaded', getBlockReady, false);
-</script>
+        document.addEventListener('DOMContentLoaded', getBlockReady, false);
+    </script>
 
 
 
