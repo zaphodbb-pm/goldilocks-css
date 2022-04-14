@@ -1,0 +1,22 @@
+<div class="main-slide-bar">
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu-main">
+
+    <label for="openSidebarMenu-main" class="sidebarIconToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <div class="sidebarMenu">
+        <nav class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation">
+            {% include slide-navs/get-started.liquid %}
+            {% include slide-navs/core-layout.liquid %}
+            {% include slide-navs/core-elements.liquid %}
+            {% include slide-navs/core-helpers.liquid %}
+            {% include slide-navs/extend-elements.liquid %}
+            {% include slide-navs/extend-components.liquid %}
+            {% include slide-navs/extras-elements.liquid %}
+            {% include slide-navs/extras-components.liquid %}
+        </nav>
+    </div>
+</div>
