@@ -37,9 +37,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --secondary-dark:  hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
     --tertiary-dark:  hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
 
-    --link: hsl(217, 71%, 53%);
-    --link-light:  hsl(217, 70%, 93%);
-    --link-dark: hsl(217, 71%, 45%);
+    --link: hsl(217, 71%, 48%);
+    --link-light:  hsl(217, 70%, 90%);
+    --link-dark: hsl(217, 71%, 43%);
 
     --success: hsl(141, 53%, 53%);
     --success-light:  hsl(141, 53%, 96%);
