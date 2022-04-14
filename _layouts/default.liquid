@@ -38,9 +38,7 @@
  -->
 
 <script type="text/javascript">
-
-    /*
-    fetch('http://localhost:3000/icon-definitions.html')
+    fetch("{{site.url}}/public/icon-definitions.html")
         .then( response => response.text() )
         .then((data) => {
             let svgElements = document.createElement('div');
@@ -48,15 +46,13 @@
             document.body.appendChild(svgElements);
         })
 
-    fetch('http://localhost:3000/icon-la-definitions.html')
+    fetch("{{site.url}}/public/icon-la-definitions.html")
         .then( response => response.text() )
         .then((data) => {
             let svgElements = document.createElement('div');
             svgElements.innerHTML = data;
             document.body.appendChild(svgElements);
         })
-
-     */
 </script>
 
 <!-- For prism.js only: convert html tags in <code class="language-html"> to &lt; and &gt; -->
