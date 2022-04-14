@@ -1,10 +1,13 @@
 <li class="sidenav">
-    <input type="checkbox" id="elements" {% if page.parent-tab == 'elements' %}checked{% endif %}>
-    <label class="sidenav-label" for="elements">Core Elements</label>
-    <ul class="sidenav-content">
-        <li><a href="{{site.url}}/pages/elements/buttons.html">Buttons</a></li>
-        <li><a href="{{site.url}}/pages/elements/image.html">Image</a></li>
-        <li><a href="{{site.url}}/pages/elements/table.html">Table</a></li>
-        <li><a href="{{site.url}}/pages/elements/typography.html">Typography</a></li>
-    </ul>
+    <input type="checkbox" id="core-elements" {% if page.parent-tab == 'core-elements' %}checked{% endif %}>
+    <label class="sidenav-label" for="core-elements">Core Elements</label>
+    <nav>
+        <a href="{{site.url}}/pages/core-elements/buttons.html">Buttons</a>
+        <a href="{{site.url}}/pages/core-elements/buttons.html">Form</a>
+        <a href="{{site.url}}/pages/core-elements/buttons.html">Horizontal Rule</a>
+        <a href="{{site.url}}/pages/core-elements/buttons.html">Image</a>
+        <a href="{{site.url}}/pages/core-elements/buttons.html">Lists</a>
+        <a href="{{site.url}}/pages/core-elements/buttons.html">Table</a>
+        <a href="{{site.url}}/pages/core-elements/buttons.html">Typography</a>
+    </nav>
 </li>
