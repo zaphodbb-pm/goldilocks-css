@@ -83,8 +83,8 @@
 .page-wrapper-widgets > .page-header {
     grid-area: header;
     height: calc( var(--size-1) + 0.75rem );
-    padding: max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48)));
-    width: calc( 100% - 2* max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48))) );
+    padding: max(0.75rem, min(1.5rem, 3vw));
+    width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );
 }
 
 .page-wrapper > .page-sidenav,
@@ -95,8 +95,8 @@
 .page-wrapper > .main-content,
 .page-wrapper-widgets > .main-content {
     grid-area: main-content;
-    padding: max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48)));
-    width: calc( 100% - 2* max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48))) );
+    padding: max(0.75rem, min(1.5rem, 3vw));
+    width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );
 }
 
 .page-wrapper > .page-footer,
