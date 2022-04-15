@@ -36,7 +36,7 @@
         Make sure that the icons definition file is publicly accessable.
      -->
 
-    <script type="text/javascript" async>
+    <script>
         fetch("{{site.url}}/public/icon-definitions.html")
             .then( response => response.text() )
             .then((data) => {

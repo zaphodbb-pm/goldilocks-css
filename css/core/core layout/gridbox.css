@@ -56,39 +56,39 @@
     }
 
     .row.has-2x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 2 ) , 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 2 ), 1fr) );
     }
 
     .row.has-3x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 3 ) , 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 3 ), 1fr) );
     }
 
     .row.has-4x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 4 ) , 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 4 ), 1fr) );
     }
 
     .row.has-5x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 5 ) , 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 5 ), 1fr) );
     }
 
     .row.has-6x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 6 ) , 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 6 ), 1fr) );
     }
 
     .row.has-7x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 7 ) , 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 7 ), 1fr) );
     }
 
     .row.has-8x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 8 ) , 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 8 ), 1fr) );
     }
 
     .row.has-9x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 9 ) , 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 9 ), 1fr) );
     }
 
     .row.has-10x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 10 ) , 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 10 ), 1fr) );
     }
 
     /** control each column span independently **/
