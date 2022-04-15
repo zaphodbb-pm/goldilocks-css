@@ -83,7 +83,8 @@
 .page-wrapper-widgets > .page-header {
     grid-area: header;
     /*height: calc( var(--size-1) + 0.75rem );*/
-    min-height: calc( var(--size-1) + 2 * max(0.75rem, min(1.5rem, 3vw)) );
+    /*min-height: calc( var(--size-1) + 2 * max(0.75rem, min(1.5rem, 3vw)) );*/
+    min-height: var(--size-1);
     padding: max(0.75rem, min(1.5rem, 3vw));
     /*width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );*/
 }
