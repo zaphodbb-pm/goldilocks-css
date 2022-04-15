@@ -36,9 +36,7 @@
 @media screen and (min-width: 576px){
     .row {
         --min-grid-width: var(--grid-min-width);
-        /*grid-template-columns: repeat( auto-fit,  minmax( var(--grid-min-width), 1fr) );*/
-
-        grid-template-columns: repeat( auto-fit, var(--grid-min-width) );
+        grid-template-columns: repeat( auto-fit,  minmax( var(--grid-min-width), 1fr) );
     }
 
     .row.abs-width {
@@ -70,9 +68,7 @@
     }
 
     .row.has-5x-minwidth {
-        /*grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 5 ), 1fr) );*/
-
-        grid-template-columns: repeat( auto-fit, calc(var(--min-grid-width) * 5 ) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 5 ), 1fr) );
     }
 
     .row.has-6x-minwidth {
