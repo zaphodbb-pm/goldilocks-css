@@ -11,6 +11,8 @@
                             "side-nav main-content"
                             "side-nav footer"
                             "side-nav .";
+
+    max-width: 100vw;
 }
 
 .page-wrapper-widgets {
@@ -27,6 +29,8 @@
                             "side-nav main-content"
                             "side-nav footer"
                             "side-nav .";
+
+    max-width: 100vw;
 }
 
 

@@ -2947,6 +2947,8 @@ h4 + .sub-title
 {
     display: grid;
 
+    max-width: 100vw;
+
     -moz-column-gap: 0;
          column-gap: 0;
     row-gap: 0;
@@ -2962,6 +2964,8 @@ h4 + .sub-title
 .page-wrapper-widgets
 {
     display: grid;
+
+    max-width: 100vw;
 
     -moz-column-gap: 0;
          column-gap: 0;
