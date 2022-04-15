@@ -33,6 +33,7 @@ button.has-hover:hover,
 }
 
 
+/*
 a.button {
     text-decoration: none;
     color: inherit;
@@ -43,6 +44,8 @@ a.button {
 a.button:hover {
     color: inherit;
 }
+
+ */
 
 
 button.is-default-inverted,
