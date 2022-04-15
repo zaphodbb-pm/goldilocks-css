@@ -9,10 +9,10 @@
      It is 100% responsive, fully modular, no javascript required and available for free on an MIT license.">
     <meta name="robots" content="index, follow">
 
-    <link rel="manifest" href="./site.webmanifest">
-    <link rel="icon" href="./favicon.png">
+    <link rel="manifest" href="{{site.url}}/site.webmanifest">
+    <link rel="icon" href="{{site.url}}/favicon.png">
 
-    <link rel="stylesheet" href='./dist/goldilocks.all.min.css' media="screen">
+    <link rel="stylesheet" href='{{site.url}}/dist/goldilocks.all.min.css' media="screen">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
      -->
 
     <script type="text/javascript">
-        fetch("./public/icon-definitions.html")
+        fetch("{{site.url}}/public/icon-definitions.html")
             .then( response => response.text() )
             .then((data) => {
                 let svgElements = document.createElement('div');
@@ -46,7 +46,7 @@
                 document.body.appendChild(svgElements);
             })
 
-        fetch("./public/icon-la-definitions.html")
+        fetch("{{site.url}}/public/icon-la-definitions.html")
             .then( response => response.text() )
             .then((data) => {
                 let svgElements = document.createElement('div');
@@ -84,8 +84,8 @@
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 -->
 
-    <link href='./public/prism.css' rel="stylesheet" />
-    <script src='./public/prism.js'></script>
+    <link href='{{site.url}}/public/prism.css' rel="stylesheet" />
+    <script src='{{site.url}}/public/prism.js'></script>
 </body>
 
 </html>
