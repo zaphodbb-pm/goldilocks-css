@@ -36,20 +36,6 @@ a.button {
     height: auto;
 }
 
-/*
-a.button {
-    text-decoration: none;
-    color: inherit;
-    margin: -0.5em -1em;
-    padding: 0.5em 1em;
-}
-
-a.button:hover {
-    color: inherit;
-}
-
- */
-
 
 button.is-default-inverted,
 .button.is-default-inverted {
