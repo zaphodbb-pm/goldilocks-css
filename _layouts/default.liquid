@@ -20,14 +20,13 @@
     <div id="page-top" class="page-wrapper-widgets has-slidebar">
         {{ content }}
 
-        {% include main_page/footer.liquid %}
-
-
         <!-- set up main page navbar with widget bar -->
         {% include main_page/widget-bar.liquid %}
 
         {% include main_page/site-navbar.liquid %}
         {% include main_page/site-sidenav_links.liquid %}
+
+        {% include main_page/footer.liquid %}
 
     </div>
 
@@ -37,7 +36,7 @@
         Make sure that the icons definition file is publicly accessable.
      -->
 
-    <script type="text/javascript">
+    <script type="text/javascript" async>
         fetch("{{site.url}}/public/icon-definitions.html")
             .then( response => response.text() )
             .then((data) => {
@@ -85,7 +84,7 @@
 -->
 
     <link href='{{site.url}}/public/prism.css' rel="stylesheet" />
-    <script src='{{site.url}}/public/prism.js'></script>
+    <script src='{{site.url}}/public/prism.js' async></script>
 </body>
 
 </html>
