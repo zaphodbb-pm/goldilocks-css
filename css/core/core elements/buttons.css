@@ -32,6 +32,9 @@ button.has-hover:hover,
     border: 1px solid  var(--bg-element);
 }
 
+a.button {
+    height: auto;
+}
 
 /*
 a.button {
