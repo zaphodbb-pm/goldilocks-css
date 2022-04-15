@@ -3,14 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Goldilocks CSS</title>
+    <title>{{page.title}} for Goldilocks CSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lightweight CSS framework that is HTML and CSS3 standards compliant. No javascript required.">
+    <meta name="description" content="Goldilocks-CSS is a lightweight CSS framework based on grid that is HTML5 and CSS3 standards compliant.
+     It is 100% responsive, fully modular, no javascript required and available for free on an MIT license.">
+    <meta name="robots" content="index, follow">
 
-    <link rel="manifest" href="{{site.url}}/site.webmanifest">
-    <link rel="icon" href="{{site.url}}/favicon.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="icon" href="./favicon.png">
 
-    <link rel="stylesheet" href='{{site.url}}/dist/goldilocks.all.min.css' media="screen">
+    <link rel="stylesheet" href='./dist/goldilocks.all.min.css' media="screen">
 </head>
 
 <body>
@@ -36,7 +38,7 @@
      -->
 
     <script type="text/javascript">
-        fetch("{{site.url}}/public/icon-definitions.html")
+        fetch("./public/icon-definitions.html")
             .then( response => response.text() )
             .then((data) => {
                 let svgElements = document.createElement('div');
@@ -44,7 +46,7 @@
                 document.body.appendChild(svgElements);
             })
 
-        fetch("{{site.url}}/public/icon-la-definitions.html")
+        fetch("./public/icon-la-definitions.html")
             .then( response => response.text() )
             .then((data) => {
                 let svgElements = document.createElement('div');
@@ -54,6 +56,9 @@
     </script>
 
     <!-- For prism.js only: convert html tags in <code class="language-html"> to &lt; and &gt; -->
+
+
+    <!--
     <script type="text/javascript">
         const getBlockReady = function(){
             const getCode = document.querySelectorAll("code.language-html");
@@ -65,6 +70,7 @@
 
         document.addEventListener('DOMContentLoaded', getBlockReady, false);
     </script>
+    -->
 
 
 
@@ -78,8 +84,8 @@
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 -->
 
-    <link href='{{site.url}}/public/prism.css' rel="stylesheet" />
-    <script src='{{site.url}}/public/prism.js'></script>
+    <link href='./public/prism.css' rel="stylesheet" />
+    <script src='./public/prism.js'></script>
 </body>
 
 </html>
