@@ -82,7 +82,7 @@
 .page-wrapper > .page-header,
 .page-wrapper-widgets > .page-header {
     grid-area: header;
-    margin: 0.75rem 1.5rem;
+    /*margin: 0.75rem 1.5rem;*/
     height: calc( var(--size-1) + 0.75rem );
 }
 
