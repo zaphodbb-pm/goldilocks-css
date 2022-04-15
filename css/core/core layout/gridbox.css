@@ -8,6 +8,7 @@
     column-gap: var(--gutter);
     justify-items: stretch;
     align-items: stretch;
+    max-width: 100vw;
 }
 
 .row.is-centered-vert {
@@ -18,6 +19,7 @@
     margin: 0;
     padding: 0;
     align-items: start;
+    max-width: 100vw;
 }
 
 .row .column.has-background{
