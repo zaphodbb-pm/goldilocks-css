@@ -33,15 +33,14 @@ button.has-hover:hover,
 }
 
 
-/* when using <a> as a button, adjust anchor */
-a.button {
+a:not(.button) {
     text-decoration: none;
     color: inherit;
     margin: -0.5em -1em;
     padding: 0.5em 1em;
 }
 
-a.button:hover {
+a:not(.button):hover {
     color: inherit;
 }
 
