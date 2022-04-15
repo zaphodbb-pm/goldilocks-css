@@ -589,7 +589,7 @@ button.has-hover:hover,
 }
 
 
-a:not(.button)
+a.button
 {
     margin: -.5em -1em;
     padding: .5em 1em;
@@ -599,10 +599,11 @@ a:not(.button)
     color: inherit;
 }
 
-a:not(.button):hover
+a.button:hover
 {
     color: inherit;
 }
+
 
 button.is-default-inverted,
 .button.is-default-inverted
