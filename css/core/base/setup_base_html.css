@@ -36,6 +36,7 @@ header {
     margin: 0;
     padding: max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48)));
     overflow-x: hidden;
+    width: calc( 100% - 2* max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48))) );
 }
 
 section,
