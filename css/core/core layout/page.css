@@ -82,7 +82,8 @@
 .page-wrapper > .page-header,
 .page-wrapper-widgets > .page-header {
     grid-area: header;
-    height: calc( var(--size-1) + 0.75rem );
+    /*height: calc( var(--size-1) + 0.75rem );*/
+    min-height: var(--size-1);
     padding: max(0.75rem, min(1.5rem, 3vw));
     width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );
 }
@@ -97,6 +98,7 @@
     grid-area: main-content;
     padding: max(0.75rem, min(1.5rem, 3vw));
     width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );
+    min-height: 5rem;
 }
 
 .page-wrapper > .page-footer,
@@ -119,6 +121,7 @@
     column-gap: calc( 2 * var(--gap-col) );
     row-gap: var(--gap-row);
     flex-wrap: wrap;
+    min-height: 5rem;
 }
 
 .page-footer > section,
@@ -127,6 +130,7 @@
     flex-direction: column;
     row-gap: var(--gap-row);
     margin: 0;
+    min-height: 1rem;
 }
 
 .page-footer > section.is-wide,
@@ -142,6 +146,7 @@
 .page-footer > section p,
 .page-footer > div p{
     margin: 0;
+    min-height: 1rem;
 }
 
 .page-footer > section p:first-child,
@@ -153,6 +158,7 @@
 .page-footer .foot-heading {
     font-size: var(--size-4);
     font-weight: var(--weight-semibold);
+    min-height: var(--size-4);
 }
 
 @media screen and (max-width: 576px) {
@@ -179,7 +185,13 @@
     }
 
     .page-wrapper-widgets.has-slidebar {
-
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:    "widgets"
+                                "main-nav"
+                                "header"
+                                "main-content"
+                                "footer"
     }
 
     .page-wrapper.has-slidebar .page-sidenav,
