@@ -16,6 +16,8 @@ pre > code[class*=language-] {
     margin: 0 !important;
     padding: 1rem 1.5rem;
     max-height: 30rem;
+    min-height: 10rem;
+    min-width: 10rem;
     overflow: auto;
 }
 
