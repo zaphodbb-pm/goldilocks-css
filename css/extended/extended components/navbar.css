@@ -61,7 +61,8 @@
 }
 
 .navbar img {
-    max-height: calc( 0.75 * var(--navbar-height));
+    /*max-height: calc( 0.75 * var(--navbar-height));*/
+    height: calc( 0.75 * var(--navbar-height));
     width: auto;
     max-width: calc( 1.5 * var(--navbar-height));
 }

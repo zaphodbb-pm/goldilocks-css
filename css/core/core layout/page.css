@@ -84,6 +84,8 @@
     grid-area: header;
     /*margin: 0.75rem 1.5rem;*/
     height: calc( var(--size-1) + 0.75rem );
+    padding: max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48)));
+    width: calc( 100% - 2* max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48))) );
 }
 
 .page-wrapper > .page-sidenav,
@@ -94,7 +96,16 @@
 .page-wrapper > .main-content,
 .page-wrapper-widgets > .main-content {
     grid-area: main-content;
+    padding: max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48)));
+    width: calc( 100% - 2* max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48))) );
 }
+
+
+
+/*
+    padding: max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48)));
+    width: calc( 100% - 2* max(0.75rem, min(1.5rem, calc(100vw * 1.5 / 48))) );
+ */
 
 .page-wrapper > .page-footer,
 .page-wrapper-widgets > .page-footer {
