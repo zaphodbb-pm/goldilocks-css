@@ -3064,12 +3064,18 @@ h4 + .sub-title
 .page-wrapper > .page-header,
 .page-wrapper-widgets > .page-header
 {
-    width: calc( 100% - 2 * max(.75rem, min(1.5rem, 3vw)) );
     /*height: calc( var(--size-1) + 0.75rem );*/
-    min-height: var(--size-1);
+    min-height: calc( var(--size-1) + 2 * max(.75rem, min(1.5rem, 3vw)) );
     padding: max(.75rem, min(1.5rem, 3vw));
 
     grid-area: header;
+    /*width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );*/
+}
+
+.page-wrapper > .page-header > h1,
+.page-wrapper-widgets > .page-header > h1
+{
+    margin: 0;
 }
 
 .page-wrapper > .page-sidenav,
