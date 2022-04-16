@@ -92,6 +92,11 @@
     margin: 0;
 }
 
+.page-wrapper > .page-header > h1 + .sub-title,
+.page-wrapper-widgets > .page-header > h1 + .sub-title {
+    margin-top: 0;
+}
+
 .page-wrapper > .page-sidenav,
 .page-wrapper-widgets > .page-sidenav {
     grid-area: side-nav;
