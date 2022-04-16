@@ -34,6 +34,7 @@ button.has-hover:hover {
 
 a.button {
     height: auto;
+    text-decoration: none;
 }
 
 
