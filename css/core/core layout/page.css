@@ -90,7 +90,7 @@
 .page-wrapper-widgets > .page-header > h1 {
     min-height: var(--size-1);
     margin: 0;
-    max-width: 100ch;
+    /*max-width: 100ch;*/
 }
 
 .page-wrapper > .page-sidenav,
@@ -102,7 +102,7 @@
 .page-wrapper-widgets > .main-content {
     grid-area: main-content;
     padding: max(0.75rem, min(1.5rem, 3vw));
-    min-width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );
+    /*min-width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );*/
 }
 
 .page-wrapper > .page-footer,
@@ -125,7 +125,7 @@
     column-gap: calc( 2 * var(--gap-col) );
     row-gap: var(--gap-row);
     flex-wrap: wrap;
-    min-height: 5rem;
+    /*min-height: 5rem;*/
 }
 
 .page-footer > section,
@@ -134,7 +134,7 @@
     flex-direction: column;
     row-gap: var(--gap-row);
     margin: 0;
-    min-height: 1rem;
+    /*min-height: 1rem;*/
 }
 
 .page-footer > section.is-wide,
@@ -150,7 +150,7 @@
 .page-footer > section p,
 .page-footer > div p{
     margin: 0;
-    min-height: 1rem;
+    /*min-height: 1rem;*/
 }
 
 .page-footer > section p:first-child,
