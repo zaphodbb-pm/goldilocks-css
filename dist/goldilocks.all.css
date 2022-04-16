@@ -177,16 +177,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
      **/
     /** --base-font-size:  clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) ); **/
     /** Default is to use system fonts as much as possible **/
-    --family-sans-serif: sans-serif;
-    --family-serif: serif;
+    --family-sans-serif: 'Tahoma', 'Helvetica Neue', 'Helvetica', 'Arial', 'Segoe UI', 'Roboto', sans-serif;
+    --family-serif: 'Georgia', 'Times New Roman', serif;
     --family-monospace: monospace;
     --render-mode: optimizeLegibility;
-    /*
-    --family-sans-serif: "Tahoma", "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", "Roboto", sans-serif;
-    --family-serif: "Georgia", "Times New Roman", serif;
-    --family-monospace: monospace;
-    --render-mode: optimizeLegibility;
-     */
     /** Define font weights here **/
     --weight-light: 300;
     --weight-normal: 400;
