@@ -20,14 +20,17 @@
 <body>
 
     <div id="page-top" class="page-wrapper-widgets has-slidebar">
-        {{ content }}
-
-        <!-- set up main page navbar with widget bar -->
+        <!-- add widget bar -->
         {% include main_page/widget-bar.liquid %}
 
+        <!-- set up main page navbar -->
         {% include main_page/site-navbar.liquid %}
         {% include main_page/site-sidenav_links.liquid %}
 
+        <!-- include heading and main content -->
+        {{ content }}
+
+        <!-- complete with footer -->
         {% include main_page/footer.liquid %}
 
     </div>

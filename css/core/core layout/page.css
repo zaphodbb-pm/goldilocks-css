@@ -83,7 +83,6 @@
 .page-wrapper-widgets > .page-header {
     grid-area: header;
     padding: max(0.75rem, min(1.5rem, 3vw));
-    /*min-height: var(--size-1) + 2rem;*/
     max-width: 80ch;
 }
 
@@ -104,7 +103,6 @@
     grid-area: main-content;
     padding: max(0.75rem, min(1.5rem, 3vw));
     min-width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );
-    /*min-height: 10vh;*/
 }
 
 .page-wrapper > .page-footer,
