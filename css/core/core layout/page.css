@@ -27,6 +27,8 @@
                             "side-nav main-content"
                             "side-nav footer"
                             "side-nav .";
+
+    max-width: 800px;
 }
 
 
