@@ -1305,14 +1305,18 @@ button,
     text-align: center;
     white-space: nowrap;
 
-    color: var(--text-comp);
-    border: 1px solid var(--border-main-darker);
     border-radius: var(--radius-elem);
-    background-color: var(--bg-main);
     box-shadow: none;
 
     justify-content: center;
     align-items: center;
+}
+
+button
+{
+    color: var(--text-comp);
+    border: 1px solid var(--border-main-darker);
+    background-color: var(--bg-main);
 }
 
 button:focus,
@@ -1321,8 +1325,7 @@ button:focus,
     outline: none;
 }
 
-button.has-hover:hover,
-.button.has-hover:hover
+button.has-hover:hover
 {
     color: var(--text-elem);
     border: 1px solid  var(--bg-element);

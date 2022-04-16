@@ -1,11 +1,7 @@
 /* Buttons */
 
 button, .button {
-    color: var(--text-comp);
-    background-color: var(--bg-main);
-    border: 1px solid var(--border-main-darker);
     border-radius: var(--radius-elem);
-
     cursor: pointer;
     justify-content: center;
     padding: 0.5em 1em;
@@ -20,13 +16,17 @@ button, .button {
     line-height: 1.5;
 }
 
+button {
+    color: var(--text-comp);
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-main-darker);
+}
+
 button:focus, .button:focus {
     outline: none;
 }
 
-button.has-hover:hover,
-.button.has-hover:hover
-{
+button.has-hover:hover {
     color: var(--text-elem);
     background-color: var(--bg-element);
     border: 1px solid  var(--bg-element);
