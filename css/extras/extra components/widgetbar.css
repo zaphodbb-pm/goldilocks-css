@@ -43,6 +43,7 @@
 /* text size selector */
 .widgetbar-radios > span {
     padding: 0 var(--pad-vert) 0 var(--pad-horz);
+    max-width: 10ch;
 }
 
 .widgetbar-radios label {
