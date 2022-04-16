@@ -1,10 +1,188 @@
 ---
 layout: default
 parent-tab: core-layout
+title: Layout Spacing
 ---
 
-<h1 class="page-header">Spacing</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+
+    <div class="row has-5x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>Typical Bootstrap type fine grained margin and padding controls are complex and hard to keep track of.
+                This type of spacing control also becomes harder to maintain when the UI undergoes changes.
+            </p>
+
+            <p>In <strong>Goldilocks-CSS</strong>, we prefer to predefine simpler spacing controls.
+                In general, all elements and components have no margin so that they can be positioned by parent layout blocks or components.
+                Components, certain layout contols and certain elements may also provide their own padding for their children items.
+            </p>
+
+            <p>White space can be provided with optional <strong>spacing</strong> controls.
+                The spacing is vertical only, horizontal only or both vertical and horizontal.
+                Spacing margins are normal (set by variable <code>--base-font-size</code>.  Normal is 1x <code>--base-font-size</code>.
+                Medium is 3x and large is 5x.</p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.space</code>, <code>.space-medium</code>, <code>.space-large</code></td>
+                    <td>Provides default horizontal and vertical margins of 1, 3 or 5 times base font size</td>
+                </tr>
+
+                <tr>
+                    <td><code>.space-horz</code>, <code>.space-horz-medium</code>, <code>.space-horz-large</code></td>
+                    <td>Provides default zero vertical margins and horizontal margins of 1, 3 or 5 times base font size</td>
+                </tr>
+
+                <tr>
+                    <td><code>.space-vert</code>, <code>.space-vert-medium</code>, <code>.space-vert-large</code></td>
+                    <td>Provides default zero horizontal margins and vertical margins of 1, 3 or 5 times base font size</td>
+                </tr>
+
+
+                <tr>
+                    <td><code>.space-component</code>, <code>.space-component-medium</code>, <code>.space-component-large</code></td>
+                    <td>Provides default zero horizontal margins and vertical margins of 1, 3 or 5 times base font size.
+                        These also sets an element height of 1px.  Typically, used with a <code>div</code> HTML tag to create a spacer.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>spacing.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--margin, --margin-medium, --margin-large</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <div class="row">
+        <section class="column ">
+            <h3>Section / Article Spacing</h3>
+            <div class="is-grey" style="padding: 1px;">
+                <div class="space">
+                    <section class="box-shadow">
+                        <p>.space Lorem Ipsum 1 ... </p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="is-grey" style="padding: 1px; border-top: 1px solid var(--grey)">
+                <div class="space-medium">
+                    <section class="box-shadow">
+                        <p>.space-medium Lorem Ipsum 2 ...</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="is-grey" style="padding: 1px; border-top: 1px solid var(--grey)">
+                <div class="space-vert-medium">
+                    <section class="box-shadow">
+                        <p>.space-medium-vert Lorem Ipsum 3 ...</p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="is-grey" style="padding: 1px; border-top: 1px solid var(--grey)">
+                <div class="space-large">
+                    <section class="box-shadow">
+                        <p>.space-large Lorem Ipsum 3 ...</p>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section class="column">
+            <h3>HTML Code Examples</h3>
+            <pre><code class="language-html">
+                &lt;div class="space"&gt;
+                    &lt;section class="box-shadow"&gt;
+                        &lt;p&gt;.space Lorem Ipsum 1 ... &lt;/p&gt;
+                    &lt;/section&gt;
+                &lt;/div&gt;
+
+                &lt;div class="space-medium"&gt;
+                    &lt;section class="box-shadow"&gt;
+                        &lt;p&gt;.space-medium Lorem Ipsum 2 ...&lt;/p&gt;
+                    &lt;/section&gt;
+                &lt;/div&gt;
+
+                &lt;div class="space-vert-medium"&gt;
+                    &lt;section class="box-shadow"&gt;
+                        &lt;p&gt;.space-medium-vert Lorem Ipsum 2 ...&lt;/p&gt;
+                    &lt;/section&gt;
+                &lt;/div&gt;
+
+                &lt;div class="space-large"&gt;
+                    &lt;section class="box-shadow"&gt;
+                        &lt;p&gt;.space-large Lorem Ipsum 3 ...&lt;/p&gt;
+                    &lt;/section&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </section>
+    </div>
+
+
+    <div class="space-component-medium"></div>
+
+
+    <div class="row">
+        <section class="column ">
+            <h3>Inter-Component Spacing</h3>
+            <div class="is-grey" style="padding: 1px;">
+                <div class="space-component"></div>
+            </div>
+
+            <div class="is-grey" style="padding: 1px; border-top: 1px solid var(--secondary)">
+                <div class="space-component-medium"></div>
+            </div>
+
+            <div class="is-grey" style="padding: 1px; border-top: 1px solid var(--secondary)">
+                <div class="space-component-large"></div>
+            </div>
+        </section>
+
+        <section class="column">
+            <h3>HTML Code Example</h3>
+            <pre><code class="language-html">
+                &lt;div class="space-component"&gt;&lt;/div&gt;
+
+                &lt;div class="space-component-medium"&gt;&lt;/div&gt;
+
+                &lt;div class="space-component-large"&gt;&lt;/div&gt;
+            </code></pre>
+        </section>
+    </div>
 </main>
+
+
+
