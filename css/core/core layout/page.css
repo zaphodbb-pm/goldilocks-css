@@ -85,11 +85,14 @@
     /*height: calc( var(--size-1) + 0.75rem );*/
     /*min-height: calc( var(--size-1) + 2 * max(0.75rem, min(1.5rem, 3vw)) );*/
     padding: max(0.75rem, min(1.5rem, 3vw));
+
+    min-height: calc( var(--size-1) + 2rem );
+
     /*width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );*/
 
     /*max-width: 98vw;*/
 
-    min-width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );
+    /*min-width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );*/
 }
 
 .page-wrapper > .page-header > h1,
@@ -111,6 +114,8 @@
     /*width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );*/
 
     min-width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );
+
+    min-height: 10vh;
 
     /*max-width: 98vw;*/
 }
