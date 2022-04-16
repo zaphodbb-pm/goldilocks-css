@@ -1,10 +1,789 @@
 ---
 layout: default
 parent-tab: core-layout
+title: Page Layout
+logo: logo
 ---
 
-<h1 class="page-header">Page Layout</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-5x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>page</strong> layout element is a grid based container.
+                This element structures the common page layout and includes regions for:
+            </p>
+
+            <ul>
+                <li>
+                    <em>Navigation Bar</em>: <code>nav</code> HTML tag contains site branding, common links and widgets.
+                    At the mobile breakpoint, the navbar will collapse links but maintain the site branding.
+                    At this point, the usual <em>hamburger</em> can be displayed.  This will occur if a <em>side bar</em> has been defined.
+                    The side bar will slide in from the left or right and can be dismissed.
+                </li>
+                <li>
+                    <em>Page Title</em>: single <code>h1</code> HTML tag per page
+                </li>
+                <li>
+                    <em>Main Content</em>: single <code>main</code> HTML tag per page holds content for the topic at hand
+                </li>
+                <li>
+                    <em>Footer</em>: single <code>.page-footer</code> per page holds common footer information and uses <strong>flexbox</strong> to evenly space children elements or components.
+                </li>
+                <li>
+                    <em>Side Nav</em>: optional <code>nav</code> HTML tag, left side adjusted holds navigational links to other website pages.
+                </li>
+            </ul>
+
+
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.page-wrapper</code></td>
+                    <td>This is typically a non-semantic component that sets up a <code>div</code> as a parent
+                        container to facilitate styling of children nodes.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.page-wrapper-widgets</code></td>
+                    <td>Optional main parent container instead of <code>.page-wrapper</code> to facilitate styling of children nodes.
+                        This adds a region for a widget bar before the navbar.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-mobile</code></td>
+                    <td>Modifier for wrapper to preserve navbar and side nav below mobile breakpoint</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-slidebar</code></td>
+                    <td>Modifier for wrapper at mobile breakpoint, hides .sidenav component and adjusts grid into column display of other regions.
+                        Note that the <code>.navbar</code> component needs to be setup with the hamburger and slidebar.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-sticky</code></td>
+                    <td>Modifier for wrapper to have navbar and optional widget bar regions sticky at the top of the viewport.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-fixed</code></td>
+                    <td>Modifier for wrapper to have navbar and optional widget bar regions fixed at the top of the viewport.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.page-header</code></td>
+                    <td>HTML <code> header</code> tag for page title.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.page-main-nav</code></td>
+                    <td>Holds top navbar.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.main-content</code></td>
+                    <td>HTML <code>main</code> tag for page content</td>
+                </tr>
+
+                <tr>
+                    <td><code>.page-footer</code></td>
+                    <td>HTML <code>footer</code> tag for page</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-medium</code>, <code>.is-wide</code></td>
+                    <td>Footer section modifiers to control column width</td>
+                </tr>
+
+                <tr>
+                    <td><code>.page-sidenav</code></td>
+                    <td>Usual page side navigation component</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>page.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--border-main, border-main-darker,  --element-background, --gap-col, ----gap-row, --padding-large, --size-5, --weight-semibold</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <div class="magazine space-vert-large">
+        <h3>Basic Page with Fixed Bottom</h3>
+
+        <p>Typical page layout using css grid. This includes a fixed side navigation component.</p>
+
+        <p> By using the <code>.is-mobile</code> class on the parent <code>.navbar</code> element, the navbar child
+            <code>.navbar-center</code> section will display. Otherwise, it will not display in the navbar.</p>
+    </div>
+
+    <div class="page-wrapper" id="page-top">
+        <header class="page-header">
+            <h1>Main Page Content h1 Heading</h1>
+            <p class="sub-title">A sub-title of supporting text</p>
+        </header>
+
+        <nav class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar">
+            <div class="navbar-left">
+                <a href="#page-top">
+                    <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo">
+                </a>
+            </div>
+
+            <div class="navbar-center is-fixed-bottom">
+                <a class="icon-nav" href="#page-top">
+                    <svg class="icon"><use href="#icon-bookmark"/></svg>
+                    <span>Bookmark</span>
+                </a>
+
+                <a class="icon-nav" href="#page-top">
+                    <svg class="icon"><use href="#icon-clock"/></svg>
+                    <span>Clock</span>
+                </a>
+
+                <a class="icon-nav" href="#page-top">
+                    <svg class="icon"><use href="#icon-film"/></svg>
+                    <span>Film</span>
+                </a>
+            </div>
+
+            <div class="navbar-right">
+                <button class="is-secondary has-hover">
+                    <a href="#page-top">Download</a>
+                </button>
+
+                <button class="is-tertiary-outlined has-hover">
+                    <a href="#page-top">Github</a>
+                </button>
+            </div>
+        </nav>
+
+        <nav class="page-sidenav" aria-label="Extended Side Bar Navigation">
+            <div class="sidenavs">
+                <a class="icon-nav-horz" href="#page-top" title="Bookmark">
+                    <svg class="icon"><use href="#icon-home"/></svg>
+                    <span>Home</span>
+                </a>
+
+                <div class="sidenav-block">
+                    <input type="checkbox" id="chck1">
+                    <label for="chck1">Item 1</label>
+                    <nav>
+                        <a href="#page-top">Home</a>
+                        <a href="#page-top">About</a>
+                        <a href="#page-top">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="sidenav-block">
+                    <input type="checkbox" id="chck2">
+                    <label for="chck2">Item 2</label>
+                    <nav>
+                        <a class="icon-nav-horz" href="#page-top" title="Bookmark">
+                            <svg class="icon"><use href="#icon-bookmark"/></svg>
+                            <span>Bookmark</span>
+                        </a>
+
+                        <a class="icon-nav-horz" href="#page-top" title="Clock">
+                            <svg class="icon"><use href="#icon-clock"/></svg>
+                            <span>Clock</span>
+                        </a>
+
+                        <a class="icon-nav-horz" href="#page-top" title="Film">
+                            <svg class="icon"><use href="#icon-film"/></svg>
+                            <span>Film</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <h2>An h2 Semantic Row Heading</h2>
+            <p class="sub-title">A sub-title of supporting text</p>
+
+            <div class="row">
+                <section class="column">
+                    <h3>Section One h3 Heading</h3>
+                    <p class="sub-title">A sub-title of supporting text</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                        tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.</p>
+                </section>
+
+                <section class="column">
+                    <h3>Section Two h3 Heading</h3>
+                    <p class="sub-title">A sub-title of supporting text</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                        tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.</p>
+                </section>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <div>Goldilocks-CSS &copy; 2021 - 2022</div>
+            <div>page-footer</div>
+            <div>Version: 0.1.0 / March 21, 2022</div>
+        </footer>
+    </div>
+
+    <div class="space-vert-large">
+        <pre><code class="language-html">
+            &lt;div class="page-wrapper" id="page-top"&lg;
+                &lt;header class="page-header"&lg;
+                    &lt;h1&lg;Main Page Content h1 Heading&lt;/h1&lg;
+                    &lt;p class="sub-title"&lg;A sub-title of supporting text&lt;/p&lg;
+                &lt;/header&lg;
+
+                &lt;nav class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar"&lg;
+                    &lt;div class="navbar-left"&lg;
+                        &lt;a href="#page-top"&lg;
+                            &lt;img src="/goldi3-logo.png" alt="Project Logo"&lg;
+                        &lt;/a&lg;
+                    &lt;/div&lg;
+
+                    &lt;div class="navbar-center is-fixed-bottom"&lg;
+                        &lt;a class="icon-nav" href="#page-top"&lg;
+                            &lt;svg class="icon"&lg;&lt;use href="#icon-bookmark"/&lg;&lt;/svg&lg;
+                            &lt;span&lg;Bookmark&lt;/span&lg;
+                        &lt;/a&lg;
+
+                        &lt;a class="icon-nav" href="#page-top"&lg;
+                            &lt;svg class="icon"&lg;&lt;use href="#icon-clock"/&lg;&lt;/svg&lg;
+                            &lt;span&lg;Clock&lt;/span&lg;
+                        &lt;/a&lg;
+
+                        &lt;a class="icon-nav" href="#page-top"&lg;
+                            &lt;svg class="icon"&lg;&lt;use href="#icon-film"/&lg;&lt;/svg&lg;
+                            &lt;span&lg;Film&lt;/span&lg;
+                        &lt;/a&lg;
+                    &lt;/div&lg;
+
+                    &lt;div class="navbar-right"&lg;
+                        &lt;button class="is-secondary has-hover"&lg;
+                            &lt;a href="#page-top"&lg;Download&lt;/a&lg;
+                        &lt;/button&lg;
+
+                        &lt;button class="is-tertiary-outlined has-hover"&lg;
+                            &lt;a href="#page-top"&lg;Github&lt;/a&lg;
+                        &lt;/button&lg;
+                    &lt;/div&lg;
+                &lt;/nav&lg;
+
+                &lt;nav class="page-sidenav" aria-label="Extended Side Bar Navigation"&lg;
+                    &lt;div class="sidenavs"&lg;
+                        &lt;a class="icon-nav-horz" href="#page-top" title="Bookmark"&lg;
+                            &lt;svg class="icon"&lg;&lt;use href="#icon-home"/&lg;&lt;/svg&lg;
+                            &lt;span&lg;Home&lt;/span&lg;
+                        &lt;/a&lg;
+
+                        &lt;div class="sidenav-block"&lg;
+                            &lt;input type="checkbox" id="chck1"&lg;
+                            &lt;label for="chck1"&lg;Item 1&lt;/label&lg;
+                            &lt;nav&lg;
+                                &lt;a href="#page-top"&lg;Home&lt;/a&lg;
+                                &lt;a href="#page-top"&lg;About&lt;/a&lg;
+                                &lt;a href="#page-top"&lg;Contact&lt;/a&lg;
+                            &lt;/nav&lg;
+                        &lt;/div&lg;
+
+                        &lt;div class="sidenav-block"&lg;
+                            &lt;input type="checkbox" id="chck2"&lg;
+                            &lt;label for="chck2"&lg;Item 2&lt;/label&lg;
+                            &lt;nav&lg;
+                                &lt;a class="icon-nav-horz" href="#page-top" title="Bookmark"&lg;
+                                    &lt;svg class="icon"&lg;&lt;use href="#icon-bookmark"/&lg;&lt;/svg&lg;
+                                    &lt;span&lg;Bookmark&lt;/span&lg;
+                                &lt;/a&lg;
+
+                                &lt;a class="icon-nav-horz" href="#page-top" title="Clock"&lg;
+                                    &lt;svg class="icon"&lg;&lt;use href="#icon-clock"/&lg;&lt;/svg&lg;
+                                    &lt;span&lg;Clock&lt;/span&lg;
+                                &lt;/a&lg;
+
+                                &lt;a class="icon-nav-horz" href="#page-top" title="Film"&lg;
+                                    &lt;svg class="icon"&lg;&lt;use href="#icon-film"/&lg;&lt;/svg&lg;
+                                    &lt;span&lg;Film&lt;/span&lg;
+                                &lt;/a&lg;
+                            &lt;/nav&lg;
+                        &lt;/div&lg;
+                    &lt;/div&lg;
+                &lt;/nav&lg;
+
+                &lt;main class="main-content"&lg;
+                    &lt;h2&lg;An h2 Semantic Row Heading&lt;/h2&lg;
+                    &lt;p class="sub-title"&lg;A sub-title of supporting text&lt;/p&lg;
+
+                    &lt;div class="row"&lg;
+                        &lt;section class="column"&lg;
+                            &lt;h3&lg;Section One h3 Heading&lt;/h3&lg;
+                            &lt;p class="sub-title"&lg;A sub-title of supporting text&lt;/p&lg;
+
+                            &lt;p&lg;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                                tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.&lt;/p&lg;
+                        &lt;/section&lg;
+
+                        &lt;section class="column"&lg;
+                            &lt;h3&lg;Section Two h3 Heading&lt;/h3&lg;
+                            &lt;p class="sub-title"&lg;A sub-title of supporting text&lt;/p&lg;
+
+                            &lt;p&lg;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                                tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.&lt;/p&lg;
+                        &lt;/section&lg;
+                    &lt;/div&lg;
+                &lt;/main&lg;
+
+                &lt;footer class="page-footer"&lg;
+                    &lt;div&lg;Goldilocks-CSS &copy; 2021 - 2022&lt;/div&lg;
+                    &lt;div&lg;page-footer&lt;/div&lg;
+                    &lt;div&lg;Version: 0.1.0 / March 21, 2022&lt;/div&lg;
+                &lt;/footer&lg;
+            &lt;/div&lg;
+        </code></pre>
+    </div>
+
+    <div class="magazine space-vert-large">
+        <h3>Basic Page with Fixed Bottom and Sliding Sidebar</h3>
+
+        <p>Page Layout with a sliding side nav for mobile widths. For mobile width (typically less than 576px),
+            a hamburger target will appear.  Clicking on the hamburger will slide in a vertical sidebar.
+            Note that the hamburger and slidebar navigation are setup in the <code>.navbar</code> component.</p>
+
+        <p> By using the <code>.has-slidebar</code> class on the parent <code>.page-wrapper</code> component, the page child
+            <code>.page-sidenav</code> section will not display.</p>
+    </div>
+
+    <div class="page-wrapper has-slidebar" id="page-top-2">
+        <header class="page-header">
+            <h1>Main Page Content h1 Heading</h1>
+            <p class="sub-title">A sub-title of supporting text</p>
+        </header>
+
+        <nav class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar">
+            <div class="navbar-left">
+                <div class="main-slide-bar">
+                    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+
+                    <label for="openSidebarMenu" class="sidebarIconToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+
+                    <div id="sidebarMenu">
+                        <nav class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation">
+                            <a href="#page-top-2" title="Some Link">Some Link</a>
+
+                            <a href="#page-top-2" class="icon-nav-horz"  title="Bookmark">
+                                <svg class="icon"><use href="#icon-bookmark"/></svg>
+                                <span>Bookmark</span>
+                            </a>
+
+                            <a href="#page-top-2" class="icon-nav-horz" title="Clock">
+                                <svg class="icon"><use href="#icon-clock"/></svg>
+                                <span>Clock</span>
+                            </a>
+
+                            <a href="#page-top-2" class="icon-nav-horz" title="Film">
+                                <svg class="icon"><use href="#icon-film"/></svg>
+                                <span>Film</span>
+                            </a>
+
+                            <div class="sidebar-block">
+                                <input type="checkbox" id="check21">
+                                <label for="check21">More Links</label>
+                                <section>
+                                    <a href="#page-top-2" class="icon-nav-horz" title="Home">
+                                        <svg class="icon"><use href="#icon-home"></use></svg>
+                                        <span>Home</span>
+                                    </a>
+                                    <a href="#page-top-2">About</a>
+                                    <a href="#page-top-2">Contact</a>
+                                    <a href="#page-top-2">Jobs</a>
+                                    <a href="#page-top-2">Report an Issue</a>
+                                </section>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <a href="#page-top">
+                    <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo">
+                </a>
+            </div>
+
+            <div class="navbar-center is-fixed-bottom">
+                <a class="icon-nav" href="#page-top-2">
+                    <svg class="icon"><use href="#icon-bookmark"/></svg>
+                    <span>Bookmark</span>
+                </a>
+
+                <a class="icon-nav" href="#page-top-2">
+                    <svg class="icon"><use href="#icon-clock"/></svg>
+                    <span>Clock</span>
+                </a>
+
+                <a class="icon-nav" href="#page-top-2">
+                    <svg class="icon"><use href="#icon-film"/></svg>
+                    <span>Film</span>
+                </a>
+            </div>
+
+            <div class="navbar-right">
+                <button class="is-secondary has-hover">
+                    <a href="#page-top-2">Download</a>
+                </button>
+
+                <button class="is-tertiary-outlined has-hover">
+                    <a href="#page-top-2">Github</a>
+                </button>
+            </div>
+        </nav>
+
+        <nav class="page-sidenav" aria-label="Extended Side Bar Navigation">
+            <div class="sidenavs">
+                <a class="icon-nav-horz" href="#page-top-2" title="Bookmark">
+                    <svg class="icon"><use href="#icon-home"/></svg>
+                    <span>Home</span>
+                </a>
+
+                <div class="sidenav-block">
+                    <input type="checkbox" id="check22">
+                    <label for="check22">Item 1</label>
+                    <nav>
+                        <a href="#page-top-2">Home</a>
+                        <a href="#page-top-2">About</a>
+                        <a href="#page-top-2">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="sidenav-block">
+                    <input type="checkbox" id="check23">
+                    <label for="check23">Item 2</label>
+                    <nav>
+                        <a class="icon-nav-horz" href="#page-top-2" title="Bookmark">
+                            <svg class="icon"><use href="#icon-bookmark"/></svg>
+                            <span>Bookmark</span>
+                        </a>
+
+                        <a class="icon-nav-horz" href="#page-top-2" title="Clock">
+                            <svg class="icon"><use href="#icon-clock"/></svg>
+                            <span>Clock</span>
+                        </a>
+
+                        <a class="icon-nav-horz" href="#page-top-2" title="Film">
+                            <svg class="icon"><use href="#icon-film"/></svg>
+                            <span>Film</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <h2>An h2 Semantic Row Heading</h2>
+            <p class="sub-title">A sub-title of supporting text</p>
+
+            <section class="row has-3x-minwidth">
+                <section class="column">
+                    <h3>Section One h3 Heading</h3>
+                    <p class="sub-title">A sub-title of supporting text</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                        tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.</p>
+                </section>
+
+                <section class="column">
+                    <h3>Section Two h3 Heading</h3>
+                    <p class="sub-title">A sub-title of supporting text</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                        tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.</p>
+                </section>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <section>Goldilocks-CSS &copy; 2021 - 2022</section>
+            <section>page-footer</section>
+            <section>Version: 0.1.0 / March 21, 2022</section>
+        </footer>
+    </div>
+
+    <div class="space-vert-large">
+        <pre><code class="language-html">
+            &lt;div class="page-wrapper has-slidebar" id="page-top-2"&gt;
+                &lt;header class="page-header"&gt;
+                    &lt;h1&gt;Main Page Content h1 Heading&lt;/h1&gt;
+                    &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
+                &lt;/header&gt;
+
+                &lt;nav class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar"&gt;
+                    &lt;div class="navbar-left"&gt;
+                        &lt;div class="main-slide-bar"&gt;
+                            &lt;input type="checkbox" class="openSidebarMenu" id="openSidebarMenu"&gt;
+
+                            &lt;label for="openSidebarMenu" class="sidebarIconToggle"&gt;
+                                &lt;span&gt;&lt;/span&gt;
+                                &lt;span&gt;&lt;/span&gt;
+                                &lt;span&gt;&lt;/span&gt;
+                            &lt;/label&gt;
+
+                            &lt;div id="sidebarMenu"&gt;
+                                &lt;nav class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation"&gt;
+                                    &lt;a href="#page-top-2" title="Some Link"&gt;Some Link&lt;/a&gt;
+
+                                    &lt;a href="#page-top-2" class="icon-nav-horz"  title="Bookmark"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Bookmark&lt;/span&gt;
+                                    &lt;/a&gt;
+
+                                    &lt;a href="#page-top-2" class="icon-nav-horz" title="Clock"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Clock&lt;/span&gt;
+                                    &lt;/a&gt;
+
+                                    &lt;a href="#page-top-2" class="icon-nav-horz" title="Film"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Film&lt;/span&gt;
+                                    &lt;/a&gt;
+
+                                    &lt;div class="sidebar-block"&gt;
+                                        &lt;input type="checkbox" id="check21"&gt;
+                                        &lt;label for="check21"&gt;More Links&lt;/label&gt;
+                                        &lt;section&gt;
+                                            &lt;a href="#page-top-2" class="icon-nav-horz" title="Home"&gt;
+                                                &lt;svg class="icon"&gt;&lt;use href="#icon-home"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                                &lt;span&gt;Home&lt;/span&gt;
+                                            &lt;/a&gt;
+                                            &lt;a href="#page-top-2"&gt;About&lt;/a&gt;
+                                            &lt;a href="#page-top-2"&gt;Contact&lt;/a&gt;
+                                            &lt;a href="#page-top-2"&gt;Jobs&lt;/a&gt;
+                                            &lt;a href="#page-top-2"&gt;Report an Issue&lt;/a&gt;
+                                        &lt;/section&gt;
+                                    &lt;/div&gt;
+                                &lt;/nav&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;a href="#page-top"&gt;
+                            &lt;img src="/goldi3-logo.png" alt="Project Logo"&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="navbar-center is-fixed-bottom"&gt;
+                        &lt;a class="icon-nav" href="#page-top-2"&gt;
+                            &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
+                            &lt;span&gt;Bookmark&lt;/span&gt;
+                        &lt;/a&gt;
+
+                        &lt;a class="icon-nav" href="#page-top-2"&gt;
+                            &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
+                            &lt;span&gt;Clock&lt;/span&gt;
+                        &lt;/a&gt;
+
+                        &lt;a class="icon-nav" href="#page-top-2"&gt;
+                            &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
+                            &lt;span&gt;Film&lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="navbar-right"&gt;
+                        &lt;button class="is-secondary has-hover"&gt;
+                            &lt;a href="#page-top-2"&gt;Download&lt;/a&gt;
+                        &lt;/button&gt;
+
+                        &lt;button class="is-tertiary-outlined has-hover"&gt;
+                            &lt;a href="#page-top-2"&gt;Github&lt;/a&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/nav&gt;
+
+                &lt;nav class="page-sidenav" aria-label="Extended Side Bar Navigation"&gt;
+                    &lt;div class="sidenavs"&gt;
+                        &lt;a class="icon-nav-horz" href="#page-top-2" title="Bookmark"&gt;
+                            &lt;svg class="icon"&gt;&lt;use href="#icon-home"/&gt;&lt;/svg&gt;
+                            &lt;span&gt;Home&lt;/span&gt;
+                        &lt;/a&gt;
+
+                        &lt;div class="sidenav-block"&gt;
+                            &lt;input type="checkbox" id="check22"&gt;
+                            &lt;label for="check22"&gt;Item 1&lt;/label&gt;
+                            &lt;nav&gt;
+                                &lt;a href="#page-top-2"&gt;Home&lt;/a&gt;
+                                &lt;a href="#page-top-2"&gt;About&lt;/a&gt;
+                                &lt;a href="#page-top-2"&gt;Contact&lt;/a&gt;
+                            &lt;/nav&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="sidenav-block"&gt;
+                            &lt;input type="checkbox" id="check23"&gt;
+                            &lt;label for="check23"&gt;Item 2&lt;/label&gt;
+                            &lt;nav&gt;
+                                &lt;a class="icon-nav-horz" href="#page-top-2" title="Bookmark"&gt;
+                                    &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
+                                    &lt;span&gt;Bookmark&lt;/span&gt;
+                                &lt;/a&gt;
+
+                                &lt;a class="icon-nav-horz" href="#page-top-2" title="Clock"&gt;
+                                    &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
+                                    &lt;span&gt;Clock&lt;/span&gt;
+                                &lt;/a&gt;
+
+                                &lt;a class="icon-nav-horz" href="#page-top-2" title="Film"&gt;
+                                    &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
+                                    &lt;span&gt;Film&lt;/span&gt;
+                                &lt;/a&gt;
+                            &lt;/nav&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/nav&gt;
+
+                &lt;main class="main-content"&gt;
+                    &lt;h2&gt;An h2 Semantic Row Heading&lt;/h2&gt;
+                    &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
+
+                    &lt;section class="row has-3x-minwidth"&gt;
+                        &lt;section class="column"&gt;
+                            &lt;h3&gt;Section One h3 Heading&lt;/h3&gt;
+                            &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
+
+                            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                                tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.&lt;/p&gt;
+                        &lt;/section&gt;
+
+                        &lt;section class="column"&gt;
+                            &lt;h3&gt;Section Two h3 Heading&lt;/h3&gt;
+                            &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
+
+                            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                                tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.&lt;/p&gt;
+                        &lt;/section&gt;
+                    &lt;/section&gt;
+                &lt;/main&gt;
+
+                &lt;footer class="page-footer"&gt;
+                    &lt;section&gt;Goldilocks-CSS &copy; 2021 - 2022&lt;/section&gt;
+                    &lt;section&gt;page-footer&lt;/section&gt;
+                    &lt;section&gt;Version: 0.1.0 / March 21, 2022&lt;/section&gt;
+                &lt;/footer&gt;
+            &lt;/div&gt;
+        </code></pre>
+    </div>
+
+    <div class="magazine space-vert-large">
+        <h3>Page Footer</h3>
+
+        <p>The <code>.page-footer</code> component is a general flexbox row layout that can contain any
+            other elements or components.  If the footer children are <code>section</code> tags, then these sections
+            are also flexbox controlled.   These sections are <em>column</em> orientated to create vertical stacks.
+        </p>
+
+        <p><code>.page-footer</code> <code>section</code> can be modified by <code>.is-medium</code> or <code>.is-wide</code>
+            to set maximum wdiths of 20rem or 30 rem respectively to make any text areas easier to read.</p>
+    </div>
+
+    <footer class="page-footer" id="page-footer-top">
+        <div class="is-medium">
+            <p class="foot-heading icon-nav-horz">
+                <img src="{{site.url}}/img/goldi3-logo.png" class="icon" alt="Project Logo">
+                <span>Goldilocks-CSS</span>
+            </p>
+
+            <p>Designed and built for the overworked Product Manager who needs to get a product into the customers hands on time.</p>
+
+            <p>Code licensed <a href="https://github.com/zaphodbb-pm/goldilocks-css/blob/master/LICENSE.txt" title="MIT License">MIT</a>
+                <br/>
+                Website content <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC">CC BY 4.0.</a>
+                <br/>
+                Currently V0.1.0
+            </p>
+        </div>
+
+        <div>
+            <p class="foot-heading">Links</p>
+            <a href="#page-footer-top">Get Started</a>
+        </div>
+
+        <div>
+            <p class="foot-heading">Guides</p>
+            <a href="#page-footer-top">Installation</a>
+        </div>
+
+        <div>
+            <p class="foot-heading">Community</p>
+            <a href="https://github.com/zaphodbb-pm/goldilocks-css">Github</a>
+            <a href="https://github.com/zaphodbb-pm/goldilocks-css/issues">Issues</a>
+        </div>
+    </footer>
+
+    <section class="space-vert-large">
+        <pre><code class="language-html">
+            &lt;footer class="page-footer" id="page-footer-top"&gt;
+                &lt;div class="is-medium"&gt;
+                    &lt;p class="foot-heading icon-nav-horz"&gt;
+                        &lt;img src="/goldi3-logo.png" class="icon" alt="Project Logo"&gt;
+                        &lt;span&gt;Goldilocks-CSS&lt;/span&gt;
+                    &lt;/p&gt;
+
+                    &lt;p&gt;Designed and built for the overworked Product Manager who needs to get a product into the customers hands on time.&lt;/p&gt;
+
+                    &lt;p&gt;Code licensed &lt;a href="https://github.com/zaphodbb-pm/goldilocks-css/blob/master/LICENSE.txt" title="MIT License"&gt;MIT&lt;/a&gt;
+                        &lt;br/&gt;
+                        Website content &lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC"&gt;CC BY 4.0.&lt;/a&gt;
+                        &lt;br/&gt;
+                        Currently V0.1.0
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;p class="foot-heading"&gt;Links&lt;/p&gt;
+                    &lt;a href="#page-footer-top"&gt;Get Started&lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;p class="foot-heading"&gt;Guides&lt;/p&gt;
+                    &lt;a href="#page-footer-top"&gt;Installation&lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;p class="foot-heading"&gt;Community&lt;/p&gt;
+                    &lt;a href="https://github.com/zaphodbb-pm/goldilocks-css"&gt;Github&lt;/a&gt;
+                    &lt;a href="https://github.com/zaphodbb-pm/goldilocks-css/issues"&gt;Issues&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/footer&gt;
+        </code></pre>
+    </section>
 </main>
