@@ -1,10 +1,440 @@
 ---
 layout: default
 parent-tab: core-layout
+title: Grid Layout
 ---
 
-<h1 class="page-header">Grid</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-5x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>CSS flex box was designed for one-dimensional layout and manages content <em>flow</em>.
+                This primarily allows control over spacing between elements.  On the other hand, CSS grid provides two dimensional layout
+                as well as primarily  being concerned with content <em>placement</em>!
+            </p>
+
+            <p><strong>Goldilocks-CSS</strong> uses grid to replace flexbox for one dimensional layout which gives much greater control.
+                With grid, you can define the minimum content width and the grid will deal with adjusting widths to meet the placement requirements.
+                This results in eliminating the need for using @media breakpoints to ensure proper content viewing.
+            </p>
+
+            <p>Rather than trying to map your layout into a fixed grid (typically 12 columns and consequently spans thereof) think of your
+                desired minimum content width first and let <strong>grid</strong> figure how to best display it for a given viewport.
+                This then means that you only need to think about how many columns of content you require.  Typically this would mean
+                dividing the horizontal axis into half, thirds, fourths or fifths and spans thereof.
+            </p>
+
+
+            <details class="accordion is-expander-primary">
+                <summary>Bootstrap Style Breakpoint Impact on Column Width</summary>
+                <article>
+                    <p>Consider that for Bootstrap, a common example sets a <code>div</code> with classes <code>col-sm-8 col-md-6 col-lg-4 col-xl-3</code>
+                        based on a 12 grid strip layout.  For this layout, the columns of content would typically provide the following sizes:
+                    </p>
+
+                    <div class="box space-vert">
+                        <table class="table is-bordered table-scroll">
+                            <caption>Bootstrap Breakpoints</caption>
+
+                            <thead>
+                            <tr>
+                                <th>Breakpoint</th>
+                                <th>Breakpoint <br/>Pixels</th>
+                                <th>Class</th>
+                                <th>Grid Strips /<br/>BP</th>
+                                <th>Min-width<br/>Pixels</th>
+                                <th>Max-width<br/>Pixels</th>
+                                <th>Cols /<br/>BP</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr><td>Total grid strips</td><td colspan="6">12</td></tr>
+                            <tr><td>X-Small</td><td>575</td><td>xs</td><td>12</td><td>575</td><td>575</td><td>1</td></tr>
+                            <tr><td>Small</td><td>576</td><td>sm</td><td>8</td><td>384</td><td>384</td><td>1</td></tr>
+                            <tr><td>Medium</td><td>768</td><td>md</td><td>6</td><td>384</td><td>384</td><td>2</td></tr>
+                            <tr><td>Large</td><td>992</td><td>lg</td><td>4</td><td>331</td><td>331</td><td>3</td></tr>
+                            <tr><td>Extra Large</td><td>1200</td><td>xl</td><td>3</td><td>300</td><td>300</td><td>4</td></tr>
+                            <tr><td>Extra Extra Large</td><td>1400</td><td>xxl</td><td>3</td><td>350</td><td>350</td><td>4</td></tr>
+                            <tr><td>Max Full HD</td><td>1920</td><td></td><td></td><td></td><td></td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>At mobile device widths, the layout defaults to a single column of content.  At larger screen sizes,
+                        the content columns are fairly constant but allow more content columns to be displayed.
+                        This method requires that the designer must compute the content column width ahead of time.
+                        Ironic considering that this type of work is what computers excel at!
+                    </p>
+
+                    <p>Furthermore, the choice of breakpoints is subjective since the browser viewpoints are
+                        <a href="https://gs.statcounter.com/screen-resolution-stats" target=_blank> very varied </a>
+                        and will change over time as new devices get introduced into the market.
+                    </p>
+                </article>
+            </details>
+
+
+            <details class="accordion is-expander-primary">
+                <summary>Impact of Using Content Widths Instead of Breakpoints</summary>
+                <article>
+                    <p>Now, what if the designer only needed to think about the content column width that is needed for a particular design.
+                        If we fix the width at, let's say 300px, then for the various viewports, we will get a fixed number of columns.
+                    </p>
+
+                    <p>Here we do not need to have any knowledge of the type of device the user may have.  Gridbox will automatically adjust column widths
+                        and will fill the available space. Wrapping will also occur naturally with column width adjusted and filled as needed.
+                    </p>
+
+                    <p>The table below shows how a classic Bootstrap grid / columns breakpoints map into the newer CSS <code>grid</code> capability.</p>
+
+                    <div class="box space-vert">
+                        <table class="table is-bordered table-scroll">
+                            <caption>Using Content Width Instead of Breakpoints</caption>
+
+                            <thead>
+                            <tr>
+                                <th>BS<br/>Breakpoint</th>
+                                <th>BS<br/>Breakpoint <br/>Pixels</th>
+                                <th>BS<br/>Class</th>
+                                <th>Grid<br/>Min <br/>Cols</th>
+                                <th>Grid<br/>Max <br/>Cols</th>
+                                <th>Grid<br/>Min-width<br/>Pixels</th>
+                                <th>Grid<br/>Max-width<br/>Pixels</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr><td>Column Width (px)</td><td colspan="4"></td><td>300</td><td></td></tr>
+                            <tr><td>X-Small</td><td>575</td><td>xs</td><td>1</td><td>1</td><td>300</td><td>575</td></tr>
+                            <tr><td>Small</td><td>576</td><td>sm</td><td>1</td><td>2</td><td>300</td><td>384</td></tr>
+                            <tr><td>Medium</td><td>768</td><td>md</td><td>2</td><td>3</td><td>300</td><td>331</td></tr>
+                            <tr><td>Large</td><td>992</td><td>lg</td><td>3</td><td>3</td><td>300</td><td>400</td></tr>
+                            <tr><td>Extra Large</td><td>1200</td><td>xl</td><td>4</td><td>4</td><td>300</td><td>350</td></tr>
+                            <tr><td>Extra Extra Large</td><td>1400</td><td>xxl</td><td>4</td><td>6</td><td>300</td><td>320</td></tr>
+                            <tr><td>Max Full HD</td><td>1920</td><td></td><td></td><td></td><td></td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>Using the content column width allows for tracking more closely to the available browser viewport and ensures that the content
+                        layout remains consist for all users.  The developer / designer is also freed from the width calculation and the
+                        limitations of fixed breakpoints.
+                    </p>
+                </article>
+            </details>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.row</code></td>
+                    <td>Top level class defines the grid container.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.abs-width</code></td>
+                    <td>Row modifier sets minimum width to 100px width. Default minimum width is 5rem.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-<b>N</b>x-minwidth</code></td>
+                    <td><b>N</b> = [1 - 10]; Row modifier sets children content width in increments of minimum width (default 5rem or, if set, 100px).</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-centered-vert</code></td>
+                    <td>Row modifier vertically centres column content in a row.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.column</code></td>
+                    <td>Child of <code>.row</code> that will be spaced horizontally by the grid with gridbox column gutter as spacer.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-background</code></td>
+                    <td>Optional column modifier that adds a background plus small padding.  Usually not required for most content.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-span-<b>N</b></code></td>
+                    <td><b>N</b> = [1 - 8]; Column modifier allows a content column to span <b>N</b> grid columns.</td>
+                </tr>
+
+                <tr>
+                    <td><code> .is-fullwidth</code></td>
+                    <td>Optional column modifier that allows a column to grab all of the horizontal grid space.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>grid.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-grid, --grid-background, --grid-min-px-width, --grid-min-width, --gutter</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Basic Layout with Even columns</h3>
+
+    <div class="row">
+        <div class="column">
+            <div class="row">
+                <div class="column has-background">
+                    <div>Component</div>
+                </div>
+
+                <div class="column has-background">
+                    <div>Component</div>
+                </div>
+
+                <div class="column has-background">
+                    <div>Component</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="row"&gt;
+                    &lt;div class="column has-background"&gt;
+                        &lt;div&gt;Component&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="column has-background"&gt;
+                        &lt;div&gt;Component&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="column has-background"&gt;
+                        &lt;div&gt;Component&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Even columns with Vertical Alignment</h3>
+
+    <div class="row">
+        <div class="column">
+            <div class="row is-centered-vert">
+                <div class="column has-background">
+                    <div>Item 1</div>
+                </div>
+
+                <div class="column has-background">
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                </div>
+
+                <div class="column has-background">
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                    <div>Item 3</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="row is-centered-vert"&gt;
+                    &lt;div class="column has-background"&gt;
+                        &lt;div&gt;Item 1&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="column has-background"&gt;
+                        &lt;div&gt;Item 1&lt;/div&gt;
+                        &lt;div&gt;Item 2&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="column has-background"&gt;
+                        &lt;div&gt;Item 1&lt;/div&gt;
+                        &lt;div&gt;Item 2&lt;/div&gt;
+                        &lt;div&gt;Item 3&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Columns with Minimum Fixed Width</h3>
+    <p>Container CSS = class="row abs-width has-3x-minwidth".<br />
+        Sets minimum column width to 300px and maximum width is handled by browser rendering.</p>
+
+    <div class="row abs-width has-3x-minwidth">
+        <div class="column has-background">Item 1</div>
+        <div class="column has-background">Item 2</div>
+        <div class="column has-background">Item 3</div>
+        <div class="column has-background">Item 4</div>
+        <div class="column has-background">Item 5</div>
+        <div class="column has-background">Item 6</div>
+        <div class="column has-background">Item 7</div>
+        <div class="column has-background">Item 8</div>
+        <div class="column has-background">Item 9</div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <pre><code class="language-html">
+        &lt;div class="row abs-width has-3x-minwidth"&gt;
+            &lt;div class="column has-background"&gt;Item 1&lt;/div&gt;
+            &lt;div class="column has-background"&gt;Item 2&lt;/div&gt;
+            &lt;div class="column has-background"&gt;Item 3&lt;/div&gt;
+            &lt;div class="column has-background"&gt;Item 4&lt;/div&gt;
+            &lt;div class="column has-background"&gt;Item 5&lt;/div&gt;
+            &lt;div class="column has-background"&gt;Item 6&lt;/div&gt;
+            &lt;div class="column has-background"&gt;Item 7&lt;/div&gt;
+            &lt;div class="column has-background"&gt;Item 8&lt;/div&gt;
+            &lt;div class="column has-background"&gt;Item 9&lt;/div&gt;
+        &lt;/div&gt;
+    </code></pre>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Columns with Variable Widths</h3>
+    <p>Container CSS = class="row abs-width".<br />
+        Column widths set to span various grid columns.<br />
+        Browser rendering will ensure minimum column width and calculate maximum widths.<br />
+        Columns will wrap automatically and maintain minimum column widths.</p>
+
+    <div class="row abs-width">
+        <div class="column is-span-1 has-background">
+            <p>.column.is-span-1</p>
+            <p>.abs-width = 100px min width</p>
+        </div>
+
+        <div class="column is-span-2 has-background">
+            <p>.column.is-span-2</p>
+            <p>.abs-width = 100px x 2 cols = 200px min width</p>
+        </div>
+
+        <div class="column is-span-3 has-background">
+            <p>.column.is-span-3</p>
+            <p>.abs-width = 100px x 3 cols = 300px min width</p>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <pre><code class="language-html">
+        &lt;div class="row abs-width"&gt;
+            &lt;div class="column is-span-1 has-background"&gt;
+                &lt;p&gt;.column.is-span-1&lt;/p&gt;
+                &lt;p&gt;.abs-width = 100px min width&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class="column is-span-2 has-background"&gt;
+                &lt;p&gt;.column.is-span-2&lt;/p&gt;
+                &lt;p&gt;.abs-width = 100px x 2 cols = 200px min width&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class="column is-span-3 has-background"&gt;
+                &lt;p&gt;.column.is-span-3&lt;/p&gt;
+                &lt;p&gt;.abs-width = 100px x 3 cols = 300px min width&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    </code></pre>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Columns with Wider Variable Widths</h3>
+    <p>Container CSS = class="row has-3x-minwidth".<br />
+        Column widths set to span various grid columns.<br />
+        Browser rendering will ensure minimum column width and calculate maximum widths.<br />
+        Columns will wrap automatically and maintain minimum column width of 3 * 5rem.</p>
+
+    <div class="row has-3x-minwidth">
+        <div class="column has-background">
+            <p class="is-title-5">Item 1</p>
+        </div>
+
+        <div class="column is-span-2 has-background">
+            <p class="is-title-5">Item 2 + .is-span-2</p>
+            <p>rel-width = 5rem x3-min-width x 2 cols = 30rem min-width</p>
+        </div>
+
+        <div class="column has-background">
+            <p class="is-title-5">Item 3</p>
+            <p>Rel-width = 5rem x3-min-width = 15rem min-width</p>
+        </div>
+        <div class="column has-background">
+            <p class="is-title-5">Item 4</p>
+            <p>Column with a lot of text to create a wide item to show how the column gets filled out.</p>
+        </div>
+        <div class="column has-background"><p class="is-title-5">Item 5</p></div>
+        <div class="column has-background"><p class="is-title-5">Item 6</p></div>
+        <div class="column has-background"><p class="is-title-5">Item 7</p></div>
+        <div class="column is-span-2 has-background">
+            <p class="is-title-5">Item 8 + .is-span-2</p>
+            <p>Rel-width = 5rem x3-min-width x 2 cols = 30rem min-width</p>
+        </div>
+        <div class="column has-background"><p class="is-title-5">Item 9</p></div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <pre><code class="language-html">
+        &lt;div class="row has-3x-minwidth"&gt;
+            &lt;div class="column has-background"&gt;
+                &lt;p class="is-title-5"&gt;Item 1&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class="column is-span-2 has-background"&gt;
+                &lt;p class="is-title-5"&gt;Item 2 + .is-span-2&lt;/p&gt;
+                &lt;p&gt;rel-width = 5rem x3-min-width x 2 cols = 30rem min-width&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class="column has-background"&gt;
+                &lt;p class="is-title-5"&gt;Item 3&lt;/p&gt;
+                &lt;p&gt;Rel-width = 5rem x3-min-width = 15rem min-width&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="column has-background"&gt;
+                &lt;h5&gt;Item 4&lt;/h5&gt;
+                &lt;p&gt;Column with a lot of text to create a wide item to show how the column gets filled out.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="column has-background"&gt;&lt;p class="is-title-5"&gt;Item 5&lt;/p&gt;&lt;/div&gt;
+            &lt;div class="column has-background"&gt;&lt;p class="is-title-5"&gt;Item 6&lt;/p&gt;&lt;/div&gt;
+            &lt;div class="column has-background"&gt;&lt;p class="is-title-5"&gt;Item 7&lt;/p&gt;&lt;/div&gt;
+            &lt;div class="column is-span-2 has-background"&gt;
+                &lt;p class="is-title-5"&gt;Item 8 + .is-span-2&lt;/p&gt;
+                &lt;p&gt;Rel-width = 5rem x3-min-width x 2 cols = 30rem min-width&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="column has-background"&gt;&lt;p class="is-title-5"&gt;Item 9&lt;/p&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    </code></pre>
 </main>

@@ -10,11 +10,9 @@
     <meta name="robots" content="index, follow">
 
     <link rel="icon" href="{{site.url}}/favicon.png">
-
     <link rel="stylesheet" href='{{site.url}}/dist/goldilocks.all.min.css' media="screen">
 
     <!--<link rel="manifest" href="{{site.url}}/site.webmanifest">-->
-
 </head>
 
 <body>
@@ -30,9 +28,8 @@
         <!-- include heading and main content -->
         {{ content }}
 
-        <!-- complete with footer -->
+        <!-- add footer at end -->
         {% include main_page/footer.liquid %}
-
     </div>
 
 
@@ -40,9 +37,6 @@
         Loads svg based icons that can be referenced on any page.
         Make sure that the icons definition file is publicly accessable.
      -->
-
-
-
 
     <script>
         fetch("{{site.url}}/public/icon-definitions.html")
@@ -64,8 +58,6 @@
 
 
     <!-- For prism.js only: convert html tags in <code class="language-html"> to &lt; and &gt; -->
-
-
     <!--
     <script type="text/javascript">
         const getBlockReady = function(){
@@ -79,7 +71,6 @@
         document.addEventListener('DOMContentLoaded', getBlockReady, false);
     </script>
     -->
-
 
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
