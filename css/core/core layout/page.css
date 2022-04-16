@@ -108,7 +108,6 @@
     padding: max(0.75rem, min(1.5rem, 3vw));
     /*width: calc( 100% - 2 * max(0.75rem, min(1.5rem, 3vw)) );*/
 
-    max-height: 10rem;
     max-width: 98vw;
 }
 
