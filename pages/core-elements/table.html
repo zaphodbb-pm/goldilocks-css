@@ -9,5 +9,354 @@ title: Table Layout
 </header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>Classic <strong>table</strong> layout controls.  These controls are opt-in by adding the <code>.table</code> class to the html tag.
+                This allows other libraries to control their own table layouts. Note that all modifiers are applied with the <code>.table</code> class.
+            </p>
+
+            <p>The <code>table</code> HTML element is the parent container for rows and cells.  Optional styling can be applied to decorate the table.
+                Additionally, columns can have their contents aligned centre or right.  Default alignment is left.  Also <code>th</code> and <code>td</code>
+                HTML text can have background and / or color set and can have text aligned
+                (see <a href="/typography" target=_blank>Typography</a>).</p>
+
+            <p>Note that although the HTML specification for <code>table</code> HTML tag supports the
+                <code>colgroup</code> child HTML tag, it is very limited in what decorations it supports.  In fact, it does <strong>not</strong> support
+                cell text alignment or individual cell content formatting.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>table</code>, <code>caption</code></td>
+                    <td>Key HTML tags</td>
+                </tr>
+
+                <tr>
+                    <td><code>.table</code></td>
+                    <td>Defines main container using <code>table</code> HTML tag</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-fullwidth</code></td>
+                    <td>Stretches table width to fit parent container</td>
+                </tr>
+
+                <tr>
+                    <td><code>.table-scroll</code></td>
+                    <td>Allows wide tables to overflow and be scrollable.  Note that you cannot use <code>.is-fullwidth</code> when using this class.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-striped</code></td>
+                    <td>Provides a background to odd rows</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-hover</code></td>
+                    <td>Sets background and text color for hover on a row</td>
+                </tr>
+
+                <tr>
+                    <td><code>.numbers-col-x</code></td>
+                    <td>x is [1-9]; Right aligns cell content (optional column styling)</td>
+                </tr>
+
+                <tr>
+                    <td><code>.centered-col-x</code></td>
+                    <td>x is [1-9]; Centre aligns cell content (optional column styling)</td>
+                </tr>
+
+                <tr>
+                    <td><code>.nobreak-col-x</code></td>
+                    <td>x is [1-9]; Centre aligns cell content (optional column styling)</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>table.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--border-main-darker, --grey-lighter, -mar-horz, -mar-vert, --pad-horz, --pad-vert, --size-5, --text-elem, --weight-semibold</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Basic Table</h3>
+    <div class="row">
+        <div class="column">
+
+            <table class="table">
+                <caption>Caption: Table with no decoration</caption>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Item</th>
+                    <th>Value</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Shoes</td>
+                    <td>$95</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Socks</td>
+                    <td>$15</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Pants</td>
+                    <td>$105</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Belt</td>
+                    <td>$35</td>
+                </tr>
+
+                </tbody>
+
+                <tfoot>
+                <tr>
+                    <td></td>
+                    <td>Total</td>
+                    <td>$250</td>
+                </tr>
+                </tfoot>
+
+            </table>
+
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;table class="table"&gt;
+                    &lt;caption&gt;Caption: Table with no decoration&lt;/caption&gt;
+
+                    &lt;thead&gt;
+                        &lt;tr&gt;&lt;th&gt;#&lt;/th&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;/tr&gt;
+                    &lt;/thead&gt;
+
+                    &lt;tbody&gt;
+                        &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Shoes&lt;/td&gt;&lt;td&gt;$95&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Socks&lt;/td&gt;&lt;td&gt;$15&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Pants&lt;/td&gt;&lt;td&gt;$105&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Belt&lt;/td&gt;&lt;td&gt;$35&lt;/td&gt;&lt;/tr&gt;
+                    &lt;/tbody&gt;
+
+                    &lt;tfoot&gt;
+                        &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Total&lt;/td&gt;&lt;td&gt;$250&lt;/td&gt;&lt;/tr&gt;
+                    &lt;/tfoot&gt;
+                &lt;/table&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Table full width and striped</h3>
+    <div class="row">
+        <div class="column">
+            <table class="table is-fullwidth is-striped centered-col-1 numbers-col-3">
+                <caption>Caption: Has column with text right</caption>
+
+                <thead>
+                <tr><th>#</th><th>Item</th><th>Value</th><th>Description</th></tr>
+                </thead>
+
+                <tbody>
+                <tr><td>1</td><td>Shoes</td><td>$95</td><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td></tr>
+                <tr><td>22</td><td>Socks</td><td>$15</td><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td></tr>
+                <tr><td>333</td><td>Pants</td><td>$105</td><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td></tr>
+                <tr><td>4444</td><td>Belt</td><td>$35</td><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td></tr>
+                </tbody>
+
+                <tfoot>
+                <tr><td></td><td>Total</td><td class="has-text-secondary">$250</td><td></td></tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;table class="table is-fullwidth is-striped centered-col-1 numbers-col-3"&gt;
+                    &lt;caption&gt;Caption: Has column with text right&lt;/caption&gt;
+
+                    &lt;thead&gt;
+                        &lt;tr&gt;&lt;th&gt;#&lt;/th&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;
+                    &lt;/thead&gt;
+
+                    &lt;tbody&gt;
+                        &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Shoes&lt;/td&gt;&lt;td&gt;$95&lt;/td&gt;&lt;td&gt;Lorem ipsum ...&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;Socks&lt;/td&gt;&lt;td&gt;$15&lt;/td&gt;&lt;td&gt;Lorem ipsum ...&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;333&lt;/td&gt;&lt;td&gt;Pants&lt;/td&gt;&lt;td&gt;$105&lt;/td&gt;&lt;td&gt;Lorem ipsum ...&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;4444&lt;/td&gt;&lt;td&gt;Belt&lt;/td&gt;&lt;td&gt;$35&lt;/td&gt;&lt;td&gt;Lorem ipsum ...&lt;/td&gt;&lt;/tr&gt;
+                    &lt;/tbody&gt;
+
+                    &lt;tfoot&gt;
+                        &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Total&lt;/td&gt;&lt;td class="has-text-secondary"&gt;$250&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+                    &lt;/tfoot&gt;
+                &lt;/table&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Table scroll and hover</h3>
+    <div class="row">
+        <div class="column">
+            <table class="table table-scroll has-hover centered-col-1 numbers-col-3">
+                <caption>Caption: Table is scrollable and has a column with text right</caption>
+
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Item</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                    <th>Delivery</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Shoes</td>
+                    <td>$95</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                    <td>Available in 2 weeks</td>
+                </tr>
+
+                <tr class="is-danger-light">
+                    <td>22</td>
+                    <td>Socks</td>
+                    <td class="has-text-right">$15</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                    <td>Available in 1 week</td>
+                </tr>
+
+                <tr>
+                    <td>333</td>
+                    <td>Pants</td>
+                    <td>$105</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                    <td>Available in 3 weeks</td>
+                </tr>
+
+                <tr>
+                    <td>4444</td>
+                    <td>Belt</td>
+                    <td>$35</td>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                    <td>Available in 2 weeks</td>
+                </tr>
+                </tbody>
+
+                <tfoot>
+                <tr>
+                    <td></td>
+                    <td>Total</td>
+                    <td>$250</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;table class="table table-scroll has-hover centered-col-1 numbers-col-3"&gt;
+                    &lt;caption&gt;Caption: Table is scrollable and has a column with text right&lt;/caption&gt;
+
+                    &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;#&lt;/th&gt;
+                            &lt;th&gt;Item&lt;/th&gt;
+                            &lt;th&gt;Value&lt;/th&gt;
+                            &lt;th&gt;Description&lt;/th&gt;
+                            &lt;th&gt;Delivery&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/thead&gt;
+
+                    &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;1&lt;/td&gt;
+                            &lt;td&gt;Shoes&lt;/td&gt;
+                            &lt;td&gt;$95&lt;/td&gt;
+                            &lt;td&gt;Lorem ipsum ...&lt;/td&gt;
+                            &lt;td&gt;Available in 2 weeks&lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr class="is-danger-light"&gt;
+                            &lt;td&gt;22&lt;/td&gt;
+                            &lt;td&gt;Socks&lt;/td&gt;
+                            &lt;td class="has-text-right"&gt;$15&lt;/td&gt;
+                            &lt;td&gt;Lorem ipsum ...&lt;/td&gt;
+                            &lt;td&gt;Available in 1 week&lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                            &lt;td&gt;333&lt;/td&gt;
+                            &lt;td&gt;Pants&lt;/td&gt;
+                            &lt;td&gt;$105&lt;/td&gt;
+                            &lt;td&gt;Lorem ipsum ...&lt;/td&gt;
+                            &lt;td&gt;Available in 3 weeks&lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                            &lt;td&gt;4444&lt;/td&gt;
+                            &lt;td&gt;Belt&lt;/td&gt;
+                            &lt;td&gt;$35&lt;/td&gt;
+                            &lt;td&gt;Lorem ipsum ...&lt;/td&gt;
+                            &lt;td&gt;Available in 2 weeks&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+
+                    &lt;tfoot&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;&lt;/td&gt;
+                            &lt;td&gt;Total&lt;/td&gt;
+                            &lt;td&gt;$250&lt;/td&gt;
+                            &lt;td&gt;&lt;/td&gt;
+                            &lt;td&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tfoot&gt;
+                &lt;/table&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

@@ -9,5 +9,408 @@ title: Form
 </header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>form</strong> element provides the most common control styles used in forms, including input,
+                textarea, select, checkbox, radio and switch.  The <code>input</code> tag is encapsulated in a <code>label</code>
+                tag that associates the label text with the input field.
+            </p>
+
+            <p>Although the <strong>form</strong> element is a common item, it is challenging to structure because of the wide
+                variety of input types.   Also, form validation and submission vary depending on the client side framework employed.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.form</code></td>
+                    <td>main form container added to <code>form</code>html tag</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-form-shadow</code></td>
+                    <td>modifier that adds a shadow and padding to <code>form</code></td>
+                </tr>
+
+                <tr>
+                    <td><code>.adjust-label</code></td>
+                    <td>shifts field label to the right</td>
+                </tr>
+
+                <tr>
+                    <td><code>.field-error</code></td>
+                    <td>adds a red border to a field input</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-field-addons</code></td>
+                    <td>flexbox container for classic grouped inputs</td>
+                </tr>
+
+                <tr>
+                    <td><code>.form-footer</code></td>
+                    <td>container for submit and other buttons</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>form.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main-elem, --border-main-darker, --danger, --gap-col, --gap-row, --margin, --mar-horz, --margin-form, --pad-horz, --primary, --radius-elem,  --size-6, --size-7, --shadow, --text-elem, --weight-medium, --weight-semibold</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>No Frills Form and Elements</h3>
+    <div class="row">
+        <div class="column">
+            <form class="form">
+                <label class="field-error">
+                    <span>Input Field</span>
+                    <input type="text" placeholder="Text input" name="input_field">
+                </label>
+
+                <label>
+                    <span>Text Area</span>
+                    <textarea rows="3" placeholder="Text area input" name="textarea_field"></textarea>
+                </label>
+
+                <label>
+                    <span>Switch</span>
+                    <div class="switch">
+                        <input type="checkbox">
+                        <span>Toggle Switch Value</span>
+                    </div>
+                </label>
+
+                <label>
+                    <span>Select</span>
+                    <select name="select1_field">
+                        <option value="sel1">Select One</option>
+                        <option value="sel2">Select Two</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Radio Group</span>
+                    <div>
+                        <input type="radio" name="group1"><span>One</span>
+                        <input type="radio" name="group1"><span>Two</span>
+                        <input type="radio" name="group1"><span>Three</span>
+                    </div>
+                </label>
+
+                <label>
+                    <span>Checkbox Group</span>
+                    <div>
+                        <input type="checkbox" name="group2"><span>One</span>
+                        <input type="checkbox" name="group2"><span>Two</span>
+                        <input type="checkbox" name="group2"><span>Three</span>
+                    </div>
+                </label>
+
+                <label class="has-field-addons">
+                    <select name="select2_field">
+                        <option value="dollar">$</option>
+                        <option value="pound">£</option>
+                        <option value="euro">€</option>
+                    </select>
+
+                    <input type="text" name="currency">
+
+                    <button class="is-primary has-hover" aria-label="Search">
+                        Search
+                    </button>
+                </label>
+
+                <label class="has-field-addons">
+                    <button class="is-secondary" aria-label="icon only">
+                        <svg class="icon"><use href="#icon-file" /></svg>
+                    </button>
+
+                    <input type="file" name="file_field">
+                </label>
+            </form>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                <form class="form">
+                    <label class="field-error">
+                        <span>Input Field</span>
+                        <input type="text" placeholder="Text input" name="input_field">
+                    </label>
+
+                    <label>
+                        <span>Text Area</span>
+                        <textarea rows="3" placeholder="Text area input" name="textarea_field"></textarea>
+                    </label>
+
+                    <label>
+                        <span>Switch</span>
+                        <div class="switch">
+                            <input type="checkbox">
+                            <span>Toggle Switch Value</span>
+                        </div>
+                    </label>
+
+                    <label>
+                        <span>Select</span>
+                        <select name="select1_field">
+                            <option value="sel1">Select One</option>
+                            <option value="sel2">Select Two</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>Radio Group</span>
+                        <div>
+                            <input type="radio" name="group1"><span>One</span>
+                            <input type="radio" name="group1"><span>Two</span>
+                            <input type="radio" name="group1"><span>Three</span>
+                        </div>
+                    </label>
+
+                    <label>
+                        <span>Checkbox Group</span>
+                        <div>
+                            <input type="checkbox" name="group2"><span>One</span>
+                            <input type="checkbox" name="group2"><span>Two</span>
+                            <input type="checkbox" name="group2"><span>Three</span>
+                        </div>
+                    </label>
+
+                    <label class="has-field-addons">
+                        <select name="select2_field">
+                            <option value="dollar">$</option>
+                            <option value="pound">£</option>
+                            <option value="euro">€</option>
+                        </select>
+
+                        <input type="text" name="currency">
+
+                        <button class="is-primary" aria-label="Search">
+                            Search
+                        </button>
+                    </label>
+
+                    <label class="has-field-addons">
+                        <button class="is-secondary" aria-label="icon only">
+                            <svg class="icon"><use href="#icon-file" /></svg>
+                        </button>
+
+                        <input type="file" name="file_field">
+                    </label>
+                </form>
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium"></div>
+
+    <h3>Full Form Structure</h3>
+    <div class="row">
+        <div class="column">
+            <form id="test-form"  class="form has-form-shadow">
+                <label>
+                    <span>Input Field</span>
+                    <input type="text" placeholder="Text input" name="input_field">
+                </label>
+
+                <fieldset>
+                    <label class="select">
+                        <span>Select</span>
+                        <select name="select1">
+                            <option value="one">Select One</option>
+                            <option value="two">Select Two</option>
+                        </select>
+                    </label>
+
+                    <label class="select">
+                        <span>Colour</span>
+                        <input type="color" name="color_field">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <label>
+                        <span>Date Field</span>
+                        <input type="date" name="date_field">
+                    </label>
+
+                    <label>
+                        <span>Time Field</span>
+                        <input type="time" value="09:00" name="time_field">
+                    </label>
+                </fieldset>
+
+                <label>
+                    <span>Input Field</span>
+                    <input type="text" placeholder="Text input" name="text2_field">
+                </label>
+
+                <label>
+                    <span>Select</span>
+                    <select name="select2">
+                        <option value="one">Select One</option>
+                        <option value="two">Select Two</option>
+                    </select>
+                </label>
+
+                <fieldset>
+                    <label>
+                        <span>Email Field</span>
+                        <input type="email" required name="email_field">
+                    </label>
+
+                    <label>
+                        <span>Phone Field</span>
+                        <input type="tel" required name="phone_field">
+                    </label>
+                </fieldset>
+
+                <label>
+                    <span>Radio Group</span>
+
+                    <div>
+                        <input type="radio" name="group1"><span>One</span>
+                        <input type="radio" name="group1"><span>Two</span>
+                        <input type="radio" name="group1"><span>Three</span>
+                    </div>
+                </label>
+
+                <div class="form-footer">
+                    <button class="is-primary has-hover" aria-label="Submit">
+                        <input type="submit" value="Submit!" formaction="#test-form" formmethod="get">
+                    </button>
+                </div>
+            </form>
+
+            <script>
+                const submit = document.getElementById("test-form");
+
+                submit.addEventListener('submit', (ev) => {
+                    ev.preventDefault();
+
+                    const preamble = "Some simple javascript for demonstration only.\nValues picked up in form:\n\n";
+                    const fields = ["input_field", "select1", "color_field", "date_field", "time_field", "text2_field",
+                        "select2", "email_field", "phone_field", "group1"];
+
+                    let out = {};
+
+                    fields.forEach( field => {
+                        out[field] = submit.elements[field].value;
+                    });
+
+                    window.alert( `${preamble} ${JSON.stringify(out, null, '  ')}`);
+                })
+
+            </script>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                <form id="test-form"  class="form has-form-shadow">
+                    <label>
+                        <span>Input Field</span>
+                        <input type="text" placeholder="Text input" name="input_field">
+                    </label>
+
+                    <fieldset>
+                        <label class="select">
+                            <span>Select</span>
+                            <select name="select1">
+                                <option value="one">Select One</option>
+                                <option value="two">Select Two</option>
+                            </select>
+                        </label>
+
+                        <label class="select">
+                            <span>Colour</span>
+                            <input type="color" name="color_field">
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <label>
+                            <span>Date Field</span>
+                            <input type="date" name="date_field">
+                        </label>
+
+                        <label>
+                            <span>Time Field</span>
+                            <input type="time" value="09:00" name="time_field">
+                        </label>
+                    </fieldset>
+
+                    <label>
+                        <span>Input Field</span>
+                        <input type="text" placeholder="Text input" name="text2_field">
+                    </label>
+
+                    <label>
+                        <span>Select</span>
+                        <select name="select2">
+                            <option value="one">Select One</option>
+                            <option value="two">Select Two</option>
+                        </select>
+                    </label>
+
+                    <fieldset>
+                        <label>
+                            <span>Email Field</span>
+                            <input type="email" required name="email_field">
+                        </label>
+
+                        <label>
+                            <span>Phone Field</span>
+                            <input type="tel" required name="phone_field">
+                        </label>
+                    </fieldset>
+
+                    <label>
+                        <span>Radio Group</span>
+
+                        <div>
+                            <input type="radio" name="group1"><span>One</span>
+                            <input type="radio" name="group1"><span>Two</span>
+                            <input type="radio" name="group1"><span>Three</span>
+                        </div>
+                    </label>
+
+                    <div class="form-footer">
+                        <button class="is-primary has-hover" aria-label="Submit">
+                            <input type="submit" value="Submit!" formaction="#test-form" formmethod="get">
+                        </button>
+                    </div>
+                </form>
+            </code></pre>
+        </div>
+    </div>
 </main>

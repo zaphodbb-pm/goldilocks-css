@@ -9,5 +9,107 @@ title: Horizontal Rule
 </header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <code>hr</code> html tag needs special mention as it is too often misused as a way to draw a horizontal
+                across the display area.  In fact, <code>hr</code>  has a specific semantic meaning that needs to be understood
+                to use this tag properly!
+            </p>
+
+            <p>The <code>hr</code> HTML tag represents a thematic break between <em>paragraph-level</em> elements such as a
+                change of scene in a story, or a shift of topic within a section.  The <em>line</em> on the display is
+                actually optional and can be styled in a variety of ways using CSS.
+            </p>
+
+            <p>Furthermore, there is no need for an <code>hr</code> HTML tag between <code>section</code> or <code>h1</code> tags.
+                These tags imply thematic changes themselves.  Also, The<code>hr</code> tag does not affect the document's outline.
+                See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr" target=_blank>MDN Web Docs</a> and
+                <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element" target=_blank>HTML Living Standard</a>.
+            </p>
+
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>none</code></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>setup_base_html.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>none</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="box-shadow">
+                <p>As an example of a thematic break, consider the topic of shoes.  Consider that this paragraph (plus any others following)
+                    discusses the variety of shoes available and their best use and also where to buy shoes.
+                    This paragraph then has a particular scope.
+                </p>
+
+                <hr>
+
+                <p>This second paragraph (plus others following this section) then discusses how to go about getting the right fit for your foot.
+                    Consideration needs to be given to foot length and also (importantly) foot width.  Proper width
+                    will make walking longer distances much more comfortable.
+                </p>
+
+                <hr>
+
+                <p>This third paragraph could then also discuss proper shoe care.   Note that although all three paragraphs discuss shoes,
+                    each paragraph goes into each topic into greater detail.  Using a horizontal rule to indicate a change in topic is an appropriate use.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="box-shadow"&gt;
+                    &lt;p&gt;As an example ...&lt;/p&gt;
+
+                    &lt;hr&gt;
+
+                    &lt;p&gt;This second paragraph ...&lt;/p&gt;
+
+                    &lt;hr&gt;
+
+                    &lt;p&gt;This third paragraph ..&lt;/p&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+
+    </div>
 </main>

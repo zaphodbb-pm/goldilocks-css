@@ -9,5 +9,317 @@ title: Images
 </header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <code>img</code> <em>element</em> with its parent <code>figure</code> tag provides responsive image controls.
+                The image can be fit into the available area as well.  Adapted from
+                <a href="https://picturepan2.github.io/spectre/elements/media.html" target="_blank">Spectre CSS</a>.
+            </p>
+
+            <p>Adding the <code>.img-responsive</code> class to <code>img</code> elements allows the images to scale with parent size changes.
+                Images are further enhanced with fixed width controls to over-ride responsive image resizing.
+                This lets you include this element into components and maintain its size as the rest of the component is adjusted
+                around this image.
+            </p>
+
+            <p>
+                Adding the <code>img-fit-contain</code> or <code>img-fit-cover</code> class to <code>img</code> controls how the
+                image fills the space. The media will crop itself to fit inside the element (and you don't need another container).
+            </p>
+
+            <p>If a fixed width is given, the image can be controlled by its aspect ratio.  This ensures that the image
+                will be true to its original format.  These sizes are documented at
+                <a href="https://en.wikipedia.org/wiki/Aspect_ratio_%28image%29#Still_photography" target=_blank>still photography aspect ratios</a>./p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>figure</code>, <code>figcaption</code>, <code>img</code></td>
+                    <td>core HTML tags as parent and children</td>
+                </tr>
+
+                <tr>
+                    <td><code>.img-responsive</code></td>
+                    <td>ensures image will scale with viewport</td>
+                </tr>
+
+                <tr>
+                    <td><code>.img-fit-cover</code></td>
+                    <td>ensures image will cover the parent container</td>
+                </tr>
+
+                <tr>
+                    <td><code>.img-fit-contain</code></td>
+                    <td>parent container height or width determines maximum image dimension</td>
+                </tr>
+
+                <tr>
+                    <td>Landscape sizes:</td>
+                    <td><code>.has-aspect-3x1</code>, <code>.has-aspect-2x1</code>, <code>.has-aspect-16x9</code>
+                        <code>.has-aspect-3x2</code>, <code>.has-aspect-4x3</code>, <code>.has-aspect-5x4</code>,
+                        <code>.has-aspect-1x1</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Portrait sizes:</td>
+                    <td><code>.has-aspect-1x3</code>, <code>.has-aspect-1x2</code>, <code>.has-aspect-9x16</code>
+                        <code>.has-aspect-2x3</code>, <code>.has-aspect-3x4</code>, <code>.has-aspect-4x5</code>,
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>image.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--mar-vert, --weight-medium</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <section>
+        <h3>Basic Image Set-up</h3>
+
+        <div class="row">
+            <div class="column">
+                <figure>
+                    <img src="{{site.url}}/img/demo/gl-demo.jpg" class="" alt="Autumn Forest Scene" loading="lazy">
+                    <figcaption>Love Our Planet from Pixelbay</figcaption>
+                </figure>
+            </div>
+
+            <div class="column">
+                <pre><code class="language-html">
+                    &lt;figure&gt;
+                        &lt;img src="{{site.url}}/img/demo/gl-demo.jpg" class="" alt="Autumn Forest Scene" loading="lazy"&gt;
+                        &lt;figcaption&gt;Love Our Planet from Pixelbay&lt;/figcaption&gt;
+                    &lt;/figure&gt;
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="space-vert-large"></div>
+
+        <h3>Fitting Images into Parent Container</h3>
+
+        <div class="row">
+            <div class="column">
+                <figure>
+                    <img src="{{site.url}}/img/demo/gl-demo.jpg" alt="img no fit example" loading="lazy">
+                    <figcaption>No fitting - image is stretched but remains responsive.</figcaption>
+                </figure>
+
+                <div class="space-vert-medium"></div>
+
+                <pre><code class="language-html">
+                    &lt;figure&gt;
+                        &lt;img src="{{site.url}}/img/demo/gl-demo.jpg" alt="img no fit example" loading="lazy"&gt;
+                        &lt;figcaption&gt;No fitting - image is stretched but remains responsive.&lt;/figcaption&gt;
+                    &lt;/figure&gt;
+                </code></pre>
+            </div>
+
+            <div class="column">
+                <figure>
+                    <img src="{{site.url}}/img/demo/gl-demo.jpg" class="img-fit-contain" alt="img contain example" loading="lazy">
+                    <figcaption>"img-fit-contain" - Maintains aspect ratio and matches max height or max width.</figcaption>
+                </figure>
+
+                <div class="space-vert-medium"></div>
+
+                <pre><code class="language-html">
+                    &lt;figure&gt;
+                        &lt;img src="{{site.url}}/img/demo/gl-demo.jpg" class="img-fit-contain" alt="img contain example" loading="lazy"&gt;
+                        &lt;figcaption&gt;"img-fit-contain" - Maintains aspect ratio and matches max height or max width.&lt;/figcaption&gt;
+                    &lt;/figure&gt;
+                </code></pre>
+            </div>
+
+            <div class="column">
+                <figure>
+                    <img src="{{site.url}}/img/demo/gl-demo.jpg" class="img-fit-cover" alt="img cover example" loading="lazy">
+                    <figcaption>"img-fit-cover" - Maintains aspect ratio and clips image.</figcaption>
+                </figure>
+
+                <div class="space-vert-medium"></div>
+
+                <pre><code class="language-html">
+                    &lt;figure&gt;
+                        &lt;img src="{{site.url}}/img/demo/gl-demo.jpg" class="img-fit-cover" alt="img cover example" loading="lazy"&gt;
+                        &lt;figcaption&gt;"img-fit-cover" - Maintains aspect ratio and clips image.&lt;/figcaption&gt;
+                    &lt;/figure&gt;
+                </code></pre>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="space-vert-large">
+
+        <h3>Fixed Size Square Images</h3>
+
+        <div class="level align-bottom">
+
+            <figure class="has-width-3rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-1x1"  alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>3rem</figcaption>
+            </figure>
+
+            <figure class="has-width-4rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-1x1" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>4rem</figcaption>
+            </figure>
+
+            <figure class="has-width-5rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-1x1" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>5rem</figcaption>
+            </figure>
+
+            <figure class="has-width-6rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-1x1" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>6rem</figcaption>
+            </figure>
+
+            <figure class="has-width-8rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-1x1" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>8rem</figcaption>
+            </figure>
+
+            <figure class="has-width-10rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-1x1" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>10rem</figcaption>
+            </figure>
+
+        </div>
+
+        <div class="space-vert-medium">
+            <pre><code class="language-html">
+                &lt;figure class=has-width-8rem&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-1x1" alt="Autumn Forest Scene" loading="lazy"&gt;
+                    &lt;figcaption&gt;8rem&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+
+    </section>
+
+
+    <section class="space-vert-large">
+        <h3>Landscape Images Fit to Fixed Width</h3>
+
+        <div class="level align-bottom">
+            <figure class="has-width-10rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-3x1" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-3x1</figcaption>
+            </figure>
+
+            <figure class="has-width-10rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-2x1" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-2x1</figcaption>
+            </figure>
+
+            <figure class="has-width-10rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-16x9" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-16x9</figcaption>
+            </figure>
+
+            <figure class="has-width-10rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-3x2" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-3x2</figcaption>
+            </figure>
+
+            <figure class="has-width-10rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-4x3" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-4x3</figcaption>
+            </figure>
+
+            <figure class="has-width-10rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-5x4" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-5x4</figcaption>
+            </figure>
+        </div>
+
+        <div class="space-vert-medium">
+            <pre><code class="language-html">
+                &lt;figure class="has-width-10rem"&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-2x1" alt="Autumn Forest Scene" loading="lazy"&gt;
+                    &lt;figcaption&gt;.has-aspect-2x1&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+
+    </section>
+
+
+    <section class="space-vert-large">
+        <h3>Portrait Images Fit to Fixed Width</h3>
+
+        <div class="level align-bottom">
+            <figure class="has-width-8rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-1x3" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-1x3</figcaption>
+            </figure>
+
+            <figure class="has-width-8rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-1x2" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-1x2</figcaption>
+            </figure>
+
+            <figure class="has-width-8rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-9x16" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-9x16</figcaption>
+            </figure>
+
+            <figure class="has-width-8rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-2x3" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-2x3</figcaption>
+            </figure>
+
+            <figure class="has-width-8rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-3x4" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-3x4</figcaption>
+            </figure>
+
+            <figure class="has-width-8rem">
+                <img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-4x5" alt="Autumn Forest Scene" loading="lazy">
+                <figcaption>.has-aspect-4x5</figcaption>
+            </figure>
+        </div>
+
+        <div class="space-vert-medium">
+            <pre><code class="language-html">
+                &lt;figure class="has-width-8rem"&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-demo.jpg" class="has-aspect-2x3" alt="Autumn Forest Scene" loading="lazy"&gt;
+                    &lt;figcaption&gt;.has-aspect-2x3&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+
+    </section>
 </main>

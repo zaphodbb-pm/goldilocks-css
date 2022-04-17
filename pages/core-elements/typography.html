@@ -9,5 +9,393 @@ title: Typography
 </header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>Typography sets default styles for all text elements such as headings, paragraphs and semantic text elements.
+                Text sizing uses the base font size (typically 1rem).  Heading sizes are controlled by a scale factor that is nominally
+                in 0.25 steps. Alternative step sizes is 0.125 or 0.067.  The step size is set in the variable <code>--size-factor</code>.
+                Text content can also be controlled by setting alignment, color and size.  These can be used in combination as well.
+                <a href="https://type-scale.com/" target=_blank>Typography Sandbox</a>
+            </p>
+
+            <p>The font families are chosen to provide the best accessibility ratings as described in
+                <a href="https://siteimprove.com/en-us/accessibility/most-accessible-fonts/">Accessible fonts </a> and
+                <a href="https://bighack.org/font-accessibility-and-readability-the-basics/">Font accessibility and readability</a>.
+                Note that attention also needs to be paid to sufficient font weight and color to maintain high accessibility scores.
+            </p>
+
+            <p>Semantic text elements use the browser user agent only.  No additional decorations provided.</p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.is-family-code</code>, <br><code>.is-family-monospace</code>, <br><code>.is-family-primary</code>,
+                        <br><code>.is-family-sans-serif</code>, <br><code>.is-family-secondary</code></td>
+                    <td>Sets the font family to use for the target element</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-size-x</code></td>
+                    <td>x is [1-7]; Adjusts font size for target element</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-title-x</code></td>
+                    <td>x is [1-7]; Adjusts font size for target element as well as settiing font weight to semibold and adjusts bottom margin.
+                        Matches <code>h</code> HTML tag but carries no semantic meaning.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.sub-title</code></td>
+                    <td>Matches a sub-title to a given <code>h</code> HTML tag.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-indented-1</code>, <code>.is-indented-2</code>, <code>.is-indented-3</code></td>
+                    <td>Optional indenting options.  Default indents are 3rem, 6rem or 9rem.  Works for left-to-right and right-to-left text.</td>
+                </tr>
+
+                <tr>
+                    <td>Positioning options:</td>
+                    <td><code>.has-text-start</code>, <code>.has-text-centered</code>, <code>.has-text-end</code>, <code>.has-text-justified</code></td>
+                </tr>
+
+
+                <tr>
+                    <td>Font options:</td>
+                    <td><code>.is-text-light</code>, <code>.is-text-normal</code>, <code>.is-text-medium</code>,
+                        <code>.is-text-semibold</code>, <code>.is-text-bold</code></td>
+                </tr>
+
+
+                <tr>
+                    <td>Colour options:</td>
+                    <td><code>.has-text-danger</code>, <code>.has-text-dark</code>, <code>.has-text-black</code>, <code>.has-text-light</code>,
+                        <code>.has-text-link</code>, <code>.has-text-primary</code>, <code>.has-text-secondary</code>, <code>.has-text-success</code>,
+                        <code>.has-text-tertiary</code>, <code>.has-text-warning</code>, <code>.has-text-white</code>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth nobreak-col-1 space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>typography.css</td>
+                </tr>
+
+                <tr>
+                    <td>Fonts:</td>
+                    <td>--family-monospace, --family-sans-serif, --family-serif</td>
+                </tr>
+
+                <tr>
+                    <td>Main text:</td>
+                    <td>--text-darker, --weight-semibold</td>
+                </tr>
+
+                <tr>
+                    <td>Font sizes:</td>
+                    <td>--scale-factor,  --size-1, --size-2, --size-3, --size-4, --size-5, --size-6, --size-7</td>
+                </tr>
+
+                <tr>
+                    <td>Font colors:</td>
+                    <td>--bg-main, --bg-main-invert, --danger, --grey, --grey-dark, --link, --primary, --secondary, --success, --tertiary, --warning, --white-ter</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Classic Heading Sizes</h3>
+    <div class="row">
+        <div class="column">
+            <p>Base Font = 1rem; Normal Scale Factor = 1.125</p>
+
+            <h1>H1 Heading One <small>(base * factor<sup>5</sup> )</small></h1>
+            <p class="sub-title">H1 Sub Title</p>
+
+            <h2>H2 Heading Two <small>(base * factor<sup>4</sup> )</small></h2>
+            <p class="sub-title">H2 Sub Title</p>
+
+            <h3>H3 Heading Three <small>(base * factor<sup>3</sup> )</small></h3>
+            <p class="sub-title">H3 Sub Title</p>
+
+            <h4>H4 Heading Four <small>(base * factor<sup>2</sup> )</small></h4>
+            <p class="sub-title">H4 Sub Title</p>
+
+            <h5>H5 Heading Five <small>(base)</small></h5>
+            <h6>H6 Heading Six <small>(base / factor)</small></h6>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;h1&gt;H1 Heading One &lt;small&gt;(base + 5 * factor)&lt;/small&gt;&lt;/h1&gt;
+                &lt;p class="sub-title"&gt;H1 Sub Title&lt;/p&gt;
+
+                &lt;h2&gt;H2 Heading Two &lt;small&gt;(base + 4 * factor)&lt;/small&gt;&lt;/h2&gt;
+                &lt;p class="sub-title"&gt;H2 Sub Title&lt;/p&gt;
+
+                &lt;h3&gt;H3 Heading Three &lt;small&gt;(base + 3 * factor)&lt;/small&gt;&lt;/h3&gt;
+                &lt;p class="sub-title"&gt;H3 Sub Title&lt;/p&gt;
+
+                &lt;h4&gt;H4 Heading Four &lt;small&gt;(base + 2 * factor)&lt;/small&gt;&lt;/h4&gt;
+                &lt;p class="sub-title"&gt;H4 Sub Title&lt;/p&gt;
+
+                &lt;h5&gt;H5 Heading Five &lt;small&gt;(base + factor)&lt;/small&gt;&lt;/h5&gt;
+                &lt;h6&gt;H6 Heading Six &lt;small&gt;(base)&lt;/small&gt;&lt;/h6&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <section class="space-vert-large">
+        <h3>Text Families</h3>
+
+        <div class="row">
+            <div class="column">
+                <p class="is-family-primary">is-family-primary</p>
+                <p class="is-family-secondary">is-family-secondary</p>
+                <p class="is-family-code">is-family-code</p>
+            </div>
+
+            <div class="column">
+                <pre><code class="language-html">
+                    &lt;p class="is-family-primary"&gt;is-family-primary&lt;/p&gt;
+
+                    &lt;p class="is-family-secondary"&gt;is-family-secondary&lt;/p&gt;
+
+                    &lt;p class="is-family-code"&gt;is-family-code&lt;/p&gt;
+                </code></pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="space-vert-large">
+        <h3>Text Controls</h3>
+
+        <div class="row">
+            <div class="column">
+                <p>
+                    <span>text is left (default)</span>
+                    <span class="has-text-primary">.has-text-primary</span>
+                </p>
+
+                <p class="has-text-centered">
+                    <span>.has-text-centered</span>
+                    <span class="has-text-secondary">.has-text-secondary</span>
+                </p>
+
+                <p class="has-text-start">
+                    <span>.has-text-start</span>
+                    <span class="has-text-tertiary">.has-text-tertiary</span>
+                </p>
+
+                <p class="has-text-end">
+                    <span>.has-text-end</span>
+                    <span class="has-text-link">.has-text-link</span>
+                </p>
+
+                <p class="has-text-justified">
+                    <span>.has-text-justified</span>
+                    <span class="has-text-danger">.has-text-danger</span>
+                    <span class="has-text-danger">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                </p>
+
+                <p class="has-text-start">
+                    <span>.has-text-start</span>
+                    <span class="has-text-warning">.has-text-warning</span>
+                </p>
+
+                <p class="has-text-centered">
+                    <span>.has-text-centered</span>
+                    <span class="has-text-success">.has-text-success</span>
+                </p>
+
+                <p class="has-text-start">
+                    <span class="has-text-black is-size-7">.has-text-black  .is-size-7</span>
+                </p>
+
+                <p class="has-text-start">
+                    <span class="has-text-white is-size-5">.has-text-white  .is-size-5</span>
+                </p>
+
+                <p class="has-text-start">
+                    <span class="has-text-dark is-size-3">.has-text-dark .is-size-3</span>
+                </p>
+
+                <p class="has-text-start">
+                    <span class="has-text-light is-size-1">.has-text-light .is-size-1</span>
+                </p>
+            </div>
+
+            <div class="column">
+               <pre><code class="language-html">
+                   &lt;p&gt;
+                       &lt;span&gt;text is left (default)&lt;/span&gt;
+                       &lt;span class="has-text-primary"&gt;.has-text-primary&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-centered"&gt;
+                       &lt;span&gt;.has-text-centered&lt;/span&gt;
+                       &lt;span class="has-text-secondary"&gt;.has-text-secondary&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-start"&gt;
+                       &lt;span&gt;.has-text-start&lt;/span&gt;
+                       &lt;span class="has-text-tertiary"&gt;.has-text-tertiary&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-end"&gt;
+                       &lt;span&gt;.has-text-end&lt;/span&gt;
+                       &lt;span class="has-text-link"&gt;.has-text-link&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-justified"&gt;
+                       &lt;span&gt;.has-text-justified&lt;/span&gt;
+                       &lt;span class="has-text-danger"&gt;.has-text-danger&lt;/span&gt;
+                       &lt;span class="has-text-danger"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-start"&gt;
+                       &lt;span&gt;.has-text-start&lt;/span&gt;
+                       &lt;span class="has-text-warning"&gt;.has-text-warning&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-centered"&gt;
+                       &lt;span&gt;.has-text-centered&lt;/span&gt;
+                       &lt;span class="has-text-success"&gt;.has-text-success&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-start"&gt;
+                       &lt;span class="has-text-black is-size-7"&gt;.has-text-black  .is-size-7&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-start"&gt;
+                       &lt;span class="has-text-white is-size-5"&gt;.has-text-white  .is-size-5&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-start"&gt;
+                       &lt;span class="has-text-dark is-size-3"&gt;.has-text-dark .is-size-3&lt;/span&gt;
+                   &lt;/p&gt;
+
+                   &lt;p class="has-text-start"&gt;
+                       &lt;span class="has-text-light is-size-1"&gt;.has-text-light .is-size-1&lt;/span&gt;
+                   &lt;/p&gt;
+               </code></pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="space-vert-large">
+        <h3>Semantic Text Elements</h3>
+
+        <p>Example: &lt;cite&gt;Citation&lt;/cite&gt;</p>
+
+        <div class="row">
+            <div class="column">
+
+                <div class="stack">
+                    <div class="level-start">
+                        <strong>Bold</strong>  <code>strong</code>  <code>b</code>
+                    </div>
+
+                    <div class="level-start">
+                        <em>Emphasis</em> <code>em</code>
+                    </div>
+
+                    <div class="level-start">
+                        <i>Italic</i> <code>i</code>
+                    </div>
+
+                    <div class="level-start">
+                        <cite>Citation</cite> <code>cite</code>
+                    </div>
+
+                    <div class="level-start">
+                        <u>Underline</u> <code>u</code>
+                    </div>
+
+                    <div class="level-start">
+                        <ins>Inserted</ins> <code>ins</code>
+                    </div>
+
+                    <div class="level-start">
+                        <s>Strikethroughs</s> <code>strike</code>
+                    </div>
+
+                    <div class="level-start">
+                        <del>Deleted</del> <code>del</code>
+                    </div>
+
+                    <div class="level-start">
+                        <samp>Samples</samp> <code>samp</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="stack">
+
+                    <div class="level-start">
+                        <span>Text <sub>Subscripted</sub></span> <code>sub</code>
+                    </div>
+
+                    <div class="level-start">
+                        <span>Text<sub>Superscripted</sub></span> <code>sub</code>
+                    </div>
+
+                    <div class="level-start">
+                        <mark>Highlighted</mark> <code>mark</code>
+                    </div>
+
+                    <div class="level-start">
+                        <abbr>I18N</abbr> <code>abbr</code>
+                    </div>
+
+                    <div class="level-start">
+                        <code>Hello World!</code> <code>code</code>
+                    </div>
+
+                    <div class="level-start">
+                        <kbd>Ctrl + S</kbd> <code>kbd</code>
+                    </div>
+
+                    <div class="level-start">
+                        <ruby>漢kan字ji</ruby> <code>ruby</code>
+                    </div>
+
+                    <div class="level-start">
+                        <time>20:00</time> <code>time</code>
+                    </div>
+
+                    <div class="level-start">
+                        <var>x = y + 2</var> <code>var</code>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
