@@ -20,6 +20,15 @@
     height: calc(var(--widgetbar-height) - 2px) ;
 }
 
+.widgetbar fieldset,
+.widgetbar-bordered fieldset {
+    display: flex;
+    border: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
 
 /* common widget parents */
 .widgetbar-radios,
