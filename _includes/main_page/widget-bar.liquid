@@ -3,15 +3,17 @@
     <form class="widgetbar-radios">
         <span>Theme</span>
 
-        <label>
-            <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')">
-            <svg class="icon"><use href="#icon-day"></use></svg>
-        </label>
+        <fieldset>
+            <label aria-label="Select light / day mode">
+                <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')">
+                <svg class="icon"><use href="#icon-day"></use></svg>
+            </label>
 
-        <label>
-            <input type="radio" name="heading-sizes" onchange="setTheme('Dark')">
-            <svg class="icon"><use href="#icon-night"></use></svg>
-        </label>
+            <label aria-label="Select dark / night mode">
+                <input type="radio" name="heading-sizes" onchange="setTheme('Dark')">
+                <svg class="icon"><use href="#icon-night"></use></svg>
+            </label>
+        </fieldset>
     </form>
 
     <script>
@@ -25,17 +27,19 @@
     </script>
 
     <form class="widgetbar-radios">
-        <label>
-            <input type="radio" name="text-sizes" checked onchange="setTextSize('1')"><span>T1</span>
-        </label>
+        <fieldset aria-label="Select normal text size">
+            <label>
+                <input type="radio" name="text-sizes" checked onchange="setTextSize('1')"><span>T1</span>
+            </label>
 
-        <label>
-            <input type="radio" name="text-sizes" onchange="setTextSize('1.5')"><span>T2</span>
-        </label>
+            <label aria-label="Select 1.5 times text size">
+                <input type="radio" name="text-sizes" onchange="setTextSize('1.5')"><span>T2</span>
+            </label>
 
-        <label>
-            <input type="radio" name="text-sizes" onchange="setTextSize('2.25')"><span>T3</span>
-        </label>
+            <label aria-label="Select 2.25 times text size">
+                <input type="radio" name="text-sizes" onchange="setTextSize('2.25')"><span>T3</span>
+            </label>
+        </fieldset>
     </form>
 
     <script>
