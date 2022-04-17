@@ -140,7 +140,7 @@
 
 .sidebar-block > label {
     margin: 0;
-    font-weight: bold;
+    font-weight: var(--weight-medium);
     cursor: pointer;
 
     position: relative;
