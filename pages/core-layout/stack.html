@@ -1,10 +1,237 @@
 ---
 layout: default
 parent-tab: core-layout
+title: Vertical Stack Layout
 ---
 
-<h1 class="page-header">Stack</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>stack</strong> <em>element</em> provides vertical layout of children using flexbox.
+                Children can be start, centered or end justified.  The  <code>.stack</code> element is the companion to the <code>.level</code>
+                element and can also be a child of <code>.level</code>.
+            </p>
+
+            <p>Normally <strong>stack</strong> would not have other <code>.stack</code> children, but may have
+                <code>.level</code> children.
+            </p>
+
+            <p>Background and text colors can be set for each stack element using the color element classes such as <code>.is-primary</code>,
+                <code>.is-primary-light</code> etc.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.stack</code></td>
+                    <td>Provides a flexbox element that vertically aligns children items to the left edge.
+                        <code>--col-row</code> is the default spacing.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.stack-right</code></td>
+                    <td>Provides a flexbox element that right aligns children items.</td>
+                </tr>
+
+
+                <tr>
+                    <td><code>.stack-centered</code></td>
+                    <td>Provides a flexbox element with center aligned children items.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.stack-gap-medium</code></td>
+                    <td>Modifier that increases the row gap to 3 times default gap.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.stack-gap-large</code></td>
+                    <td>Modifier that increases the row gap to 5 times default gap.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>stack.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td> --gap-col, --gap-row</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+
+    <div class="row">
+        <div class="column">
+            <div class="stack is-grey">
+                <div class="is-primary">
+                    <div>Lorem Ipsum 1</div>
+                    <div>item one</div>
+                </div>
+                <div class="is-primary">
+                    <div>Lorem Ipsum 2</div>
+                    <div>item two</div>
+                </div>
+                <div class="is-primary">
+                    <div>Lorem Ipsum 3</div>
+                    <div>item three</div>
+                </div>
+                <div class="is-primary">
+                    <div>Lorem Ipsum 4</div>
+                    <div>item four</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="stack is-grey"&gt;
+                    &lt;div class="is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 1&lt;/div&gt;
+                        &lt;div&gt;item one&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 2&lt;/div&gt;
+                        &lt;div&gt;item two&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 3&lt;/div&gt;
+                        &lt;div&gt;item three&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 4&lt;/div&gt;
+                        &lt;div&gt;item four&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>.stack-right</h3>
+
+    <div class="row">
+        <div class="column">
+            <div class="stack-right is-grey">
+                <div class="is-primary">
+                    <div>Lorem Ipsum 1</div>
+                    <div>item one</div>
+                </div>
+                <div class="is-primary">
+                    <div>Lorem Ipsum 2</div>
+                    <div>item two</div>
+                </div>
+                <div class="is-primary">
+                    <div>Lorem Ipsum 3</div>
+                    <div>item three</div>
+                </div>
+                <div class="is-primary">
+                    <div>Lorem Ipsum 4</div>
+                    <div>item four</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="stack-right is-grey"&gt;
+                    &lt;div class="is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 1&lt;/div&gt;
+                        &lt;div&gt;item one&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 2&lt;/div&gt;
+                        &lt;div&gt;item two&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 3&lt;/div&gt;
+                        &lt;div&gt;item three&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 4&lt;/div&gt;
+                        &lt;div&gt;item four&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>.stack-centered with .level children</h3>
+
+    <div class="row">
+        <div class="column">
+            <div class="stack-centered is-grey">
+                <div class="level is-primary">
+                    <div>Lorem Ipsum 1</div>
+                    <div>item one</div>
+                </div>
+                <div class="level is-primary">
+                    <div>Lorem Ipsum 2</div>
+                    <div>item two</div>
+                </div>
+                <div class="level is-primary">
+                    <div>Lorem Ipsum 3</div>
+                    <div>item three</div>
+                </div>
+                <div class="level is-primary">
+                    <div>Lorem Ipsum 4</div>
+                    <div>item four</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="stack-centered is-grey"&gt;
+                    &lt;div class="level is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 1&lt;/div&gt;
+                        &lt;div&gt;item one&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="level is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 2&lt;/div&gt;
+                        &lt;div&gt;item two&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="level is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 3&lt;/div&gt;
+                        &lt;div&gt;item three&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="level is-primary"&gt;
+                        &lt;div&gt;Lorem Ipsum 4&lt;/div&gt;
+                        &lt;div&gt;item four&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>
