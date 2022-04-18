@@ -13,7 +13,7 @@
     box-shadow: var(--shadow);
 }
 
-.form fieldset {
+.form .field-group {
     margin:  var(--margin-form) 0;
     padding: 0;
     border: none;
@@ -23,15 +23,9 @@
     gap: var(--gap-row) var(--gap-col);
 }
 
-.form legend {
-    margin: 0;
-    padding: 0;
-}
-
-.form fieldset > * {
+.form .field-group > * {
     flex-grow: 1;
 }
-
 
 .form label {
     position: relative;
@@ -39,7 +33,7 @@
     margin:  var(--margin-form) 0;
 }
 
-.form fieldset label {
+.form .field-group label {
     margin:  0;
 }
 
@@ -60,11 +54,12 @@
 }
 
 
-.form label > input,
-.form label > textarea,
-.form label > select,
-.form label > div
-{
+.form > label > input,
+.form > label > textarea,
+.form > label > select,
+.form .field-group > label > input,
+.form .field-group > label > textarea,
+.form .field-group > label > select {
     background-color: var(--bg-main-elem);
     border: 1px solid var(--border-main-darker);
     border-radius: var(--radius-elem);
@@ -87,7 +82,7 @@
 }
 
 
-.form label select {
+.form > label select {
     /* builds "chevron down" svg image for select box */
     background-image: var(--indicator);
     background-position: right 1em center;
@@ -101,16 +96,41 @@
     cursor: pointer;
 }
 
-.form label > div {
+
+
+/* controls for fieldset group of inputs */
+.form fieldset {
     display: flex;
-    justify-items: flex-start;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
     gap: var(--gap-row) var(--gap-col);
+
+    position: relative;
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    margin: var(--margin-form) 0;
+
+    background-color: var(--bg-main-elem);
+    border: 1px solid var(--border-main-darker);
+    border-radius: var(--radius-elem);
+}
+
+.form fieldset legend {
+    background-color: var(--bg-main-elem);
+    padding: 0 calc( 0.5 * var(--pad-horz) );
+    font-weight: var(--weight-medium);
+    font-size: var(--size-7);
+    color: var(--text-elem);
+}
+
+.form fieldset > label {
+    margin: 0;
+    display: flex;
     align-items: center;
 }
 
-.form label > div span {
-    margin-left: calc( -0.5 * var(--gap-col) );
+.form fieldset label > span {
+    margin: 0 calc( 0.5 * var(--gap-col) );
 }
 
 
@@ -212,6 +232,11 @@
     position: relative;
     display: flex;
     align-items: center;
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+
+    background-color: var(--bg-main-elem);
+    border: 1px solid var(--border-main-darker);
+    border-radius: var(--radius-elem);
 }
 
 .form .switch input {

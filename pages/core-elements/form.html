@@ -20,6 +20,8 @@ title: Form
 
             <p>Although the <strong>form</strong> element is a common item, it is challenging to structure because of the wide
                 variety of input types.   Also, form validation and submission vary depending on the client side framework employed.
+                Included here is a simple javascript routine to collect and display the form's inputs.  Validation is typically handled through
+                javascript before sending to the server.
             </p>
         </section>
 
@@ -45,6 +47,16 @@ title: Form
                 <tr>
                     <td><code>.adjust-label</code></td>
                     <td>shifts field label to the right</td>
+                </tr>
+
+                <tr>
+                    <td><code>fieldset</code></td>
+                    <td>HTML tag that builds an optional collection of inputs such as radio buttons or checkboxes.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.field-group</code></td>
+                    <td>Optional class to create an horizontal display of inputs.</td>
                 </tr>
 
                 <tr>
@@ -103,10 +115,10 @@ title: Form
 
                 <label>
                     <span>Switch</span>
-                    <div class="switch">
+                    <span class="switch">
                         <input type="checkbox">
                         <span>Toggle Switch Value</span>
-                    </div>
+                    </span>
                 </label>
 
                 <label>
@@ -117,23 +129,43 @@ title: Form
                     </select>
                 </label>
 
-                <label>
-                    <span>Radio Group</span>
-                    <div>
-                        <input type="radio" name="group1"><span>One</span>
-                        <input type="radio" name="group1"><span>Two</span>
-                        <input type="radio" name="group1"><span>Three</span>
-                    </div>
-                </label>
+                <fieldset>
+                    <legend>Radio Group</legend>
 
-                <label>
-                    <span>Checkbox Group</span>
-                    <div>
-                        <input type="checkbox" name="group2"><span>One</span>
-                        <input type="checkbox" name="group2"><span>Two</span>
-                        <input type="checkbox" name="group2"><span>Three</span>
-                    </div>
-                </label>
+                    <label>
+                        <input type="radio" name="group1">
+                        <span>One</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="group1">
+                        <span>Two</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="group1">
+                        <span>Three</span>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Checkbox Group</legend>
+
+                    <label>
+                        <input type="checkbox" name="group2">
+                        <span>One</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="group2">
+                        <span>Two</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="group2">
+                        <span>Three</span>
+                    </label>
+                </fieldset>
 
                 <label class="has-field-addons">
                     <select name="select2_field">
@@ -161,73 +193,93 @@ title: Form
 
         <div class="column">
             <pre><code class="language-html">
-                <form class="form">
-                    <label class="field-error">
-                        <span>Input Field</span>
-                        <input type="text" placeholder="Text input" name="input_field">
-                    </label>
+                &lt;form class="form"&gt;
+                    &lt;label class="field-error"&gt;
+                        &lt;span&gt;Input Field&lt;/span&gt;
+                        &lt;input type="text" placeholder="Text input" name="input_field"&gt;
+                    &lt;/label&gt;
 
-                    <label>
-                        <span>Text Area</span>
-                        <textarea rows="3" placeholder="Text area input" name="textarea_field"></textarea>
-                    </label>
+                    &lt;label&gt;
+                        &lt;span&gt;Text Area&lt;/span&gt;
+                        &lt;textarea rows="3" placeholder="Text area input" name="textarea_field"&gt;&lt;/textarea&gt;
+                    &lt;/label&gt;
 
-                    <label>
-                        <span>Switch</span>
-                        <div class="switch">
-                            <input type="checkbox">
-                            <span>Toggle Switch Value</span>
-                        </div>
-                    </label>
+                    &lt;label&gt;
+                        &lt;span&gt;Switch&lt;/span&gt;
+                        &lt;span class="switch"&gt;
+                            &lt;input type="checkbox"&gt;
+                            &lt;span&gt;Toggle Switch Value&lt;/span&gt;
+                        &lt;/span&gt;
+                    &lt;/label&gt;
 
-                    <label>
-                        <span>Select</span>
-                        <select name="select1_field">
-                            <option value="sel1">Select One</option>
-                            <option value="sel2">Select Two</option>
-                        </select>
-                    </label>
+                    &lt;label&gt;
+                        &lt;span&gt;Select&lt;/span&gt;
+                        &lt;select name="select1_field"&gt;
+                            &lt;option value="sel1"&gt;Select One&lt;/option&gt;
+                            &lt;option value="sel2"&gt;Select Two&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/label&gt;
 
-                    <label>
-                        <span>Radio Group</span>
-                        <div>
-                            <input type="radio" name="group1"><span>One</span>
-                            <input type="radio" name="group1"><span>Two</span>
-                            <input type="radio" name="group1"><span>Three</span>
-                        </div>
-                    </label>
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Radio Group&lt;/legend&gt;
 
-                    <label>
-                        <span>Checkbox Group</span>
-                        <div>
-                            <input type="checkbox" name="group2"><span>One</span>
-                            <input type="checkbox" name="group2"><span>Two</span>
-                            <input type="checkbox" name="group2"><span>Three</span>
-                        </div>
-                    </label>
+                        &lt;label&gt;
+                            &lt;input type="radio" name="group1"&gt;
+                            &lt;span&gt;One&lt;/span&gt;
+                        &lt;/label&gt;
 
-                    <label class="has-field-addons">
-                        <select name="select2_field">
-                            <option value="dollar">$</option>
-                            <option value="pound">£</option>
-                            <option value="euro">€</option>
-                        </select>
+                        &lt;label&gt;
+                            &lt;input type="radio" name="group1"&gt;
+                            &lt;span&gt;Two&lt;/span&gt;
+                        &lt;/label&gt;
 
-                        <input type="text" name="currency">
+                        &lt;label&gt;
+                            &lt;input type="radio" name="group1"&gt;
+                            &lt;span&gt;Three&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/fieldset&gt;
 
-                        <button class="is-primary" aria-label="Search">
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Checkbox Group&lt;/legend&gt;
+
+                        &lt;label&gt;
+                            &lt;input type="checkbox" name="group2"&gt;
+                            &lt;span&gt;One&lt;/span&gt;
+                        &lt;/label&gt;
+
+                        &lt;label&gt;
+                            &lt;input type="checkbox" name="group2"&gt;
+                            &lt;span&gt;Two&lt;/span&gt;
+                        &lt;/label&gt;
+
+                        &lt;label&gt;
+                            &lt;input type="checkbox" name="group2"&gt;
+                            &lt;span&gt;Three&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/fieldset&gt;
+
+                    &lt;label class="has-field-addons"&gt;
+                        &lt;select name="select2_field"&gt;
+                            &lt;option value="dollar"&gt;$&lt;/option&gt;
+                            &lt;option value="pound"&gt;£&lt;/option&gt;
+                            &lt;option value="euro"&gt;€&lt;/option&gt;
+                        &lt;/select&gt;
+
+                        &lt;input type="text" name="currency"&gt;
+
+                        &lt;button class="is-primary has-hover" aria-label="Search"&gt;
                             Search
-                        </button>
-                    </label>
+                        &lt;/button&gt;
+                    &lt;/label&gt;
 
-                    <label class="has-field-addons">
-                        <button class="is-secondary" aria-label="icon only">
-                            <svg class="icon"><use href="#icon-file" /></svg>
-                        </button>
+                    &lt;label class="has-field-addons"&gt;
+                        &lt;button class="is-secondary" aria-label="icon only"&gt;
+                            &lt;svg class="icon"&gt;&lt;use href="#icon-file" /&gt;&lt;/svg&gt;
+                        &lt;/button&gt;
 
-                        <input type="file" name="file_field">
-                    </label>
-                </form>
+                        &lt;input type="file" name="file_field"&gt;
+                    &lt;/label&gt;
+                &lt;/form&gt;
             </code></pre>
         </div>
     </div>
@@ -243,7 +295,7 @@ title: Form
                     <input type="text" placeholder="Text input" name="input_field">
                 </label>
 
-                <fieldset>
+                <div class="field-group">
                     <label class="select">
                         <span>Select</span>
                         <select name="select1">
@@ -256,9 +308,9 @@ title: Form
                         <span>Colour</span>
                         <input type="color" name="color_field">
                     </label>
-                </fieldset>
+                </div>
 
-                <fieldset>
+                <div class="field-group">
                     <label>
                         <span>Date Field</span>
                         <input type="date" name="date_field">
@@ -268,7 +320,7 @@ title: Form
                         <span>Time Field</span>
                         <input type="time" value="09:00" name="time_field">
                     </label>
-                </fieldset>
+                </div>
 
                 <label>
                     <span>Input Field</span>
@@ -283,7 +335,7 @@ title: Form
                     </select>
                 </label>
 
-                <fieldset>
+                <div class="field-group">
                     <label>
                         <span>Email Field</span>
                         <input type="email" required name="email_field">
@@ -293,17 +345,26 @@ title: Form
                         <span>Phone Field</span>
                         <input type="tel" required name="phone_field">
                     </label>
+                </div>
+
+                <fieldset>
+                    <legend>Radio Group</legend>
+
+                    <label>
+                        <input type="radio" name="group1">
+                        <span>One</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="group1">
+                        <span>Two</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="group1">
+                        <span>Three</span>
+                    </label>
                 </fieldset>
-
-                <label>
-                    <span>Radio Group</span>
-
-                    <div>
-                        <input type="radio" name="group1"><span>One</span>
-                        <input type="radio" name="group1"><span>Two</span>
-                        <input type="radio" name="group1"><span>Three</span>
-                    </div>
-                </label>
 
                 <div class="form-footer">
                     <button class="is-primary has-hover" aria-label="Submit">
@@ -336,80 +397,89 @@ title: Form
 
         <div class="column">
             <pre><code class="language-html">
-                <form id="test-form"  class="form has-form-shadow">
-                    <label>
-                        <span>Input Field</span>
-                        <input type="text" placeholder="Text input" name="input_field">
-                    </label>
+                &lt;form id="test-form"  class="form has-form-shadow"&gt;
+                    &lt;label&gt;
+                        &lt;span&gt;Input Field&lt;/span&gt;
+                        &lt;input type="text" placeholder="Text input" name="input_field"&gt;
+                    &lt;/label&gt;
 
-                    <fieldset>
-                        <label class="select">
-                            <span>Select</span>
-                            <select name="select1">
-                                <option value="one">Select One</option>
-                                <option value="two">Select Two</option>
-                            </select>
-                        </label>
+                    &lt;div class="field-group"&gt;
+                        &lt;label class="select"&gt;
+                            &lt;span&gt;Select&lt;/span&gt;
+                            &lt;select name="select1"&gt;
+                                &lt;option value="one"&gt;Select One&lt;/option&gt;
+                                &lt;option value="two"&gt;Select Two&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/label&gt;
 
-                        <label class="select">
-                            <span>Colour</span>
-                            <input type="color" name="color_field">
-                        </label>
-                    </fieldset>
+                        &lt;label class="select"&gt;
+                            &lt;span&gt;Colour&lt;/span&gt;
+                            &lt;input type="color" name="color_field"&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
 
-                    <fieldset>
-                        <label>
-                            <span>Date Field</span>
-                            <input type="date" name="date_field">
-                        </label>
+                    &lt;div class="field-group"&gt;
+                        &lt;label&gt;
+                            &lt;span&gt;Date Field&lt;/span&gt;
+                            &lt;input type="date" name="date_field"&gt;
+                        &lt;/label&gt;
 
-                        <label>
-                            <span>Time Field</span>
-                            <input type="time" value="09:00" name="time_field">
-                        </label>
-                    </fieldset>
+                        &lt;label&gt;
+                            &lt;span&gt;Time Field&lt;/span&gt;
+                            &lt;input type="time" value="09:00" name="time_field"&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
 
-                    <label>
-                        <span>Input Field</span>
-                        <input type="text" placeholder="Text input" name="text2_field">
-                    </label>
+                    &lt;label&gt;
+                        &lt;span&gt;Input Field&lt;/span&gt;
+                        &lt;input type="text" placeholder="Text input" name="text2_field"&gt;
+                    &lt;/label&gt;
 
-                    <label>
-                        <span>Select</span>
-                        <select name="select2">
-                            <option value="one">Select One</option>
-                            <option value="two">Select Two</option>
-                        </select>
-                    </label>
+                    &lt;label&gt;
+                        &lt;span&gt;Select&lt;/span&gt;
+                        &lt;select name="select2"&gt;
+                            &lt;option value="one"&gt;Select One&lt;/option&gt;
+                            &lt;option value="two"&gt;Select Two&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/label&gt;
 
-                    <fieldset>
-                        <label>
-                            <span>Email Field</span>
-                            <input type="email" required name="email_field">
-                        </label>
+                    &lt;div class="field-group"&gt;
+                        &lt;label&gt;
+                            &lt;span&gt;Email Field&lt;/span&gt;
+                            &lt;input type="email" required name="email_field"&gt;
+                        &lt;/label&gt;
 
-                        <label>
-                            <span>Phone Field</span>
-                            <input type="tel" required name="phone_field">
-                        </label>
-                    </fieldset>
+                        &lt;label&gt;
+                            &lt;span&gt;Phone Field&lt;/span&gt;
+                            &lt;input type="tel" required name="phone_field"&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
 
-                    <label>
-                        <span>Radio Group</span>
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Radio Group&lt;/legend&gt;
 
-                        <div>
-                            <input type="radio" name="group1"><span>One</span>
-                            <input type="radio" name="group1"><span>Two</span>
-                            <input type="radio" name="group1"><span>Three</span>
-                        </div>
-                    </label>
+                        &lt;label&gt;
+                            &lt;input type="radio" name="group1"&gt;
+                            &lt;span&gt;One&lt;/span&gt;
+                        &lt;/label&gt;
 
-                    <div class="form-footer">
-                        <button class="is-primary has-hover" aria-label="Submit">
-                            <input type="submit" value="Submit!" formaction="#test-form" formmethod="get">
-                        </button>
-                    </div>
-                </form>
+                        &lt;label&gt;
+                            &lt;input type="radio" name="group1"&gt;
+                            &lt;span&gt;Two&lt;/span&gt;
+                        &lt;/label&gt;
+
+                        &lt;label&gt;
+                            &lt;input type="radio" name="group1"&gt;
+                            &lt;span&gt;Three&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/fieldset&gt;
+
+                    &lt;div class="form-footer"&gt;
+                        &lt;button class="is-primary has-hover" aria-label="Submit"&gt;
+                            &lt;input type="submit" value="Submit!" formaction="#test-form" formmethod="get"&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
             </code></pre>
         </div>
     </div>
