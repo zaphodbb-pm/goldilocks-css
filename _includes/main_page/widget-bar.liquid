@@ -7,13 +7,15 @@
             <legend>Choose Light or Dark Theme</legend>
 
             <label>
-                <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')" aria-label="Light / day mode">
+                <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')">
                 <svg class="icon"><use href="#icon-day"></use></svg>
+                <span class="sr-only">Light / day mode</span>
             </label>
 
             <label>
-                <input type="radio" name="heading-sizes" onchange="setTheme('Dark')" aria-label="Dark / night mode">
+                <input type="radio" name="heading-sizes" onchange="setTheme('Dark')">
                 <svg class="icon"><use href="#icon-night"></use></svg>
+                <span class="sr-only">Dark / night mode</span>
             </label>
         </fieldset>
     </form>
