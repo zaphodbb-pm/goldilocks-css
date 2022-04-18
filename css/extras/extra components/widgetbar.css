@@ -29,6 +29,12 @@
     margin: 0;
 }
 
+.widgetbar legend,
+.widgetbar-bordered legend {
+    overflow: hidden;
+    height: 0;
+    width: 0;
+}
 
 /* common widget parents */
 .widgetbar-radios,
