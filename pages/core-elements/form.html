@@ -70,6 +70,12 @@ title: Form
                 </tr>
 
                 <tr>
+                    <td><code>.is-fullwidth</code></td>
+                    <td>Optional class for a <code>label</code> tag in a <code>.has-field-addons</code>
+                        Ensures that this field will fill the available space for this label in a field group</td>
+                </tr>
+
+                <tr>
                     <td><code>.form-footer</code></td>
                     <td>container for submit and other buttons</td>
                 </tr>
@@ -385,9 +391,9 @@ title: Form
                 </fieldset>
 
                 <div class="form-footer">
-                    <button class="is-primary has-hover" aria-label="Submit">
+                    <div class="button is-primary has-hover" aria-label="Submit">
                         <input type="submit" value="Submit!" formaction="#test-form" formmethod="get">
-                    </button>
+                    </div>
                 </div>
             </form>
 
@@ -493,9 +499,9 @@ title: Form
                     &lt;/fieldset&gt;
 
                     &lt;div class="form-footer"&gt;
-                        &lt;button class="is-primary has-hover" aria-label="Submit"&gt;
+                        &lt;div class="button is-primary has-hover" aria-label="Submit"&gt;
                             &lt;input type="submit" value="Submit!" formaction="#test-form" formmethod="get"&gt;
-                        &lt;/button&gt;
+                        &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/form&gt;
             </code></pre>
