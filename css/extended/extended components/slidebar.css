@@ -49,7 +49,6 @@
     background-color: currentColor;
     position: relative;
     display: block;
-    font-size: 0;
 }
 
 .sidebarIconToggle > span:nth-child(2) {

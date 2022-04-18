@@ -544,6 +544,800 @@ pre
     padding: 0 !important;
 }
 
+/* Background Colour Helpers */
+.has-bg-primary
+{
+    background-color: var(--primary);
+}
+
+.has-bg-primary-light
+{
+    background-color: var(--primary-light);
+}
+
+.has-bg-secondary
+{
+    background-color: var(--secondary);
+}
+
+.has-bg-secondary-light
+{
+    background-color: var(--secondary-light);
+}
+
+.has-bg-tertiary
+{
+    background-color: var(--tertiary);
+}
+
+.has-bg-tertiary-light
+{
+    background-color: var(--tertiary-light);
+}
+
+.has-bg-link
+{
+    background-color: var(--link);
+}
+
+.has-bg-link-light
+{
+    background-color: var(--link-light);
+}
+
+.has-bg-success
+{
+    background-color: var(--success);
+}
+
+.has-bg-success-light
+{
+    background-color: var(--success-light);
+}
+
+.has-bg-warning
+{
+    background-color: var(--warning);
+}
+
+.has-bg-warning-light
+{
+    background-color: var(--warning-light);
+}
+
+.has-bg-danger
+{
+    background-color: var(--danger);
+}
+
+.has-bg-danger-light
+{
+    background-color: var(--danger-light);
+}
+
+.has-bg-dark
+{
+    background-color: var(--grey-dark);
+}
+
+.has-bg-grey
+{
+    background-color: var(--grey-lighter);
+}
+
+.has-bg-white
+{
+    background-color: var(--white);
+}
+
+/* Element / Block Colours */
+.is-primary,
+.is-primary-light.has-hover:hover,
+.is-primary-outlined.has-hover:hover,
+.is-primary-dark.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--primary-dark);
+    background-color: var(--primary);
+}
+
+.is-primary-light
+{
+    opacity: 1;
+    color: var(--primary-dark);
+    border: 0 solid var(--primary);
+    background-color: var(--primary-light);
+}
+
+.is-primary-dark,
+.is-primary.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--primary-dark);
+    background-color: var(--primary-dark);
+}
+
+.is-primary-outlined
+{
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    background-color: var(--bg-main);
+}
+
+.is-primary-inverted
+{
+            text-decoration: underline var(--primary);
+
+    color: var(--primary);
+    border: none;
+    background-color: var(--bg-main);
+
+    -webkit-text-decoration: underline var(--primary);
+    text-underline-offset: .25em;
+}
+
+.is-primary-inverted.has-hover:hover
+{
+            text-decoration: underline var(--primary-dark);
+
+    opacity: 1;
+    color: var(--primary-dark);
+    border: none;
+    background-color: var(--bg-element);
+
+    -webkit-text-decoration: underline var(--primary-dark);
+}
+
+
+
+
+.is-secondary,
+.is-secondary-light.has-hover:hover,
+.is-secondary-outlined.has-hover:hover,
+.is-secondary-dark.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--secondary-dark);
+    background-color: var(--secondary);
+}
+
+.is-secondary-light
+{
+    opacity: 1;
+    color: var(--secondary-dark);
+    border: 0 solid var(--secondary);
+    background-color: var(--secondary-light);
+}
+
+.is-secondary-dark,
+.is-secondary.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--secondary-dark);
+    background-color: var(--secondary-dark);
+}
+
+.is-secondary-outlined
+{
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    background-color: var(--bg-main);
+}
+
+.is-secondary-inverted
+{
+            text-decoration: underline var(--secondary);
+
+    color: var(--secondary);
+    border: none;
+    background-color: var(--bg-main);
+
+    -webkit-text-decoration: underline var(--secondary);
+    text-underline-offset: .25em;
+}
+
+.is-secondary-inverted.has-hover:hover
+{
+            text-decoration: underline var(--secondary-dark);
+
+    opacity: 1;
+    color: var(--secondary-dark);
+    border: none;
+    background-color: var(--bg-element);
+
+    -webkit-text-decoration: underline var(--secondary-dark);
+}
+
+
+.is-tertiary,
+.is-tertiary-light.has-hover:hover,
+.is-tertiary-outlined.has-hover:hover,
+.is-tertiary-dark.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--tertiary-dark);
+    background-color: var(--tertiary);
+}
+
+.is-tertiary-light
+{
+    opacity: 1;
+    color: var(--tertiary-dark);
+    border: 0 solid var(--tertiary);
+    background-color: var(--tertiary-light);
+}
+
+.is-tertiary-dark,
+.is-tertiary.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--tertiary-dark);
+    background-color: var(--tertiary-dark);
+}
+
+.is-tertiary-outlined
+{
+    color: var(--tertiary);
+    border: 1px solid var(--tertiary);
+    background-color: var(--bg-main);
+}
+
+.is-tertiary-inverted
+{
+            text-decoration: underline var(--tertiary);
+
+    color: var(--tertiary);
+    border: none;
+    background-color: var(--bg-main);
+
+    -webkit-text-decoration: underline var(--tertiary);
+    text-underline-offset: .25em;
+}
+
+.is-tertiary-inverted.has-hover:hover
+{
+            text-decoration: underline var(--tertiary-dark);
+
+    opacity: 1;
+    color: var(--tertiary-dark);
+    border: none;
+    background-color: var(--bg-element);
+
+    -webkit-text-decoration: underline var(--tertiary-dark);
+}
+
+
+.is-link,
+.is-link-light.has-hover:hover,
+.is-link-outlined.has-hover:hover,
+.is-link-dark.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--link-dark);
+    background-color: var(--link);
+}
+
+.is-link-light
+{
+    opacity: 1;
+    color: var(--link-dark);
+    border: 0 solid var(--link);
+    background-color: var(--link-light);
+}
+
+.is-link-dark,
+.is-link.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--link-dark);
+    background-color: var(--link-dark);
+}
+
+.is-link-outlined
+{
+    color: var(--link);
+    border: 1px solid var(--link);
+    background-color: var(--bg-main);
+}
+
+.is-link-inverted
+{
+            text-decoration: underline var(--link);
+
+    color: var(--link);
+    border: none;
+    background-color: var(--bg-main);
+
+    -webkit-text-decoration: underline var(--link);
+    text-underline-offset: .25em;
+}
+
+.is-link-inverted.has-hover:hover
+{
+            text-decoration: underline var(--link-dark);
+
+    opacity: 1;
+    color: var(--link-dark);
+    border: none;
+    background-color: var(--bg-element);
+
+    -webkit-text-decoration: underline var(--link-dark);
+}
+
+
+.is-success,
+.is-success-light.has-hover:hover,
+.is-success-outlined.has-hover:hover,
+.is-success-dark.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--success-dark);
+    background-color: var(--success);
+}
+
+.is-success-light
+{
+    opacity: 1;
+    color: var(--success-dark);
+    border: 0 solid var(--success);
+    background-color: var(--success-light);
+}
+
+.is-success-dark,
+.is-success.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--success-dark);
+    background-color: var(--success-dark);
+}
+
+.is-success-outlined
+{
+    color: var(--success);
+    border: 1px solid var(--success);
+    background-color: var(--bg-main);
+}
+
+.is-success-inverted
+{
+            text-decoration: underline var(--success);
+
+    color: var(--success);
+    border: none;
+    background-color: var(--bg-main);
+
+    -webkit-text-decoration: underline var(--success);
+    text-underline-offset: .25em;
+}
+
+.is-success-inverted.has-hover:hover
+{
+            text-decoration: underline var(--success-dark);
+
+    opacity: 1;
+    color: var(--success-dark);
+    border: none;
+    background-color: var(--bg-element);
+
+    -webkit-text-decoration: underline var(--success-dark);
+}
+
+
+
+.is-warning,
+.is-warning-light.has-hover:hover,
+.is-warning-outlined.has-hover:hover,
+.is-warning-dark.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn);
+    border: 0 solid var(--warning-dark);
+    background-color: var(--warning);
+}
+
+.is-warning-light
+{
+    opacity: 1;
+    color: var(--warning-dark);
+    border: 0 solid var(--warning);
+    background-color: var(--warning-light);
+}
+
+.is-warning-dark,
+.is-warning.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--warning-dark);
+    background-color: var(--warning-dark);
+}
+
+.is-warning-outlined
+{
+    color: var(--warning-dark);
+    border: 1px solid var(--warning-dark);
+    background-color: var(--bg-main);
+}
+
+.is-warning-inverted
+{
+            text-decoration: underline var(--warning);
+
+    color: var(--warning);
+    border: none;
+    background-color: var(--bg-main);
+
+    -webkit-text-decoration: underline var(--warning);
+    text-underline-offset: .25em;
+}
+
+.is-warning-inverted.has-hover:hover
+{
+            text-decoration: underline var(--warning-dark);
+
+    opacity: 1;
+    color: var(--warning-dark);
+    border: none;
+    background-color: var(--bg-element);
+
+    -webkit-text-decoration: underline var(--warning-dark);
+}
+
+
+
+
+
+.is-danger,
+.is-danger-light.has-hover:hover,
+.is-danger-outlined.has-hover:hover,
+.is-danger-dark.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--danger-dark);
+    background-color: var(--danger);
+}
+
+.is-danger-light
+{
+    opacity: 1;
+    color: var(--danger-dark);
+    border: 0 solid var(--danger);
+    background-color: var(--danger-light);
+}
+
+.is-danger-dark,
+.is-danger.has-hover:hover
+{
+    opacity: 1;
+    color: var(--text-btn-invert);
+    border: 0 solid var(--danger-dark);
+    background-color: var(--danger-dark);
+}
+
+.is-danger-outlined
+{
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    background-color: var(--bg-main);
+}
+
+.is-danger-inverted
+{
+            text-decoration: underline var(--danger);
+
+    color: var(--danger);
+    border: none;
+    background-color: var(--bg-main);
+
+    -webkit-text-decoration: underline var(--danger);
+    text-underline-offset: .25em;
+}
+
+.is-danger-inverted.has-hover:hover
+{
+            text-decoration: underline var(--danger-dark);
+
+    opacity: 1;
+    color: var(--danger-dark);
+    border: none;
+    background-color: var(--bg-element);
+
+    -webkit-text-decoration: underline var(--danger-dark);
+}
+
+
+
+
+.is-white
+{
+    color: var(--text);
+    border: 1px solid var(--bg-main);
+    background-color: var(--bg-main);
+}
+
+.is-dark
+{
+    color: var(--text-btn-invert);
+    border: 0 solid var(--grey-dark);
+    background-color: var(--grey-dark);
+}
+
+.is-grey
+{
+    color: var(--black-ter);
+    border: 0 solid var(--grey-light);
+    background-color: var(--grey-light);
+}
+
+/* fixed heights for elements / components */
+.has-height-5rem
+{
+    height: 5rem;
+}
+
+.has-height-10rem
+{
+    height: 10rem;
+}
+
+.has-height-15rem
+{
+    height: 15rem;
+}
+
+.has-height-20rem
+{
+    height: 20rem;
+}
+
+.has-height-25rem
+{
+    height: 25rem;
+}
+
+.has-height-30rem
+{
+    height: 30rem;
+}
+
+.has-height-40rem
+{
+    height: 40rem;
+}
+
+/* defines general purpose containers to create, for example, a hero section */
+
+[class*='is-container']
+{
+    width: 100%;
+}
+
+.is-container-5rem
+{
+    height: 5rem;
+}
+
+.is-container-10rem
+{
+    height: 10rem;
+}
+
+.is-container-15rem
+{
+    height: 15rem;
+}
+
+.is-container-20rem
+{
+    height: 20rem;
+}
+
+.is-container-25rem
+{
+    height: 25rem;
+}
+
+.is-container-30rem
+{
+    height: 30rem;
+}
+
+.is-container-40rem
+{
+    height: 40rem;
+}
+
+/* positions.css */
+
+.is-fixed-top
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+}
+
+.is-fixed-bottom
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+}
+
+.is-fixed-left
+{
+    position: fixed;
+    top: 50%;
+    left: 0;
+
+    height: 100%;
+}
+
+.is-fixed-right
+{
+    position: fixed;
+    top: 50%;
+    right: 0;
+
+    height: 100%;
+}
+
+
+
+/* controls to hide content but allow screen readers to still see them */
+/* from https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
+
+.sr-only
+{
+    position: absolute !important;
+
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+
+    white-space: nowrap !important;            /* 3 */
+
+    border: 0 !important;
+
+    -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;  /* 2 */
+}
+
+/*
+	Use in conjunction with .sr-only to only display content when it's focused.
+	@note Useful for skip links
+	@see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+	@note Based on a HTML5 Boilerplate technique, included in Bootstrap
+	@note Fixed a bug with position: static on iOS 10.0.2 + VoiceOver
+		@author Sylvain Pigeard
+		@see https://github.com/twbs/bootstrap/issues/20732
+*/
+.sr-only-focusable:focus,
+.sr-only-focusable:active
+{
+    overflow: visible !important;
+    clip: auto !important;
+
+    width: auto !important;
+    height: auto !important;
+    margin: auto !important;
+
+    white-space: normal !important;
+
+    -webkit-clip-path: none !important;
+            clip-path: none !important;
+}
+
+
+
+.has-width-1rem
+{
+    width: 1rem !important;
+}
+
+.has-width-2rem
+{
+    width: 2rem !important;
+}
+
+.has-width-3rem
+{
+    width: 3rem !important;
+}
+
+.has-width-4rem
+{
+    width: 4rem !important;
+}
+
+.has-width-5rem
+{
+    width: 5rem !important;
+}
+
+.has-width-6rem
+{
+    width: 6rem !important;
+}
+
+.has-width-8rem
+{
+    width: 8rem !important;
+}
+
+.has-width-10rem
+{
+    width: 10rem !important;
+}
+
+.has-width-15rem
+{
+    width: 15rem !important;
+}
+
+.has-width-20rem
+{
+    width: 20rem !important;
+}
+
+.has-width-25rem
+{
+    width: 25rem !important;
+}
+
+.has-width-30rem
+{
+    width: 30rem !important;
+}
+
+.has-width-40rem
+{
+    width: 40rem !important;
+}
+
+.width-75
+{
+    width: 75% !important;
+}
+
+.width-50
+{
+    width: 50% !important;
+}
+
+.width-33
+{
+    width: 33% !important;
+}
+
+.width-25
+{
+    width: 25% !important;
+}
+
+.width-full
+{
+    width: 100% !important;
+}
+
 /* Buttons */
 
 button,
@@ -1878,800 +2672,6 @@ h4 + .sub-title
 {
     color: var(--grey);
     background-color: var(--bg-main);
-}
-
-/* Background Colour Helpers */
-.has-bg-primary
-{
-    background-color: var(--primary);
-}
-
-.has-bg-primary-light
-{
-    background-color: var(--primary-light);
-}
-
-.has-bg-secondary
-{
-    background-color: var(--secondary);
-}
-
-.has-bg-secondary-light
-{
-    background-color: var(--secondary-light);
-}
-
-.has-bg-tertiary
-{
-    background-color: var(--tertiary);
-}
-
-.has-bg-tertiary-light
-{
-    background-color: var(--tertiary-light);
-}
-
-.has-bg-link
-{
-    background-color: var(--link);
-}
-
-.has-bg-link-light
-{
-    background-color: var(--link-light);
-}
-
-.has-bg-success
-{
-    background-color: var(--success);
-}
-
-.has-bg-success-light
-{
-    background-color: var(--success-light);
-}
-
-.has-bg-warning
-{
-    background-color: var(--warning);
-}
-
-.has-bg-warning-light
-{
-    background-color: var(--warning-light);
-}
-
-.has-bg-danger
-{
-    background-color: var(--danger);
-}
-
-.has-bg-danger-light
-{
-    background-color: var(--danger-light);
-}
-
-.has-bg-dark
-{
-    background-color: var(--grey-dark);
-}
-
-.has-bg-grey
-{
-    background-color: var(--grey-lighter);
-}
-
-.has-bg-white
-{
-    background-color: var(--white);
-}
-
-/* Element / Block Colours */
-.is-primary,
-.is-primary-light.has-hover:hover,
-.is-primary-outlined.has-hover:hover,
-.is-primary-dark.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--primary-dark);
-    background-color: var(--primary);
-}
-
-.is-primary-light
-{
-    opacity: 1;
-    color: var(--primary-dark);
-    border: 0 solid var(--primary);
-    background-color: var(--primary-light);
-}
-
-.is-primary-dark,
-.is-primary.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--primary-dark);
-    background-color: var(--primary-dark);
-}
-
-.is-primary-outlined
-{
-    color: var(--primary);
-    border: 1px solid var(--primary);
-    background-color: var(--bg-main);
-}
-
-.is-primary-inverted
-{
-            text-decoration: underline var(--primary);
-
-    color: var(--primary);
-    border: none;
-    background-color: var(--bg-main);
-
-    -webkit-text-decoration: underline var(--primary);
-    text-underline-offset: .25em;
-}
-
-.is-primary-inverted.has-hover:hover
-{
-            text-decoration: underline var(--primary-dark);
-
-    opacity: 1;
-    color: var(--primary-dark);
-    border: none;
-    background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--primary-dark);
-}
-
-
-
-
-.is-secondary,
-.is-secondary-light.has-hover:hover,
-.is-secondary-outlined.has-hover:hover,
-.is-secondary-dark.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--secondary-dark);
-    background-color: var(--secondary);
-}
-
-.is-secondary-light
-{
-    opacity: 1;
-    color: var(--secondary-dark);
-    border: 0 solid var(--secondary);
-    background-color: var(--secondary-light);
-}
-
-.is-secondary-dark,
-.is-secondary.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--secondary-dark);
-    background-color: var(--secondary-dark);
-}
-
-.is-secondary-outlined
-{
-    color: var(--secondary);
-    border: 1px solid var(--secondary);
-    background-color: var(--bg-main);
-}
-
-.is-secondary-inverted
-{
-            text-decoration: underline var(--secondary);
-
-    color: var(--secondary);
-    border: none;
-    background-color: var(--bg-main);
-
-    -webkit-text-decoration: underline var(--secondary);
-    text-underline-offset: .25em;
-}
-
-.is-secondary-inverted.has-hover:hover
-{
-            text-decoration: underline var(--secondary-dark);
-
-    opacity: 1;
-    color: var(--secondary-dark);
-    border: none;
-    background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--secondary-dark);
-}
-
-
-.is-tertiary,
-.is-tertiary-light.has-hover:hover,
-.is-tertiary-outlined.has-hover:hover,
-.is-tertiary-dark.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--tertiary-dark);
-    background-color: var(--tertiary);
-}
-
-.is-tertiary-light
-{
-    opacity: 1;
-    color: var(--tertiary-dark);
-    border: 0 solid var(--tertiary);
-    background-color: var(--tertiary-light);
-}
-
-.is-tertiary-dark,
-.is-tertiary.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--tertiary-dark);
-    background-color: var(--tertiary-dark);
-}
-
-.is-tertiary-outlined
-{
-    color: var(--tertiary);
-    border: 1px solid var(--tertiary);
-    background-color: var(--bg-main);
-}
-
-.is-tertiary-inverted
-{
-            text-decoration: underline var(--tertiary);
-
-    color: var(--tertiary);
-    border: none;
-    background-color: var(--bg-main);
-
-    -webkit-text-decoration: underline var(--tertiary);
-    text-underline-offset: .25em;
-}
-
-.is-tertiary-inverted.has-hover:hover
-{
-            text-decoration: underline var(--tertiary-dark);
-
-    opacity: 1;
-    color: var(--tertiary-dark);
-    border: none;
-    background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--tertiary-dark);
-}
-
-
-.is-link,
-.is-link-light.has-hover:hover,
-.is-link-outlined.has-hover:hover,
-.is-link-dark.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--link-dark);
-    background-color: var(--link);
-}
-
-.is-link-light
-{
-    opacity: 1;
-    color: var(--link-dark);
-    border: 0 solid var(--link);
-    background-color: var(--link-light);
-}
-
-.is-link-dark,
-.is-link.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--link-dark);
-    background-color: var(--link-dark);
-}
-
-.is-link-outlined
-{
-    color: var(--link);
-    border: 1px solid var(--link);
-    background-color: var(--bg-main);
-}
-
-.is-link-inverted
-{
-            text-decoration: underline var(--link);
-
-    color: var(--link);
-    border: none;
-    background-color: var(--bg-main);
-
-    -webkit-text-decoration: underline var(--link);
-    text-underline-offset: .25em;
-}
-
-.is-link-inverted.has-hover:hover
-{
-            text-decoration: underline var(--link-dark);
-
-    opacity: 1;
-    color: var(--link-dark);
-    border: none;
-    background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--link-dark);
-}
-
-
-.is-success,
-.is-success-light.has-hover:hover,
-.is-success-outlined.has-hover:hover,
-.is-success-dark.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--success-dark);
-    background-color: var(--success);
-}
-
-.is-success-light
-{
-    opacity: 1;
-    color: var(--success-dark);
-    border: 0 solid var(--success);
-    background-color: var(--success-light);
-}
-
-.is-success-dark,
-.is-success.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--success-dark);
-    background-color: var(--success-dark);
-}
-
-.is-success-outlined
-{
-    color: var(--success);
-    border: 1px solid var(--success);
-    background-color: var(--bg-main);
-}
-
-.is-success-inverted
-{
-            text-decoration: underline var(--success);
-
-    color: var(--success);
-    border: none;
-    background-color: var(--bg-main);
-
-    -webkit-text-decoration: underline var(--success);
-    text-underline-offset: .25em;
-}
-
-.is-success-inverted.has-hover:hover
-{
-            text-decoration: underline var(--success-dark);
-
-    opacity: 1;
-    color: var(--success-dark);
-    border: none;
-    background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--success-dark);
-}
-
-
-
-.is-warning,
-.is-warning-light.has-hover:hover,
-.is-warning-outlined.has-hover:hover,
-.is-warning-dark.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn);
-    border: 0 solid var(--warning-dark);
-    background-color: var(--warning);
-}
-
-.is-warning-light
-{
-    opacity: 1;
-    color: var(--warning-dark);
-    border: 0 solid var(--warning);
-    background-color: var(--warning-light);
-}
-
-.is-warning-dark,
-.is-warning.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--warning-dark);
-    background-color: var(--warning-dark);
-}
-
-.is-warning-outlined
-{
-    color: var(--warning-dark);
-    border: 1px solid var(--warning-dark);
-    background-color: var(--bg-main);
-}
-
-.is-warning-inverted
-{
-            text-decoration: underline var(--warning);
-
-    color: var(--warning);
-    border: none;
-    background-color: var(--bg-main);
-
-    -webkit-text-decoration: underline var(--warning);
-    text-underline-offset: .25em;
-}
-
-.is-warning-inverted.has-hover:hover
-{
-            text-decoration: underline var(--warning-dark);
-
-    opacity: 1;
-    color: var(--warning-dark);
-    border: none;
-    background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--warning-dark);
-}
-
-
-
-
-
-.is-danger,
-.is-danger-light.has-hover:hover,
-.is-danger-outlined.has-hover:hover,
-.is-danger-dark.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--danger-dark);
-    background-color: var(--danger);
-}
-
-.is-danger-light
-{
-    opacity: 1;
-    color: var(--danger-dark);
-    border: 0 solid var(--danger);
-    background-color: var(--danger-light);
-}
-
-.is-danger-dark,
-.is-danger.has-hover:hover
-{
-    opacity: 1;
-    color: var(--text-btn-invert);
-    border: 0 solid var(--danger-dark);
-    background-color: var(--danger-dark);
-}
-
-.is-danger-outlined
-{
-    color: var(--danger);
-    border: 1px solid var(--danger);
-    background-color: var(--bg-main);
-}
-
-.is-danger-inverted
-{
-            text-decoration: underline var(--danger);
-
-    color: var(--danger);
-    border: none;
-    background-color: var(--bg-main);
-
-    -webkit-text-decoration: underline var(--danger);
-    text-underline-offset: .25em;
-}
-
-.is-danger-inverted.has-hover:hover
-{
-            text-decoration: underline var(--danger-dark);
-
-    opacity: 1;
-    color: var(--danger-dark);
-    border: none;
-    background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--danger-dark);
-}
-
-
-
-
-.is-white
-{
-    color: var(--text);
-    border: 1px solid var(--bg-main);
-    background-color: var(--bg-main);
-}
-
-.is-dark
-{
-    color: var(--text-btn-invert);
-    border: 0 solid var(--grey-dark);
-    background-color: var(--grey-dark);
-}
-
-.is-grey
-{
-    color: var(--black-ter);
-    border: 0 solid var(--grey-light);
-    background-color: var(--grey-light);
-}
-
-/* fixed heights for elements / components */
-.has-height-5rem
-{
-    height: 5rem;
-}
-
-.has-height-10rem
-{
-    height: 10rem;
-}
-
-.has-height-15rem
-{
-    height: 15rem;
-}
-
-.has-height-20rem
-{
-    height: 20rem;
-}
-
-.has-height-25rem
-{
-    height: 25rem;
-}
-
-.has-height-30rem
-{
-    height: 30rem;
-}
-
-.has-height-40rem
-{
-    height: 40rem;
-}
-
-/* defines general purpose containers to create, for example, a hero section */
-
-[class*='is-container']
-{
-    width: 100%;
-}
-
-.is-container-5rem
-{
-    height: 5rem;
-}
-
-.is-container-10rem
-{
-    height: 10rem;
-}
-
-.is-container-15rem
-{
-    height: 15rem;
-}
-
-.is-container-20rem
-{
-    height: 20rem;
-}
-
-.is-container-25rem
-{
-    height: 25rem;
-}
-
-.is-container-30rem
-{
-    height: 30rem;
-}
-
-.is-container-40rem
-{
-    height: 40rem;
-}
-
-/* positions.css */
-
-.is-fixed-top
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-}
-
-.is-fixed-bottom
-{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-}
-
-.is-fixed-left
-{
-    position: fixed;
-    top: 50%;
-    left: 0;
-
-    height: 100%;
-}
-
-.is-fixed-right
-{
-    position: fixed;
-    top: 50%;
-    right: 0;
-
-    height: 100%;
-}
-
-
-
-/* controls to hide content but allow screen readers to still see them */
-/* from https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
-
-.sr-only
-{
-    position: absolute !important;
-
-    overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
-
-    width: 1px !important;
-    height: 1px !important;
-    margin: -1px !important;
-    padding: 0 !important;
-
-    white-space: nowrap !important;            /* 3 */
-
-    border: 0 !important;
-
-    -webkit-clip-path: inset(50%) !important;
-            clip-path: inset(50%) !important;  /* 2 */
-}
-
-/*
-	Use in conjunction with .sr-only to only display content when it's focused.
-	@note Useful for skip links
-	@see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
-	@note Based on a HTML5 Boilerplate technique, included in Bootstrap
-	@note Fixed a bug with position: static on iOS 10.0.2 + VoiceOver
-		@author Sylvain Pigeard
-		@see https://github.com/twbs/bootstrap/issues/20732
-*/
-.sr-only-focusable:focus,
-.sr-only-focusable:active
-{
-    overflow: visible !important;
-    clip: auto !important;
-
-    width: auto !important;
-    height: auto !important;
-    margin: auto !important;
-
-    white-space: normal !important;
-
-    -webkit-clip-path: none !important;
-            clip-path: none !important;
-}
-
-
-
-.has-width-1rem
-{
-    width: 1rem !important;
-}
-
-.has-width-2rem
-{
-    width: 2rem !important;
-}
-
-.has-width-3rem
-{
-    width: 3rem !important;
-}
-
-.has-width-4rem
-{
-    width: 4rem !important;
-}
-
-.has-width-5rem
-{
-    width: 5rem !important;
-}
-
-.has-width-6rem
-{
-    width: 6rem !important;
-}
-
-.has-width-8rem
-{
-    width: 8rem !important;
-}
-
-.has-width-10rem
-{
-    width: 10rem !important;
-}
-
-.has-width-15rem
-{
-    width: 15rem !important;
-}
-
-.has-width-20rem
-{
-    width: 20rem !important;
-}
-
-.has-width-25rem
-{
-    width: 25rem !important;
-}
-
-.has-width-30rem
-{
-    width: 30rem !important;
-}
-
-.has-width-40rem
-{
-    width: 40rem !important;
-}
-
-.width-75
-{
-    width: 75% !important;
-}
-
-.width-50
-{
-    width: 50% !important;
-}
-
-.width-33
-{
-    width: 33% !important;
-}
-
-.width-25
-{
-    width: 25% !important;
-}
-
-.width-full
-{
-    width: 100% !important;
 }
 
 .box,
@@ -4731,8 +4731,6 @@ details.accordion.is-expander-danger summary
 
 .sidebarIconToggle > span
 {
-    font-size: 0;
-
     position: relative;
 
     display: block;
