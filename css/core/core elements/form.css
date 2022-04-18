@@ -246,6 +246,10 @@
     margin-bottom: var(--margin);
 }
 
+.form .form-footer .button {
+    padding: 0 1em;
+}
+
 .form input[type="submit"] {
     background-color: transparent;
     border: none;
