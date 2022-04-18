@@ -167,27 +167,36 @@ title: Form
                     </label>
                 </fieldset>
 
-                <label class="has-field-addons">
-                    <select name="select2_field">
-                        <option value="dollar">$</option>
-                        <option value="pound">£</option>
-                        <option value="euro">€</option>
-                    </select>
+                <div class="has-field-addons">
+                    <label>
+                        <span class="sr-only">Select Currency</span>
+                        <select name="select2_field">
+                            <option value="dollar">$</option>
+                            <option value="pound">£</option>
+                            <option value="euro">€</option>
+                        </select>
+                    </label>
 
-                    <input type="text" name="currency">
+                    <label class="is-fullwidth">
+                        <span class="sr-only">Enter Amount</span>
+                        <input type="text" name="currency">
+                    </label>
 
                     <button class="is-primary has-hover" aria-label="Search">
                         Search
                     </button>
-                </label>
+                </div>
 
-                <label class="has-field-addons">
+                <div class="has-field-addons">
                     <button class="is-secondary" aria-label="icon only">
                         <svg class="icon"><use href="#icon-file" /></svg>
                     </button>
 
-                    <input type="file" name="file_field">
-                </label>
+                    <label class="is-fullwidth">
+                        <span>Find File</span>
+                        <input type="file" name="file_field">
+                    </label>
+                </div>
             </form>
         </div>
 
@@ -258,27 +267,36 @@ title: Form
                         &lt;/label&gt;
                     &lt;/fieldset&gt;
 
-                    &lt;label class="has-field-addons"&gt;
-                        &lt;select name="select2_field"&gt;
-                            &lt;option value="dollar"&gt;$&lt;/option&gt;
-                            &lt;option value="pound"&gt;£&lt;/option&gt;
-                            &lt;option value="euro"&gt;€&lt;/option&gt;
-                        &lt;/select&gt;
+                    &lt;div class="has-field-addons"&gt;
+                        &lt;label&gt;
+                            &lt;span class="sr-only"&gt;Select Currency&lt;/span&gt;
+                            &lt;select name="select2_field"&gt;
+                                &lt;option value="dollar"&gt;$&lt;/option&gt;
+                                &lt;option value="pound"&gt;£&lt;/option&gt;
+                                &lt;option value="euro"&gt;€&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/label&gt;
 
-                        &lt;input type="text" name="currency"&gt;
+                        &lt;label class="is-fullwidth"&gt;
+                            &lt;span class="sr-only"&gt;Enter Amount&lt;/span&gt;
+                            &lt;input type="text" name="currency"&gt;
+                        &lt;/label&gt;
 
                         &lt;button class="is-primary has-hover" aria-label="Search"&gt;
                             Search
                         &lt;/button&gt;
-                    &lt;/label&gt;
+                    &lt;/div&gt;
 
-                    &lt;label class="has-field-addons"&gt;
+                    &lt;div class="has-field-addons"&gt;
                         &lt;button class="is-secondary" aria-label="icon only"&gt;
                             &lt;svg class="icon"&gt;&lt;use href="#icon-file" /&gt;&lt;/svg&gt;
                         &lt;/button&gt;
 
-                        &lt;input type="file" name="file_field"&gt;
-                    &lt;/label&gt;
+                        &lt;label class="is-fullwidth"&gt;
+                            &lt;span&gt;Find File&lt;/span&gt;
+                            &lt;input type="file" name="file_field"&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
                 &lt;/form&gt;
             </code></pre>
         </div>

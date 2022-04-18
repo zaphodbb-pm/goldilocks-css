@@ -145,7 +145,12 @@ button .icon:last-child,
     font-size: 1em;
 }
 
-
+button .icon:only-child,
+.button .icon:only-child {
+    margin-right: 0.25em;
+    margin-left: 0.25em;
+    font-size: 1em;
+}
 
 /* set-up for waiting spinner */
 button.is-loading, button.is-loading-dark,

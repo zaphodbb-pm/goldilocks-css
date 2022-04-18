@@ -76,13 +76,14 @@
 
     box-shadow: none;
     margin: 0;
-    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    padding: 0.75rem 3.5rem 0.5rem 0.75rem;
 
     width: 100%;
 }
 
 
-.form > label select {
+.form > label select,
+.form .has-field-addons > label > select{
     /* builds "chevron down" svg image for select box */
     background-image: var(--indicator);
     background-position: right 1em center;
@@ -152,17 +153,17 @@
     border-radius: var(--radius-elem);
 }
 
-.form label.has-field-addons {
-    position: relative;
+.form .has-field-addons {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
     width: 100%;
     height: auto;
     margin:  var(--margin-form) 0;
-    align-items: center;
 }
 
-.form label.has-field-addons > * {
+.form .has-field-addons > * {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -171,35 +172,62 @@
     font-size: var(--size-6);
     box-sizing: border-box;
     margin: 0;
-    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    padding:0 0.75rem;
     border-radius: 0;
-    height: 3em;
+    height: calc( 2.5rem + 2px);
     width: auto;
     border: 1px solid var(--border-main-darker);
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    flex-basis: auto;
 }
 
-.form label.has-field-addons > input {
-    width: 100%;
-}
-
-.form label.has-field-addons > :first-child {
+.form .has-field-addons > :first-child {
     border-top-left-radius: var(--radius-elem);
     border-bottom-left-radius: var(--radius-elem);
     border-right: none;
 }
 
-.form label.has-field-addons > :last-child {
+.form .has-field-addons > :last-child {
     border-top-right-radius: var(--radius-elem);
     border-bottom-right-radius: var(--radius-elem);
     border-left: none;
 }
 
-.form label.has-field-addons select {
+.form .has-field-addons label > * {
+    border: none;
+}
+
+.form .has-field-addons label.is-fullwidth {
+    width: 100%;
+}
+
+
+.form .has-field-addons > label > input,
+.form .has-field-addons > label > textarea,
+.form .has-field-addons > label > select {
     position: relative;
-    padding: 0.5rem 3.5rem 0.5rem 0.75rem;
-    font-size: inherit;
-    color: inherit;
+    color: var(--text-elem);
+    font-size: var(--size-6);
+    display: block;
+    box-sizing: border-box;
+
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    box-shadow: none;
+    margin: 0;
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+
+    width: 100%;
+}
+
+.form .has-field-addons  > label > select {
+    padding-right: 3.5rem;
+    width: auto;
 }
 
 .form input{
