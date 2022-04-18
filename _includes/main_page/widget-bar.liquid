@@ -3,15 +3,19 @@
     <form class="widgetbar-radios">
         <span>Theme</span>
 
-        <label>
-            <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')" title="Select light / day mode">
-            <svg class="icon"><use href="#icon-day"></use></svg>
-        </label>
+        <fieldset>
+            <legend>Choose Light or Dark Theme</legend>
 
-        <label>
-            <input type="radio" name="heading-sizes" onchange="setTheme('Dark')" title="Select dark / night mode">
-            <svg class="icon"><use href="#icon-night"></use></svg>
-        </label>
+            <label>
+                <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')" aria-label="Light / day mode">
+                <svg class="icon"><use href="#icon-day"></use></svg>
+            </label>
+
+            <label>
+                <input type="radio" name="heading-sizes" onchange="setTheme('Dark')" aria-label="Dark / night mode">
+                <svg class="icon"><use href="#icon-night"></use></svg>
+            </label>
+        </fieldset>
     </form>
 
     <script>
@@ -25,20 +29,24 @@
     </script>
 
     <form class="widgetbar-radios">
-        <label>
-            <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
-            <span>T1</span>
-        </label>
+        <fieldset>
+            <legend>Choose Font Size</legend>
+            <label>
+                <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
+                <span>T1</span>
+            </label>
 
-        <label>
-            <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
-            <span>T2</span>
-        </label>
+            <label>
+                <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
+                <span>T2</span>
+            </label>
 
-        <label>
-            <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
-            <span>T3</span>
-        </label>
+            <label>
+                <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
+                <span>T3</span>
+            </label>
+        </fieldset>
+
     </form>
 
     <script>
