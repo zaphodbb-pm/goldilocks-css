@@ -1,10 +1,68 @@
 ---
 layout: default
 parent-tab: core-helpers
+title: Widths
 ---
 
-<h1 class="page-header">Widths</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>These are common helpers that force a width on an element.  These are useful to provide controls for images
+                and other elements that do not have an intrinsic size.
+            </p>
+
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth nobreak-col-1">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>Fixed widths</td>
+                    <td><code>.has-width-1rem</code>, <code>.has-width-2rem</code>, <code>.has-width-3rem</code>,
+                        <code>.has-width-4rem</code>, <code>.has-width-5rem</code>, <code>.has-width-6rem</code>,
+                        <code>.has-width-7rem</code>, <code>.has-width-8rem</code>, <code>.has-width-10rem</code>,
+                        <code>.has-width-15rem</code>, <code>.has-width-20rem</code>, <code>.has-width-25rem</code>,
+                        <code>.has-width-30rem</code>, <code>.has-width-40rem</code></td>
+                </tr>
+
+                <tr>
+                    <td>Relative % widths</td>
+                    <td><code>.width-25</code>, <code>.width-33</code>, <code>.width-50</code>,
+                        <code>.width-75</code>, <code>.width-full</code> </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File: </td>
+                    <td>widths.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>none</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
 </main>
