@@ -2038,6 +2038,11 @@ button.delete.is-small
     align-items: center;
 }
 
+.form .form-footer .button
+{
+    padding: 0 1em;
+}
+
 .form input[type='submit']
 {
     font-size: inherit;
