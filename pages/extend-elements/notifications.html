@@ -15,6 +15,14 @@ title: Notifications
 
             <p>The <strong>notification</strong> block is a simple coloured block, based on the HTML <code>article</code> tag, to highlight
                 something meaningful to a user.  The notification block is often a system generated message to notify a result after a user action.
+                It does not use a heading in its structure as headings are not mandatory.
+            </p>
+
+            <p>Note that from the <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">HTML specification</a>
+                an <code>article</code> element represents a complete, or self-contained, composition in a document, page, application,
+                or site and that is, in principle, independently distributable or reusable, e.g. in syndication.
+                This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment,
+                an interactive widget or gadget, or any other independent item of content.
             </p>
 
             <p><strong>Notification</strong> block backgrounds can be colourized with the element colour helpers that set the text and
@@ -152,7 +160,7 @@ title: Notifications
 
         </div>
 
-        <section class="column">
+        <div class="column">
             <pre><code class="language-html">
                 &lt;article class="notification"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
@@ -229,7 +237,7 @@ title: Notifications
                     &lt;p&gt;Lorem Ipsum is-danger-light&lt;/p&gt;
                 &lt;/article&gt;
             </code></pre>
-        </section>
+        </div>
 
     </div>
 </main>
