@@ -1,10 +1,668 @@
 ---
 layout: default
 parent-tab: extend-components
+title: Tabs
 ---
 
-<h1 class="page-header">Tabs</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p><strong>Tabs</strong> is an all CSS component (no javascript required) that that provides basic responsive horizontal
+                content tabs with two different styles.  <strong>Tabs</strong> allows for the addition of icons in the tab label.
+                Note that a maximum of 9 tab labels are supported. More than 9 tabs makes the element cluttered and hard for the
+                user to comprehend.  Break a long list of items into two tabbed sections or combine some items together if you can.
+            </p>
+
+            <p><strong>Tabs</strong> maintains the semantic HTML structure for screen readers of the user relevant content.
+                This requires a semantic structure for the tab-content area and includes a <code>section</code> tag and
+                an <code>h2</code> heading. The heading is off-screen but still readable by a screen reader.
+            </p>
+
+            <p>Based on work by <a href="https://cutcodedown.com/for_others/medium_articles/tabsWithoutJS/" target=_blank> Jason Knight </a></p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.tabs</code></td>
+                    <td>Defines main container with default tab layout.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-boxed</code></td>
+                    <td>Provides an alternative layout with classic tab border.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.tabs-centered</code>, <code>.tabs-right</code></td>
+                    <td>Optional modifiers to display tabs in center or right adjusted.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-fullwidth</code></td>
+                    <td>Optional modifier that spreads tab labels across the full width of the element.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-small</code>, <code>.is-medium</code>, <code>.is-large</code></td>
+                    <td>Optional modifiers to change tab label text size.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>tabs.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main, --bg-main-invert, --bg-main-ter, --border-main-darker, --link, --padding, --radius --size-4, --size-5, --size-7, --text, --text-darker</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Common Tab Setup</h3>
+
+    <div id="tabs-section" class="row">
+        <div class="column stack stack-gap-large">
+
+            <div class="tabs">
+                <input type="radio" name="tab_unit_01" id="tabs_content_01" hidden aria-hidden="true" checked>
+                <input type="radio" name="tab_unit_01" id="tabs_content_02" hidden aria-hidden="true" >
+
+                <ul hidden aria-hidden="true">
+                    <li>
+                        <label for="tabs_content_01">
+                            <svg class="icon"><use href="#icon-bell" /></svg>
+                            Tab One
+                        </label>
+                    </li>
+                    <li><label for="tabs_content_02">Tab Two</label></li>
+                </ul>
+
+                <div class="tab-content">
+                    <section>
+                        <h2>Tab One</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor.
+                            Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Tab Two</h2>
+                        <p>
+                            Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex.
+                            Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod.
+                            Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <div class="tabs is-boxed">
+                <input type="radio" name="tab_unit_02" id="tabs_content_001" hidden aria-hidden="true" checked>
+                <input type="radio" name="tab_unit_02" id="tabs_content_002" hidden aria-hidden="true" >
+
+                <ul hidden aria-hidden="true">
+                    <li><label for="tabs_content_001">Tab One</label></li>
+                    <li>
+                        <label for="tabs_content_002">
+                            <svg class="icon"><use href="#icon-music" /></svg>
+                            Tab Two
+                        </label>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <section>
+                        <h2>Tab One</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor.
+                            Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Tab Two</h2>
+                        <p>
+                            Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex.
+                            Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod.
+                            Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="tabs [options: is-boxed]"&gt;
+                    &lt;input type="radio" name="tab_unit_1" id="tabs_content_1" hidden aria-hidden="true" checked&gt;
+                    &lt;input type="radio" name="tab_unit_1" id="tabs_content_2" hidden aria-hidden="true" &gt;
+
+                    &lt;ul hidden aria-hidden="true"&gt;
+                        &lt;li&gt;
+                            &lt;label for="tabs_content_1"&gt;
+                                &lt;svg class="icon"&gt;&lt;use href="#icon-bell" /&gt;&lt;/svg&gt;
+                                Tab One
+                            &lt;/label&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;&lt;label for="tabs_content_2"&gt;Tab Two&lt;/label&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+
+                    &lt;div class="tab-content"&gt;
+                        &lt;section&gt;
+                            &lt;h2&gt;Tab One&lt;/h2&gt;
+                            &lt;p&gt;
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Donec id elementum neque, ac pharetra tortor. Vivamus ac vehicula augue.
+                                Curabitur pretium commodo nisi id pellentesque.
+                            &lt;/p&gt;
+                        &lt;/section&gt;
+
+                        &lt;section&gt;
+                            &lt;h2&gt;Tab Two&lt;/h2&gt;
+                            &lt;p&gt;
+                                Sed ut leo in turpis efficitur convallis at bibendum erat.
+                                Curabitur in egestas ex. Etiam efficitur sagittis molestie.
+                                Praesent condimentum elementum ipsum sit amet euismod.
+                                Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                            &lt;/p&gt;
+                        &lt;/section&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <div id="tabs-section2" class="row has-5x-minwidth">
+        <div class="column stack stack-gap-large">
+            <div>
+                <h3>.tabs</h3>
+                <div class="tabs">
+                    <input type="radio" name="tab_unit_11" id="tabs_content_11" hidden aria-hidden="true" checked>
+                    <input type="radio" name="tab_unit_11" id="tabs_content_12" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_11" id="tabs_content_13" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_11" id="tabs_content_14" hidden aria-hidden="true" >
+
+                    <ul hidden aria-hidden="true">
+                        <li><label for="tabs_content_11">One</label></li>
+                        <li><label for="tabs_content_12">Two</label></li>
+                        <li><label for="tabs_content_13">Three</label></li>
+                        <li><label for="tabs_content_14">Four</label></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <section>
+                            <h2>One</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor. Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Two</h2>
+                            <p>
+                                Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex. Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod. Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Three</h2>
+                            <p>
+                                Donec non nunc ac augue ornare aliquam. Aenean sed volutpat arcu. Sed molestie lacus placerat nisl gravida condimentum.
+                            </p>
+
+                        </section>
+
+                        <section>
+                            <h2>Four</h2>
+                            <p>
+                                Nullam nec condimentum lacus. Integer dapibus velit nec ipsum varius, a pharetra arcu imperdiet. Donec pretium libero a tincidunt vulputate. Mauris feugiat tempor lectus, quis placerat mi congue sit amet.
+                            </p>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3>.tabs .tabs-centered</h3>
+                <div class="tabs tabs-centered stack-gap-large">
+                    <input type="radio" name="tab_unit_4" id="tabs_content_41" hidden aria-hidden="true" checked>
+                    <input type="radio" name="tab_unit_4" id="tabs_content_42" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_4" id="tabs_content_43" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_4" id="tabs_content_44" hidden aria-hidden="true" >
+
+                    <ul hidden aria-hidden="true">
+                        <li><label for="tabs_content_41">One</label></li>
+                        <li><label for="tabs_content_42">Two</label></li>
+                        <li><label for="tabs_content_43">Three</label></li>
+                        <li><label for="tabs_content_44">Four</label></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <section>
+                            <h2>One</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor. Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Two</h2>
+                            <p>
+                                Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex. Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod. Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Three</h2>
+                            <p>
+                                Donec non nunc ac augue ornare aliquam. Aenean sed volutpat arcu. Sed molestie lacus placerat nisl gravida condimentum.
+                            </p>
+
+                        </section>
+
+                        <section>
+                            <h2>Four</h2>
+                            <p>
+                                Nullam nec condimentum lacus. Integer dapibus velit nec ipsum varius, a pharetra arcu imperdiet. Donec pretium libero a tincidunt vulputate. Mauris feugiat tempor lectus, quis placerat mi congue sit amet.
+                            </p>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3>.tabs .is-fullwidth .is-medium</h3>
+                <div class="tabs is-fullwidth is-medium">
+                    <input type="radio" name="tab_unit_2" id="tabs_content_21" hidden aria-hidden="true" checked>
+                    <input type="radio" name="tab_unit_2" id="tabs_content_22" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_2" id="tabs_content_23" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_2" id="tabs_content_24" hidden aria-hidden="true" >
+
+                    <ul hidden aria-hidden="true">
+                        <li><label for="tabs_content_21">One</label></li>
+                        <li><label for="tabs_content_22">Two</label></li>
+                        <li><label for="tabs_content_23">Three</label></li>
+                        <li><label for="tabs_content_24">Four</label></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <section>
+                            <h2>One</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor. Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Two</h2>
+                            <p>
+                                Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex. Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod. Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Three</h2>
+                            <p>
+                                Donec non nunc ac augue ornare aliquam. Aenean sed volutpat arcu. Sed molestie lacus placerat nisl gravida condimentum.
+                            </p>
+
+                        </section>
+
+                        <section>
+                            <h2>Four</h2>
+                            <p>
+                                Nullam nec condimentum lacus. Integer dapibus velit nec ipsum varius, a pharetra arcu imperdiet. Donec pretium libero a tincidunt vulputate. Mauris feugiat tempor lectus, quis placerat mi congue sit amet.
+                            </p>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3>.tabs .tabs-right .is-large</h3>
+                <div class="tabs tabs-right is-large">
+                    <input type="radio" name="tab_unit_3" id="tabs_content_31" hidden aria-hidden="true" checked>
+                    <input type="radio" name="tab_unit_3" id="tabs_content_32" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_3" id="tabs_content_33" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_3" id="tabs_content_34" hidden aria-hidden="true" >
+
+                    <ul hidden aria-hidden="true">
+                        <li><label for="tabs_content_31">One</label></li>
+                        <li><label for="tabs_content_32">Two</label></li>
+                        <li><label for="tabs_content_33">Three</label></li>
+                        <li><label for="tabs_content_34">Four</label></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <section>
+                            <h2>One</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor. Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Two</h2>
+                            <p>
+                                Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex. Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod. Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Three</h2>
+                            <p>
+                                Donec non nunc ac augue ornare aliquam. Aenean sed volutpat arcu. Sed molestie lacus placerat nisl gravida condimentum.
+                            </p>
+
+                        </section>
+
+                        <section>
+                            <h2>Four</h2>
+                            <p>
+                                Nullam nec condimentum lacus. Integer dapibus velit nec ipsum varius, a pharetra arcu imperdiet. Donec pretium libero a tincidunt vulputate. Mauris feugiat tempor lectus, quis placerat mi congue sit amet.
+                            </p>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column stack stack-gap-large">
+            <div>
+                <h3>.tabs .is-boxed</h3>
+                <div class="tabs is-boxed">
+                    <input type="radio" name="tab_unit_5" id="tabs_content_51" hidden aria-hidden="true" checked>
+                    <input type="radio" name="tab_unit_5" id="tabs_content_52" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_5" id="tabs_content_53" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_5" id="tabs_content_55" hidden aria-hidden="true" >
+
+                    <ul hidden aria-hidden="true">
+                        <li><label for="tabs_content_51">One</label></li>
+                        <li><label for="tabs_content_52">Two</label></li>
+                        <li><label for="tabs_content_53">Three</label></li>
+                        <li><label for="tabs_content_55">Four</label></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <section>
+                            <h2>One</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor. Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Two</h2>
+                            <p>
+                                Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex. Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod. Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Three</h2>
+                            <p>
+                                Donec non nunc ac augue ornare aliquam. Aenean sed volutpat arcu. Sed molestie lacus placerat nisl gravida condimentum.
+                            </p>
+
+                        </section>
+
+                        <section>
+                            <h2>Four</h2>
+                            <p>
+                                Nullam nec condimentum lacus. Integer dapibus velit nec ipsum varius, a pharetra arcu imperdiet. Donec pretium libero a tincidunt vulputate. Mauris feugiat tempor lectus, quis placerat mi congue sit amet.
+                            </p>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3>.tabs .is-boxed with icons</h3>
+                <div class="tabs is-boxed">
+                    <input type="radio" name="tab_unit_6" id="tabs_content_61" hidden aria-hidden="true" checked>
+                    <input type="radio" name="tab_unit_6" id="tabs_content_62" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_6" id="tabs_content_63" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_6" id="tabs_content_66" hidden aria-hidden="true" >
+
+                    <ul hidden aria-hidden="true">
+                        <li>
+                            <label for="tabs_content_61">
+                                <svg class="icon"><use href="#icon-bell" /></svg>
+                                One
+                            </label>
+                        </li>
+                        <li>
+                            <label for="tabs_content_62">
+                                <svg class="icon"><use href="#icon-music" /></svg>
+                                Two
+                            </label>
+                        </li>
+                        <li>
+                            <label for="tabs_content_63">
+                                <svg class="icon"><use href="#icon-file" /></svg>
+                                Three
+                            </label>
+                        </li>
+                        <li>
+                            <label for="tabs_content_66">
+                                <svg class="icon"><use href="#icon-clock" /></svg>
+                                Four
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <section>
+                            <h2>One</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor. Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Two</h2>
+                            <p>
+                                Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex. Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod. Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Three</h2>
+                            <p>
+                                Donec non nunc ac augue ornare aliquam. Aenean sed volutpat arcu. Sed molestie lacus placerat nisl gravida condimentum.
+                            </p>
+
+                        </section>
+
+                        <section>
+                            <h2>Four</h2>
+                            <p>
+                                Nullam nec condimentum lacus. Integer dapibus velit nec ipsum varius, a pharetra arcu imperdiet. Donec pretium libero a tincidunt vulputate. Mauris feugiat tempor lectus, quis placerat mi congue sit amet.
+                            </p>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3>.tabs .is-boxed .is-fullwidth with icons</h3>
+                <div class="tabs is-boxed is-fullwidth">
+                    <input type="radio" name="tab_unit_7" id="tabs_content_71" hidden aria-hidden="true" checked>
+                    <input type="radio" name="tab_unit_7" id="tabs_content_72" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_7" id="tabs_content_73" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_7" id="tabs_content_77" hidden aria-hidden="true" >
+
+                    <ul hidden aria-hidden="true">
+                        <li>
+                            <label for="tabs_content_71">
+                                <svg class="icon"><use href="#icon-bell" /></svg>
+                                One
+                            </label>
+                        </li>
+                        <li>
+                            <label for="tabs_content_72">
+                                <svg class="icon"><use href="#icon-music" /></svg>
+                                Two
+                            </label>
+                        </li>
+                        <li>
+                            <label for="tabs_content_73">
+                                <svg class="icon"><use href="#icon-file" /></svg>
+                                Three
+                            </label>
+                        </li>
+                        <li>
+                            <label for="tabs_content_77">
+                                <svg class="icon"><use href="#icon-clock" /></svg>
+                                Four
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <section>
+                            <h2>One</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor. Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Two</h2>
+                            <p>
+                                Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex. Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod. Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Three</h2>
+                            <p>
+                                Donec non nunc ac augue ornare aliquam. Aenean sed volutpat arcu. Sed molestie lacus placerat nisl gravida condimentum.
+                            </p>
+
+                        </section>
+
+                        <section>
+                            <h2>Four</h2>
+                            <p>
+                                Nullam nec condimentum lacus. Integer dapibus velit nec ipsum varius, a pharetra arcu imperdiet. Donec pretium libero a tincidunt vulputate. Mauris feugiat tempor lectus, quis placerat mi congue sit amet.
+                            </p>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3>.tabs .is-boxed .is-large .is-fullwidth with icons</h3>
+                <div class="tabs is-large is-boxed is-fullwidth">
+                    <input type="radio" name="tab_unit_ 8" id="tabs_content_ 81" hidden aria-hidden="true" checked>
+                    <input type="radio" name="tab_unit_ 8" id="tabs_content_ 82" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_ 8" id="tabs_content_ 83" hidden aria-hidden="true" >
+                    <input type="radio" name="tab_unit_ 8" id="tabs_content_ 8 8" hidden aria-hidden="true" >
+
+                    <ul hidden aria-hidden="true">
+                        <li>
+                            <label for="tabs_content_ 81">
+                                <svg class="icon"><use href="#icon-bell" /></svg>
+                                One
+                            </label>
+                        </li>
+                        <li>
+                            <label for="tabs_content_ 82">
+                                <svg class="icon"><use href="#icon-music" /></svg>
+                                Two
+                            </label>
+                        </li>
+                        <li>
+                            <label for="tabs_content_ 83">
+                                <svg class="icon"><use href="#icon-file" /></svg>
+                                Three
+                            </label>
+                        </li>
+                        <li>
+                            <label for="tabs_content_ 8 8">
+                                <svg class="icon"><use href="#icon-clock" /></svg>
+                                Four
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <section>
+                            <h2>One</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elementum neque, ac pharetra tortor. Vivamus ac vehicula augue. Curabitur pretium commodo nisi id pellentesque.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Two</h2>
+                            <p>
+                                Sed ut leo in turpis efficitur convallis at bibendum erat. Curabitur in egestas ex. Etiam efficitur sagittis molestie. Praesent condimentum elementum ipsum sit amet euismod. Sed vestibulum, leo ac iaculis fringilla, felis nulla placerat turpis, eu aliquam elit risus vel tellus.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Three</h2>
+                            <p>
+                                Donec non nunc ac augue ornare aliquam. Aenean sed volutpat arcu. Sed molestie lacus placerat nisl gravida condimentum.
+                            </p>
+
+                        </section>
+
+                        <section>
+                            <h2>Four</h2>
+                            <p>
+                                Nullam nec condimentum lacus. Integer dapibus velit nec ipsum varius, a pharetra arcu imperdiet. Donec pretium libero a tincidunt vulputate. Mauris feugiat tempor lectus, quis placerat mi congue sit amet.
+                            </p>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
 </main>

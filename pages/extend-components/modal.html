@@ -1,10 +1,198 @@
 ---
 layout: default
 parent-tab: extend-components
+title: Modal
 ---
 
-<h1 class="page-header">Modal</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p><strong>Modal</strong> is a classic overlay.  Note that any type of content can be included in the body.
+                The footer is typically reserved for call to action buttons or links.
+            </p>
+
+            <p>Three are containers in the <strong>modal</strong>: <code>modal-card-head</code>, <code>modal-card-body</code>
+                and <code>modal-card-footer</code>.  These can be ordered any way you like.
+            </p>
+
+            <ul>
+                <li><code>modal-card-head</code> contains a title and an optional sub-title text;</li>
+
+                <li><code>modal-card-body</code> is a basic container that contains html elements, Goldilocks-CSS elements or components;</li>
+
+                <li><code>modal-card-footer</code> is a flexbox controlled container that would typically contain call-to-action elements.</li>
+
+            </ul>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.modal-overlay</code></td>
+                    <td>Container for a modal that is triggered by anchor link; has background control for modal.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.modal-overlay:target</code></td>
+                    <td>CSS watcher for trigger</td>
+                </tr>
+
+                <tr>
+                    <td><code>.modal</code></td>
+                    <td>Defines main container for centering displayable modal content.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.modal-card</code></td>
+                    <td>Holds modal content.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.modal-card-head</code></td>
+                    <td>Provides a container and background for title.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.modal-card-title</code></td>
+                    <td>Sets font and weight for text.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.delete</code></td>
+                    <td>Common delete anchor link to close modal.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.modal-card-body</code></td>
+                    <td>Standard container for HTML content.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.modal-card-footer</code></td>
+                    <td>Optional flexbox typically for calls to action buttons or links.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>modal.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main, --bg-main-ter, --border-main-darker, --mar-horz, --radius-comp, --size-4, --text-darker</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <div class="row" id="modal-opener">
+        <div class="column">
+
+            <button id="modal-opener-demo" class="is-primary has-hover">
+                <a href="#modal-one">Open Modal</a>
+            </button>
+
+            <p class="is-size-5 is-text-semibold" style="margin-top: 5rem;">Basic Modal Form</p>
+
+            <div id="no-modal-one">
+                <div>
+                    <article class="modal-card" style="width: 50%;">
+                        <header class="modal-card-head">
+                            <h1 class="modal-card-title">Modal title</h1>
+                            <a class="delete" href="#modal-opener" aria-label="delete"></a>
+                        </header>
+
+                        <div class="modal-card-body">
+                            <p>Content</p>
+                        </div>
+
+                        <footer class="modal-card-footer">
+                            <button class="button is-success has-hover">Save</button>
+                            <button class="button is-danger-outlined has-hover">
+                                <a href="#modal-opener">Cancel</a>
+                            </button>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-one" class="modal-overlay">
+            <div class="modal">
+                <article class="modal-card">
+                    <header class="modal-card-head">
+                        <h1 class="modal-card-title">Modal title</h1>
+                        <a class="delete" href="#modal-opener" aria-label="delete"></a>
+                    </header>
+
+                    <div class="modal-card-body">
+                        <p>Content</p>
+                    </div>
+
+                    <footer class="modal-card-footer">
+                        <button class="is-success has-hover">Save Changes</button>
+                        <button class="is-danger-outlined has-hover">
+                            <a href="#modal-opener">Cancel Action</a>
+                        </button>
+                    </footer>
+                </article>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;button id="modal-opener" class="is-primary has-hover"&gt;
+                    &lt;a href="#modal-one"&gt;Open Modal&lt;/a&gt;
+                &lt;/button&gt;
+
+                &lt;div id="modal-one" class="modal-overlay"&gt;
+                    &lt;div class="modal"&gt;
+                        &lt;article class="modal-card"&gt;
+                            &lt;header class="modal-card-head"&gt;
+                                &lt;h1 class="modal-card-title"&gt;Modal title&lt;/h1&gt;
+                                &lt;a class="delete" href="#modal-opener" aria-label="delete"&gt;&lt;/a&gt;
+                            &lt;/header&gt;
+
+                            &lt;div class="modal-card-body"&gt;
+                                &lt;p&gt;Content&lt;/p&gt;
+                            &lt;/div&gt;
+
+                            &lt;footer class="modal-card-footer"&gt;
+                                &lt;button class="button is-success has-hover"&gt;Save Changes&lt;/button&gt;
+                                &lt;button class="button is-danger-outlined has-hover"&gt;
+                                    &lt;a href="#modal-opener"&gt;Cancel Action&lt;/a&gt;
+                                &lt;/button&gt;
+                            &lt;/footer&gt;
+                        &lt;/article&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+
+    </div>
 </main>

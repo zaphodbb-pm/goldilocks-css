@@ -1,10 +1,350 @@
 ---
 layout: default
 parent-tab: extend-components
+title: Card
 ---
 
-<h1 class="page-header">Card</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p><strong>Cards</strong> provide flexible and extensible content containers.
+                Contained in a card are four types of containers for a) titles, b) image area, c) body and d) footer for,
+                typically, buttons or links.  These interior containers are optional and their order can be sorted based your needs.
+                These can be ordered any way you like.
+            </p>
+
+            <ul>
+                <li><code>card-header</code> contains a title and an optional sub-title text;</li>
+
+                <li><code>card-image</code> is typically a <code>figure</code> HTML tag that holds an <code>img</code> html tag.
+                    The <code>img</code> tag can use any of the aspect ratio controls to adjust image size and fit;
+                </li>
+
+                <li><code>card-body</code> is a basic container that contains HTML elements, Goldilocks-CSS elements or components;</li>
+
+                <li><code>card-footer</code> is a flexbox controlled container that would typically contain call-to-action elements.</li>
+            </ul>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.card</code></td>
+                    <td>Defines main container for breadcrumb, typically <code>nav</code> HTML tag is used at top level.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.card-header</code>, <code>.card-header-title</code>, <code>.card-header-subtitle</code></td>
+                    <td>Optional header setup.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.card-header-title</code></td>
+                    <td>Defines main container for breadcrumb, typically <code>nav</code> html tag is used at top level.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.card-image</code></td>
+                    <td>Optional image holder.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.card-body</code></td>
+                    <td>Optional main body for textual information.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.card-footer</code></td>
+                    <td>Optional area for calls to action.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>card.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td> --border-main, --radius-comp, --mar-vert, --shadow, --size-5, --text-comp, --text-darker, --text-light, --weight-bold, --weight-semibold</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Basic Card no Image</h3>
+    <div class="row">
+        <div class="column">
+
+            <article class="card">
+                <header class="card-header">
+                    <h4 class="card-header-title">
+                        Component Name
+                    </h4>
+
+                    <p class="card-header-subtitle">
+                        Sub-title for component
+                    </p>
+                </header>
+
+                <div class="card-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                        <a href="#">@goldilocks</a>.
+                    </p>
+
+                    <time datetime="2022-05-15T19:00">May 15, 2022</time>
+                </div>
+
+                <footer class="card-footer">
+                    <button class="is-primary has-hover">Save</button>
+                    <button class="is-danger-outlined has-hover">Delete</button>
+                </footer>
+            </article>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;article class="card"&gt;
+                    &lt;header class="card-header"&gt;
+                        &lt;h4 class="card-header-title"&gt;
+                            Component Name
+                        &lt;/h4&gt;
+
+                        &lt;p class="card-header-subtitle"&gt;
+                            Sub-title for component
+                        &lt;/p&gt;
+                    &lt;/header&gt;
+
+                    &lt;div class="card-body"&gt;
+                        &lt;p&gt;
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris.
+                            &lt;a href="#"&gt;@goldilocks&lt;/a&gt;.
+                        &lt;/p&gt;
+
+                        &lt;time datetime="2022-05-15T19:00"&gt;May 15, 2022&lt;/time&gt;
+                    &lt;/div&gt;
+
+                    &lt;footer class="card-footer"&gt;
+                        &lt;button class="is-primary has-hover"&gt;Save&lt;/button&gt;
+                        &lt;button class="is-danger-outlined has-hover"&gt;Delete&lt;/button&gt;
+                    &lt;/footer&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Card with Image</h3>
+    <div class="row">
+        <div class="column">
+
+            <article class="card">
+                <figure class="card-image">
+                    <img class="has-aspect-3x1" src="{{site.url}}/img/demo/gl-main1.png" alt="Placeholder image">
+                </figure>
+
+                <header class="card-header">
+                    <div class="card-header-title">
+                        Component Name
+                    </div>
+                </header>
+
+                <div class="card-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                        <a href="#">@goldilocks</a>.
+                    </p>
+                </div>
+
+                <footer class="card-footer">
+                    <button class="is-primary has-hover">Save</button>
+                    <button class="is-danger-outlined has-hover">Delete</button>
+                </footer>
+            </article>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;article class="card"&gt;
+                    &lt;header class="card-header"&gt;
+                        &lt;div class="card-header-title"&gt;
+                            Component Name
+                        &lt;/div&gt;
+                    &lt;/header&gt;
+
+                    &lt;figure class="card-image"&gt;
+                        &lt;img class="has-aspect-3x1" src="{{site.url}}/img/demo/gl-main1.png" alt="Placeholder image"&gt;
+                    &lt;/figure&gt;
+
+                    &lt;div class="card-body"&gt;
+                        &lt;p&gt;
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris.
+                            &lt;a href="#"&gt;@goldilocks&lt;/a&gt;.
+                        &lt;/p&gt;
+
+                        &lt;time datetime="2022-05-15T19:00"&gt;May 15, 2022&lt;/time&gt;
+                    &lt;/div&gt;
+
+                    &lt;footer class="card-footer"&gt;
+                        &lt;button class="is-primary has-hover"&gt;Save&lt;/button&gt;
+                        &lt;button class="is-danger-outlined has-hover"&gt;Delete&lt;/button&gt;
+                    &lt;/footer&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Card with end Image and no Footer</h3>
+    <div class="row">
+        <div class="column">
+            <article class="card">
+                <header class="card-header">
+                    <h4 class="card-header-title">
+                        Component Name
+                    </h4>
+                </header>
+
+                <div class="card-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                        <a href="#">@goldilocks</a>.
+                    </p>
+                </div>
+
+                <figure class="card-image">
+                    <img class="has-aspect-3x1" src="{{site.url}}/img/demo/gl-main1.png" alt="Placeholder image">
+                </figure>
+            </article>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;article class="card"&gt;
+                    &lt;header class="card-header"&gt;
+                        &lt;h4 class="card-header-title"&gt;
+                            Component Name
+                        &lt;/h4&gt;
+                    &lt;/header&gt;
+
+                    &lt;div class="card-body"&gt;
+                        &lt;p&gt;
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris.
+                            &lt;a href="#"&gt;@goldilocks&lt;/a&gt;.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;figure class="card-image"&gt;
+                        &lt;img class="has-aspect-3x1" src="{{site.url}}/img/demo/gl-main1.png" alt="Placeholder image"&gt;
+                    &lt;/figure&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Card with Comment Style Media in Body, no Image or Footer</h3>
+    <div class="row">
+        <div class="column">
+            <article class="card">
+                <header class="card-header">
+                    <h4 class="card-header-title">
+                        Component Name
+                    </h4>
+
+                    <p class="card-header-subtitle">
+                        Sub-title for component
+                    </p>
+                </header>
+
+                <div class="card-body">
+                    <div class="comments space-vert">
+                        <figure class="has-width-4rem">
+                            <img src="{{site.url}}/img/demo/gl-man1.png" alt="Placeholder image">
+                        </figure>
+
+                        <div>
+                            <p class="text is-size-5">John Smith</p>
+                            <p class="subtext is-size-6">@johnsmith</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                        <a href="#">@goldilocks</a>.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;article class="card"&gt;
+                    &lt;header class="card-header"&gt;
+                        &lt;h4 class="card-header-title"&gt;
+                            Component Name
+                        &lt;/h4&gt;
+
+                        &lt;p class="card-header-subtitle"&gt;
+                            Sub-title for component
+                        &lt;/p&gt;
+                    &lt;/header&gt;
+
+                    &lt;div class="card-body"&gt;
+                        &lt;div class="comments space-vert"&gt;
+                            &lt;figure class="has-width-4rem"&gt;
+                                &lt;img src="{{site.url}}/img/demo/gl-man1.png" alt="Placeholder image"&gt;
+                            &lt;/figure&gt;
+
+                            &lt;div&gt;
+                                &lt;p class="text is-size-5"&gt;John Smith&lt;/p&gt;
+                                &lt;p class="subtext is-size-6"&gt;@johnsmith&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;p&gt;
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris.
+                            &lt;a href="#"&gt;@goldilocks&lt;/a&gt;.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

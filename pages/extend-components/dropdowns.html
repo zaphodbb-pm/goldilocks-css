@@ -1,10 +1,271 @@
 ---
 layout: default
 parent-tab: extend-components
+title: Dropdowns
 ---
 
-<h1 class="page-header">Drop Downs</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p><strong>Dropdowns</strong> are toggle-able, contextual overlays for displaying a curated lists of links,
+                call-to-action buttons and text.  These are typically used to unclutter the main page by holding secondary links or
+                information that are shown only when needed.  <strong>Goldilocks-CSS</strong> dropdowns are CSS only, no javascript required.
+            </p>
+
+            <figure class="blockquote space-vert-medium">
+                <blockquote cite="https://www.nngroup.com/articles/drop-down-menus/">
+                    <p>Dropdown boxes and menus are overused and clunky but can be useful for revealing a list of options or commands.</p>
+                </blockquote>
+                <figcaption>
+                    Norman Nielsen group,
+                    <cite><a href="https://www.nngroup.com/articles/drop-down-menus/" target=_blank>Dropdowns: Design Guidelines</a></cite>
+                </figcaption>
+            </figure>
+
+            <p>Dropdowns have their advantages in that they conserve screen space. Also they are a standard widget,
+                users know how to deal with them. Despite these advantages, web usability would increase if designers used
+                dropdowns less often.  Some design guidelines for dropdowns:
+            </p>
+
+            <ul>
+                <li>Keep the menu label or description in view when the dropdown is open;</li>
+                <li>Keep global navigation options out of dropdown menus on desktop;</li>
+                <li>Gray out any unavailable options instead of removing them;</li>
+                <li>Very long dropdowns that require scrolling make it impossible for users to see all their choices in one glance;</li>
+                <li>Avoid interacting menus where the options in one menu change when users select something in another menu on the same page;</li>
+                <li>Avoid dropdown boxes when typing may be faster;</li>
+                <li>Avoid dropdown boxes for data that is highly familiar to your users, such as the day, month, or year;</li>
+            </ul>
+
+            <p><strong>Goldilocks-CSS</strong> type <strong>dropdowns</strong> are driven by CSS only, no javascript required.
+                The <strong>dropdown</strong> can be triggered by clicking on the drop down button or by hover if the
+                <code>.is-hoverable</code> class is added to the main container.  The <code>.dropdown-menu</code> can be left (default)
+                right or up oriented.</p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.dropdown</code></td>
+                    <td>Defines main component container.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-up</code>, <code>.is-right</code></td>
+                    <td>Optional modifiers for <code>.dropdown-menu</code> container alignment but applied at parent level.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-hoverable</code></td>
+                    <td>Triggers expansion of dropdown when user hovers over parent.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.dropdown-menu</code></td>
+                    <td>Container for list of items to be hidden or shown.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.dropdown-content</code></td>
+                    <td>Child of <code>.dropdown-menu</code> that contains links, buttons or other content.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-active</code></td>
+                    <td>Optional link decoration for items inside <code>.dropdown-content</code>.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>dropdown.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main-comp, --bg-main-ter, --border-main, --indicator,  --link, --mar-vert, --pad-vert,
+                        --radius-comp, --shadow, --text, --text-darker, --text-invert, --weight-medium</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Common Dropdown Formats</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack-centered stack-gap-large">
+                <div class="dropdown">
+                    <button class="is-default-inverted"  aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Dropdown Link on Click</span>
+                    </button>
+
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <nav>
+                            <a href="#">Dropdown item</a>
+                            <p>Other dropdown item with a really long text but not a link</p>
+                            <a href="#" class="is-active">Active item</a>
+                            <a href="#">Other dropdown item</a>
+
+
+
+                            <a href="#">With a divider</a>
+                            <button class="is-success">Call To Action</button>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="dropdown is-hoverable">
+                    <button class="is-secondary-outlined" aria-haspopup="true" aria-controls="dropdown-menu11">
+                        <span>Dropdown button on Hover</span>
+                    </button>
+
+                    <div class="dropdown-menu" id="dropdown-menu11">
+                        <nav>
+                            <a href="#">Dropdown item</a>
+                            <p>Other dropdown item with a really long text but not a link</p>
+                            <a href="#" class="is-active">Active item</a>
+                            <a href="#">Other dropdown item</a>
+
+
+
+                            <a href="#">With a divider</a>
+                            <button class="is-success">Call To Action</button>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="is-tertiary-outlined has-hover" aria-haspopup="true" aria-controls="dropdown-menu2">
+                        <span>Dropdown button on Click</span>
+                    </button>
+
+                    <div class="dropdown-menu" id="dropdown-menu2">
+                        <nav class="dropdown-content">
+                            <a href="#">Dropdown item</a>
+                            <p>Other dropdown item with a really long text but not a link</p>
+                            <a href="#" class="is-active">Active item</a>
+                            <a href="#">Other dropdown item</a>
+
+
+
+                            <a href="#">With a divider</a>
+                            <button class="is-success">Call To Action</button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                 &lt;div class="dropdown [is-hoverable]"&gt;
+                    &lt;button class="is-default-inverted"  aria-haspopup="true" aria-controls="dropdown-menu3"&gt;
+                        &lt;span&gt;Dropdown Link on Click&lt;/span&gt;
+                    &lt;/button&gt;
+
+                    &lt;div class="dropdown-menu" id="dropdown-menu3"&gt;
+                        &lt;nav&gt;
+                            &lt;a href="#"&gt;Dropdown item&lt;/a&gt;
+                            &lt;p&gt;Other dropdown item with a really long text but not a link&lt;/p&gt;
+                            &lt;a href="#" class="is-active"&gt;Active item&lt;/a&gt;
+                            &lt;a href="#"&gt;Other dropdown item&lt;/a&gt;
+
+
+
+                            &lt;a href="#"&gt;With a divider&lt;/a&gt;
+                            &lt;button class="is-success"&gt;Call To Action&lt;/button&gt;
+                        &lt;/nav&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Dropdown Alignments</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack-centered stack-gap-large">
+                <div class="dropdown is-hoverable">
+                    <button aria-haspopup="true" aria-controls="dropdown-menu5">
+                        <span>Left aligned on Hover</span>
+                    </button>
+
+                    <div class="dropdown-menu" id="dropdown-menu5">
+                        <nav>
+                            <p>The dropdown is <strong>left-aligned</strong> by default.</p>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="dropdown is-right is-hoverable">
+                    <button aria-haspopup="true" aria-controls="dropdown-menu6">
+                        <span>Right aligned</span>
+                    </button>
+
+                    <div class="dropdown-menu" id="dropdown-menu6">
+                        <nav>
+                            <p>Add the <code>is-right</code> modifier for a <strong>right-aligned</strong> dropdown.</p>
+                            <a href="#" class="is-active">Active item</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="dropdown is-up">
+                    <button class="is-primary-outlined has-hover" aria-haspopup="true" aria-controls="dropdown-menu7">
+                        <span>Drop Up on Click</span>
+                    </button>
+
+                    <div class="dropdown-menu" id="dropdown-menu7" role="menu">
+                        <nav>
+                            <p>You can add the <code>is-up</code> modifier to have a dropdown menu that appears above the dropdown button.</p>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="dropdown [is-right, is-up] [is-hoverable]"&gt;
+                    &lt;button aria-haspopup="true" aria-controls="dropdown-menu9"&gt;
+                        &lt;span&gt;Right aligned&lt;/span&gt;
+                    &lt;/button&gt;
+
+                    &lt;div class="dropdown-menu" id="dropdown-menu9"&gt;
+                        &lt;nav&gt;
+                            &lt;p&gt;Add the &lt;code&gt;is-right&lt;/code&gt; modifier for a &lt;strong&gt;right-aligned&lt;/strong&gt; dropdown.&lt;/p&gt;
+                            &lt;a href="#" class="is-active"&gt;Active item&lt;/a&gt;
+                        &lt;/nav&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

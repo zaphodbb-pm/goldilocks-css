@@ -1,10 +1,245 @@
 ---
 layout: default
 parent-tab: extend-components
+title: Accordions
 ---
 
-<h1 class="page-header">Accordions</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p><strong>Accordions</strong> are the classic vertically collapsable content areas.
+                Two formats are available a) classic primarily used for small amounts of text like FAQs and b) with a border whose color
+                can be changed and meant primarily for an aside.
+            </p>
+
+            <p>This implementation uses the html <code>details</code> tag.  This tag has built in the ability to open and close a content body.
+                This body can be a <code>p</code>, 	<code>div</code> or <code>article</code> child.
+                This allows you to add any other element or component to the accordion.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.accordions</code></td>
+                    <td>Provides a container for a group of accordions.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.accordion</code></td>
+                    <td>Defines an individual accordion item.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-expander</code></td>
+                    <td>Provides an alternate layout for collapsable areas that can also be styled with a bottom border color.</td>
+                </tr>
+
+                <tr>
+                    <td>Alternative Border Modifiers:</td>
+                    <td><code>.is-expander-primary</code>, <code>.is-expander-secondary</code>, <code>.is-expander-tertiary</code>,
+                        <code>.is-expander-link</code>, <code>.is-expander-success</code>, <code>.is-expander-warning</code>, <code>.is-expander-danger</code>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>accordions.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td> --bg-main, --bg-main-ter, --danger, --link, --margin, --mar-vert, --padding-normal, --primary,
+                        --radius-comp, --secondary,--shadow, --success, --tertiary, --text-comp, --warning, --weight-semibold</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Single Accordion</h3>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="space-vert-medium">
+                <details class="accordion">
+                    <summary>Accordion FAQ Details</summary>
+                    <div>
+                        <p>Something small enough to escape casual notice.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="space-vert-medium">
+                <details class="accordion is-expander-primary">
+                    <summary>Accordion Aside Style Details</summary>
+                    <article>
+                        <figure class="blockquote">
+                            <blockquote cite="https://www.goodreads.com/quotes/search?utf8=%E2%9C%93&q=peter+drucker+purpose&commit=Search">
+                                <p>Profit is not the purpose of a business, but rather the test of its validity.
+                                    The purpose of a business is to create and keep a customer. </p>
+                            </blockquote>
+                            <figcaption>
+                                <a href="https://en.wikipedia.org/wiki/Peter_Drucker" target="_blank">Peter Drucker</a>,
+                                <cite>Innovation and Entrepreneurship</cite>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </details>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;details class="accordion"&gt;
+                    &lt;summary&gt;Accordion FAQ Details&lt;/summary&gt;
+                    &lt;div&gt;
+                        &lt;p&gt;Something small enough to escape casual notice.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/details&gt;
+
+                &lt;details class="accordion is-expander-primary"&gt;
+                    &lt;summary&gt;Accordion Aside Style Details&lt;/summary&gt;
+                    &lt;article&gt;
+                        &lt;figure class="blockquote"&gt;
+                            &lt;blockquote cite="https://www.goodreads.com/quotes/search?utf8=%E2%9C%93&q=peter+drucker+purpose&commit=Search"&gt;
+                                &lt;p&gt;Profit is not the purpose of a business, but rather the test of its validity.
+                                    The purpose of a business is to create and keep a customer. &lt;/p&gt;
+                            &lt;/blockquote&gt;
+                            &lt;figcaption&gt;
+                                &lt;a href="https://en.wikipedia.org/wiki/Peter_Drucker" target="_blank"&gt;Peter Drucker&lt;/a&gt;,
+                                &lt;cite&gt;Innovation and Entrepreneurship&lt;/cite&gt;
+                            &lt;/figcaption&gt;
+                        &lt;/figure&gt;
+                    &lt;/article&gt;
+                &lt;/details&gt;
+            </code></pre>
+        </div>
+
+    </div>
+
+
+    <div class="space-component-medium "></div>
+
+    <h3>Accordions Group</h3>
+
+    <div class="row">
+        <div class="column stack stack-gap-large">
+
+            <div class="accordions">
+                <details class="accordion">
+                    <summary>One - Accordion Quote</summary>
+                    <article>
+                        <figure class="blockquote">
+                            <blockquote cite="https://www.goodreads.com/quotes/search?utf8=%E2%9C%93&q=peter+drucker+purpose&commit=Search">
+                                <p>Profit is not the purpose of a business, but rather the test of its validity.
+                                    The purpose of a business is to create and keep a customer. </p>
+                            </blockquote>
+                            <figcaption>
+                                <a href="https://en.wikipedia.org/wiki/Peter_Drucker" target="_blank">Peter Drucker</a>,
+                                <cite>Innovation and Entrepreneurship</cite>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </details>
+
+                <details class="accordion">
+                    <summary>Two - Accordion Details</summary>
+                    <div>Two Something small enough to escape casual notice.</div>
+                </details>
+
+                <details class="accordion">
+                    <summary>Three - Accordion Details</summary>
+                    <p>Three Something small enough to escape casual notice.</p>
+                </details>
+            </div>
+
+            <div class="accordions">
+                <details class="accordion is-expander-primary">
+                    <summary>One - Accordion Quote</summary>
+                    <article>
+                        <figure class="blockquote">
+                            <blockquote cite="https://www.goodreads.com/quotes/search?utf8=%E2%9C%93&q=peter+drucker+purpose&commit=Search">
+                                <p>Profit is not the purpose of a business, but rather the test of its validity.
+                                    The purpose of a business is to create and keep a customer. </p>
+                            </blockquote>
+                            <figcaption>
+                                <a href="https://en.wikipedia.org/wiki/Peter_Drucker" target="_blank">Peter Drucker</a>,
+                                <cite>Innovation and Entrepreneurship</cite>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </details>
+
+                <details class="accordion is-expander-secondary">
+                    <summary>Two - Accordion Details</summary>
+                    <div>Two Something small enough to escape casual notice.</div>
+                </details>
+
+                <details class="accordion is-expander-tertiary">
+                    <summary>Three - Accordion Details</summary>
+                    <p>Three Something small enough to escape casual notice.</p>
+                </details>
+            </div>
+
+        </div>
+
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="accordions"&gt;
+                    &lt;details class="accordion [is-expander-primary]"&gt;
+                        &lt;summary&gt;One - Accordion Quote&lt;/summary&gt;
+                        &lt;article&gt;
+                            &lt;figure class="blockquote"&gt;
+                                &lt;blockquote cite="https://www.goodreads.com/quotes/search?utf8=%E2%9C%93&q=peter+drucker+purpose&commit=Search"&gt;
+                                    &lt;p&gt;Profit is not the purpose of a business, but rather the test of its validity.
+                                        The purpose of a business is to create and keep a customer. &lt;/p&gt;
+                                &lt;/blockquote&gt;
+                                &lt;figcaption&gt;
+                                    &lt;a href="https://en.wikipedia.org/wiki/Peter_Drucker" target="_blank"&gt;Peter Drucker&lt;/a&gt;,
+                                    &lt;cite&gt;Innovation and Entrepreneurship&lt;/cite&gt;
+                                &lt;/figcaption&gt;
+                            &lt;/figure&gt;
+                        &lt;/article&gt;
+                    &lt;/details&gt;
+
+                    &lt;details class="accordion [is-expander-secondary]"&gt;
+                        &lt;summary&gt;Two - Accordion Details&lt;/summary&gt;
+                        &lt;div&gt;Two Something small enough to escape casual notice.&lt;/div&gt;
+                    &lt;/details&gt;
+
+                    &lt;details class="accordion [is-expander-tertiary]"&gt;
+                        &lt;summary&gt;Three - Accordion Details&lt;/summary&gt;
+                        &lt;p&gt;Three Something small enough to escape casual notice.&lt;/p&gt;
+                    &lt;/details&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

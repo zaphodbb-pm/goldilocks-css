@@ -1,10 +1,609 @@
 ---
 layout: default
 parent-tab: extend-components
+title: Navbar
 ---
 
-<h1 class="page-header">Navbar</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>navbar</strong> is a responsive horizontal component that can support images, links, buttons, and dropdown menus.
+                The <strong>navbar</strong> is more complex than the layout implies.
+                See <a href="https://atelierlks.com/six-tips-for-strong-navbar-design-that-converts-users/" target=_blank>Six Tips for Navbar Design</a>
+                and also <a href="https://www.yext.com/blog/2022/03/how-to-structure-and-organize-your-navbar/" target=_blank>How to Structure Your Navbar</a>
+                for some more interesting views on using navbars.
+            </p>
+
+            <p>The <strong>navbar</strong> parent contains three children: <code>.navbar-left</code> for typically branding
+                information and a slide-out bar, <code>.navbar-center</code> typically for links to other parts of the site
+                and <code>.navbar-right</code> for typically widgets and controls and also can hold an optional right side
+                slide-out component.
+            </p>
+
+            <p>The <code>.navbar</code> direct children ca also support dropdown menus.
+                Note that drop-down menus should be used carefully and infrequently.
+            </p>
+
+            <p>For a mobile sized screen (ie less then 576px), the order is changed where left and right flexboxes appear first and
+                the center flexbox changes its direction to column with its children row aligned.
+            </p>
+
+            <p>By using the <code>.is-mobile</code> class on the parent <code>.navbar</code> element, the navbar children sections will
+                not be re-ordered.  The left, center and right children flex boxes will maintain their row orientation.
+                Navbar supports preserving the layout for mobile sized screens (ie typically less then 576px) as well.
+                In this case, care should be taken to ensure that the children will still fit in a row, otherwise they will be wrapped.
+            </p>
+
+            <p>The <strong>navbar</strong> component supports a <strong>slide-out bar</strong> component activated by a
+                classic hamburger element.  The hamburger will be hidden until the mobile break-point is reached.
+                The hamburger can be forced to display always by adding the <code>.show-always</code> class.
+                The <strong>slide-out bar</strong> component can be left (default) slide in or right slide in.
+            </p>
+
+            <p>For mobile sized screens (ie typically less then 576px) a sliding sidebar can be used to provide better screen usage
+                and more complete navigation.  By using the <code>.has-sliding-sidebar</code> class on the parent <code>.navbar</code> element, the navbar child
+                <code>.navbar-center</code> section will not display.  The navigation menu will instead slide out.
+                This menu can hold many more navigation links than the horizontal navbar section.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.navbar</code></td>
+                    <td>defines parent <code>nav</code> element</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-mobile</code></td>
+                    <td>navbar modifier that maintains direct navbar children</td>
+                </tr>
+
+                <tr>
+                    <td><code>.navbar-left</code></td>
+                    <td><code>.navbar</code> child block, left adjusted</td>
+                </tr>
+
+                <tr>
+                    <td><code>.navbar-center</code></td>
+                    <td><code>.navbar</code> child block, centre adjusted; usually holds navigation links</td>
+                </tr>
+
+                <tr>
+                    <td><code>.navbar-right</code></td>
+                    <td><code>.navbar</code> child block, right adjusted</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-fixed-bottom</code></td>
+                    <td><code>.navbar</code> children modifier (typically for .navbar-center) that emulates a typical mobile app menu.
+                        At mobile breakpoint, fixes children's children at viewport bottom and removes labels.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.navbar-burger</code></td>
+                    <td>styles classic hamburger component in mobile widths</td>
+                </tr>
+
+                <tr>
+                    <td><code>.navbar-center</code></td>
+                    <td>styles <code>svg</code> plus <code>label</code> HTML tags</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-sidebar</code></td>
+                    <td>allows  <code> .navbar-burger</code> component to control opening and closing side bar additional navigation</td>
+                </tr>
+
+                <tr>
+                    <td><code>.main-slide-bar</code></td>
+                    <td>defines parent slide out bar; default left entry</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-right</code></td>
+                    <td>slide bar modifier for right entry</td>
+                </tr>
+
+                <tr>
+                    <td><code>.show-always</code></td>
+                    <td>modifier that always displays hamburger, otherwise hidden for non-mobile width viewports</td>
+                </tr>
+
+                <tr>
+                    <td><code>.sidebarMenu</code> or <code>.sidebarMenuRight</code></td>
+                    <td>main content container for nav links</td>
+                </tr>
+
+                <tr>
+                    <td><code>.sidebarIconToggle</code></td>
+                    <td>hamburger parent</td>
+                </tr>
+
+                <tr>
+                    <td><code>.sidebarMenuInner</code></td>
+                    <td>child content container styles block</td>
+                </tr>
+
+                <tr>
+                    <td><code>.sidebar-block</code></td>
+                    <td>child of <code>.sidebarMenuInner</code> that is an expandable link box for more links</td>
+                </tr>
+
+                <tr>
+                    <td><code>.icon-nav-horz</code></td>
+                    <td>adjusts nav icon + label for horizontal display</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>navbar.css, slidebar.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables for Navbar:</td>
+                    <td> --gap-row, --grid-background, --indicator, --navbar-height, --navbar-z,  --padding, --pad-horz, --pad-vert, --size-4, --text-comp</td>
+                </tr>
+                <tr>
+                    <td>Variables for Slide-out Bar:</td>
+                    <td>--bg-main-ter, --element-background, --gap-row, --indicator-text, --link, --mar-horz, --navbar-height, --padding-medium, --pad-vert, --text</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3 id="basic-navbar">Basic Navbar</h3>
+
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="navbar-left">
+            <a href="#basic-navbar">
+                <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo">
+            </a>
+        </div>
+
+        <div class="navbar-center">
+            <a href="#basic-navbar" class="">Home</a>
+            <a href="#basic-navbar" class="">About</a>
+            <a href="#basic-navbar">Contact</a>
+        </div>
+
+        <div class="navbar-right">
+            <button class="is-primary"><strong>Sign up</strong></button>
+            <button class="is-grey">Log in</button>
+        </div>
+    </nav>
+
+    <div class="space-vert-large">
+        <pre><code class="language-html">
+             &lt;nav class="navbar" aria-label="Main Navigation"&gt;
+                 &lt;div class="navbar-left"&gt;
+                     &lt;a href="#basic-navbar"&gt;
+                         &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo"&gt;
+                     &lt;/a&gt;
+                 &lt;/div&gt;
+
+                 &lt;div class="navbar-center"&gt;
+                     &lt;a href="#basic-navbar" class=""&gt;Home&lt;/a&gt;
+                     &lt;a href="#basic-navbar" class=""&gt;About&lt;/a&gt;
+                     &lt;a href="#basic-navbar"&gt;Contact&lt;/a&gt;
+                 &lt;/div&gt;
+
+                 &lt;div class="navbar-right"&gt;
+                     &lt;button class="is-primary"&gt;&lt;strong&gt;Sign up&lt;/strong&gt;&lt;/button&gt;
+                     &lt;button class="is-grey"&gt;Log in&lt;/button&gt;
+                 &lt;/div&gt;
+            &lt;/nav&gt;
+        </code></pre>
+    </div>
+
+    <div class="space-component-medium"></div>
+
+    <h3 id="common-navbar">Common Navbar</h3>
+
+    <nav class="navbar is-primary" aria-label="Main Navigation">
+        <div class="navbar-left">
+            <a href="#common-navbar">
+                <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo">
+            </a>
+        </div>
+
+        <div class="navbar-center">
+            <a href="#common-navbar" class="icon-nav" title="Home">
+                <svg class="icon"><use href="#icon-home"></use></svg>
+                <span>Home</span>
+            </a>
+
+            <a href="#common-navbar" class="">About</a>
+
+            <div class="dropdown indicator-white">
+                <button class="is-primary"  aria-haspopup="true" aria-controls="navbar-dropdown-menu1">
+                    <span>More</span>
+                </button>
+
+                <div class="dropdown-menu" id="navbar-dropdown-menu1">
+                    <nav>
+                        <a href="#common-navbar">Contact</a>
+                        <a href="#common-navbar">Jobs</a>
+                        <a href="#common-navbar">Report an issue</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-right">
+            <div class="buttons">
+                <button class="is-warning has-hover"><strong>Sign up</strong></button>
+                <button class="is-grey has-hover">Log in</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="space-vert-large">
+        <pre><code class="language-html">
+            &lt;nav class="navbar is-primary" aria-label="Main Navigation"&gt;
+                &lt;div class="navbar-left"&gt;
+                    &lt;a href="#common-navbar"&gt;
+                        &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo"&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;div class="navbar-center"&gt;
+                    &lt;a href="#common-navbar" class="icon-nav" title="Home"&gt;
+                        &lt;svg class="icon"&gt;&lt;use href="#icon-home"&gt;&lt;/use&gt;&lt;/svg&gt;
+                        &lt;span&gt;Home&lt;/span&gt;
+                    &lt;/a&gt;
+
+                    &lt;a href="#common-navbar" class=""&gt;About&lt;/a&gt;
+
+                    &lt;div class="dropdown indicator-white"&gt;
+                        &lt;button class="is-primary"  aria-haspopup="true" aria-controls="navbar-dropdown-menu2"&gt;
+                            &lt;span&gt;More&lt;/span&gt;
+                        &lt;/button&gt;
+
+                        &lt;div class="dropdown-menu" id="navbar-dropdown-menu2"&gt;
+                            &lt;nav&gt;
+                                &lt;a href="#common-navbar"&gt;Contact&lt;/a&gt;
+                                &lt;a href="#common-navbar"&gt;Jobs&lt;/a&gt;
+                                &lt;a href="#common-navbar"&gt;Report an issue&lt;/a&gt;
+                            &lt;/nav&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="navbar-right"&gt;
+                    &lt;div class="buttons"&gt;
+                        &lt;button class="is-warning has-hover"&gt;&lt;strong&gt;Sign up&lt;/strong&gt;&lt;/button&gt;
+                        &lt;button class="is-grey has-hover"&gt;Log in&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+        </code></pre>
+    </div>
+
+    <div class="space-component-medium"></div>
+
+    <h3 id="common-navbar2">Navbar with <small><code>.is-mobile</code></small></h3>
+
+    <nav class="navbar is-secondary-light is-mobile" aria-label="Main Navigation">
+        <div class="navbar-left">
+            <a href="#common-navbar">
+                <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo">
+            </a>
+        </div>
+
+        <div class="navbar-center" id="navbarIconsExample">
+            <a href="#common-navbar" class="icon-nav">
+                <svg class="icon"><use href="#icon-home"></use></svg>
+                <span>Home</span>
+            </a>
+
+            <a href="#common-navbar" class="icon-nav">
+                <svg class="icon"><use href="#icon-music"></use></svg>
+                <span>About</span>
+            </a>
+
+            <a href="#common-navbar" class="icon-nav">
+                <svg class="icon"><use href="#icon-phone"></use></svg>
+                <span>Contact</span>
+            </a>
+        </div>
+
+        <div class="navbar-right">
+            <figure class="avatar avatar-nm">
+                <img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal">
+            </figure>
+        </div>
+    </nav>
+
+    <div class="space-vert-large">
+        <pre><code class="language-html">
+            &lt;nav class="navbar is-secondary-light is-mobile" aria-label="Main Navigation"&gt;
+                &lt;div class="navbar-left"&gt;
+                    &lt;a href="#common-navbar"&gt;
+                        &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo"&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;div class="navbar-center" id="navbarIconsExample"&gt;
+                    &lt;a href="#common-navbar" class="icon-nav"&gt;
+                        &lt;svg class="icon"&gt;&lt;use href="#icon-home"&gt;&lt;/use&gt;&lt;/svg&gt;
+                        &lt;span&gt;Home&lt;/span&gt;
+                    &lt;/a&gt;
+
+                    &lt;a href="#common-navbar" class="icon-nav"&gt;
+                        &lt;svg class="icon"&gt;&lt;use href="#icon-music"&gt;&lt;/use&gt;&lt;/svg&gt;
+                        &lt;span&gt;About&lt;/span&gt;
+                    &lt;/a&gt;
+
+                    &lt;a href="#common-navbar" class="icon-nav"&gt;
+                        &lt;svg class="icon"&gt;&lt;use href="#icon-phone"&gt;&lt;/use&gt;&lt;/svg&gt;
+                        &lt;span&gt;Contact&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;div class="navbar-right"&gt;
+                    &lt;figure class="avatar avatar-nm"&gt;
+                        &lt;img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal"&gt;
+                    &lt;/figure&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+        </code></pre>
+    </div>
+
+    <div class="space-component-medium"></div>
+
+    <h3 id="navbar-sidebar">Navbar with Icons and Mobile Sidebar</h3>
+
+    <nav class="navbar is-primary has-sidebar" aria-label="Main Navigation">
+        <div class="navbar-left">
+            <div class="main-slide-bar">
+                <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu-example">
+
+                <label for="openSidebarMenu-example" class="sidebarIconToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="sr-only">Sidebar toggle</span>
+                </label>
+
+                <div class="sidebarMenu">
+                    <nav class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation">
+                        <a href="#navbar-sidebar" title="Some Link">Some Link</a>
+
+                        <a href="#navbar-sidebar" class="icon-nav-horz"  title="Bookmark">
+                            <svg class="icon"><use href="#icon-bookmark"/></svg>
+                            <span>Bookmark</span>
+                        </a>
+
+                        <a href="#navbar-sidebar" class="icon-nav-horz" title="Clock">
+                            <svg class="icon"><use href="#icon-clock"/></svg>
+                            <span>Clock</span>
+                        </a>
+
+                        <a href="#navbar-sidebar" class="icon-nav-horz" title="Film">
+                            <svg class="icon"><use href="#icon-film"/></svg>
+                            <span>Film</span>
+                        </a>
+
+                        <div class="sidebar-block">
+                            <input type="checkbox" id="check1">
+                            <label for="check1">More Links</label>
+                            <section>
+                                <a href="#common-navbar" class="icon-nav-horz" title="Home">
+                                    <svg class="icon"><use href="#icon-home"></use></svg>
+                                    <span>Home</span>
+                                </a>
+                                <a href="#navbar-sidebar">About</a>
+                                <a href="#navbar-sidebar">Contact</a>
+                                <a href="#navbar-sidebar">Jobs</a>
+                                <a href="#navbar-sidebar">Report an Issue</a>
+                            </section>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <a href="#common-navbar">
+                <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo">
+            </a>
+        </div>
+
+        <div class="navbar-center">
+            <a href="#common-navbar" class="icon-nav">
+                <svg class="icon"><use href="#icon-home"></use></svg>
+                <span>Home</span>
+            </a>
+
+            <a href="#common-navbar" class="icon-nav">
+                <svg class="icon"><use href="#icon-music"></use></svg>
+                <span>About</span>
+            </a>
+
+            <div class="dropdown indicator-white">
+                <button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu3">
+                    <svg class="icon"><use href="#icon-link"></use></svg>
+                    <span>More</span>
+                </button>
+
+                <div class="dropdown-menu" id="navbar-dropdown-menu3">
+                    <nav>
+                        <a href="#common-navbar">Contact</a>
+                        <a href="#common-navbar">Jobs</a>
+                        <a href="#common-navbar">Report an issue</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-right">
+            <figure class="avatar avatar-nm">
+                <img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal">
+            </figure>
+
+            <div class="main-slide-bar show-always is-right">
+                <input type="checkbox" class="openSidebarMenu" id="openSidebarMenuRight">
+
+                <label class="sidebarIconToggle" for="openSidebarMenuRight">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="sr-only">Sidebar toggle</span>
+                </label>
+
+                <div class="sidebarMenuRight">
+                    <nav class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation">
+                        <a href="#navbar-sidebar" title="Some Link">Some Link</a>
+
+                        <a href="#navbar-sidebar" class="icon-nav-horz"  title="Bookmark">
+                            <svg class="icon"><use href="#icon-bookmark"/></svg>
+                            <span>Bookmark</span>
+                        </a>
+
+                        <a href="#navbar-sidebar" class="icon-nav-horz" title="Clock">
+                            <svg class="icon"><use href="#icon-clock"/></svg>
+                            <span>Clock</span>
+                        </a>
+
+                        <a href="#navbar-sidebar" class="icon-nav-horz" title="Film">
+                            <svg class="icon"><use href="#icon-film"/></svg>
+                            <span>Film</span>
+                        </a>
+
+                        <div class="sidebar-block">
+                            <input type="checkbox" id="checkRight">
+                            <label for="checkRight">More Links</label>
+                            <section>
+                                <a href="#common-navbar" class="icon-nav-horz" title="Home">
+                                    <svg class="icon"><use href="#icon-home"></use></svg>
+                                    <span>Home</span>
+                                </a>
+                                <a href="#navbar-sidebar">About</a>
+                                <a href="#navbar-sidebar">Contact</a>
+                                <a href="#navbar-sidebar">Jobs</a>
+                                <a href="#navbar-sidebar">Report an Issue</a>
+                            </section>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="space-vert-large">
+        <pre><code class="language-html">
+            &lt;nav class="navbar is-primary has-sliding-sidebar" aria-label="Main Navigation"&gt;
+                &lt;div class="navbar-left"&gt;
+                    &lt;div class="main-slide-bar [show-always, is-right]"&gt;
+                        &lt;input type="checkbox" class="openSidebarMenu" id="openSidebarMenu [or openSidebarMenuRight]"&gt;
+
+                        &lt;label class="sidebarIconToggle" for="openSidebarMenu [or openSidebarMenuRight]"&gt;
+                            &lt;span&gt;&lt;/span&gt;
+                            &lt;span&gt;&lt;/span&gt;
+                            &lt;span&gt;&lt;/span&gt;
+                            &lt;span class="sr-only"&gt;Sidebar toggle&lt;/span&gt;
+                        &lt;/label&gt;
+
+                        &lt;div class="sidebarMenu [or sidebarMenuRight]"&gt;
+                            &lt;nav class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation"&gt;
+                                &lt;a href="#navbar-sidebar" title="Some Link"&gt;Some Link&lt;/a&gt;
+
+                                &lt;a href="#navbar-sidebar" class="icon-nav-horz"  title="Bookmark"&gt;
+                                    &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
+                                    &lt;span&gt;Bookmark&lt;/span&gt;
+                                &lt;/a&gt;
+
+                                &lt;a href="#navbar-sidebar" class="icon-nav-horz" title="Clock"&gt;
+                                    &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
+                                    &lt;span&gt;Clock&lt;/span&gt;
+                                &lt;/a&gt;
+
+                                &lt;a href="#navbar-sidebar" class="icon-nav-horz" title="Film"&gt;
+                                    &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
+                                    &lt;span&gt;Film&lt;/span&gt;
+                                &lt;/a&gt;
+
+                                &lt;div class="sidebar-block"&gt;
+                                    &lt;input type="checkbox" id="check1"&gt;
+                                    &lt;label for="check1"&gt;More Links&lt;/label&gt;
+                                    &lt;section&gt;
+                                        &lt;a href="#common-navbar" class="icon-nav-horz" title="Home"&gt;
+                                            &lt;svg class="icon"&gt;&lt;use href="#icon-home"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                            &lt;span&gt;Home&lt;/span&gt;
+                                        &lt;/a&gt;
+                                        &lt;a href="#navbar-sidebar"&gt;About&lt;/a&gt;
+                                        &lt;a href="#navbar-sidebar"&gt;Contact&lt;/a&gt;
+                                        &lt;a href="#navbar-sidebar"&gt;Jobs&lt;/a&gt;
+                                        &lt;a href="#navbar-sidebar"&gt;Report an Issue&lt;/a&gt;
+                                    &lt;/section&gt;
+                                &lt;/div&gt;
+                            &lt;/nav&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;a href="#common-navbar"&gt;
+                        &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo"&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;div class="navbar-center"&gt;
+                    &lt;a href="#common-navbar" class="icon-nav"&gt;
+                        &lt;svg class="icon"&gt;&lt;use href="#icon-home"&gt;&lt;/use&gt;&lt;/svg&gt;
+                        &lt;span&gt;Home&lt;/span&gt;
+                    &lt;/a&gt;
+
+                    &lt;a href="#common-navbar" class="icon-nav"&gt;
+                        &lt;svg class="icon"&gt;&lt;use href="#icon-music"&gt;&lt;/use&gt;&lt;/svg&gt;
+                        &lt;span&gt;About&lt;/span&gt;
+                    &lt;/a&gt;
+
+                    &lt;div class="dropdown indicator-white"&gt;
+                        &lt;button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu4"&gt;
+                            &lt;svg class="icon"&gt;&lt;use href="#icon-link"&gt;&lt;/use&gt;&lt;/svg&gt;
+                            &lt;span&gt;More&lt;/span&gt;
+                        &lt;/button&gt;
+
+                        &lt;div class="dropdown-menu" id="navbar-dropdown-menu4"&gt;
+                            &lt;nav&gt;
+                                &lt;a href="#common-navbar"&gt;Contact&lt;/a&gt;
+                                &lt;a href="#common-navbar"&gt;Jobs&lt;/a&gt;
+                                &lt;a href="#common-navbar"&gt;Report an issue&lt;/a&gt;
+                            &lt;/nav&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="navbar-right"&gt;
+                    &lt;figure class="avatar avatar-nm"&gt;
+                        &lt;img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal"&gt;
+                    &lt;/figure&gt;
+                &lt;/div&gt;
+            &lt;/nav&gt;
+        </code></pre>
+    </div>
 </main>

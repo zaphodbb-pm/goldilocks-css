@@ -1,10 +1,277 @@
 ---
 layout: default
 parent-tab: extend-components
+title: Pagination
 ---
 
-<h1 class="page-header">Pagination</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>pagination</strong> component is a classic component that helps with navigating through large amounts of
+                items retrieved from a database. <strong>Pagination</strong> is a flexbox styled element that allows for better
+                control over the children.
+            </p>
+
+            <p>For mobile widths (ie less than nominally 576px), the pagination elements reposition themselves.  The <em>previous</em>
+                and <em>next</em> targets move together at the top inside the parent.  The <em>page</em> targets move to the bottom inside the parent.
+                The font-sizes also reduce by one size.  This allows the <strong>pagination</strong> component to continue to provide access
+                to allow of the clickable targets.</p>
+
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.pagination</code></td>
+                    <td>Defines pagination container.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.pagination-rounded</code></td>
+                    <td>Displays a rounded page target.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.pagination-ellipsis</code></td>
+                    <td>Displays a <code>span</code> element as an ellipsis.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-current</code></td>
+                    <td>Highlights active element.</td>
+                </tr>
+
+                <tr>
+                    <td>Positioning options:</td>
+                    <td><code>.is-centered</code>, <code>.is-right</code></td>
+                </tr>
+
+                <tr>
+                    <td>Size options:</td>
+                    <td><code>.is-small</code>, <code>.is-medium</code>, <code>.is-large</code></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>pagination.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--border-main-darker, --grey-lighter, --link, -link-dark, --mar-horz, --radius, --size-5,
+                        --size-6, --size-7, --text, --text-light, --text-darker, --text-invert</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Normal and centered</h3>
+    <div class="row" id="extend-comp_pagination">
+        <div class="column">
+            <div class="stack">
+                <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                    <a class="prev" href="#extend-comp_pagination">&lt;</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 1">1</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 45">45</a>
+                    <a class="is-current" href="#extend-comp_pagination" aria-label="Page 45" aria-current="page">45</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 47">47</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 185">185</a>
+                    <a href="#extend-comp_pagination" class="next">&gt;</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;nav class="pagination is-centered" role="navigation" aria-label="pagination"&gt;
+                    &lt;a class="prev" href="#extend-comp_pagination"&gt;&lt;&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 1"&gt;1&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 45"&gt;45&lt;/a&gt;
+                    &lt;a class="is-current" href="#extend-comp_pagination" aria-label="Page 45" aria-current="page"&gt;45&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 47"&gt;47&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 185"&gt;185&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" class="next"&gt;&gt;&lt;/a&gt;
+                &lt;/nav&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Normal and rounded</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack">
+                <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+                    <a href="#extend-comp_pagination" class="prev">&lt;</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 1">1</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 45">45</a>
+                    <a href="#extend-comp_pagination" class="is-current" aria-label="Page 45" aria-current="page">45</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 47">47</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 185">185</a>
+                    <a href="#extend-comp_pagination" class="next">&gt;</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;nav class="pagination is-rounded" role="navigation" aria-label="pagination"&gt;
+                    &lt;a href="#extend-comp_pagination" class="prev"&gt;&lt;&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 1"&gt;1&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 45"&gt;45&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" class="is-current" aria-label="Page 45" aria-current="page"&gt;45&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 47"&gt;47&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 185"&gt;185&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" class="next"&gt;&gt;&lt;/a&gt;
+                &lt;/nav&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Small and is right</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack">
+                <nav class="pagination is-right is-small" role="navigation" aria-label="pagination">
+                    <a href="#extend-comp_pagination" class="prev">&lt;</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 1">1</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 45">45</a>
+                    <a href="#extend-comp_pagination" class="is-current" aria-label="Page 45" aria-current="page">45</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 47">47</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 185">185</a>
+                    <a href="#extend-comp_pagination" class="next">&gt;</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;nav class="pagination is-right is-small" role="navigation" aria-label="pagination"&gt;
+                    &lt;a href="#extend-comp_pagination" class="prev"&gt;&lt;&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 1"&gt;1&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 45"&gt;45&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" class="is-current" aria-label="Page 45" aria-current="page"&gt;45&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 47"&gt;47&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 185"&gt;185&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" class="next"&gt;&gt;&lt;/a&gt;
+                &lt;/nav&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Medium and is centered</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack">
+                <nav class="pagination is-centered is-medium" role="navigation" aria-label="pagination">
+                    <a href="#extend-comp_pagination" class="prev">&lt;</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 1">1</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 45">45</a>
+                    <a href="#extend-comp_pagination" class="is-current" aria-label="Page 45" aria-current="page">45</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 47">47</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" class="" aria-label="Goto page 185">185</a>
+                    <a href="#extend-comp_pagination" class="next">&gt;</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;nav class="pagination is-centered is-medium" role="navigation" aria-label="pagination"&gt;
+                    &lt;a href="#extend-comp_pagination" class="prev"&gt;&lt;&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 1"&gt;1&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 45"&gt;45&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" class="is-current" aria-label="Page 45" aria-current="page"&gt;45&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 47"&gt;47&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" class="" aria-label="Goto page 185"&gt;185&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" class="next"&gt;&gt;&lt;/a&gt;
+                &lt;/nav&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Large centered and rounded</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack">
+                <nav class="pagination is-large is-centered is-rounded" role="navigation" aria-label="pagination">
+                    <a href="#extend-comp_pagination" class="prev">&lt;</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 1">1</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" class="" aria-label="Goto page 45">45</a>
+                    <a href="#extend-comp_pagination" class="is-current" aria-label="Page 45" aria-current="page">45</a>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 47">47</a>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                    <a href="#extend-comp_pagination" aria-label="Goto page 185">185</a>
+                    <a href="#extend-comp_pagination" class="next">&gt;</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;nav class="pagination is-large is-centered is-rounded" role="navigation" aria-label="pagination"&gt;
+                    &lt;a href="#extend-comp_pagination" class="prev"&gt;&lt;&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 1"&gt;1&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" class="" aria-label="Goto page 45"&gt;45&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" class="is-current" aria-label="Page 45" aria-current="page"&gt;45&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 47"&gt;47&lt;/a&gt;
+                    &lt;span class="pagination-ellipsis"&gt;&hellip;&lt;/span&gt;
+                    &lt;a href="#extend-comp_pagination" aria-label="Goto page 185"&gt;185&lt;/a&gt;
+                    &lt;a href="#extend-comp_pagination" class="next"&gt;&gt;&lt;/a&gt;
+                &lt;/nav&gt;
+            </code></pre>
+        </div>
+    </div>
+
 </main>
