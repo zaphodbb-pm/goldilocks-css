@@ -1,10 +1,149 @@
 ---
 layout: default
 parent-tab: extend-elements
+title: Badges
 ---
 
-<h1 class="page-header">Badges</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>badge</strong> element is modifier for most elements that adds number indicators.  Typically badges are used to
+                show unread items or outstanding notifications.
+            </p>
+
+            <p>The <code>data-badge</code> attribute holds the numerical content to show.  This badge appears as a target at the top
+                right of the modified element.  The colour of the badge target can be modified with classes.  If there is no <code>data-badge</code>
+                or the attribute is not specified, the badge will appear as a dot.</p>
+
+            <p>Typical practices for using badges are:</p>
+            <ul>
+                <li>For the relevant element, use badges for counts of important information;</li>
+
+                <li>A dot badge notifies the user that something is new or updated without showing a count, such as an “unread report”,
+                    or activity notification. It may be useful as a less prominent badge, even when the count is known.</li>
+
+                <li>Use badges to notify or draw attention to changed values or status.</li>
+            </ul>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.badge</code></td>
+                    <td>Defines an element (typically a <code>span</code>, <code>figure</code>  or <code>button</code> element that can receive numerical data.</td>
+                </tr>
+
+                <tr>
+                    <td><code>data-badge="8"</code></td>
+                    <td>Is the content for display in the badge target</td>
+                </tr>
+
+                <tr>
+                    <td>Colour modifiers::</td>
+                    <td><code>.is-badge-primary</code>, <code>.is-badge-secondary</code>, <code>.is-badge-tertiary</code>,
+                        <code>.is-badge-link</code>, <code>.is-badge-success</code>, <code>.is-badge-warning</code>, <code>.is-badge-danger</code>,
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>badge.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main-element, --danger, --grey-dark, --link, --primary, --secondary, --success, --tertiary, --text-darker, --text-invert, --warning</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Basic Badge Attachments</h3>
+    <div class="row">
+        <div class="column">
+
+            <div class="stack-centered">
+                <span class="badge">Badge Default</span>
+                <span class="badge is-badge-primary" data-badge="8" title="unread messages">Badge Primary</span>
+                <span class="badge is-badge-success" data-badge="88" title="unread messages">Badge Success</span>
+                <span class="badge is-badge-warning" data-badge="888" title="unread messages">Badge Warning</span>
+                <span class="badge is-badge-danger" data-badge="8888" title="unread messages">Badge Danger</span>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;span class="badge"&gt;Badge Default&lt;/span&gt;
+                &lt;span class="badge is-badge-primary" data-badge="8" title="unread messages"&gt;Badge Primary&lt;/span&gt;
+                &lt;span class="badge is-badge-success" data-badge="88" title="unread messages"&gt;Badge Success&lt;/span&gt;
+                &lt;span class="badge is-badge-warning" data-badge="888" title="unread messages"&gt;Badge Warning&lt;/span&gt;
+                &lt;span class="badge is-badge-danger" data-badge="8888" title="unread messages"&gt;Badge Danger&lt;/span&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Button and Image Badge Attachments</h3>
+    <div class="row">
+        <div class="column">
+
+            <div class="stack-centered stack-gap-large">
+                <button class="is-primary badge is-badge-secondary" data-badge="88"  title="unread messages">
+                    Button Info
+                </button>
+
+                <button class="is-primary badge is-badge-link" data-badge="888"  title="unread messages">
+                    Button Link
+                </button>
+
+                <figure class="avatar avatar-lg badge is-badge-primary" data-badge="8" data-initial="YZ"  title="unread messages">
+                    <img src="{{site.url}}/img/demo/gl-woman4.png" alt="YZ">
+                </figure>
+            </div>
+
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;button class="is-primary badge is-badge-secondary" data-badge="88" title="unread messages"&gt;
+                    Button Info
+                &lt;/button&gt;
+
+                &lt;button class="is-primary badge is-badge-link" data-badge="888" title="unread messages"&gt;
+                    Button Link
+                &lt;/button&gt;
+
+                &lt;figure class="avatar avatar-lg badge is-badge-primary" data-badge="8" data-initial="YZ" title="unread messages"&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-woman4.png" alt="YZ"&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+
+    </div>
 </main>

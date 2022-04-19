@@ -1,10 +1,256 @@
 ---
 layout: default
 parent-tab: extend-elements
+title: Tags
 ---
 
-<h1 class="page-header">Tags</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>tag</strong> element is adapted from <a href="https://bulma.io/documentation/elements/tag/" target=_blank>Bulma</a>.
+                The difference is that <strong>Goldilocks-CSS</strong> uses the native HTML <code>data</code> tag with value attribute set to content text.
+                This allows screen readers to extract relevant semantic information.
+            </p>
+
+            <p>The tag element provides add on information for a variety of use cases. The tag elements can be concatenated into a
+                tracking list with target click areas.</p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.tag</code></td>
+                    <td>Defines tag and its setup.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-rounded</code></td>
+                    <td>Optional modifier rounds the tag.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.tags</code></td>
+                    <td>Creates horizontal grouped tags using flexbox.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-addons</code></td>
+                    <td>Combines tags into one display component.</td>
+                </tr>
+
+                <tr>
+                    <td>Size options:</td>
+                    <td><code>.tag-normal</code>, <code>.tag-medium</code>, <code>.tag-large</code></td>
+                </tr>
+
+                <tr>
+                    <td>Colour options:</td>
+                    <td>Any of the <b>element</b> colour modifiers from the Colour Palette helpers.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>tag.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td> --mar-horz, --mar-vert</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Basic Tags</h3>
+
+    <div class="row">
+        <div class="column">
+            <div class="stack-centered stack-gap">
+                <data class="tag" value="Default"></data>
+                <data class="tag is-primary" value="Primary"></data>
+                <data class="tag is-secondary" value="Secondary"></data>
+                <data class="tag is-tertiary" value="Tertiary"></data>
+                <data class="tag is-link" value="Link"></data>
+                <data class="tag is-success" value="Success"></data>
+                <data class="tag is-warning" value="Warning"></data>
+                <data class="tag is-danger" value="Danger"></data>
+                <data class="tag is-dark" value="Dark"></data>
+                <data class="tag is-grey" value="Grey"></data>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;data class="tag" value="Default"&gt;&lt;/data&gt;
+                &lt;data class="tag is-primary" value="Primary"&gt;&lt;/data&gt;
+
+                &lt;data class="tag is-secondary" value="Secondary"&gt;&lt;/data&gt;
+                &lt;data class="tag is-tertiary" value="Tertiary"&gt;&lt;/data&gt;
+
+                &lt;data class="tag is-link" value="Link"&gt;&lt;/data&gt;
+
+                &lt;data class="tag is-success" value="Success"&gt;&lt;/data&gt;
+
+                &lt;data class="tag is-warning" value="Warning"&gt;&lt;/data&gt;
+                &lt;data class="tag is-danger" value="Danger"&gt;&lt;/data&gt;
+
+                &lt;data class="tag is-dark" value="Dark"&gt;&lt;/data&gt;
+
+                &lt;data class="tag is-grey" value="Grey"&gt;&lt;/data&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Compound Tags</h3>
+
+    <div class="row">
+        <div class="column">
+            <div class="stack-centered stack-gap">
+
+                <div class="tags are-medium">
+                    <data class="tag" value="All"></data>
+                    <data class="tag" value="Medium"></data>
+                    <data class="tag" value="Size"></data>
+                </div>
+
+                <div class="tags are-large">
+                    <data class="tag is-success" value="All"></data>
+                    <data class="tag is-warning" value="Large"></data>
+                    <data class="tag is-danger" value="Size"></data>
+                </div>
+
+                <data class="tag is-success" value="Success + Delete">
+                    <button class="delete is-small" aria-label="delete"></button>
+                </data>
+
+                <data class="tag tag-medium is-warning " value="Warning + Delete">
+                    <button class="delete is-medium" aria-label="delete"></button>
+                </data>
+
+                <data class="tag tag-large is-danger is-rounded" value="Danger + Delete">
+                    <button class="delete is-large" aria-label="delete"></button>
+                </data>
+
+                <div class="tags has-addons">
+                    <data class="tag" value="Package"></data>
+                    <data class="tag is-primary" value="Category"></data>
+                </div>
+
+                <div class="tags has-addons">
+                    <data class="tag is-tertiary" value="User Name"></data>
+                    <a href="#page-top" class="tag is-delete" aria-label="delete"></a>
+                </div>
+
+                <div class="tags has-addons">
+                    <data class="tag is-dark" value="npm"></data>
+                    <data class="tag is-danger" value="0.9.2"></data>
+                </div>
+
+                <div class="tags has-addons">
+                    <data class="tag is-dark" value="build"></data>
+                    <data class="tag is-success" value="passing"></data>
+                </div>
+
+                <div class="tags has-addons">
+                    <data class="tag is-dark is-rounded" value="chat"></data>
+                    <data class="tag is-primary is-rounded" value="on gitter"></data>
+                </div>
+
+                <div class="tags has-addons are-large">
+                    <data class="tag is-dark" value="">
+                        <svg class="icon"><use href="#icon-file"/></svg>
+                    </data>
+                    <data class="tag is-primary" value=" 10 files"></data>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="tags are-medium"&gt;
+                    &lt;data class="tag" value="All"&gt;&lt;/data&gt;
+                    &lt;data class="tag" value="Medium"&gt;&lt;/data&gt;
+                    &lt;data class="tag" value="Size"&gt;&lt;/data&gt;
+                &lt;/div&gt;
+
+                &lt;div class="tags are-large"&gt;
+                    &lt;data class="tag is-success" value="All"&gt;&lt;/data&gt;
+                    &lt;data class="tag is-warning" value="Large"&gt;&lt;/data&gt;
+                    &lt;data class="tag is-danger" value="Size"&gt;&lt;/data&gt;
+                &lt;/div&gt;
+
+                &lt;data class="tag is-success" value="Success + Delete"&gt;
+                    &lt;button class="delete is-small" aria-label="delete"&gt;&lt;/button&gt;
+                &lt;/data&gt;
+
+                &lt;data class="tag tag-medium is-warning " value="Warning + Delete"&gt;
+                    &lt;button class="delete is-medium" aria-label="delete"&gt;&lt;/button&gt;
+                &lt;/data&gt;
+
+                &lt;data class="tag tag-large is-danger is-rounded" value="Danger + Delete"&gt;
+                    &lt;button class="delete is-large" aria-label="delete"&gt;&lt;/button&gt;
+                &lt;/data&gt;
+
+                &lt;div class="tags has-addons"&gt;
+                    &lt;data class="tag" value="Package"&gt;&lt;/data&gt;
+                    &lt;data class="tag is-primary" value="Category"&gt;&lt;/data&gt;
+                &lt;/div&gt;
+
+                &lt;div class="tags has-addons"&gt;
+                    &lt;data class="tag is-tertiary" value="User Name"&gt;&lt;/data&gt;
+                    &lt;a href="#page-top" class="tag is-delete" aria-label="delete"&gt;&lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;div class="tags has-addons"&gt;
+                    &lt;data class="tag is-dark" value="npm"&gt;&lt;/data&gt;
+                    &lt;data class="tag is-danger" value="0.9.2"&gt;&lt;/data&gt;
+                &lt;/div&gt;
+
+                &lt;div class="tags has-addons"&gt;
+                    &lt;data class="tag is-dark" value="build"&gt;&lt;/data&gt;
+                    &lt;data class="tag is-success" value="passing"&gt;&lt;/data&gt;
+                &lt;/div&gt;
+
+                &lt;div class="tags has-addons"&gt;
+                    &lt;data class="tag is-dark is-rounded" value="chat"&gt;&lt;/data&gt;
+                    &lt;data class="tag is-primary is-rounded" value="on gitter"&gt;&lt;/data&gt;
+                &lt;/div&gt;
+
+                &lt;div class="tags has-addons are-large"&gt;
+                    &lt;data class="tag is-dark" value=""&gt;
+                        &lt;svg class="icon"&gt;&lt;use href="#icon-file"/&gt;&lt;/svg&gt;
+                    &lt;/data&gt;
+                    &lt;data class="tag is-primary" value=" 10 files"&gt;&lt;/data&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

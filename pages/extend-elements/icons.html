@@ -1,10 +1,835 @@
 ---
 layout: default
 parent-tab: extend-elements
+title: Icons Included (optional)
 ---
 
-<h1 class="page-header">Icons</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>Icon use is <a href="https://uxmyths.com/post/715009009/myth-icons-enhance-usability" target=_blank> challenging </a>.
+                Icons generally are constrained by the social context that they are inserted into.  Consider an icon that works in North America.
+                Will this same icon mean the same thing in Europe?  Will it be understood in a more graphic text script such as Arabic or Sanskrit?
+                Will it stand out enough to be noticed in pictographic languages in Asia?
+            </p>
+
+            <p>Consider the <svg class="icon"><use href="#icon-save"/></svg> icon represented by a pictograph of a floppy disk.
+                2010 was the last year of production of the floppy disk after years of decline.  Yet, this symbol is still in use today to represent data saving.
+                Isn’t the human mind a curious thing?
+            </p>
+
+            <p>Much <a href="https://uxplanet.org/25-icons-with-universal-meaning-3ac48d22c686" target=_blank>research</a> is has been done by user experience
+                people on iconography that has become <a href="https://interconnectit.com/news/2018/11/07/not-all-icons-are-universal/" target=_blank>universal</a>
+                through long term exposure and repeated use.  This is a small set of icons!  When using icons, proper
+                <a href="https://usabilityhub.com/guides/testing-iconography" target=_blank>usability testing</a> should be done to ensure that it will
+                be understood and will do the job that is expected of it.
+            </p>
+
+            <p>Finally, there is universal agreement by UX experts that icons should also have an associated
+                <a href="https://www.nngroup.com/articles/icon-usability/" target=_blank>text label</a>.  This scores the highest usability
+                factor and transcends cultural contexts.  In general, icons should be used lightly and deliberately with proper forethought.
+                Less is better and provides better usability.
+            </p>
+
+            <p><strong>Goldilocks-CSS</strong> uses scalable vector graphics (SVG) icons that can be loaded and cached by the web page or
+                can be included in the build package for your application.  Uses HTML <code>svg</code> semantic tag for icon information.
+                Each icon is a selectable symbol with independent scale, line and fill settings.  Text size and color is inherited from parent HTML
+                tag or can be set with text control classes.
+            </p>
+
+            <p>“icon-definitions.html” file provides the SVG definitions for a set of designer defined icons  and contains 44
+                icons from <a href="https://feathericons.com/" target=_blank> Feather Icons</a> and is 17.91Kb in size (average of 407 bytes per icon).
+                “icon-la-definitions.html” is an alternate file that provides the SVG definitions for a set of designer defined icons based on a
+                font awesome clone and contains 44 icons from <a href="https://icons8.com/line-awesome" target=_blank> Lineawesome Icons</a> and is
+                32.42Kb in size (average of 737 bytes per icon).  Note that you can add more icons and from different icon sets as you need.
+                You can also easily delete icons that you are not using.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.icon</code></td>
+                    <td>Provides settings for an <code>svg</code> HTML tag.  Default settings are 1rem height and width.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.icon-nav</code></td>
+                    <td>Provides a column stacked flexbox for an icon and a text label.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.icon-nav-horz</code></td>
+                    <td>Provides a row direction flexbox for an icon and a text label.</td>
+                </tr>
+
+                <tr>
+                    <td>Size options:</td>
+                    <td><code>.is-small</code>, <code>.is-medium</code>, <code>.is-large</code></td>
+                </tr>
+
+                <tr>
+                    <td>Text colour:</td>
+                    <td>Can use any text color settings.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>icons.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--size-1 sets large size, --size-2 sets medium size, --size-4 sets normal size, --size-6 sets small size.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>The icon definition file containing the <code>svg</code> icon code can be loaded into main index.html by including the following
+                javascript at the end of the <code>body</code> tag.
+                This ensures that the main page loads as fast as possible and the icon definition file loads whenever ready.
+            </p>
+
+            <pre><code class="language-js">
+                &lt;script type="text/javascript"&gt;<br>
+                    fetch('http://localhost:3000/icons-definitions.html')<br>
+                            .then( response => response.text() )<br>
+                            .then((data) => {<br>
+                                let svgElements = document.createElement('div');<br>
+                                svgElements.innerHTML = data;<br>
+                                document.body.appendChild(svgElements);<br>
+                            })<br>
+                &lt;/script&gt;<br>
+            </code></pre>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+
+
+    <div class="row">
+
+        <section class="column">
+            <h3>SVG Icons Usage</h3>
+            <div>
+                <p>#icon-bell with sizes: .is-small, normal, .is-medium, .is-large</p>
+
+                <div class="level">
+
+                    <div class="icon-nav">
+                        <svg class="icon is-small has-text-link">
+                            <use href="#icon-bell" />
+                        </svg>
+                        <p>#is-small</p>
+                    </div>
+
+                    <div class="icon-nav">
+                        <svg class="icon has-text-primary">
+                            <use href="#icon-bell" />
+                        </svg>
+                        <p>normal size</p>
+                    </div>
+
+                    <div class="icon-nav">
+                        <svg class="icon is-medium has-text-danger">
+                            <use href="#icon-bell" />
+                        </svg>
+                        <p>#is-medium</p>
+                    </div>
+
+                    <div class="icon-nav">
+                        <svg class="icon is-large has-text-secondary">
+                            <use href="#icon-bell" />
+                        </svg>
+                        <p>#is-large</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="column">
+            <h3>Sample HTML Code</h3>
+            <pre><code class="language-html">
+                &lt;svg class="icon is-small has-text-link"&gt;
+                    &lt;use href="#icon-bell" /&gt;
+                &lt;/svg&gt;
+
+                &lt;svg class="icon has-text-primary"&gt;
+                    &lt;use href="#icon-bell" /&gt;
+                &lt;/svg&gt;
+
+                &lt;svg class="icon is-medium has-text-danger"&gt;
+                    &lt;use href="#icon-bell" /&gt;
+                &lt;/svg&gt;
+
+                &lt;svg class="icon is-large has-text-secondary"&gt;
+                    &lt;use href="#icon-bell" /&gt;
+                &lt;/svg&gt;
+            </code></pre>
+        </section>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <section class="box-shadow">
+        <h3>SVG Icon Set Based on Feather Icons</h3>
+
+        <p><a href="https://feathericons.com/" target="_blank">Feather Source Website</a></p>
+
+        <div class="row has-3x-minwidth">
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-alert-danger" /></svg>
+                    <p class="">#icon-alert-danger</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-alert-success" /></svg>
+                    <p class="">#icon-alert-success</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-alert-warning" /></svg>
+                    <p class="">#icon-alert-warning</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-bell" /></svg>
+                    <p class="">#icon-bell</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-bookmark"/></svg>
+                    <p class="">#icon-bookmark</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-calendar"/></svg>
+                    <p class="">#icon-calendar</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-clock"/></svg>
+                    <p class="">#icon-clock</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-cloud-download"/></svg>
+                    <p class="">#icon-cloud-download</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-cloud-save"/></svg>
+                    <p class="">#icon-cloud-save</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-code"/></svg>
+                    <p class="">#icon-code</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-cog"/></svg>
+                    <p class="">#icon-cog</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-day"/></svg>
+                    <p class="">#icon-day</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-edit"/></svg>
+                    <p class="">#icon-edit</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-eye"/></svg>
+                    <p class="">#icon-eye</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-eye-off"/></svg>
+                    <p class="">#icon-eye-off</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-facebook"/></svg>
+                    <p class="">#icon-facebook</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-file"/></svg>
+                    <p class="">#icon-file</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-film"/></svg>
+                    <p class="">#icon-film</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-filter"/></svg>
+                    <p class="">#icon-filter</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-github"/></svg>
+                    <p class="">#icon-github</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-help"/></svg>
+                    <p class="">#icon-help</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-home"/></svg>
+                    <p class="">#icon-home</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-image"/></svg>
+                    <p class="">#icon-image</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-link"/></svg>
+                    <p class="">#icon-link</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-linkedin"/></svg>
+                    <p class="">#icon-linkedin</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-mail"/></svg>
+                    <p class="">#icon-mail</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-map"/></svg>
+                    <p class="">#icon-map</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-marker"/></svg>
+                    <p class="">#icon-marker</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-music"/></svg>
+                    <p class="">#icon-music</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-night"/></svg>
+                    <p class="">#icon-night</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-phone"/></svg>
+                    <p class="">#icon-phone</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-printer"/></svg>
+                    <p class="">#icon-printer</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-save"/></svg>
+                    <p class="">#icon-save</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-search"/></svg>
+                    <p class="">#icon-search</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-send"/></svg>
+                    <p class="">#icon-send</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-settings"/></svg>
+                    <p class="">#icon-settings</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-share"/></svg>
+                    <p class="">#icon-share</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-shopping-cart"/></svg>
+                    <p class="">#icon-shopping-cart</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-slack"/></svg>
+                    <p class="">#icon-slack</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-tag"/></svg>
+                    <p class="">#icon-tag</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-trash"/></svg>
+                    <p class="">#icon-trash</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-twitter"/></svg>
+                    <p class="">#icon-twitter</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-user"/></svg>
+                    <p class="">#icon-user</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-users"/></svg>
+                    <p class="">#icon-users</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="space-component-medium "></div>
+
+    <section class="box-shadow">
+        <h3>SVG Icon Set Based on Line Awesome</h3>
+
+        <p><a href="https://icons8.com/line-awesome" target="_blank">Line Awesome Source Website</a></p>
+
+        <div class="row has-3x-minwidth">
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-alert-danger" /></svg>
+                    <p class="">#icon-la-alert-danger</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-alert-success" /></svg>
+                    <p class="">#icon-la-alert-success</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-alert-warning" /></svg>
+                    <p class="">#icon-la-alert-warning</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-bell" /></svg>
+                    <p class="">#icon-la-bell</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-bookmark"/></svg>
+                    <p class="">#icon-la-bookmark</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-calendar"/></svg>
+                    <p class="">#icon-la-calendar</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-clock"/></svg>
+                    <p class="">#icon-la-clock</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-cloud-download"/></svg>
+                    <p class="">#icon-la-cloud-download</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-cloud-save"/></svg>
+                    <p class="">#icon-la-cloud-save</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-code"/></svg>
+                    <p class="">#icon-la-code</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-cog"/></svg>
+                    <p class="">#icon-la-cog</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-day"/></svg>
+                    <p class="">#icon-la-day</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-edit"/></svg>
+                    <p class="">#icon-la-edit</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-eye"/></svg>
+                    <p class="">#icon-la-eye</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-eye-off"/></svg>
+                    <p class="">#icon-la-eye-off</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-facebook"/></svg>
+                    <p class="">#icon-la-facebook</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-file"/></svg>
+                    <p class="">#icon-la-file</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-film"/></svg>
+                    <p class="">#icon-la-film</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-filter"/></svg>
+                    <p class="">#icon-la-filter</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-github"/></svg>
+                    <p class="">#icon-la-github</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-help"/></svg>
+                    <p class="">#icon-la-help</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-home"/></svg>
+                    <p class="">#icon-la-home</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-image"/></svg>
+                    <p class="">#icon-la-image</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-link"/></svg>
+                    <p class="">#icon-la-link</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-linkedin"/></svg>
+                    <p class="">#icon-la-linkedin</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-mail"/></svg>
+                    <p class="">#icon-la-mail</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-map"/></svg>
+                    <p class="">#icon-la-map</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-marker"/></svg>
+                    <p class="">#icon-la-marker</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-music"/></svg>
+                    <p class="">#icon-la-music</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-night"/></svg>
+                    <p class="">#icon-la-night</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-phone"/></svg>
+                    <p class="">#icon-la-phone</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-printer"/></svg>
+                    <p class="">#icon-la-printer</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-save"/></svg>
+                    <p class="">#icon-la-save</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-search"/></svg>
+                    <p class="">#icon-la-search</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-send"/></svg>
+                    <p class="">#icon-la-send</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-settings"/></svg>
+                    <p class="">#icon-la-settings</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-share"/></svg>
+                    <p class="">#icon-la-share</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-shopping-cart"/></svg>
+                    <p class="">#icon-la-shopping-cart</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-slack"/></svg>
+                    <p class="">#icon-la-slack</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-tag"/></svg>
+                    <p class="">#icon-la-tag</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-trash"/></svg>
+                    <p class="">#icon-la-trash</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-twitter"/></svg>
+                    <p class="">#icon-la-twitter</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-user"/></svg>
+                    <p class="">#icon-la-user</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="icon-nav">
+                    <svg class="icon is-medium"><use href="#icon-la-users"/></svg>
+                    <p class="">#icon-la-users</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 </main>

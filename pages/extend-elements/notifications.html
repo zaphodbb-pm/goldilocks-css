@@ -1,10 +1,235 @@
 ---
 layout: default
 parent-tab: extend-elements
+title: Notifications
 ---
 
-<h1 class="page-header">Notifications</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>notification</strong> block is a simple coloured block, based on the HTML <code>article</code> tag, to highlight
+                something meaningful to a user.  The notification block is often a system generated message to notify a result after a user action.
+            </p>
+
+            <p><strong>Notification</strong> block backgrounds can be colourized with the element colour helpers that set the text and
+                background colour.  The <strong>notification</strong> block also supports icons in the body of the block.
+            </p>
+
+            <p>The <strong>notification</strong> block also supports an optional delete button to allow the user to dismiss the notification.
+                This dismissal action will require some javascript to react to the dismissal press.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.notification</code></td>
+                    <td>Defines a notification block with background and text color.</td>
+                </tr>
+
+                <tr>
+                    <td>Colour options:</td>
+                    <td>Any of the <b>element</b> colour modifiers from the Colour Palette helpers.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>notifications.css.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--element-background, --radius, --text</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="stack-centered stack-gap-medium">
+                <article class="notification">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum Default</p>
+                </article>
+
+                <article class="notification is-primary">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-primary</p>
+                </article>
+
+                <article class="notification is-secondary">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-secondary</p>
+                </article>
+
+                <article class="notification is-tertiary">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-tertiary</p>
+                </article>
+
+                <article class="notification is-link">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-link</p>
+                </article>
+
+                <article class="notification is-success">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-success</p>
+                </article>
+
+                <article class="notification is-warning">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-warning</p>
+                </article>
+
+                <article class="notification is-danger">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-danger</p>
+                </article>
+
+                <article class="notification is-primary-light">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-primary-light</p>
+                </article>
+
+                <article class="notification is-secondary-light">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-secondary-light</p>
+                </article>
+
+                <article class="notification is-tertiary-light">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-tertiary-light</p>
+                </article>
+
+                <article class="notification is-link-light">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-link-light</p>
+                </article>
+
+                <article class="notification is-success-light">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-success-light</p>
+                </article>
+
+                <article class="notification is-warning-light">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-warning-light</p>
+                </article>
+
+                <article class="notification is-danger-light">
+                    <button class="delete" type="button" aria-label="delete"></button>
+                    <p>Lorem Ipsum is-danger-light</p>
+                </article>
+            </div>
+
+        </div>
+
+        <section class="column">
+            <pre><code class="language-html">
+                &lt;article class="notification"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum Default&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-primary"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-primary&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-secondary"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-secondary&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-tertiary"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-tertiary&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-link"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-link&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-success"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-success&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-warning"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-warning&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-danger"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-danger&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-primary-light"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-primary-light&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-secondary-light"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-secondary-light&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-tertiary-light"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-tertiary-light&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-link-light"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-link-light&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-success-light"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-success-light&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-warning-light"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-warning-light&lt;/p&gt;
+                &lt;/article&gt;
+
+                &lt;article class="notification is-danger-light"&gt;
+                    &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;p&gt;Lorem Ipsum is-danger-light&lt;/p&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </section>
+
+    </div>
 </main>

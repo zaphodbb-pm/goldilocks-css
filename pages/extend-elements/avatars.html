@@ -1,10 +1,188 @@
 ---
 layout: default
 parent-tab: extend-elements
+title: Avatars
 ---
 
-<h1 class="page-header">Avatars</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>avatar</strong> is an image that represents the user’s identity on screen.  The <strong>avatar</strong> is a small
+                object that has great power to help connect the user to the application or user to user relationships.  <strong>Avatars</strong>
+                simplify the process of interaction and communication.  They also save screen space producing less visual clutter.
+                <strong>Avatars</strong> improve comprehension allowing users to rely on images instead of text labels to identify a person.  Adapted from
+                <a href="https://picturepan2.github.io/spectre/elements/avatars.html" target="_blank">Spectre CSS - avatars</a>.
+            </p>
+
+            <p>The <code>.avatar</code> element modifier structures a user profile image to be displayed as a circle cropped image.
+                Five sizes are available ranging from 1x to 5x the base font size:
+            </p>
+
+            <ul>
+                <li><code>avatar-xl</code> (5rem);</li>
+                <li><code>avatar-lg</code> (4rem);</li>
+                <li><code>avatar-nm</code> (3rem);</li>
+                <li><code>avatar-sm</code> (2rem);</li>
+                <li><code>avatar-xs</code> (1rem).</li>
+            </ul>
+
+
+            <p>Three "presence" indicators are also available for real-time
+                indication of the state of a user.  For users who don't have profile pictures, use their initials for avatars.
+                The <code>data-initials</code> attribute provides the initials to show inside the avatar.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.avatar</code></td>
+                    <td>Defines a <code>figure</code> HTML tag that holds a user profile image.</td>
+                </tr>
+
+                <tr>
+                    <td><code>data-initials</code></td>
+                    <td>Optional attribute that holds a user's initials if no image is available.</td>
+                </tr>
+
+                <tr>
+                    <td>Size options:</td>
+                    <td><code>.avatar-xs</code>, <code>.avatar-sm</code>, <code>.avatar-nm</code>, <code>.avatar-lg</code>, <code>.avatar-xl</code></td>
+                </tr>
+
+                <tr>
+                    <td>Presence modifiers:</td>
+                    <td><code>.avatar-presence-online</code>, <code>.avatar-presence-busy</code>, <code>.avatar-presence-away</code></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>avatar.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--base-font-size, --bg-main, --danger, --grey-light, --secondary, --success, --warning</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+
+    <h3>Avatar with Options</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack-centered stack-gap-medium">
+
+                <figure class="avatar avatar-lg">
+                    <img src="{{site.url}}/img/demo/gl-man2.png" alt="Avatar LG">
+                </figure>
+
+                <figure class="avatar avatar-lg avatar-presence-online">
+                    <img src="{{site.url}}/img/demo/gl-woman1.png" alt="Avatar lg">
+                </figure>
+
+                <figure class="avatar avatar-lg avatar-presence-online" data-initials="YZ">
+                    <div></div>
+                </figure>
+
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;figure class="avatar avatar-lg"&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-man2.png" alt="Avatar LG"&gt;
+                &lt;/figure&gt;
+
+                &lt;figure class="avatar avatar-lg avatar-presence-online"&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-woman1.png" alt="Avatar lg"&gt;
+                &lt;/figure&gt;
+
+                &lt;figure class="avatar avatar-lg avatar-presence-online" data-initials="YZ"&gt;
+                    &lt;div&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Avatar Sizes</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack-centered stack-gap-medium">
+
+                <figure class="avatar avatar-xl avatar-presence-busy">
+                    <img src="{{site.url}}/img/demo/gl-woman2.png" alt="Avatar XL">
+                </figure>
+
+                <figure class="avatar avatar-lg avatar-presence-online" data-initials="YZ">
+                    <div></div>
+                </figure>
+
+                <figure class="avatar avatar-nm avatar-presence-away">
+                    <img src="{{site.url}}/img/demo/gl-man2.png" alt="Avatar Normal">
+                </figure>
+
+                <figure class="avatar avatar-sm">
+                    <img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar SM">
+                </figure>
+
+                <figure class="avatar avatar-xs">
+                    <img src="{{site.url}}/img/demo/gl-man2.png" alt="Avatar XS">
+                </figure>
+
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;figure class="avatar avatar-xl avatar-presence-busy"&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-woman1.png" alt="Avatar XL"&gt;
+                &lt;/figure&gt;
+
+                &lt;figure class="avatar avatar-lg avatar-presence-online" data-initials="YZ"&gt;
+                    &lt;div&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+
+                &lt;figure class="avatar avatar-nm avatar-presence-away"&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-man2.png" alt="Avatar Normal"&gt;
+                &lt;/figure&gt;
+
+                &lt;figure class="avatar avatar-sm"&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar SM"&gt;
+                &lt;/figure&gt;
+
+                &lt;figure class="avatar avatar-xs"&gt;
+                    &lt;img src="{{site.url}}/img/demo/gl-man2.png" alt="Avatar XS"&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>
