@@ -163,6 +163,7 @@
         margin: 0 0 1rem 0;
         row-gap: var(--gap-row);
         flex-wrap: nowrap;
+        justify-content: flex-start;
     }
 
     .navbar:not(.is-mobile) .navbar-center > a {

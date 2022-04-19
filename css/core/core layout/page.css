@@ -174,9 +174,12 @@
         display: none;
     }
 
+    /*
     .page-main-nav:not(.is-mobile) .navbar-center {
         display: none;
     }
+
+     */
 
     .page-wrapper.has-slidebar {
         grid-template-columns: 1fr;
