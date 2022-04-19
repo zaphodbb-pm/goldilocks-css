@@ -147,10 +147,6 @@
         height: 100%;
     }
 
-    .navbar.has-sidebar .navbar-center {
-        display: none;
-    }
-
     .navbar:not(.is-mobile) .navbar-left,
     .navbar:not(.is-mobile) .navbar-right {
         order: 1;
