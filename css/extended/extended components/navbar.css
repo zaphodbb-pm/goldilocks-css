@@ -215,7 +215,7 @@
         display: none;
     }
 
-    .navbar .navbar-center.is-fixed-bottom {
+    .navbar .navbar-center.show-bottom-nav {
         position: fixed;
         bottom: 0;
         right: 0;
@@ -230,11 +230,11 @@
         background-color: inherit;
     }
 
-    .navbar:not(.is-mobile) .navbar-center.is-fixed-bottom .icon-nav > span{
+    .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav > span{
         display: none;
     }
 
-    .navbar:not(.is-mobile) .navbar-center.is-fixed-bottom .icon-nav .icon{
+    .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav .icon{
         margin: 0;
     }
 }
