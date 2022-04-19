@@ -144,7 +144,7 @@
     .navbar {
         justify-content: flex-start;
         flex-wrap: wrap;
-        height: 100%;
+        height: auto;
     }
 
     .navbar:not(.is-mobile) .navbar-left,
