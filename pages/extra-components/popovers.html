@@ -1,10 +1,245 @@
 ---
 layout: default
 parent-tab: extra-components
+title: Popovers
 ---
 
-<h1 class="page-header">Popovers</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>Popovers are small containers that often contain additional information or allow a user to interact with secondary
+                content / calls to action.
+            </p>
+
+            <p>The <code>aside</code> HTML element is used as a semantic container as it represents a portion of a document whose
+                content is only indirectly related to the document's main content.
+            </p>
+
+            <p>Note: Mobile / touch devices do not respond to a <code>:hover</code> user action. Mobile / touch devices do
+                respond to <code></code> event that can use javascript to emulate a hover user action.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.popover</code></td>
+                    <td>Defines the class for the <code>aside</code> content container that has a <code>button</code> and uses
+                        <code>:hover</code> to activate the hidden content.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.pop-right</code>, <code>.pop-left</code>, <code>.pop-bottom</code></td>
+                    <td>Define the callout position. By default, the popovers appear above the element.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.popover-container</code></td>
+                    <td>Defines the hidden container of content that will appear on <code>:hover</code> or <code>:focus </code> user action.
+                        The container can be any content that a user can read or a component that a user can interact with such as a card with links.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>popover.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main-comp, --mar-horz, --mar-vert, --pad-horz, --radius, --shadow</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Basic Popovers with Different Buttons</h3>
+    <div class="row is-centered">
+        <div class="column">
+
+            <div class="stack-centered stack-gap-large">
+
+                <aside class="popover">
+                    <button  class="is-primary">popover (top default)</button>
+                    <div class="popover-container">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                        </p>
+                    </div>
+                </aside>
+
+                <aside class="popover pop-right">
+                    <button   class="is-secondary">.popover .popover-right</button>
+                    <div class="popover-container">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                        </p>
+                    </div>
+                </aside>
+
+                <aside class="popover pop-bottom">
+                    <button  class="is-tertiary-outlined">.popover .popover-bottom</button>
+                    <div class="popover-container">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                        </p>
+                    </div>
+                </aside>
+
+                <aside class="popover pop-left">
+                    <button  class="is-link-inverted">.popover .popover-left</button>
+                    <div class="popover-container">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                        </p>
+                    </div>
+                </aside>
+
+            </div>
+
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;aside class="popover"&gt;
+                    &lt;button  class="is-primary"&gt;popover (top default)&lt;/button&gt;
+                    &lt;div class="popover-container"&gt;
+                        &lt;p&gt;
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/aside&gt;
+
+                &lt;aside class="popover pop-right"&gt;
+                    &lt;button   class="is-secondary"&gt;.popover .popover-right&lt;/button&gt;
+                    &lt;div class="popover-container"&gt;
+                        &lt;p&gt;
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/aside&gt;
+
+                &lt;aside class="popover pop-bottom"&gt;
+                    &lt;button  class="is-info"&gt;.popover .popover-bottom&lt;/button&gt;
+                    &lt;div class="popover-container"&gt;
+                        &lt;p&gt;
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/aside&gt;
+
+                &lt;aside class="popover pop-left"&gt;
+                    &lt;button  class="is-link"&gt;.popover .popover-left&lt;/button&gt;
+                    &lt;div class="popover-container"&gt;
+                        &lt;p&gt;
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/aside&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Popover Wrapping Another Component</h3>
+    <div class="row is-centered">
+        <div class="column">
+            <aside class="popover pop-right">
+                <button  class="is-primary">.popover with card</button>
+                <div class="popover-container">
+                    <article class="card">
+                        <figure class="card-image">
+                            <img class="has-aspect-3x1" src="{{site.url}}/img/demo/main2.jpg" alt="Placeholder image">
+                        </figure>
+
+                        <header class="card-header">
+                            <h2 class="card-header-title">
+                                Card Title
+                            </h2>
+                        </header>
+
+                        <div class="card-body">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                                tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                            </p>
+                        </div>
+
+                        <footer class="card-footer">
+                            <button class="is-primary has-hover"><a href="#">Save</a></button>
+                            <button class="is-secondary-outlined has-hover"><a href="#">Edit</a></button>
+                            <button class="is-danger-outlined has-hover"><a href="#">Delete</a></button>
+                        </footer>
+                    </article>
+                </div>
+            </aside>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;aside class="popover pop-right"&gt;
+                    &lt;button  class="is-primary"&gt;.popover with card&lt;/button&gt;
+                    &lt;div class="popover-container"&gt;
+                        &lt;article class="card"&gt;
+                            &lt;figure class="card-image"&gt;
+                                &lt;img class="has-aspect-3x1" src="{{site.url}}/img/demo/main2.jpg" alt="Placeholder image"&gt;
+                            &lt;/figure&gt;
+
+                            &lt;header class="card-header"&gt;
+                                &lt;h2 class="card-header-title"&gt;
+                                    Card Title
+                                &lt;/h2&gt;
+                            &lt;/header&gt;
+
+                            &lt;div class="card-body"&gt;
+                                &lt;p&gt;
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                                    tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                                &lt;/p&gt;
+                            &lt;/div&gt;
+
+                            &lt;footer class="card-footer"&gt;
+                                &lt;button class="is-primary has-hover"&gt;&lt;a href="#"&gt;Save&lt;/a&gt;&lt;/button&gt;
+                                &lt;button class="is-secondary-outlined has-hover"&gt;&lt;a href="#"&gt;Edit&lt;/a&gt;&lt;/button&gt;
+                                &lt;button class="is-danger-outlined has-hover"&gt;&lt;a href="#"&gt;Delete&lt;/a&gt;&lt;/button&gt;
+                            &lt;/footer&gt;
+                        &lt;/article&gt;
+                    &lt;/div&gt;
+                &lt;/aside&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

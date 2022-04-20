@@ -1,10 +1,135 @@
 ---
 layout: default
 parent-tab: extra-components
+title: Carousel
 ---
 
-<h1 class="page-header">Carousel</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>carousel</strong> is a simple horizontal all CSS display bar for images.  CSS grid is used to display these images;
+                no javascript required. Nothing fancy, but can also be used for mobile devices.
+            </p>
+
+            <p>The <code>.carousel-wrapper</code> class defines the parent container and sets up the grid.  <code>.carousel</code> class
+                controls the horizontal display of images. The <code>.no-scrollbar</code> class is an optional modifier that hides
+                the bottom scrollbar.
+            </p>
+
+            <p>The variable <code>--carousel-image-height</code> sets the images height and <code>--carousel-image-width</code> is
+                set to an aspect ratio of 4 x 3 (default).  The images are set to <em>cover</em> the carousel image area and so the image
+                overflow will be hidden.  This results in uniform image sizing.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.carousel-wrapper</code></td>
+                    <td>Defines a parent grid <code>div</code>.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.carousel</code></td>
+                    <td>Main body of carousel that holds a <code>ul</code> list of images.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.no-scrollbar</code></td>
+                    <td>Optional modifier that removes bottom scroll bar.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>carousel.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main-ter, --carousel-image-height,  --carousel-image-widtht, --gutter, --mar-ver, --pad-horz ,--radius</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+
+    <h3>Carousel with Scroll Bar</h3>
+
+    <div class="carousel-wrapper">
+        <div class="carousel">
+            <ul>
+                <li><img src="{{site.url}}/img/demo/main7.jpg" alt="main7"/></li>
+                <li><img src="{{site.url}}/img/demo/main6.jpg" alt="main6"/></li>
+                <li><img src="{{site.url}}/img/demo/main8.jpg" alt="cycle6"/></li>
+                <li><img src="{{site.url}}/img/demo/gl-demo.jpg" alt="gl-main1"/></li>
+                <li><img src="{{site.url}}/img/demo/main1.jpg" alt="main1"/></li>
+                <li><img src="{{site.url}}/img/demo/main3.jpg" alt="main3"/></li>
+                <li><img src="{{site.url}}/img/demo/main4.jpg" alt="main4"/></li>
+                <li><img src="{{site.url}}/img/demo/main6.jpg" alt="main6"/></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Carousel no Scroll Bar</h3>
+
+    <div class="carousel-wrapper">
+        <div class="carousel">
+            <ul class="no-scrollbar">
+                <li><img src="{{site.url}}/img/demo/main7.jpg" alt="main7"/></li>
+                <li><img src="{{site.url}}/img/demo/main6.jpg" alt="main6"/></li>
+                <li><img src="{{site.url}}/img/demo/main8.jpg" alt="cycle6"/></li>
+                <li><img src="{{site.url}}/img/demo/gl-demo.jpg" alt="gl-main1"/></li>
+                <li><img src="{{site.url}}/img/demo/main1.jpg" alt="main1"/></li>
+                <li><img src="{{site.url}}/img/demo/main3.jpg" alt="main3"/></li>
+                <li><img src="{{site.url}}/img/demo/main4.jpg" alt="main4"/></li>
+                <li><img src="{{site.url}}/img/demo/main6.jpg" alt="main6"/></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <pre><code class="language-html">
+        &lt;div class="carousel-wrapper"&gt;
+            &lt;div class="carousel"&gt;
+                &lt;ul class="[no-scrollbar]"&gt;
+                    &lt;li&gt;&lt;img src="{{site.url}}/img/demo/main7.jpg" alt="main7"/&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="{{site.url}}/img/demo/main6.jpg" alt="main6"/&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="{{site.url}}/img/demo/main8.jpg" alt="cycle6"/&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="{{site.url}}/img/demo/gl-demo.jpg" alt="gl-main1"/&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="{{site.url}}/img/demo/main1.jpg" alt="main1"/&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="{{site.url}}/img/demo/main3.jpg" alt="main3"/&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="{{site.url}}/img/demo/main4.jpg" alt="main4"/&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="{{site.url}}/img/demo/main6.jpg" alt="main6"/&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    </code></pre>
 </main>

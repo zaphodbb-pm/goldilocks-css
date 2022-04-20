@@ -25,17 +25,29 @@
 }
 
 .message > header {
+    margin: 0;
+    padding: .75em 1.25em;
+    width: auto;
     align-items: center;
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
     display: flex;
-    font-weight: var(--weight-bold);
     justify-content: space-between;
-    line-height: var(--line-height-125);
-    margin: 0;
-    padding: .75em .5em .75em 1.25em;
     position: relative;
     pointer-events: none;
+}
+
+.message > header > h2,
+.message > header > h3,
+.message > header > h4,
+.message > header > h5,
+.message > header > h6 {
+    font-size: var(--size-4);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-height-125);
+    margin: 0;
+    padding: 0;
+    color: inherit;
 }
 
 .message > .message-body {
@@ -45,6 +57,7 @@
     border-bottom-right-radius: var(--radius);
 }
 
+.message > :first-child:not(header) + .message-body,
 .message > .message-body:first-child {
     border-color: inherit;
     border-style: solid;

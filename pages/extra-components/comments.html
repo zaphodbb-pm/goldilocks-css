@@ -1,10 +1,223 @@
 ---
 layout: default
 parent-tab: extra-components
+title: Comments
 ---
 
-<h1 class="page-header">Comments</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>comments</strong> component is used to capture client entered comments as a response to the primary page content.
+                This a typical use case for many SaaS type applications.
+            </p>
+
+            <p>Up to two levels of comments responses is supported.  More can be added if need, however, this can become unwieldy quickly.
+                The client avatar is useful to encourage engagement.  An HTML <code>time</code> tag is available to capture when the client responded.
+                The comment body can also contain a form but needs to be styled with a <code>with-form</code> class to align the form
+                within the comment body.</p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.comments</code></td>
+                    <td>Defines the parent component.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-level-2</code></td>
+                    <td>Indents second level (ie response to comment).</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-level-3</code></td>
+                    <td>Double indents third level response.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.with-form</code></td>
+                    <td>When message area is a form, adjusts margins and padding to align form with comments structure.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>comments.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--border-main, --gap-col, --mar-vert, --padding, --padding-normal</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+
+    <div class="row" id="comments-top">
+        <div class="column">
+
+            <article class="comments">
+                <figure class="avatar avatar-nm">
+                    <img src="{{site.url}}/img/demo/gl-man2.png" alt="Avatar LG">
+                </figure>
+
+                <div>
+                    <p><strong>Richard Smith</strong></p>
+                    <time datetime="2022-01-30 17:00">Commented 2 months ago</time>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis, nunc id mollis mattis, mi leo suscipit turpis,
+                        ac pulvinar nulla dolor a tortor. In vel nibh quis enim eleifend tincidunt ut sit amet nulla.</p>
+                    <a href="#comments-top" aria-label="link icon"><svg class="icon"><use href="#icon-link"/></svg></a>
+                </div>
+            </article>
+
+            <article class="comments is-level-2">
+                <figure class="avatar avatar-nm">
+                    <img src="{{site.url}}/img/demo/gl-woman2.png" alt="Avatar LG">
+                </figure>
+
+                <div>
+                    <p><strong>Jane Doe</strong></p>
+                    <time datetime="2022-02-30 17:00">Commented 6 weeks ago</time>
+                    <p>Etiam at tellus pulvinar, convallis lacus nec, hendrerit magna. Morbi interdum porta dui at tempor.
+                        Quisque ante justo, aliquet eu vestibulum vitae, elementum tincidunt leo. </p>
+                    <a href="#comments-top" aria-label="link icon"><svg class="icon"><use href="#icon-link"/></svg></a>
+                </div>
+            </article>
+
+            <article class="comments is-level-3">
+                <figure class="avatar avatar-nm">
+                    <img src="{{site.url}}/img/demo/gl-man1.png" alt="Avatar LG">
+                </figure>
+
+                <div>
+                    <p><strong>Chris Jones</strong></p>
+                    <time datetime="2022-03-30 17:00">Commented 8 days ago</time>
+                    <p>Etiam at tellus pulvinar, convallis lacus nec, hendrerit magna. Morbi interdum porta dui at tempor.
+                        Quisque ante justo, aliquet eu vestibulum vitae, elementum tincidunt leo. </p>
+                    <a href="#comments-top" aria-label="link icon"><svg class="icon"><use href="#icon-link"/></svg></a>
+                </div>
+            </article>
+
+            <article class="comments with-form">
+                <figure class="avatar avatar-nm" data-initials="JS">
+                    <div></div>
+                </figure>
+
+                <form class="form">
+                    <label>
+                        <span>Text Area</span>
+                        <textarea rows="5" placeholder="Text area input" name="textarea_field"></textarea>
+                    </label>
+
+                    <div class="form-footer">
+                        <button class="is-primary has-hover">
+                            <input type="submit" value="Submit!" formaction="#" formmethod="get">
+                        </button>
+
+                        <button class="is-danger-outlined has-hover">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </article>
+
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;article class="comments"&gt;
+                    &lt;figure class="avatar avatar-nm"&gt;
+                        &lt;img src="{{site.url}}/img/demo/gl-man2.png" alt="Avatar LG"&gt;
+                    &lt;/figure&gt;
+
+                    &lt;div&gt;
+                        &lt;p&gt;&lt;strong&gt;Richard Smith&lt;/strong&gt;&lt;/p&gt;
+                        &lt;time datetime="2022-01-30 17:00"&gt;Commented 2 months ago&lt;/time&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis, nunc id mollis mattis, mi leo suscipit turpis,
+                            ac pulvinar nulla dolor a tortor. In vel nibh quis enim eleifend tincidunt ut sit amet nulla.&lt;/p&gt;
+                        &lt;a href="#comments-top" aria-label="link icon"&gt;&lt;svg class="icon"&gt;&lt;use href="#icon-link"/&gt;&lt;/svg&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+
+                &lt;article class="comments is-level-2"&gt;
+                    &lt;figure class="avatar avatar-nm"&gt;
+                        &lt;img src="{{site.url}}/img/demo/gl-woman2.png" alt="Avatar LG"&gt;
+                    &lt;/figure&gt;
+
+                    &lt;div&gt;
+                        &lt;p&gt;&lt;strong&gt;Jane Doe&lt;/strong&gt;&lt;/p&gt;
+                        &lt;time datetime="2022-02-30 17:00"&gt;Commented 6 weeks ago&lt;/time&gt;
+                        &lt;p&gt;Etiam at tellus pulvinar, convallis lacus nec, hendrerit magna. Morbi interdum porta dui at tempor.
+                            Quisque ante justo, aliquet eu vestibulum vitae, elementum tincidunt leo. &lt;/p&gt;
+                        &lt;a href="#comments-top" aria-label="link icon"&gt;&lt;svg class="icon"&gt;&lt;use href="#icon-link"/&gt;&lt;/svg&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class="comments is-level-3"&gt;
+                    &lt;figure class="avatar avatar-nm"&gt;
+                        &lt;img src="{{site.url}}/img/demo/gl-man1.png" alt="Avatar LG"&gt;
+                    &lt;/figure&gt;
+
+                    &lt;div&gt;
+                        &lt;p&gt;&lt;strong&gt;Chris Jones&lt;/strong&gt;&lt;/p&gt;
+                        &lt;time datetime="2022-03-30 17:00"&gt;Commented 8 days ago&lt;/time&gt;
+                        &lt;p&gt;Etiam at tellus pulvinar, convallis lacus nec, hendrerit magna. Morbi interdum porta dui at tempor.
+                            Quisque ante justo, aliquet eu vestibulum vitae, elementum tincidunt leo. &lt;/p&gt;
+                        &lt;a href="#comments-top" aria-label="link icon"&gt;&lt;svg class="icon"&gt;&lt;use href="#icon-link"/&gt;&lt;/svg&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class="comments with-form"&gt;
+                    &lt;figure class="avatar avatar-nm" data-initials="JS"&gt;
+                        &lt;div&gt;&lt;/div&gt;
+                    &lt;/figure&gt;
+
+                    &lt;form class="form"&gt;
+                        &lt;label&gt;
+                            &lt;span&gt;Text Area&lt;/span&gt;
+                            &lt;textarea rows="5" placeholder="Text area input" name="textarea_field"&gt;&lt;/textarea&gt;
+                        &lt;/label&gt;
+
+                        &lt;div class="form-footer"&gt;
+                            &lt;button class="is-primary has-hover"&gt;
+                                &lt;input type="submit" value="Submit!" formaction="#" formmethod="get"&gt;
+                            &lt;/button&gt;
+
+                            &lt;button class="is-danger-outlined has-hover"&gt;
+                                Cancel
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </div>
+    </div>
+
+
 </main>

@@ -1,10 +1,253 @@
 ---
 layout: default
 parent-tab: extra-components
+title: Magazine
 ---
 
-<h1 class="page-header">Magazine</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>magazine</strong> component formats a large block of text.  This block is typically an article of interest that
+                can be a longer, deeper discussion.  To make this more readable, a magazine / newspaper style layout is used to
+                keep the column width from 40 characters (default set at <code>--magazine-width</code>) expanding to fill a column to a
+                maximum of 80 characters before a new column is created.
+            </p>
+
+            <p>Modifications to the layout include setting the font family to a serif font.  This is usually easier to read.
+                The column width can be set 33% narrower (or about 30ch expanding to 60ch) or 33% wider (about 53ch expanding to 106ch).
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.magazine</code></td>
+                    <td>Uses serif font family and is 10% larger than base.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-narrow</code></td>
+                    <td>Optional modifier that makes a 33% smaller column width.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-wide</code></td>
+                    <td>Optional modifier that makes a 33% wider column width.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-highlighted</code></td>
+                    <td>Adds padding and background colour for a paragraph or block.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.mag-block</code></td>
+                    <td>Defines a non-breakable block of content that will not split across columns.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>magazine.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-highlight, --family-sans-serif, --family-serif, --gutter, --magazine-width, --margin-medium,  --padding</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Basic Magazine Layout with 40ch Default Width</h3>
+
+    <article class="magazine space-vert-medium">
+        <h4>Section One</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis, nunc id mollis mattis, mi leo suscipit turpis,
+            ac pulvinar nulla dolor a tortor. In vel nibh quis enim eleifend tincidunt ut sit amet nulla.
+            Nullam imperdiet erat libero, feugiat tincidunt arcu tempor in. Morbi fermentum ante mauris, hendrerit semper orci
+            lobortis sit amet. Sed euismod mauris eu volutpat fringilla. Ut in varius nunc. Nullam malesuada ipsum libero,
+            et volutpat mi eleifend ac. Etiam semper nunc ac elit dapibus, non congue nisi egestas.
+            Integer quis nunc a leo pharetra interdum a fringilla orci. Nulla a convallis eros, ac auctor lacus.
+            Proin molestie elit erat, ut ultricies turpis scelerisque vel. Proin ac ornare orci.
+            Donec tincidunt lectus in tellus pulvinar egestas eu quis elit.</p>
+
+        <p>Etiam at tellus pulvinar, convallis lacus nec, hendrerit magna. Morbi interdum porta dui at tempor.
+            Quisque ante justo, aliquet eu vestibulum vitae, elementum tincidunt leo. Ut pulvinar suscipit mauris,
+            non facilisis nibh gravida ut. Etiam nisl magna, mollis sed ex id, viverra sagittis ex.
+            Ut malesuada nisi id velit euismod aliquet. Vestibulum sagittis tempus lorem eget vehicula.
+            Duis nec luctus metus, ut tempus tellus.</p>
+
+        <h4>Section Two</h4>
+        <p>Quisque dui dolor, iaculis nec sagittis at, porta vitae nulla. Praesent ut nisl at risus aliquet dictum vitae at massa.
+            Nulla dapibus lectus nec nisl fringilla sollicitudin. Ut gravida orci euismod ligula placerat,
+            sit amet sodales ex laoreet. Phasellus quam leo, placerat nec aliquam sit amet, posuere eget felis.
+            Proin enim lacus, dictum et ligula quis, pharetra malesuada libero. Praesent mollis venenatis justo,
+            tempor tincidunt arcu auctor eget. Quisque euismod erat sit amet pellentesque volutpat.
+            Nam vitae massa a ipsum blandit ornare. Etiam laoreet ante eu fringilla gravida. Etiam ac rutrum velit.
+            Aenean non nisi sit amet enim hendrerit commodo sit amet at enim. Etiam lacinia augue a leo dignissim,
+            eu commodo lacus ornare. Nunc in neque posuere tellus gravida porta sed nec tortor. Etiam dictum luctus hendrerit.</p>
+
+        <p>Cras tincidunt eros neque, in consequat risus accumsan bibendum. Duis sodales consequat sapien.
+            Etiam interdum arcu neque, sed vestibulum massa auctor eu. Nam tempus vestibulum bibendum.
+            Vivamus malesuada rhoncus sem, nec hendrerit ipsum ultricies a. Nunc in ante id diam rhoncus pretium quis vel arcu.
+            Pellentesque finibus tincidunt nisi id mattis. Mauris imperdiet tortor eget sollicitudin mollis.
+            Curabitur cursus ex at eros bibendum, nec tincidunt tellus finibus. Donec posuere sed tellus blandit suscipit.</p>
+
+        <p>Pellentesque tempus risus mi, sed imperdiet turpis blandit quis. Cras vitae ullamcorper nibh, nec mattis magna.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat sed arcu sodales tincidunt.
+            Praesent at lobortis dui. Maecenas mattis arcu nisl, sed iaculis sem euismod eget.
+            Aenean faucibus magna eget mi consectetur lobortis. Pellentesque mattis massa a lectus hendrerit,
+            aliquet euismod nulla ultricies. Pellentesque pulvinar facilisis ex quis vehicula. Integer fermentum consequat metus,
+            et pulvinar justo interdum eu.</p>
+    </article>
+
+
+    <div class="space-vert-medium">
+        <pre><code class="language-html">
+            &lt;article class="magazine space-vert-medium"&gt;
+                &lt;h4&gt;Section One&lt;/h4&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, ...&lt;/p&gt;
+                &lt;p&gt;Etiam at tellus pulvinar, ...&lt;/p&gt;
+
+                &lt;h4&gt;Section Two&lt;/h4&gt;
+                &lt;p&gt;Quisque dui dolor, iaculis nec sagittis at, ...&lt;/p&gt;
+                &lt;p&gt;Cras tincidunt eros neque, ...&lt;/p&gt;
+                &lt;p&gt;Pellentesque tempus risus mi, ...&lt;/p&gt;
+            &lt;/article&gt;
+        </code></pre>
+    </div>
+
+    <h3>Magazine Layout with Serif Fonts, Non-Breakable Block and Narrow Width</h3>
+
+    <article class="magazine has-serif is-narrow space-vert-medium">
+
+        <div class="mag-block is-highlighted">
+            <h4>Comments</h4>
+
+            <P>If you have lots of headings and need to keep these headings together with the paragraph text,
+                you will need to wrap the text with a <code>div</code> tag to create a <em>generated box</em>.</p>
+
+            <p>The block including the heading can be styled with <code>.mag-block</code> class.
+                This allows the browser to preserve the block and will layout the blocks based on the selected column width.
+                This results in a more natural reading experience.</p>
+
+            <p>The block can be highlighted by adding an <code>is-highlighted</code> class to the <code>div</code> tag.</p>
+        </div>
+
+        <div class="mag-block">
+            <h4>Paragraph One</h4>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis, nunc id mollis mattis, mi leo suscipit turpis,
+                ac pulvinar nulla dolor a tortor. In vel nibh quis enim eleifend tincidunt ut sit amet nulla.
+                Nullam imperdiet erat libero, feugiat tincidunt arcu tempor in. Morbi fermentum ante mauris, hendrerit semper orci
+                lobortis sit amet. Sed euismod mauris eu volutpat fringilla. Ut in varius nunc. Nullam malesuada ipsum libero,
+                et volutpat mi eleifend ac. Etiam semper nunc ac elit dapibus, non congue nisi egestas.
+                Integer quis nunc a leo pharetra interdum a fringilla orci. Nulla a convallis eros, ac auctor lacus.
+                Proin molestie elit erat, ut ultricies turpis scelerisque vel. Proin ac ornare orci.
+                Donec tincidunt lectus in tellus pulvinar egestas eu quis elit.</p>
+        </div>
+
+        <div class="mag-block">
+            <h4>Paragraph Two</h4>
+
+            <p>Etiam at tellus pulvinar, convallis lacus nec, hendrerit magna. Morbi interdum porta dui at tempor.
+                Quisque ante justo, aliquet eu vestibulum vitae, elementum tincidunt leo. Ut pulvinar suscipit mauris,
+                non facilisis nibh gravida ut. Etiam nisl magna, mollis sed ex id, viverra sagittis ex.
+                Ut malesuada nisi id velit euismod aliquet. Vestibulum sagittis tempus lorem eget vehicula.
+                Duis nec luctus metus, ut tempus tellus.</p>
+
+            <p class="is-highlighted">Another paragraph under the same heading. You can highlight the paragraph individually.</p>
+        </div>
+
+        <div class="mag-block">
+            <h4>Paragraph Three</h4>
+
+            <p>Quisque dui dolor, iaculis nec sagittis at, porta vitae nulla. Praesent ut nisl at risus aliquet dictum vitae at massa.
+                Nulla dapibus lectus nec nisl fringilla sollicitudin. Ut gravida orci euismod ligula placerat,
+                sit amet sodales ex laoreet. Phasellus quam leo, placerat nec aliquam sit amet, posuere eget felis.
+                Proin enim lacus, dictum et ligula quis, pharetra malesuada libero. Praesent mollis venenatis justo,
+                tempor tincidunt arcu auctor eget. Quisque euismod erat sit amet pellentesque volutpat.
+                Nam vitae massa a ipsum blandit ornare. Etiam laoreet ante eu fringilla gravida. Etiam ac rutrum velit.
+                Aenean non nisi sit amet enim hendrerit commodo sit amet at enim. Etiam lacinia augue a leo dignissim,
+                eu commodo lacus ornare. Nunc in neque posuere tellus gravida porta sed nec tortor. Etiam dictum luctus hendrerit.</p>
+        </div>
+
+        <div class="mag-block">
+            <h4>Paragraph Four</h4>
+
+            <p>Cras tincidunt eros neque, in consequat risus accumsan bibendum. Duis sodales consequat sapien.
+                Etiam interdum arcu neque, sed vestibulum massa auctor eu. Nam tempus vestibulum bibendum.
+                Vivamus malesuada rhoncus sem, nec hendrerit ipsum ultricies a. Nunc in ante id diam rhoncus pretium quis vel arcu.
+                Pellentesque finibus tincidunt nisi id mattis. Mauris imperdiet tortor eget sollicitudin mollis.
+                Curabitur cursus ex at eros bibendum, nec tincidunt tellus finibus. Donec posuere sed tellus blandit suscipit.</p>
+        </div>
+
+        <div class="mag-block">
+            <h4>Paragraph Five</h4>
+
+            <p>Pellentesque tempus risus mi, sed imperdiet turpis blandit quis. Cras vitae ullamcorper nibh, nec mattis magna.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat sed arcu sodales tincidunt.
+                Praesent at lobortis dui. Maecenas mattis arcu nisl, sed iaculis sem euismod eget.
+                Aenean faucibus magna eget mi consectetur lobortis. Pellentesque mattis massa a lectus hendrerit,
+                aliquet euismod nulla ultricies. Pellentesque pulvinar facilisis ex quis vehicula. Integer fermentum consequat metus,
+                et pulvinar justo interdum eu.</p>
+        </div>
+    </article>
+
+    <div class="space-vert-medium">
+        <pre><code class="language-html">
+            &lt;article class="magazine has-serif is-narrow space-vert-medium"&gt;
+                &lt;div class="mag-block is-highlighted"&gt;
+                    &lt;h4&gt;Paragraph One&lt;/h4&gt;
+                    &lt;p&gt;Lorem ipsum dolor sit amet, ...&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="mag-block"&gt;
+                    &lt;h4&gt;Paragraph Two&lt;/h4&gt;
+                    &lt;p&gt;Etiam at tellus pulvinar, ...&lt;/p&gt;
+                    &lt;p class="is-highlighted"&gt;Another paragraph ...&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="mag-block"&gt;
+                    &lt;h5 &gt;Paragraph Three&lt;/h5&gt;
+                    &lt;p&gt;Quisque dui dolor, iaculis nec sagittis at, ...&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="mag-block"&gt;
+                    &lt;h4&gt;Paragraph Four&lt;/h4&gt;
+                    &lt;p&gt;Cras tincidunt eros neque, ...&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="mag-block"&gt;
+                    &lt;h4&gt;Paragraph Five&lt;/h4&gt;
+                    &lt;p&gt;Pellentesque tempus risus mi, ...&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        </code></pre>
+    </div>
 </main>

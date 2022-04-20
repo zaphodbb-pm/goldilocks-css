@@ -1,10 +1,148 @@
 ---
 layout: default
 parent-tab: extra-components
+title: Dividers
 ---
 
-<h1 class="page-header">Dividers</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>divider</strong> component is a container that separates two articles or paragraphs.
+                The <strong>divider</strong> can be vertically or horizontally oriented.
+            </p>
+            <p>Typical uses are to offer options to actions.  As an example, login using a third party service such as
+                Google or login with email and password.  Another example is to offer payment via PayPal or credit card.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.divider-box</code></td>
+                    <td>Defines a vertically oriented divider box.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.divider</code></td>
+                    <td>Styles child horizontal divider for vertical box.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.divider-box-horz</code></td>
+                    <td>Defines an optional horizontally oriented divider box.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.divider-vert</code></td>
+                    <td>Styles child vertical divider for horizontal box.</td>
+                </tr>
+
+                <tr>
+                    <td><code>data-content</code></td>
+                    <td>Attribute that holds text to overlay onto the divider.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>divider.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main-comp, --border-main-darker, --gap-col, --margin-form, --padding-normal, --pad-vert,  --text-light</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Common Vertically Stacked Divider</h3>
+    <div class="row">
+        <div class="column">
+            <div class="divider-box">
+                <p class="has-text-centered">First Paragraph</p>
+                <div class="divider" data-content="Horizontal Divider"></div>
+                <p class="has-text-centered">Second paragraph</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="divider-box"&gt;
+                    &lt;p class="has-text-centered"&gt;First Paragraph&lt;/p&gt;
+                    &lt;div class="divider" data-content="Horizontal Divider"&gt;&lt;/div&gt;
+                    &lt;p class="has-text-centered"&gt;Second paragraph&lt;/p&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Horizontally Aligned Divider</h3>
+    <div class="row">
+        <div class="column">
+
+            <div class="divider-box-horz">
+                <article class="has-text-end">
+                    <p>First Panel</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent risus leo,
+                        dictum in vehicula sit amet, feugiat tempus tellus.</p>
+                </article>
+
+                <div class="divider-vert" data-content="Vertical Divider"></div>
+
+                <article>
+                    <p>Second Panel</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent risus leo,
+                        dictum in vehicula sit amet, feugiat tempus tellus.</p>
+                </article>
+            </div>
+
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="divider-box-horz"&gt;
+                    &lt;article class="has-text-end"&gt;
+                        &lt;p&gt;First Panel&lt;/p&gt;
+                        &lt;p&gt;Lorem ipsum dolor ...&lt;/p&gt;
+                    &lt;/article&gt;
+
+                    &lt;div class="divider-vert" data-content="Vertical Divider"&gt;&lt;/div&gt;
+
+                    &lt;article&gt;
+                        &lt;p&gt;Second Panel&lt;/p&gt;
+                        &lt;p&gt;Lorem ipsum dolor ...&lt;/p&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

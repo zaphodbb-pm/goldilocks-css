@@ -1,10 +1,91 @@
 ---
 layout: default
 parent-tab: extra-components
+title: Blockquote
 ---
 
-<h1 class="page-header">Blockquote</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>blockquote</strong> component is a simple container that conforms to web accessibility best
+                practice (see  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote" target=_blank>Mozilla</a>).
+                It's layout is in a classic format that is common for content pages.  It includes top and bottom margins to fit into the text flow.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.blockquote</code></td>
+                    <td>Defines typically a <code>figure</code> HTML tag as container.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td> blockquote.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--element-background, --family-serif, --line-height-125, --line-height-150, --margin-form, --pad-horz, --pad-vert,
+                        --secondary, --size-5, --text-darker, --weight-medium</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <div class="row">
+        <div class="column">
+            <figure class="blockquote">
+                <blockquote cite="https://www.goodreads.com/quotes/search?utf8=%E2%9C%93&q=peter+drucker+purpose&commit=Search">
+                    <p>Profit is not the purpose of a business, but rather the test of its validity.
+                        The purpose of a business is to create and keep a customer. </p>
+                </blockquote>
+                <figcaption>
+                    <a href="https://en.wikipedia.org/wiki/Peter_Drucker" target="_blank">Peter Drucker</a>,
+                    <cite>Innovation and Entrepreneurship</cite>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;figure class="blockquote"&gt;
+                    &lt;blockquote cite="https://www.goodreads.com/quotes/search?utf8=%E2%9C%93&q=peter+drucker+purpose&commit=Search"&gt;
+                        &lt;p&gt;Profit is not the purpose of a business, but rather the test of its validity.
+                            The purpose of a business is to create and keep a customer. &lt;/p&gt;
+                    &lt;/blockquote&gt;
+                    &lt;figcaption&gt;
+                        &lt;a href="https://en.wikipedia.org/wiki/Peter_Drucker" target="_blank"&gt;Peter Drucker&lt;/a&gt;,
+                        &lt;cite&gt;Innovation and Entrepreneurship&lt;/cite&gt;
+                    &lt;/figcaption&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

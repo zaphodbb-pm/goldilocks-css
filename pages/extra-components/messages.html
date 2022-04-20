@@ -1,10 +1,249 @@
 ---
 layout: default
 parent-tab: extra-components
+title: Messages
 ---
 
-<h1 class="page-header">Messages</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>message</strong> component provides a decorated container to deliver colourful containers of text for
+                important messages that may provide showing the result of a user action, can help to explain some feature or more detailed
+                text for an article.
+            </p>
+
+            <p>An <code>article</code> tag is defined by the <strong>message</strong> class to set up the container.
+                An optional <code>header</code> HTML tag can hold a title and an optional <strong>delete</strong> button.
+                The <strong>delete</strong> button can be serviced by javascript to close the message.
+                The <strong>message-body</strong> class holds the content of the message and can contain other HTML tags such <code>p</code>.
+            </p>
+
+            <p>Any of the element background and font modifiers can be used to colourize the <strong>message</strong> component.
+                The header section can also be independently colourized.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.message</code></td>
+                    <td>Defines main container for a message, typically <code>article</code> HTML tag is used at top level.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.message-body</code></td>
+                    <td>Defines content container.</td>
+                </tr>
+
+                <tr>
+                    <td>Colour options:</td>
+                    <td>Any of the <b>element</b> colour modifiers from the Colour Palette helpers.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>message.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--grey-dark, --grey-lighter, --line-height-125, --radius,  --size-6, --text, --text-invert-ter</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Message with Header and Colour Options</h3>
+
+    <div class="row">
+        <div class="column">
+            <div class="stack stack-gap-medium">
+
+                <article class="message">
+                    <header>
+                        <h2>Header default</h2>
+                        <button class="delete" aria-label="delete"></button>
+                    </header>
+                    <div class="message-body">
+                        <p>.message</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                            Nullam gravida purus diam, et dictum felis venenatis efficitur.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="message is-primary-light">
+                    <header class="is-primary">
+                        <h2>Header.is-primary</h2>
+                        <button class="delete" aria-label="delete"></button>
+                    </header>
+                    <div class="message-body">
+                        <p>.message.is-primary-light</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                            Nullam gravida purus diam, et dictum felis venenatis efficitur.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="message is-secondary">
+                    <header class="is-secondary-dark">
+                        <h2>Header.is-secondary-dark</h2>
+                        <button class="delete" aria-label="delete"></button>
+                    </header>
+                    <div class="message-body">
+                        <p>.message.is-secondary</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                            Nullam gravida purus diam, et dictum felis venenatis efficitur.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;article class="message"&gt;
+                    &lt;header&gt;
+                        &lt;h2&gt;Header default&lt;/h2&gt;
+                        &lt;button class="delete" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;/header&gt;
+                    &lt;div class="message-body"&gt;
+                        &lt;p&gt;.message&lt;/p&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, ...&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class="message is-primary-light"&gt;
+                    &lt;header class="is-primary"&gt;
+                        &lt;h2&gt;Header.is-primary&lt;/h2&gt;
+                        &lt;button class="delete" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;/header&gt;
+                    &lt;div class="message-body"&gt;
+                        &lt;p&gt;.message.is-primary-light&lt;/p&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, ...&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class="message is-secondary"&gt;
+                    &lt;header class="is-secondary-dark"&gt;
+                        &lt;h2&gt;Header.is-secondary-dark&lt;/h2&gt;
+                        &lt;button class="delete" aria-label="delete"&gt;&lt;/button&gt;
+                    &lt;/header&gt;
+                    &lt;div class="message-body"&gt;
+                        &lt;p&gt;.message.is-secondary&lt;/p&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, ...&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Message without a Header and with Colour Options</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack stack-gap-medium">
+
+                <article class="message">
+
+                    <div class="message-body">
+                        <p>.message no header</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                            Nullam gravida purus diam, et dictum felis venenatis efficitur.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="message is-danger">
+                    <h2 class="sr-only">Message 2</h2>
+                    <div class="message-body">
+                        <p>.message.is-danger no header</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                            Nullam gravida purus diam, et dictum felis venenatis efficitur.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="message is-link-light">
+                    <h2 class="sr-only">Message 3</h2>
+                    <div class="message-body">
+                        <p>.message.is-link-light no header</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
+                            tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+                            Nullam gravida purus diam, et dictum felis venenatis efficitur.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;article class="message"&gt;
+                    &lt;h2 class="sr-only"&gt;Message 1&lt;/h2&gt;
+                    &lt;div class="message-body"&gt;
+                        &lt;p&gt;.message no header&lt;/p&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, ...&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+
+                &lt;article class="message is-danger"&gt;
+                    &lt;h2 class="sr-only"&gt;Message 2&lt;/h2&gt;
+                    &lt;div class="message-body"&gt;
+                        &lt;p&gt;.message.is-danger no header&lt;/p&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, ...&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+
+                &lt;article class="message is-link-light"&gt;
+                    &lt;h2 class="sr-only"&gt;Message 3&lt;/h2&gt;
+                    &lt;div class="message-body"&gt;
+                        &lt;p&gt;.message.is-link-light no header&lt;/p&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, ...&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>
