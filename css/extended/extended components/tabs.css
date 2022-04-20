@@ -71,8 +71,7 @@
     padding: var(--padding);
 }
 
-.tabs .tab-content > section,
-.tabs .tab-content > section h2 {
+.tabs .tab-content > section {
     position:absolute;
     top:-999em;
     left:-999em;
