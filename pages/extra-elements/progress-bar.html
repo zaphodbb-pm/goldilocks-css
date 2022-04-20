@@ -1,10 +1,183 @@
 ---
 layout: default
 parent-tab: extra-elements
+title: Progress Bars
 ---
 
-<h1 class="page-header">Progress Bars</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>Uses native HTML <code>progress</code> tag to build progress bar that can be used to show task progress or used
+                as a horizontal data bar.  Bar label and data value can be optionally shown.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>progress</code></td>
+                    <td>HTML tag that gets styledDefines main container for breadcrumb, typically <code>nav</code> html tag is used at top level.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.progress-wrapper</code></td>
+                    <td>Optional modifier for a <code>label</code> HTML tag that adds bar label and shows data value.</td>
+                </tr>
+
+                <tr>
+                    <td>Size options:</td>
+                    <td><code>.is-small</code>, <code>.is-medium</code>, <code>.is-large</code></td>
+                </tr>
+
+                <tr>
+                    <td>Colour options:</td>
+                    <td><code>.is-progress-primary</code>, <code>.is-progress-secondary</code>, <code>.is-progress-tertiary</code>,
+                        <code>.is-progress-link</code>, <code>.is-progress-success</code>, <code>.is-progress-warning</code>,
+                        <code>.is-progress-primary</code>, <code>.is-progress-danger</code>, </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>progress_bars.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--base-rem,--base-scale,  --bg-element, --danger, --black-ter, --link, --mar-horz, --mar-vert,
+                        --primary, --secondary, --size-4, --size-5, --size-7, --success, --tertiary,  --warning</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="stack stack-gap-medium">
+                <p style="margin-bottom: -3rem;">Default Bar, no label and no frills</p>
+                <progress value="15" max="100"></progress>
+
+                <label class="progress-wrapper">
+                    Default bar with label and data-show value
+                    <progress value="30" max="100" data-show="30%"></progress>
+                </label>
+
+                <label class="progress-wrapper">
+                    .is-progress-primary
+                    <progress class="is-progress-primary" value="25" max="100" data-show="25%"></progress>
+                </label>
+
+                <label class="progress-wrapper">
+                    .is-progress-secondary
+                    <progress class="is-progress-secondary" value="50" max="100" data-show="50%"></progress>
+                </label>
+
+                <label class="progress-wrapper">
+                    .is-progress-tertiary
+                    <progress class="is-progress-tertiary" value="75" max="100" data-show="75%"></progress>
+                </label>
+
+                <label class="progress-wrapper">
+                    .is-progress-link
+                    <progress class="is-progress-link" value="100" max="100" data-show="100%"></progress>
+                </label>
+
+                <label class="progress-wrapper">
+                    .is-progress-success .is-small
+                    <progress class="is-progress-success is-small" value="55" max="100" data-show="55%"></progress>
+                </label>
+
+                <label class="progress-wrapper">
+                    .is-progress-warning .is-medium
+                    <progress class="is-progress-warning is-medium" value="45" max="100" data-show="45%"></progress>
+                </label>
+
+                <label class="progress-wrapper">
+                    .is-progress-danger .is-large
+                    <progress class="is-progress-danger is-large" value="35" max="100" data-show="35%"></progress>
+                </label>
+
+                <label class="progress-wrapper">
+                    .is-progress-primary with indeterminate value
+                    <progress class="is-progress-primary" max="100" data-show=""></progress>
+                </label>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;progress value="15" max="100"&gt;&lt;/progress&gt;
+
+                &lt;label class="progress-wrapper"&gt;
+                    Default bar with label and data-show value
+                    &lt;progress value="30" max="100" data-show="30%"&gt;&lt;/progress&gt;
+                &lt;/label&gt;
+
+                &lt;label class="progress-wrapper"&gt;
+                    .is-progress-primary
+                    &lt;progress class="is-progress-primary" value="25" max="100" data-show="25%"&gt;&lt;/progress&gt;
+                &lt;/label&gt;
+
+                &lt;label class="progress-wrapper"&gt;
+                    .is-progress-secondary
+                    &lt;progress class="is-progress-secondary" value="50" max="100" data-show="50%"&gt;&lt;/progress&gt;
+                &lt;/label&gt;
+
+                &lt;label class="progress-wrapper"&gt;
+                    .is-progress-tertiary
+                    &lt;progress class="is-progress-tertiary" value="75" max="100" data-show="75%"&gt;&lt;/progress&gt;
+                &lt;/label&gt;
+
+                &lt;label class="progress-wrapper"&gt;
+                    .is-progress-link
+                    &lt;progress class="is-progress-link" value="100" max="100" data-show="100%"&gt;&lt;/progress&gt;
+                &lt;/label&gt;
+
+                &lt;label class="progress-wrapper"&gt;
+                    .is-progress-success .is-small
+                    &lt;progress class="is-progress-success is-small" value="55" max="100" data-show="55%"&gt;&lt;/progress&gt;
+                &lt;/label&gt;
+
+                &lt;label class="progress-wrapper"&gt;
+                    .is-progress-warning .is-medium
+                    &lt;progress class="is-progress-warning is-medium" value="45" max="100" data-show="45%"&gt;&lt;/progress&gt;
+                &lt;/label&gt;
+
+                &lt;label class="progress-wrapper"&gt;
+                    .is-progress-danger .is-large
+                    &lt;progress class="is-progress-danger is-large" value="35" max="100" data-show="35%"&gt;&lt;/progress&gt;
+                &lt;/label&gt;
+
+                &lt;label class="progress-wrapper"&gt;
+                    .is-progress-primary with indeterminate value
+                    &lt;progress class="is-progress-primary" max="100" data-show=""&gt;&lt;/progress&gt;
+                &lt;/label&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

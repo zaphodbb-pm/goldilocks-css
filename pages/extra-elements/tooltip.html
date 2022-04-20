@@ -1,10 +1,128 @@
 ---
 layout: default
 parent-tab: extra-elements
+title: Tooltips
 ---
 
-<h1 class="page-header">Tooltips</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>Tooltips provide context information for any element, which often are buttons.
+                The information appears on hover and focus and is appropriate for desktop computers.
+                See <a href="https://www.nngroup.com/articles/tooltip-guidelines/">tooltip guidelines</a> for a more detailed discussion
+            </p>
+
+            <p>Multiline text can be used with <code>& #10;</code> as the HTML code for newline or \n.
+                Note that the css <code>attr()</code> function will not reparse a string value and hence the string will need
+                valid HTML codes for control characters.
+            </p>
+
+            <p>Note: Mobile / touch devices do not respond to a <code>:hover</code> user action.
+                Mobile / touch devices do respond to <code>ontouchstart</code> event that can use javascript to emulate a hover user action.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.tooltip</code></td>
+                    <td>Defines an element that has text to show from the <code>data-tooltip</code> attribute.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.tooltip-right</code>, <code>.tooltip-left</code>, <code>.tooltip-bottom</code></td>
+                    <td>Define the callout position. By default, the tooltips appear above the element.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>tooltip.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main-invert, --radius, --size-7, --text-invert, --weight-medium</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <div class="row is-centered">
+        <div class="column">
+            <div class="stack-centered stack-gap-large">
+
+                <button  class="is-primary tooltip" data-tooltip="Top Tooltip Text">
+                    .tooltip (default top)
+                </button>
+
+                <button  class="is-secondary" >
+                    <span class="tooltip tooltip-right" data-tooltip="Right Tooltip Text">.tooltip .tooltip-right</span>
+                </button>
+
+                <button  class="is-info tooltip tooltip-bottom" data-tooltip="Bottom Tooltip Text">
+                    .tooltip .tooltip-bottom
+                </button>
+
+                <button  class="is-link tooltip tooltip-left" data-tooltip="Left Tooltip Text">
+                    .tooltip .tooltip-left
+                </button>
+
+                <button  class="is-link tooltip tooltip-right"
+                        data-tooltip="This tooltip &#10; has multiline text &#10; that can be shown">
+                    .tooltip multiline
+                </button>
+
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;button  class="is-primary tooltip" data-tooltip="Top Tooltip Text"&gt;
+                    .tooltip (default top)
+                &lt;/button&gt;
+
+                &lt;button  class="is-secondary" &gt;
+                    &lt;span class="tooltip tooltip-right" data-tooltip="Right Tooltip Text"&gt;.tooltip .tooltip-right&lt;/span&gt;
+                &lt;/button&gt;
+
+                &lt;button  class="is-info tooltip tooltip-bottom" data-tooltip="Bottom Tooltip Text"&gt;
+                    .tooltip .tooltip-bottom
+                &lt;/button&gt;
+
+                &lt;button  class="is-link tooltip tooltip-left" data-tooltip="Left Tooltip Text"&gt;
+                    .tooltip .tooltip-left
+                &lt;/button&gt;
+
+                &lt;button  class="is-link tooltip tooltip-right"
+                        data-tooltip="This tooltip has  &#38;&#35;&#49;&#48;&#59;  multiline text &#38;&#35;&#49;&#48;&#59; that can be shown"&gt;
+                    .tooltip multiline
+                &lt;/button&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>

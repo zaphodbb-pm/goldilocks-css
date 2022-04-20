@@ -1,10 +1,324 @@
 ---
 layout: default
 parent-tab: extra-elements
+title: Ribbons
 ---
 
-<h1 class="page-header">Ribbons</h1>
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>ribbon</strong> element is a decorative feature that can be added to any component.
+                The <strong>ribbon</strong> is typically used to highlight a feature or to signal the state of the parent component.
+            </p>
+
+            <p>Size and posiotnin options are available.  The <strong>ribbon</strong> can also have its colour set
+                through any of the element colour options.
+            </p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.has-ribbon</code>, <code>.has-ribbon-left</code>, <code>.has-ribbon-right</code></td>
+                    <td>Attached to a parent container to signal that a ribbon on a child elementt needs to be shown.
+                        Default positon is top-right.  Other options are top-left and bottom-right</td>
+                </tr>
+
+                <tr>
+                    <td><code>.ribbon</code></td>
+                    <td>Defines a child element inside a container that will be posiitoned and styled to show the ribbon.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-shadow</code></td>
+                    <td>Optional modifier for ribbon that adds a border shadow.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-outlined</code></td>
+                    <td>Optional modifier for ribbon that makes the ribbon outlined.</td>
+                </tr>
+
+                <tr>
+                    <td>Size options:</td>
+                    <td><code>.is-small</code>, <code>.is-medium</code>, <code>.is-large</code></td>
+                </tr>
+
+                <tr>
+                    <td>Colour options:</td>
+                    <td>Any of the <b>element</b> colour modifiers from the Colour Palette helpers.</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>ribbon.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main-ter, --pad-horz, --pad-vert, --radius-small, --shadow, --size-4, --size-5, --size-6, --size-7, --weight-normal</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Basic Ribbons with Colours and Shadows</h3>
+    <div class="row">
+        <div class="column">
+            <div class="stack stack-gap">
+                <div class="box-shadow has-ribbon has-bg-grey">
+                    <div class="ribbon">Default</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon has-bg-grey">
+                    <div class="ribbon is-white">White</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-primary has-shadow">Primary Shadow</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-primary-outlined has-shadow">Primary Outlined Shadow</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-secondary">Secondary</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-secondary-outlined">Secondary Outlined</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-success">Success</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-success-outlined">Success Outlined</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-warning">Warning</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-warning-outlined">Warning Outlined</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-danger">Danger</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-danger-outlined">Danger Outlined</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-dark">Dark</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-grey has-shadow">Grey with Shadow</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon"&gt;Default&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-white"&gt;White&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-primary has-shadow"&gt;Primary Shadow&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-primary-outlined has-shadow"&gt;Primary Outlined Shadow&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-secondary"&gt;Secondary&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-secondary-outlined"&gt;Secondary Outlined&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-success"&gt;Success&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-success-outlined"&gt;Success Outlined&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-warning"&gt;Warning&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-warning-outlined"&gt;Warning Outlined&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-danger"&gt;Danger&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-danger-outlined"&gt;Danger Outlined&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-dark"&gt;Dark&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                     &lt;div class="ribbon is-grey has-shadow"&gt;Grey with Shadow&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Ribbons with Sizes and Placements</h3>
+    <div class="row">
+        <div class="column">
+
+            <div class="stack">
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-primary-outlined is-small">Small ribbon - outlined</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-primary is-medium">Medium ribbon</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon">
+                    <div class="ribbon is-primary is-large ">Large ribbon</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon-left">
+                    <div class="ribbon is-primary is-small">Left ribbon</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+
+                <div class="box-shadow has-ribbon-bottom">
+                    <div class="ribbon is-primary is-small">Bottom ribbon small</div>
+                    <p></p>
+                    <p>Box content</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-primary-outlined is-small"&gt;Small ribbon - outlined&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-primary is-medium"&gt;Medium ribbon&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon"&gt;
+                    &lt;div class="ribbon is-primary is-large "&gt;Large ribbon&lt;/div&gt;
+                    Box content
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon-left"&gt;
+                    &lt;div class="ribbon is-primary is-small"&gt;Left ribbon&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="box-shadow has-ribbon-bottom"&gt;
+                    &lt;div class="ribbon is-primary is-small"&gt;Bottom ribbon small&lt;/div&gt;
+                    &lt;p&gt;Box content&lt;/p&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
 </main>
