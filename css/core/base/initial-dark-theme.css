@@ -12,7 +12,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         - based on split complementary color selection
         - for triadic color selection, set --main-color-offset to 120 degrees
     */
-    --main-color: 170;                  /** primary hue value **/
+    --main-color: 140;                  /** primary hue value **/
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
     --main-color-sl: 53%, 60%;          /** saturation and lightness **/
     --main-color-sl-light: 100%, 92%;   /** color lightening saturation and lightness **/
@@ -20,6 +20,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
+
 
     /* build main theme colours */
     --primary: hsl( var(--main-color), var(--main-color-sl) );
