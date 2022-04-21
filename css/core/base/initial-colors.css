@@ -22,7 +22,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 
     /* build main theme colours */
-    --primary: hsl( var(--main-color), 50%, 35% );
+    --primary: hsl( var(--main-color), 70%, 31% );
     --secondary: hsl( var(--main-color-complement-low), 85%, 45% );
     --tertiary: hsl( var(--main-color-complement-high), 85%, 42% );
 
