@@ -12,6 +12,10 @@ pre > code .tag {
     white-space: nowrap;
 }
 
+pre[class*=language-] {
+    border: none;
+}
+
 pre > code[class*=language-] {
     margin: 0 !important;
     padding: 1rem 1.5rem;
@@ -25,3 +29,4 @@ pre {
     padding: 0 !important;
     margin: 0 !important;
 }
+
