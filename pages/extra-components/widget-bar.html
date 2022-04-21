@@ -9,5 +9,459 @@ title: Widget Bar
 </header>
 
 <main class="main-content">
-    Content
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>WidgetBar</strong> component contains widgets that are used to support users and allows them to control their
+                own viewing experience.  The <strong>WidgetBar</strong> is usually a sibling of the <strong>NavBar</strong> component and
+                is either above or below.  In our case, its position is controlled by the page grid layout through a named region.
+            </p>
+
+            <p>Currently there are five widgets available:</p>
+
+            <ul>
+                <li>Setting font-size for users that have vision accessibility needs.
+                    Sets base font size to 1, 1.5 or 2.25 times the base value (typically 16px or viewport size adjusted value).</li>
+                <li>Theme switch for normal / dark mode.  Toggles site theme colours.</li>
+                <li>Download link to simplify getting a file</li>
+                <li>GitHub project link</li>
+                <li>Heading scale factor adjuster for increments of 1.067, 1.125 or 1.250 text height size increase.
+                    A useful tool to see the impact is <a href="https://type-scale.com/" target=_blank>Type Scale</a>.</li>
+            </ul>
+
+            <p>Note that dark mode themed pages are a challenge to build.  These need to be carefully planned out.  Dark mode is usually not
+                appropriate for pages with lots of text, dashboards and other situations where colour control is important.  Some resources that go
+                into to more details include:
+                <a href="https://uxdesign.cc/dark-ui-design-principles-and-best-practices-9b9061b86e1" target=_blank>Dark UI Design Best Practices</a>,
+                <a href="https://blog.prototypr.io/dark-mode-ui-best-practices-8101782de93f" target=_blank>Dark Mode UI Best Practices</a>,
+                <a href="https://www.toptal.com/designers/ui/dark-ui-design" target=_blank>The Principles of Dark UI Design</a>
+            </p>
+
+            <p>CSS variables of parents (ie <code>:root</code>) can not be changed by children elements.  The variables in <code>:root</code> must,
+                unfortunately be changed through javascript.  A simple, plain vanilla script has been included for each widget the needs to
+                change a ket CSS variable.
+            </p>
+
+            <p>Since the <strong>WidgetBar</strong> component is general purpose, you can add your own widgets to improve the use of your application.</p>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.widgetbar</code></td>
+                    <td>Defines parent element; fixed height fullwidth flex container.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.widgetbar-bordered</code></td>
+                    <td>Optionally adds a border around a child; typically a link.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.widgetbar-item-border</code></td>
+                    <td>Defines main container for breadcrumb, typically <code>nav</code> html tag is used at top level.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.widgetbar-radios</code></td>
+                    <td>Optional child containing a set of radio button.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.widgetbar-link</code></td>
+                    <td>Optional child containing a link.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>widgetbar.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-component, --bg-main, --gap-col, --gap-row, --pad-horz, --radius-comp, --secondary, --text, --text-btn-invert, --weight-semibold, --widgetbar-height</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Text Size Adjust</h3>
+    <div class="row">
+        <div class="column">
+            <div class="widgetbar-bordered">
+                <form class="widgetbar-radios">
+                    <label>
+                        <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
+                        <span>T1</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
+                        <span>T2</span>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
+                        <span>T3</span>
+                    </label>
+                </form>
+
+                <script>
+                    function setTextSize(size){
+                        document.querySelector(':root').style.setProperty("--base-scale", size);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="widgetbar-bordered"&gt;
+                    &lt;form class="widgetbar-radios"&gt;
+                        &lt;label&gt;
+                            &lt;input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size"&gt;
+                            &lt;span&gt;T1&lt;/span&gt;
+                        &lt;/label&gt;
+
+                        &lt;label&gt;
+                            &lt;input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size"&gt;
+                            &lt;span&gt;T2&lt;/span&gt;
+                        &lt;/label&gt;
+
+                        &lt;label&gt;
+                            &lt;input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size"&gt;
+                            &lt;span&gt;T3&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/form&gt;
+
+                    &lt;script&gt;
+                        function setTextSize(size){
+                            document.querySelector(':root').style.setProperty("--base-scale", size);
+                        }
+                    &lt;/script&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Heading Size Adjust</h3>
+    <div class="row">
+        <div class="column">
+            <div class="widgetbar-bordered">
+                <form class="widgetbar-radios">
+                    <fieldset>
+                        <legend>Choose Heading Size</legend>
+
+                        <label>
+                            <input type="radio" name="heading-sizes" onchange="setHeadingSize('1.067')" title="Select heading size small">
+                            <span>Hsm</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="heading-sizes" onchange="setHeadingSize('1.125')" checked title="Select heading size normal">
+                            <span>Hnm</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="heading-sizes" onchange="setHeadingSize('1.250')" title="Select heading size large">
+                            <span>Hlg</span>
+                        </label>
+                    </fieldset>
+                </form>
+
+                <script>
+                    function setHeadingSize(size){
+                        document.querySelector(':root').style.setProperty("--size-factor", size);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="widgetbar-bordered"&gt;
+                    &lt;form class="widgetbar-radios"&gt;
+                        &lt;fieldset&gt;
+                            &lt;legend&gt;Choose Heading Size&lt;/legend&gt;
+
+                            &lt;label&gt;
+                                &lt;input type="radio" name="heading-sizes" onchange="setHeadingSize('1.067')" title="Select heading size small"&gt;
+                                &lt;span&gt;Hsm&lt;/span&gt;
+                            &lt;/label&gt;
+
+                            &lt;label&gt;
+                                &lt;input type="radio" name="heading-sizes" onchange="setHeadingSize('1.125')" checked title="Select heading size normal"&gt;
+                                &lt;span&gt;Hnm&lt;/span&gt;
+                            &lt;/label&gt;
+
+                            &lt;label&gt;
+                                &lt;input type="radio" name="heading-sizes" onchange="setHeadingSize('1.250')" title="Select heading size large"&gt;
+                                &lt;span&gt;Hlg&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/fieldset&gt;
+                    &lt;/form&gt;
+
+                    &lt;script&gt;
+                        function setHeadingSize(size){
+                            document.querySelector(':root').style.setProperty("--size-factor", size);
+                        }
+                    &lt;/script&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Light / Dark Mode Switch</h3>
+    <div class="row">
+        <div class="column">
+            <div class="widgetbar-bordered">
+                <form class="widgetbar-radios">
+                    <span>Theme</span>
+
+                    <fieldset>
+                        <legend>Choose Light or Dark Theme</legend>
+
+                        <label>
+                            <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')">
+                            <svg class="icon"><use href="#icon-day"></use></svg>
+                            <span class="sr-only">Light / day mode</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="heading-sizes" onchange="setTheme('Dark')">
+                            <svg class="icon"><use href="#icon-night"></use></svg>
+                            <span class="sr-only">Dark / night mode</span>
+                        </label>
+                    </fieldset>
+                </form>
+
+                <script>
+                    function setTheme(theme){
+                        if(theme === "Dark"){
+                            document.body.classList.add('main-theme-dark');
+                        }else{
+                            document.body.classList.remove('main-theme-dark');
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="widgetbar-bordered"&gt;
+                    &lt;form class="widgetbar-radios"&gt;
+                        &lt;span&gt;Theme&lt;/span&gt;
+
+                        &lt;fieldset&gt;
+                            &lt;legend&gt;Choose Light or Dark Theme&lt;/legend&gt;
+
+                            &lt;label&gt;
+                                &lt;input type="radio" name="heading-sizes" checked onchange="setTheme('Light')"&gt;
+                                &lt;svg class="icon"&gt;&lt;use href="#icon-day"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                &lt;span class="sr-only"&gt;Light / day mode&lt;/span&gt;
+                            &lt;/label&gt;
+
+                            &lt;label&gt;
+                                &lt;input type="radio" name="heading-sizes" onchange="setTheme('Dark')"&gt;
+                                &lt;svg class="icon"&gt;&lt;use href="#icon-night"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                &lt;span class="sr-only"&gt;Dark / night mode&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/fieldset&gt;
+                    &lt;/form&gt;
+
+                    &lt;script&gt;
+                        function setTheme(theme){
+                            if(theme === "Dark"){
+                                document.body.classList.add('main-theme-dark');
+                            }else{
+                                document.body.classList.remove('main-theme-dark');
+                            }
+                        }
+                    &lt;/script&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Button Link</h3>
+    <div class="row">
+        <div class="column">
+            <div class="widgetbar-bordered">
+                <div class="widgetbar-link">
+                    <a class="widgetbar-item-border" href="https://github.com/zaphodbb-pm/goldilocks-css/archive/refs/heads/master.zip" rel="nofollow" aria-label="link to download">
+                        <svg class="icon"><use href="#icon-cloud-download"></use></svg>
+                        <span>DownLoad</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="widgetbar-bordered"&gt;
+                    &lt;div class="widgetbar-link"&gt;
+                        &lt;a class="widgetbar-item-border" href="https://github.com/zaphodbb-pm/goldilocks-css/archive/refs/heads/master.zip" rel="nofollow" aria-label="link to download"&gt;
+                            &lt;svg class="icon"&gt;&lt;use href="#icon-cloud-download"&gt;&lt;/use&gt;&lt;/svg&gt;
+                            &lt;span&gt;DownLoad&lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Icon Link</h3>
+    <div class="row">
+        <div class="column">
+            <div class="widgetbar-bordered">
+                <div class="widgetbar-link">
+                    <a href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github">
+                        <svg class="icon"><use href="#icon-github"></use></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="widgetbar-link"&gt;
+                    &lt;a href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow"  aria-label="link to gtihub"&gt;
+                        &lt;svg class="icon"&gt;&lt;use href="#icon-github"&gt;&lt;/use&gt;&lt;/svg&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="space-component-medium "></div>
+    <h3>Fully Loaded Widget Bar</h3>
+
+    <div class="widgetbar">
+
+        <form class="widgetbar-radios">
+            <span>Theme</span>
+
+            <fieldset>
+                <legend>Choose Light or Dark Theme</legend>
+
+                <label>
+                    <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')">
+                    <svg class="icon"><use href="#icon-day"></use></svg>
+                    <span class="sr-only">Light / day mode</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="heading-sizes" onchange="setTheme('Dark')">
+                    <svg class="icon"><use href="#icon-night"></use></svg>
+                    <span class="sr-only">Dark / night mode</span>
+                </label>
+            </fieldset>
+        </form>
+
+        <script>
+            function setTheme(theme){
+                if(theme === "Dark"){
+                    document.body.classList.add('main-theme-dark');
+                }else{
+                    document.body.classList.remove('main-theme-dark');
+                }
+            }
+        </script>
+
+
+        <form class="widgetbar-radios">
+            <label>
+                <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
+                <span>T1</span>
+            </label>
+
+            <label>
+                <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
+                <span>T2</span>
+            </label>
+
+            <label>
+                <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
+                <span>T3</span>
+            </label>
+        </form>
+
+        <script>
+            function setTextSize(size){
+                document.querySelector(':root').style.setProperty("--base-scale", size);
+            }
+        </script>
+
+
+        <form class="widgetbar-radios">
+            <fieldset>
+                <legend>Choose Heading Size</legend>
+
+                <label>
+                    <input type="radio" name="heading-sizes" onchange="setHeadingSize('1.067')" title="Select heading size small">
+                    <span>Hsm</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="heading-sizes" onchange="setHeadingSize('1.125')" checked title="Select heading size normal">
+                    <span>Hnm</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="heading-sizes" onchange="setHeadingSize('1.250')" title="Select heading size large">
+                    <span>Hlg</span>
+                </label>
+            </fieldset>
+        </form>
+
+        <script>
+            function setHeadingSize(size){
+                document.querySelector(':root').style.setProperty("--size-factor", size);
+            }
+        </script>
+
+
+        <div class="widgetbar-link">
+            <a class="widgetbar-item-border" href="https://github.com/zaphodbb-pm/goldilocks-css/archive/refs/heads/master.zip" rel="nofollow" aria-label="link to download">
+                <svg class="icon"><use href="#icon-cloud-download"></use></svg>
+                <span>DownLoad</span>
+            </a>
+        </div>
+
+        <div class="widgetbar-link">
+            <a href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to download">
+                <svg class="icon"><use href="#icon-github"></use></svg>
+            </a>
+        </div>
+    </div>
 </main>
