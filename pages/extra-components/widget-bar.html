@@ -110,20 +110,23 @@ title: Widget Bar
         <div class="column">
             <div class="widgetbar-bordered">
                 <form class="widgetbar-radios">
-                    <label>
-                        <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
-                        <span>T1</span>
-                    </label>
+                    <fieldset>
+                        <legend>Choose Text Size</legend>
+                        <label>
+                            <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
+                            <span>T1</span>
+                        </label>
 
-                    <label>
-                        <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
-                        <span>T2</span>
-                    </label>
+                        <label>
+                            <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
+                            <span>T2</span>
+                        </label>
 
-                    <label>
-                        <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
-                        <span>T3</span>
-                    </label>
+                        <label>
+                            <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
+                            <span>T3</span>
+                        </label>
+                    </fieldset>
                 </form>
 
                 <script>
@@ -138,20 +141,23 @@ title: Widget Bar
             <pre><code class="language-html">
                 &lt;div class="widgetbar-bordered"&gt;
                     &lt;form class="widgetbar-radios"&gt;
-                        &lt;label&gt;
-                            &lt;input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size"&gt;
-                            &lt;span&gt;T1&lt;/span&gt;
-                        &lt;/label&gt;
+                        &lt;fieldset&gt;
+                            &lt;legend&gt;Choose Text Size&lt;/legend&gt;
+                            &lt;label&gt;
+                                &lt;input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size"&gt;
+                                &lt;span&gt;T1&lt;/span&gt;
+                            &lt;/label&gt;
 
-                        &lt;label&gt;
-                            &lt;input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size"&gt;
-                            &lt;span&gt;T2&lt;/span&gt;
-                        &lt;/label&gt;
+                            &lt;label&gt;
+                                &lt;input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size"&gt;
+                                &lt;span&gt;T2&lt;/span&gt;
+                            &lt;/label&gt;
 
-                        &lt;label&gt;
-                            &lt;input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size"&gt;
-                            &lt;span&gt;T3&lt;/span&gt;
-                        &lt;/label&gt;
+                            &lt;label&gt;
+                                &lt;input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size"&gt;
+                                &lt;span&gt;T3&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/fieldset&gt;
                     &lt;/form&gt;
 
                     &lt;script&gt;
@@ -399,21 +405,25 @@ title: Widget Bar
         </script>
 
 
+
         <form class="widgetbar-radios">
-            <label>
-                <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
-                <span>T1</span>
-            </label>
+            <fieldset>
+                <legend>Choose Text Size</legend>
+                <label>
+                    <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
+                    <span>T1</span>
+                </label>
 
-            <label>
-                <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
-                <span>T2</span>
-            </label>
+                <label>
+                    <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
+                    <span>T2</span>
+                </label>
 
-            <label>
-                <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
-                <span>T3</span>
-            </label>
+                <label>
+                    <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
+                    <span>T3</span>
+                </label>
+            </fieldset>
         </form>
 
         <script>
