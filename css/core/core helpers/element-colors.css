@@ -3,7 +3,7 @@
 .is-primary-light.has-hover:hover,
 .is-primary-outlined.has-hover:hover,
 .is-primary-dark.has-hover:hover {
-    color: var(--text-btn-invert);
+    color:  var(--primary-text);
     background-color: var(--primary);
     border: 0 solid var(--primary-dark);
     opacity: 1;
@@ -17,16 +17,16 @@
 }
 
 .is-primary-dark, .is-primary.has-hover:hover {
-    color: var(--text-btn-invert);
+    color: var(--primary-text-invert);
     background-color: var(--primary-dark);
     border: 0 solid var(--primary-dark);
     opacity: 1;
 }
 
 .is-primary-outlined {
-    color: var(--primary);
+    color: var(--primary-dark);
     background-color: var(--bg-main);
-    border: 1px solid var(--primary);
+    border: 1px solid var(--primary-dark);
 }
 
 .is-primary-inverted {
@@ -52,7 +52,7 @@
 .is-secondary-light.has-hover:hover,
 .is-secondary-outlined.has-hover:hover,
 .is-secondary-dark.has-hover:hover {
-    color: var(--text-btn-invert);
+    color:  var(--secondary-text);
     background-color: var(--secondary);
     border: 0 solid var(--secondary-dark);
     opacity: 1;
@@ -66,16 +66,16 @@
 }
 
 .is-secondary-dark, .is-secondary.has-hover:hover {
-    color: var(--text-btn-invert);
+    color: var(--secondary-text-invert);
     background-color: var(--secondary-dark);
     border: 0 solid var(--secondary-dark);
     opacity: 1;
 }
 
 .is-secondary-outlined {
-    color: var(--secondary);
+    color: var(--secondary-dark);
     background-color: var(--bg-main);
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--secondary-dark);
 }
 
 .is-secondary-inverted {
@@ -99,7 +99,7 @@
 .is-tertiary-light.has-hover:hover,
 .is-tertiary-outlined.has-hover:hover,
 .is-tertiary-dark.has-hover:hover {
-    color: var(--text-btn-invert);
+    color:  var(--tertiary-text);
     background-color: var(--tertiary);
     border: 0 solid var(--tertiary-dark);
     opacity: 1;
@@ -113,16 +113,16 @@
 }
 
 .is-tertiary-dark, .is-tertiary.has-hover:hover {
-    color: var(--text-btn-invert);
+    color: var(--tertiary-text-invert);
     background-color: var(--tertiary-dark);
     border: 0 solid var(--tertiary-dark);
     opacity: 1;
 }
 
 .is-tertiary-outlined {
-    color: var(--tertiary);
+    color: var(--tertiary-dark);
     background-color: var(--bg-main);
-    border: 1px solid var(--tertiary);
+    border: 1px solid var(--tertiary-dark);
 }
 
 .is-tertiary-inverted {
@@ -146,7 +146,7 @@
 .is-link-light.has-hover:hover,
 .is-link-outlined.has-hover:hover,
 .is-link-dark.has-hover:hover {
-    color: var(--text-btn-invert);
+    color:  var(--link-text);
     background-color: var(--link);
     border: 0 solid var(--link-dark);
     opacity: 1;
@@ -160,7 +160,7 @@
 }
 
 .is-link-dark, .is-link.has-hover:hover {
-    color: var(--text-btn-invert);
+    color: var(--link-text-invert);
     background-color: var(--link-dark);
     border: 0 solid var(--link-dark);
     opacity: 1;
@@ -193,7 +193,7 @@
 .is-success-light.has-hover:hover,
 .is-success-outlined.has-hover:hover,
 .is-success-dark.has-hover:hover {
-    color: var(--text-btn-invert);
+    color:  var(--success-text);
     background-color: var(--success);
     border: 0 solid var(--success-dark);
     opacity: 1;
@@ -207,7 +207,7 @@
 }
 
 .is-success-dark, .is-success.has-hover:hover {
-    color: var(--text-btn-invert);
+    color: var(--success-text-invert);
     background-color: var(--success-dark);
     border: 0 solid var(--success-dark);
     opacity: 1;
@@ -241,7 +241,7 @@
 .is-warning-light.has-hover:hover,
 .is-warning-outlined.has-hover:hover,
 .is-warning-dark.has-hover:hover {
-    color: var(--text-btn);
+    color:  var(--warning-text);
     background-color: var(--warning);
     border: 0 solid var(--warning-dark);
     opacity: 1;
@@ -255,7 +255,7 @@
 }
 
 .is-warning-dark, .is-warning.has-hover:hover {
-    color: var(--text-btn-invert);
+    color: var(--warning-text-invert);
     background-color: var(--warning-dark);
     border: 0 solid var(--warning-dark);
     opacity: 1;
@@ -291,7 +291,7 @@
 .is-danger-light.has-hover:hover,
 .is-danger-outlined.has-hover:hover,
 .is-danger-dark.has-hover:hover {
-    color: var(--text-btn-invert);
+    color:  var(--danger-text);
     background-color: var(--danger);
     border: 0 solid var(--danger-dark);
     opacity: 1;
@@ -305,7 +305,7 @@
 }
 
 .is-danger-dark, .is-danger.has-hover:hover {
-    color: var(--text-btn-invert);
+    color: var(--danger-text-invert);
     background-color: var(--danger-dark);
     border: 0 solid var(--danger-dark);
     opacity: 1;
