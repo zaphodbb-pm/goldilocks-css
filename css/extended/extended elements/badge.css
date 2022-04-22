@@ -48,36 +48,36 @@ button.badge::after {
 }
 
 .badge.is-badge-primary::after {
-    color: var(--text-invert);
+    color: var(--primary-text);
     background-color: var(--primary);
 }
 
 .badge.is-badge-secondary::after {
-    color: var(--text-btn-invert);
+    color: var(--secondary-text);
     background-color: var(--secondary);
 }
 
 .badge.is-badge-tertiary::after {
-    color: var(--text-btn-invert);
+    color: var(--tertiary-text);
     background-color: var(--tertiary);
 }
 
 .badge.is-badge-success::after {
-    color: var(--text-invert);
+    color: var(--success-text);
     background-color: var(--success);
 }
 
 .badge.is-badge-warning::after {
-    color: var(--text-btn);
+    color: var(--warning-text);
     background-color: var(--warning);
 }
 
 .badge.is-badge-danger::after {
-    color: var(--text-invert);
+    color: var(--danger-text);
     background-color: var(--danger);
 }
 
 .badge.is-badge-link::after {
-    color: var(--text-btn-invert);
+    color: var(--link-text);
     background-color: var(--link);
 }
