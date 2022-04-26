@@ -1,7 +1,7 @@
 .blockquote {
     display: block;
     padding: var(--pad-vert) var(--pad-horz);
-    margin: var(--margin-form) auto;
+    margin: var(--margin-medium) auto;
     max-width: 40ch;
 
     background-color: var(--bg-component);
