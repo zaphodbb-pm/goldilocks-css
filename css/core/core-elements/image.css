@@ -31,6 +31,12 @@ img {
     object-fit: contain;
 }
 
+.img-as-content {
+    width: 66%;
+    height: auto;
+    margin: var(--margin-medium) auto;
+}
+
 
 /** landscape sizes **/
 .has-aspect-1x1 {

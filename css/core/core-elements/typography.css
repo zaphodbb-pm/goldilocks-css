@@ -17,25 +17,29 @@ h5 {font-size: var(--size-5); margin-bottom: var(--size-5); }
 h6 {font-size: var(--size-6); margin-bottom: var(--size-6); }
 
 /* sub-titles for headings for only three top headings */
-h1 + .sub-title {
+h1 + .sub-title,
+.is-title-1 + .sub-title {
     font-size: var(--size-4);
     margin-top: -1em;
     margin-bottom: var(--size-1);
 }
 
-h2 + .sub-title {
+h2 + .sub-title,
+.is-title-2 + .sub-title {
     font-size: var(--size-5);
     margin-top: -1.2em;
     margin-bottom: var(--size-2);
 }
 
-h3 + .sub-title {
+h3 + .sub-title,
+.is-title-3 + .sub-title {
     font-size: var(--size-5);
     margin-top: -1.2em;
     margin-bottom: var(--size-3);
 }
 
-h4 + .sub-title {
+h4 + .sub-title,
+.is-title-4 + .sub-title {
     font-size: var(--size-6);
     margin-top: -1.4em;
     margin-bottom: var(--size-4);
