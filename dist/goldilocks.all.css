@@ -5119,7 +5119,7 @@ a.tag:hover
 {
     display: block;
 
-    max-width: 40ch;
+    max-width: 50ch;
     margin: var(--margin-medium) auto;
     padding: var(--pad-vert) var(--pad-horz);
 
