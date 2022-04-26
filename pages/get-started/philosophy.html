@@ -1,7 +1,7 @@
 ---
 layout: default
 parent-tab: get-started
-title: Philosophy
+title: Design Philosophy
 ---
 
 <header class="page-header">
@@ -9,5 +9,67 @@ title: Philosophy
 </header>
 
 <main class="main-content">
-    Content
+    <article class="magazine has-serif">
+
+        <h2>What Are We Trying to Achieve?</h2>
+
+        <p><strong>Goldilocks-CSS</strong> attempts to find the sweet spot between providing enough items and modifiers to create
+            unique settings to deliver against your design needs.  Layouts provide many ways to position and space your components.
+            Key variables are provided to customize CSS parameters such as colour, padding, margins and more.  <strong>Goldilocks-CSS</strong>
+            tries <b>not</b> to provide too many controls that may never get used.
+            The objective is reasonable flexibility at minimal cost.
+        </p>
+
+        <p>Key principles that have driven the development of Goldilocks-CSS include:</p>
+
+        <ul>
+            <li>CSS3 standards compliant. No need for pre- or post-processors or extra bundling work.</li>
+            <li>Supports modern browsers only. No backward support for Internet Explorer!</li>
+            <li>File size is intended to be a small as possible. Even smaller when minified and gzipped.</li>
+            <li>Expected to be <b>THE</b> single source of truth for styling HTML.</li>
+            <li>Focus is on providing and styling core elements.</li>
+            <li>Other elements and components can be added as needed.</li>
+            <li>Minimizes HTML tags required to construct components which reduces nodes required for rendering.</li>
+            <li>Comply with semantic HTML to ensure accessibility.</li>
+            <li>No bundled javascript code needed or included.</li>
+            <li>Components have a light treatment as it is expected that a component framework or vanilla javascript
+                will be employed to make these components reactive.</li>
+        </ul>
+
+        <h2>Directory Structure</h2>
+
+        <p><strong>Goldilocks-CSS</strong> is composed of core items that cover the basic needs of website building and common items that
+            extend functionality and can be added as needed.  For more involved websites, extra elements and components are available when needed.
+            The items available in each category are grouped as elements or components.
+        </p>
+
+        <ul>
+            <li><b>Core Layout</b> is a set of elements that support page structure.  These include page layout using CSS grid,
+                flexbox horizontal layout and other page structural support elements.  All of these items are non-semantic.
+            </li>
+
+            <li><b>Core Elements</b> are the common basic structures such as typography control, buttons, forms, tables and image display.
+                Elements have semantic meaning as they usually contain content / information for customer consumption.
+            </li>
+
+            <li> <b>Core Helpers</b> provide common modifiers that can be applied to elements or components. These include colour choices,
+                position controls and fixed heights and widths.
+            </li>
+
+            <li><b>Extended elements</b> include common but more intricate structures such as avatars, badges, icons, tooltips and more.
+                Most of these elements have semantic meaning and so use appropriate HTML tags.
+            </li>
+
+            <li> <b>Extended components</b> are more complex structures that include components that are more intricate such as accordions,
+                breadcrumbs, cards and nav bar.  Most of these elements have semantic meaning and so use appropriate HTML tags.
+            </li>
+
+            <li><b>Extra elements</b> include a library of parts such as progress bars, ribboned and tooltips.
+                Most of these elements have semantic meaning and so use appropriate HTML tags.</li>
+
+            <li><b>Extra components</b> include a library of parts such as block quote, carousel, popovers and more.
+                Most of these elements have semantic meaning and so use appropriate HTML tags.</li>
+        </ul>
+
+    </article>
 </main>
