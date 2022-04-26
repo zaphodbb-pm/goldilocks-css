@@ -7,7 +7,12 @@ const concat = require("gulp-concat")
 
 function buildCore() {
     return gulpit
-        .src('./css/core/**/*.css')
+        .src([
+            './css/core/base/*.css',
+            './css/core/core-layout/*.css',
+            './css/core/core-elements/*.css',
+            './css/core/core-helpers/*.css'
+        ])
         .pipe(autoprefixer())
         .pipe(concat("goldilocks.core.css"))
         .pipe(csscomb())
@@ -49,7 +54,13 @@ function buildExtras() {
 
 function buildCoreExtended() {
     return gulpit
-        .src(['./css/core/**/*.css', './css/extended/**/*.css'])
+        .src([
+            './css/core/base/*.css',
+            './css/core/core-layout/*.css',
+            './css/core/core-elements/*.css',
+            './css/extended/**/*.css',
+            './css/core/core-helpers/*.css'
+        ])
         .pipe(autoprefixer())
         .pipe(concat("goldilocks.core-extended.css"))
         .pipe(csscomb())
@@ -63,7 +74,14 @@ function buildCoreExtended() {
 
 function buildAll() {
     return gulpit
-        .src('./css/**/*.css')
+        .src([
+            './css/core/base/*.css',
+            './css/core/core-layout/*.css',
+            './css/core/core-elements/*.css',
+            './css/extended/**/*.css',
+            './css/extras/**/*.css',
+            './css/core/core-helpers/*.css'
+        ])
         .pipe(autoprefixer())
         .pipe(concat("goldilocks.all.css"))
         .pipe(csscomb())
