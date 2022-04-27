@@ -113,8 +113,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --main-color: 140;                  /** primary hue value **/
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
     --main-color-sl: 53%, 35%;          /** saturation and lightness **/
-    --main-color-sl-light: 100%, 92%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 100%, 30%;    /** color lightening saturation and lightness **/
+    --main-color-sl-light: 100%, 90%;   /** color lightening saturation and lightness **/
+    --main-color-sl-dark: 100%, 35%;    /** color lightening saturation and lightness **/
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
     /* build main theme colours */
@@ -139,7 +139,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --link-light: hsl(217, 70%, 90%);
     --link-dark: hsl(217, 75%, 40%);
     --link-text: hsl( 217, 100%, 5%);
-    --link-text-invert: hsl( 217, 100%, 5%);
+    --link-text-invert: hsl( 217, 100%, 98%);
     --success: hsl(150, 65%, 53%);
     --success-light: hsl(141, 70%, 96%);
     --success-dark: hsl(141, 70%, 31%);
