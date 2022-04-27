@@ -85,7 +85,7 @@
 .widgetbar-radios input:checked + span,
 .widgetbar-radios input:checked + svg{
     background-color: var(--secondary);
-    color: var(--text-btn-invert);
+    color: var(--secondary-text);
     border-radius: var(--radius-comp);
 }
 

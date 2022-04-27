@@ -16,7 +16,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
     --main-color-sl: 53%, 35%;          /** saturation and lightness **/
     --main-color-sl-light: 100%, 90%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 100%, 35%;    /** color lightening saturation and lightness **/
+    --main-color-sl-dark: 100%, 55%;    /** color lightening saturation and lightness **/
 
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
@@ -25,7 +25,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     /* build main theme colours */
     --primary: hsl( var(--main-color), 80%, 51% );
-    --secondary: hsl( var(--main-color-complement-low), 85%, 51% );
+    --secondary: hsl( var(--main-color-complement-low), 75%, 75% );
     --tertiary: hsl( var(--main-color-complement-high), 85%, 51% );
 
 
