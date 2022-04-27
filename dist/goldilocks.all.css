@@ -120,7 +120,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /* build main theme colours */
     --primary: hsl( var(--main-color), 80%, 51% );
     --secondary: hsl( var(--main-color-complement-low), 75%, 75% );
-    --tertiary: hsl( var(--main-color-complement-high), 85%, 51% );
+    --tertiary: hsl( var(--main-color-complement-high), 85%, 65% );
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: hsl( var(--main-color), 100%, 5%);
     --secondary-text: hsl( var(--main-color-complement-low), 100%, 5%);
@@ -150,10 +150,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --warning-dark: hsl(48, 100%, 40%);
     --warning-text: hsl( 48, 100%, 5%);
     --warning-text-invert: hsl( 48, 100%, 95%);
-    --danger: hsl(348, 86%, 48%);
+    --danger: hsl(348, 86%, 65%);
     --danger-light: hsl(348, 90%, 97%);
     --danger-dark: hsl(348, 86%, 33%);
-    --danger-text: hsl( 348, 100%, 100%);
+    --danger-text: hsl( 348, 100%, 5%);
     --danger-text-invert: hsl( 348, 100%, 100%);
     --grey-light: hsl(0, 0%, 75%);
     --grey-lighter: hsl(0, 0%, 85%);
