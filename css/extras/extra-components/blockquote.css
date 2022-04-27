@@ -6,6 +6,7 @@
 
     background-color: var(--bg-component);
     border-left: 0.3rem solid var(--secondary);
+    break-inside: avoid;
 }
 
 .blockquote > blockquote {
