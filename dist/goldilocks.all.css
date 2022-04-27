@@ -114,7 +114,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
     --main-color-sl: 53%, 35%;          /** saturation and lightness **/
     --main-color-sl-light: 100%, 90%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 100%, 55%;    /** color lightening saturation and lightness **/
+    --main-color-sl-dark: 100%, 48%;    /** color lightening saturation and lightness **/
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
     /* build main theme colours */
@@ -140,17 +140,17 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --link-dark: hsl(217, 75%, 40%);
     --link-text: hsl( 217, 100%, 5%);
     --link-text-invert: hsl( 217, 100%, 98%);
-    --success: hsl(150, 75%, 65%);
+    --success: hsl(150, 85%, 75%);
     --success-light: hsl(141, 80%, 96%);
     --success-dark: hsl(141, 70%, 31%);
     --success-text: hsl( 141, 100%, 5%);
     --success-text-invert: hsl( 141, 100%, 95%);
-    --warning: hsl(48, 100%, 48%);
+    --warning: hsl(48, 900%, 55%);
     --warning-light: hsl(48, 100%, 95%);
     --warning-dark: hsl(48, 100%, 40%);
     --warning-text: hsl( 48, 100%, 5%);
     --warning-text-invert: hsl( 48, 100%, 95%);
-    --danger: hsl(348, 86%, 65%);
+    --danger: hsl(348, 80%, 70%);
     --danger-light: hsl(348, 90%, 97%);
     --danger-dark: hsl(348, 86%, 33%);
     --danger-text: hsl( 348, 100%, 5%);
