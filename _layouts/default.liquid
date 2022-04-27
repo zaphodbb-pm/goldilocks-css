@@ -40,7 +40,7 @@
      -->
 
     <script>
-        fetch("{{site.url}}/public/icon-definitions.html")
+        fetch("{{site.url}}/dist/icon-definitions.html")
             .then( response => response.text() )
             .then((data) => {
                 let svgElements = document.createElement('div');
@@ -48,7 +48,7 @@
                 document.body.appendChild(svgElements);
             })
 
-        fetch("{{site.url}}/public/icon-la-definitions.html")
+        fetch("{{site.url}}/dist/icon-la-definitions.html")
             .then( response => response.text() )
             .then((data) => {
                 let svgElements = document.createElement('div');
@@ -57,21 +57,18 @@
             })
     </script>
 
-<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 
-<!--
-<script>
-  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-  ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-</script>
-<script src="https://www.google-analytics.com/analytics.js" async></script>
--->
-
-
+    <!--
+    <script>
+      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+      ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    -->
 
     <link href='{{site.url}}/public/prism-coy.css' rel="stylesheet" />
     <script src='{{site.url}}/public/prism.js'></script>
-
 </body>
 
 </html>

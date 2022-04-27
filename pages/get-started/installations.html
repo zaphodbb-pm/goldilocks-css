@@ -9,5 +9,130 @@ title: Installations
 </header>
 
 <main class="main-content">
-    Content
+    <p><strong>Goldilocks-CSS</strong> works without a package manager or dependencies!
+        For this beta phase, there are currently 2 ways to get started with Goldilocks-CSS: download from Github or use a CDN.
+    </p>
+
+    <div class="space-vert-medium">
+        <h2>Install manually</h2>
+
+        <p>Download Goldilocks-CSS files from Github (use link in navbar) and link one of the following files
+            into the <code>head</code> of your website:</p>
+
+        <article class="box space-vert-medium">
+            <h3>Core includes Layouts, Common Elements and Helpers</h3>
+            <p><code>&lt;link rel="stylesheet" href="./dist/goldilocks.core.min.css"&gt;</code></p>
+        </article>
+
+        <article class="box space-vert-medium">
+            <h3>Core Plus Popular Add-on Elements and Components</h3>
+            <p><code>&lt;link rel="stylesheet" href="./dist/goldilocks.core-extended.min.css"&gt;</code></p>
+        </article>
+
+        <article class="box space-vert-medium">
+            <h3>Core and Extended Items Plus Secondary Add-on Elements and Components</h3>
+            <p><code>&lt;link rel="stylesheet" href="./dist/goldilocks.all.min.css"&gt;</code></p>
+        </article>
+    </div>
+
+    <div class="space-vert-medium">
+        <h2>Install from CDN</h2>
+        <p>Alternatively, you can use jsdelivr CDN to link to Goldilocks-CSS.  Use only one link for the package that you need.</p>
+
+        <div class="box">
+            <div class="stack">
+                <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.core.min.css"&gt;</code>
+
+                <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.core-extended.min.css"&gt;</code>
+
+                <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.all.min.css"&gt;</code>
+            </div>
+        </div>
+    </div>
+
+    <div class="space-vert-medium">
+        <h2>Starter HTML template</h2>
+
+        <p>An example starter template that sets up the basic page structure.
+            This typical for Github Pages use with the Jekyll template language.
+            Included is some Javascript to load the icon svg files.
+        </p>
+
+        <pre><code class="language-html">
+            &lt;!doctype html&gt;
+            &lt;html class="no-js" lang="en"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="utf-8"&gt;
+                    &lt;title&gt;{{page.title}} for Goldilocks CSS&lt;/title&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                    &lt;meta name="description" content="Goldilocks-CSS is a lightweight CSS framework based on grid that is HTML5 and CSS3 standards compliant.
+                    It is 100% responsive, fully modular, no javascript required and available for free on an MIT license."&gt;
+                    &lt;meta name="robots" content="index, follow"&gt;
+
+                    &lt;link rel="icon" href="{{site.url}}/favicon.png"&gt;
+                    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.all.min.css" media="screen"&gt;
+                &lt;/head&gt;
+
+                &lt;body&gt;
+                    &lt;div id="page-top" class="page-wrapper"&gt;
+
+                        &lt;div id="page-main-nav" class="page-main-nav"&gt;
+                            &lt;nav class="navbar is-primary has-sidebar" aria-label="Main Site Navigation Bar"&gt;
+                                &lt;div class="navbar-left"&gt;
+                                    &lt;!--add your own logo --&gt;
+                                    &lt;a href="{{site.url}}/home.html"&gt;
+                                        &lt;img src="{{site.url}}/img/logo.png" height="192" width="192" alt="Project Logo"&gt;
+                                    &lt;/a&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="navbar-right"&gt;
+                                    &lt;!-- add your links here --&gt;
+                                    &lt;a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-github"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                    &lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/nav&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- include heading and main content --&gt;
+                        &lt;header class="page-header"&gt;
+                            &lt;h1&gt;{{page.title}}&lt;/h1&gt;
+                        &lt;/header&gt;
+
+                        &lt;main class="main-content"&gt;
+                            Content
+                        &lt;/main&gt;
+
+                        &lt;footer class="page-footer"&gt;&lt;/footer&gt;
+                    &lt;/div&gt;
+
+                    &lt;!--
+                        Loads svg based icons that can be referenced on any page.
+                        Make sure that the icons definition file is publicly accessable.
+                     --&gt;
+
+                    &lt;script&gt;
+                        fetch("{{site.url}}/dist/icon-definitions.html")
+                                .then( response =&gt; response.text() )
+                                .then((data) =&gt; {
+                                    let svgElements = document.createElement('div');
+                                    svgElements.innerHTML = data;
+                                    document.body.appendChild(svgElements);
+                                })
+
+                        /* OR use the alternative icon set */
+
+                        fetch("{{site.url}}/dist/icon-la-definitions.html")
+                                .then( response =&gt; response.text() )
+                                .then((data) =&gt; {
+                                    let svgElements = document.createElement('div');
+                                    svgElements.innerHTML = data;
+                                    document.body.appendChild(svgElements);
+                                })
+                    &lt;/script&gt;
+
+                &lt;/body&gt;
+            &lt;/html&gt;
+        </code></pre>
+    </div>
 </main>

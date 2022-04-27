@@ -2128,6 +2128,13 @@ img
        object-fit: contain;
 }
 
+.img-as-content
+{
+    width: 66%;
+    height: auto;
+    margin: var(--margin-medium) auto;
+}
+
 
 /** landscape sizes **/
 .has-aspect-1x1
@@ -2213,6 +2220,11 @@ img
         flex-direction: column !important;
 
         gap: 0 !important;
+    }
+
+    .img-as-content
+    {
+        width: 100%;
     }
 }
 
@@ -2436,7 +2448,8 @@ h6
 }
 
 /* sub-titles for headings for only three top headings */
-h1 + .sub-title
+h1 + .sub-title,
+.is-title-1 + .sub-title
 {
     font-size: var(--size-4);
 
@@ -2444,7 +2457,8 @@ h1 + .sub-title
     margin-bottom: var(--size-1);
 }
 
-h2 + .sub-title
+h2 + .sub-title,
+.is-title-2 + .sub-title
 {
     font-size: var(--size-5);
 
@@ -2452,7 +2466,8 @@ h2 + .sub-title
     margin-bottom: var(--size-2);
 }
 
-h3 + .sub-title
+h3 + .sub-title,
+.is-title-3 + .sub-title
 {
     font-size: var(--size-5);
 
@@ -2460,7 +2475,8 @@ h3 + .sub-title
     margin-bottom: var(--size-3);
 }
 
-h4 + .sub-title
+h4 + .sub-title,
+.is-title-4 + .sub-title
 {
     font-size: var(--size-6);
 
