@@ -352,6 +352,14 @@ title: Form
                 </label>
 
                 <label>
+                    <span>Switch</span>
+                    <span class="switch">
+                        <input type="checkbox" name="switch_field">
+                        <span>Toggle Switch Value</span>
+                    </span>
+                </label>
+
+                <label>
                     <span>Select</span>
                     <select name="select2">
                         <option value="one">Select One</option>
@@ -391,14 +399,7 @@ title: Form
                 </fieldset>
 
                 <div class="form-footer">
-
                     <button type="submit" class="is-primary has-hover">Submit!</button>
-
-                    <!--
-                    <div class="button is-primary has-hover">
-                        <input type="submit" value="Submit!" formaction="#test-form" formmethod="get">
-                    </div>
-                    -->
                 </div>
             </form>
 
@@ -410,7 +411,7 @@ title: Form
 
                     const preamble = "Some simple javascript for demonstration only.\nValues picked up in form:\n\n";
                     const fields = ["input_field", "select1", "color_field", "date_field", "time_field", "text2_field",
-                        "select2", "email_field", "phone_field", "group1"];
+                        "switch_field", "select2", "email_field", "phone_field", "group1"];
 
                     let out = {};
 
@@ -462,6 +463,14 @@ title: Form
                     &lt;label&gt;
                         &lt;span&gt;Input Field&lt;/span&gt;
                         &lt;input type="text" placeholder="Text input" name="text2_field"&gt;
+                    &lt;/label&gt;
+
+                    &lt;label&gt;
+                        &lt;span&gt;Switch&lt;/span&gt;
+                        &lt;span class="switch"&gt;
+                            &lt;input type="checkbox" name="switch_field"&gt;
+                            &lt;span&gt;Toggle Switch Value&lt;/span&gt;
+                        &lt;/span&gt;
                     &lt;/label&gt;
 
                     &lt;label&gt;
