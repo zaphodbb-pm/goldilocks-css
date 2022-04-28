@@ -83,7 +83,6 @@
 .page-wrapper-widgets > .page-header {
     grid-area: header;
     padding: max(0.75rem, min(1.5rem, 3vw));
-    max-width: 80ch;
 }
 
 .page-wrapper > .page-header > h1,
