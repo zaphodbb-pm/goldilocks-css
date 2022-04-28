@@ -383,17 +383,36 @@ title: Form
                     <legend>Radio Group</legend>
 
                     <label>
-                        <input type="radio" name="group1">
+                        <input type="radio" name="group1" value="One">
                         <span>One</span>
                     </label>
 
                     <label>
-                        <input type="radio" name="group1">
+                        <input type="radio" name="group1" value="Two">
                         <span>Two</span>
                     </label>
 
                     <label>
-                        <input type="radio" name="group1">
+                        <input type="radio" name="group1" value="Three">
+                        <span>Three</span>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Checkbox Group</legend>
+
+                    <label>
+                        <input type="checkbox" name="group2" value="One">
+                        <span>One</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="group2" value="Two">
+                        <span>Two</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="group2" value="Three">
                         <span>Three</span>
                     </label>
                 </fieldset>
@@ -411,7 +430,7 @@ title: Form
 
                     const preamble = "Some simple javascript for demonstration only.\nValues picked up in form:\n\n";
                     const fields = ["input_field", "select1", "color_field", "date_field", "time_field", "text2_field",
-                        "switch_field", "select2", "email_field", "phone_field", "group1"];
+                        "switch_field", "select2", "email_field", "phone_field", "group1", "group2"];
 
                     let out = {};
 
@@ -508,6 +527,25 @@ title: Form
 
                         &lt;label&gt;
                             &lt;input type="radio" name="group1"&gt;
+                            &lt;span&gt;Three&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/fieldset&gt;
+
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Checkbox Group&lt;/legend&gt;
+
+                        &lt;label&gt;
+                            &lt;input type="checkbox" name="group2"&gt;
+                            &lt;span&gt;One&lt;/span&gt;
+                        &lt;/label&gt;
+
+                        &lt;label&gt;
+                            &lt;input type="checkbox" name="group2"&gt;
+                            &lt;span&gt;Two&lt;/span&gt;
+                        &lt;/label&gt;
+
+                        &lt;label&gt;
+                            &lt;input type="checkbox" name="group2"&gt;
                             &lt;span&gt;Three&lt;/span&gt;
                         &lt;/label&gt;
                     &lt;/fieldset&gt;
