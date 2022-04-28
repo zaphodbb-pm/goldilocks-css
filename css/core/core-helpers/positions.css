@@ -16,14 +16,14 @@
 
 .is-fixed-left {
     position: fixed;
-    top: 50%;
+    top: 25%;
     left: 0;
     height: 100%;
 }
 
 .is-fixed-right {
     position: fixed;
-    top: 50%;
+    top: 25%;
     right: 0;
     height: 100%;
 }
