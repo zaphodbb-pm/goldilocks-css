@@ -354,7 +354,7 @@ title: Form
                 <label>
                     <span>Switch</span>
                     <span class="switch">
-                        <input type="checkbox" name="switch_field">
+                        <input type="checkbox" name="switch_field" value="toggle-on">
                         <span>Toggle Switch Value</span>
                     </span>
                 </label>
@@ -435,16 +435,25 @@ title: Form
                     let out = {};
 
                     fields.forEach( field => {
-                        if( field === "checkboxes"){
-                            out[field] = [];
+                        switch(field){
+                            /* a group of checkboxes is annoying to handle, need to use its state to extract values */
+                            case "checkboxes":
+                                out[field] = [];
 
-                            Object.values(submit2.elements[field]).forEach( box => {
-                                if(box.checked){
-                                    out[field].push(box.value);
-                                }
-                            });
-                        }else{
-                            out[field] = submit2.elements[field].value;
+                                Object.values(submit2.elements[field]).forEach( box => {
+                                    if(box.checked){
+                                        out[field].push(box.value);
+                                    }
+                                });
+                                break;
+
+                            /* a checkbox is also a pain in the butt! */
+                            case "switch_field":
+                                out[field] = !!submit2?.elements[field]?.checked;
+                                break;
+
+                            default:
+                                out[field] = submit2.elements[field].value;
                         }
                     });
 
@@ -576,19 +585,26 @@ title: Form
 
                         let out = {};
 
-                        fields.forEach( field =&gt; {
-                            /* a group of checkboxes is annoying to handle,
-                            need to use its state to extract values */
-                            if( field === "checkboxes"){
-                                out[field] = [];
+                        fields.forEach( field => {
+                            switch(field){
+                                /* a group of checkboxes is annoying to handle, need to use its state to extract values */
+                                case "checkboxes":
+                                    out[field] = [];
 
-                                Object.values(submit.elements[field]).forEach( box =&gt; {
-                                    if(box.checked){
-                                        out[field].push(box.value);
-                                    }
-                                });
-                            }else{
-                                out[field] = submit.elements[field].value;
+                                    Object.values(submit2.elements[field]).forEach( box => {
+                                        if(box.checked){
+                                            out[field].push(box.value);
+                                        }
+                                    });
+                                    break;
+
+                                /* a checkbox is also a pain in the butt! */
+                                case "switch_field":
+                                    out[field] = !!submit2?.elements[field]?.checked;
+                                    break;
+
+                                default:
+                                    out[field] = submit2.elements[field].value;
                             }
                         });
 
