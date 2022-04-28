@@ -112,22 +112,22 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     */
     --main-color: 140;                  /** primary hue value **/
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
-    --main-color-sl: 53%, 60%;          /** saturation and lightness **/
-    --main-color-sl-light: 100%, 92%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 100%, 40%;    /** color lightening saturation and lightness **/
+    --main-color-sl: 53%, 35%;          /** saturation and lightness **/
+    --main-color-sl-light: 100%, 90%;   /** color lightening saturation and lightness **/
+    --main-color-sl-dark: 100%, 48%;    /** color lightening saturation and lightness **/
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
     /* build main theme colours */
-    --primary: hsl( var(--main-color), var(--main-color-sl) );
-    --secondary: hsl( var(--main-color-complement-low), var(--main-color-sl) );
-    --tertiary: hsl( var(--main-color-complement-high), var(--main-color-sl) );
+    --primary: hsl( var(--main-color), 80%, 65% );
+    --secondary: hsl( var(--main-color-complement-low), 75%, 75% );
+    --tertiary: hsl( var(--main-color-complement-high), 85%, 65% );
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl( var(--main-color), 100%, 100%);
-    --secondary-text: hsl( var(--main-color-complement-low), 100%, 98%);
-    --tertiary-text: hsl( var(--main-color-complement-high), 100%, 100%);
+    --primary-text: hsl( var(--main-color), 100%, 5%);
+    --secondary-text: hsl( var(--main-color-complement-low), 100%, 5%);
+    --tertiary-text: hsl( var(--main-color-complement-high), 100%, 5%);
     --primary-text-invert: hsl( var(--main-color), 100%, 5%);
-    --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 5%);
-    --tertiary-text-invert: hsl( var(--main-color-complement-high), 100%, 5%);
+    --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
+    --tertiary-text-invert: hsl( var(--main-color-complement-high), 100%, 100%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
     --primary-light: hsl( var(--main-color), var(--main-color-sl-light));
     --secondary-light: hsl( var(--main-color-complement-low), var(--main-color-sl-light));
@@ -135,25 +135,25 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --primary-dark: hsl( var(--main-color), var(--main-color-sl-dark) );
     --secondary-dark: hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
     --tertiary-dark: hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
-    --link: hsl(217, 75%, 65%);
-    --link-light: hsl(217, 75%, 93%);
-    --link-dark: hsl(217, 75%, 55%);
-    --link-text: hsl( 217, 100%, 95%);
-    --link-text-invert: hsl( 217, 100%, 95%);
-    --success: hsl(150, 65%, 53%);
-    --success-light: hsl(150, 70%, 96%);
-    --success-dark: hsl(150, 70%, 31%);
-    --success-text: hsl( 150, 100%, 5%);
-    --success-text-invert: hsl( 150, 100%, 95%);
-    --warning: hsl(48, 100%, 48%);
+    --link: hsl(217, 80%, 68%);
+    --link-light: hsl(217, 70%, 90%);
+    --link-dark: hsl(217, 75%, 40%);
+    --link-text: hsl( 217, 100%, 5%);
+    --link-text-invert: hsl( 217, 100%, 98%);
+    --success: hsl(150, 85%, 75%);
+    --success-light: hsl(141, 80%, 96%);
+    --success-dark: hsl(141, 70%, 31%);
+    --success-text: hsl( 141, 100%, 5%);
+    --success-text-invert: hsl( 141, 100%, 95%);
+    --warning: hsl(48, 900%, 55%);
     --warning-light: hsl(48, 100%, 95%);
     --warning-dark: hsl(48, 100%, 40%);
     --warning-text: hsl( 48, 100%, 5%);
     --warning-text-invert: hsl( 48, 100%, 95%);
-    --danger: hsl(348, 86%, 61%);
+    --danger: hsl(348, 80%, 70%);
     --danger-light: hsl(348, 90%, 97%);
     --danger-dark: hsl(348, 86%, 33%);
-    --danger-text: hsl( 348, 100%, 100%);
+    --danger-text: hsl( 348, 100%, 5%);
     --danger-text-invert: hsl( 348, 100%, 100%);
     --grey-light: hsl(0, 0%, 75%);
     --grey-lighter: hsl(0, 0%, 85%);
@@ -1020,7 +1020,6 @@ pre
 .page-wrapper > .page-header,
 .page-wrapper-widgets > .page-header
 {
-    max-width: 80ch;
     padding: max(.75rem, min(1.5rem, 3vw));
 
     grid-area: header;
@@ -3349,7 +3348,7 @@ h4 + .sub-title,
 .is-fixed-left
 {
     position: fixed;
-    top: 50%;
+    top: 25%;
     left: 0;
 
     height: 100%;
@@ -3358,7 +3357,7 @@ h4 + .sub-title,
 .is-fixed-right
 {
     position: fixed;
-    top: 50%;
+    top: 25%;
     right: 0;
 
     height: 100%;

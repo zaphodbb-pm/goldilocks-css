@@ -1,9 +1,11 @@
 {
   "name": "@zaphodbb-pm/goldilocks-css",
   "version": "0.1.0",
-  "description": "Modern CSS3 and HTML5 small framework",
+  "description": "Modern CSS3 and HTML5 small footprint framework",
   "keywords": [
-    "css"
+    "css",
+    "css3",
+    "HTML5"
   ],
   "license": "MIT",
   "author": "Zaphod Beeblebrox",
