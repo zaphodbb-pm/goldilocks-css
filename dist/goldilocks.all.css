@@ -189,6 +189,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 :root
 {
+    /* version 0.1.0 - April 29, 2022 */
     /* awareness variables - for info only */
     /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
     /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
