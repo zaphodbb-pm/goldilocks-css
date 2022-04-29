@@ -1,3 +1,138 @@
+:root
+{
+    /* version 0.1.0 - April 29, 2022 */
+    /* awareness variables - for info only */
+    /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
+    /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
+    --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
+    /* Base measurement unit to be used for font, margins and padding */
+    /* changing the base scale allows a user to change the font sizes to meet accessibility needs */
+    --base-rem: 16px;
+    --base-scale: 1;
+    /* Typography */
+    /** Note: text colors are set in file: initial-colors.css **/
+    /** basic is a fixed font size for all screen sizes **/
+    --base-font-size: calc( var(--base-scale) * var(--base-rem) );
+    /** alternatively, you can use a variable font size for all screen sizes
+    - font-size is variable and tracks viewport to a width of 100rem (1600 px)
+        - maximum font-size is set to 3 * base (48px)
+     **/
+    /** --base-font-size:  clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) ); **/
+    /** Default is to use system fonts as much as possible **/
+    --family-sans-serif: 'Tahoma', 'Helvetica Neue', 'Helvetica', 'Arial', 'Segoe UI', 'Roboto', sans-serif;
+    --family-serif: 'Georgia', 'Times New Roman', serif;
+    --family-monospace: monospace;
+    --render-mode: optimizeLegibility;
+    /** Define font weights here **/
+    --weight-light: 300;
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    /** Text line heights to match size **/
+    --line-height-125: 125%;
+    --line-height-150: 150%;
+    --line-height-175: 175%;
+    --line-height-200: 200%;
+    /** Sizing pattern - typically for text **/
+    --size-factor: 1.125;
+    --size-1: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
+    --size-2: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
+    --size-3: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) );
+    --size-4: calc( 1rem * var(--size-factor) * var(--size-factor) );
+    --size-5: calc( 1rem * var(--size-factor) );
+    --size-6: 1rem;
+    --size-7: calc( 1rem / var(--size-factor) );
+    /* Example 1.125 scale factor:
+    --size-1: 1.80rem;
+    --size-2: 1.60rem;
+    --size-3: 1.42rem;
+    --size-4: 1.27rem;
+    --size-5: 1.13rem;
+    --size-6: 1rem;
+    --size-7: 0.9rem;
+     */
+    /* Grid Key Variables */
+    --gutter: calc(3 * var(--base-rem));    /** grid column gutter **/
+    --grid-min-px-width: 100px;             /** minimum absolute column width in a grid layout **/
+    --grid-min-width: 5rem;                 /** minimum relative column width in a grid layout **/
+    /* Flexbox element spacing */
+    --gap-row: calc( 1 * var(--base-font-size) );
+    --gap-col: calc( 1 * var(--base-font-size) );
+    /* Elements Controls */
+    --pad-horz: var(--base-font-size);
+    --pad-vert: calc( .5 * var(--base-font-size) );
+    --padding: calc(.75 * var(--base-font-size));
+    --padding-normal: var(--base-font-size);
+    --padding-medium: calc( 1.5 * var(--base-font-size) );
+    --padding-large: calc( 3 * var(--base-font-size) );
+    --mar-horz: calc( .5 * var(--base-font-size) );
+    --mar-vert: calc( .5 * var(--base-font-size) );
+    --margin: var(--base-font-size);
+    --margin-form: calc(1.5 * var(--base-font-size));
+    --margin-medium: calc(3 * var(--base-font-size));
+    --margin-large: calc(5 * var(--base-font-size));
+    /* Component Controls */
+    --radius: calc(.5 * var(--base-font-size));
+    --radius-small: calc(.5 * var(--radius));
+    --radius-comp: calc(1 * var(--radius));
+    --radius-elem: calc(1.5 * var(--radius));
+    --radius-rounded: 10000px;
+    /* Navbar settings */
+    --navbar-height: 4rem;
+    --navbar-offset: 0;
+    --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
+    /* Widgetbar settings */
+    --widgetbar-height: calc( 2 * var(--base-font-size) );
+    --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
+    /* magazine normal width */
+    --magazine-width: 40ch;
+    /* carousel image height */
+    --carousel-image-height: 8rem;
+    --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
+    /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
+    --indicator: url('data:image/svg+xml;charset=utf8,\
+    %3Csvg%20\
+    xmlns="http://www.w3.org/2000/svg"%20\
+    width="24"%20\
+    height="24"%20\
+    viewBox="0%200%2024%2024"%20\
+    fill="none"%20\
+    stroke="%23CF63AB"%20\
+    stroke-width="3"%20\
+    stroke-linecap="round"%20\
+    stroke-linejoin="round"%20\
+    %3E\
+    %3Cpolyline%20points="6%209%2012%2015%2018%209"/%3E\
+    %3C/svg%3E');
+    --indicator-down: url('data:image/svg+xml;charset=utf8,\
+    %3Csvg%20\
+    xmlns="http://www.w3.org/2000/svg"%20\
+    width="24"%20\
+    height="24"%20\
+    viewBox="0%200%2024%2024"%20\
+    fill="none"%20\
+    stroke="currentColor"%20\
+    stroke-width="3"%20\
+    stroke-linecap="round"%20\
+    stroke-linejoin="round"%20\
+    %3E%3Cpolyline%20points="6%209%2012%2015%2018%209"/%3E\
+    %3C/svg%3E');
+    --indicator-right: url('data:image/svg+xml;charset=utf8,\
+    %3Csvg%20\
+    xmlns="http://www.w3.org/2000/svg"%20\
+    width="24"%20\
+    height="24"%20\
+    viewBox="0%200%2024%2024"%20\
+    fill="none"%20\
+    stroke="currentColor"%20\
+    stroke-width="3"%20\
+    stroke-linecap="round"%20\
+    stroke-linejoin="round"%20\
+    %3E%3Cpolyline%20points="9%2018%2015%2012%209%206"/%3E\
+    %3C/svg%3E');
+}
+
 /*
 main theme color definitions
 use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
@@ -185,141 +320,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-btn-invert: var(--white-ter);
     --text-bg: var(--black-bis);
     --text-code: var(--secondary-light);;
-}
-
-:root
-{
-    /* version 0.1.0 - April 29, 2022 */
-    /* awareness variables - for info only */
-    /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
-    /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
-    --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
-    /* Base measurement unit to be used for font, margins and padding */
-    /* changing the base scale allows a user to change the font sizes to meet accessibility needs */
-    --base-rem: 16px;
-    --base-scale: 1;
-    /* Typography */
-    /** Note: text colors are set in file: initial-colors.css **/
-    /** basic is a fixed font size for all screen sizes **/
-    --base-font-size: calc( var(--base-scale) * var(--base-rem) );
-    /** alternatively, you can use a variable font size for all screen sizes
-    - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-        - maximum font-size is set to 3 * base (48px)
-     **/
-    /** --base-font-size:  clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) ); **/
-    /** Default is to use system fonts as much as possible **/
-    --family-sans-serif: 'Tahoma', 'Helvetica Neue', 'Helvetica', 'Arial', 'Segoe UI', 'Roboto', sans-serif;
-    --family-serif: 'Georgia', 'Times New Roman', serif;
-    --family-monospace: monospace;
-    --render-mode: optimizeLegibility;
-    /** Define font weights here **/
-    --weight-light: 300;
-    --weight-normal: 400;
-    --weight-medium: 500;
-    --weight-semibold: 600;
-    --weight-bold: 700;
-    /** Text line heights to match size **/
-    --line-height-125: 125%;
-    --line-height-150: 150%;
-    --line-height-175: 175%;
-    --line-height-200: 200%;
-    /** Sizing pattern - typically for text **/
-    --size-factor: 1.125;
-    --size-1: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-2: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-3: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-4: calc( 1rem * var(--size-factor) * var(--size-factor) );
-    --size-5: calc( 1rem * var(--size-factor) );
-    --size-6: 1rem;
-    --size-7: calc( 1rem / var(--size-factor) );
-    /* Example 1.125 scale factor:
-    --size-1: 1.80rem;
-    --size-2: 1.60rem;
-    --size-3: 1.42rem;
-    --size-4: 1.27rem;
-    --size-5: 1.13rem;
-    --size-6: 1rem;
-    --size-7: 0.9rem;
-     */
-    /* Grid Key Variables */
-    --gutter: calc(3 * var(--base-rem));    /** grid column gutter **/
-    --grid-min-px-width: 100px;             /** minimum absolute column width in a grid layout **/
-    --grid-min-width: 5rem;                 /** minimum relative column width in a grid layout **/
-    /* Flexbox element spacing */
-    --gap-row: calc( 1 * var(--base-font-size) );
-    --gap-col: calc( 1 * var(--base-font-size) );
-    /* Elements Controls */
-    --pad-horz: var(--base-font-size);
-    --pad-vert: calc( .5 * var(--base-font-size) );
-    --padding: calc(.75 * var(--base-font-size));
-    --padding-normal: var(--base-font-size);
-    --padding-medium: calc( 1.5 * var(--base-font-size) );
-    --padding-large: calc( 3 * var(--base-font-size) );
-    --mar-horz: calc( .5 * var(--base-font-size) );
-    --mar-vert: calc( .5 * var(--base-font-size) );
-    --margin: var(--base-font-size);
-    --margin-form: calc(1.5 * var(--base-font-size));
-    --margin-medium: calc(3 * var(--base-font-size));
-    --margin-large: calc(5 * var(--base-font-size));
-    /* Component Controls */
-    --radius: calc(.5 * var(--base-font-size));
-    --radius-small: calc(.5 * var(--radius));
-    --radius-comp: calc(1 * var(--radius));
-    --radius-elem: calc(1.5 * var(--radius));
-    --radius-rounded: 10000px;
-    /* Navbar settings */
-    --navbar-height: 4rem;
-    --navbar-offset: 0;
-    --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
-    /* Widgetbar settings */
-    --widgetbar-height: calc( 2 * var(--base-font-size) );
-    --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
-    /* magazine normal width */
-    --magazine-width: 40ch;
-    /* carousel image height */
-    --carousel-image-height: 8rem;
-    --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
-    /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
-    --indicator: url('data:image/svg+xml;charset=utf8,\
-    %3Csvg%20\
-    xmlns="http://www.w3.org/2000/svg"%20\
-    width="24"%20\
-    height="24"%20\
-    viewBox="0%200%2024%2024"%20\
-    fill="none"%20\
-    stroke="%23CF63AB"%20\
-    stroke-width="3"%20\
-    stroke-linecap="round"%20\
-    stroke-linejoin="round"%20\
-    %3E\
-    %3Cpolyline%20points="6%209%2012%2015%2018%209"/%3E\
-    %3C/svg%3E');
-    --indicator-down: url('data:image/svg+xml;charset=utf8,\
-    %3Csvg%20\
-    xmlns="http://www.w3.org/2000/svg"%20\
-    width="24"%20\
-    height="24"%20\
-    viewBox="0%200%2024%2024"%20\
-    fill="none"%20\
-    stroke="currentColor"%20\
-    stroke-width="3"%20\
-    stroke-linecap="round"%20\
-    stroke-linejoin="round"%20\
-    %3E%3Cpolyline%20points="6%209%2012%2015%2018%209"/%3E\
-    %3C/svg%3E');
-    --indicator-right: url('data:image/svg+xml;charset=utf8,\
-    %3Csvg%20\
-    xmlns="http://www.w3.org/2000/svg"%20\
-    width="24"%20\
-    height="24"%20\
-    viewBox="0%200%2024%2024"%20\
-    fill="none"%20\
-    stroke="currentColor"%20\
-    stroke-width="3"%20\
-    stroke-linecap="round"%20\
-    stroke-linejoin="round"%20\
-    %3E%3Cpolyline%20points="9%2018%2015%2012%209%206"/%3E\
-    %3C/svg%3E');
 }
 
 /* Pure css html base elements and reset */
