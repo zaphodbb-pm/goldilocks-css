@@ -1,7 +1,7 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/zaphodbb-pm/goldilocks-css)
 ![GitHub](https://img.shields.io/github/license/zaphodbb-pm/goldilocks-css)
 
-# goldilocks-css
+# Goldilocks-CSS
 A customer first CSS design library.
 
 ## Introduction
