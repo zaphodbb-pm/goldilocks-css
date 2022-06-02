@@ -1,6 +1,6 @@
 :root
 {
-    /* version 0.1.0 - April 29, 2022 */
+    /* version 0.1.0 - April 29, 2022 - v3 */
     /* awareness variables - for info only */
     /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
     /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
@@ -2641,73 +2641,61 @@ h4 + .sub-title,
 .has-text-primary
 {
     color: var(--primary);
-    background-color: var(--bg-main);
 }
 
 .has-text-secondary
 {
     color: var(--secondary);
-    background-color: var(--bg-main);
 }
 
 .has-text-tertiary
 {
     color: var(--tertiary);
-    background-color: var(--bg-main);
 }
 
 .has-text-link
 {
     color: var(--link);
-    background-color: var(--bg-main);
 }
 
 .has-text-success
 {
     color: var(--success);
-    background-color: var(--bg-main);
 }
 
 .has-text-warning
 {
     color: var(--warning);
-    background-color: var(--bg-main);
 }
 
 .has-text-danger
 {
     color: var(--danger);
-    background-color: var(--bg-main);
 }
 
 .has-text-white
 {
     color: var(--bg-main);
-    background-color: var(--grey-dark);
 }
 
 .has-text-black
 {
     color: var(--bg-main-invert);
-    background-color: var(--bg-main);
 }
 
 .has-text-grey
 {
     color: var(--grey);
-    background-color: var(--bg-main);
 }
 
 .has-text-dark
 {
     color: var(--grey-dark);
-    background-color: var(--bg-main);
 }
 
 .has-text-light
 {
     color: var(--grey);
-    background-color: var(--bg-main);
 }
 
 /* Accordion styles */
@@ -3190,6 +3178,8 @@ details.accordion.is-expander-danger summary
 
     min-width: 12rem;
     padding-top: 4px;
+
+    background-color: currentColor;
 }
 
 .dropdown.is-hoverable:hover .dropdown-menu,
