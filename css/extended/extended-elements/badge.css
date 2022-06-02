@@ -47,6 +47,14 @@ button.badge::after {
     z-index: 5;
 }
 
+.badge.has-icon::after {
+    position: absolute;
+    right: -10%;
+    top: 15%;
+    transform: translate(50%,-50%);
+    z-index: 5;
+}
+
 .badge.is-badge-primary::after {
     color: var(--primary-text);
     background-color: var(--primary);

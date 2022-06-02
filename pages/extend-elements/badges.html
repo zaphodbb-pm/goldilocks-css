@@ -52,6 +52,16 @@ title: Badges
                 </tr>
 
                 <tr>
+                    <td><code>.avatar</code></td>
+                    <td>Optional class to adjust for the shape of an avatar.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-icon</code></td>
+                    <td>Optional class to adjust for the shape of an icon.  Icons have a right margin that needs to be taken into accp\ount</td>
+                </tr>
+
+                <tr>
                     <td>Colour modifiers::</td>
                     <td><code>.is-badge-primary</code>, <code>.is-badge-secondary</code>, <code>.is-badge-tertiary</code>,
                         <code>.is-badge-link</code>, <code>.is-badge-success</code>, <code>.is-badge-warning</code>, <code>.is-badge-danger</code>,
@@ -113,7 +123,7 @@ title: Badges
     <div class="row">
         <div class="column">
 
-            <div class="stack-centered stack-gap-large">
+            <div class="stack-centered stack-gap-medium">
                 <button class="is-secondary badge is-badge-warning" data-badge="88"  title="unread messages">
                     Button Info
                 </button>
@@ -124,6 +134,10 @@ title: Badges
 
                 <figure class="avatar avatar-lg badge is-badge-primary" data-badge="8" data-initial="YZ"  title="unread messages">
                     <img src="{{site.url}}/img/demo/gl-woman4.png" alt="YZ">
+                </figure>
+
+                <figure class="badge is-badge-danger has-icon" data-badge="88"  title="svg example">
+                    <svg class="icon is-large"><use href="#icon-bell" /></svg>
                 </figure>
             </div>
 
@@ -139,8 +153,12 @@ title: Badges
                     Button Link
                 &lt;/button&gt;
 
-                &lt;figure class="avatar avatar-lg badge is-badge-primary" data-badge="8" data-initial="YZ" title="unread messages"&gt;
+                &lt;figure class="badge is-badge-danger has-icon" data-badge="88" title="unread messages"&gt;
                     &lt;img src="{{site.url}}/img/demo/gl-woman4.png" alt="YZ"&gt;
+                &lt;/figure&gt;
+
+                &lt;figure class="avatar avatar-lg badge is-badge-primary" data-badge="8" data-initial="YZ" title="unread messages"&gt;
+                    &lt;svg class="icon is-large"&gt;&lt;use href="#icon-bell" /&gt;&lt;/svg&gt;
                 &lt;/figure&gt;
             </code></pre>
         </div>
