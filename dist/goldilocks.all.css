@@ -3176,7 +3176,11 @@ details.accordion.is-expander-danger summary
 
     display: none;
 
+    width: -webkit-max-content;
+    width:    -moz-max-content;
+    width:         max-content;
     min-width: 12rem;
+    max-width: 20rem;
     padding-top: 4px;
 
     background-color: currentColor;
