@@ -4782,7 +4782,8 @@ button.badge::after
     transform: translate(50%,-50%);
 }
 
-.badge.avatar::after
+.badge.avatar::after,
+.badge.has-icon::after
 {
     position: absolute;
     z-index: 5;
@@ -4792,15 +4793,16 @@ button.badge::after
     transform: translate(50%,-50%);
 }
 
-.badge.has-icon::after
-{
+/*
+.badge.has-icon::after {
     position: absolute;
-    z-index: 5;
+    left: 60%;
     top: 15%;
-    left: 70%;
-
     transform: translate(50%,-50%);
+    z-index: 5;
 }
+
+ */
 
 .badge.is-badge-primary::after
 {

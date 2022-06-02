@@ -39,7 +39,8 @@ button.badge::after {
     transform: translate(50%,-50%);
 }
 
-.badge.avatar::after {
+.badge.avatar::after,
+.badge.has-icon::after {
     position: absolute;
     left: 60%;
     top: 16%;
@@ -47,13 +48,16 @@ button.badge::after {
     z-index: 5;
 }
 
+/*
 .badge.has-icon::after {
     position: absolute;
-    left: 70%;
+    left: 60%;
     top: 15%;
     transform: translate(50%,-50%);
     z-index: 5;
 }
+
+ */
 
 .badge.is-badge-primary::after {
     color: var(--primary-text);
