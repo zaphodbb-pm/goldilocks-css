@@ -4786,8 +4786,8 @@ button.badge::after
 {
     position: absolute;
     z-index: 5;
-    top: 14.64%;
-    right: 14.64%;
+    top: 16%;
+    left: 60%;
 
     transform: translate(50%,-50%);
 }
@@ -4797,7 +4797,7 @@ button.badge::after
     position: absolute;
     z-index: 5;
     top: 15%;
-    right: -10%;
+    left: 70%;
 
     transform: translate(50%,-50%);
 }
