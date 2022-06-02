@@ -2,13 +2,13 @@
     <input type="checkbox" id="extra-components" {% if page.parent-tab == 'extra-components' %}checked{% endif %}>
     <label for="extra-components">Extra Components</label>
     <nav>
-        <a href="{{site.url}}/pages/extra-components/blockquote.html">Blockquote</a>
-        <a href="{{site.url}}/pages/extra-components/carousel.html">Carousel</a>
-        <a href="{{site.url}}/pages/extra-components/comments.html">Comments</a>
-        <a href="{{site.url}}/pages/extra-components/dividers.html">Dividers</a>
-        <a href="{{site.url}}/pages/extra-components/magazine.html">Magazine</a>
-        <a href="{{site.url}}/pages/extra-components/messages.html">Messages</a>
-        <a href="{{site.url}}/pages/extra-components/popovers.html">Popovers</a>
-        <a href="{{site.url}}/pages/extra-components/widget-bar.html">Widget Bar</a>
+        <a href="{{site.url}}/pages/extra-components/blockquote.html" class="{% if page.title == "Blockquote" %}is-active{% endif %}">Blockquote</a>
+        <a href="{{site.url}}/pages/extra-components/carousel.html" class="{% if page.title == "Carousel" %}is-active{% endif %}">Carousel</a>
+        <a href="{{site.url}}/pages/extra-components/comments.html" class="{% if page.title == "Comments" %}is-active{% endif %}">Comments</a>
+        <a href="{{site.url}}/pages/extra-components/dividers.html" class="{% if page.title == "Dividers" %}is-active{% endif %}">Dividers</a>
+        <a href="{{site.url}}/pages/extra-components/magazine.html" class="{% if page.title == "Magazine" %}is-active{% endif %}">Magazine</a>
+        <a href="{{site.url}}/pages/extra-components/messages.html" class="{% if page.title == "Messages" %}is-active{% endif %}">Messages</a>
+        <a href="{{site.url}}/pages/extra-components/popovers.html" class="{% if page.title == "Popovers" %}is-active{% endif %}">Popovers</a>
+        <a href="{{site.url}}/pages/extra-components/widget-bar.html" class="{% if page.title == "Widget Bar" %}is-active{% endif %}">Widget Bar</a>
     </nav>
 </div>
