@@ -3183,7 +3183,7 @@ details.accordion.is-expander-danger summary
     max-width: 18rem;
     padding-top: 4px;
 
-    background-color: currentColor;
+    background-color: var(--bg-main);
 }
 
 .dropdown.is-hoverable:hover .dropdown-menu,

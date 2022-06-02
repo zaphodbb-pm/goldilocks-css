@@ -38,7 +38,7 @@
     left: 0;
     top: 100%;
     z-index: 40;
-    background-color: currentColor;
+    background-color: var(--bg-main);
 }
 
 .dropdown.is-hoverable:hover .dropdown-menu,
