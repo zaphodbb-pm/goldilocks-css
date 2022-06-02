@@ -4792,6 +4792,16 @@ button.badge::after
     transform: translate(50%,-50%);
 }
 
+.badge.has-icon::after
+{
+    position: absolute;
+    z-index: 5;
+    top: 15%;
+    right: -10%;
+
+    transform: translate(50%,-50%);
+}
+
 .badge.is-badge-primary::after
 {
     color: var(--primary-text);
