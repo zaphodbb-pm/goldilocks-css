@@ -71,7 +71,6 @@
 
 
 .sidenavs a.is-active,
-.sidenavs a:active,
 .sidenavs a:hover,
 .sidenav-block a:hover {
     border-right: 2px solid var(--link);
