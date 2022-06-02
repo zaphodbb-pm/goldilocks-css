@@ -3949,6 +3949,9 @@ details.accordion.is-expander-danger summary
     background-color: inherit;
 }
 
+
+.sidenavs a.is-active,
+.sidenavs a:active,
 .sidenavs a:hover,
 .sidenav-block a:hover
 {
