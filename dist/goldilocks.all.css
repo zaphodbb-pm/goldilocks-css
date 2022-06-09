@@ -3047,7 +3047,6 @@ details.accordion.is-expander-danger summary
     margin: 0 .5em 0 0;
 }
 
-
 .card
 {
     position: relative;
@@ -3062,7 +3061,7 @@ details.accordion.is-expander-danger summary
 
 .card-header
 {
-    padding: 1.5rem 1.5rem 0 1.5rem;
+    padding: 1.5rem;
 
     background-color: transparent;
 }
@@ -3103,12 +3102,16 @@ details.accordion.is-expander-danger summary
     border-bottom-left-radius: var(--radius-comp);
 }
 
-
 .card-body
 {
     padding: 1.5rem;
 
     background-color: transparent;
+}
+
+.card-header + .card-body
+{
+    padding-top: 0;
 }
 
 .card-body .media:not(:last-child)
@@ -3951,7 +3954,6 @@ details.accordion.is-expander-danger summary
 
 
 .sidenavs a.is-active,
-.sidenavs a:active,
 .sidenavs a:hover,
 .sidenav-block a:hover
 {

@@ -1,4 +1,3 @@
-
 .card {
     background-color: var(--bg-component);
     border-radius: var(--radius-comp);
@@ -10,7 +9,7 @@
 
 .card-header {
     background-color: transparent;
-    padding: 1.5rem 1.5rem 0 1.5rem;
+    padding: 1.5rem;
 }
 
 .card-header-title {
@@ -40,10 +39,13 @@
     border-bottom-right-radius: var(--radius-comp);
 }
 
-
 .card-body {
     background-color: transparent;
     padding: 1.5rem;
+}
+
+.card-header + .card-body {
+    padding-top: 0;
 }
 
 .card-body .media:not(:last-child) {
