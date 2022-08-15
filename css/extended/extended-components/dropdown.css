@@ -66,8 +66,18 @@
     padding-top: var(--pad-vert);
 }
 
-.dropdown-menu > nav > a,
-.dropdown-menu > nav > p{
+.dropdown-menu > nav > ul {
+    display: block;
+}
+
+.dropdown-menu > nav > ul > li {
+    list-style: none;
+    display: block;
+    margin: 0;
+}
+
+.dropdown-menu > nav > ul > li > a,
+.dropdown-menu > nav > ul > li > p {
     color: var(--text);
     display: block;
     font-size: 0.875rem;
@@ -75,19 +85,20 @@
     padding: 0.375rem 1rem;
     position: relative;
     margin: 0;
+    justify-content: left;
 }
 
-.dropdown-menu > nav > button {
+.dropdown-menu > nav > ul > li > button {
     margin: 0.375rem 1rem;
     position: relative;
 }
 
-.dropdown-menu > nav > a:hover {
+.dropdown-menu > nav > ul > li a:hover {
     background-color: var(--bg-element);
     color: var(--text-darker);
 }
 
-.dropdown-menu > nav > a.is-active {
+.dropdown-menu > nav > ul > li a.is-active {
     background-color: var(--link);
     color: var(--text-invert);
 }

@@ -2,8 +2,10 @@
     <input type="checkbox" id="extra-elements" {% if page.parent-tab == 'extra-elements' %}checked{% endif %}>
     <label for="extra-elements">Extra Elements</label>
     <nav>
-        <a href="{{site.url}}/pages/extra-elements/progress-bar.html" class="{% if page.nav == "Progress Bars" %}is-active{% endif %}">Progress Bars</a>
-        <a href="{{site.url}}/pages/extra-elements/ribbon.html" class="{% if page.nav == "Ribbons" %}is-active{% endif %}">Ribbons</a>
-        <a href="{{site.url}}/pages/extra-elements/tooltip.html" class="{% if page.nav == "Tool Tips" %}is-active{% endif %}">Tool Tips</a>
+        <ul>
+            <li><a href="{{site.url}}/pages/extra-elements/progress-bar.html" class="{% if page.nav == "Progress Bars" %}is-active{% endif %}">Progress Bars</a></li>
+            <li><a href="{{site.url}}/pages/extra-elements/ribbon.html" class="{% if page.nav == "Ribbons" %}is-active{% endif %}">Ribbons</a></li>
+            <li><a href="{{site.url}}/pages/extra-elements/tooltip.html" class="{% if page.nav == "Tool Tips" %}is-active{% endif %}">Tool Tips</a></li>
+        </ul>
     </nav>
 </div>

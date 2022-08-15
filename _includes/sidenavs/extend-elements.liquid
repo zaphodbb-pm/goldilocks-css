@@ -2,10 +2,12 @@
     <input type="checkbox" id="extend-elements" {% if page.parent-tab == 'extend-elements' %}checked{% endif %}>
     <label for="extend-elements">Extend Elements</label>
     <nav>
-        <a href="{{site.url}}/pages/extend-elements/avatars.html" class="{% if page.nav == "Avatars" %}is-active{% endif %}">Avatars</a>
-        <a href="{{site.url}}/pages/extend-elements/badges.html" class="{% if page.nav == "Badges" %}is-active{% endif %}">Badges</a>
-        <a href="{{site.url}}/pages/extend-elements/icons.html" class="{% if page.nav == "Icons" %}is-active{% endif %}">Icons</a>
-        <a href="{{site.url}}/pages/extend-elements/notifications.html" class="{% if page.nav == "Notifications" %}is-active{% endif %}">Notifications</a>
-        <a href="{{site.url}}/pages/extend-elements/tags.html" class="{% if page.nav == "Tags" %}is-active{% endif %}">Tags</a>
+        <ul>
+            <li><a href="{{site.url}}/pages/extend-elements/avatars.html" class="{% if page.nav == "Avatars" %}is-active{% endif %}">Avatars</a></li>
+            <li><a href="{{site.url}}/pages/extend-elements/badges.html" class="{% if page.nav == "Badges" %}is-active{% endif %}">Badges</a></li>
+            <li><a href="{{site.url}}/pages/extend-elements/icons.html" class="{% if page.nav == "Icons" %}is-active{% endif %}">Icons</a></li>
+            <li><a href="{{site.url}}/pages/extend-elements/notifications.html" class="{% if page.nav == "Notifications" %}is-active{% endif %}">Notifications</a></li>
+            <li><a href="{{site.url}}/pages/extend-elements/tags.html" class="{% if page.nav == "Tags" %}is-active{% endif %}">Tags</a></li>
+        </ul>
     </nav>
 </div>
