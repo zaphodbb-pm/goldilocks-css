@@ -10,6 +10,7 @@ nav: Dropdowns
 </header>
 
 <main class="main-content">
+
     <div class="row has-6x-minwidth">
         <section class="column">
             <h2>Commentary</h2>
@@ -48,6 +49,9 @@ nav: Dropdowns
                 The <strong>dropdown</strong> can be triggered by clicking on the drop down button or by hover if the
                 <code>.is-hoverable</code> class is added to the main container.  The <code>.dropdown-menu</code> can be left (default)
                 right or up oriented.</p>
+
+            <p>Note that Safari does not support <code>:focus-within</code> for buttons or links.  This means that you need to use hover
+                instead of button clicks.  If you need to use button clicks, you will need to add an event listener to enforce the click.</p>
         </section>
 
         <section class="column">
@@ -129,15 +133,19 @@ nav: Dropdowns
                     </button>
 
                     <div class="dropdown-menu" id="dropdown-menu">
-                        <nav>
-                            <a href="#">Dropdown item</a>
-                            <p>Other dropdown item with a really long text but not a link</p>
-                            <a href="#" class="is-active">Active item</a>
-                            <a href="#">Other dropdown item</a>
+                        <p>Other dropdown item with a really long text but not a link</p>
 
-                            <hr />
-                            <button class="is-success">Call To Action</button>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Dropdown item</a></li>
+                                <li></li>
+                                <li><a href="#" class="is-active">Active item</a></li>
+                                <li><a href="#">Other dropdown item</a></li>
+                            </ul>
                         </nav>
+
+                        <hr />
+                        <button class="is-success">Call To Action</button>
                     </div>
                 </div>
 
@@ -147,15 +155,18 @@ nav: Dropdowns
                     </button>
 
                     <div class="dropdown-menu" id="dropdown-menu11">
-                        <nav>
-                            <a href="#">Dropdown item</a>
-                            <p>Other dropdown item with a really long text but not a link</p>
-                            <a href="#" class="is-active">Active item</a>
-                            <a href="#">Other dropdown item</a>
+                        <p>Other dropdown item with a really long text but not a link</p>
 
-                            <hr />
-                            <button class="is-success">Call To Action</button>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Dropdown item</a></li>
+                                <li><a href="#" class="is-active">Active item</a></li>
+                                <li><a href="#">Other dropdown item</a></li>
+                            </ul>
                         </nav>
+
+                        <hr />
+                        <button class="is-success">Call To Action</button>
                     </div>
                 </div>
 
@@ -165,15 +176,18 @@ nav: Dropdowns
                     </button>
 
                     <div class="dropdown-menu" id="dropdown-menu2">
-                        <nav class="dropdown-content">
-                            <a href="#">Dropdown item</a>
-                            <p>Other dropdown item with a really long text but not a link</p>
-                            <a href="#" class="is-active">Active item</a>
-                            <a href="#">Other dropdown item</a>
+                        <p>Other dropdown item with a really long text but not a link</p>
 
-                            <hr />
-                            <button class="is-success">Call To Action</button>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Dropdown item</a></li>
+                                <li><a href="#" class="is-active">Active item</a></li>
+                                <li><a href="#">Other dropdown item</a></li>
+                            </ul>
                         </nav>
+
+                        <hr />
+                        <button class="is-success">Call To Action</button>
                     </div>
                 </div>
             </div>
@@ -187,15 +201,17 @@ nav: Dropdowns
                     &lt;/button&gt;
 
                     &lt;div class="dropdown-menu" id="dropdown-menu3"&gt;
+                        &lt;p&gt;Other dropdown item with a really long text but not a link&lt;/p&gt;
                         &lt;nav&gt;
-                            &lt;a href="#"&gt;Dropdown item&lt;/a&gt;
-                            &lt;p&gt;Other dropdown item with a really long text but not a link&lt;/p&gt;
-                            &lt;a href="#" class="is-active"&gt;Active item&lt;/a&gt;
-                            &lt;a href="#"&gt;Other dropdown item&lt;/a&gt;
-
-                            &lt;hr&gt;
-                            &lt;button class="is-success"&gt;Call To Action&lt;/button&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Dropdown item&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#" class="is-active"&gt;Active item&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Other dropdown item&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
                         &lt;/nav&gt;
+
+                        &lt;hr&gt;
+                        &lt;button class="is-success"&gt;Call To Action&lt;/button&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             </code></pre>
@@ -215,9 +231,7 @@ nav: Dropdowns
                     </button>
 
                     <div class="dropdown-menu" id="dropdown-menu5">
-                        <nav>
-                            <p>The dropdown is <strong>left-aligned</strong> by default.</p>
-                        </nav>
+                        <p>The dropdown is <strong>left-aligned</strong> by default.</p>
                     </div>
                 </div>
 
@@ -227,9 +241,11 @@ nav: Dropdowns
                     </button>
 
                     <div class="dropdown-menu" id="dropdown-menu6">
+                        <p>Add the <code>is-right</code> modifier for a <strong>right-aligned</strong> dropdown.</p>
                         <nav>
-                            <p>Add the <code>is-right</code> modifier for a <strong>right-aligned</strong> dropdown.</p>
-                            <a href="#" class="is-active">Active item</a>
+                            <ul>
+                                <li><a href="#" class="is-active">Active item</a></li>
+                            </ul>
                         </nav>
                     </div>
                 </div>
@@ -240,9 +256,7 @@ nav: Dropdowns
                     </button>
 
                     <div class="dropdown-menu" id="dropdown-menu7" role="menu">
-                        <nav>
-                            <p>You can add the <code>is-up</code> modifier to have a dropdown menu that appears above the dropdown button.</p>
-                        </nav>
+                        <p>You can add the <code>is-up</code> modifier to have a dropdown menu that appears above the dropdown button.</p>
                     </div>
                 </div>
             </div>
@@ -256,9 +270,11 @@ nav: Dropdowns
                     &lt;/button&gt;
 
                     &lt;div class="dropdown-menu" id="dropdown-menu9"&gt;
+                        &lt;p&gt;Add the &lt;code&gt;is-right&lt;/code&gt; modifier for a &lt;strong&gt;right-aligned&lt;/strong&gt; dropdown.&lt;/p&gt;
                         &lt;nav&gt;
-                            &lt;p&gt;Add the &lt;code&gt;is-right&lt;/code&gt; modifier for a &lt;strong&gt;right-aligned&lt;/strong&gt; dropdown.&lt;/p&gt;
-                            &lt;a href="#" class="is-active"&gt;Active item&lt;/a&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#" class="is-active"&gt;Active item&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
                         &lt;/nav&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
