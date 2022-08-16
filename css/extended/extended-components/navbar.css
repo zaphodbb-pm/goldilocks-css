@@ -271,9 +271,7 @@
         padding-bottom: var(--pad-vert);
         padding-top: initial;
         top: auto;
-        background-color: transparent;
     }
-
 
     .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav > span{
         display: none;
