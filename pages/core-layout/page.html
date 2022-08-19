@@ -158,30 +158,41 @@ nav: Page
             </div>
 
             <div class="navbar-center show-bottom-nav">
-                <a class="icon-nav" href="#page-layout-top">
-                    <svg class="icon"><use href="#icon-bookmark"/></svg>
-                    <span>Bookmark</span>
-                </a>
+                <nav aria-label="Main Navigation Links">
+                    <ul>
+                        <li>
+                            <a class="icon-nav" href="#page-layout-top">
+                                <svg class="icon"><use href="#icon-bookmark"/></svg>
+                                <span>Bookmark</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="icon-nav" href="#page-layout-top">
+                                <svg class="icon"><use href="#icon-clock"/></svg>
+                                <span>Clock</span>
+                            </a>
+                        </li>
+                        <li><a class="icon-nav" href="#page-layout-top">
+                            <svg class="icon"><use href="#icon-film"/></svg>
+                            <span>Film</span>
+                        </a>
 
-                <a class="icon-nav" href="#page-layout-top">
-                    <svg class="icon"><use href="#icon-clock"/></svg>
-                    <span>Clock</span>
-                </a>
-
-                <a class="icon-nav" href="#page-layout-top">
-                    <svg class="icon"><use href="#icon-film"/></svg>
-                    <span>Film</span>
-                </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
 
             <div class="navbar-right">
-                <a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github">
-                    <svg class="icon"><use href="#icon-github"></use></svg>
-                </a>
-
-                <a class="button is-secondary has-hover" href="#page-layout-top">
-                    <span>Top</span>
-                </a>
+                <nav aria-label="Main Navigation Secondary Actions">
+                    <ul>
+                        <li><a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github">
+                            <svg class="icon"><use href="#icon-github"></use></svg>
+                        </a></li>
+                        <li><a class="button is-secondary has-hover" href="#page-layout-top">
+                            <span>Top</span>
+                        </a></li>
+                    </ul>
+                </nav>
             </div>
         </nav>
 
@@ -400,36 +411,45 @@ nav: Page
 
                     <div id="sidebarMenu">
                         <nav class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation">
-                            <a href="#page-layout-top-2" title="Some Link">Some Link</a>
-
-                            <a href="#page-layout-top-2" class="icon-nav-horz"  title="Bookmark">
-                                <svg class="icon"><use href="#icon-bookmark"/></svg>
-                                <span>Bookmark</span>
-                            </a>
-
-                            <a href="#page-layout-top-2" class="icon-nav-horz" title="Clock">
-                                <svg class="icon"><use href="#icon-clock"/></svg>
-                                <span>Clock</span>
-                            </a>
-
-                            <a href="#page-layout-top-2" class="icon-nav-horz" title="Film">
-                                <svg class="icon"><use href="#icon-film"/></svg>
-                                <span>Film</span>
-                            </a>
+                            <ul>
+                                <li><a href="#page-layout-top-2" title="Some Link">Some Link</a></li>
+                                <li>
+                                    <a href="#page-layout-top-2" class="icon-nav-horz"  title="Bookmark">
+                                        <svg class="icon"><use href="#icon-bookmark"/></svg>
+                                        <span>Bookmark</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#page-layout-top-2" class="icon-nav-horz" title="Clock">
+                                        <svg class="icon"><use href="#icon-clock"/></svg>
+                                        <span>Clock</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#page-layout-top-2" class="icon-nav-horz" title="Film">
+                                        <svg class="icon"><use href="#icon-film"/></svg>
+                                        <span>Film</span>
+                                    </a>
+                                </li>
+                            </ul>
 
                             <div class="sidebar-block">
                                 <input type="checkbox" id="check21">
                                 <label for="check21">More Links</label>
-                                <div>
-                                    <a href="#page-layout-top-2" class="icon-nav-horz" title="Home">
-                                        <svg class="icon"><use href="#icon-home"></use></svg>
-                                        <span>Home</span>
-                                    </a>
-                                    <a href="#page-layout-top-2">About</a>
-                                    <a href="#page-layout-top-2">Contact</a>
-                                    <a href="#page-layout-top-2">Jobs</a>
-                                    <a href="#page-layout-top-2">Report an Issue</a>
-                                </div>
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <a href="#page-layout-top-2" class="icon-nav-horz" title="Home">
+                                                <svg class="icon"><use href="#icon-home"></use></svg>
+                                                <span>Home</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="#page-layout-top-2">About</a></li>
+                                        <li><a href="#page-layout-top-2">Contact</a></li>
+                                        <li><a href="#page-layout-top-2">Jobs</a></li>
+                                        <li><a href="#page-layout-top-2">Report an Issue</a></li>
+                                    </ul>
+                                </nav>
                             </div>
                         </nav>
                     </div>
@@ -441,47 +461,70 @@ nav: Page
             </div>
 
             <div class="navbar-center show-bottom-nav">
-                <a class="icon-nav" href="#page-layout-top-2">
-                    <svg class="icon"><use href="#icon-bookmark"/></svg>
-                    <span>Bookmark</span>
-                </a>
-
-                <a class="icon-nav" href="#page-layout-top-2">
-                    <svg class="icon"><use href="#icon-clock"/></svg>
-                    <span>Clock</span>
-                </a>
-
-                <a class="icon-nav" href="#page-layout-top-2">
-                    <svg class="icon"><use href="#icon-film"/></svg>
-                    <span>Film</span>
-                </a>
+                <nav>
+                    <ul>
+                        <li>
+                            <a class="icon-nav" href="#page-layout-top-2">
+                                <svg class="icon"><use href="#icon-bookmark"/></svg>
+                                <span>Bookmark</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="icon-nav" href="#page-layout-top-2">
+                                <svg class="icon"><use href="#icon-clock"/></svg>
+                                <span>Clock</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="icon-nav" href="#page-layout-top-2">
+                                <svg class="icon"><use href="#icon-film"/></svg>
+                                <span>Film</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
 
             <div class="navbar-right">
-                <a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github">
-                    <svg class="icon"><use href="#icon-github"></use></svg>
-                </a>
-
-                <a class="button is-secondary has-hover" href="#page-layout-top">
-                    <span>Top</span>
-                </a>
+                <nav>
+                    <ul>
+                        <li>
+                            <a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github">
+                                <svg class="icon"><use href="#icon-github"></use></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="button is-secondary has-hover" href="#page-layout-top">
+                                <span>Top</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </nav>
 
-        <nav class="page-sidenav" aria-label="Extended Side Bar Navigation">
+        <div class="page-sidenav" aria-label="Extended Side Bar Navigation">
             <div class="sidenavs">
-                <a class="icon-nav-horz" href="#page-layout-top-2" title="Bookmark">
-                    <svg class="icon"><use href="#icon-home"/></svg>
-                    <span>Home</span>
-                </a>
+                <nav>
+                    <ul>
+                        <li>
+                            <a class="icon-nav-horz" href="#page-layout-top-2" title="Bookmark">
+                                <svg class="icon"><use href="#icon-home"/></svg>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
                 <div class="sidenav-block">
                     <input type="checkbox" id="check22">
                     <label for="check22">Item 1</label>
                     <nav>
-                        <a href="#page-layout-top-2">Home</a>
-                        <a href="#page-layout-top-2">About</a>
-                        <a href="#page-layout-top-2">Contact</a>
+                        <ul>
+                            <li><a href="#page-layout-top-2">Home</a></li>
+                            <li><a href="#page-layout-top-2">About</a></li>
+                            <li><a href="#page-layout-top-2">Contact</a></li>
+                        </ul>
                     </nav>
                 </div>
 
@@ -489,24 +532,30 @@ nav: Page
                     <input type="checkbox" id="check23">
                     <label for="check23">Item 2</label>
                     <nav>
-                        <a class="icon-nav-horz" href="#page-layout-top-2" title="Bookmark">
-                            <svg class="icon"><use href="#icon-bookmark"/></svg>
-                            <span>Bookmark</span>
-                        </a>
-
-                        <a class="icon-nav-horz" href="#page-layout-top-2" title="Clock">
-                            <svg class="icon"><use href="#icon-clock"/></svg>
-                            <span>Clock</span>
-                        </a>
-
-                        <a class="icon-nav-horz" href="#page-layout-top-2" title="Film">
-                            <svg class="icon"><use href="#icon-film"/></svg>
-                            <span>Film</span>
-                        </a>
+                        <ul>
+                            <li>
+                                <a class="icon-nav-horz" href="#page-layout-top-2" title="Bookmark">
+                                    <svg class="icon"><use href="#icon-bookmark"/></svg>
+                                    <span>Bookmark</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="icon-nav-horz" href="#page-layout-top-2" title="Clock">
+                                    <svg class="icon"><use href="#icon-clock"/></svg>
+                                    <span>Clock</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="icon-nav-horz" href="#page-layout-top-2" title="Film">
+                                    <svg class="icon"><use href="#icon-film"/></svg>
+                                    <span>Film</span>
+                                </a>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
             </div>
-        </nav>
+        </div>
 
         <header class="page-header">
             <h1>Main Page Content h1 Heading</h1>
