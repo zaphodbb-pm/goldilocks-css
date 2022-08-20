@@ -42,7 +42,8 @@ button.is-default-inverted,
 .button.is-default-inverted {
     color: var(--text-comp);
     border: none;
-    text-decoration: underline var(--text-comp);
+    text-decoration-color: var(--text-comp);
+    text-decoration-line: underline;
     text-underline-offset: 0.25em;
 }
 

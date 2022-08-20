@@ -30,7 +30,7 @@ nav: Dropdowns
                 </figcaption>
             </figure>
 
-            <p>Dropdowns have their advantages in that they conserve screen space. Also they are a standard widget,
+            <p>Dropdowns have their advantages in that they conserve screen space. They are also a standard widget and
                 users know how to deal with them. Despite these advantages, web usability would increase if designers used
                 dropdowns less often.  Some design guidelines for dropdowns:
             </p>
@@ -46,12 +46,9 @@ nav: Dropdowns
             </ul>
 
             <p><strong>Goldilocks-CSS</strong> type <strong>dropdowns</strong> are driven by CSS only, no javascript required.
-                The <strong>dropdown</strong> can be triggered by clicking on the drop down button or by hover if the
-                <code>.is-hoverable</code> class is added to the main container.  The <code>.dropdown-menu</code> can be left (default)
+                The <strong>dropdown</strong> can be triggered by hovering on the drop down button (default) or by clicking if the
+                <code>.is-click-open</code> class is added to the main container.  The <code>.dropdown-menu</code> can be left (default)
                 right or up oriented.</p>
-
-            <p>Note that Safari does not support <code>:focus-within</code> for buttons or links.  This means that you need to use hover
-                instead of button clicks.  If you need to use button clicks, you will need to add an event listener to enforce the click.</p>
         </section>
 
         <section class="column">
@@ -74,8 +71,15 @@ nav: Dropdowns
                 </tr>
 
                 <tr>
-                    <td><code>.is-hoverable</code></td>
-                    <td>Triggers expansion of dropdown when user hovers over parent.</td>
+                    <td><code>.is-click-open</code></td>
+                    <td>Triggers expansion of dropdown when user clicks on parent button. Note that this overrides hover open.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.dropdown-trigger</code></td>
+                    <td>Container for the button that activates the <code>.dropdown-menu</code>.
+                        Note that Safari requires setting the <code>tabindex</code> attribute in order to be able to respond to CSS <code>:focus-within</code>
+                        in order to use a click to show the for the <code>.dropdown-menu</code>.</td>
                 </tr>
 
                 <tr>
@@ -128,9 +132,11 @@ nav: Dropdowns
         <div class="column">
             <div class="stack-centered stack-gap-large">
                 <div class="dropdown">
-                    <button class="is-default-inverted"  aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Dropdown Link on Click</span>
-                    </button>
+                    <div class="dropdown-trigger" tabindex="0">
+                        <button class="is-default-inverted" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <span>Basic Dropdown Link</span>
+                        </button>
+                    </div>
 
                     <div class="dropdown-menu" id="dropdown-menu">
                         <p>Other dropdown item with a really long text but not a link</p>
@@ -138,7 +144,6 @@ nav: Dropdowns
                         <nav>
                             <ul>
                                 <li><a href="#">Dropdown item</a></li>
-                                <li></li>
                                 <li><a href="#" class="is-active">Active item</a></li>
                                 <li><a href="#">Other dropdown item</a></li>
                             </ul>
@@ -149,10 +154,12 @@ nav: Dropdowns
                     </div>
                 </div>
 
-                <div class="dropdown is-hoverable">
-                    <button class="is-secondary-outlined" aria-haspopup="true" aria-controls="dropdown-menu11">
-                        <span>Dropdown button on Hover</span>
-                    </button>
+                <div class="dropdown">
+                    <div class="dropdown-trigger" tabindex="0">
+                        <button class="is-secondary-outlined has-hover" aria-haspopup="true" aria-controls="dropdown-menu11">
+                            <span>Dropdown button on Hover</span>
+                        </button>
+                    </div>
 
                     <div class="dropdown-menu" id="dropdown-menu11">
                         <p>Other dropdown item with a really long text but not a link</p>
@@ -170,10 +177,12 @@ nav: Dropdowns
                     </div>
                 </div>
 
-                <div class="dropdown">
-                    <button class="is-tertiary-outlined has-hover" aria-haspopup="true" aria-controls="dropdown-menu2">
-                        <span>Dropdown button on Click</span>
-                    </button>
+                <div class="dropdown is-click-open">
+                    <div class="dropdown-trigger" tabindex="0">
+                        <button class="is-tertiary-outlined has-hover" aria-haspopup="true" aria-controls="dropdown-menu2">
+                            <span>Dropdown button on Click</span>
+                        </button>
+                    </div>
 
                     <div class="dropdown-menu" id="dropdown-menu2">
                         <p>Other dropdown item with a really long text but not a link</p>
@@ -195,10 +204,12 @@ nav: Dropdowns
 
         <div class="column">
             <pre><code class="language-html">
-                 &lt;div class="dropdown [is-hoverable]"&gt;
-                    &lt;button class="is-default-inverted"  aria-haspopup="true" aria-controls="dropdown-menu3"&gt;
-                        &lt;span&gt;Dropdown Link on Click&lt;/span&gt;
-                    &lt;/button&gt;
+                 &lt;div class="dropdown [is-click-open]"&gt;
+                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
+                        &lt;button class="is-default-inverted"  aria-haspopup="true" aria-controls="dropdown-menu3"&gt;
+                            &lt;span&gt;Dropdown Link on Click&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
 
                     &lt;div class="dropdown-menu" id="dropdown-menu3"&gt;
                         &lt;p&gt;Other dropdown item with a really long text but not a link&lt;/p&gt;
@@ -225,20 +236,24 @@ nav: Dropdowns
     <div class="row">
         <div class="column">
             <div class="stack-centered stack-gap-large">
-                <div class="dropdown is-hoverable">
-                    <button aria-haspopup="true" aria-controls="dropdown-menu5">
-                        <span>Left aligned on Hover</span>
-                    </button>
+                <div class="dropdown">
+                    <div class="dropdown-trigger" tabindex="0">
+                        <button aria-haspopup="true" aria-controls="dropdown-menu5">
+                            <span>Left aligned on Hover</span>
+                        </button>
+                    </div>
 
                     <div class="dropdown-menu" id="dropdown-menu5">
                         <p>The dropdown is <strong>left-aligned</strong> by default.</p>
                     </div>
                 </div>
 
-                <div class="dropdown is-right is-hoverable">
-                    <button aria-haspopup="true" aria-controls="dropdown-menu6">
-                        <span>Right aligned</span>
-                    </button>
+                <div class="dropdown is-right">
+                    <div class="dropdown-trigger" tabindex="0">
+                        <button aria-haspopup="true" aria-controls="dropdown-menu6">
+                            <span>Right aligned</span>
+                        </button>
+                    </div>
 
                     <div class="dropdown-menu" id="dropdown-menu6">
                         <p>Add the <code>is-right</code> modifier for a <strong>right-aligned</strong> dropdown.</p>
@@ -250,10 +265,12 @@ nav: Dropdowns
                     </div>
                 </div>
 
-                <div class="dropdown is-up">
-                    <button class="is-primary-outlined has-hover" aria-haspopup="true" aria-controls="dropdown-menu7">
-                        <span>Drop Up on Click</span>
-                    </button>
+                <div class="dropdown is-up is-click-open">
+                    <div class="dropdown-trigger" tabindex="0">
+                        <button class="is-primary-outlined has-hover" aria-haspopup="true" aria-controls="dropdown-menu7">
+                            <span>Drop Up on Click</span>
+                        </button>
+                    </div>
 
                     <div class="dropdown-menu" id="dropdown-menu7">
                         <p>You can add the <code>is-up</code> modifier to have a dropdown menu that appears above the dropdown button.</p>
@@ -264,10 +281,12 @@ nav: Dropdowns
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;div class="dropdown [is-right, is-up] [is-hoverable]"&gt;
-                    &lt;button aria-haspopup="true" aria-controls="dropdown-menu9"&gt;
-                        &lt;span&gt;Right aligned&lt;/span&gt;
-                    &lt;/button&gt;
+                &lt;div class="dropdown [is-right, is-up] [is-click-open]"&gt;
+                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
+                        &lt;button aria-haspopup="true" aria-controls="dropdown-menu9"&gt;
+                            &lt;span&gt;Right aligned&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
 
                     &lt;div class="dropdown-menu" id="dropdown-menu9"&gt;
                         &lt;p&gt;Add the &lt;code&gt;is-right&lt;/code&gt; modifier for a &lt;strong&gt;right-aligned&lt;/strong&gt; dropdown.&lt;/p&gt;

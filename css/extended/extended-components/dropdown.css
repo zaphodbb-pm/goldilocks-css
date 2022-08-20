@@ -41,8 +41,8 @@
     background-color: var(--bg-main);
 }
 
-.dropdown.is-hoverable:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
+.dropdown:not(.is-click-open):hover .dropdown-menu,
+.dropdown.is-click-open > .dropdown-trigger:focus-within  + .dropdown-menu {
     display: block;
 }
 
