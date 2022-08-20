@@ -189,11 +189,11 @@ h4 + .sub-title,
 }
 
 .has-text-success {
-    color: var(--success);
+    color: var(--success-dark);
 }
 
 .has-text-warning {
-    color: var(--warning);
+    color: var(--warning-dark);
 }
 
 .has-text-danger {
@@ -217,5 +217,5 @@ h4 + .sub-title,
 }
 
 .has-text-light {
-    color: var(--grey);
+    color: var(--grey-light);
 }
