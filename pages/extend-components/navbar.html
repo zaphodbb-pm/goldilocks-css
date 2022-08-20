@@ -181,7 +181,7 @@ nav: Navbar
 
     <h3 id="basic-navbar">Basic Navbar</h3>
 
-    <div class="navbar" aria-label="Main Navigation Bar" style="max-height: 35vh">
+    <div class="navbar" aria-label="Main Navbar" style="max-height: 35vh">
         <div class="navbar-left">
             <a href="#basic-navbar">
                 <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo Points to Home">
@@ -189,7 +189,7 @@ nav: Navbar
         </div>
 
         <div class="navbar-center">
-            <nav aria-label="Main Navigation Section">
+            <nav aria-label="Main Section">
                 <ul>
                     <li><a href="#basic-navbar" class="">Home</a></li>
                     <li><a href="#basic-navbar" class="">About</a></li>
@@ -198,7 +198,7 @@ nav: Navbar
             </nav>
         </div>
 
-        <div class="navbar-right" aria-label="Secondary Navigation Action Buttons">
+        <div class="navbar-right" aria-label="Secondary Action Buttons">
             <button class="is-primary"><strong>Sign up</strong></button>
             <button class="is-grey">Log in</button>
         </div>
@@ -206,7 +206,7 @@ nav: Navbar
 
     <div class="space-vert-large">
         <pre><code class="language-html">
-             &lt;div class="navbar" aria-label="Main Navigation Bar"&gt;
+             &lt;div class="navbar" aria-label="Main Navbar"&gt;
                  &lt;div class="navbar-left"&gt;
                      &lt;a href="#basic-navbar"&gt;
                          &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo Points to Home"&gt;
@@ -214,7 +214,7 @@ nav: Navbar
                  &lt;/div&gt;
 
                 &lt;div class="navbar-center"&gt;
-                    &lt;nav aria-label="Main Navigation Section"&gt;
+                    &lt;nav aria-label="Main Section"&gt;
                         &lt;ul&gt;
                             &lt;li&gt;&lt;a href="#basic-navbar" class=""&gt;Home&lt;/a&gt;&lt;/li&gt;
                             &lt;li&gt;&lt;a href="#basic-navbar" class=""&gt;About&lt;/a&gt;&lt;/li&gt;
@@ -223,7 +223,7 @@ nav: Navbar
                     &lt;/nav&gt;
                 &lt;/div&gt;
         
-                &lt;div class="navbar-right" aria-label="Secondary Navigation Action Buttons"&gt;
+                &lt;div class="navbar-right" aria-label="Secondary Action Buttons"&gt;
                     &lt;button class="is-primary"&gt;&lt;strong&gt;Sign up&lt;/strong&gt;&lt;/button&gt;
                     &lt;button class="is-grey"&gt;Log in&lt;/button&gt;
                 &lt;/div&gt;
@@ -237,7 +237,7 @@ nav: Navbar
 
     <h3 id="common-navbar">Common Navbar</h3>
 
-    <div class="navbar is-primary" aria-label="Main Navigation Bar"  style="max-height: 35vh">
+    <div class="navbar is-primary" aria-label="Main  Navbar"  style="max-height: 35vh">
         <div class="navbar-left">
             <a href="#common-navbar" aria-label="Site Logo Points to Home Page">
                 <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Home Logo">
@@ -245,7 +245,7 @@ nav: Navbar
         </div>
 
         <div class="navbar-center">
-            <nav aria-label="Main Navigation Section">
+            <nav aria-label="Main Section">
                 <ul>
                     <li>
                         <a href="#common-navbar" class="icon-nav" title="Home">
@@ -258,12 +258,14 @@ nav: Navbar
 
                     <li>
                         <div class="dropdown indicator-white">
-                            <button class="is-primary" aria-haspopup="true" aria-controls="navbar-dropdown-menu2">
-                                <span>More</span>
-                            </button>
-
+                            <div class="dropdown-trigger" tabindex="0">
+                                <button class="is-primary" aria-haspopup="true" aria-controls="navbar-dropdown-menu2">
+                                    <span>More</span>
+                                </button>
+                            </div>
+                            
                             <div class="dropdown-menu" id="navbar-dropdown-menu2">
-                                <nav aria-label="Main Navigation Section Dropdown Menu">
+                                <nav aria-label="Section Dropdown Menu">
                                     <ul>
                                         <li><a href="#common-navbar">Contact</a></li>
                                         <li><a href="#common-navbar">Jobs</a></li>
@@ -287,7 +289,7 @@ nav: Navbar
 
     <div class="space-vert-large">
         <pre><code class="language-html">
-            &lt;div class="navbar is-primary" aria-label="Main Navigation Bar"&gt;
+            &lt;div class="navbar is-primary" aria-label="Main Navbar"&gt;
                 &lt;div class="navbar-left"&gt;
                     &lt;a href="#common-navbar" aria-label="Site Logo Points to Home Page"&gt;
                         &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Home Logo"&gt;
@@ -295,7 +297,7 @@ nav: Navbar
                 &lt;/div&gt;
         
                 &lt;div class="navbar-center"&gt;
-                    &lt;nav aria-label="Main Navigation Section"&gt;
+                    &lt;nav aria-label="Main Section"&gt;
                         &lt;ul&gt;
                             &lt;li&gt;
                                 &lt;a href="#common-navbar" class="icon-nav" title="Home Example"&gt;
@@ -308,12 +310,14 @@ nav: Navbar
         
                             &lt;li&gt;
                                 &lt;div class="dropdown indicator-white"&gt;
-                                    &lt;button class="is-primary" aria-haspopup="true" aria-controls="navbar-dropdown-menu2"&gt;
-                                        &lt;span&gt;More&lt;/span&gt;
-                                    &lt;/button&gt;
+                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
+                                        &lt;button class="is-primary" aria-haspopup="true" aria-controls="navbar-dropdown-menu2"&gt;
+                                            &lt;span&gt;More&lt;/span&gt;
+                                        &lt;/button&gt;
+                                    &lt;/div&gt;
         
                                     &lt;div class="dropdown-menu" id="navbar-dropdown-menu2"&gt;
-                                        &lt;nav aria-label="Main Navigation Section Dropdown Menu"&gt;
+                                        &lt;nav aria-label="Dropdown Menu"&gt;
                                             &lt;ul&gt;
                                                 &lt;li&gt;&lt;a href="#common-navbar"&gt;Contact&lt;/a&gt;&lt;/li&gt;
                                                 &lt;li&gt;&lt;a href="#common-navbar"&gt;Jobs&lt;/a&gt;&lt;/li&gt;
@@ -343,7 +347,7 @@ nav: Navbar
 
     <h3 id="mobile-navbar">Navbar with <small><code>.is-mobile</code></small></h3>
     
-    <div class="navbar is-secondary-light is-mobile" aria-label="Main Navigation" style="max-height: 35vh">
+    <div class="navbar is-secondary-light is-mobile" aria-label="Main Navbar" style="max-height: 35vh">
         <div class="navbar-left">
             <a href="#mobile-navbar" aria-label="Site Logo Points to Home Page">
                 <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Home Logo">
@@ -351,7 +355,7 @@ nav: Navbar
         </div>
 
         <div class="navbar-center">
-            <nav aria-label="Main Navigation Section">
+            <nav aria-label="Main Section">
                 <ul>
                     <li>
                         <a href="#mobile-navbar" class="icon-nav">
@@ -392,7 +396,7 @@ nav: Navbar
                 &lt;/div&gt;
         
                 &lt;div class="navbar-center"&gt;
-                    &lt;nav aria-label="Main Navigation Section"&gt;
+                    &lt;nav aria-label="Main Section"&gt;
                         &lt;ul&gt;
                             &lt;li&gt;
                                 &lt;a href="#mobile-navbar" class="icon-nav"&gt;
@@ -431,7 +435,7 @@ nav: Navbar
 
     <h3 id="navbar-left-sidebar">Navbar with Icons and Left Mobile Sidebar</h3>
 
-    <div class="navbar is-primary has-sidebar" aria-label="Main Navigation" style="max-height: 35vh">
+    <div class="navbar is-primary has-sidebar" aria-label="Main Navbar" style="max-height: 35vh">
         <div class="navbar-left">
             <div class="main-slide-bar">
                 <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu-example">
@@ -511,11 +515,13 @@ nav: Navbar
                         </a>
                     <li>
                         <div class="dropdown indicator-white">
-                            <button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu3">
-                                <svg class="icon"><use href="#icon-link"></use></svg>
-                                <span>More</span>
-                            </button>
-
+                            <div class="dropdown-trigger" tabindex="0">
+                                <button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu3">
+                                    <svg class="icon"><use href="#icon-link"></use></svg>
+                                    <span>More</span>
+                                </button>
+                            </div>
+                            
                             <div class="dropdown-menu" id="navbar-dropdown-menu3">
                                 <nav>
                                     <ul>
@@ -620,10 +626,12 @@ nav: Navbar
                                 &lt;/a&gt;
                             &lt;li&gt;
                                 &lt;div class="dropdown indicator-white"&gt;
-                                    &lt;button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu3"&gt;
-                                        &lt;svg class="icon"&gt;&lt;use href="#icon-link"&gt;&lt;/use&gt;&lt;/svg&gt;
-                                        &lt;span&gt;More&lt;/span&gt;
-                                    &lt;/button&gt;
+                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
+                                        &lt;button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu3"&gt;
+                                            &lt;svg class="icon"&gt;&lt;use href="#icon-link"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                            &lt;span&gt;More&lt;/span&gt;
+                                        &lt;/button&gt;
+                                    &lt;/div&gt;
         
                                     &lt;div class="dropdown-menu" id="navbar-dropdown-menu3"&gt;
                                         &lt;nav&gt;
@@ -675,12 +683,14 @@ nav: Navbar
                             <span>About</span>
                         </a>
                     <li>
-                        <div class="dropdown is-hoverable indicator-white">
-                            <button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu4">
-                                <svg class="icon"><use href="#icon-link"></use></svg>
-                                <span>More</span>
-                            </button>
-
+                        <div class="dropdown indicator-white">
+                            <div class="dropdown-trigger" tabindex="0">
+                                <button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu4">
+                                    <svg class="icon"><use href="#icon-link"></use></svg>
+                                    <span>More</span>
+                                </button>
+                            </div>
+                            
                             <div class="dropdown-menu" id="navbar-dropdown-menu4">
                                 <nav>
                                     <ul>
@@ -788,10 +798,12 @@ nav: Navbar
                                 &lt;/a&gt;
                             &lt;li&gt;
                                 &lt;div class="dropdown indicator-white"&gt;
-                                    &lt;button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu4"&gt;
-                                        &lt;svg class="icon"&gt;&lt;use href="#icon-link"&gt;&lt;/use&gt;&lt;/svg&gt;
-                                        &lt;span&gt;More&lt;/span&gt;
-                                    &lt;/button&gt;
+                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
+                                        &lt;button class="is-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu4"&gt;
+                                            &lt;svg class="icon"&gt;&lt;use href="#icon-link"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                            &lt;span&gt;More&lt;/span&gt;
+                                        &lt;/button&gt;
+                                    &lt;/div&gt;
         
                                     &lt;div class="dropdown-menu" id="navbar-dropdown-menu4"&gt;
                                         &lt;nav&gt;
