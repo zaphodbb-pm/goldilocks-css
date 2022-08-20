@@ -55,7 +55,8 @@ nav: Table
 
                 <tr>
                     <td><code>.table-scroll</code></td>
-                    <td>Allows wide tables to overflow and be scrollable.  Note that you cannot use <code>.is-fullwidth</code> when using this class.</td>
+                    <td>This a container for <code>.table</code> that allows wide tables to overflow and be scrollable.
+                        Note that you cannot use <code>.is-fullwidth</code> when using this class.</td>
                 </tr>
 
                 <tr>
@@ -80,7 +81,13 @@ nav: Table
 
                 <tr>
                     <td><code>.nobreak-col-x</code></td>
-                    <td>x is [1-9]; Centre aligns cell content (optional column styling)</td>
+                    <td>x is [1-9]; Prevents cell content from wrapping (optional column styling)</td>
+                </tr>
+
+                <tr>
+                    <td><code>.scrollbreak-col-x</code></td>
+                    <td>x is [1-9]; Typically a modifier for <code>.table</code> when using the <code>.table-scroll</code>
+                         container.  This allows certain columns to wrap their cell text (optional column styling)</td>
                 </tr>
                 </tbody>
             </table>

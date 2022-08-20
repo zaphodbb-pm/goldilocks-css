@@ -8,6 +8,7 @@
 
     background-color: inherit;
     color: inherit;
+    width: 100%;
 }
 
 .table > caption {
@@ -49,10 +50,11 @@
     width: 100%;
 }
 
-.table.table-scroll {
+.table-scroll {
     -webkit-overflow-scrolling: touch;
     display: block;
     overflow-x: auto;
+    max-width: 100%;
     white-space: nowrap;
 }
 
@@ -99,6 +101,7 @@
 .table.numbers-col-9 th:nth-of-type(9)
 {
     text-align: end;
+    white-space: nowrap;
 }
 
 /** allows for center alignment of a column of values **/
@@ -126,7 +129,7 @@
 
 
 
-/** disable word breaks on aper column basis **/
+/** disable word breaks on a per column basis **/
 .table.nobreak-col-1 td:nth-of-type(1),
 .table.nobreak-col-1 th:nth-of-type(1),
 .table.nobreak-col-2 td:nth-of-type(2),
@@ -147,4 +150,29 @@
 .table.nobreak-col-9 th:nth-of-type(9)
 {
     white-space: nowrap;
+}
+
+/** enable word breaks for scrolled table on a per column basis **/
+.table.scrollbreak-col-1 td:nth-of-type(1),
+.table.scrollbreak-col-1 th:nth-of-type(1),
+.table.scrollbreak-col-2 td:nth-of-type(2),
+.table.scrollbreak-col-2 th:nth-of-type(2),
+.table.scrollbreak-col-3 td:nth-of-type(3),
+.table.scrollbreak-col-3 th:nth-of-type(3),
+.table.scrollbreak-col-4 td:nth-of-type(4),
+.table.scrollbreak-col-4 th:nth-of-type(4),
+.table.scrollbreak-col-5 td:nth-of-type(5),
+.table.scrollbreak-col-5 th:nth-of-type(5),
+.table.scrollbreak-col-6 td:nth-of-type(6),
+.table.scrollbreak-col-6 th:nth-of-type(6),
+.table.scrollbreak-col-7 td:nth-of-type(7),
+.table.scrollbreak-col-7 th:nth-of-type(7),
+.table.scrollbreak-col-8 td:nth-of-type(8),
+.table.scrollbreak-col-8 th:nth-of-type(8),
+.table.scrollbreak-col-9 td:nth-of-type(9),
+.table.scrollbreak-col-9 th:nth-of-type(9)
+{
+    white-space: normal;
+    max-width: 20ch;
+    word-break: break-word;
 }
