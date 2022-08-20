@@ -150,10 +150,10 @@ nav: Page
     </div>
 
     <div class="page-wrapper">
-        <nav class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar">
+        <div class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar">
             <div class="navbar-left">
                 <a href="#page-layout-top">
-                    <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo">
+                    <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo to Home">
                 </a>
             </div>
 
@@ -194,15 +194,21 @@ nav: Page
                     </ul>
                 </nav>
             </div>
-        </nav>
+        </div>
 
-        <nav class="page-sidenav" aria-label="Extended Side Bar Navigation">
+        <div class="page-sidenav" aria-label="Extended Side Bar Navigation">
             <div class="sidenavs">
-                <a class="icon-nav-horz" href="#page-layout-top" title="Bookmark">
-                    <svg class="icon"><use href="#icon-home"/></svg>
-                    <span>Home</span>
-                </a>
-
+                <nav>
+                    <ul>
+                        <li>
+                            <a class="icon-nav-horz" href="#page-layout-top" title="Bookmark">
+                                <svg class="icon"><use href="#icon-home"/></svg>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
                 <div class="sidenav-block">
                     <input type="checkbox" id="chck1">
                     <label for="chck1">Item 1</label>
@@ -242,7 +248,7 @@ nav: Page
                     </nav>
                 </div>
             </div>
-        </nav>
+        </div>
 
         <header class="page-header">
             <h1>Main Page Content h1 Heading</h1>
@@ -281,110 +287,135 @@ nav: Page
 
     <div class="space-vert-large">
         <pre><code class="language-html">
-            &lt;div class="page-wrapper" id="page-layout-top"&gt;
-                &lt;nav class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar"&gt;
+            &lt;div class="page-wrapper"&gt;
+                &lt;div class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar"&gt;
                     &lt;div class="navbar-left"&gt;
                         &lt;a href="#page-layout-top"&gt;
-                            &lt;img src="/goldi3-logo.png" alt="Project Logo"&gt;
+                            &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo to Home"&gt;
                         &lt;/a&gt;
                     &lt;/div&gt;
-
+        
                     &lt;div class="navbar-center show-bottom-nav"&gt;
-                        &lt;a class="icon-nav" href="#page-layout-top"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
-                            &lt;span&gt;Bookmark&lt;/span&gt;
-                        &lt;/a&gt;
-
-                        &lt;a class="icon-nav" href="#page-layout-top"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
-                            &lt;span&gt;Clock&lt;/span&gt;
-                        &lt;/a&gt;
-
-                        &lt;a class="icon-nav" href="#page-layout-top"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
-                            &lt;span&gt;Film&lt;/span&gt;
-                        &lt;/a&gt;
+                        &lt;nav aria-label="Main Navigation Links"&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;
+                                    &lt;a class="icon-nav" href="#page-layout-top"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Bookmark&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a class="icon-nav" href="#page-layout-top"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Clock&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;&lt;a class="icon-nav" href="#page-layout-top"&gt;
+                                    &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
+                                    &lt;span&gt;Film&lt;/span&gt;
+                                &lt;/a&gt;
+        
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
                     &lt;/div&gt;
-
+        
                     &lt;div class="navbar-right"&gt;
-                        &lt;a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-github"&gt;&lt;/use&gt;&lt;/svg&gt;
-                        &lt;/a&gt;
-
-                        &lt;a class="button is-secondary has-hover" href="#page-layout-top"&gt;
-                            &lt;span&gt;Top&lt;/span&gt;
-                        &lt;/a&gt;
+                        &lt;nav aria-label="Main Navigation Secondary Actions"&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github"&gt;
+                                    &lt;svg class="icon"&gt;&lt;use href="#icon-github"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                &lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a class="button is-secondary has-hover" href="#page-layout-top"&gt;
+                                    &lt;span&gt;Top&lt;/span&gt;
+                                &lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
                     &lt;/div&gt;
-                &lt;/nav&gt;
-
-                &lt;nav class="page-sidenav" aria-label="Extended Side Bar Navigation"&gt;
+                &lt;/div&gt;
+        
+                &lt;div class="page-sidenav" aria-label="Extended Side Bar Navigation"&gt;
                     &lt;div class="sidenavs"&gt;
-                        &lt;a class="icon-nav-horz" href="#page-layout-top" title="Bookmark"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-home"/&gt;&lt;/svg&gt;
-                            &lt;span&gt;Home&lt;/span&gt;
-                        &lt;/a&gt;
-
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;
+                                    &lt;a class="icon-nav-horz" href="#page-layout-top" title="Bookmark"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-home"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Home&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                        
                         &lt;div class="sidenav-block"&gt;
                             &lt;input type="checkbox" id="chck1"&gt;
                             &lt;label for="chck1"&gt;Item 1&lt;/label&gt;
                             &lt;nav&gt;
-                                &lt;a href="#page-layout-top"&gt;Home&lt;/a&gt;
-                                &lt;a href="#page-layout-top"&gt;About&lt;/a&gt;
-                                &lt;a href="#page-layout-top"&gt;Contact&lt;/a&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="#page-layout-top"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#page-layout-top"&gt;About&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#page-layout-top"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
                             &lt;/nav&gt;
                         &lt;/div&gt;
-
+        
                         &lt;div class="sidenav-block"&gt;
                             &lt;input type="checkbox" id="chck2"&gt;
                             &lt;label for="chck2"&gt;Item 2&lt;/label&gt;
                             &lt;nav&gt;
-                                &lt;a class="icon-nav-horz" href="#page-layout-top" title="Bookmark"&gt;
-                                    &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
-                                    &lt;span&gt;Bookmark&lt;/span&gt;
-                                &lt;/a&gt;
-
-                                &lt;a class="icon-nav-horz" href="#page-layout-top" title="Clock"&gt;
-                                    &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
-                                    &lt;span&gt;Clock&lt;/span&gt;
-                                &lt;/a&gt;
-
-                                &lt;a class="icon-nav-horz" href="#page-layout-top" title="Film"&gt;
-                                    &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
-                                    &lt;span&gt;Film&lt;/span&gt;
-                                &lt;/a&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;
+                                        &lt;a class="icon-nav-horz" href="#page-layout-top" title="Bookmark"&gt;
+                                            &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
+                                            &lt;span&gt;Bookmark&lt;/span&gt;
+                                        &lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;a class="icon-nav-horz" href="#page-layout-top" title="Clock"&gt;
+                                            &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
+                                            &lt;span&gt;Clock&lt;/span&gt;
+                                        &lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;a class="icon-nav-horz" href="#page-layout-top" title="Film"&gt;
+                                            &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
+                                            &lt;span&gt;Film&lt;/span&gt;
+                                        &lt;/a&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
                             &lt;/nav&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
-                &lt;/nav&gt;
-
+                &lt;/div&gt;
+        
                 &lt;header class="page-header"&gt;
                     &lt;h1&gt;Main Page Content h1 Heading&lt;/h1&gt;
                     &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
                 &lt;/header&gt;
-
+        
                 &lt;section class="main-content"&gt;
                     &lt;h2&gt;An h2 Semantic Row Heading&lt;/h2&gt;
                     &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
-
+        
                     &lt;div class="row"&gt;
                         &lt;section class="column"&gt;
                             &lt;h3&gt;Section One h3 Heading&lt;/h3&gt;
                             &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
-
+        
                             &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                                 tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.&lt;/p&gt;
                         &lt;/section&gt;
-
+        
                         &lt;section class="column"&gt;
                             &lt;h3&gt;Section Two h3 Heading&lt;/h3&gt;
                             &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
-
+        
                             &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                                 tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.&lt;/p&gt;
                         &lt;/section&gt;
                     &lt;/div&gt;
                 &lt;/section&gt;
-
+        
                 &lt;footer class="page-footer"&gt;
                     &lt;div&gt;Goldilocks-CSS &copy; 2021 - 2022&lt;/div&gt;
                     &lt;div&gt;page-footer&lt;/div&gt;
@@ -419,29 +450,31 @@ nav: Page
                     </label>
 
                     <div id="sidebarMenu">
-                        <nav class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation">
-                            <ul>
-                                <li><a href="#page-layout-top-2" title="Example Link">Some Link</a></li>
-                                <li>
-                                    <a href="#page-layout-top-2" class="icon-nav-horz"  title="Bookmark">
-                                        <svg class="icon"><use href="#icon-bookmark"/></svg>
-                                        <span>Bookmark</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#page-layout-top-2" class="icon-nav-horz" title="Clock">
-                                        <svg class="icon"><use href="#icon-clock"/></svg>
-                                        <span>Clock</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#page-layout-top-2" class="icon-nav-horz" title="Film">
-                                        <svg class="icon"><use href="#icon-film"/></svg>
-                                        <span>Film</span>
-                                    </a>
-                                </li>
-                            </ul>
-
+                        <div class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation">
+                            <nav>
+                                <ul>
+                                    <li><a href="#page-layout-top-2" title="Example Link">Some Link</a></li>
+                                    <li>
+                                        <a href="#page-layout-top-2" class="icon-nav-horz"  title="Bookmark">
+                                            <svg class="icon"><use href="#icon-bookmark"/></svg>
+                                            <span>Bookmark</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#page-layout-top-2" class="icon-nav-horz" title="Clock">
+                                            <svg class="icon"><use href="#icon-clock"/></svg>
+                                            <span>Clock</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#page-layout-top-2" class="icon-nav-horz" title="Film">
+                                            <svg class="icon"><use href="#icon-film"/></svg>
+                                            <span>Film</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            
                             <div class="sidebar-block">
                                 <input type="checkbox" id="check21">
                                 <label for="check21">More Links</label>
@@ -460,7 +493,7 @@ nav: Page
                                     </ul>
                                 </nav>
                             </div>
-                        </nav>
+                        </div>
                     </div>
                 </div>
 
@@ -604,156 +637,196 @@ nav: Page
     <div class="space-vert-large">
         <pre><code class="language-html">
             &lt;div class="page-wrapper has-slidebar" id="page-layout-top-2"&gt;
-
                 &lt;nav class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar"&gt;
                     &lt;div class="navbar-left"&gt;
                         &lt;div class="main-slide-bar"&gt;
                             &lt;input type="checkbox" class="openSidebarMenu" id="openSidebarMenu"&gt;
-
+        
                             &lt;label for="openSidebarMenu" class="sidebarIconToggle"&gt;
                                 &lt;span&gt;&lt;/span&gt;
                                 &lt;span&gt;&lt;/span&gt;
                                 &lt;span&gt;&lt;/span&gt;
+                                &lt;span class="sr-only"&gt;Sidebar toggle&lt;/span&gt;
                             &lt;/label&gt;
-
+        
                             &lt;div id="sidebarMenu"&gt;
-                                &lt;nav class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation"&gt;
-                                    &lt;a href="#page-layout-top-2" title="Some Link"&gt;Some Link&lt;/a&gt;
-
-                                    &lt;a href="#page-layout-top-2" class="icon-nav-horz"  title="Bookmark"&gt;
-                                        &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
-                                        &lt;span&gt;Bookmark&lt;/span&gt;
-                                    &lt;/a&gt;
-
-                                    &lt;a href="#page-layout-top-2" class="icon-nav-horz" title="Clock"&gt;
-                                        &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
-                                        &lt;span&gt;Clock&lt;/span&gt;
-                                    &lt;/a&gt;
-
-                                    &lt;a href="#page-layout-top-2" class="icon-nav-horz" title="Film"&gt;
-                                        &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
-                                        &lt;span&gt;Film&lt;/span&gt;
-                                    &lt;/a&gt;
-
+                                &lt;div class="sidebarMenuInner" aria-label="Sliding Side Bar Navigation"&gt;
+                                    &lt;nav&gt;
+                                        &lt;ul&gt;
+                                            &lt;li&gt;&lt;a href="#page-layout-top-2" title="Example Link"&gt;Some Link&lt;/a&gt;&lt;/li&gt;
+                                            &lt;li&gt;
+                                                &lt;a href="#page-layout-top-2" class="icon-nav-horz"  title="Bookmark"&gt;
+                                                    &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
+                                                    &lt;span&gt;Bookmark&lt;/span&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                            &lt;li&gt;
+                                                &lt;a href="#page-layout-top-2" class="icon-nav-horz" title="Clock"&gt;
+                                                    &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
+                                                    &lt;span&gt;Clock&lt;/span&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                            &lt;li&gt;
+                                                &lt;a href="#page-layout-top-2" class="icon-nav-horz" title="Film"&gt;
+                                                    &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
+                                                    &lt;span&gt;Film&lt;/span&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    &lt;/nav&gt;
+                                    
                                     &lt;div class="sidebar-block"&gt;
                                         &lt;input type="checkbox" id="check21"&gt;
                                         &lt;label for="check21"&gt;More Links&lt;/label&gt;
-                                        &lt;div&gt;
-                                            &lt;a href="#page-layout-top-2" class="icon-nav-horz" title="Home"&gt;
-                                                &lt;svg class="icon"&gt;&lt;use href="#icon-home"&gt;&lt;/use&gt;&lt;/svg&gt;
-                                                &lt;span&gt;Home&lt;/span&gt;
-                                            &lt;/a&gt;
-                                            &lt;a href="#page-layout-top-2"&gt;About&lt;/a&gt;
-                                            &lt;a href="#page-layout-top-2"&gt;Contact&lt;/a&gt;
-                                            &lt;a href="#page-layout-top-2"&gt;Jobs&lt;/a&gt;
-                                            &lt;a href="#page-layout-top-2"&gt;Report an Issue&lt;/a&gt;
-                                        &lt;/div&gt;
+                                        &lt;nav&gt;
+                                            &lt;ul&gt;
+                                                &lt;li&gt;
+                                                    &lt;a href="#page-layout-top-2" class="icon-nav-horz" title="Home"&gt;
+                                                        &lt;svg class="icon"&gt;&lt;use href="#icon-home"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                                        &lt;span&gt;Home&lt;/span&gt;
+                                                    &lt;/a&gt;
+                                                &lt;/li&gt;
+                                                &lt;li&gt;&lt;a href="#page-layout-top-2"&gt;About&lt;/a&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;a href="#page-layout-top-2"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;a href="#page-layout-top-2"&gt;Jobs&lt;/a&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;a href="#page-layout-top-2"&gt;Report an Issue&lt;/a&gt;&lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/nav&gt;
                                     &lt;/div&gt;
-                                &lt;/nav&gt;
+                                &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
-
+        
                         &lt;a href="#page-layout-top"&gt;
-                            &lt;img src="/goldi3-logo.png" alt="Project Logo"&gt;
+                            &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo"&gt;
                         &lt;/a&gt;
                     &lt;/div&gt;
-
+        
                     &lt;div class="navbar-center show-bottom-nav"&gt;
-                        &lt;a class="icon-nav" href="#page-layout-top-2"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
-                            &lt;span&gt;Bookmark&lt;/span&gt;
-                        &lt;/a&gt;
-
-                        &lt;a class="icon-nav" href="#page-layout-top-2"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
-                            &lt;span&gt;Clock&lt;/span&gt;
-                        &lt;/a&gt;
-
-                        &lt;a class="icon-nav" href="#page-layout-top-2"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
-                            &lt;span&gt;Film&lt;/span&gt;
-                        &lt;/a&gt;
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;
+                                    &lt;a class="icon-nav" href="#page-layout-top-2"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Bookmark&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a class="icon-nav" href="#page-layout-top-2"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Clock&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a class="icon-nav" href="#page-layout-top-2"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Film&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
                     &lt;/div&gt;
-
+        
                     &lt;div class="navbar-right"&gt;
-                        &lt;a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-github"&gt;&lt;/use&gt;&lt;/svg&gt;
-                        &lt;/a&gt;
-
-                        &lt;a class="button is-secondary has-hover" href="#page-layout-top"&gt;
-                            &lt;span&gt;Top&lt;/span&gt;
-                        &lt;/a&gt;
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;
+                                    &lt;a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github two"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-github"&gt;&lt;/use&gt;&lt;/svg&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;a class="button is-secondary has-hover" href="#page-layout-top"&gt;
+                                        &lt;span&gt;Top&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
                     &lt;/div&gt;
                 &lt;/nav&gt;
-
-                &lt;nav class="page-sidenav" aria-label="Extended Side Bar Navigation"&gt;
+        
+                &lt;div class="page-sidenav" aria-label="Extended Side Bar Navigation"&gt;
                     &lt;div class="sidenavs"&gt;
-                        &lt;a class="icon-nav-horz" href="#page-layout-top-2" title="Bookmark"&gt;
-                            &lt;svg class="icon"&gt;&lt;use href="#icon-home"/&gt;&lt;/svg&gt;
-                            &lt;span&gt;Home&lt;/span&gt;
-                        &lt;/a&gt;
-
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;
+                                    &lt;a class="icon-nav-horz" href="#page-layout-top-2" title="Bookmark"&gt;
+                                        &lt;svg class="icon"&gt;&lt;use href="#icon-home"/&gt;&lt;/svg&gt;
+                                        &lt;span&gt;Home&lt;/span&gt;
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+        
                         &lt;div class="sidenav-block"&gt;
                             &lt;input type="checkbox" id="check22"&gt;
                             &lt;label for="check22"&gt;Item 1&lt;/label&gt;
                             &lt;nav&gt;
-                                &lt;a href="#page-layout-top-2"&gt;Home&lt;/a&gt;
-                                &lt;a href="#page-layout-top-2"&gt;About&lt;/a&gt;
-                                &lt;a href="#page-layout-top-2"&gt;Contact&lt;/a&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="#page-layout-top-2"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#page-layout-top-2"&gt;About&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#page-layout-top-2"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
                             &lt;/nav&gt;
                         &lt;/div&gt;
-
+        
                         &lt;div class="sidenav-block"&gt;
                             &lt;input type="checkbox" id="check23"&gt;
                             &lt;label for="check23"&gt;Item 2&lt;/label&gt;
                             &lt;nav&gt;
-                                &lt;a class="icon-nav-horz" href="#page-layout-top-2" title="Bookmark"&gt;
-                                    &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
-                                    &lt;span&gt;Bookmark&lt;/span&gt;
-                                &lt;/a&gt;
-
-                                &lt;a class="icon-nav-horz" href="#page-layout-top-2" title="Clock"&gt;
-                                    &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
-                                    &lt;span&gt;Clock&lt;/span&gt;
-                                &lt;/a&gt;
-
-                                &lt;a class="icon-nav-horz" href="#page-layout-top-2" title="Film"&gt;
-                                    &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
-                                    &lt;span&gt;Film&lt;/span&gt;
-                                &lt;/a&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;
+                                        &lt;a class="icon-nav-horz" href="#page-layout-top-2" title="Bookmark"&gt;
+                                            &lt;svg class="icon"&gt;&lt;use href="#icon-bookmark"/&gt;&lt;/svg&gt;
+                                            &lt;span&gt;Bookmark&lt;/span&gt;
+                                        &lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;a class="icon-nav-horz" href="#page-layout-top-2" title="Clock"&gt;
+                                            &lt;svg class="icon"&gt;&lt;use href="#icon-clock"/&gt;&lt;/svg&gt;
+                                            &lt;span&gt;Clock&lt;/span&gt;
+                                        &lt;/a&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                        &lt;a class="icon-nav-horz" href="#page-layout-top-2" title="Film"&gt;
+                                            &lt;svg class="icon"&gt;&lt;use href="#icon-film"/&gt;&lt;/svg&gt;
+                                            &lt;span&gt;Film&lt;/span&gt;
+                                        &lt;/a&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
                             &lt;/nav&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
-                &lt;/nav&gt;
-
+                &lt;/div&gt;
+        
                 &lt;header class="page-header"&gt;
                     &lt;h1&gt;Main Page Content h1 Heading&lt;/h1&gt;
                     &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
                 &lt;/header&gt;
-
-                &lt;main class="main-content"&gt;
+        
+                &lt;section class="main-content"&gt;
                     &lt;h2&gt;An h2 Semantic Row Heading&lt;/h2&gt;
                     &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
-
+        
                     &lt;div class="row has-3x-minwidth"&gt;
                         &lt;section class="column"&gt;
                             &lt;h3&gt;Section One h3 Heading&lt;/h3&gt;
                             &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
-
+        
                             &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                                 tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.&lt;/p&gt;
                         &lt;/section&gt;
-
+        
                         &lt;section class="column"&gt;
                             &lt;h3&gt;Section Two h3 Heading&lt;/h3&gt;
                             &lt;p class="sub-title"&gt;A sub-title of supporting text&lt;/p&gt;
-
+        
                             &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                                 tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.&lt;/p&gt;
                         &lt;/section&gt;
                     &lt;/div&gt;
-                &lt;/main&gt;
-
+                &lt;/section&gt;
+        
                 &lt;footer class="page-footer"&gt;
                     &lt;div&gt;Goldilocks-CSS &copy; 2021 - 2022&lt;/div&gt;
                     &lt;div&gt;page-footer&lt;/div&gt;
