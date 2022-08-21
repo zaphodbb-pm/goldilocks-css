@@ -3585,8 +3585,13 @@ details.accordion.is-expander-danger summary
     align-items: center;
 }
 
-.navbar .dropdown > button:first-child,
-.navbar .dropdown > .button:first-child
+.navbar .dropdown .dropdown-trigger
+{
+    height: 100%;
+}
+
+.navbar .dropdown .dropdown-trigger > button:first-child,
+.navbar .dropdown .dropdown-trigger > .button:first-child
 {
     height: 100%;
     padding-right: 2.25rem;
@@ -3595,8 +3600,8 @@ details.accordion.is-expander-danger summary
     border-radius: unset;
 }
 
-.navbar .dropdown > button:first-child::after,
-.navbar .dropdown > .button:first-child::after
+.navbar .dropdown .dropdown-trigger > button:first-child::after,
+.navbar .dropdown .dropdown-trigger > .button:first-child::after
 {
     position: absolute;
     top: 0;
@@ -3618,8 +3623,8 @@ details.accordion.is-expander-danger summary
     -webkit-mask-position: center center;
 }
 
-.navbar .dropdown:hover > button:first-child,
-.navbar .dropdown:hover > .button:first-child
+.navbar .dropdown:hover .dropdown-trigger > button:first-child,
+.navbar .dropdown:hover .dropdown-trigger > .button:first-child
 {
     opacity: 80%;
     color: var(--text-comp);
@@ -3627,8 +3632,8 @@ details.accordion.is-expander-danger summary
 }
 
 
-.navbar .dropdown:hover > button:first-child::after,
-.navbar .dropdown:hover > .button:first-child::after
+.navbar .dropdown:hover .dropdown-trigger > button:first-child::after,
+.navbar .dropdown:hover .dropdown-trigger > .button:first-child::after
 {
     position: absolute;
 
@@ -3650,8 +3655,8 @@ details.accordion.is-expander-danger summary
 }
 
 
-.navbar .dropdown > button:first-child .icon,
-.navbar .dropdown > .button:first-child .icon
+.navbar .dropdown .dropdown-trigger > button:first-child .icon,
+.navbar .dropdown .dropdown-trigger > .button:first-child .icon
 {
     font-size: var(--size-4);
 
@@ -3735,7 +3740,7 @@ details.accordion.is-expander-danger summary
         flex-direction: row;
     }
 
-    .navbar:not(.is-mobile) .dropdown > button:first-child .icon
+    .navbar:not(.is-mobile) .dropdown .dropdown-trigger > button:first-child .icon
     {
         margin: 0 var(--padding);
         padding: 0 0 0 .25rem;
@@ -3792,6 +3797,7 @@ details.accordion.is-expander-danger summary
         padding-top: initial;
         padding-bottom: var(--pad-vert);
     }
+
 
     .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav > span
     {

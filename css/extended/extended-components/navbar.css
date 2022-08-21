@@ -109,16 +109,20 @@
     height: var(--navbar-height);
 }
 
-.navbar .dropdown > button:first-child,
-.navbar .dropdown > .button:first-child {
+.navbar .dropdown .dropdown-trigger {
+    height: 100%;
+}
+
+.navbar .dropdown .dropdown-trigger > button:first-child,
+.navbar .dropdown .dropdown-trigger > .button:first-child {
     height: 100%;
     border-radius: unset;
     padding-left: 0.25rem;
     padding-right: 2.25rem;
 }
 
-.navbar .dropdown > button:first-child::after,
-.navbar .dropdown > .button:first-child::after{
+.navbar .dropdown .dropdown-trigger > button:first-child::after,
+.navbar .dropdown .dropdown-trigger > .button:first-child::after{
     content: "";
     height: 100%;
     width: 1.5rem;
@@ -136,16 +140,16 @@
     -webkit-mask-position: center center;
 }
 
-.navbar .dropdown:hover > button:first-child,
-.navbar .dropdown:hover > .button:first-child{
+.navbar .dropdown:hover .dropdown-trigger > button:first-child,
+.navbar .dropdown:hover .dropdown-trigger > .button:first-child{
     background-color: var(--bg-grid);
     color: var(--text-comp);
     opacity: 80%;
 }
 
 
-.navbar .dropdown:hover > button:first-child::after,
-.navbar .dropdown:hover > .button:first-child::after {
+.navbar .dropdown:hover .dropdown-trigger > button:first-child::after,
+.navbar .dropdown:hover .dropdown-trigger > .button:first-child::after {
     content: "";
     height: 100%;
     width: 1.5rem;
@@ -163,8 +167,8 @@
 }
 
 
-.navbar .dropdown > button:first-child .icon,
-.navbar .dropdown > .button:first-child .icon {
+.navbar .dropdown .dropdown-trigger > button:first-child .icon,
+.navbar .dropdown .dropdown-trigger > .button:first-child .icon {
     padding: 0;
     margin: 0;
     font-size: var(--size-4);
@@ -228,7 +232,7 @@
         flex-direction: row;
     }
 
-    .navbar:not(.is-mobile) .dropdown > button:first-child .icon{
+    .navbar:not(.is-mobile) .dropdown .dropdown-trigger > button:first-child .icon{
         padding: 0 0 0 0.25rem;
         margin: 0 var(--padding);
     }
@@ -272,6 +276,7 @@
         padding-top: initial;
         top: auto;
     }
+
 
     .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav > span{
         display: none;
