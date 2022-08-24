@@ -20,7 +20,7 @@ nav: Icons
                 Will it stand out enough to be noticed in pictographic languages in Asia?
             </p>
 
-            <p>Consider the <svg class="icon"><use href="#icon-save"/></svg> icon represented by a pictograph of a floppy disk.
+            <p>Consider the <svg class="icon" aria-hidden="true"><use href="#icon-save"/></svg> icon represented by a pictograph of a floppy disk.
                 2010 was the last year of production of the floppy disk after years of decline.  Yet, this symbol is still in use today to represent data saving.
                 Isn’t the human mind a curious thing?
             </p>
@@ -38,20 +38,32 @@ nav: Icons
                 Less is better and provides better usability.
             </p>
 
-            <p><strong>Goldilocks-CSS</strong> uses scalable vector graphics (SVG) icons that can be loaded and cached by the web page or
+            <p><strong>Goldilocks-CSS</strong> uses scalable vector graphics (SVG) icon sprites that can be loaded and cached by the web page or
                 can be included in the build package for your application.  Uses HTML <code>svg</code> semantic tag for icon information.
                 Each icon is a selectable symbol with independent scale, line and fill settings.  Text size and color is inherited from parent HTML
                 tag or can be set with text control classes.
             </p>
 
-            <p>“icon-definitions.html” file provides the SVG definitions for a set of designer defined icons  and contains 59
-                icons from <a href="https://feathericons.com/" target=_blank> Feather Icons</a> and is 23.09Kb in size (average of 391 bytes per icon).
-                Note that this is 4.0Kb gzipped and will be cached.
-                “icon-la-definitions.html” is an alternate file that provides the SVG definitions for a set of designer defined icons based on a
-                font awesome clone and contains 59 icons from <a href="https://icons8.com/line-awesome" target=_blank> Lineawesome Icons</a> and is
-                40.88Kb in size (average of 693 bytes per icon).  This is 11.5KB gzipped.  Note that you can add more icons and from different icon sets as you need.
+            <p><b>icons-feather.svg</b> file provides the SVG definitions for a set of designer defined icons and contains 56
+                icons from <a href="https://feathericons.com/" target=_blank> Feather Icons</a>.  This file is 20.19KB in size (average of 361 bytes per icon)
+                and compresses to 3.8KB for page load.  This icon set uses the <code>svg</code> sub tags to draw shapes.
+            </p>
+
+            <p><b>icons-la.svg</b> is an alternate file that provides the SVG definitions for a set of designer defined icons based on a
+                font awesome clone and contains 56 icons from <a href="https://icons8.com/line-awesome" target=_blank> Lineawesome Icons</a>.
+                This file is 37.85KB in size (average of 675 bytes per icon) and compresses to 11.5KB for page load.
+                This icon set uses the <code>path</code> sub tag to draw shapes and consequently requires more drawing information to draw a shape.
+            </p>
+
+            <p>Note that you can add more icons and from different icon sets as you need.  See the SVG sprite file for format.
                 You can also easily delete icons that you are not using.
             </p>
+
+            <p>The icon definition file containing the SVG icon code can be loaded into the <code>svg</code>
+                <code>use</code> tag by referencing the SVG sprite from your server.  Note that cross-origin files are not supported and
+                hence a CDN cannot provide this file. This file is automatically cached by the browser to minimizes server requests.
+            </p>
+
         </section>
 
         <section class="column">
@@ -107,64 +119,43 @@ nav: Icons
                 </tr>
                 </tbody>
             </table>
-
-            <p>The icon definition file containing the <code>svg</code> icon code can be loaded into main index.html by including the following
-                javascript at the end of the <code>body</code> tag.
-                This ensures that the main page loads as fast as possible and the icon definition file loads whenever ready.
-            </p>
-
-            <pre><code class="language-js">
-                &lt;script type="text/javascript"&gt;<br>
-                    fetch('http://localhost:3000/icons-definitions.html')<br>
-                            .then( response => response.text() )<br>
-                            .then((data) => {<br>
-                                let svgElements = document.createElement('div');<br>
-                                svgElements.innerHTML = data;<br>
-                                document.body.appendChild(svgElements);<br>
-                            })<br>
-                &lt;/script&gt;<br>
-            </code></pre>
-
         </section>
     </div>
 
     <h2 class="space-vert-medium">Examples</h2>
 
-
-
     <div class="row">
-
         <section class="column">
-            <h3>SVG Icons Usage</h3>
+            <h3>SVG Sprite Icons Usage</h3>
             <div>
                 <p>#icon-bell with sizes: .is-small, normal, .is-medium, .is-large</p>
 
                 <div class="level">
 
                     <div class="icon-nav">
-                        <svg class="icon is-small has-text-link">
-                            <use href="#icon-bell" />
+                        <svg class="icon is-small has-text-link" aria-hidden="true">
+                            <use href="/icons-feather.svg#icon-bell"/>
                         </svg>
                         <p>#is-small</p>
                     </div>
 
                     <div class="icon-nav">
-                        <svg class="icon has-text-primary">
-                            <use href="#icon-bell" />
+                        <svg class="icon has-text-primary" aria-hidden="true">
+                            <use href="/icons-la.svg#icon-bell"/>
                         </svg>
                         <p>normal size</p>
                     </div>
 
                     <div class="icon-nav">
-                        <svg class="icon is-medium has-text-danger">
-                            <use href="#icon-bell" />
+                        <svg class="icon is-medium has-text-danger" aria-hidden="true">
+                            <use href="/icons-feather.svg#icon-bell"/>
                         </svg>
                         <p>#is-medium</p>
                     </div>
 
                     <div class="icon-nav">
-                        <svg class="icon is-large has-text-secondary">
-                            <use href="#icon-bell" />
+                        <svg class="icon is-large has-text-secondary" aria-hidden="true">
+                            <use href="/icons-la.svg#icon-bell"/>
                         </svg>
                         <p>#is-large</p>
                     </div>
@@ -178,20 +169,20 @@ nav: Icons
         <section class="column">
             <h3>Sample HTML Code</h3>
             <pre><code class="language-html">
-                &lt;svg class="icon is-small has-text-link"&gt;
-                    &lt;use href="#icon-bell" /&gt;
+                &lt;svg class="icon is-small has-text-link" aria-hidden="true"&gt;
+                    &lt;use href="/icons-feather.svg#icon-bell"/&gt;
                 &lt;/svg&gt;
 
-                &lt;svg class="icon has-text-primary"&gt;
-                    &lt;use href="#icon-bell" /&gt;
+                &lt;svg class="icon has-text-primary" aria-hidden="true"&gt;
+                    &lt;use href="/icons-la.svg#icon-bell"/&gt;
                 &lt;/svg&gt;
 
-                &lt;svg class="icon is-medium has-text-danger"&gt;
-                    &lt;use href="#icon-bell" /&gt;
+                &lt;svg class="icon is-medium has-text-danger" aria-hidden="true"&gt;
+                    &lt;use href="/icons-feather.svg#icon-bell"/&gt;
                 &lt;/svg&gt;
 
-                &lt;svg class="icon is-large has-text-secondary"&gt;
-                    &lt;use href="#icon-bell" /&gt;
+                &lt;svg class="icon is-large has-text-secondary" aria-hidden="true"&gt;
+                    &lt;use href="/icons-la.svg#icon-bell"/&gt;
                 &lt;/svg&gt;
             </code></pre>
         </section>
@@ -199,421 +190,402 @@ nav: Icons
 
     <div class="space-component-medium "></div>
 
-    <section class="box-shadow">
-        <h3>SVG Icon Set Based on Feather Icons</h3>
 
-        <p><a href="https://feathericons.com/" target="_blank">Feather Source Website</a></p>
+
+    <section class="box-shadow">
+        <h3>SVG Sprite Icon Set Based on Feather Icons</h3>
+
+        <p><a href="/icons-feather.svghttps://feathericons.com/" target="_blank">Feather Source Website</a></p>
 
         <div class="row has-3x-minwidth">
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-alert-danger" /></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-alert-danger" /></svg>
                     <p class="">#icon-alert-danger</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-alert-success" /></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-alert-success" /></svg>
                     <p class="">#icon-alert-success</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-alert-warning" /></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-alert-warning" /></svg>
                     <p class="">#icon-alert-warning</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-bell" /></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-bell" /></svg>
                     <p class="">#icon-bell</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-book"/></svg>
-                    <p class="">#icon-book</p>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-bookmark"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-bookmark"/></svg>
                     <p class="">#icon-bookmark</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-calendar"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-calendar"/></svg>
                     <p class="">#icon-calendar</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-clipboard"/></svg>
-                    <p class="">#icon-clipboard</p>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-clock"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-clock"/></svg>
                     <p class="">#icon-clock</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-cloud-download"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-cloud-download"/></svg>
                     <p class="">#icon-cloud-download</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-cloud-save"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-cloud-save"/></svg>
                     <p class="">#icon-cloud-save</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-code"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-code"/></svg>
                     <p class="">#icon-code</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-cog"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-cog"/></svg>
                     <p class="">#icon-cog</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-content"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-content"/></svg>
                     <p class="">#icon-content</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-crop"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-crop"/></svg>
                     <p class="">#icon-crop</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-day"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-day"/></svg>
                     <p class="">#icon-day</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-edit"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-edit"/></svg>
                     <p class="">#icon-edit</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-eye"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-eye"/></svg>
                     <p class="">#icon-eye</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-eye-off"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-eye-off"/></svg>
                     <p class="">#icon-eye-off</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-facebook"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-facebook"/></svg>
                     <p class="">#icon-facebook</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-file"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-file"/></svg>
                     <p class="">#icon-file</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-film"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-film"/></svg>
                     <p class="">#icon-film</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-filter"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-filter"/></svg>
                     <p class="">#icon-filter</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-github"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-github"/></svg>
                     <p class="">#icon-github</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-grid"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-grid"/></svg>
                     <p class="">#icon-grid</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-help"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-help"/></svg>
                     <p class="">#icon-help</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-home"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-home"/></svg>
                     <p class="">#icon-home</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-icons"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-icons"/></svg>
                     <p class="">#icon-icons</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-image"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-image"/></svg>
                     <p class="">#icon-image</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-key"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-key"/></svg>
                     <p class="">#icon-key</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-layers"/></svg>
-                    <p class="">#icon-layers</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#iconyout"/></svg>
+                    <p class="">#iconyout</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-layout"/></svg>
-                    <p class="">#icon-layout</p>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-link"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-link"/></svg>
                     <p class="">#icon-link</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-linkedin"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-linkedin"/></svg>
                     <p class="">#icon-linkedin</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-list"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-list"/></svg>
                     <p class="">#icon-list</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-login"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-login"/></svg>
                     <p class="">#icon-login</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-logout"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-logout"/></svg>
                     <p class="">#icon-logout</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-logs"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-logs"/></svg>
                     <p class="">#icon-logs</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-mail"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-mail"/></svg>
                     <p class="">#icon-mail</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-map"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-map"/></svg>
                     <p class="">#icon-map</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-marker"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-marker"/></svg>
                     <p class="">#icon-marker</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-music"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-music"/></svg>
                     <p class="">#icon-music</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-night"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-night"/></svg>
                     <p class="">#icon-night</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-phone"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-phone"/></svg>
                     <p class="">#icon-phone</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-printer"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-printer"/></svg>
                     <p class="">#icon-printer</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-profile"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-profile"/></svg>
                     <p class="">#icon-profile</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-refresh"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-refresh"/></svg>
                     <p class="">#icon-refresh</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-save"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-save"/></svg>
                     <p class="">#icon-save</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-search"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-search"/></svg>
                     <p class="">#icon-search</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-send"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-send"/></svg>
                     <p class="">#icon-send</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-settings"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-settings"/></svg>
                     <p class="">#icon-settings</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-share"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-share"/></svg>
                     <p class="">#icon-share</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-shopping-cart"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-shopping-cart"/></svg>
                     <p class="">#icon-shopping-cart</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-slack"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-slack"/></svg>
                     <p class="">#icon-slack</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-tag"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-tag"/></svg>
                     <p class="">#icon-tag</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-trash"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-trash"/></svg>
                     <p class="">#icon-trash</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-twitter"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-twitter"/></svg>
                     <p class="">#icon-twitter</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-user"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-user"/></svg>
                     <p class="">#icon-user</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-users"/></svg>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-feather.svg#icon-users"/></svg>
                     <p class="">#icon-users</p>
                 </div>
             </div>
@@ -631,414 +603,393 @@ nav: Icons
         <div class="row has-3x-minwidth">
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-alert-danger" /></svg>
-                    <p class="">#icon-la-alert-danger</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-alert-danger" /></svg>
+                    <p class="">#icon-alert-danger</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-alert-success" /></svg>
-                    <p class="">#icon-la-alert-success</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-alert-success" /></svg>
+                    <p class="">#icon-alert-success</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-alert-warning" /></svg>
-                    <p class="">#icon-la-alert-warning</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-alert-warning" /></svg>
+                    <p class="">#icon-alert-warning</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-bell" /></svg>
-                    <p class="">#icon-la-bell</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-bell" /></svg>
+                    <p class="">#icon-bell</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-book"/></svg>
-                    <p class="">#icon-la-book</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-bookmark"/></svg>
+                    <p class="">#icon-bookmark</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-bookmark"/></svg>
-                    <p class="">#icon-la-bookmark</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-calendar"/></svg>
+                    <p class="">#icon-calendar</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-calendar"/></svg>
-                    <p class="">#icon-la-calendar</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-clock"/></svg>
+                    <p class="">#icon-clock</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-clipboard"/></svg>
-                    <p class="">#icon-la-clipboard</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-cloud-download"/></svg>
+                    <p class="">#icon-cloud-download</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-clock"/></svg>
-                    <p class="">#icon-la-clock</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-cloud-save"/></svg>
+                    <p class="">#icon-cloud-save</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-cloud-download"/></svg>
-                    <p class="">#icon-la-cloud-download</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-code"/></svg>
+                    <p class="">#icon-code</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-cloud-save"/></svg>
-                    <p class="">#icon-la-cloud-save</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-cog"/></svg>
+                    <p class="">#icon-cog</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-code"/></svg>
-                    <p class="">#icon-la-code</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-content"/></svg>
+                    <p class="">#icon-content</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-cog"/></svg>
-                    <p class="">#icon-la-cog</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-crop"/></svg>
+                    <p class="">#icon-crop</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-content"/></svg>
-                    <p class="">#icon-la-content</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-day"/></svg>
+                    <p class="">#icon-day</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-crop"/></svg>
-                    <p class="">#icon-la-crop</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-edit"/></svg>
+                    <p class="">#icon-edit</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-day"/></svg>
-                    <p class="">#icon-la-day</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-eye"/></svg>
+                    <p class="">#icon-eye</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-edit"/></svg>
-                    <p class="">#icon-la-edit</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-eye-off"/></svg>
+                    <p class="">#icon-eye-off</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-eye"/></svg>
-                    <p class="">#icon-la-eye</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-facebook"/></svg>
+                    <p class="">#icon-facebook</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-eye-off"/></svg>
-                    <p class="">#icon-la-eye-off</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-file"/></svg>
+                    <p class="">#icon-file</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-facebook"/></svg>
-                    <p class="">#icon-la-facebook</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-film"/></svg>
+                    <p class="">#icon-film</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-file"/></svg>
-                    <p class="">#icon-la-file</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-filter"/></svg>
+                    <p class="">#icon-filter</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-film"/></svg>
-                    <p class="">#icon-la-film</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-github"/></svg>
+                    <p class="">#icon-github</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-filter"/></svg>
-                    <p class="">#icon-la-filter</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-grid"/></svg>
+                    <p class="">#icon-grid</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-github"/></svg>
-                    <p class="">#icon-la-github</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-help"/></svg>
+                    <p class="">#icon-help</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-grid"/></svg>
-                    <p class="">#icon-la-grid</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-home"/></svg>
+                    <p class="">#icon-home</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-help"/></svg>
-                    <p class="">#icon-la-help</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-icons"/></svg>
+                    <p class="">#icon-icons</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-home"/></svg>
-                    <p class="">#icon-la-home</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-image"/></svg>
+                    <p class="">#icon-image</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-icons"/></svg>
-                    <p class="">#icon-la-icons</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-key"/></svg>
+                    <p class="">#icon-key</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-image"/></svg>
-                    <p class="">#icon-la-image</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-layout"/></svg>
+                    <p class="">#icon-layout</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-key"/></svg>
-                    <p class="">#icon-la-key</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-link"/></svg>
+                    <p class="">#icon-link</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-layers"/></svg>
-                    <p class="">#icon-la-layers</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-linkedin"/></svg>
+                    <p class="">#icon-linkedin</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-layout"/></svg>
-                    <p class="">#icon-la-layout</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-list"/></svg>
+                    <p class="">#icon-list</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-link"/></svg>
-                    <p class="">#icon-la-link</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-login"/></svg>
+                    <p class="">#icon-login</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-linkedin"/></svg>
-                    <p class="">#icon-la-linkedin</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-logout"/></svg>
+                    <p class="">#icon-logout</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-list"/></svg>
-                    <p class="">#icon-la-list</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-logs"/></svg>
+                    <p class="">#icon-logs</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-login"/></svg>
-                    <p class="">#icon-la-login</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-mail"/></svg>
+                    <p class="">#icon-mail</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-logout"/></svg>
-                    <p class="">#icon-la-logout</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-map"/></svg>
+                    <p class="">#icon-map</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-logs"/></svg>
-                    <p class="">#icon-la-logs</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-marker"/></svg>
+                    <p class="">#icon-marker</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-mail"/></svg>
-                    <p class="">#icon-la-mail</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-music"/></svg>
+                    <p class="">#icon-music</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-map"/></svg>
-                    <p class="">#icon-la-map</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-night"/></svg>
+                    <p class="">#icon-night</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-marker"/></svg>
-                    <p class="">#icon-la-marker</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-phone"/></svg>
+                    <p class="">#icon-phone</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-music"/></svg>
-                    <p class="">#icon-la-music</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-printer"/></svg>
+                    <p class="">#icon-printer</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-night"/></svg>
-                    <p class="">#icon-la-night</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-profile"/></svg>
+                    <p class="">#icon-profile</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-phone"/></svg>
-                    <p class="">#icon-la-phone</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-refresh"/></svg>
+                    <p class="">#icon-refresh</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-printer"/></svg>
-                    <p class="">#icon-la-printer</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-save"/></svg>
+                    <p class="">#icon-save</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-profile"/></svg>
-                    <p class="">#icon-la-profile</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-search"/></svg>
+                    <p class="">#icon-search</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-refresh"/></svg>
-                    <p class="">#icon-la-refresh</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-send"/></svg>
+                    <p class="">#icon-send</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-save"/></svg>
-                    <p class="">#icon-la-save</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-settings"/></svg>
+                    <p class="">#icon-settings</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-search"/></svg>
-                    <p class="">#icon-la-search</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-share"/></svg>
+                    <p class="">#icon-share</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-send"/></svg>
-                    <p class="">#icon-la-send</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-shopping-cart"/></svg>
+                    <p class="">#icon-shopping-cart</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-settings"/></svg>
-                    <p class="">#icon-la-settings</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-slack"/></svg>
+                    <p class="">#icon-slack</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-share"/></svg>
-                    <p class="">#icon-la-share</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-tag"/></svg>
+                    <p class="">#icon-tag</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-shopping-cart"/></svg>
-                    <p class="">#icon-la-shopping-cart</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-trash"/></svg>
+                    <p class="">#icon-trash</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-slack"/></svg>
-                    <p class="">#icon-la-slack</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-twitter"/></svg>
+                    <p class="">#icon-twitter</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-tag"/></svg>
-                    <p class="">#icon-la-tag</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-user"/></svg>
+                    <p class="">#icon-user</p>
                 </div>
             </div>
 
             <div class="column">
                 <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-trash"/></svg>
-                    <p class="">#icon-la-trash</p>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-twitter"/></svg>
-                    <p class="">#icon-la-twitter</p>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-user"/></svg>
-                    <p class="">#icon-la-user</p>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="icon-nav">
-                    <svg class="icon is-medium"><use href="#icon-la-users"/></svg>
-                    <p class="">#icon-la-users</p>
+                    <svg class="icon is-medium" aria-hidden="true"><use href="/icons-la.svg#icon-users"/></svg>
+                    <p class="">#icon-users</p>
                 </div>
             </div>
 
