@@ -16,8 +16,8 @@
     background: transparent;
     overflow: hidden;
     text-indent: 0;
-    list-style: none;
     text-decoration: none;
+    width: 100%;
 }
 
 .sidenav-block {
@@ -67,6 +67,12 @@
     transition: all 0.3s;
     display: flex;
     flex-direction: column;
+}
+
+.sidenav-block > nav > ul > li {
+    list-style: none;
+    display: flex;
+    margin: 0
 }
 
 

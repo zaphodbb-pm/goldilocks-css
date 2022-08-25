@@ -4,13 +4,13 @@
     vertical-align: top;
 }
 
-.dropdown > button:first-child,
-.dropdown > button.has-hover:first-child {
+.dropdown .dropdown-trigger > button:first-child,
+.dropdown .dropdown-trigger button.has-hover:first-child {
     margin: 0;
     padding-right: 3rem;
 }
 
-.dropdown > button::after {
+.dropdown .dropdown-trigger button::after {
     content: "";
     height: 1.5rem;
     width: 1.5rem;
@@ -41,8 +41,8 @@
     background-color: var(--bg-main);
 }
 
-.dropdown.is-hoverable:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
+.dropdown:not(.is-click-open):hover .dropdown-menu,
+.dropdown.is-click-open > .dropdown-trigger:focus-within  + .dropdown-menu {
     display: block;
 }
 
@@ -58,16 +58,43 @@
     top: auto;
 }
 
-.dropdown-menu > nav {
+.dropdown-menu {
     background-color: var(--bg-main-comp);
     border-radius: var(--radius-comp);
     box-shadow: var(--shadow);
+
     padding-bottom: var(--pad-vert);
     padding-top: var(--pad-vert);
 }
 
-.dropdown-menu > nav > a,
-.dropdown-menu > nav > p{
+.dropdown-menu p {
+    margin: var(--mar-vert) var(--margin);
+}
+
+.dropdown-menu button {
+    margin: 1rem auto calc(1rem - var(--pad-vert)) auto;
+    display: block;
+}
+
+.dropdown-menu hr {
+    background-color: var(--border-main);
+    border: none;
+    display: block;
+    height: 1px;
+    margin: var(--mar-vert) 0;
+}
+
+.dropdown-menu > nav > ul {
+    display: block;
+}
+
+.dropdown-menu > nav > ul > li {
+    list-style: none;
+    display: block;
+    margin: 0;
+}
+
+.dropdown-menu > nav > ul > li > a {
     color: var(--text);
     display: block;
     font-size: 0.875rem;
@@ -75,27 +102,15 @@
     padding: 0.375rem 1rem;
     position: relative;
     margin: 0;
+    justify-content: left;
 }
 
-.dropdown-menu > nav > button {
-    margin: 0.375rem 1rem;
-    position: relative;
-}
-
-.dropdown-menu > nav > a:hover {
+.dropdown-menu > nav > ul > li a:hover {
     background-color: var(--bg-element);
     color: var(--text-darker);
 }
 
-.dropdown-menu > nav > a.is-active {
+.dropdown-menu > nav > ul > li a.is-active {
     background-color: var(--link);
     color: var(--text-invert);
-}
-
-.dropdown-menu > nav > hr {
-    background-color: var(--border-main);
-    border: none;
-    display: block;
-    height: 1px;
-    margin: var(--mar-vert) 0;
 }

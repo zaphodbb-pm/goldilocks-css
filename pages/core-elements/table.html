@@ -55,7 +55,8 @@ nav: Table
 
                 <tr>
                     <td><code>.table-scroll</code></td>
-                    <td>Allows wide tables to overflow and be scrollable.  Note that you cannot use <code>.is-fullwidth</code> when using this class.</td>
+                    <td>This a container for <code>.table</code> that allows wide tables to overflow and be scrollable.
+                        Note that you cannot use <code>.is-fullwidth</code> when using this class.</td>
                 </tr>
 
                 <tr>
@@ -80,7 +81,13 @@ nav: Table
 
                 <tr>
                     <td><code>.nobreak-col-x</code></td>
-                    <td>x is [1-9]; Centre aligns cell content (optional column styling)</td>
+                    <td>x is [1-9]; Prevents cell content from wrapping (optional column styling)</td>
+                </tr>
+
+                <tr>
+                    <td><code>.scrollbreak-col-x</code></td>
+                    <td>x is [1-9]; Typically a modifier for <code>.table</code> when using the <code>.table-scroll</code>
+                         container.  This allows certain columns to wrap their cell text (optional column styling)</td>
                 </tr>
                 </tbody>
             </table>
@@ -239,71 +246,74 @@ nav: Table
     <h3>Table scroll and hover</h3>
     <div class="row">
         <div class="column">
-            <table class="table table-scroll has-hover centered-col-1 numbers-col-3">
-                <caption>Caption: Table is scrollable and has a column with text right</caption>
+            <div class="table-scroll">
+                <table class="table has-hover centered-col-1 numbers-col-3 scrollbreak-col-4">
+                    <caption>Caption: Table is scrollable and has a column with text right</caption>
 
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Item</th>
-                    <th>Value</th>
-                    <th>Description</th>
-                    <th>Delivery</th>
-                </tr>
-                </thead>
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Item</th>
+                        <th>Value</th>
+                        <th>Description</th>
+                        <th>Delivery</th>
+                    </tr>
+                    </thead>
 
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Shoes</td>
-                    <td>$95</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>Available in 2 weeks</td>
-                </tr>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Shoes</td>
+                        <td>$95</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>Available in 2 weeks</td>
+                    </tr>
 
-                <tr class="is-danger-light">
-                    <td>22</td>
-                    <td>Socks</td>
-                    <td class="has-text-right">$15</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>Available in 1 week</td>
-                </tr>
+                    <tr class="is-danger-light">
+                        <td>22</td>
+                        <td>Socks</td>
+                        <td class="has-text-right">$15</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>Available in 1 week</td>
+                    </tr>
 
-                <tr>
-                    <td>333</td>
-                    <td>Pants</td>
-                    <td>$105</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>Available in 3 weeks</td>
-                </tr>
+                    <tr>
+                        <td>333</td>
+                        <td>Pants</td>
+                        <td>$105</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>Available in 3 weeks</td>
+                    </tr>
 
-                <tr>
-                    <td>4444</td>
-                    <td>Belt</td>
-                    <td>$35</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                    <td>Available in 2 weeks</td>
-                </tr>
-                </tbody>
+                    <tr>
+                        <td>4444</td>
+                        <td>Belt</td>
+                        <td>$35</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <td>Available in 2 weeks</td>
+                    </tr>
+                    </tbody>
 
-                <tfoot>
-                <tr>
-                    <td></td>
-                    <td>Total</td>
-                    <td>$250</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tfoot>
-            </table>
+                    <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>Total</td>
+                        <td>$250</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;table class="table table-scroll has-hover centered-col-1 numbers-col-3"&gt;
-                    &lt;caption&gt;Caption: Table is scrollable and has a column with text right&lt;/caption&gt;
-
-                    &lt;thead&gt;
+                &lt;div class="table-scroll"&gt;
+                    &lt;table class="table has-hover centered-col-1 numbers-col-3 scrollbreak-col-4"&gt;
+                        &lt;caption&gt;Caption: Table is scrollable and has a column with text right&lt;/caption&gt;
+    
+                        &lt;thead&gt;
                         &lt;tr&gt;
                             &lt;th&gt;#&lt;/th&gt;
                             &lt;th&gt;Item&lt;/th&gt;
@@ -311,43 +321,43 @@ nav: Table
                             &lt;th&gt;Description&lt;/th&gt;
                             &lt;th&gt;Delivery&lt;/th&gt;
                         &lt;/tr&gt;
-                    &lt;/thead&gt;
-
-                    &lt;tbody&gt;
+                        &lt;/thead&gt;
+    
+                        &lt;tbody&gt;
                         &lt;tr&gt;
                             &lt;td&gt;1&lt;/td&gt;
                             &lt;td&gt;Shoes&lt;/td&gt;
                             &lt;td&gt;$95&lt;/td&gt;
-                            &lt;td&gt;Lorem ipsum ...&lt;/td&gt;
+                            &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
                             &lt;td&gt;Available in 2 weeks&lt;/td&gt;
                         &lt;/tr&gt;
-
+    
                         &lt;tr class="is-danger-light"&gt;
                             &lt;td&gt;22&lt;/td&gt;
                             &lt;td&gt;Socks&lt;/td&gt;
                             &lt;td class="has-text-right"&gt;$15&lt;/td&gt;
-                            &lt;td&gt;Lorem ipsum ...&lt;/td&gt;
+                            &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
                             &lt;td&gt;Available in 1 week&lt;/td&gt;
                         &lt;/tr&gt;
-
+    
                         &lt;tr&gt;
                             &lt;td&gt;333&lt;/td&gt;
                             &lt;td&gt;Pants&lt;/td&gt;
                             &lt;td&gt;$105&lt;/td&gt;
-                            &lt;td&gt;Lorem ipsum ...&lt;/td&gt;
+                            &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
                             &lt;td&gt;Available in 3 weeks&lt;/td&gt;
                         &lt;/tr&gt;
-
+    
                         &lt;tr&gt;
                             &lt;td&gt;4444&lt;/td&gt;
                             &lt;td&gt;Belt&lt;/td&gt;
                             &lt;td&gt;$35&lt;/td&gt;
-                            &lt;td&gt;Lorem ipsum ...&lt;/td&gt;
+                            &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
                             &lt;td&gt;Available in 2 weeks&lt;/td&gt;
                         &lt;/tr&gt;
-                    &lt;/tbody&gt;
-
-                    &lt;tfoot&gt;
+                        &lt;/tbody&gt;
+    
+                        &lt;tfoot&gt;
                         &lt;tr&gt;
                             &lt;td&gt;&lt;/td&gt;
                             &lt;td&gt;Total&lt;/td&gt;
@@ -355,8 +365,9 @@ nav: Table
                             &lt;td&gt;&lt;/td&gt;
                             &lt;td&gt;&lt;/td&gt;
                         &lt;/tr&gt;
-                    &lt;/tfoot&gt;
-                &lt;/table&gt;
+                        &lt;/tfoot&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
             </code></pre>
         </div>
     </div>

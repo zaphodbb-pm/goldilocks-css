@@ -2,11 +2,13 @@
     <input type="checkbox" id="core-layout" {% if page.parent-tab == 'core-layout' %}checked{% endif %}>
     <label for="core-layout">Core Layout</label>
     <nav>
-        <a href="{{site.url}}/pages/core-layout/box.html" class="{% if page.nav == "Box" %}is-active{% endif %}">Box</a>
-        <a href="{{site.url}}/pages/core-layout/grid.html" class="{% if page.nav == "Grid" %}is-active{% endif %}">Grid</a>
-        <a href="{{site.url}}/pages/core-layout/level.html" class="{% if page.nav == "Level" %}is-active{% endif %}">Level</a>
-        <a href="{{site.url}}/pages/core-layout/page.html" class="{% if page.nav == "Page" %}is-active{% endif %}">Page</a>
-        <a href="{{site.url}}/pages/core-layout/spacing.html" class="{% if page.nav == "Spacing" %}is-active{% endif %}">Spacing</a>
-        <a href="{{site.url}}/pages/core-layout/stack.html" class="{% if page.nav == "Stack" %}is-active{% endif %}">Stack</a>
+        <ul>
+            <li><a href="{{site.url}}/pages/core-layout/box.html" class="{% if page.nav == "Box" %}is-active{% endif %}">Box</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/grid.html" class="{% if page.nav == "Grid" %}is-active{% endif %}">Grid</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/level.html" class="{% if page.nav == "Level" %}is-active{% endif %}">Level</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/page.html" class="{% if page.nav == "Page" %}is-active{% endif %}">Page</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/spacing.html" class="{% if page.nav == "Spacing" %}is-active{% endif %}">Spacing</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/stack.html" class="{% if page.nav == "Stack" %}is-active{% endif %}">Stack</a></li>
+        </ul>
     </nav>
 </div>
