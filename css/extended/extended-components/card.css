@@ -7,52 +7,52 @@
     position: relative;
 }
 
-.card-header {
+.card > header {
     background-color: transparent;
     padding: 1.5rem;
 }
 
-.card-header-title {
+.card > header > :is(h2, h3, h4, h5, h6) {
     font-size: var(--size-5);
     color: var(--text-darker);
     font-weight: var(--weight-bold);
     margin: 0;
 }
 
-.card-header-subtitle {
+.card > header > :is(h2, h3, h4, h5, h6) + p {
     color: var(--text-light);
     font-weight: var(--weight-semibold);
 }
 
-.card-image {
+.card > figure {
     display: block;
     position: relative;
 }
 
-.card-image:first-child img {
+.card > figure:first-child img {
     border-top-left-radius: var(--radius-comp);
     border-top-right-radius: var(--radius-comp);
 }
 
-.card-image:last-child img {
+.card > figure:last-child img {
     border-bottom-left-radius: var(--radius-comp);
     border-bottom-right-radius: var(--radius-comp);
 }
 
-.card-body {
+.card > div {
     background-color: transparent;
     padding: 1.5rem;
 }
 
-.card-header + .card-body {
+.card > header + div {
     padding-top: 0;
 }
 
-.card-body .media:not(:last-child) {
+.card > div .comment:not(:last-child) {
     margin-bottom: var(--mar-vert);
 }
 
-.card-footer {
+.card > footer {
     display: flex;
     justify-content: space-between;
     align-items: stretch;

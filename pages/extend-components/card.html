@@ -21,17 +21,19 @@ nav: Card
             </p>
 
             <ul>
-                <li><code>card-header</code> contains a title and an optional sub-title text;</li>
+                <li><code>card > hx</code> contains a title and an optional sub-title text;</li>
 
-                <li><code>card-image</code> is typically a <code>figure</code> HTML tag that holds an <code>img</code> html tag.
+                <li><code>card > figure</code> is typically a <code>figure</code> HTML tag that holds an <code>img</code> html tag.
                     The <code>img</code> tag can use any of the aspect ratio controls to adjust image size and fit;
                 </li>
 
-                <li><code>card-body</code> is a basic container that contains HTML elements, Goldilocks-CSS elements or components;</li>
+                <li><code>card > div</code> is a basic container that contains HTML elements, Goldilocks-CSS elements or components;</li>
 
-                <li><code>card-footer</code> is a flexbox controlled container that would typically contain call-to-action elements.</li>
+                <li><code>card > footer</code> is a flexbox controlled container that would typically contain call-to-action elements.</li>
             </ul>
         </section>
+
+
 
         <section class="column">
             <h2>Usage</h2>
@@ -48,28 +50,33 @@ nav: Card
                 </tr>
 
                 <tr>
-                    <td><code>.card-header</code>, <code>.card-header-title</code>, <code>.card-header-subtitle</code></td>
-                    <td>Optional header setup.</td>
+                    <td><code>.card > header</code></td>
+                    <td>Optional header setup. Is the main header block of the card.</td>
                 </tr>
 
                 <tr>
-                    <td><code>.card-header-title</code></td>
-                    <td>Defines main container for breadcrumb, typically <code>nav</code> html tag is used at top level.</td>
+                    <td><code>.card > header > hx</code> </td>
+                    <td>Is the title of the card inside the <code>header</code> HTML tag.  Any <code>h2, h3, h4, h5, h6</code> HTML tags are used here.</td>
                 </tr>
 
                 <tr>
-                    <td><code>.card-image</code></td>
+                    <td><code>.card > header > p</code> </td>
+                    <td>Is the subtitle of the card inside the <code>header</code> HTML tag associated with the title.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.card > figure</code></td>
                     <td>Optional image holder.</td>
                 </tr>
 
                 <tr>
-                    <td><code>.card-body</code></td>
+                    <td><code>.card > div</code></td>
                     <td>Optional main body for textual information.</td>
                 </tr>
 
                 <tr>
-                    <td><code>.card-footer</code></td>
-                    <td>Optional area for calls to action.</td>
+                    <td><code>.card > footer</code></td>
+                    <td>Optional footer area for calls to action.</td>
                 </tr>
                 </tbody>
             </table>
@@ -102,18 +109,13 @@ nav: Card
         <div class="column">
 
             <article class="card">
-                <header class="card-header">
-                    <h4 class="card-header-title">
-                        Component Name
-                    </h4>
-
-                    <p class="card-header-subtitle">
-                        Sub-title for component
-                    </p>
+                <header>
+                    <h4>Component Name</h4>
+                    <p>Sub-title for component</p>
                 </header>
 
-                <div class="card-body">
-                    <p>
+                <div>
+                    <p>Card body child >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Phasellus nec iaculis mauris.
                         <a href="#">@goldilocks</a>.
@@ -122,7 +124,7 @@ nav: Card
                     <time datetime="2022-05-15T19:00">May 15, 2022</time>
                 </div>
 
-                <footer class="card-footer">
+                <footer>
                     <button class="is-primary has-hover">Save</button>
                     <button class="is-danger-outlined has-hover">Delete</button>
                 </footer>
@@ -132,18 +134,13 @@ nav: Card
         <div class="column">
             <pre><code class="language-html">
                 &lt;article class="card"&gt;
-                    &lt;header class="card-header"&gt;
-                        &lt;h4 class="card-header-title"&gt;
-                            Component Name
-                        &lt;/h4&gt;
-
-                        &lt;p class="card-header-subtitle"&gt;
-                            Sub-title for component
-                        &lt;/p&gt;
+                    &lt;header&gt;
+                        &lt;h4&gt;Component Name&lt;/h4&gt;
+                        &lt;p&gt;Sub-title for component&lt;/p&gt;
                     &lt;/header&gt;
 
-                    &lt;div class="card-body"&gt;
-                        &lt;p&gt;
+                    &lt;div&gt;
+                        &lt;p&gt;Card body child &gt;
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Phasellus nec iaculis mauris.
                             &lt;a href="#"&gt;@goldilocks&lt;/a&gt;.
@@ -152,7 +149,7 @@ nav: Card
                         &lt;time datetime="2022-05-15T19:00"&gt;May 15, 2022&lt;/time&gt;
                     &lt;/div&gt;
 
-                    &lt;footer class="card-footer"&gt;
+                    &lt;footer&gt;
                         &lt;button class="is-primary has-hover"&gt;Save&lt;/button&gt;
                         &lt;button class="is-danger-outlined has-hover"&gt;Delete&lt;/button&gt;
                     &lt;/footer&gt;
@@ -168,17 +165,15 @@ nav: Card
         <div class="column">
 
             <article class="card">
-                <figure class="card-image">
-                    <img class="has-aspect-3x1" src="{{site.url}}/img/demo/gl-main1.png" alt="demo main1">
+                <figure>
+                    <img class="has-aspect-3x1" src="/images/gl-main1.png" alt="Placeholder image">
                 </figure>
 
-                <header class="card-header">
-                    <h2 class="card-header-title">
-                        Component Name
-                    </h2>
+                <header>
+                    <h4>Component Name</h4>
                 </header>
 
-                <div class="card-body">
+                <div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Phasellus nec iaculis mauris.
@@ -186,7 +181,7 @@ nav: Card
                     </p>
                 </div>
 
-                <footer class="card-footer">
+                <footer>
                     <button class="is-primary has-hover">Save</button>
                     <button class="is-danger-outlined has-hover">Delete</button>
                 </footer>
@@ -196,17 +191,15 @@ nav: Card
         <div class="column">
             <pre><code class="language-html">
                 &lt;article class="card"&gt;
-                    &lt;header class="card-header"&gt;
-                        &lt;h2 class="card-header-title"&gt;
-                            Component Name
-                        &lt;/h2&gt;
+                    &lt;header&gt;
+                        &lt;h4&gt;Component Name&lt;/h4&gt;
                     &lt;/header&gt;
 
-                    &lt;figure class="card-image"&gt;
-                        &lt;img class="has-aspect-3x1" src="{{site.url}}/img/demo/gl-main1.png" alt="Placeholder image"&gt;
+                    &lt;figure&gt;
+                        &lt;img class="has-aspect-3x1" src="/images/gl-main1.png" alt="Placeholder image"&gt;
                     &lt;/figure&gt;
 
-                    &lt;div class="card-body"&gt;
+                    &lt;div&gt;
                         &lt;p&gt;
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Phasellus nec iaculis mauris.
@@ -216,7 +209,7 @@ nav: Card
                         &lt;time datetime="2022-05-15T19:00"&gt;May 15, 2022&lt;/time&gt;
                     &lt;/div&gt;
 
-                    &lt;footer class="card-footer"&gt;
+                    &lt;footer&gt;
                         &lt;button class="is-primary has-hover"&gt;Save&lt;/button&gt;
                         &lt;button class="is-danger-outlined has-hover"&gt;Delete&lt;/button&gt;
                     &lt;/footer&gt;
@@ -231,13 +224,11 @@ nav: Card
     <div class="row">
         <div class="column">
             <article class="card">
-                <header class="card-header">
-                    <h4 class="card-header-title">
-                        Component Name
-                    </h4>
+                <header>
+                    <h4>Component Name</h4>
                 </header>
 
-                <div class="card-body">
+                <div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Phasellus nec iaculis mauris.
@@ -245,8 +236,8 @@ nav: Card
                     </p>
                 </div>
 
-                <figure class="card-image">
-                    <img class="has-aspect-3x1" src="{{site.url}}/img/demo/gl-main1.png" alt="second demo main1">
+                <figure>
+                    <img class="has-aspect-3x1" src="/images/gl-main1.png" alt="Placeholder image">
                 </figure>
             </article>
         </div>
@@ -254,13 +245,11 @@ nav: Card
         <div class="column">
             <pre><code class="language-html">
                 &lt;article class="card"&gt;
-                    &lt;header class="card-header"&gt;
-                        &lt;h4 class="card-header-title"&gt;
-                            Component Name
-                        &lt;/h4&gt;
+                    &lt;header&gt;
+                        &lt;h4&gt;Component Name&lt;/h4&gt;
                     &lt;/header&gt;
 
-                    &lt;div class="card-body"&gt;
+                    &lt;div&gt;
                         &lt;p&gt;
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Phasellus nec iaculis mauris.
@@ -268,8 +257,8 @@ nav: Card
                         &lt;/p&gt;
                     &lt;/div&gt;
 
-                    &lt;figure class="card-image"&gt;
-                        &lt;img class="has-aspect-3x1" src="{{site.url}}/img/demo/gl-main1.png" alt="Placeholder image"&gt;
+                    &lt;figure&gt;
+                        &lt;img class="has-aspect-3x1" src="/images/gl-main1.png" alt="Placeholder image"&gt;
                     &lt;/figure&gt;
                 &lt;/article&gt;
             </code></pre>
@@ -282,20 +271,15 @@ nav: Card
     <div class="row">
         <div class="column">
             <article class="card">
-                <header class="card-header">
-                    <h4 class="card-header-title">
-                        Component Name
-                    </h4>
-
-                    <p class="card-header-subtitle">
-                        Sub-title for component
-                    </p>
+                <header>
+                    <h4>Component Name</h4>
+                    <p>Sub-title for component</p>
                 </header>
 
-                <div class="card-body">
+                <div>
                     <div class="comments space-vert">
                         <figure class="has-width-4rem">
-                            <img src="{{site.url}}/img/demo/gl-man1.png" alt="demo man1">
+                            <img src="/images/gl-man1.png" alt="Placeholder image">
                         </figure>
 
                         <div>
@@ -316,20 +300,15 @@ nav: Card
         <div class="column">
             <pre><code class="language-html">
                 &lt;article class="card"&gt;
-                    &lt;header class="card-header"&gt;
-                        &lt;h4 class="card-header-title"&gt;
-                            Component Name
-                        &lt;/h4&gt;
-
-                        &lt;p class="card-header-subtitle"&gt;
-                            Sub-title for component
-                        &lt;/p&gt;
+                    &lt;header&gt;
+                        &lt;h4&gt;Component Name&lt;/h4&gt;
+                        &lt;p&gt;Sub-title for component&lt;/p&gt;
                     &lt;/header&gt;
 
-                    &lt;div class="card-body"&gt;
+                    &lt;div&gt;
                         &lt;div class="comments space-vert"&gt;
                             &lt;figure class="has-width-4rem"&gt;
-                                &lt;img src="{{site.url}}/img/demo/gl-man1.png" alt="Placeholder image"&gt;
+                                &lt;img src="/images/gl-man1.png" alt="Placeholder image"&gt;
                             &lt;/figure&gt;
 
                             &lt;div&gt;

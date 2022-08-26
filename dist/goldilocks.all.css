@@ -3089,14 +3089,14 @@ details.accordion.is-expander-danger summary
     box-shadow: var(--shadow);
 }
 
-.card-header
+.card > header
 {
     padding: 1.5rem;
 
     background-color: transparent;
 }
 
-.card-header-title
+.card > header > :is(h2, h3, h4, h5, h6)
 {
     font-size: var(--size-5);
     font-weight: var(--weight-bold);
@@ -3106,50 +3106,50 @@ details.accordion.is-expander-danger summary
     color: var(--text-darker);
 }
 
-.card-header-subtitle
+.card > header > :is(h2, h3, h4, h5, h6) + p
 {
     font-weight: var(--weight-semibold);
 
     color: var(--text-light);
 }
 
-.card-image
+.card > figure
 {
     position: relative;
 
     display: block;
 }
 
-.card-image:first-child img
+.card > figure:first-child img
 {
     border-top-left-radius: var(--radius-comp);
     border-top-right-radius: var(--radius-comp);
 }
 
-.card-image:last-child img
+.card > figure:last-child img
 {
     border-bottom-right-radius: var(--radius-comp);
     border-bottom-left-radius: var(--radius-comp);
 }
 
-.card-body
+.card > div
 {
     padding: 1.5rem;
 
     background-color: transparent;
 }
 
-.card-header + .card-body
+.card > header + div
 {
     padding-top: 0;
 }
 
-.card-body .media:not(:last-child)
+.card > div .comment:not(:last-child)
 {
     margin-bottom: var(--mar-vert);
 }
 
-.card-footer
+.card > footer
 {
     display: flex;
 
