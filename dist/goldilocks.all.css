@@ -3804,12 +3804,12 @@ details.accordion.is-expander-danger summary
     }
 
 
-    .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav > span
+    .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav > span:not([class*='icon-bg-'])
     {
         display: none;
     }
 
-    .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav .icon
+    .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav [class*='icon-bg-']
     {
         margin: 0;
     }
