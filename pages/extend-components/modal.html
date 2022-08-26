@@ -23,11 +23,11 @@ nav: Modal
             </p>
 
             <ul>
-                <li><code>modal-card-head</code> contains a title and an optional sub-title text;</li>
+                <li><code>modal-card > header</code> contains a title and an optional sub-title text;</li>
 
-                <li><code>modal-card-body</code> is a basic container that contains html elements, Goldilocks-CSS elements or components;</li>
+                <li><code>modal-card > div</code> is a basic container that contains html elements, Goldilocks-CSS elements or components;</li>
 
-                <li><code>modal-card-footer</code> is a flexbox controlled container that would typically contain call-to-action elements.</li>
+                <li><code>modal-card > footer</code> is a flexbox controlled container that would typically contain call-to-action elements.</li>
 
             </ul>
         </section>
@@ -62,27 +62,27 @@ nav: Modal
                 </tr>
 
                 <tr>
-                    <td><code>.modal-card-head</code></td>
+                    <td><code>.modal-card > header</code></td>
                     <td>Provides a container and background for title.</td>
                 </tr>
 
                 <tr>
-                    <td><code>.modal-card-title</code></td>
-                    <td>Sets font and weight for text.</td>
+                    <td><code>.modal-card > header > hx</code></td>
+                    <td>Sets font and weight for title text.</td>
                 </tr>
 
                 <tr>
                     <td><code>.delete</code></td>
-                    <td>Common delete anchor link to close modal.</td>
+                    <td>Common delete anchor link to close modal. Appears in header right top.</td>
                 </tr>
 
                 <tr>
-                    <td><code>.modal-card-body</code></td>
+                    <td><code>.modal-card > div</code></td>
                     <td>Standard container for HTML content.</td>
                 </tr>
 
                 <tr>
-                    <td><code>.modal-card-footer</code></td>
+                    <td><code>.modal-card > footer</code></td>
                     <td>Optional flexbox typically for calls to action buttons or links.</td>
                 </tr>
                 </tbody>
@@ -111,28 +111,32 @@ nav: Modal
 
     <h2 class="space-vert-medium">Examples</h2>
 
-    <div class="row" id="modal-opener">
+    <div class="row">
         <div class="column">
 
-            <a href="#modal-one" class="button is-primary has-hover">Open Modal</a>
+            <button id="modal-opener" class="is-primary-outlined has-hover">
+                <a href="#modal-one">Open Modal</a>
+            </button>
 
             <p class="is-size-5 is-text-semibold" style="margin-top: 5rem;">Basic Modal Form</p>
 
             <div id="no-modal-one">
                 <div>
                     <article class="modal-card" style="width: 50%;">
-                        <header class="modal-card-head">
-                            <h2 class="modal-card-title">Modal title</h2>
+                        <header>
+                            <h2>Modal title</h2>
                             <a class="delete" href="#modal-opener" aria-label="delete"></a>
                         </header>
 
-                        <div class="modal-card-body">
+                        <div>
                             <p>Content</p>
                         </div>
 
-                        <footer class="modal-card-footer">
-                            <button class="button is-success has-hover">Save</button>
-                            <a href="#modal-one" class="button is-danger-outlined has-hover">Cancel</a>
+                        <footer>
+                            <button class="is-success has-hover">Save</button>
+                            <button class="is-danger-outlined has-hover">
+                                <a href="#modal-opener">Cancel</a>
+                            </button>
                         </footer>
                     </article>
                 </div>
@@ -142,18 +146,20 @@ nav: Modal
         <div id="modal-one" class="modal-overlay">
             <div class="modal">
                 <article class="modal-card">
-                    <header class="modal-card-head">
-                        <h2 class="modal-card-title">Modal title</h2>
+                    <header>
+                        <h2>Modal title</h2>
                         <a class="delete" href="#modal-opener" aria-label="delete"></a>
                     </header>
 
-                    <div class="modal-card-body">
+                    <div>
                         <p>Content</p>
                     </div>
 
-                    <footer class="modal-card-footer">
+                    <footer>
                         <button class="is-success has-hover">Save Changes</button>
-                        <a href="#modal-opener" class="button is-danger-outlined has-hover">Cancel Action</a>
+                        <button class="is-danger-outlined has-hover">
+                            <a href="#modal-opener">Cancel Action</a>
+                        </button>
                     </footer>
                 </article>
             </div>
@@ -168,18 +174,20 @@ nav: Modal
                 &lt;div id="modal-one" class="modal-overlay"&gt;
                     &lt;div class="modal"&gt;
                         &lt;article class="modal-card"&gt;
-                            &lt;header class="modal-card-head"&gt;
-                                &lt;h2 class="modal-card-title"&gt;Modal title&lt;/h2&gt;
+                            &lt;header&gt;
+                                &lt;h2&gt;Modal title&lt;/h2&gt;
                                 &lt;a class="delete" href="#modal-opener" aria-label="delete"&gt;&lt;/a&gt;
                             &lt;/header&gt;
 
-                            &lt;div class="modal-card-body"&gt;
+                            &lt;div&gt;
                                 &lt;p&gt;Content&lt;/p&gt;
                             &lt;/div&gt;
 
-                            &lt;footer class="modal-card-footer"&gt;
-                                &lt;button class="button is-success has-hover"&gt;Save Changes&lt;/button&gt;
-                                &lt;a href="#modal-opener" class="button is-danger-outlined has-hover"&gt;Cancel Action&lt;/a&gt;
+                            &lt;footer&gt;
+                                &lt;button class="is-success has-hover"&gt;Save Changes&lt;/button&gt;
+                                &lt;button class="is-danger-outlined has-hover"&gt;
+                                    &lt;a href="#modal-opener"&gt;Cancel Action&lt;/a&gt;
+                                &lt;/button&gt;
                             &lt;/footer&gt;
                         &lt;/article&gt;
                     &lt;/div&gt;

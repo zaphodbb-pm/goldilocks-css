@@ -1336,6 +1336,11 @@ a.button
     text-decoration: none;
 }
 
+button > a
+{
+    color: inherit;
+}
+
 
 button.is-default-inverted,
 .button.is-default-inverted
@@ -3383,8 +3388,8 @@ details.accordion.is-expander-danger summary
     max-height: calc(100vh - 40px);
 }
 
-.modal-card-head,
-.modal-card-footer
+.modal-card > header,
+.modal-card > footer
 {
     position: relative;
 
@@ -3398,7 +3403,7 @@ details.accordion.is-expander-danger summary
     flex-shrink: 0;
 }
 
-.modal-card-head
+.modal-card > header
 {
     border-bottom: 1px solid var(--border-main-darker);
     border-top-left-radius: var(--radius-comp);
@@ -3407,7 +3412,7 @@ details.accordion.is-expander-danger summary
     justify-content: flex-start;
 }
 
-.modal-card-title
+.modal-card > header > :is(h2, h3, h4 ,h5, h6)
 {
     font-size: var(--size-4);
     line-height: 1;
@@ -3420,7 +3425,7 @@ details.accordion.is-expander-danger summary
     flex-shrink: 0;
 }
 
-.modal-card-footer
+.modal-card > footer
 {
     border-top: 1px solid var(--border-main-darker);
     border-bottom-right-radius: var(--radius-comp);
@@ -3429,12 +3434,12 @@ details.accordion.is-expander-danger summary
     justify-content: space-between;
 }
 
-.modal-card-footer .button:not(:last-child)
+.modal-card > footer .button:not(:last-child)
 {
     margin-right: var(--mar-horz);
 }
 
-.modal-card-body
+.modal-card > div
 {
     overflow: auto;
 

@@ -37,6 +37,10 @@ a.button {
     text-decoration: none;
 }
 
+button > a {
+    color: inherit;
+}
+
 
 button.is-default-inverted,
 .button.is-default-inverted {

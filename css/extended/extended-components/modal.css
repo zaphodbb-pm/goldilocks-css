@@ -49,8 +49,8 @@
     -ms-overflow-y: visible;
 }
 
-.modal-card-head,
-.modal-card-footer {
+.modal-card > header,
+.modal-card > footer {
     align-items: center;
     background-color: var(--bg-main-ter);
     display: flex;
@@ -59,14 +59,14 @@
     position: relative;
 }
 
-.modal-card-head {
+.modal-card > header {
     justify-content: flex-start;
     border-bottom: 1px solid var(--border-main-darker);
     border-top-left-radius: var(--radius-comp);
     border-top-right-radius: var(--radius-comp);
 }
 
-.modal-card-title {
+.modal-card > header > :is(h2, h3, h4 ,h5, h6) {
     color: var(--text-darker);
     flex-grow: 1;
     flex-shrink: 0;
@@ -75,18 +75,18 @@
     margin: 0;
 }
 
-.modal-card-footer {
+.modal-card > footer {
     justify-content: space-between;
     border-bottom-left-radius: var(--radius-comp);
     border-bottom-right-radius: var(--radius-comp);
     border-top: 1px solid var(--border-main-darker);
 }
 
-.modal-card-footer .button:not(:last-child) {
+.modal-card > footer .button:not(:last-child) {
     margin-right: var(--mar-horz);
 }
 
-.modal-card-body {
+.modal-card > div {
     -webkit-overflow-scrolling: touch;
     background-color: var(--bg-main);
     flex-grow: 1;
