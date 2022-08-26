@@ -5042,7 +5042,7 @@ button.badge::after
 
     width: 1em;
     height: 1em;
-    margin: 0 var(--padding);
+    margin: 0   var(--padding);
 
     background-color: currentColor;
     background-repeat: no-repeat;
@@ -6690,26 +6690,20 @@ a.tag:hover
     display: none;
 }
 
-.widgetbar-radios input + span,
-.widgetbar-radios input + svg
+.widgetbar-radios input + span
 {
-    font-size: 1em;
+    font-size: 1em !important;
     line-height: 1;
 
-    padding: .25em .5em;
+    margin: 0 !important;
+    padding: .25em .5em !important;
 
     cursor: pointer;
 
     color: var(--text);
 }
 
-.widgetbar-radios input + svg
-{
-    margin: 0;
-}
-
-.widgetbar-radios input:checked + span,
-.widgetbar-radios input:checked + svg
+.widgetbar-radios input:checked + span
 {
     color: var(--secondary-text);
     border-radius: var(--radius-comp);
@@ -6741,14 +6735,14 @@ a.tag:hover
     align-items: center;
 }
 
-.widgetbar-link a svg
-{
-    margin: 0;
-}
-
 .widgetbar-link a span
 {
     margin-left: .5em;
+}
+
+.widgetbar-link a :is([class*='.icon-bg-'])
+{
+    margin: 0;
 }
 
 .widgetbar-link a:hover

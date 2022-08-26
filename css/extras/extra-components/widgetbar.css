@@ -69,21 +69,16 @@
     display: none;
 }
 
-.widgetbar-radios input + span,
-.widgetbar-radios input + svg{
+.widgetbar-radios input + span {
     cursor: pointer;
-    padding: 0.25em 0.5em;
-    font-size: 1em;
+    margin: 0 !important;
+    padding: 0.25em 0.5em !important;
+    font-size: 1em !important;
     line-height: 1;
     color:var(--text);
 }
 
-.widgetbar-radios input + svg{
-    margin: 0;
-}
-
-.widgetbar-radios input:checked + span,
-.widgetbar-radios input:checked + svg{
+.widgetbar-radios input:checked + span {
     background-color: var(--secondary);
     color: var(--secondary-text);
     border-radius: var(--radius-comp);
@@ -106,12 +101,12 @@
     text-decoration: none;
 }
 
-.widgetbar-link a svg {
-    margin: 0;
-}
-
 .widgetbar-link a span {
     margin-left: 0.5em;
+}
+
+.widgetbar-link a :is([class*=".icon-bg-"]) {
+    margin: 0;
 }
 
 .widgetbar-link a:hover {
