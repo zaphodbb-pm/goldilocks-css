@@ -1,17 +1,25 @@
 .pagination {
+    font-size: var(--size-6);
+    width: 100%;
+}
+
+.pagination > ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: var(--size-6);
     width: 100%;
     flex-wrap: wrap;
 }
 
-.pagination.is-centered {
+.pagination > ul > li {
+    list-style: none;
+}
+
+.pagination.is-centered > ul {
     justify-content: center;
 }
 
-.pagination.is-right {
+.pagination.is-right > ul {
     justify-content: flex-end;
 }
 
@@ -27,14 +35,16 @@
     font-size: var(--size-4);
 }
 
+.pagination > ul > li {
+    order: 3;
+    margin: 0;
+}
 
-
-.pagination > a {
+.pagination > ul a {
     -webkit-appearance: none;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    order: 3;
 
     color: var(--text);
     cursor: pointer;
@@ -45,26 +55,27 @@
     border: 1px solid var(--border-main-darker);
     border-radius: var(--radius);
     box-shadow: none;
+    text-decoration: none;
 }
 
-.pagination.is-rounded > a {
+.pagination.is-rounded > ul a {
     border-radius: 9999px;
 }
 
-.pagination > a:hover {
+.pagination > ul a:hover {
     border-color: var(--link);
     color: var(--text-darker);
 }
 
-.pagination > a:focus {
+.pagination > ul a:focus {
     border-color: var(--link-dark);
 }
 
-.pagination > a:active {
+.pagination > ul a:active {
     box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2);
 }
 
-.pagination > a[disabled] {
+.pagination > ul a[disabled] {
     background-color: var(--grey-lighter);
     border-color: var(--grey-lighter);
     box-shadow: none;
@@ -73,7 +84,7 @@
 }
 
 
-.pagination > a.is-current {
+.pagination > ul a.is-current {
     background-color: var(--link);
     border-color: var(--link);
     color: var(--text-invert);
@@ -89,22 +100,32 @@
 
 @media screen and (max-width: 576px) {
     .pagination {
-        justify-content: center;
         margin-bottom: 0;
         margin-top: 0;
+    }
+
+    .pagination > ul {
+        justify-content: center;
         flex-wrap: wrap;
     }
 
-    .pagination a.prev {
+    .pagination > ul li.prev {
         order: 1;
+        width: 42%;
+        margin-bottom: var(--mar-vert);
+        margin-right: 5%;
+    }
+
+    .pagination > ul li.next {
+        order: 2;
         width: 42%;
         margin-bottom: var(--mar-vert);
     }
 
-    .pagination a.next {
-        order: 2;
-        width: 42%;
-        margin-bottom: var(--mar-vert);
+    .pagination > ul li.next a,
+    .pagination > ul li.prev a {
+        width: 100%;
+        margin: 0;
     }
 
     .pagination.is-right {

@@ -3876,6 +3876,11 @@ details.accordion.is-expander-danger summary
 {
     font-size: var(--size-6);
 
+    width: 100%;
+}
+
+.pagination > ul
+{
     display: flex;
 
     width: 100%;
@@ -3885,12 +3890,17 @@ details.accordion.is-expander-danger summary
     flex-wrap: wrap;
 }
 
-.pagination.is-centered
+.pagination > ul > li
+{
+    list-style: none;
+}
+
+.pagination.is-centered > ul
 {
     justify-content: center;
 }
 
-.pagination.is-right
+.pagination.is-right > ul
 {
     justify-content: flex-end;
 }
@@ -3910,9 +3920,14 @@ details.accordion.is-expander-danger summary
     font-size: var(--size-4);
 }
 
+.pagination > ul > li
+{
+    margin: 0;
 
+    order: 3;
+}
 
-.pagination > a
+.pagination > ul a
 {
     display: inline-flex;
 
@@ -3921,6 +3936,7 @@ details.accordion.is-expander-danger summary
     margin: 0 var(--mar-horz);
 
     cursor: pointer;
+    text-decoration: none;
 
     color: var(--text);
     border: 1px solid var(--border-main-darker);
@@ -3930,31 +3946,30 @@ details.accordion.is-expander-danger summary
     -webkit-appearance: none;
     justify-content: center;
     align-items: center;
-    order: 3;
 }
 
-.pagination.is-rounded > a
+.pagination.is-rounded > ul a
 {
     border-radius: 9999px;
 }
 
-.pagination > a:hover
+.pagination > ul a:hover
 {
     color: var(--text-darker);
     border-color: var(--link);
 }
 
-.pagination > a:focus
+.pagination > ul a:focus
 {
     border-color: var(--link-dark);
 }
 
-.pagination > a:active
+.pagination > ul a:active
 {
     box-shadow: inset 0 1px 2px rgba(10, 10, 10, .2);
 }
 
-.pagination > a[disabled]
+.pagination > ul a[disabled]
 {
     opacity: .5;
     color: var(--text-light);
@@ -3964,7 +3979,7 @@ details.accordion.is-expander-danger summary
 }
 
 
-.pagination > a.is-current
+.pagination > ul a.is-current
 {
     color: var(--text-invert);
     border-color: var(--link);
@@ -3989,25 +4004,36 @@ details.accordion.is-expander-danger summary
     {
         margin-top: 0;
         margin-bottom: 0;
+    }
 
+    .pagination > ul
+    {
         justify-content: center;
         flex-wrap: wrap;
     }
 
-    .pagination a.prev
+    .pagination > ul li.prev
     {
         width: 42%;
+        margin-right: 5%;
         margin-bottom: var(--mar-vert);
 
         order: 1;
     }
 
-    .pagination a.next
+    .pagination > ul li.next
     {
         width: 42%;
         margin-bottom: var(--mar-vert);
 
         order: 2;
+    }
+
+    .pagination > ul li.next a,
+    .pagination > ul li.prev a
+    {
+        width: 100%;
+        margin: 0;
     }
 
     .pagination.is-right
