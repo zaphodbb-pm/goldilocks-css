@@ -86,6 +86,7 @@
     overflow-y: scroll;
     transform: translateX(-30rem);
     transition: transform 250ms ease-in-out;
+    z-index: 10;
 }
 
 .sidebarMenuInner {
