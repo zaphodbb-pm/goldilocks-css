@@ -144,8 +144,7 @@
     border-right: 1px solid var(--border-main-darker) !important;
     border-bottom: 1px solid var(--bg-main) !important;
 
-    position: relative;
-    bottom: -1px;
+    margin-bottom: -1px;
     background-color: var(--bg-main);
 }
 
