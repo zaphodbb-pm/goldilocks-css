@@ -4040,8 +4040,14 @@ details.accordion.is-expander-danger summary
     row-gap: .5rem;
 }
 
+.sidenavs li
+{
+    list-style: none;
+}
+
 .sidenavs a
 {
+    display: flex;
     overflow: hidden;
 
     width: 100%;
@@ -4053,6 +4059,11 @@ details.accordion.is-expander-danger summary
 
     color: var(--link);
     background: transparent;
+}
+
+.sidenavs > nav a
+{
+    width: auto;
 }
 
 .sidenav-block
@@ -4134,7 +4145,8 @@ details.accordion.is-expander-danger summary
 .sidenavs a:hover,
 .sidenav-block a:hover
 {
-    padding-right: calc(var(--pad-horz) - 2px);
+    /*padding-right: calc(var(--pad-horz) - 2px);*/
+    padding-right: calc(.5rem - 2px);
 
     border-right: 2px solid var(--link);
     background-color: var(--bg-main-ter);
