@@ -4770,10 +4770,13 @@ details.accordion.is-expander-danger summary
 .tabs.is-boxed > input:nth-child(8):checked ~ ul li:nth-child(8) label,
 .tabs.is-boxed > input:nth-child(9):checked ~ ul li:nth-child(9) label
 {
-    margin-bottom: -1px;
+    position: relative;
+    bottom: -1px;
 
-    border: 1px solid var(--border-main-darker) !important;
-    border-bottom-color: var(--bg-main) !important;
+    border-top: 1px solid var(--border-main-darker) !important;
+    border-right: 1px solid var(--border-main-darker) !important;
+    border-bottom: 1px solid var(--bg-main) !important;
+    border-left: 1px solid var(--border-main-darker) !important;
     border-radius: var(--radius) var(--radius) 0 0;
     background-color: var(--bg-main);
 }
