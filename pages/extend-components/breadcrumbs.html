@@ -16,10 +16,15 @@ nav: Breadcrumbs
 
             <p><strong>Breadcrumbs</strong> are simple navigational hierarchies to indicate the path to the current page location.
                 The <strong>breadcrumb</strong> navigation component uses a <code>nav</code> HTML tag containing
-                a <code>ul</code> list.</p>
+                an ordered <code>ol</code> list.</p>
 
-            <p>The link separator are created in the <code>li::before</code> pseudo-element. Four separator types are supported.
-                Three size options and two positioning options are also available</p>
+            <p>The default link separator is "/".
+                Three additional traditional separator types can be used and are set in the file "initial-core-variables.css" in the
+                variable <code>--breadcrumb-separator</code>.  Note that you can use any other text character that you want by
+                setting the separator variable.
+            </p>
+
+            <p>Three additional size options and two additional positioning options are also available (left aligned is default).</p>
         </section>
 
         <section class="column">
@@ -42,13 +47,14 @@ nav: Breadcrumbs
                 </tr>
 
                 <tr>
-                    <td>Size options:</td>
-                    <td><code>.is-small</code>, <code>.is-medium</code>, <code>.is-large</code></td>
+                    <td>Separator options: </td>
+                    <td>Set in variable <code>--breadcrumb-separator</code>. Default = "/", arrow-separator = ">",
+                        bullet-separator = "\02022" or quote-separator = "\BB".  Others can be set as desired.</td>
                 </tr>
 
                 <tr>
-                    <td>Separator options:</td>
-                    <td><code>.has-arrow-separator</code>, <code>.has-bullet-separator</code>, <code>.has-quote-separator</code></td>
+                    <td>Size options:</td>
+                    <td><code>.is-small</code>, <code>.is-medium</code>, <code>.is-large</code></td>
                 </tr>
                 </tbody>
             </table>
@@ -112,64 +118,14 @@ nav: Breadcrumbs
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;nav class="breadcrumb [is-centered, is-right]" aria-label="breadcrumbs"&gt;
-                    &lt;ol&gt;
-                        &lt;li&gt;&lt;a href="#"&gt;One&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#"&gt;Two&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#"&gt;Three&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#" aria-current="page"&gt;Four&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ol&gt;
-                &lt;/nav&gt;
-            </code></pre>
-        </div>
-    </div>
-
-    <div class="space-component-medium "></div>
-
-    <h3>Beadcrumb Separators</h3>
-    <div class="row">
-        <section class="column">
-            <h4 style="margin: 1.5rem 0 0.5rem 0;">Arrow Separator</h4>
-            <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
-                <ol>
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
-                    <li><a href="#" aria-current="page">Four</a></li>
-                </ol>
-            </nav>
-
-            <h4 style="margin: 1.5rem 0 0.5rem 0;">Bullet Separator</h4>
-            <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
-                <ol>
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
-                    <li><a href="#" aria-current="page">Four</a></li>
-                </ol>
-            </nav>
-
-            <h4 style="margin: 1.5rem 0 0.5rem 0;">Quote Separator</h4>
-            <nav class="breadcrumb has-quote-separator" aria-label="breadcrumbs">
-                <ol>
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
-                    <li><a href="#" aria-current="page">Four</a></li>
-                </ol>
-            </nav>
-        </section>
-
-        <div class="column">
-            <pre><code class="language-html">
-                &lt;nav class="breadcrumb [has-arrow-separator, has-bullet-separator, has-quote-separator]" aria-label="breadcrumbs"&gt;
-                    &lt;ol&gt;
-                        &lt;li&gt;&lt;a href="#"&gt;One&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#"&gt;Two&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#"&gt;Three&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href="#" aria-current="page"&gt;Four&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ol&gt;
-                &lt;/nav&gt;
+                <nav class="breadcrumb [is-centered, is-right]" aria-label="breadcrumbs">
+                    <ol>
+                        <li><a href="#">One</a></li>
+                        <li><a href="#">Two</a></li>
+                        <li><a href="#">Three</a></li>
+                        <li><a href="#" aria-current="page">Four</a></li>
+                    </ol>
+                </nav>
             </code></pre>
         </div>
     </div>
@@ -183,104 +139,40 @@ nav: Breadcrumbs
             <h4 style="margin: 1.5rem 0 0.5rem 0;">Normal Size</h4>
             <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ol>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-bell"></use></svg> One
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-music"></use></svg> Two
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-file"></use></svg> Three
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" aria-current="page">
-                            <svg class="icon"><use href="#icon-clock"></use></svg> Four
-                        </a>
-                    </li>
+                    <li><a href="#"><span class="icon-bg-bell"></span> One</a></li>
+                    <li><a href="#"><span class="icon-bg-music"></span> Two</a></li>
+                    <li><a href="#"><span class="icon-bg-file"></span> Three</a></li>
+                    <li><a href="#" aria-current="page"><span class="icon-bg-clock"></span> Four</a></li>
                 </ol>
             </nav>
 
             <h4 style="margin: 1.5rem 0 0.5rem 0;">Small Size</h4>
             <nav class="breadcrumb is-small" aria-label="breadcrumbs">
                 <ol>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-bell"></use></svg> One
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-music"></use></svg> Two
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-file"></use></svg> Three
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" aria-current="page">
-                            <svg class="icon"><use href="#icon-clock"></use></svg> Four
-                        </a>
-                    </li>
+                    <li><a href="#"><span class="icon-bg-bell"></span> One</a></li>
+                    <li><a href="#"><span class="icon-bg-music"></span> Two</a></li>
+                    <li><a href="#"><span class="icon-bg-file"></span> Three</a></li>
+                    <li><a href="#" aria-current="page"><span class="icon-bg-clock"></span> Four</a></li>
                 </ol>
             </nav>
 
             <h4 style="margin: 1.5rem 0 0.5rem 0;">Medium Size</h4>
             <nav class="breadcrumb is-medium" aria-label="breadcrumbs">
                 <ol>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-bell"></use></svg> One
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-music"></use></svg> Two
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-file"></use></svg> Three
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" aria-current="page">
-                            <svg class="icon"><use href="#icon-clock"></use></svg> Four
-                        </a>
-                    </li>
+                    <li><a href="#"><span class="icon-bg-bell"></span> One</a></li>
+                    <li><a href="#"><span class="icon-bg-music"></span> Two</a></li>
+                    <li><a href="#"><span class="icon-bg-file"></span> Three</a></li>
+                    <li><a href="#" aria-current="page"><span class="icon-bg-clock"></span> Four</a></li>
                 </ol>
             </nav>
 
             <h4 style="margin: 1.5rem 0 0.5rem 0;">Large Size</h4>
             <nav class="breadcrumb is-large" aria-label="breadcrumbs">
                 <ol>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-bell"></use></svg> One
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-music"></use></svg> Two
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="icon"><use href="#icon-file"></use></svg> Three
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" aria-current="page">
-                            <svg class="icon"><use href="#icon-clock"></use></svg> Four
-                        </a>
-                    </li>
+                    <li><a href="#"><span class="icon-bg-bell"></span> One</a></li>
+                    <li><a href="#"><span class="icon-bg-music"></span> Two</a></li>
+                    <li><a href="#"><span class="icon-bg-file"></span> Three</a></li>
+                    <li><a href="#" aria-current="page"><span class="icon-bg-clock"></span> Four</a></li>
                 </ol>
             </nav>
 
@@ -290,26 +182,10 @@ nav: Breadcrumbs
             <pre><code class="language-html">
                 &lt;nav class="breadcrumb [is-small, is-medium, is-large]" aria-label="breadcrumbs"&gt;
                     &lt;ol&gt;
-                        &lt;li&gt;
-                            &lt;a href="#"&gt;
-                                &lt;svg class="icon"&gt;&lt;use href="#icon-bell"&gt;&lt;/use&gt;&lt;/svg&gt; One
-                            &lt;/a&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                            &lt;a href="#"&gt;
-                                &lt;svg class="icon"&gt;&lt;use href="#icon-music"&gt;&lt;/use&gt;&lt;/svg&gt; Two
-                            &lt;/a&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                            &lt;a href="#"&gt;
-                                &lt;svg class="icon"&gt;&lt;use href="#icon-file"&gt;&lt;/use&gt;&lt;/svg&gt; Three
-                            &lt;/a&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                            &lt;a href="#" aria-current="page"&gt;
-                                &lt;svg class="icon"&gt;&lt;use href="#icon-clock"&gt;&lt;/use&gt;&lt;/svg&gt; Four
-                            &lt;/a&gt;
-                        &lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="icon-bg-bell"&gt;&lt;/span&gt; One&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="icon-bg-music"&gt;&lt;/span&gt; Two&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="icon-bg-file"&gt;&lt;/span&gt; Three&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#" aria-current="page"&gt;&lt;span class="icon-bg-clock"&gt;&lt;/span&gt; Four&lt;/a&gt;&lt;/li&gt;
                     &lt;/ol&gt;
                 &lt;/nav&gt;
             </code></pre>

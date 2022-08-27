@@ -85,6 +85,9 @@
     /* Widgetbar settings */
     --widgetbar-height: calc( 2 * var(--base-font-size) );
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
+    /* Breadcrumb setting */
+    /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
+    --breadcrumb-separator: '/';
     /* magazine normal width */
     --magazine-width: 40ch;
     /* carousel image height */
@@ -3011,7 +3014,7 @@ details.accordion.is-expander-danger summary
 {
     padding: 0 var(--pad-horz);
 
-    content: '/';
+    content: var(--breadcrumb-separator);
 
     color: var(--link);
 }
@@ -3049,33 +3052,15 @@ details.accordion.is-expander-danger summary
 }
 
 
-
-/* replaced with --breadcrumb-separator */
-.breadcrumb.has-arrow-separator li + li::before
-{
-    content: '>';
-}
-
-.breadcrumb.has-bullet-separator li + li::before
-{
-    content: '\02022';
-}
-
-.breadcrumb.has-quote-separator li + li::before
-{
-    content: '\BB';
-}
-
-
-/* control for svg icon */
-.breadcrumb  li svg:last-child
+/* control for background icon */
+.breadcrumb  li span:last-child
 {
     font-size: 1em;
 
     margin: 0 0 0 .5em;
 }
 
-.breadcrumb li svg:first-child
+.breadcrumb li span:first-child
 {
     font-size: 1em;
 

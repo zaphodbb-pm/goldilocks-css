@@ -45,7 +45,7 @@
 
 .breadcrumb li + li::before {
     color: var(--link);
-    content: "/";
+    content: var(--breadcrumb-separator);
     padding: 0 var(--pad-horz);
 }
 
@@ -76,28 +76,13 @@
 }
 
 
-
-/* replaced with --breadcrumb-separator */
-.breadcrumb.has-arrow-separator li + li::before {
-    content: ">";
-}
-
-.breadcrumb.has-bullet-separator li + li::before {
-    content: "\02022";
-}
-
-.breadcrumb.has-quote-separator li + li::before {
-    content: "\BB";
-}
-
-
-/* control for svg icon */
-.breadcrumb  li svg:last-child {
+/* control for background icon */
+.breadcrumb  li span:last-child {
     margin: 0 0 0 0.5em;
     font-size:1em;
 }
 
-.breadcrumb li svg:first-child {
+.breadcrumb li span:first-child {
     margin: 0 0.5em 0 0;
     font-size:1em;
 }
