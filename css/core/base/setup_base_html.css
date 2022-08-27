@@ -63,6 +63,15 @@ p:last-child {
     margin-bottom: 0;
 }
 
+p.scrollable {
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+p.scrollable::-webkit-scrollbar {
+    display: none;
+}
+
 a {
     color: var(--link);
 }
