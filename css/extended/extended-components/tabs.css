@@ -57,12 +57,12 @@
 
 .tabs  > ul label span:last-child {
     margin: 0 0 0 0.5em;
-    font-size:1em;
+    font-size: 1em;
 }
 
 .tabs > ul label span:first-child {
     margin: 0 0.5em 0 0;
-    font-size:1em;
+    font-size: 1em;
 }
 
 
