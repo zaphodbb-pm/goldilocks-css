@@ -90,7 +90,7 @@
     color: var(--text-invert);
 }
 
-.pagination-ellipsis {
+.pagination > ul > li > span {
     color: var(--text-light);
     pointer-events: none;
     position: relative;

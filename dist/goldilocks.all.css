@@ -3986,7 +3986,7 @@ details.accordion.is-expander-danger summary
     background-color: var(--link);
 }
 
-.pagination-ellipsis
+.pagination > ul > li > span
 {
     position: relative;
     top: -.25rem;
