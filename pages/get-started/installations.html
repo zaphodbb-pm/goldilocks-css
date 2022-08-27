@@ -56,7 +56,6 @@ nav: Installations
 
         <p>An example starter template that sets up the basic page structure.
             This typical for Github Pages use with the Jekyll template language.
-            Included is some Javascript to load the icon svg files.
         </p>
 
         <pre><code class="language-html">
@@ -78,7 +77,7 @@ nav: Installations
                     &lt;div id="page-top" class="page-wrapper"&gt;
 
                         &lt;div id="page-main-nav" class="page-main-nav"&gt;
-                            &lt;nav class="navbar is-primary has-sidebar" aria-label="Main Site Navigation Bar"&gt;
+                            &lt;div class="navbar is-primary has-sidebar" aria-label="Main Site Navigation Bar"&gt;
                                 &lt;div class="navbar-left"&gt;
                                     &lt;!--add your own logo --&gt;
                                     &lt;a href="{{site.url}}/home.html"&gt;
@@ -88,11 +87,22 @@ nav: Installations
 
                                 &lt;div class="navbar-right"&gt;
                                     &lt;!-- add your links here --&gt;
-                                    &lt;a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github"&gt;
-                                        &lt;svg class="icon"&gt;&lt;use href="#icon-github"&gt;&lt;/use&gt;&lt;/svg&gt;
-                                    &lt;/a&gt;
+                                    &lt;nav&gt;
+                                        &lt;ul&gt;
+                                            &lt;li&gt;
+                                                &lt;a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github two"&gt;
+                                                    &lt;span class="icon-bg-github"&gt;&lt;/span&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                            &lt;li&gt;
+                                                &lt;a class="button is-secondary has-hover" href="#page-layout-top"&gt;
+                                                    &lt;span&gt;Top&lt;/span&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    &lt;/nav&gt;
                                 &lt;/div&gt;
-                            &lt;/nav&gt;
+                            &lt;/div&gt;
                         &lt;/div&gt;
 
                         &lt;!-- include heading and main content --&gt;
@@ -106,31 +116,6 @@ nav: Installations
 
                         &lt;footer class="page-footer"&gt;&lt;/footer&gt;
                     &lt;/div&gt;
-
-                    &lt;!--
-                        Loads svg based icons that can be referenced on any page.
-                        Make sure that the icons definition file is publicly accessable.
-                     --&gt;
-
-                    &lt;script&gt;
-                        fetch("{{site.url}}/dist/icon-definitions.html")
-                                .then( response =&gt; response.text() )
-                                .then((data) =&gt; {
-                                    let svgElements = document.createElement('div');
-                                    svgElements.innerHTML = data;
-                                    document.body.appendChild(svgElements);
-                                })
-
-                        /* OR use the alternative icon set */
-
-                        fetch("{{site.url}}/dist/icon-la-definitions.html")
-                                .then( response =&gt; response.text() )
-                                .then((data) =&gt; {
-                                    let svgElements = document.createElement('div');
-                                    svgElements.innerHTML = data;
-                                    document.body.appendChild(svgElements);
-                                })
-                    &lt;/script&gt;
 
                 &lt;/body&gt;
             &lt;/html&gt;
