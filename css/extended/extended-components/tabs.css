@@ -55,12 +55,12 @@
     color: var(--text-darker);
 }
 
-.tabs  > ul label svg:last-child {
+.tabs  > ul label span:last-child {
     margin: 0 0 0 0.5em;
     font-size:1em;
 }
 
-.tabs > ul label svg:first-child {
+.tabs > ul label span:first-child {
     margin: 0 0.5em 0 0;
     font-size:1em;
 }
