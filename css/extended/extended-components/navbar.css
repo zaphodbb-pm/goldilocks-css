@@ -291,7 +291,7 @@
 
     .navbar.is-mobile .icon-nav [class*="icon-bg-"]{
         display: block;
-        font-size: calc(var(--navbar-height) / 2.5);
+        font-size: calc(var(--navbar-height) * 0.5);
     }
 
     .navbar.has-sidebar .navbar-center{

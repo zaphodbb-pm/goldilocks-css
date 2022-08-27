@@ -3821,7 +3821,7 @@ details.accordion.is-expander-danger summary
 
     .navbar.is-mobile .icon-nav [class*='icon-bg-']
     {
-        font-size: calc(var(--navbar-height) / 2.5);
+        font-size: calc(var(--navbar-height) * .5);
 
         display: block;
     }
