@@ -119,6 +119,10 @@
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
 
 
+    /* Breadcrumb setting */
+    /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
+    --breadcrumb-separator: "/";
+
 
     /* magazine normal width */
     --magazine-width: 40ch;
