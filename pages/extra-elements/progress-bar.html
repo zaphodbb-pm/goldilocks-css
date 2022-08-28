@@ -17,6 +17,11 @@ nav: Progress Bars
             <p>Uses native HTML <code>progress</code> tag to build progress bar that can be used to show task progress or used
                 as a horizontal data bar.  Bar label and data value can be optionally shown.
             </p>
+
+            <p>Note that Safari and Firefox do
+                not support the <code>::after</code> pseudo selector and so we need to use a more complex method to display
+                the value with the progress bar.
+            </p>
         </section>
 
         <section class="column">
@@ -83,49 +88,49 @@ nav: Progress Bars
                 <p style="margin-bottom: -3rem;">Default Bar, no label and no frills</p>
                 <progress value="15" max="100"></progress>
 
-                <label class="progress-wrapper">
+                <label class="progress-wrapper" data-show="30%">
                     Default bar with label and data-show value
-                    <progress value="30" max="100" data-show="30%"></progress>
+                    <progress value="30" max="100">30%</progress>
                 </label>
 
-                <label class="progress-wrapper">
+                <label class="progress-wrapper" data-show="25%">
                     .is-progress-primary
-                    <progress class="is-progress-primary" value="25" max="100" data-show="25%"></progress>
+                    <progress class="is-progress-primary" value="25" max="100">25%</progress>
                 </label>
 
-                <label class="progress-wrapper">
+                <label class="progress-wrapper" data-show="50%">
                     .is-progress-secondary
-                    <progress class="is-progress-secondary" value="50" max="100" data-show="50%"></progress>
+                    <progress class="is-progress-secondary" value="50" max="100">50%</progress>
                 </label>
 
-                <label class="progress-wrapper">
+                <label class="progress-wrapper" data-show="75%">
                     .is-progress-tertiary
-                    <progress class="is-progress-tertiary" value="75" max="100" data-show="75%"></progress>
+                    <progress class="is-progress-tertiary" value="75" max="100">75%</progress>
                 </label>
 
-                <label class="progress-wrapper">
+                <label class="progress-wrapper" data-show="100%">
                     .is-progress-link
-                    <progress class="is-progress-link" value="100" max="100" data-show="100%"></progress>
+                    <progress class="is-progress-link" value="100" max="100">100%</progress>
                 </label>
 
-                <label class="progress-wrapper">
-                    .is-progress-success .is-small
-                    <progress class="is-progress-success is-small" value="55" max="100" data-show="55%"></progress>
+                <label class="progress-wrapper is-small" data-show="55%">
+                    .is-small .is-progress-success
+                    <progress class="is-progress-success" value="55" max="100">55%</progress>
                 </label>
 
-                <label class="progress-wrapper">
-                    .is-progress-warning .is-medium
-                    <progress class="is-progress-warning is-medium" value="45" max="100" data-show="45%"></progress>
+                <label class="progress-wrapper is-medium" data-show="45%">
+                    .is-medium .is-progress-warning
+                    <progress class="is-progress-warning" value="45" max="100">45%</progress>
                 </label>
 
-                <label class="progress-wrapper">
-                    .is-progress-danger .is-large
-                    <progress class="is-progress-danger is-large" value="35" max="100" data-show="35%"></progress>
+                <label class="progress-wrapper is-large" data-show="35%">
+                    .is-large .is-progress-danger
+                    <progress class="is-progress-danger" value="35" max="100">35%</progress>
                 </label>
 
                 <label class="progress-wrapper">
                     .is-progress-primary with indeterminate value
-                    <progress class="is-progress-primary" max="100" data-show=""></progress>
+                    <progress class="is-progress-primary" max="100"></progress>
                 </label>
             </div>
         </div>
@@ -134,49 +139,49 @@ nav: Progress Bars
             <pre><code class="language-html">
                 &lt;progress value="15" max="100"&gt;&lt;/progress&gt;
 
-                &lt;label class="progress-wrapper"&gt;
+                &lt;label class="progress-wrapper" data-show="30%"&gt;
                     Default bar with label and data-show value
-                    &lt;progress value="30" max="100" data-show="30%"&gt;&lt;/progress&gt;
+                    &lt;progress value="30" max="100"&gt;30%&lt;/progress&gt;
                 &lt;/label&gt;
 
-                &lt;label class="progress-wrapper"&gt;
+                &lt;label class="progress-wrapper" data-show="25%"&gt;
                     .is-progress-primary
-                    &lt;progress class="is-progress-primary" value="25" max="100" data-show="25%"&gt;&lt;/progress&gt;
+                    &lt;progress class="is-progress-primary" value="25" max="100"&gt;25%&lt;/progress&gt;
                 &lt;/label&gt;
 
-                &lt;label class="progress-wrapper"&gt;
+                &lt;label class="progress-wrapper" data-show="50%"&gt;
                     .is-progress-secondary
-                    &lt;progress class="is-progress-secondary" value="50" max="100" data-show="50%"&gt;&lt;/progress&gt;
+                    &lt;progress class="is-progress-secondary" value="50" max="100"&gt;50%&lt;/progress&gt;
                 &lt;/label&gt;
 
-                &lt;label class="progress-wrapper"&gt;
+                &lt;label class="progress-wrapper" data-show="75%"&gt;
                     .is-progress-tertiary
-                    &lt;progress class="is-progress-tertiary" value="75" max="100" data-show="75%"&gt;&lt;/progress&gt;
+                    &lt;progress class="is-progress-tertiary" value="75" max="100"&gt;75%&lt;/progress&gt;
                 &lt;/label&gt;
 
-                &lt;label class="progress-wrapper"&gt;
+                &lt;label class="progress-wrapper" data-show="100%"&gt;
                     .is-progress-link
-                    &lt;progress class="is-progress-link" value="100" max="100" data-show="100%"&gt;&lt;/progress&gt;
+                    &lt;progress class="is-progress-link" value="100" max="100"&gt;100%&lt;/progress&gt;
                 &lt;/label&gt;
 
-                &lt;label class="progress-wrapper"&gt;
-                    .is-progress-success .is-small
-                    &lt;progress class="is-progress-success is-small" value="55" max="100" data-show="55%"&gt;&lt;/progress&gt;
+                &lt;label class="progress-wrapper is-small" data-show="55%"&gt;
+                    .is-small .is-progress-success
+                    &lt;progress class="is-progress-success" value="55" max="100"&gt;55%&lt;/progress&gt;
                 &lt;/label&gt;
 
-                &lt;label class="progress-wrapper"&gt;
-                    .is-progress-warning .is-medium
-                    &lt;progress class="is-progress-warning is-medium" value="45" max="100" data-show="45%"&gt;&lt;/progress&gt;
+                &lt;label class="progress-wrapper is-medium" data-show="45%"&gt;
+                    .is-medium .is-progress-warning
+                    &lt;progress class="is-progress-warning" value="45" max="100"&gt;45%&lt;/progress&gt;
                 &lt;/label&gt;
 
-                &lt;label class="progress-wrapper"&gt;
-                    .is-progress-danger .is-large
-                    &lt;progress class="is-progress-danger is-large" value="35" max="100" data-show="35%"&gt;&lt;/progress&gt;
+                &lt;label class="progress-wrapper is-large" data-show="35%"&gt;
+                    .is-large .is-progress-danger
+                    &lt;progress class="is-progress-danger" value="35" max="100"&gt;35%&lt;/progress&gt;
                 &lt;/label&gt;
 
                 &lt;label class="progress-wrapper"&gt;
                     .is-progress-primary with indeterminate value
-                    &lt;progress class="is-progress-primary" max="100" data-show=""&gt;&lt;/progress&gt;
+                    &lt;progress class="is-progress-primary" max="100"&gt;&lt;/progress&gt;
                 &lt;/label&gt;
             </code></pre>
         </div>

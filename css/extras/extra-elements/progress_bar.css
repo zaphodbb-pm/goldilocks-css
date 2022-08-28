@@ -169,18 +169,6 @@ progress:indeterminate::-ms-fill {
     animation-name: none;
 }
 
-progress.is-small {
-    height: var(--size-7);
-}
-
-progress.is-medium {
-    height: var(--size-5);
-}
-
-progress.is-large {
-    height: var(--size-4);
-}
-
 @-webkit-keyframes moveIndeterminate {
     from {
         background-position: 200% 0;
@@ -199,10 +187,15 @@ progress.is-large {
     }
 }
 
+
 .progress-wrapper {
     display: block;
     margin: var(--mar-vert) 0;
     width: 100%;
+    position: relative;
+    font-size: var(--size-6);
+
+    --progress-value-offset: 0px;
 }
 
 .progress-wrapper > progress{
@@ -210,9 +203,37 @@ progress.is-large {
     align-items: center;
     border-radius: 9999px;
     margin-top: calc(var(--base-rem) * var(--base-scale) / 5);
+    width: calc( 100% - 6ch );
 }
 
-.progress-wrapper > progress[data-show]::after{
+.progress-wrapper.is-small > progress {
+    height: var(--size-7);
+}
+
+.progress-wrapper.is-medium > progress {
+    height: var(--size-4);
+}
+
+.progress-wrapper.is-large > progress {
+    height: var(--size-2);
+}
+
+.progress-wrapper.is-small {
+    --progress-value-offset: calc( calc(var(--size-7) - var(--size-6)) / 2);
+}
+
+.progress-wrapper.is-medium {
+    --progress-value-offset: calc( calc(var(--size-4) - var(--size-6)) / 2);
+}
+
+.progress-wrapper.is-large {
+    --progress-value-offset: calc( calc(var(--size-2) - var(--size-6)) / 2);
+}
+
+.progress-wrapper[data-show]::after{
     content: attr(data-show);
-    margin: 0 var(--mar-horz);
+    position: absolute;
+    bottom: var(--progress-value-offset);
+    right: 0;
+    line-height: 1;
 }
