@@ -1,5 +1,5 @@
-/* Pure css html base elements and reset */
-/** note that some html tags are set in other element files **/
+/* Pure css HTML base elements and reset */
+/** note that some HTML tags are set in other element files **/
 
 
 /** set global environment **/
@@ -30,7 +30,7 @@ body{
     background-color: var(--bg-main);
 }
 
-/** set key html tags */
+/** set key HTML tags */
 main,
 header {
     margin: 0;

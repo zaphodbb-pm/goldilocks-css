@@ -85,6 +85,9 @@
     /* Widgetbar settings */
     --widgetbar-height: calc( 2 * var(--base-font-size) );
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
+    /* Breadcrumb setting */
+    /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
+    --breadcrumb-separator: '/';
     /* magazine normal width */
     --magazine-width: 40ch;
     /* carousel image height */
@@ -92,44 +95,44 @@
     --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
     /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
     --indicator: url('data:image/svg+xml;charset=utf8,\
-    %3Csvg%20\
-    xmlns="http://www.w3.org/2000/svg"%20\
-    width="24"%20\
-    height="24"%20\
-    viewBox="0%200%2024%2024"%20\
-    fill="none"%20\
-    stroke="%23CF63AB"%20\
-    stroke-width="3"%20\
-    stroke-linecap="round"%20\
-    stroke-linejoin="round"%20\
+    %3Csvg  \
+    xmlns="http://www.w3.org/2000/svg"  \
+    width="24"  \
+    height="24"  \
+    viewBox="0  0  24  24"  \
+    fill="none"  \
+    stroke="%23CF63AB"  \
+    stroke-width="3"  \
+    stroke-linecap="round"  \
+    stroke-linejoin="round"  \
     %3E\
-    %3Cpolyline%20points="6%209%2012%2015%2018%209"/%3E\
+    %3Cpolyline  points="6  9  12  15  18  9"/%3E\
     %3C/svg%3E');
     --indicator-down: url('data:image/svg+xml;charset=utf8,\
-    %3Csvg%20\
-    xmlns="http://www.w3.org/2000/svg"%20\
-    width="24"%20\
-    height="24"%20\
-    viewBox="0%200%2024%2024"%20\
-    fill="none"%20\
-    stroke="currentColor"%20\
-    stroke-width="3"%20\
-    stroke-linecap="round"%20\
-    stroke-linejoin="round"%20\
-    %3E%3Cpolyline%20points="6%209%2012%2015%2018%209"/%3E\
+    %3Csvg \
+    xmlns="http://www.w3.org/2000/svg" \
+    width="24" \
+    height="24" \
+    viewBox="0 0 24 24" \
+    fill="none" \
+    stroke="currentColor" \
+    stroke-width="3" \
+    stroke-linecap="round" \
+    stroke-linejoin="round" \
+    %3E%3Cpolyline points="6%209%2012%2015%2018%209"/%3E\
     %3C/svg%3E');
     --indicator-right: url('data:image/svg+xml;charset=utf8,\
-    %3Csvg%20\
-    xmlns="http://www.w3.org/2000/svg"%20\
-    width="24"%20\
-    height="24"%20\
-    viewBox="0%200%2024%2024"%20\
-    fill="none"%20\
-    stroke="currentColor"%20\
-    stroke-width="3"%20\
-    stroke-linecap="round"%20\
-    stroke-linejoin="round"%20\
-    %3E%3Cpolyline%20points="9%2018%2015%2012%209%206"/%3E\
+    %3Csvg \
+    xmlns="http://www.w3.org/2000/svg" \
+    width="24" \
+    height="24" \
+    viewBox="0 0 24 24" \
+    fill="none" \
+    stroke="currentColor" \
+    stroke-width="3" \
+    stroke-linecap="round" \
+    stroke-linejoin="round" \
+    %3E%3Cpolyline points="9 18 15 12 9 6"/%3E\
     %3C/svg%3E');
 }
 
@@ -197,7 +200,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --black-ter: hsl(0, 0%, 16%);
     --grey-darker: hsl(0, 0%, 25%);
     --grey-dark: hsl(0, 0%, 40%);
-    --grey: hsl(0, 0%, 70%);
+    --grey: hsl(0, 0%, 60%);
     --grey-light: hsl(0, 0%, 85%);
     --grey-lighter: hsl(0, 0%, 93%);
     --white-ter: hsl(0, 0%, 95%);
@@ -322,8 +325,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-code: var(--secondary-light);;
 }
 
-/* Pure css html base elements and reset */
-/** note that some html tags are set in other element files **/
+/* Pure css HTML base elements and reset */
+/** note that some HTML tags are set in other element files **/
 
 
 /** set global environment **/
@@ -359,7 +362,7 @@ body
     background-color: var(--bg-main);
 }
 
-/** set key html tags */
+/** set key HTML tags */
 main,
 header
 {
@@ -408,6 +411,18 @@ p
 p:last-child
 {
     margin-bottom: 0;
+}
+
+p.scrollable
+{
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+p.scrollable::-webkit-scrollbar
+{
+    display: none;
 }
 
 a
@@ -529,7 +544,7 @@ pre > code
     overflow-x: scroll;
 
     max-width: 100%;
-    padding: 0;
+    padding: 0 0 0 1em;
 
     white-space: pre;
 
@@ -1336,16 +1351,22 @@ a.button
     text-decoration: none;
 }
 
+button > a
+{
+    color: inherit;
+}
+
 
 button.is-default-inverted,
 .button.is-default-inverted
 {
-            text-decoration: underline var(--text-comp);
-
     color: var(--text-comp);
     border: none;
 
-    -webkit-text-decoration: underline var(--text-comp);
+    -webkit-text-decoration-color: var(--text-comp);
+            text-decoration-color: var(--text-comp);
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
     text-underline-offset: .25em;
 }
 
@@ -2085,8 +2106,12 @@ button.delete.is-small
 
 figure
 {
+    display: flex;
+
     margin: 0;
     padding: 0;
+
+    flex-flow: column;
 }
 
 figcaption
@@ -2296,10 +2321,12 @@ img
     width: 100%;
 }
 
-.table.table-scroll
+.table-scroll
 {
     display: block;
     overflow-x: auto;
+
+    max-width: 100%;
 
     white-space: nowrap;
 
@@ -2353,6 +2380,7 @@ img
 .table.numbers-col-9 th:nth-of-type(9)
 {
     text-align: end;
+    white-space: nowrap;
 }
 
 /** allows for center alignment of a column of values **/
@@ -2380,7 +2408,7 @@ img
 
 
 
-/** disable word breaks on aper column basis **/
+/** disable word breaks on a per column basis **/
 .table.nobreak-col-1 td:nth-of-type(1),
 .table.nobreak-col-1 th:nth-of-type(1),
 .table.nobreak-col-2 td:nth-of-type(2),
@@ -2401,6 +2429,32 @@ img
 .table.nobreak-col-9 th:nth-of-type(9)
 {
     white-space: nowrap;
+}
+
+/** enable word breaks for scrolled table on a per column basis **/
+.table.scrollbreak-col-1 td:nth-of-type(1),
+.table.scrollbreak-col-1 th:nth-of-type(1),
+.table.scrollbreak-col-2 td:nth-of-type(2),
+.table.scrollbreak-col-2 th:nth-of-type(2),
+.table.scrollbreak-col-3 td:nth-of-type(3),
+.table.scrollbreak-col-3 th:nth-of-type(3),
+.table.scrollbreak-col-4 td:nth-of-type(4),
+.table.scrollbreak-col-4 th:nth-of-type(4),
+.table.scrollbreak-col-5 td:nth-of-type(5),
+.table.scrollbreak-col-5 th:nth-of-type(5),
+.table.scrollbreak-col-6 td:nth-of-type(6),
+.table.scrollbreak-col-6 th:nth-of-type(6),
+.table.scrollbreak-col-7 td:nth-of-type(7),
+.table.scrollbreak-col-7 th:nth-of-type(7),
+.table.scrollbreak-col-8 td:nth-of-type(8),
+.table.scrollbreak-col-8 th:nth-of-type(8),
+.table.scrollbreak-col-9 td:nth-of-type(9),
+.table.scrollbreak-col-9 th:nth-of-type(9)
+{
+    max-width: 20ch;
+
+    white-space: normal;
+    word-break: break-word;
 }
 
 /* Typography elements */
@@ -2660,12 +2714,12 @@ h4 + .sub-title,
 
 .has-text-success
 {
-    color: var(--success);
+    color: var(--success-dark);
 }
 
 .has-text-warning
 {
-    color: var(--warning);
+    color: var(--warning-dark);
 }
 
 .has-text-danger
@@ -2695,7 +2749,7 @@ h4 + .sub-title,
 
 .has-text-light
 {
-    color: var(--grey);
+    color: var(--grey-light);
 }
 
 /* Background Colour Helpers */
