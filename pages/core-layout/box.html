@@ -31,7 +31,7 @@ nav: Box
                 <tbody>
                 <tr>
                     <td><code>.box</code></td>
-                    <td>sets up a parent HTML <code>section</code></td>
+                    <td>sets up a parent HTML <code>article</code> tag</td>
                 </tr>
 
                 <tr>
@@ -81,9 +81,9 @@ nav: Box
                 <article class="box-shadow">
                     <h4>Box Boxed Example with shadow and Content</h4>
 
-                    <label class="progress-wrapper">
+                    <label class="progress-wrapper" data-show="25%">
                         Some Interesting Relationship
-                        <progress class="is-progress-primary" value="25" max="100" data-show="25%"></progress>
+                        <progress class="is-progress-primary" value="25" max="100">25%</progress>
                     </label>
                 </article>
             </div>
@@ -103,9 +103,9 @@ nav: Box
                 &lt;article class="box-shadow"&gt;
                     &lt;h3&gt;Box Boxed Example with shadow and Content&lt;/p&gt;
 
-                    &lt;label class="progress-wrapper"&gt;
+                    &lt;label class="progress-wrapper" data-show="25%"&gt;
                         Some Interesting Relationship
-                        &lt;progress class="is-progress-primary" value="25" max="100" data-show="25%"&gt;&lt;/progress&gt;
+                        &lt;progress class="is-progress-primary" value="25" max="100" &gt;25%&lt;/progress&gt;
                     &lt;/label&gt;
                 &lt;/article&gt;
             </code></pre>
