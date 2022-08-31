@@ -45,62 +45,63 @@ nav: Level
         <section class="column">
             <h2>Usage</h2>
 
-            <table class="table is-fullwidth">
-                <thead>
-                <tr><th colspan="2">Classes:</th></tr>
-                </thead>
+            <div class="table-scroll">
+                <table class="table is-fullwidth">
+                    <thead>
+                    <tr><th colspan="2">Classes:</th></tr>
+                    </thead>
 
-                <tbody>
-                <tr>
-                    <td><code>.level</code></td>
-                    <td>Builds horizontal (row direction) flexbox element.</td>
-                </tr>
+                    <tbody>
+                    <tr>
+                        <td><code>.level</code></td>
+                        <td>Builds horizontal (row direction) flexbox element.</td>
+                    </tr>
 
-                <tr>
-                    <td><code>.level-centered</code></td>
-                    <td>Flexbox with centered children.</td>
-                </tr>
+                    <tr>
+                        <td><code>.level-centered</code></td>
+                        <td>Flexbox with centered children.</td>
+                    </tr>
 
-                <tr>
-                    <td><code>.level-start</code></td>
-                    <td>Flexbox with start adjusted children.</td>
-                </tr>
+                    <tr>
+                        <td><code>.level-start</code></td>
+                        <td>Flexbox with start adjusted children.</td>
+                    </tr>
 
-                <tr>
-                    <td><code>.level-end</code></td>
-                    <td>Flexbox with end adjusted children.</td>
-                </tr>
+                    <tr>
+                        <td><code>.level-end</code></td>
+                        <td>Flexbox with end adjusted children.</td>
+                    </tr>
 
-                <tr>
-                    <td><code>.is-mobile</code></td>
-                    <td>Reverts to vertical block layout if viewport width is less then (nominally) 576px.</td>
-                </tr>
+                    <tr>
+                        <td><code>.is-mobile</code></td>
+                        <td>Reverts to vertical block layout if viewport width is less then (nominally) 576px.</td>
+                    </tr>
 
-                <tr>
-                    <td><code>.icon-nav</code></td>
-                    <td>Controls a child if it is used as a navigation link.</td>
-                </tr>
-                </tbody>
-            </table>
+                    <tr>
+                        <td><code>.icon-nav</code></td>
+                        <td>Controls a child if it is used as a navigation link.</td>
+                    </tr>
+                    </tbody>
+                </table>
 
-            <table class="table is-fullwidth space-vert-medium">
-                <thead>
-                <tr><th colspan="2">Dependencies:</th></tr>
-                </thead>
+                <table class="table is-fullwidth space-vert-medium">
+                    <thead>
+                    <tr><th colspan="2">Dependencies:</th></tr>
+                    </thead>
 
-                <tbody>
-                <tr>
-                    <td>File:</td>
-                    <td>level.css</td>
-                </tr>
+                    <tbody>
+                    <tr>
+                        <td>File:</td>
+                        <td>level.css</td>
+                    </tr>
 
-                <tr>
-                    <td>Variables:</td>
-                    <td> --gap-col, --gap-row, --pad-horz, --pad-vert</td>
-                </tr>
-                </tbody>
-            </table>
-
+                    <tr>
+                        <td>Variables:</td>
+                        <td> --gap-col, --gap-row, --pad-horz, --pad-vert</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </div>
 
@@ -108,7 +109,7 @@ nav: Level
 
     <h3>Basic .level</h3>
 
-    <div class="row has-5x-minwidth">
+    <div class="row has-6x-minwidth">
         <div class="column">
             <div class="level is-grey">
                 <div class="is-secondary">
@@ -157,7 +158,7 @@ nav: Level
     <div class="space-component-medium "></div>
 
     <h3>Basic .level-centered</h3>
-    <div class="row has-5x-minwidth">
+    <div class="row has-6x-minwidth">
         <div class="column">
             <div class="level-centered is-grey">
                 <a class="icon-nav is-dark" href="#core-layout_level">
@@ -206,7 +207,7 @@ nav: Level
     <div class="space-component-medium "></div>
 
     <h3>.level + [.level-start, .level-centered, .level-end]</h3>
-    <div class="row has-5x-minwidth">
+    <div class="row has-6x-minwidth">
         <div class="column">
             <div class="level is-grey">
                 <div class="level-start is-secondary-light">
@@ -288,7 +289,7 @@ nav: Level
 
     <h3>.level-centered and .is-mobile</h3>
 
-    <div class="row has-5x-minwidth">
+    <div class="row has-6x-minwidth">
         <div class="column">
             <div class="level-centered is-grey is-mobile">
                 <a class="icon-nav is-dark" href="#core-layout_level">
@@ -338,7 +339,7 @@ nav: Level
 
     <h3>.level + [.level-start, .level-centered, .level-end] and .is-mobile</h3>
 
-    <div class="row  has-5x-minwidth space-vert-medium">
+    <div class="row has-6x-minwidth space-vert-medium">
         <div class="column">
             <div class="level is-mobile is-grey">
                 <div class="level-start is-mobile is-secondary-light">
