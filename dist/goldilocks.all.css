@@ -53,9 +53,9 @@
     --size-7: 0.9rem;
      */
     /* Grid Key Variables */
-    --gutter: calc(3 * var(--base-rem));                /** grid column gutter **/
-    --grid-min-px-width: 100px;                         /** minimum absolute column width in a grid layout **/
-    --grid-min-width: calc(5rem);                       /** minimum relative column width in a grid layout **/
+    --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
+    --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
+    --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
     /* Flexbox element spacing */
     --gap-row: calc( 1 * var(--base-font-size) );
     --gap-col: calc( 1 * var(--base-font-size) );
