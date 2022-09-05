@@ -72,7 +72,7 @@
     /* Grid Key Variables */
     --gutter: calc(3 * var(--base-rem));                /** grid column gutter **/
     --grid-min-px-width: 100px;                         /** minimum absolute column width in a grid layout **/
-    --grid-min-width: calc(5rem / var(--base-scale) );  /** minimum relative column width in a grid layout **/
+    --grid-min-width: calc(5rem);                       /** minimum relative column width in a grid layout **/
 
 
 

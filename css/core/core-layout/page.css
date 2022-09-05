@@ -11,6 +11,7 @@
                             "side-nav main-content"
                             "side-nav footer"
                             "side-nav .";
+    overflow-x: auto;
 }
 
 .page-wrapper-widgets {
@@ -27,6 +28,7 @@
                             "side-nav main-content"
                             "side-nav footer"
                             "side-nav .";
+    overflow-x: auto;
 }
 
 

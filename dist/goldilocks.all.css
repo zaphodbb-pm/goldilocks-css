@@ -55,7 +55,7 @@
     /* Grid Key Variables */
     --gutter: calc(3 * var(--base-rem));                /** grid column gutter **/
     --grid-min-px-width: 100px;                         /** minimum absolute column width in a grid layout **/
-    --grid-min-width: calc(5rem / var(--base-scale) );  /** minimum relative column width in a grid layout **/
+    --grid-min-width: calc(5rem);                       /** minimum relative column width in a grid layout **/
     /* Flexbox element spacing */
     --gap-row: calc( 1 * var(--base-font-size) );
     --gap-col: calc( 1 * var(--base-font-size) );
@@ -914,6 +914,7 @@ pre
 .page-wrapper
 {
     display: grid;
+    overflow-x: auto;
 
     -moz-column-gap: 0;
          column-gap: 0;
@@ -930,6 +931,7 @@ pre
 .page-wrapper-widgets
 {
     display: grid;
+    overflow-x: auto;
 
     -moz-column-gap: 0;
          column-gap: 0;
