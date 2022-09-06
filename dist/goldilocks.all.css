@@ -685,18 +685,11 @@ pre
     .row.has-5x-minwidth
     {
         grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 5 ), 1fr) );
-
-        /*
-        --minwidth-5x: min( calc(var(--min-grid-width) * 5), 1fr);
-        grid-template-columns: repeat( auto-fit, minmax( var(--minwidth-5x), 1fr) );
-         */
     }
 
     .row.has-6x-minwidth
     {
-        /*grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 6 ), 1fr) );*/
-        --minwidth-6x: min( calc(var(--min-grid-width) * 6), 100%);
-        grid-template-columns: repeat( auto-fit, minmax( var(--minwidth-6x), 1fr) );
+        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 6 ), 1fr) );
     }
 
     .row.has-7x-minwidth
