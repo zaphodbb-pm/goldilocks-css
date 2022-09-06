@@ -1,8 +1,8 @@
 figure {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-flow: column;
+    /*display: flex;*/
+    /*flex-flow: column;*/
 }
 
 figcaption {

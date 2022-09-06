@@ -2084,12 +2084,10 @@ button.delete.is-small
 
 figure
 {
-    display: flex;
-
     margin: 0;
     padding: 0;
-
-    flex-flow: column;
+    /*display: flex;*/
+    /*flex-flow: column;*/
 }
 
 figcaption
