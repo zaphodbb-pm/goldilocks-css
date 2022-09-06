@@ -1,0 +1,60 @@
+---
+layout: default
+parent-tab: get-started
+title: Design Verification
+nav: Verification
+---
+
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
+
+<main class="main-content">
+    <article class="magazine has-serif">
+        <p>Once your product design is done and implemented, there is a final step that should be taken before releasing your product
+            into production.  Developers will have, of course, done code testing such as TDD or BDD.  The final step, however,
+            requires checking compliance to standards for how your web pages are useable for your target users.</p>
+
+        <p>The sad state of affairs of web accessibility is continually being tracked and measured by WebAim at their
+            report <a href="https://webaim.org/projects/million/" target=_blank>The WebAIM Million in 2022</a>.
+            The top global 1 million website are tracked an evaluated.  The results are not pretty.
+            Great fodder for legal disputes if you are not careful.  The summary results are below:</p>
+
+        <figure class="img-as-content">
+            <img src="{{site.url}}/img/demo/WCAG%20Common%20Failures.png" alt="Bar graph">
+            <figcaption>
+                <p class="is-title-3">WebAIM Million</p>
+            </figcaption>
+        </figure>
+
+        <ul>
+            <li> <b>Basic Web Page Testing</b> can be performed using developer tools in the browser such as <b>Lighthouse</b>.
+                Lighthouse is best for page performance and SEO testing and also provides primary testing for HTML layout and accessibility.
+            </li>
+
+            <li> <b>Semantic HTML Validation</b> is more thoroughly performed by an on-line tools such as
+                <a href="https://validator.w3.org/nu/" target=_blank>W3 HTML Validator</a>.  This tool checks for and reports
+                on proper semantic HTML structures and completeness of attributes and ARIA controls.
+            </li>
+            <li> <b>Accessibility Validation</b> is becoming much more important these days as this topic is getting much more scrutiny.
+                A comprehensive and deep checking tool such as
+                <a href="https://wave.webaim.org/" target=_blank>WebAim Web Accessibility Evaluation Tool</a>
+                provides full checking with deep visibility into the code itself to help weed out problem areas.
+            </li>
+            <li> <b>Colour Selection</b> is, interestingly, an area that many web pages fail on.  The UI / UX designer has delivered
+                their theme and colour choices and although this design may look very attractive, it often has contrast issues.
+                These are usually caught during the accessibility validation phase.  Why not check colour combinations during
+                the design phase and before production testing.  As useful tools for this
+                <a href="https://contrastchecker.com/" target=_blank>WCAG Contrast Checker</a>.
+            </li>
+            <li> <b>New Colour Checking</b> standard is being proposed that better models the way the human eye perceives
+                colour and includes text size and weight to give a better measure of how your content will be seen by the user.
+                A deeper discussion by the author the proposed standard is
+                <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_Colors_and_Luminance" target=_blank>Understanding Colors and Luminance</a>
+                and also <a href="https://blog.datawrapper.de/color-contrast-check-data-vis-wcag-apca/" target=_blank>New approach to Color Contrast</a>.
+                A tool that helps you explore this new standard is <a href="https://www.myndex.com/APCA/" target=_blank>APCA Contrast Calculator</a>.
+            </li>
+        </ul>
+
+    </article>
+</main>
