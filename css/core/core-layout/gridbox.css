@@ -72,8 +72,9 @@
     }
 
     .row.has-6x-minwidth {
+        --minwidth-6x: min( calc(var(--min-grid-width) * 6), 1fr);
         /*grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 6 ), 1fr) );*/
-        grid-template-columns: repeat( auto-fit, clamp(var(--min-grid-width), 1fr, calc(var(--min-grid-width) * 6 ) ) );
+        grid-template-columns: repeat( auto-fit, minmax( var(--minwidth-6x), 1fr) );
     }
 
     .row.has-7x-minwidth {
