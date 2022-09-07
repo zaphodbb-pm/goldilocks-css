@@ -6151,11 +6151,21 @@ a.tag:hover
 
 .blockquote > figcaption
 {
+    font-family: var(--family-sans-serif);
+    font-size: var(--size-6);
     line-height: var(--line-height-125);
 
     padding: var(--pad-vert) var(--pad-horz);
 
     text-align: left;
+}
+
+.blockquote > figcaption + cite
+{
+    font-weight: var(--weight-normal);
+    font-style: italic;
+
+    display: block;
 }
 
 .blockquote > figcaption::before
