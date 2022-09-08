@@ -81,7 +81,7 @@ nav: Installations
                     &lt;div id="page-top" class="page-wrapper"&gt;
 
                         &lt;div id="page-main-nav" class="page-main-nav"&gt;
-                            &lt;div class="navbar is-primary has-sidebar" aria-label="Main Site Navigation Bar"&gt;
+                            &lt;div class="navbar is-primary has-sidebar" role="region" aria-label="Main Navbar"&gt;
                                 &lt;div class="navbar-left"&gt;
                                     &lt;!--add your own logo --&gt;
                                     &lt;a href="{{site.url}}/home.html"&gt;
@@ -89,9 +89,22 @@ nav: Installations
                                     &lt;/a&gt;
                                 &lt;/div&gt;
 
+                                &lt;div class="navbar-center" &gt;
+                                    &lt;!-- add your main page links here --&gt;
+                                    &lt;nav aria-label="Primary links"&gt;
+                                        &lt;ul&gt;
+                                            &lt;li&gt;
+                                                &lt;a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css/page-one"&gt;
+                                                    &lt;span class="icon-bg-bookmark"&gt;&lt;/span&gt;
+                                                &lt;/a&gt;
+                                            &lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    &lt;/nav&gt;
+                                &lt;/div&gt;
+
                                 &lt;div class="navbar-right"&gt;
                                     &lt;!-- add your links here --&gt;
-                                    &lt;nav&gt;
+                                    &lt;nav aria-label="Secondary actions"&gt;
                                         &lt;ul&gt;
                                             &lt;li&gt;
                                                 &lt;a class="icon-nav" href="https://github.com/zaphodbb-pm/goldilocks-css" rel="nofollow" aria-label="link to github two"&gt;
