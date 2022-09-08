@@ -6458,6 +6458,8 @@ a.tag:hover
 
     padding: var(--padding);
 
+    word-spacing: .1em;
+
     -moz-column-width: var(--magazine-width);
          column-width: var(--magazine-width);
     -moz-column-gap: calc(1.5 *  var(--gutter) );

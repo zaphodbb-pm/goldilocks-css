@@ -7,6 +7,7 @@
     widows: 3;
     font-family: var(--family-sans-serif);
     line-height: 1.6em;
+    word-spacing: 0.1em;
 }
 
 .magazine h2,
