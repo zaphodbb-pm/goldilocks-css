@@ -6167,7 +6167,7 @@ a.tag:hover
 
     display: block;
 
-    text-indent: 3ch;
+    text-indent: 2ch;
 }
 
 .blockquote > figcaption::before
