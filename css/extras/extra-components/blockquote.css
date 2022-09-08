@@ -25,10 +25,11 @@
     padding: var(--pad-vert) var(--pad-horz);
 }
 
-.blockquote > figcaption + cite {
+.blockquote > figcaption > cite {
     display: block;
     font-weight: var(--weight-normal);
     font-style: italic;
+    text-indent: 3ch;
 }
 
 .blockquote > figcaption::before {

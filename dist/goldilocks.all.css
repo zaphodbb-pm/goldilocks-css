@@ -6160,12 +6160,14 @@ a.tag:hover
     text-align: left;
 }
 
-.blockquote > figcaption + cite
+.blockquote > figcaption > cite
 {
     font-weight: var(--weight-normal);
     font-style: italic;
 
     display: block;
+
+    text-indent: 3ch;
 }
 
 .blockquote > figcaption::before
