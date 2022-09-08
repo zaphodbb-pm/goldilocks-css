@@ -950,14 +950,14 @@ pre
     grid-area: widgets;
 }
 
-.page-wrapper > #page-main-nav,
-.page-wrapper-widgets > #page-main-nav
+.page-wrapper > .page-main-nav,
+.page-wrapper-widgets > .page-main-nav
 {
     grid-area: main-nav;
 }
 
 /* add sticky nav and / or widget bar */
-.page-wrapper > #page-main-nav.is-sticky
+.page-wrapper > .page-main-nav.is-sticky
 {
     position: -webkit-sticky;
     position:         sticky;
@@ -975,7 +975,7 @@ pre
     height: auto;
 }
 
-.page-wrapper-widgets > #page-main-nav.is-sticky
+.page-wrapper-widgets > .page-main-nav.is-sticky
 {
     position: -webkit-sticky;
     position:         sticky;
@@ -985,7 +985,7 @@ pre
 }
 
 /* add fixed nav and / or widget bar */
-.page-wrapper > #page-main-nav.is-fixed
+.page-wrapper > .page-main-nav.is-fixed
 {
     position: fixed;
     top: 0;
@@ -1001,7 +1001,7 @@ pre
     height: auto;
 }
 
-.page-wrapper-widgets > #page-main-nav.is-fixed
+.page-wrapper-widgets > .page-main-nav.is-fixed
 {
     position: fixed;
     top: var(--widgetbar-height);

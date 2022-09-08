@@ -34,13 +34,13 @@
     grid-area: widgets;
 }
 
-.page-wrapper > #page-main-nav,
-.page-wrapper-widgets > #page-main-nav {
+.page-wrapper > .page-main-nav,
+.page-wrapper-widgets > .page-main-nav {
     grid-area: main-nav;
 }
 
 /* add sticky nav and / or widget bar */
-.page-wrapper > #page-main-nav.is-sticky {
+.page-wrapper > .page-main-nav.is-sticky {
     position: sticky;
     top: 0;
     height: auto;
@@ -52,14 +52,14 @@
     height: auto;
 }
 
-.page-wrapper-widgets  > #page-main-nav.is-sticky {
+.page-wrapper-widgets  > .page-main-nav.is-sticky {
     position: sticky;
     top: var(--widgetbar-height);
     height: auto;
 }
 
 /* add fixed nav and / or widget bar */
-.page-wrapper > #page-main-nav.is-fixed {
+.page-wrapper > .page-main-nav.is-fixed {
     position: fixed;
     top: 0;
     height: auto;
@@ -71,7 +71,7 @@
     height: auto;
 }
 
-.page-wrapper-widgets  > #page-main-nav.is-fixed {
+.page-wrapper-widgets  > .page-main-nav.is-fixed {
     position: fixed;
     top: var(--widgetbar-height);
     width: calc( 100% - 2 * var(--pad-horz));
