@@ -8510,7 +8510,9 @@ progress:indeterminate::-ms-fill
 
     white-space: nowrap !important;            /* 3 */
 
+    color: #fff;
     border: 0 !important;
+    background-color: #000;
 
     -webkit-clip-path: inset(50%) !important;
             clip-path: inset(50%) !important;  /* 2 */
