@@ -1,0 +1,150 @@
+.reportbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: calc( var(--gap-col) * 2 );
+
+    margin: 0;
+    padding: var(--padding-medium);
+    min-width: 10rem;
+    max-width: max-content;
+
+    border: solid 1px var(--border-main);
+    border-radius: var(--radius-comp);
+    background-color: var(--bg-component);
+    overflow-x: scroll;
+}
+
+.reportbox p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.reportbox > div {
+    color: var(--text-invert);
+    padding: var(--padding);
+    border-radius: var(--radius-rounded);
+    background-color: var(--grey-dark);
+    height: 3rem;
+    width: 3rem;
+}
+
+.reportbox > div > span:not(.icon-nav) {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.reportbox p {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: var(--gap-row);
+}
+
+.reportbox p > span:first-child {
+    font-size: var(--size-5);
+    color: var(--text-light);
+    font-weight: var(--weight-semibold);
+    white-space: nowrap;
+}
+
+.reportbox p > span:nth-child(2) {
+    font-size: var(--size-1);
+    font-weight: var(--weight-bold);
+}
+
+
+.reportbox > label > progress + p {
+    font-size: 0.9em;
+    margin-top: var(--mar-horz);
+    color: var(--text-light)
+}
+
+
+/* controls for progress bar */
+.reportbox label progress {
+    margin-top: var(--margin);
+    height: calc( var(--size-6) / 2);
+}
+
+.reportbox label progress::-webkit-progress-bar {
+    background-color: var(--grey-light);
+}
+
+.reportbox label progress::-moz-progress-bar {
+    background-color: var(--grey-light);
+}
+
+/* state colours */
+.report-success > div {
+    background-color: var(--success-dark);
+    color: var(--text-invert);
+}
+
+.report-warning > div {
+    background-color: var(--warning);
+    color: var(--text);
+}
+
+.report-danger > div {
+    background-color: var(--danger);
+    color: var(--text-invert);
+}
+
+
+.report-success p > span:nth-child(2) {
+    color: var(--success-dark);
+}
+
+.report-warning p > span:nth-child(2) {
+    color: var(--warning);
+}
+
+.report-danger p > span:nth-child(2) {
+    color: var(--danger);
+}
+
+
+
+.report-success progress::-webkit-progress-value{
+    background-color: var(--success-dark);
+}
+
+.report-success progress::-moz-progress-bar {
+    background-color: var(--success-dark);
+}
+
+.report-success  progress::-ms-fill {
+    background-color: var(--success-dark);
+}
+
+
+
+.report-warning progress::-webkit-progress-value{
+    background-color: var(--warning);
+}
+
+.report-warning progress::-moz-progress-bar {
+    background-color: var(--warning);
+}
+
+.report-warning  progress::-ms-fill {
+    background-color: var(--warning);
+}
+
+
+
+.report-danger progress::-webkit-progress-value{
+    background-color: var(--danger);
+}
+
+
+.report-danger progress::-moz-progress-bar {
+    background-color: var(--danger);
+}
+
+.report-danger  progress::-ms-fill {
+    background-color: var(--danger);
+}
