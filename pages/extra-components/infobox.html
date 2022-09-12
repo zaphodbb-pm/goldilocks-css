@@ -1,0 +1,203 @@
+---
+layout: default
+parent-tab: extra-components
+title: Info Box Widget
+nav: Infobox
+---
+
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
+
+<main class="main-content">
+    <div class="row has-5x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <b>infoboxbox</b> widget provides a display of useful information.
+                These are typically used in an administration page.
+            </p>
+
+            <p>These infoboxes have 4 states:</p>
+
+            <ul>
+                <li><b>Default:</b> generic information display;</li>
+                <li><b>Primary:</b> displayed data is important;</li>
+                <li><b>Secondary:</b> displayed data is useful;</li>
+                <li><b>Tertiary:</b> displayed data is for reminding.</li>
+            </ul>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.infobox</code></td>
+                    <td>Defines the parent component for the simple infobox layout.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.infobox-primary</code></td>
+                    <td>Optional modifier to indicate that data has some importants.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.infobox-secondary</code></td>
+                    <td>Optional modifier to indicate that data is generally useful.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.infobox-tertiary</code></td>
+                    <td>Optional modifier to indicate that data is mostly a reminder.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>infobox.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-component, --indicator-right, --gap-col, --gap-row, --grey-dark, --margin-vert, --mar-horz,
+                        --pad-vert, --padding-medium, -padding-large, --radius-comp, --radius-rounded, --size-3, --size-5,
+                        --primary, --primary-dark, --primary-light,
+                        --secondary, --secondary-dark, --secondary-light, --shadow,
+                        --tertiary, --tertiary-dark, --tertiary-light,
+                        --text-light, --text-invert, --weight-bold, --weight-semibold</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+
+    <div class="row" id="infobox-top">
+        <div class="column">
+            <h3>Infobox Default Layout</h3>
+
+            <article class="infobox">
+                <h4 class="sr-only">Info box</h4>
+                <div>
+                    <p>
+                        <span>95<sup>%</sup></span>
+                        <span>No Footer</span>
+                    </p>
+                    <div><span class="icon-bg-list"></span></div>
+                </div>
+            </article>
+
+            <div class="space-component"></div>
+
+            <article class="infobox">
+                <h4 class="sr-only">Info box</h4>
+                <div>
+                    <p>
+                        <span>55<sup>%</sup></span>
+                        <span>Economics</span>
+                    </p>
+                    <div><span class="icon-bg-list"></span></div>
+                </div>
+
+                <a href="http://www.apple.com" class="">
+                    <span>More Info</span>
+                </a>
+            </article>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;article class="infobox [infobox-primary infobox-secondary infobox-tertiary] "&gt;
+                    &lt;h4 class="sr-only"&gt;Info box&lt;/h4&gt;
+                    &lt;div&gt;
+                        &lt;p&gt;
+                            &lt;span&gt;55&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
+                            &lt;span&gt;Economics&lt;/span&gt;
+                        &lt;/p&gt;
+                        &lt;div&gt;&lt;span class="icon-bg-list"&gt;&lt;/span&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- optional footer - can be deleted --&gt;
+                    &lt;a href="http://www.apple.com" class=""&gt;
+                        &lt;span&gt;More Info&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="space-component-medium"></div>
+
+
+    <div class="row">
+        <div class="column">
+            <h3>Infobox Primary</h3>
+
+            <article class="infobox infobox-primary">
+                <h4 class="sr-only">Info box</h4>
+                <div>
+                    <p>
+                        <span>99<sup>€</sup></span>
+                        <span>Repair Cost</span>
+                    </p>
+                    <div><span class="icon-bg-cog"></span></div>
+                </div>
+
+                <a href="http://www.apple.com" class="">
+                    <span>Buy Deal Now</span>
+                </a>
+            </article>
+        </div>
+
+        <div class="column">
+            <h3>Infobox Secondary - No Footer</h3>
+
+            <article class="infobox infobox-secondary">
+                <h4 class="sr-only">Info box</h4>
+                <div>
+                    <p>
+                        <span>100<sup>°F</sup></span>
+                        <span>Boiling Point</span>
+                    </p>
+                    <div><span class="icon-bg-settings"></span></div>
+                </div>
+            </article>
+        </div>
+
+        <div class="column">
+            <h3>Infobox Tertiary</h3>
+
+            <article class="infobox infobox-tertiary">
+                <h4 class="sr-only">Info box</h4>
+                <div>
+                    <p>
+                        <span>101</span>
+                        <span>Lost Bags</span>
+                    </p>
+                    <div><span class="icon-bg-tag"></span></div>
+                </div>
+
+                <a href="http://www.apple.com" class="">
+                    <span>Track Your Bag</span>
+                </a>
+            </article>
+        </div>
+    </div>
+</main>

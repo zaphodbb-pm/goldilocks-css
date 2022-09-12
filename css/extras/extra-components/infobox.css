@@ -1,0 +1,167 @@
+.infobox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-width: 10rem;
+    max-width: max-content;
+    box-shadow: var(--shadow);
+
+    border-radius: var(--radius-comp);
+    background-color: var(--bg-component);
+    overflow-x: scroll;
+}
+
+/* position info text */
+.infobox > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-medium) var(--padding-large);
+    column-gap: calc( var(--gap-col) * 2 );
+}
+
+.infobox > div > p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+}
+
+.infobox > div > p span:first-child {
+    font-size: calc( 2 * var(--size-3) );
+    font-weight: var(--weight-bold);
+    margin-bottom: var(--mar-vert);
+}
+
+.infobox > div > p span:first-child sup{
+    font-size: 0.66em;
+    vertical-align: top;
+}
+
+.infobox > div > p span:nth-child(2) {
+    font-size: var(--size-5);
+    color: var(--text-light);
+    font-weight: var(--weight-semibold);
+    white-space: nowrap;
+}
+
+
+/* position icon */
+.infobox > div > div {
+    height: 5rem;
+    width: 5rem;
+    border-radius: var(--radius-rounded);
+    color: var(--grey-dark);
+}
+
+.infobox > div > div > span:not(.icon-nav) {
+    font-size: 5rem;
+    margin: 0;
+}
+
+
+/* builds box footer with link */
+.infobox > a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding: var(--pad-vert) 0;
+
+    background-color: var(--grey-dark);
+    color: white;
+    text-decoration: none;
+}
+
+.infobox > a > span {
+    position: relative;
+    padding-right: 2rem;
+
+}
+
+.infobox > a > span::after {
+    content: "";
+    height: 1.5em;
+    width: 2.5em;
+    position: absolute;
+
+    transition: all 0.3s;
+    background-color: currentColor;
+    mask-image: var(--indicator-right);
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    -webkit-mask-image: var(--indicator-right);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+}
+
+
+/* state colours */
+/** main box **/
+.infobox-primary {
+    background-color: var(--primary);
+}
+
+.infobox-secondary {
+    background-color: var(--secondary);
+}
+
+.infobox-tertiary {
+    background-color: var(--tertiary);
+}
+
+/** box text **/
+.infobox.infobox-primary > div > p,
+.infobox.infobox-secondary > div > p,
+.infobox.infobox-tertiary > div > p {
+    color: var(--text-invert);
+}
+
+.infobox.infobox-primary > div > p span:nth-child(2) {
+    color: var(--primary-light);
+}
+
+.infobox.infobox-secondary > div > p span:nth-child(2) {
+    color: var(--secondary-light);
+}
+
+.infobox.infobox-tertiary > div > p span:nth-child(2) {
+    color: var(--tertiary-light);
+}
+
+/** footer **/
+.infobox-primary > a {
+    background-color: var(--primary-dark);
+    color: var(--text-invert);
+}
+
+.infobox-secondary > a {
+    background-color: var(--secondary-dark);
+    color: var(--text-invert);
+}
+
+.infobox-tertiary > a {
+    background-color: var(--tertiary-dark);
+    color: var(--text-invert);
+}
+
+
+/** icon **/
+.infobox-primary > div > div{
+    color: var(--primary-light);
+}
+
+.infobox-secondary > div > div {
+    color: var(--secondary-light);
+}
+
+.infobox-tertiary > div > div {
+    color: var(--tertiary-light);
+}
