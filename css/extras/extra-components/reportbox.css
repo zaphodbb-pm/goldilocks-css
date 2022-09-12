@@ -35,28 +35,39 @@
     margin: 0;
 }
 
-.reportbox p {
+.reportbox > p,
+.reportbox > label {
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.reportbox > p {
     row-gap: var(--gap-row);
 }
 
-.reportbox p > span:first-child {
+
+.reportbox > p > span:first-child,
+.reportbox > label > span:first-child {
     font-size: var(--size-5);
     color: var(--text-light);
     font-weight: var(--weight-semibold);
     white-space: nowrap;
 }
 
-.reportbox p > span:nth-child(2) {
+.reportbox > label > span:first-child {
+    margin-bottom: var(--mar-vert);
+}
+
+.reportbox > p > span:nth-child(2),
+.reportbox > label > span:nth-child(2) {
     font-size: var(--size-1);
     font-weight: var(--weight-bold);
 }
 
 
-.reportbox > label > progress + p {
+.reportbox > label > progress + span {
     font-size: 0.9em;
     margin-top: var(--mar-horz);
     color: var(--text-light)
@@ -94,15 +105,18 @@
 }
 
 
-.report-success p > span:nth-child(2) {
+.report-success > p > span:nth-child(2),
+.report-success > label > span:nth-child(2) {
     color: var(--success-dark);
 }
 
-.report-warning p > span:nth-child(2) {
+.report-warning > p > span:nth-child(2),
+.report-warning > label > span:nth-child(2) {
     color: var(--warning);
 }
 
-.report-danger p > span:nth-child(2) {
+.report-danger > p > span:nth-child(2),
+.report-danger > label > span:nth-child(2) {
     color: var(--danger);
 }
 
