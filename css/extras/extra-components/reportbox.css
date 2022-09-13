@@ -21,6 +21,7 @@
     line-height: 1;
 }
 
+/* icon setup */
 .reportbox > div {
     color: var(--text-invert);
     padding: var(--padding);
@@ -35,6 +36,39 @@
     margin: 0;
 }
 
+.reportbox > div:has(+ label) {
+    height: 4rem;
+    width: 4rem;
+}
+
+.reportbox > div:has(+ label) > span:not(.icon-nav) {
+    font-size: 4rem;
+}
+
+
+
+/* image setup */
+.reportbox > figure {
+    margin: 0;
+    padding: 0;
+    height: 5rem;
+    width: 5rem;
+}
+
+.reportbox > figure:has(+ label) {
+    height: 6rem;
+    width: 6rem;
+}
+
+.reportbox > figure > img {
+    border-radius: var(--radius-elem);
+    border: solid 0.25rem var(--border-main);
+    height: auto;
+    width: auto;
+}
+
+
+/* text setup */
 .reportbox > p,
 .reportbox > label {
     display:flex;
@@ -56,6 +90,7 @@
     white-space: nowrap;
 }
 
+/* controls for progress bar */
 .reportbox > label > span:first-child {
     margin-bottom: var(--mar-vert);
 }
@@ -73,8 +108,6 @@
     color: var(--text-light)
 }
 
-
-/* controls for progress bar */
 .reportbox label progress {
     margin-top: var(--margin);
     height: calc( var(--size-6) / 2);
@@ -89,6 +122,19 @@
 }
 
 /* state colours */
+.report-success {
+    border: solid 1px var(--success);
+}
+
+.report-warning {
+    border: solid 1px var(--warning);
+}
+
+.report-danger {
+    border: solid 1px var(--danger);
+}
+
+/* icon colours */
 .report-success > div {
     background-color: var(--success-dark);
     color: var(--text-invert);
@@ -105,6 +151,21 @@
 }
 
 
+/* image border colours */
+
+.report-success > figure > img {
+    border-color: var(--success);
+}
+
+.report-warning > figure > img {
+    border-color: var(--warning);
+}
+
+.report-danger > figure > img {
+    border-color: var(--danger);
+}
+
+/* text colours */
 .report-success > p > span:nth-child(2),
 .report-success > label > span:nth-child(2) {
     color: var(--success-dark);
@@ -121,7 +182,7 @@
 }
 
 
-
+/* progress bar colours */
 .report-success progress::-webkit-progress-value{
     background-color: var(--success-dark);
 }
