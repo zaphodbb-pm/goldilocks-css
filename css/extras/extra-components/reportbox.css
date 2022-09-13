@@ -118,7 +118,15 @@
 }
 
 .reportbox label progress::-moz-progress-bar {
-    background-color: var(--grey-light);
+    background-color: var(--grey-dark);
+}
+.reportbox label progress::-webkit-progress-value {
+    background-color: var(--grey-dark);
+}
+
+.reportbox label progress::-ms-fill {
+    background-color: var(--grey-dark);
+    border: none;
 }
 
 /* state colours */
