@@ -7076,7 +7076,6 @@ a.tag:hover
 {
     background-color: var(--grey-light);
 }
-
 .reportbox label progress::-moz-progress-bar
 {
     background-color: var(--grey-dark);
@@ -7166,52 +7165,51 @@ a.tag:hover
 
 
 /* progress bar colours */
-.report-success progress::-webkit-progress-value
+.report-success label progress::-webkit-progress-value
 {
     background-color: var(--success-dark);
 }
 
-.report-success progress::-moz-progress-bar
+.report-success label progress::-moz-progress-bar
 {
     background-color: var(--success-dark);
 }
 
-.report-success  progress::-ms-fill
+.report-success label  progress::-ms-fill
 {
     background-color: var(--success-dark);
 }
 
 
 
-.report-warning progress::-webkit-progress-value
+.report-warning label progress::-webkit-progress-value
 {
     background-color: var(--warning);
 }
 
-.report-warning progress::-moz-progress-bar
+.report-warning label progress::-moz-progress-bar
 {
     background-color: var(--warning);
 }
 
-.report-warning  progress::-ms-fill
+.report-warning label  progress::-ms-fill
 {
     background-color: var(--warning);
 }
 
 
 
-.report-danger progress::-webkit-progress-value
+.report-danger label progress::-webkit-progress-value
 {
     background-color: var(--danger);
 }
 
-
-.report-danger progress::-moz-progress-bar
+.report-danger label progress::-moz-progress-bar
 {
     background-color: var(--danger);
 }
 
-.report-danger  progress::-ms-fill
+.report-danger  label progress::-ms-fill
 {
     background-color: var(--danger);
 }
