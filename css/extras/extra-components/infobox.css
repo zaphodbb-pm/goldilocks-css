@@ -21,7 +21,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: var(--padding-medium) var(--padding-large);
+    padding: var(--padding-medium);
     column-gap: calc( var(--gap-col) * 2 );
 }
 
@@ -78,7 +78,6 @@
     justify-content: center;
     width: 100%;
     position: relative;
-    padding: var(--pad-vert) 0;
 
     background-color: var(--grey-dark);
     color: white;
@@ -88,7 +87,7 @@
 .infobox > a > span {
     position: relative;
     padding-right: 2rem;
-
+    margin: var(--mar-vert) var(--mar-horz);
 }
 
 .infobox > a > span::after {
@@ -175,4 +174,20 @@
 
 .infobox-tertiary > div > div {
     color: var(--tertiary);
+}
+
+/* image setup */
+.infobox > div > figure {
+    margin: 0;
+    padding: 0;
+    height: 5rem;
+    width: 5rem;
+    display:block;
+}
+
+.infobox > div > figure > img {
+    border-radius: var(--radius-elem);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }

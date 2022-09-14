@@ -6479,7 +6479,7 @@ a.tag:hover
     display: flex;
     flex-direction: row;
 
-    padding: var(--padding-medium) var(--padding-large);
+    padding: var(--padding-medium);
 
     align-items: center;
     justify-content: space-between;
@@ -6559,7 +6559,6 @@ a.tag:hover
     display: flex;
 
     width: 100%;
-    padding: var(--pad-vert) 0;
 
     text-decoration: none;
 
@@ -6573,6 +6572,7 @@ a.tag:hover
 {
     position: relative;
 
+    margin: var(--mar-vert) var(--mar-horz);
     padding-right: 2rem;
 }
 
@@ -6681,6 +6681,27 @@ a.tag:hover
     color: var(--tertiary);
 }
 
+/* image setup */
+.infobox > div > figure
+{
+    display: block;
+
+    width: 5rem;
+    height: 5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.infobox > div > figure > img
+{
+    width: 100%;
+    height: 100%;
+
+    border-radius: var(--radius-elem);
+
+    -o-object-fit: cover;
+       object-fit: cover;
+}
 /** large volume text layouts **/
 .magazine
 {
@@ -7012,6 +7033,9 @@ a.tag:hover
 
     border: solid .25rem var(--border-main);
     border-radius: var(--radius-elem);
+
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 
@@ -7076,6 +7100,7 @@ a.tag:hover
 {
     background-color: var(--grey-light);
 }
+
 .reportbox label progress::-moz-progress-bar
 {
     background-color: var(--grey-dark);
@@ -7090,6 +7115,10 @@ a.tag:hover
     border: none;
     background-color: var(--grey-dark);
 }
+
+
+
+
 
 /* state colours */
 .report-success
@@ -7213,6 +7242,7 @@ a.tag:hover
 {
     background-color: var(--danger);
 }
+
 /* widgetbar.css */
 .widgetbar,
 .widgetbar-bordered

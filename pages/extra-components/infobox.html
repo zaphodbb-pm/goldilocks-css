@@ -14,7 +14,7 @@ nav: Infobox
         <section class="column">
             <h2>Commentary</h2>
 
-            <p>The <b>infoboxbox</b> widget provides a display of useful information.
+            <p>The <b>infobox</b> widget provides a display of timely and (optionally) actionable information.
                 These are typically used in an administration page.
             </p>
 
@@ -26,6 +26,19 @@ nav: Infobox
                 <li><b>Secondary:</b> displayed data is useful;</li>
                 <li><b>Tertiary:</b> displayed data is for reminding.</li>
             </ul>
+
+            <p>The text area holds important information.  Both <code>sup</code> and <code>sub</code> HTML tags are supported.
+                These can be used as a prefix or suffix for the numerical display. These elements should only be used for typographical
+                reasons; that is, to change the position of the text to comply with typographical conventions or standards.
+                These elements should not be used for presentation or appearance purposes.
+            </p>
+
+            <p>Icons are supported.  The <code>span</code> holding the background icon
+                is wrapped in a <code>div</code> that supplies the state colour and text colour for the icon. Alternatively,
+                the icon can be replaced by an <code>img</code> HTML tag that is wrapped by a <code>figure</code> tag.
+            </p>
+
+            <p>An optional footer region is available that is typically used to hold a call to action link.</p>
         </section>
 
         <section class="column">
@@ -73,9 +86,9 @@ nav: Infobox
                 <tr>
                     <td>Variables:</td>
                     <td>--bg-component, --indicator-right, --gap-col, --gap-row, --grey-dark, --margin-vert, --mar-horz,
-                        --pad-vert, --padding-medium, -padding-large, --radius-comp, --radius-rounded, --size-3, --size-5,
+                        --pad-vert, --padding-medium, --mar-horz, --mar-vert, --radius-comp, --radius-elem, --radius-rounded,
                         --primary, --primary-dark, --primary-light,
-                        --secondary, --secondary-dark, --secondary-light, --shadow,
+                        --secondary, --secondary-dark, --secondary-light, --shadow, --size-3, --size-5,
                         --tertiary, --tertiary-dark, --tertiary-light,
                         --text-light, --text-invert, --weight-bold, --weight-semibold</td>
                 </tr>
@@ -87,11 +100,9 @@ nav: Infobox
 
     <h2 class="space-vert-medium">Examples</h2>
 
-
-    <div class="row" id="infobox-top">
+    <h3>Infobox Default Layout</h3>
+    <div class="row">
         <div class="column">
-            <h3>Infobox Default Layout</h3>
-
             <article class="infobox">
                 <h4 class="sr-only">Info box</h4>
                 <div>
@@ -102,8 +113,30 @@ nav: Infobox
                     <div><span class="icon-bg-list"></span></div>
                 </div>
             </article>
+        </div>
 
-            <div class="space-component"></div>
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;article class="infobox [infobox-primary infobox-secondary infobox-tertiary] "&gt;
+                    &lt;h4 class="sr-only"&gt;Info box&lt;/h4&gt;
+                    &lt;div&gt;
+                        &lt;p&gt;
+                            &lt;span&gt;95&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
+                            &lt;span&gt;No Footer&lt;/span&gt;
+                        &lt;/p&gt;
+                        &lt;div&gt;&lt;span class="icon-bg-list"&gt;&lt;/span&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="space-component-medium"></div>
+
+    <h3>Infobox Default Layout with Image and Footer</h3>
+    <div class="row">
+        <div class="column">
 
             <article class="infobox">
                 <h4 class="sr-only">Info box</h4>
@@ -112,10 +145,13 @@ nav: Infobox
                         <span>55<sup>%</sup></span>
                         <span>Economics</span>
                     </p>
-                    <div><span class="icon-bg-list"></span></div>
+
+                    <figure>
+                        <img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy">
+                    </figure>
                 </div>
 
-                <a href="http://www.apple.com" class="">
+                <a href="http://www.apple.com">
                     <span>More Info</span>
                 </a>
             </article>
@@ -130,10 +166,12 @@ nav: Infobox
                             &lt;span&gt;55&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
                             &lt;span&gt;Economics&lt;/span&gt;
                         &lt;/p&gt;
-                        &lt;div&gt;&lt;span class="icon-bg-list"&gt;&lt;/span&gt;&lt;/div&gt;
+
+                        &lt;figure&gt;
+                            &lt;img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy"&gt;
+                        &lt;/figure&gt;
                     &lt;/div&gt;
 
-                    &lt;!-- optional footer - can be deleted --&gt;
                     &lt;a href="http://www.apple.com"&gt;
                         &lt;span&gt;More Info&lt;/span&gt;
                     &lt;/a&gt;
@@ -154,13 +192,13 @@ nav: Infobox
                 <h4 class="sr-only">Info box</h4>
                 <div>
                     <p>
-                        <span>99<sup>€</sup></span>
+                        <span>99<sub>€</sub></span>
                         <span>Repair Cost</span>
                     </p>
                     <div><span class="icon-bg-cog"></span></div>
                 </div>
 
-                <a href="http://www.google.com">
+                <a href="http://www.ibm.com">
                     <span>Buy Deal Now</span>
                 </a>
             </article>
@@ -191,7 +229,10 @@ nav: Infobox
                         <span>101</span>
                         <span>Lost Bags</span>
                     </p>
-                    <div><span class="icon-bg-tag"></span></div>
+
+                    <figure>
+                        <img src="{{site.url}}/img/demo/report-frog-luggage.jpg" alt="Frog with Luggage" loading="lazy">
+                    </figure>
                 </div>
 
                 <a href="http://www.delta.com">
