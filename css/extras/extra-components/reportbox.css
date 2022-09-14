@@ -65,6 +65,7 @@
     border: solid 0.25rem var(--border-main);
     height: auto;
     width: auto;
+    object-fit: cover;
 }
 
 
@@ -116,6 +117,7 @@
 .reportbox label progress::-webkit-progress-bar {
     background-color: var(--grey-light);
 }
+
 .reportbox label progress::-moz-progress-bar {
     background-color: var(--grey-dark);
 }
@@ -127,6 +129,10 @@
     background-color: var(--grey-dark);
     border: none;
 }
+
+
+
+
 
 /* state colours */
 .report-success {
