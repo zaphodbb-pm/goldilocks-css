@@ -81,6 +81,7 @@
 
     background-color: var(--grey-dark);
     color: white;
+    font-weight: var(--weight-medium);
     text-decoration: none;
 }
 
@@ -149,17 +150,17 @@
 /** footer **/
 .infobox-primary > a {
     background-color: var(--primary);
-    color: var(--text-invert);
+    color: var(--primary-text);
 }
 
 .infobox-secondary > a {
     background-color: var(--secondary);
-    color: var(--text-invert);
+    color: var(--secondary-text);
 }
 
 .infobox-tertiary > a {
     background-color: var(--tertiary);
-    color: var(--text-invert);
+    color: var(--tertiary-text);
 }
 
 

@@ -11,26 +11,28 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         - based on split complementary color selection
         - for triadic color selection, set --main-color-offset to 120 degrees
     */
-    --main-color: 140;                  /** primary hue value **/
+    --main-color: 180;                  /** primary hue value **/
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
-    --main-color-sl: 50%, 35%;          /** saturation and lightness **/
+    --main-color-saturation: 90%;       /** common saturation value **/
+    --main-color-lightness: 45%;        /** common lightness value **/
+
     --main-color-sl-light: 100%, 96%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 100%, 20%;    /** color darkening saturation and darkness **/
+    --main-color-sl-dark: 100%, 25%;    /** color darkening saturation and darkness **/
 
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
 
 
     /* build main theme colours */
-    --primary: hsl( var(--main-color), 70%, 31% );
-    --secondary: hsl( var(--main-color-complement-low), 85%, 45% );
-    --tertiary: hsl( var(--main-color-complement-high), 85%, 42% );
-
+    --primary: hsl( var(--main-color), var(--main-color-saturation), var(--main-color-lightness) );
+    --secondary: hsl( var(--main-color-complement-low), var(--main-color-saturation), var(--main-color-lightness) );
+    --tertiary: hsl( var(--main-color-complement-high), var(--main-color-saturation), calc( var(--main-color-lightness) - 10% ));
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl( var(--main-color), 100%, 100%);
-    --secondary-text: hsl( var(--main-color-complement-low), 100%, 98%);
+    --primary-text: hsl( var(--main-color), 100%, 10%);
+    --secondary-text: hsl( var(--main-color-complement-low), 100%, 100%);
     --tertiary-text: hsl( var(--main-color-complement-high), 100%, 100%);
+
     --primary-text-invert: hsl( var(--main-color), 100%, 99%);
     --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
     --tertiary-text-invert: hsl( var(--main-color-complement-high), 100%, 100%);
@@ -70,7 +72,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 
     /* additional greys */
-    --black: hsl(0, 0%, 4%);
+    --black: hsl(0, 0%, 2%);
     --black-bis: hsl(0, 0%, 10%);
     --black-ter: hsl(0, 0%, 16%);
 
