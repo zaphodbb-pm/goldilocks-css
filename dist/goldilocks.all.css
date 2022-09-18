@@ -138,7 +138,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --secondary: hsl( var(--main-color-complement-low), 70%, 45% );
     --tertiary: hsl( var(--main-color-complement-high), 70%, 40%);
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl( var(--main-color), 100%, 10%);
+    --primary-text: hsl( var(--main-color), 100%, 100%);
     --secondary-text: hsl( var(--main-color-complement-low), 100%, 100%);
     --tertiary-text: hsl( var(--main-color-complement-high), 100%, 100%);
     --primary-text-invert: hsl( var(--main-color), 100%, 99%);
