@@ -1,0 +1,107 @@
+---
+layout: default
+parent-tab: get-started
+title: Colour Control and Accessibility
+nav: Colour Control
+---
+
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
+
+<main class="main-content">
+    <h1>Colour Control and Accessibility</h1>
+
+    <article class="magazine has-serif">
+        <div class="mag-block">
+            <h2>Overview</h2>
+            <p><strong>Goldilocks-CSS</strong> is built to support a split complementary colour scheme for the main web
+                page decoration.  By using HSL values, the hue can be rotated around 360° to select a primary colour by
+                using the variable <code>--main-color</code>.  The default is 140°.  Saturation and lightness can then be chosen
+                to finalize that primary colour.  A variable <code>—main-color-offset</code> controls the complementary colours.
+                The default is 30 degrees.  Setting this to 120° produces a triadic colour scheme.
+                All three of these decoration colours have light and dark variants to support backgrounds and hover states.
+            </p>
+        </div>
+
+        <p>Note that notification colours (success, warning, danger) have fixed HSL variables as they are more standard
+            and have specific meaning.  Also the link colour and shades of grey are also provided and have fixed HSL fixed
+            variables.  You can, of course, adjust these variables to suit your needs.
+        </p>
+
+        <p>There is a dark mode over-ride file that adjusts these colours to meet the needs of contrast in this mode.
+            Typically the decoration and notification colours are lightened to provide better contrast on a dark background.
+        </p>
+
+
+        <div class="mag-block">
+            <h2>Accessibility</h2>
+            <p>Web colour accessibility  is a complex area.  <a href="https://www.w3.org/WAI/standards-guidelines/wcag/glance/">WCAG 2.1</a>
+                provides a detailed discussion on the need to meet web accessibility and provides commentary on
+                <a href=“https://www.w3.org/WAI/WCAG21/quickref/#use-of-color">proper use of colour</a>.
+                WebAim (the Institute for Disability Research, Policy, and Practice) has a detailed discussion on designing
+                in <a href=“https://webaim.org/articles/contrast/">accessible contrast</a>.
+            </p>
+        </div>
+
+        <p>In general, these are <a href=“https://dev.to/alvaromontoro/building-your-own-color-contrast-checker-4j7o">complex calculations</a>
+            that you can usually find an <a href=“https://cliambrown.com/contrast/">on-line tool</a> or
+            <a href=“https://contrast-ratio.com/#rgb%28255%2C%20255%2C%20255%29-on-hsl%28340%2C70%25%2C40%25%29”>contrast ratio calculator</a>
+            to help with colour contrast selection.  The WCAG recommendation is to ensure that the contrast between two colours is at
+            least 4.5:1.
+        </p>
+
+        <p>Where the challenges occur is around selecting a background element colour that has text.  For example, a yellow
+            background with white text has a low contrast ratio unless the yellow background is very dark.  This is usually not
+            desired or interesting.  This also applies to colours adjacent to yellow such as green and orange.  Consequently,
+            black text on these backgrounds has high contrast rather than white text that usually fails the contrast test.
+            This is often where designers stumble.
+        </p>
+
+        <p>The reverse is true for blue or red.  White text on red or blue backgrounds has high contrast.  Black text on
+            these backgrounds often fails accessibility unless these backgrounds are very light.
+        </p>
+
+        <div class="mag-block">
+            <h2>So What Does this Mean for Us?</h2>
+
+            <p>With <strong>Goldilocks-CSS</strong> we try to help the designer to select a colour scheme and then to derive
+                supporting colours to ensure that good contrast is maintained.  That means that a designer can select a primary
+                hue and a split complementary angle that will produce three colours.  The designer can also choose the saturation
+                level and lightness for these colours.
+            </p>
+        </div>
+
+        <p>The aforementioned calculator tools are highly recommended to try and test various hue, saturation and lightness settings to
+            ensure that the website has the colours it needs as well as meeting accessibility requirements.
+        </p>
+
+        <div class="mag-block">
+            <h2>Key Variables</h2>
+
+            <p>The file <b>initial-theme-colors.css</b> has all of the colour definitions.  The following variables define the
+                theme’s three colours:
+            </p>
+        </div>
+
+        <ul>
+            <li><code>--main-color</code> is the primary colour hue value (default 140°)</li>
+            <li><code>--main-color-offset</code> is the complementary colours +,- degree offset from main + 180°
+                (default 30°.  Note that a setting of 0° sets secondary = tertiary and yields a two colour theme.
+                A setting of 120° produces a triadic colour theme.</li>
+            <li><code>--main-color-complement-low</code> sets the secondary complementary colour</li>
+            <li><code>--main-color-complement-high</code> sets the tertiary complementary colour</li>
+            <li><code>--main-color-sl-light</code> sets the colour lightening for saturation and lightness </li>
+            <li><code>--main-color-sl-dark</code> sets the colour darkening for saturation and lightness </li>
+            <li><code>--primary</code> is the resulting main theme colour</li>
+            <li><code>--secondary</code> is the resulting secondary theme colour</li>
+            <li><code>--tertiary</code> is the resulting tertiary theme colour</li>
+        </ul>
+
+        <p><b>Note</b> that you do not need to use this split complementary theme method.  You can directly set
+            <code>--primary</code>, <code>--secondary</code> and / or <code>—tertiary</code> colours with any custom values
+            that you wish to use.  Also, any variable can be overridden by a subsequent custom css file or by Javascript code
+            running on the browser.
+        </p>
+    </article>
+</main>
