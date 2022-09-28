@@ -1,0 +1,1031 @@
+---
+layout: default
+parent-tab: extra-components
+title: Charts Widgets
+nav: Charts
+---
+
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
+
+<main id="extras-comp_charts"  class="main-content">
+    <div class="row has-6x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <strong>charts</strong> component has a variety of chart types that are used to show data series relationships.
+                This component is inspired by <a href="https://chartscss.org/">chart.css</a> an all CSS charts project.
+                <strong>Charts.css</strong> is a more comprehensive and heavy weight approach to pure HTML and CSS based charts.
+            </p>
+
+            <p>The <strong>Goldilocks-CSS</strong> charts add-on is a lighter weight subset designed to be used in
+                administrative information presentation. Column, line graph, pie and donut charts are supported.
+                Basic support for axes, captions, labels and legends are provided.
+            </p>
+
+            <p>The starting point is a semantically correct HTML and accessible <code>table</code> tag.  This means that a caption should
+                be included to help describe the chart.  Column and row headings are strongly recommended as screen readers will
+                identify all headers and use them to make programmatic associations between those headers and the cells they relate to.
+                This helps to ensure that screen readers can provide the meaning of the values in the table cells.
+                Note also that table cell <code>td</code> should not be empty.</p>
+
+            <p>The <strong>charts</strong> component then uses CSS to take the table data and create a visual chart.
+                When using pure CSS, data value extraction and computation capability is limited.  Consequently, we need to use
+                the <code>style</code> attribute to build local scoped variables that can then be used in the CSS file to calculate
+                the required controls.  The variable <code>--chart-max</code> is used to normalize the data values to stay
+                within the range of [0,1]. The variable <code>--column-count</code> is used as divisor to adjust column width
+                for multi-column groups per category. Multi-columns groups in a category is achieved by adding rows of data
+                values (including the row heading).
+            </p>
+
+            <p>Finally, each cell in a row uses the variable <code>--td-cell</code> to hold the numeric value to graph.  This value is
+                divided by <code>--chart-max</code> and is used to adjust the height of the background in the cell.  For connected values
+                (such as for line, pie and donut charts), a starting point <code>--td-start</code> is required to properly position each
+                data point.  Note that for pie and donut charts, the <code>--td-start</code> sums the previous data values to rotate the
+                displayed segment around a circle.
+            </p>
+
+            <p>The <code>td</code> table cell also holds a <code>span</code> element with the screen reader accessible data value.
+                Wrapping this data value in a <code>span</code> allows us to control the position of the data value above the
+                displayed column or rotated with the segment to be better visible.
+            </p>
+
+            <p>A list of the available charts and their configuration is: </p>
+
+            <ul class="space-horz">
+                <li><a href="#chart-column-no-frills">Basic Chart - No Frills</a> - Simplest column chart type</li>
+
+                <li><a href="#chart-line-no-frills">Basic Line Chart - No Frills</a> -
+                    Line Chart similar to basic column chart</li>
+
+                <li><a href="#chart-all-items">Basic Chart - All features activated</a> -
+                    Simplest column chart with caption, labels and data values</li>
+
+                <li><a href="#chart-line-all-frills">Basic Line Chart - All features activated</a> -
+                    Line Chart similar to basic column chart with all features on.</li>
+
+                <li><a href="#chart-multiple-columns">Chart - Multiple Columns</a> -
+                    Chart with multiple columns per category</li>
+
+                <li><a href="#chart-line-multiple-lines">Line Chart  - Multiple data lines</a> -
+                    Line Chart similar to multi-column chart with appropriate features on.</li>
+
+                <li><a href="#chart-multi-colour">Chart with multi-colour columns</a> -
+                    Simplest column chart with caption, labels and data values</li>
+
+                <li><a href="#chart-pie">Pie Chart</a> -
+                    Alternative columnar display of data.  Pie chart includes caption, data values and legend.</li>
+
+                <li><a href="#chart-donut">Donut Chart</a> -
+                    Alternative columnar display of data.  Donut chart includes caption, data values and legend.</li>
+
+
+            </ul>
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.charts-wrapper</code></td>
+                    <td>Defines the parent component and is a flexbox that holds a data table and an optional legend.
+                        The chart and legend are vertically centered.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><code>.charts-column</code></td>
+                    <td>Wraps the data <code>table</code>. May include an optional <code>caption</code> and
+                        optional <code>thead</code> for category labels</td>
+                </tr>
+
+                <tr>
+                    <td><code>.unique-colors</code></td>
+                    <td>Optional chart modifier that provider a different color for each column in a basic chart.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.show-caption</code></td>
+                    <td>Optional chart modifier that displays the chart caption at the top of the chart area.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.show-labels</code></td>
+                    <td>Optional chart modifier that displays the labels from the table <code>thead</code>.
+                        These labels are below the chart and are centered with the column.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.show-grid</code></td>
+                    <td>Optional chart modifier that displays a y-axis grid around the table.
+                        The grid is fixed to be 5 steps or 20% steps.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.multiple</code></td>
+                    <td>Optional column and line chart modifier that displays multiple columns in a category (label) area
+                        or multiple lines.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-buffer</code></td>
+                    <td>Optional donut chart modifier that adds a buffer between segments to highlight the transition.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Variable Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>--chart-max</code></td>
+                    <td>Denominator for data values and is used normalize values to be in range of [0,1].</td>
+                </tr>
+
+                <tr>
+                    <td><code>--td-value</code></td>
+                    <td>Extracts the column value and then gets normalized by <code>--chart-max</code>.
+                        This sets the column vertical height for a data value in the chart.</td>
+                </tr>
+
+                <tr>
+                    <td><code>--column-count</code></td>
+                    <td>When using <code>.multiple</code> columns per category, set this variable to the number of rows.
+                        This adjusts the width and spacing of the columns in a label category.</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>charts.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-component, --border-main, --gap-col, --main-color-complement-low, --padding-normal,
+                        --radius-comp, --radius-elem, --size-4, --text, --text-comp</td>
+                </tr>
+
+                <tr>
+                    <td>Variables From HTML:</td>
+                    <td>--chart-max, --column-count, --td-start, --td-value</td>
+                </tr>
+
+                <tr>
+                    <td>Variables Internal:</td>
+                    <td>--buffer, --column-buffer, --column-buffer-td, --caption-size, --labels-size, --grid-offset,
+                        --color, -color-offset, --color-satlight,
+                        --color-1, --color-2, --color-3, --color-4, --color-5, --color-6, --color-7, --color-8, --color-9</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3 id="chart-column-no-frills">Basic Column Chart - No Frills</h3>
+
+    <div class="space-vert">
+        <a href="#extras-comp_charts">Go To Top</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="charts-wrapper has-height-20rem">
+                <table class="charts-column" style="--chart-max: 100;">
+                    <thead>
+                    <tr>
+                        <th scope="col">Row Labels</th>
+                        <th scope="col"> 2016 </th>
+                        <th scope="col"> 2017 </th>
+                        <th scope="col"> 2018 </th>
+                        <th scope="col"> 2019 </th>
+                        <th scope="col"> 2020 </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Primary Chart Values</th>
+                        <td style="--td-value:25;"><span>25</span></td>
+                        <td style="--td-value:50;"><span>50</span></td>
+                        <td style="--td-value:12.5;"><span>12.5</span></td>
+                        <td style="--td-value:75;"><span>75</span></td>
+                        <td style="--td-value:25;"><span>25</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="charts-wrapper has-height-20rem"&gt;
+                    &lt;table class="charts-column" style="--chart-max: 100;"&gt;
+                        &lt;thead&gt;
+                            &lt;tr&gt;
+                                &lt;th scope="col"&gt;Row Labels&lt;/th&gt;
+                                &lt;th scope="col"&gt; 2016 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2017 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2018 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2019 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2020 &lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                            &lt;tr&gt;
+                                &lt;th scope="row"&gt;Primary Chart Values&lt;/th&gt;
+                                &lt;td style="--td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:12.5;"&gt;&lt;span&gt;12.5&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:75;"&gt;&lt;span&gt;75&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-large"></div>
+
+    <h3 id="chart-line-no-frills">Basic Line Chart - No Frills</h3>
+
+    <div class="space-vert">
+        <a href="#extras-comp_charts">Go To Top</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="charts-wrapper has-height-20rem">
+                <table class="charts-line" style="--chart-max: 100;">
+                    <thead>
+                    <tr>
+                        <th scope="col">Row Labels</th>
+                        <th scope="col"> 2016 </th>
+                        <th scope="col"> 2017 </th>
+                        <th scope="col"> 2018 </th>
+                        <th scope="col"> 2019 </th>
+                        <th scope="col"> 2020 </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Primary Chart Values</th>
+                        <td style="--td-start:10; --td-value:35;"><span>25</span></td>
+                        <td style="--td-start:35; --td-value:50;"><span>50</span></td>
+                        <td style="--td-start:50; --td-value:12.5;"><span>12.5</span></td>
+                        <td style="--td-start:12.5; --td-value:75;"><span>75</span></td>
+                        <td style="--td-start:75; --td-value:25;"><span>25</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="charts-wrapper has-height-20rem"&gt;
+                    &lt;table class="charts-line" style="--chart-max: 100;"&gt;
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="col"&gt;Row Labels&lt;/th&gt;
+                            &lt;th scope="col"&gt; 2016 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2017 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2018 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2019 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2020 &lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;Primary Chart Values&lt;/th&gt;
+                            &lt;td style="--td-start:10; --td-value:35;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:35; --td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:50; --td-value:12.5;"&gt;&lt;span&gt;12.5&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:12.5; --td-value:75;"&gt;&lt;span&gt;75&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:75; --td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-large"></div>
+
+
+    <h3 id="chart-all-items">Column Chart - All Items Activated</h3>
+
+    <div class="space-vert">
+        <a href="#extras-comp_charts">Go To Top</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="charts-wrapper has-height-20rem">
+                <table class="charts-column show-caption show-labels show-values show-grid"
+                       style="--chart-max: 100;">
+                    <caption>Chart Caption</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Row Labels</th>
+                        <th scope="col"> 2016 </th>
+                        <th scope="col"> 2017 </th>
+                        <th scope="col"> 2018 </th>
+                        <th scope="col"> 2019 </th>
+                        <th scope="col"> 2020 </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Primary Chart Values</th>
+                        <td style="--td-value:25;"><span>25</span></td>
+                        <td style="--td-value:50;"><span>50</span>50</td>
+                        <td style="--td-value:12.5;"><span>12.5</span></td>
+                        <td style="--td-value:75;"><span>75</span></td>
+                        <td style="--td-value:25;"><span>25</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="charts-wrapper has-height-20rem"&gt;
+                    &lt;table class="charts-column show-caption show-labels show-values show-grid"
+                           style="--chart-max: 100;"&gt;
+                        &lt;caption&gt;Chart Caption&lt;/caption&gt;
+
+                        &lt;thead&gt;
+                            &lt;tr&gt;
+                                &lt;th scope="col"&gt;Row Labels&lt;/th&gt;
+                                &lt;th scope="col"&gt; 2016 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2017 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2018 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2019 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2020 &lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                            &lt;tr&gt;
+                                &lt;th scope="row"&gt;Primary Chart Values&lt;/th&gt;
+                                &lt;td style="--td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;50&lt;/td&gt;
+                                &lt;td style="--td-value:12.5;"&gt;&lt;span&gt;12.5&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:75;"&gt;&lt;span&gt;75&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-large"></div>
+
+    <h3 id="chart-line-all-frills">Line Chart with Caption, Labels, Values and Grid</h3>
+
+    <div class="space-vert">
+        <a href="#extras-comp_charts">Go To Top</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="charts-wrapper has-height-20rem">
+                <table class="charts-line show-caption show-labels show-values show-grid" style="--chart-max: 100;">
+                    <caption>Line Chart Example</caption>
+
+                    <thead>
+                    <tr>
+                        <th scope="col">Row Labels</th>
+                        <th scope="col"> 2016 </th>
+                        <th scope="col"> 2017 </th>
+                        <th scope="col"> 2018 </th>
+                        <th scope="col"> 2019 </th>
+                        <th scope="col"> 2020 </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Primary Chart Values</th>
+                        <td style="--td-start:10; --td-value:35;"><span>25</span></td>
+                        <td style="--td-start:35; --td-value:50;"><span>50</span></td>
+                        <td style="--td-start:50; --td-value:12.5;"><span>12.5</span></td>
+                        <td style="--td-start:12.5; --td-value:75;"><span>75</span></td>
+                        <td style="--td-start:75; --td-value:25;"><span>25</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="charts-wrapper has-height-20rem"&gt;
+                    &lt;table class="charts-line show-caption show-labels show-values show-grid" style="--chart-max: 100;"&gt;
+                        &lt;caption&gt;Line Chart Example&lt;/caption&gt;
+
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="col"&gt;Row Labels&lt;/th&gt;
+                            &lt;th scope="col"&gt; 2016 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2017 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2018 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2019 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2020 &lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;Primary Chart Values&lt;/th&gt;
+                            &lt;td style="--td-start:10; --td-value:35;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:35; --td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:50; --td-value:12.5;"&gt;&lt;span&gt;12.5&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:12.5; --td-value:75;"&gt;&lt;span&gt;75&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:75; --td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-large"></div>
+
+
+
+
+    <h3 id="chart-multiple-columns">Chart with Multiple Columns per Category</h3>
+
+    <div class="space-vert">
+        <a href="#extras-comp_charts">Go To Top</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="charts-wrapper has-height-20rem">
+                <table class="charts-column  show-caption show-labels show-grid multiple"
+                       style="--chart-max: 100; --column-count: 4">
+                    <caption>Item Comparison in a Category</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Row Labels</th>
+                        <th scope="col"> 2017 </th>
+                        <th scope="col"> 2018 </th>
+                        <th scope="col"> 2019 </th>
+                        <th scope="col"> 2020 </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Q1</th>
+                        <td style="--td-value:50;"><span>50</span></td>
+                        <td style="--td-value:12.5;"><span>12.5</span></td>
+                        <td style="--td-value:75;"><span>75</span></td>
+                        <td style="--td-value:25;"><span>25</span></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Q2</th>
+                        <td style="--td-value:60;"><span>60</span></td>
+                        <td style="--td-value:25;"><span>25</span></td>
+                        <td style="--td-value:80;"><span>80</span></td>
+                        <td style="--td-value:45;"><span>45</span></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Q3</th>
+                        <td style="--td-value:40;"><span>40</span></td>
+                        <td style="--td-value:55;"><span>55</span></td>
+                        <td style="--td-value:70;"><span>70</span></td>
+                        <td style="--td-value:35;"><span>35</span></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Q4</th>
+                        <td style="--td-value:30;"><span>30</span></td>
+                        <td style="--td-value:40;"><span>40</span></td>
+                        <td style="--td-value:50;"><span>50</span></td>
+                        <td style="--td-value:60;"><span>60</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <ul aria-label="Chart 2 Legend">
+                    <li>Q1</li>
+                    <li>Q2</li>
+                    <li>Q3</li>
+                    <li>Q4</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="charts-wrapper has-height-20rem"&gt;
+                    &lt;table class="charts-column  show-caption show-labels show-grid multiple"
+                           style="--chart-max: 100; --column-count: 4"&gt;
+                        &lt;caption&gt;Item Comparison in a Category&lt;/caption&gt;
+
+                        &lt;thead&gt;
+                            &lt;tr&gt;
+                                &lt;th scope="col"&gt;Row Labels&lt;/th&gt;
+                                &lt;th scope="col"&gt; 2017 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2018 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2019 &lt;/th&gt;
+                                &lt;th scope="col"&gt; 2020 &lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                            &lt;tr&gt;
+                                &lt;th scope="row"&gt;Q1&lt;/th&gt;
+                                &lt;td style="--td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:12.5;"&gt;&lt;span&gt;12.5&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:75;"&gt;&lt;span&gt;75&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+
+                            &lt;tr&gt;
+                                &lt;th scope="row"&gt;Q2&lt;/th&gt;
+                                &lt;td style="--td-value:60;"&gt;&lt;span&gt;60&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:80;"&gt;&lt;span&gt;80&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:45;"&gt;&lt;span&gt;45&lt;/span&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+
+                            &lt;tr&gt;
+                                &lt;th scope="row"&gt;Q3&lt;/th&gt;
+                                &lt;td style="--td-value:40;"&gt;&lt;span&gt;40&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:55;"&gt;&lt;span&gt;55&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:70;"&gt;&lt;span&gt;70&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:35;"&gt;&lt;span&gt;35&lt;/span&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+
+                            &lt;tr&gt;
+                                &lt;th scope="row"&gt;Q4&lt;/th&gt;
+                                &lt;td style="--td-value:30;"&gt;&lt;span&gt;30&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:40;"&gt;&lt;span&gt;40&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:60;"&gt;&lt;span&gt;60&lt;/span&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+
+                    &lt;ul aria-label="Chart 2 Legend"&gt;
+                        &lt;li&gt;Q1&lt;/li&gt;
+                        &lt;li&gt;Q2&lt;/li&gt;
+                        &lt;li&gt;Q3&lt;/li&gt;
+                        &lt;li&gt;Q4&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+
+    </div>
+
+    <div class="space-component-large"></div>
+
+
+
+    <h3 id="chart-line-multiple-lines">Line Chart with Multiple Lines</h3>
+
+    <div class="space-vert">
+        <a href="#extras-comp_charts">Go To Top</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="charts-wrapper has-height-20rem">
+                <table class="charts-line show-caption show-labels show-grid multiple"
+                       style="--chart-max: 100; --column-count: 1">
+                    <caption>Multiple Lines example</caption>
+
+                    <thead>
+                    <tr>
+                        <th scope="col">Quarters</th>
+                        <th scope="col"> 2017 </th>
+                        <th scope="col"> 2018 </th>
+                        <th scope="col"> 2019 </th>
+                        <th scope="col"> 2020 </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Q1</th>
+                        <td style="--td-start:10; --td-value:50;"><span>50</span></td>
+                        <td style="--td-start:50; --td-value:12.5;"><span>12.5</span></td>
+                        <td style="--td-start:12.5; --td-value:90;"><span>80</span></td>
+                        <td style="--td-start:90; --td-value:25;"><span>25</span></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Q2</th>
+                        <td style="--td-start:10; --td-value:60;"><span>60</span></td>
+                        <td style="--td-start:60; --td-value:25;"><span>25</span></td>
+                        <td style="--td-start:25; --td-value:50;"><span>50</span></td>
+                        <td style="--td-start:50; --td-value:45;"><span>45</span></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Q3</th>
+                        <td style="--td-start:10; --td-value:40;"><span>40</span></td>
+                        <td style="--td-start:40; --td-value:90;"><span>90</span></td>
+                        <td style="--td-start:90; --td-value:70;"><span>70</span></td>
+                        <td style="--td-start:70; --td-value:35;"><span>35</span></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Q4</th>
+                        <td style="--td-start:10; --td-value:30;"><span>30</span></td>
+                        <td style="--td-start:30; --td-value:40;"><span>40</span></td>
+                        <td style="--td-start:40; --td-value:50;"><span>50</span></td>
+                        <td style="--td-start:50; --td-value:60;"><span>60</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <ul aria-label="Chart 2 Legend">
+                    <li>Q1</li>
+                    <li>Q2</li>
+                    <li>Q3</li>
+                    <li>Q4</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="charts-wrapper has-height-20rem"&gt;
+                    &lt;table class="charts-line show-caption show-labels show-grid multiple"
+                           style="--chart-max: 100; --column-count: 1"&gt;
+                        &lt;caption&gt;Multiple Lines example&lt;/caption&gt;
+
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="col"&gt;Quarters&lt;/th&gt;
+                            &lt;th scope="col"&gt; 2017 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2018 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2019 &lt;/th&gt;
+                            &lt;th scope="col"&gt; 2020 &lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;Q1&lt;/th&gt;
+                            &lt;td style="--td-start:10; --td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:50; --td-value:12.5;"&gt;&lt;span&gt;12.5&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:12.5; --td-value:90;"&gt;&lt;span&gt;80&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:90; --td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;Q2&lt;/th&gt;
+                            &lt;td style="--td-start:10; --td-value:60;"&gt;&lt;span&gt;60&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:60; --td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:25; --td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:50; --td-value:45;"&gt;&lt;span&gt;45&lt;/span&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;Q3&lt;/th&gt;
+                            &lt;td style="--td-start:10; --td-value:40;"&gt;&lt;span&gt;40&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:40; --td-value:90;"&gt;&lt;span&gt;90&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:90; --td-value:70;"&gt;&lt;span&gt;70&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:70; --td-value:35;"&gt;&lt;span&gt;35&lt;/span&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;Q4&lt;/th&gt;
+                            &lt;td style="--td-start:10; --td-value:30;"&gt;&lt;span&gt;30&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:30; --td-value:40;"&gt;&lt;span&gt;40&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:40; --td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:50; --td-value:60;"&gt;&lt;span&gt;60&lt;/span&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+
+                    &lt;ul aria-label="Chart 2 Legend"&gt;
+                        &lt;li&gt;Q1&lt;/li&gt;
+                        &lt;li&gt;Q2&lt;/li&gt;
+                        &lt;li&gt;Q3&lt;/li&gt;
+                        &lt;li&gt;Q4&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+
+    </div>
+
+    <div class="space-component-large"></div>
+
+    <h3 id="chart-multi-colour">Chart with Colourful Columns</h3>
+
+    <div class="space-vert">
+        <a href="#extras-comp_charts">Go To Top</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="charts-wrapper has-height-20rem">
+                <table class="charts-column show-caption show-grid show-values unique-colors"
+                       style="--chart-max: 100;">
+                    <caption>Multi-Colour Basic Chart with Legend</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Row Labels</th>
+                        <th scope="col">Basketball</th>
+                        <th scope="col">Golf</th>
+                        <th scope="col">Tennis</th>
+                        <th scope="col">Hockey</th>
+                        <th scope="col">Bowling</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Primary Chart Values</th>
+                        <td style="--td-value:25;"><span>25</span></td>
+                        <td style="--td-value:50;"><span>50</span></td>
+                        <td style="--td-value:13;"><span>13</span></td>
+                        <td style="--td-value:75;"><span>75</span></td>
+                        <td style="--td-value:25;"><span>25</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <ul aria-label="chart legend">
+                    <li>Basketball</li>
+                    <li>Golf</li>
+                    <li>Tennis</li>
+                    <li>Hockey</li>
+                    <li>Bowling</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="charts-wrapper has-height-20rem"&gt;
+                    &lt;table class="charts-column show-caption show-grid show-values unique-colors"
+                           style="--chart-max: 100;"&gt;
+                        &lt;caption&gt;Multi-Colour Basic Chart with Legend&lt;/caption&gt;
+
+                        &lt;thead&gt;
+                            &lt;tr&gt;
+                                &lt;th scope="col"&gt;Row Labels&lt;/th&gt;
+                                &lt;th scope="col"&gt;Basketball&lt;/th&gt;
+                                &lt;th scope="col"&gt;Golf&lt;/th&gt;
+                                &lt;th scope="col"&gt;Tennis&lt;/th&gt;
+                                &lt;th scope="col"&gt;Hockey&lt;/th&gt;
+                                &lt;th scope="col"&gt;Bowling&lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                            &lt;tr&gt;
+                                &lt;th scope="row"&gt;Primary Chart Values&lt;/th&gt;
+                                &lt;td style="--td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:13;"&gt;&lt;span&gt;13&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:75;"&gt;&lt;span&gt;75&lt;/span&gt;&lt;/td&gt;
+                                &lt;td style="--td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+
+                    &lt;ul aria-label="chart legend"&gt;
+                        &lt;li&gt;Basketball&lt;/li&gt;
+                        &lt;li&gt;Golf&lt;/li&gt;
+                        &lt;li&gt;Tennis&lt;/li&gt;
+                        &lt;li&gt;Hockey&lt;/li&gt;
+                        &lt;li&gt;Bowling&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-large"></div>
+
+
+    <h3 id="chart-pie">Pie Chart</h3>
+
+    <div class="space-vert">
+        <a href="#extras-comp_charts">Go To Top</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="charts-wrapper has-height-20rem">
+                <table class="charts-pie show-caption show-values"
+                       style="--chart-max: 188;">
+                    <caption>Pie Chart with Legend</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Row Labels</th>
+                        <th scope="col">Basketball</th>
+                        <th scope="col">Golf</th>
+                        <th scope="col">Tennis</th>
+                        <th scope="col">Hockey</th>
+                        <th scope="col">Bowling</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Primary Chart Values</th>
+                        <td style="--td-start:0; --td-value:25;"><span>25</span></td>
+                        <td style="--td-start:25; --td-value:50;"><span>50</span></td>
+                        <td style="--td-start:75; --td-value:13;"><span>13</span></td>
+                        <td style="--td-start:88; --td-value:75;"><span>75</span></td>
+                        <td style="--td-start:163; --td-value:25;"><span>25</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <ul aria-label="chart 3 legend">
+                    <li>Basketball</li>
+                    <li>Golf</li>
+                    <li>Tennis</li>
+                    <li>Hockey</li>
+                    <li>Bowling</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="charts-wrapper has-height-20rem"&gt;
+                    &lt;table class="charts-pie [show-caption show-values]"
+                           style="--chart-max: 188;"&gt;
+                        &lt;caption&gt;Pie Chart with Legend&lt;/caption&gt;
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="col"&gt;Row Labels&lt;/th&gt;
+                            &lt;th scope="col"&gt;Basketball&lt;/th&gt;
+                            &lt;th scope="col"&gt;Golf&lt;/th&gt;
+                            &lt;th scope="col"&gt;Tennis&lt;/th&gt;
+                            &lt;th scope="col"&gt;Hockey&lt;/th&gt;
+                            &lt;th scope="col"&gt;Bowling&lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;Primary Chart Values&lt;/th&gt;
+                            &lt;td style="--td-start:0; --td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:25; --td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:75; --td-value:13;"&gt;&lt;span&gt;13&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:88; --td-value:75;"&gt;&lt;span&gt;75&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:163; --td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+
+                    &lt;ul aria-label="chart 3 legend"&gt;
+                        &lt;li&gt;Basketball&lt;/li&gt;
+                        &lt;li&gt;Golf&lt;/li&gt;
+                        &lt;li&gt;Tennis&lt;/li&gt;
+                        &lt;li&gt;Hockey&lt;/li&gt;
+                        &lt;li&gt;Bowling&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-large"></div>
+
+
+    <h3 id="chart-donut">Donut Chart</h3>
+
+    <div class="space-vert">
+        <a href="#extras-comp_charts">Go To Top</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+
+            <div class="charts-wrapper has-height-20rem">
+                <table class="charts-donut has-buffer show-caption show-values"
+                       style="--chart-max: 188;">
+                    <caption>Donut Chart with Legend</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Row Labels</th>
+                        <th scope="col">Basketball</th>
+                        <th scope="col">Golf</th>
+                        <th scope="col">Tennis</th>
+                        <th scope="col">Hockey</th>
+                        <th scope="col">Bowling</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <th scope="row">Primary Chart Values</th>
+                        <td style="--td-start:0; --td-value:25;"><span>25</span></td>
+                        <td style="--td-start:25; --td-value:50;"><span>50</span></td>
+                        <td style="--td-start:75; --td-value:13;"><span>13</span></td>
+                        <td style="--td-start:88; --td-value:75;"><span>75</span></td>
+                        <td style="--td-start:163; --td-value:25;"><span>25</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <ul aria-label="chart 4 legend">
+                    <li>Basketball</li>
+                    <li>Golf</li>
+                    <li>Tennis</li>
+                    <li>Hockey</li>
+                    <li>Bowling</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="charts-wrapper has-height-20rem"&gt;
+                    &lt;table class="charts-donut [has-buffer show-caption show-values]"
+                           style="--chart-max: 188;"&gt;
+                        &lt;caption&gt;Donut Chart with Legend&lt;/caption&gt;
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="col"&gt;Row Labels&lt;/th&gt;
+                            &lt;th scope="col"&gt;Basketball&lt;/th&gt;
+                            &lt;th scope="col"&gt;Golf&lt;/th&gt;
+                            &lt;th scope="col"&gt;Tennis&lt;/th&gt;
+                            &lt;th scope="col"&gt;Hockey&lt;/th&gt;
+                            &lt;th scope="col"&gt;Bowling&lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;Primary Chart Values&lt;/th&gt;
+                            &lt;td style="--td-start:0; --td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:25; --td-value:50;"&gt;&lt;span&gt;50&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:75; --td-value:13;"&gt;&lt;span&gt;13&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:88; --td-value:75;"&gt;&lt;span&gt;75&lt;/span&gt;&lt;/td&gt;
+                            &lt;td style="--td-start:163; --td-value:25;"&gt;&lt;span&gt;25&lt;/span&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+
+                    &lt;ul aria-label="chart 4 legend"&gt;
+                        &lt;li&gt;Basketball&lt;/li&gt;
+                        &lt;li&gt;Golf&lt;/li&gt;
+                        &lt;li&gt;Tennis&lt;/li&gt;
+                        &lt;li&gt;Hockey&lt;/li&gt;
+                        &lt;li&gt;Bowling&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,180 @@
+---
+layout: default
+parent-tab: extra-components
+title: Gauge Widgets
+nav: Gauges
+---
+
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
+
+<main class="main-content">
+    <div class="row has-5x-minwidth">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p>The <b>gauge</b> widget provides a measure of an activity or outcome.  The text provides a name of
+                reported value and a numeric value.  These are typically used in an administration page.
+            </p>
+
+            <p>The parent HTML element is a <code>figure</code> tag.  This is the container for the caption and the gauge.
+                The gauge is a <code>data</code> HTML element that is the container for the CSS that creates the gauge.
+                The child <code>span</code> element holds the data value and is positioned into the center of the gauge.
+            </p>
+
+            <p>These gauges have one of 4 states:</p>
+
+            <ul>
+                <li><b>Default:</b> generic information display;</li>
+                <li><b>Success:</b> displayed data is within satisfactory range;</li>
+                <li><b>Warning:</b> displayed data is starting to move out of satisfactory range;</li>
+                <li><b>Danger:</b> displayed data is outside of satisfactory range.</li>
+            </ul>
+
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>.gauge</code></td>
+                    <td>Defines the parent component for the simple gauge layout.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.gauge-success</code></td>
+                    <td>Optional modifier to indicate that data is within acceptable range.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.gauge-warning</code></td>
+                    <td>Optional modifier to indicate that data is approaching boundary of acceptable range.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.gauge-danger</code></td>
+                    <td>Optional modifier to indicate that data is outside of acceptable range.</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-vert-medium">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>gauge.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main, --bg-main-invert, --danger, --grey-dark, --grey-light, --size-2, --size-5,
+                        --success, --text, --text-invert, --warning, --weight-bold, --weight-semibold
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Variables From HTML:</td>
+                    <td>--gauge-value, --gauge-max</td>
+                </tr>
+
+                <tr>
+                    <td>Variables Internal:</td>
+                    <td>--ring-size</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <h2 class="space-vert-medium">Examples</h2>
+
+    <h3>Gauge Donut Layout</h3>
+
+    <div class="row">
+        <div class="column">
+            <figure class="gauge-donut gauge-success">
+                <data value="65" style="--gauge-value: 65; --gauge-max: 100;">
+                    <span>65<sup>%</sup></span>
+                </data>
+                <figcaption>Donut Gauge</figcaption>
+            </figure>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;figure class="gauge-donut [gauge-success gauge-warning gauge-alert]"&gt;
+                    &lt;data value="65" style="--gauge-value: 65; --gauge-max: 100;"&gt;
+                        &lt;span&gt;65&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
+                    &lt;/data&gt;
+                    &lt;figcaption&gt;Donut Gauge&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium"></div>
+
+
+    <h3>Gauge Ring Layout</h3>
+
+    <div class="row">
+        <div class="column">
+            <figure class="gauge-ring gauge-danger">
+                <data value="25" style="--gauge-value: 25; --gauge-max: 100;">
+                    <span>25<sup>%</sup></span>
+                </data>
+                <figcaption>Ring Gauge</figcaption>
+            </figure>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;figure class="gauge-ring [gauge-success gauge-warning gauge-alert]"&gt;
+                    &lt;data value="25" style="--gauge-value: 25; --gauge-max: 100;"&gt;
+                        &lt;span&gt;25&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
+                    &lt;/data&gt;
+                    &lt;figcaption&gt;Ring Gauge&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium"></div>
+
+    <h3>Gauge Meter Layout</h3>
+
+    <div class="row">
+        <div class="column">
+            <figure class="gauge-meter gauge-warning">
+                <data value="55" style="--gauge-value: 55; --gauge-max: 100;">
+                    <span>55<sup>%</sup></span>
+                </data>
+                <figcaption>Meter Gauge</figcaption>
+            </figure>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;figure class="gauge-meter [gauge-success gauge-warning gauge-alert]"&gt;
+                    &lt;data value="55" style="--gauge-value: 55; --gauge-max: 100;"&gt;
+                        &lt;span&gt;55&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
+                    &lt;/data&gt;
+                    &lt;figcaption&gt;Meter Gauge&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium"></div>
+</main>

@@ -6274,6 +6274,751 @@ a.tag:hover
     display: none;
 }
 
+.charts-wrapper
+{
+    display: flex;
+
+    margin: 0;
+    padding: var(--padding-normal);
+
+    border-radius: var(--radius-comp);
+    background-color: var(--bg-component);
+
+    -moz-column-gap: calc( 2 * var(--gap-col) );
+         column-gap: calc( 2 * var(--gap-col) );
+    align-items: center;
+    justify-content: space-around;
+    --color: var(--main-color-complement-low, 0);
+    --color-offset: 75;
+    --color-satlight: 90%, 45%, .80;
+    --color-1: hsla( var(--color), var(--color-satlight));
+    --color-2: hsla( calc( var(--color) + var(--color-offset) ), var(--color-satlight));
+    --color-3: hsla( calc( var(--color) + 2 * var(--color-offset) ), var(--color-satlight));
+    --color-4: hsla( calc( var(--color) + 3 * var(--color-offset) ), var(--color-satlight));
+    --color-5: hsla( calc( var(--color) + 4 * var(--color-offset) ), var(--color-satlight));
+    --color-6: hsla( calc( var(--color) + 5 * var(--color-offset) ), var(--color-satlight));
+    --color-7: hsla( calc( var(--color) + 6 * var(--color-offset) ), var(--color-satlight));
+    --color-8: hsla( calc( var(--color) + 7 * var(--color-offset) ), var(--color-satlight));
+    --color-9: hsla( calc( var(--color) + 8 * var(--color-offset) ), var(--color-satlight));
+    --color-10: hsla( calc( var(--color) + 9 * var(--color-offset) ), var(--color-satlight));
+}
+
+.charts-column,
+.charts-line,
+.charts-pie,
+.charts-donut
+{
+    position: relative;
+
+    overflow: initial;
+
+    width: 100%;
+    height: calc(100% - var(--caption-size) );
+
+    empty-cells: show;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    background-color: transparent;
+
+    --labels-size: 0rem;
+    --caption-size: 0rem;
+    --grid-offset: 0;
+    --column-buffer-td: .5rem;
+    --column-buffer: .25rem;
+    --column-count: 1;
+}
+
+
+/* main graph */
+.charts-column tbody,
+.charts-line tbody,
+.charts-pie tbody,
+.charts-donut tbody
+{
+    position: absolute;
+    bottom: var(--labels-size);
+
+    width: 100%;
+    height: calc( 100% - var(--labels-size) - var(--caption-size));
+}
+
+.charts-column tbody tr,
+.charts-line tbody tr
+{
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+.charts-column tbody tr th,
+.charts-line tbody tr th,
+.charts-pie tbody tr th,
+.charts-donut tbody tr th
+{
+    position: absolute;
+    left: -200vh;
+}
+
+
+/** column specific layout **/
+.charts-column tbody tr td
+{
+    font-size: .1em;
+
+    position: relative;
+
+    display: inline-block;
+
+    width: 100%;
+    height: calc(100% * var(--td-value, 1) / var(--chart-max) - var(--grid-offset) );
+    margin: 0 var(--column-buffer-td);
+
+    border-spacing: 0;
+
+    text-align: center;
+
+    color: transparent;
+    border-top-left-radius: var(--radius-elem);
+    border-top-right-radius: var(--radius-elem);
+}
+
+.charts-column tbody tr td::after
+{
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+
+    border-top-left-radius: var(--radius-comp);
+    border-top-right-radius: var(--radius-comp);
+    background-color: var(--color-1);
+}
+
+
+/** line chart specific layout **/
+.charts-line tbody
+{
+    overflow: hidden;
+}
+
+.charts-line tbody tr td
+{
+    font-size: .1em;
+
+    position: relative;
+
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+
+    text-align: center;
+
+    color: transparent;
+    background-color: transparent;
+
+    --start: calc( var(--td-start) / var(--chart-max) );        /* normalize starting point */
+    --size: calc( var(--td-value) / var(--chart-max) );         /* normalize value point */
+}
+
+
+.charts-line tbody tr td:before
+{
+    position: absolute;
+    left: -50%;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+
+    background-color: var(--color-1);
+
+    --line-size: 2px;
+    -webkit-clip-path: polygon(
+    0 calc(100% * (1 - var(--start, var(--size)))),
+    100% calc(100% * (1 - var(--size))),
+    100% calc(100% * (1 - var(--size)) - var(--line-size)),
+    0 calc(100% * (1 - var(--start, var(--size))) - var(--line-size))
+    );
+            clip-path: polygon(
+    0 calc(100% * (1 - var(--start, var(--size)))),
+    100% calc(100% * (1 - var(--size))),
+    100% calc(100% * (1 - var(--size)) - var(--line-size)),
+    0 calc(100% * (1 - var(--start, var(--size))) - var(--line-size))
+    );
+}
+
+/** remove first line on graph **/
+.charts-line tbody tr td:nth-child(2):before,
+.charts-line.multiple tbody tr td:nth-child(2):before
+{
+    content: '';
+
+    background-color: transparent !important;
+
+    -webkit-clip-path: unset;
+            clip-path: unset;
+}
+
+
+/** add circle at data point **/
+.charts-line tbody tr td:after
+{
+    position: absolute;
+    z-index: 1;
+    right: calc( 50% - .375rem);
+    bottom: calc( 100% * var(--size) - .375rem );
+
+    width: .5rem;
+    height: .5rem;
+
+    content: '';
+
+    border: solid 2px var(--color-1);
+    border-radius: var(--radius-rounded);
+    background-color: var(--bg-component);
+}
+
+
+
+/** donut specific layout **/
+.charts-donut,
+.charts-pie
+{
+    width: auto;
+
+    aspect-ratio: 1 / 1;
+}
+
+
+.charts-donut tbody tr,
+.charts-pie tbody tr
+{
+    width: auto;
+    height: 100%;
+}
+
+
+.charts-pie tbody tr td
+{
+    font-size: .1em;
+
+    position: absolute;
+    left: 0;
+
+    display: block;
+
+    height: calc(100% - var(--padding-normal) );
+    margin: 0 0;
+
+    transform: rotate( calc( var(--start) * 360deg ) );
+    text-align: center;
+
+    border-radius: var(--radius-rounded);
+    background: conic-gradient(
+    currentColor  0deg calc( var(--size) * 360deg ),
+    transparent calc( var(--size) * 360deg ) 360deg
+    );
+
+    --start: calc( var(--td-start) / var(--chart-max) );        /* normalize starting point */
+    --size: calc( var(--td-value) / var(--chart-max) );         /* normalize value point */
+    aspect-ratio: 1 / 1;
+}
+
+
+
+.charts-donut tbody tr td
+{
+    font-size: .1em;
+
+    position: absolute;
+
+    display: block;
+
+    height: calc(100% - var(--padding-normal) );
+    margin: 0 0;
+
+    transform: rotate( calc( var(--start) * 360deg ) );
+    text-align: center;
+
+    border-radius: var(--radius-rounded);
+    background: conic-gradient(
+    currentColor  0deg calc( (var(--size) - var(--buffer)) * 360deg ),
+    transparent calc( (var(--size) - var(--buffer)) * 360deg ) 360deg
+    );
+
+    --start: calc( var(--td-start) / var(--chart-max) );        /* normalize starting point */
+    --size: calc( var(--td-value) / var(--chart-max) );         /* normalize value point */
+    --buffer: 0;
+    aspect-ratio: 1 / 1;
+}
+
+
+.charts-donut tbody tr td:after
+{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+
+    display: block;
+
+    height: 60%;
+
+    content: '';
+
+    border-radius: var(--radius-rounded);
+    background-color: var(--bg-component);
+
+    aspect-ratio: 1 / 1;
+}
+
+
+.charts-donut.has-buffer tbody tr td
+{
+    --buffer: calc( 3 / 360);
+}
+
+
+
+/* show data values */
+.charts-column.show-values tbody tr td span,
+.charts-line.show-values tbody tr td span
+{
+    font-size: .8rem;
+    font-weight: bold;
+
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: var(--text);
+}
+
+.charts-line.show-values tbody tr td span
+{
+    z-index: 3;
+    top: calc( 100% * (1 - var(--size)) - 2rem);
+    right: calc( 50% - 1ch);
+    left: unset;
+
+    text-align: end;
+}
+
+.charts-pie.show-values tbody tr td span,
+.charts-donut.show-values tbody tr td span
+{
+    font-size: .9rem;
+
+    position: absolute;
+    z-index: 3;
+
+    transform: translate(100%, -100%);
+
+    color: var(--text);
+}
+
+
+/* table caption */
+.charts-column caption,
+.charts-line caption,
+.charts-pie caption,
+.charts-donut caption
+{
+    height: 0;
+}
+
+.charts-column.show-caption,
+.charts-line.show-caption,
+.charts-pie.show-caption,
+.charts-donut.show-caption
+{
+    --caption-size: 3rem;
+}
+
+.charts-column.show-caption caption,
+.charts-line.show-caption caption,
+.charts-pie.show-caption caption,
+.charts-donut.show-caption caption
+{
+    font-size: var(--size-4);
+    font-weight: bold;
+
+    display: table-caption;
+
+    height: auto;
+    padding: 0 0 1.5rem 0;
+}
+
+
+
+/* x-axis labels */
+.charts-column thead,
+.charts-line thead,
+.charts-pie thead,
+.charts-donut thead
+{
+    position: absolute;
+    left: -200vh;
+}
+
+.charts-column.show-labels,
+.charts-line.show-labels
+{
+    --labels-size: 3rem;
+}
+
+.charts-column.show-labels thead,
+.charts-line.show-labels thead
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+
+    width: 100%;
+}
+
+.charts-column.show-labels thead tr,
+.charts-line.show-labels thead tr
+{
+    display: flex;
+
+    width: 100%;
+    height: 3rem;
+
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+}
+
+.charts-column.show-labels thead tr th,
+.charts-line.show-labels thead tr th
+{
+    width: 100%;
+
+    -webkit-margin-start: .25rem;
+    margin-inline-start: .25rem;
+    -webkit-margin-end: .25rem;
+    margin-inline-end: .25rem;
+}
+
+.charts-column.show-labels thead tr th:first-child,
+.charts-line.show-labels thead tr th:first-child
+{
+    position: absolute;
+    left: -200vh;
+}
+
+
+
+
+
+/* graph grid lines */
+.charts-column.show-grid,
+.charts-line.show-grid
+{
+    --grid-offset: 2px;
+}
+
+.charts-column.show-grid tbody,
+.charts-line.show-grid tbody
+{
+    border-right: solid 1px var(--border-main);
+    border-bottom: solid 1px var(--border-main);
+    border-left: solid 1px var(--border-main);
+    background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
+    background-size: 100% 20%;
+}
+
+.charts-column.show-grid tbody tr td,
+.charts-line.show-grid tbody tr td
+{
+    bottom: 1px;
+}
+
+
+/* chart legend */
+.charts-wrapper ul li
+{
+    display: flex;
+
+    list-style: none;
+
+    align-items: center;
+}
+
+.charts-wrapper ul li:before
+{
+    display: inline-block;
+
+    width: 1rem;
+    height: 1rem;
+
+    content: '';
+    vertical-align: middle;
+
+    background-color: var(--text-comp);
+
+    -webkit-margin-end: .5rem;
+    margin-inline-end: .5rem;
+}
+
+
+
+/* support multiple columns per category */
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 1) td:after
+{
+    left: 0;
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 2) td:after
+{
+    left: calc( 100% / var(--column-count) );
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 3) td:after
+{
+    left: calc( 2 * 100% / var(--column-count) );
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 4) td:after
+{
+    left: calc( 3 * 100% / var(--column-count) );
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 5) td:after
+{
+    left: calc( 4 * 100% / var(--column-count) );
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 6) td:after
+{
+    left: calc( 5 * 100% / var(--column-count) );
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 7) td:after
+{
+    left: calc( 6 * 100% / var(--column-count) );
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 8) td:after
+{
+    left: calc( 7 * 100% / var(--column-count) );
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 9) td:after
+{
+    left: calc( 8 * 100% / var(--column-count) );
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+.charts-column.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
+.charts-column.multiple tbody tr:nth-child(10n + 10) td:after
+{
+    left: calc( 9 * 100% / var(--column-count) );
+
+    width: calc( 100% / var(--column-count) - var(--column-buffer) );
+}
+
+
+
+/* colours for multi-column work */
+.charts-column.multiple tbody tr:nth-child(10n + 1) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 1) td:before,
+.charts-wrapper ul li:nth-child(10n + 1):before
+{
+    background-color: var(--color-1);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 1),
+.charts-donut tbody tr td:nth-of-type(10n + 1)
+{
+    color: var(--color-1);
+}
+
+
+.charts-column.multiple tbody tr:nth-child(10n + 2) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 2) td:before,
+.charts-wrapper ul li:nth-child(10n + 2):before
+{
+    background-color: var(--color-2);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 2),
+.charts-donut tbody tr td:nth-of-type(10n + 2)
+{
+    color: var(--color-2);
+}
+
+
+.charts-column.multiple tbody tr:nth-child(10n + 3) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 3):after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 3) td:before,
+.charts-wrapper ul li:nth-child(10n + 3):before
+{
+    background-color: var(--color-3);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 3),
+.charts-donut tbody tr td:nth-of-type(10n + 3)
+{
+    color: var(--color-3);
+}
+
+
+.charts-column.multiple tbody tr:nth-child(10n + 4) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 4):after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 4) td:before,
+.charts-wrapper ul li:nth-child(10n + 4):before
+{
+    background-color: var(--color-4);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 4),
+.charts-donut tbody tr td:nth-of-type(10n + 4)
+{
+    color: var(--color-4);
+}
+
+
+.charts-column.multiple tbody tr:nth-child(10n + 5) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 5) td:before,
+.charts-wrapper ul li:nth-child(10n + 5):before
+{
+    background-color: var(--color-5);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 5),
+.charts-donut tbody tr td:nth-of-type(10n + 5)
+{
+    color: var(--color-5);
+}
+
+
+.charts-column.multiple tbody tr:nth-child(10n + 6) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 6) td:before,
+.charts-wrapper ul li:nth-child(10n + 6):before
+{
+    background-color: var(--color-6);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 6),
+.charts-donut tbody tr td:nth-of-type(10n + 6)
+{
+    color: var(--color-6);
+}
+
+
+.charts-column.multiple tbody tr:nth-child(10n + 7) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 7) td:before,
+.charts-wrapper ul li:nth-child(10n + 7):before
+{
+    background-color: var(--color-7);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 7),
+.charts-donut tbody tr td:nth-of-type(10n + 7)
+{
+    color: var(--color-7);
+}
+
+
+.charts-column.multiple tbody tr:nth-child(10n + 8) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 8) td:before,
+.charts-wrapper ul li:nth-child(10n + 8):before
+{
+    background-color: var(--color-8);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 8),
+.charts-donut tbody tr td:nth-of-type(10n + 8)
+{
+    color: var(--color-8);
+}
+
+
+.charts-column.multiple tbody tr:nth-child(10n + 9) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 9) td:before,
+.charts-wrapper ul li:nth-child(10n + 9):before
+{
+    background-color: var(--color-9);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 9),
+.charts-donut tbody tr td:nth-of-type(10n + 9)
+{
+    color: var(--color-9);
+}
+
+
+.charts-column.multiple tbody tr:nth-child(10n + 10) td:after,
+.charts-column.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
+.charts-line.multiple tbody tr:nth-of-type(10n + 10) td:before,
+.charts-wrapper ul li:nth-child(10n + 10):before
+{
+    background-color: var(--color-10);
+}
+
+.charts-pie tbody tr td:nth-of-type(10n + 10),
+.charts-donut tbody tr td:nth-of-type(10n + 10)
+{
+    color: var(--color-10);
+}
 .comments
 {
     display: flex;
@@ -6449,6 +7194,238 @@ a.tag:hover
     transform: translate(-50%,-50%);
 }
 
+.gauge-donut,
+.gauge-ring,
+.gauge-meter
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gauge-donut figcaption,
+.gauge-ring figcaption,
+.gauge-meter figcaption
+{
+    font-size: var(--size-5);
+    font-weight: var(--weight-semibold);
+
+    margin: var(--margin) 0;
+
+    color: var(--text);
+}
+
+.gauge-meter figcaption
+{
+    margin-top: 0;
+}
+
+
+/* gauge general layout */
+.gauge-donut data,
+.gauge-ring data,
+.gauge-meter data
+{
+    position: relative;
+
+    display: flex;
+
+    height: 100%;
+    min-height: 8rem;
+
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* donut layout / controls */
+.gauge-donut data:before
+{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+    transform: rotate(-90deg);
+
+    border-radius: 50%;
+    background: conic-gradient(
+    currentColor 0deg calc(var(--ring-size) * 360deg),
+    var(--grey-light) calc( var(--ring-size) * 360deg ) 360deg
+    );
+
+    --ring-size: calc( var(--gauge-value) / var(--gauge-max));
+}
+
+.gauge-donut data:after
+{
+    position: absolute;
+    z-index: 1;
+    top: .5rem;
+    left: .5rem;
+
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+
+    content: '';
+
+    border-radius: 50%;
+    background-color: var(--bg-main);
+}
+
+
+/* ring layout / controls */
+.gauge-ring data:before
+{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+    transform: rotate(-90deg);
+
+    border-radius: 50%;
+    background: conic-gradient(
+    currentColor 0deg calc(var(--ring-size) * 360deg),
+    var(--bg-main) calc( var(--ring-size) * 360deg ) 360deg
+    );
+
+    --ring-size: calc( var(--gauge-value) / var(--gauge-max));
+}
+
+.gauge-ring data:after
+{
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: 1rem;
+
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+
+    content: '';
+
+    border-radius: 50%;
+    background-color: var(--bg-main-invert);
+}
+
+
+/* meter layout / controls */
+.gauge-meter data:before
+{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+    transform: rotate(-135deg);
+
+    border-radius: 50%;
+    background: conic-gradient(
+    currentColor 0deg calc(var(--ring-size) * 270deg),
+    var(--grey-light) calc( var(--ring-size) * 270deg ) 270deg,
+    var(--bg-main) 270deg 360deg
+    );
+
+    --ring-size: calc( var(--gauge-value) / var(--gauge-max));
+}
+
+.gauge-meter data:after
+{
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: 1rem;
+
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+
+    content: '';
+
+    border-radius: 50%;
+    background-color: var(--bg-main);
+}
+
+
+/* central text */
+.gauge-donut data span,
+.gauge-ring data span,
+.gauge-meter data span
+{
+    font-size: var(--size-2);
+    font-weight: var(--weight-bold);
+
+    position: relative;
+    z-index: 3;
+
+    color: var(--text);
+}
+
+.gauge-ring data span
+{
+    color: var(--text-invert);
+}
+
+.gauge-meter data span
+{
+    top: -.25rem;
+}
+
+.gauge-donut data span sup,
+.gauge-ring data span sup,
+.gauge-donut data span sub,
+.gauge-ring data span sub,
+.gauge-meter data span sup,
+.gauge-meter data span sub
+{
+    font-size: .5em;
+}
+
+.gauge-donut data span:has(sup),
+.gauge-ring data span:has(sup),
+.gauge-donut data span:has(sub),
+.gauge-ring data span:has(sub),
+.gauge-meter data span:has(sub),
+.gauge-meter data span:has(sub)
+{
+    margin-left: .5ch;
+}
+
+
+/* colours */
+.gauge-donut data:before,
+.gauge-ring data:before,
+.gauge-meter data:before
+{
+    color: var(--grey-dark);
+}
+
+.gauge-donut.gauge-success data:before,
+.gauge-ring.gauge-success data:before,
+.gauge-meter.gauge-success data:before
+{
+    color: var(--success);
+}
+
+.gauge-donut.gauge-warning data:before,
+.gauge-ring.gauge-warning  data:before,
+.gauge-meter.gauge-warning data:before
+{
+    color: var(--warning);
+}
+
+.gauge-donut.gauge-danger data:before,
+.gauge-ring.gauge-danger data:before,
+.gauge-meter.gauge-danger data:before
+{
+    color: var(--danger);
+}
 .infobox
 {
     position: relative;

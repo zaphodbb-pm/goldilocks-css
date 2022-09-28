@@ -1,0 +1,193 @@
+.gauge-donut,
+.gauge-ring,
+.gauge-meter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gauge-donut figcaption,
+.gauge-ring figcaption,
+.gauge-meter figcaption {
+    margin: var(--margin) 0;
+    font-size: var(--size-5);
+    font-weight: var(--weight-semibold);
+    color: var(--text);
+}
+
+.gauge-meter figcaption {
+    margin-top: 0;
+}
+
+
+/* gauge general layout */
+.gauge-donut data,
+.gauge-ring data,
+.gauge-meter data {
+    position: relative;
+    min-height: 8rem;
+    height: 100%;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* donut layout / controls */
+.gauge-donut data:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+
+    --ring-size: calc( var(--gauge-value) / var(--gauge-max));
+
+    transform: rotate(-90deg);
+    background: conic-gradient(
+            currentColor 0deg calc(var(--ring-size) * 360deg),
+            var(--grey-light) calc( var(--ring-size) * 360deg ) 360deg
+    );
+}
+
+.gauge-donut data:after {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 1;
+    border-radius: 50%;
+    height: calc(100% - 1rem);
+    width: calc(100% - 1rem);
+    background-color: var(--bg-main);
+}
+
+
+/* ring layout / controls */
+.gauge-ring data:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+
+    --ring-size: calc( var(--gauge-value) / var(--gauge-max));
+
+    transform: rotate(-90deg);
+    background: conic-gradient(
+            currentColor 0deg calc(var(--ring-size) * 360deg),
+            var(--bg-main) calc( var(--ring-size) * 360deg ) 360deg
+    );
+}
+
+.gauge-ring data:after {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+    border-radius: 50%;
+    height: calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    background-color: var(--bg-main-invert);
+}
+
+
+/* meter layout / controls */
+.gauge-meter data:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+
+    --ring-size: calc( var(--gauge-value) / var(--gauge-max));
+
+    transform: rotate(-135deg);
+    background: conic-gradient(
+            currentColor 0deg calc(var(--ring-size) * 270deg),
+            var(--grey-light) calc( var(--ring-size) * 270deg ) 270deg,
+            var(--bg-main) 270deg 360deg
+    );
+}
+
+.gauge-meter data:after {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+    border-radius: 50%;
+    height: calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    background-color: var(--bg-main);
+}
+
+
+/* central text */
+.gauge-donut data span,
+.gauge-ring data span,
+.gauge-meter data span {
+    position: relative;
+    color: var(--text);
+    font-size: var(--size-2);
+    font-weight: var(--weight-bold);
+    z-index: 3;
+}
+
+.gauge-ring data span {
+    color: var(--text-invert);
+}
+
+.gauge-meter data span {
+    top: -0.25rem;
+}
+
+.gauge-donut data span sup,
+.gauge-ring data span sup,
+.gauge-donut data span sub,
+.gauge-ring data span sub,
+.gauge-meter data span sup,
+.gauge-meter data span sub {
+    font-size: 0.5em;
+}
+
+.gauge-donut data span:has(sup),
+.gauge-ring data span:has(sup),
+.gauge-donut data span:has(sub),
+.gauge-ring data span:has(sub),
+.gauge-meter data span:has(sub),
+.gauge-meter data span:has(sub)
+{
+    margin-left: 0.5ch;
+}
+
+
+/* colours */
+.gauge-donut data:before,
+.gauge-ring data:before,
+.gauge-meter data:before {
+    color: var(--grey-dark);
+}
+
+.gauge-donut.gauge-success data:before,
+.gauge-ring.gauge-success data:before,
+.gauge-meter.gauge-success data:before
+{
+    color: var(--success);
+}
+
+.gauge-donut.gauge-warning data:before,
+.gauge-ring.gauge-warning  data:before,
+.gauge-meter.gauge-warning data:before {
+    color: var(--warning);
+}
+
+.gauge-donut.gauge-danger data:before,
+.gauge-ring.gauge-danger data:before,
+.gauge-meter.gauge-danger data:before {
+    color: var(--danger);
+}
