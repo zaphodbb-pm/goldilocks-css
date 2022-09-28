@@ -53,9 +53,9 @@
     --size-7: 0.9rem;
      */
     /* Grid Key Variables */
-    --gutter: calc(3 * var(--base-rem));                /** grid column gutter **/
-    --grid-min-px-width: 100px;                         /** minimum absolute column width in a grid layout **/
-    --grid-min-width: calc(5rem / var(--base-scale) );  /** minimum relative column width in a grid layout **/
+    --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
+    --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
+    --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
     /* Flexbox element spacing */
     --gap-row: calc( 1 * var(--base-font-size) );
     --gap-col: calc( 1 * var(--base-font-size) );
@@ -129,18 +129,17 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     */
     --main-color: 140;                  /** primary hue value **/
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
-    --main-color-sl: 50%, 35%;          /** saturation and lightness **/
     --main-color-sl-light: 100%, 96%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 100%, 20%;    /** color darkening saturation and darkness **/
+    --main-color-sl-dark: 100%, 24%;    /** color darkening saturation and darkness **/
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
     /* build main theme colours */
     --primary: hsl( var(--main-color), 70%, 31% );
-    --secondary: hsl( var(--main-color-complement-low), 85%, 45% );
-    --tertiary: hsl( var(--main-color-complement-high), 85%, 42% );
+    --secondary: hsl( var(--main-color-complement-low), 70%, 45% );
+    --tertiary: hsl( var(--main-color-complement-high), 70%, 40%);
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: hsl( var(--main-color), 100%, 100%);
-    --secondary-text: hsl( var(--main-color-complement-low), 100%, 98%);
+    --secondary-text: hsl( var(--main-color-complement-low), 100%, 100%);
     --tertiary-text: hsl( var(--main-color-complement-high), 100%, 100%);
     --primary-text-invert: hsl( var(--main-color), 100%, 99%);
     --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
@@ -173,7 +172,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --danger-text: hsl( 348, 100%, 100%);
     --danger-text-invert: hsl( 348, 100%, 100%);
     /* additional greys */
-    --black: hsl(0, 0%, 4%);
+    --black: hsl(0, 0%, 2%);
     --black-bis: hsl(0, 0%, 10%);
     --black-ter: hsl(0, 0%, 16%);
     --grey-darker: hsl(0, 0%, 25%);
@@ -2094,11 +2093,22 @@ figure
 
 figcaption
 {
+    font-family: var(--family-sans-serif);
+    font-size: 1.5rem;
     font-weight: var(--weight-medium);
 
     margin-top: var(--mar-vert);
 
     text-align: center;
+}
+
+figcaption > cite
+{
+    font-size: .9rem;
+    font-weight: var(--weight-normal);
+    font-style: italic;
+
+    display: block;
 }
 
 img
@@ -6786,7 +6796,9 @@ a.tag:hover
 
     white-space: nowrap !important;            /* 3 */
 
+    color: #fff;
     border: 0 !important;
+    background-color: #000;
 
     -webkit-clip-path: inset(50%) !important;
             clip-path: inset(50%) !important;  /* 2 */
