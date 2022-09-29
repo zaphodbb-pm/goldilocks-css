@@ -126,7 +126,6 @@
     height: 100%;
 
     text-align: center;
-    font-size: 0.1em;
     color: transparent;
 
     background-color: transparent;
@@ -204,9 +203,7 @@
     aspect-ratio: 1 / 1;
     border-radius: var(--radius-rounded);
     display: block;
-
     text-align: center;
-    font-size: 0.1em;
 
     transform: rotate( calc( var(--start) * 360deg ) );
 
@@ -231,7 +228,6 @@
     display: block;
 
     text-align: center;
-    font-size: 0.1em;
 
     transform: rotate( calc( var(--start) * 360deg ) );
 
