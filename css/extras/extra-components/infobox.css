@@ -178,17 +178,12 @@
 }
 
 /* image setup */
-.infobox > div > figure {
+.infobox > div > img {
     margin: 0;
     padding: 0;
     height: 5rem;
     width: 5rem;
     display:block;
-}
-
-.infobox > div > figure > img {
     border-radius: var(--radius-elem);
-    height: 100%;
-    width: 100%;
     object-fit: cover;
 }

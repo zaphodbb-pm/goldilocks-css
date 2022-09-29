@@ -35,10 +35,12 @@ nav: Infobox
 
             <p>Icons are supported.  The <code>span</code> holding the background icon
                 is wrapped in a <code>div</code> that supplies the state colour and text colour for the icon. Alternatively,
-                the icon can be replaced by an <code>img</code> HTML tag that is wrapped by a <code>figure</code> tag.
+                the icon can be replaced by an <code>img</code> HTML tag.
             </p>
 
             <p>An optional footer region is available that is typically used to hold a call to action link.</p>
+
+            <p>An optional <code>figcaption</code> HTML tag can be used to provide more descriptive text for a screen reader.</p>
         </section>
 
         <section class="column">
@@ -103,8 +105,8 @@ nav: Infobox
     <h3>Infobox Default Layout</h3>
     <div class="row">
         <div class="column">
-            <article class="infobox">
-                <h4 class="sr-only">Info box</h4>
+            <figure class="infobox">
+                <figcaption class="sr-only">Info box</figcaption>
                 <div>
                     <p>
                         <span>95<sup>%</sup></span>
@@ -112,13 +114,13 @@ nav: Infobox
                     </p>
                     <div><span class="icon-bg-list"></span></div>
                 </div>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;article class="infobox [infobox-primary infobox-secondary infobox-tertiary] "&gt;
-                    &lt;h4 class="sr-only"&gt;Info box&lt;/h4&gt;
+                &lt;figure class="infobox [infobox-primary infobox-secondary infobox-tertiary] "&gt;
+                    &lt;figcaption class="sr-only"&gt;Info box&lt;/figcaption&gt;
                     &lt;div&gt;
                         &lt;p&gt;
                             &lt;span&gt;95&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
@@ -126,7 +128,7 @@ nav: Infobox
                         &lt;/p&gt;
                         &lt;div&gt;&lt;span class="icon-bg-list"&gt;&lt;/span&gt;&lt;/div&gt;
                     &lt;/div&gt;
-                &lt;/article&gt;
+                &lt;/figure&gt;
             </code></pre>
         </div>
     </div>
@@ -138,44 +140,40 @@ nav: Infobox
     <div class="row">
         <div class="column">
 
-            <article class="infobox">
-                <h4 class="sr-only">Info box</h4>
+            <figure class="infobox">
+                <figcaption class="sr-only">Info box</figcaption>
                 <div>
                     <p>
                         <span>55<sup>%</sup></span>
                         <span>Economics</span>
                     </p>
 
-                    <figure>
-                        <img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy">
-                    </figure>
+                    <img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy">
                 </div>
 
                 <a href="http://www.apple.com">
                     <span>Find Info</span>
                 </a>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;article class="infobox [infobox-primary infobox-secondary infobox-tertiary] "&gt;
-                    &lt;h4 class="sr-only"&gt;Info box&lt;/h4&gt;
+                &lt;figure class="infobox [infobox-primary infobox-secondary infobox-tertiary] "&gt;
+                    &lt;figcaption class="sr-only"&gt;Info box&lt;/figcaption&gt;
                     &lt;div&gt;
                         &lt;p&gt;
                             &lt;span&gt;55&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
                             &lt;span&gt;Economics&lt;/span&gt;
                         &lt;/p&gt;
 
-                        &lt;figure&gt;
-                            &lt;img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy"&gt;
-                        &lt;/figure&gt;
+                        &lt;img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy"&gt;
                     &lt;/div&gt;
 
                     &lt;a href="http://www.apple.com"&gt;
                         &lt;span&gt;More Info&lt;/span&gt;
                     &lt;/a&gt;
-                &lt;/article&gt;
+                &lt;/figure&gt;
             </code></pre>
         </div>
     </div>
@@ -188,8 +186,8 @@ nav: Infobox
         <div class="column">
             <h3>Infobox Primary</h3>
 
-            <article class="infobox infobox-primary">
-                <h4 class="sr-only">Info box</h4>
+            <figure class="infobox infobox-primary">
+                <figcaption class="sr-only">Info box</figcaption>
                 <div>
                     <p>
                         <span>99<sub>€</sub></span>
@@ -201,14 +199,14 @@ nav: Infobox
                 <a href="http://www.ibm.com">
                     <span>Buy Deal Now</span>
                 </a>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <h3>Infobox Secondary - No Footer</h3>
 
-            <article class="infobox infobox-secondary">
-                <h4 class="sr-only">Info box</h4>
+            <figure class="infobox infobox-secondary">
+                <figcaption class="sr-only">Info box</figcaption>
                 <div>
                     <p>
                         <span>100<sup>°F</sup></span>
@@ -216,29 +214,27 @@ nav: Infobox
                     </p>
                     <div><span class="icon-bg-settings"></span></div>
                 </div>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <h3>Infobox Tertiary</h3>
 
-            <article class="infobox infobox-tertiary">
-                <h4 class="sr-only">Info box</h4>
+            <figure class="infobox infobox-tertiary">
+                <figcaption class="sr-only">Info box</figcaption>
                 <div>
                     <p>
                         <span>101</span>
                         <span>Lost Bags</span>
                     </p>
 
-                    <figure>
-                        <img src="{{site.url}}/img/demo/report-frog-luggage.jpg" alt="Frog with Luggage" loading="lazy">
-                    </figure>
+                    <img src="{{site.url}}/img/demo/report-frog-luggage.jpg" alt="Frog with Luggage" loading="lazy">
                 </div>
 
                 <a href="http://www.delta.com">
                     <span>Track Your Bag</span>
                 </a>
-            </article>
+            </figure>
         </div>
     </div>
 </main>

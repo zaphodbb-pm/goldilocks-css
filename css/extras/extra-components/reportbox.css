@@ -1,5 +1,6 @@
 .reportbox {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     column-gap: calc( var(--gap-col) * 2 );
@@ -48,25 +49,33 @@
 
 
 /* image setup */
-.reportbox > figure {
+.reportbox > img {
     margin: 0;
     padding: 0;
     height: 5rem;
     width: 5rem;
+
+    border-radius: var(--radius-elem);
+    border: solid 0.25rem var(--border-main);
+    object-fit: cover;
 }
 
-.reportbox > figure:has(+ label) {
+.reportbox > img:has(+ label) {
     height: 6rem;
     width: 6rem;
 }
 
-.reportbox > figure > img {
+
+/*
+.reportbox > img {
     border-radius: var(--radius-elem);
     border: solid 0.25rem var(--border-main);
     height: auto;
     width: auto;
     object-fit: cover;
 }
+
+ */
 
 
 /* text setup */
@@ -166,15 +175,15 @@
 
 /* image border colours */
 
-.report-success > figure > img {
+.report-success > img {
     border-color: var(--success);
 }
 
-.report-warning > figure > img {
+.report-warning > img {
     border-color: var(--warning);
 }
 
-.report-danger > figure > img {
+.report-danger > img {
     border-color: var(--danger);
 }
 

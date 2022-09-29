@@ -34,9 +34,11 @@ nav: Reports
                 background icon is wrapped in a <code>div</code> that supplies the state colour and text colour for the icon.
             </p>
 
-            <p>Alternatively, the icon can be replaced by an <code>img</code> HTML tag that is wrapped by a <code>figure</code>
-                tag.  The size of the image will adjust larger if a progress bar is present.
+            <p>Alternatively, the icon can be replaced by an <code>img</code> HTML tag.
+                The size of the image will adjust larger if a progress bar is present.
             </p>
+
+            <p>An optional <code>figcaption</code> HTML tag can be used to provide more descriptive text for a screen reader.</p>
         </section>
 
         <section class="column">
@@ -100,26 +102,26 @@ nav: Reports
     <div class="row" id="report-top">
         <div class="column">
 
-            <article class="reportbox">
-                <h4 class="sr-only">Report Box</h4>
+            <figure class="reportbox">
+                <figcaption class="sr-only">Report Box</figcaption>
                 <div><span class="icon-bg-bookmark"></span></div>
                 <p>
                     <span>Bookmarks</span>
                     <span>12</span>
                 </p>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;article class="reportbox [report-success report-warning report-danger] "&gt;
-                    &lt;h4 class="sr-only"&gt;Report Box&lt;/h4&gt;
+                &lt;figure class="reportbox [report-success report-warning report-danger] "&gt;
+                    &lt;figcaption class="sr-only"&gt;Report Box&lt;/figcaption&gt;
                     &lt;div&gt;&lt;span class="icon-bg-cloud-download"&gt;&lt;/span&gt;&lt;/div&gt;
                     &lt;p&gt;
                         &lt;span&gt;Bookmarks&lt;/span&gt;
                         &lt;span&gt;12&lt;/span&gt;
                     &lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/figure&gt;
             </code></pre>
         </div>
     </div>
@@ -132,34 +134,30 @@ nav: Reports
 
     <div class="row">
         <div class="column">
-            <article class="reportbox">
-                <h4 class="sr-only">Report Box with Image</h4>
+            <figure class="reportbox">
+                <figcaption class="sr-only">Report Box with Image</figcaption>
 
-                <figure>
-                    <img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy">
-                </figure>
+                <img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy">
 
                 <p>
                     <span>Downloads</span>
                     <span>44,501</span>
                 </p>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;article class="reportbox [report-success report-warning report-danger] "&gt;
-                    &lt;h4 class="sr-only"&gt;Report Box with Image&lt;/h4&gt;
+                &lt;figure class="reportbox [report-success report-warning report-danger] "&gt;
+                    &lt;figcaption class="sr-only"&gt;Report Box with Image&lt;/figcaption&gt;
 
-                    &lt;figure&gt;
-                        &lt;img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy"&gt;
-                    &lt;/figure&gt;
+                    &lt;img src="{{site.url}}/img/demo/report-lion-head.jpg" alt="Lion Head Knocker" loading="lazy"&gt;
 
                     &lt;p&gt;
                         &lt;span&gt;Downloads&lt;/span&gt;
                         &lt;span&gt;44,501&lt;/span&gt;
                     &lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/figure&gt;
             </code></pre>
         </div>
     </div>
@@ -172,44 +170,42 @@ nav: Reports
         <div class="column">
             <h3>Reportbox Simple - Success Layout</h3>
 
-            <article class="reportbox report-success">
-                <h4 class="sr-only">Report Box Success</h4>
+            <figure class="reportbox report-success">
+                <figcaption class="sr-only">Report Box Success</figcaption>
                 <div><span class="icon-bg-cloud-download"></span></div>
                 <p>
                     <span>Downloads</span>
                     <span>44,501</span>
                 </p>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <h3>Reportbox Simple - Warning Layout</h3>
 
-            <article class="reportbox report-warning">
-                <h4 class="sr-only">Report Box Warning</h4>
+            <figure class="reportbox report-warning">
+                <figcaption class="sr-only">Report Box Warning</figcaption>
                 <div><span class="icon-bg-music"></span></div>
                 <p>
                     <span>Songs Played</span>
                     <span>5,231</span>
                 </p>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <h3>Reportbox Simple - Danger Layout</h3>
 
-            <article class="reportbox report-danger">
-                <h4 class="sr-only">Report Box Danger</h4>
+            <figure class="reportbox report-danger">
+                <figcaption class="sr-only">Report Box Danger</figcaption>
 
-                <figure>
-                    <img src="{{site.url}}/img/demo/report-hacker-mask.jpg" alt="Hacker with Mask" loading="lazy">
-                </figure>
+                <img src="{{site.url}}/img/demo/report-hacker-mask.jpg" alt="Hacker with Mask" loading="lazy">
 
                 <p>
                     <span>Login Attempts</span>
                     <span>23</span>
                 </p>
-            </article>
+            </figure>
         </div>
     </div>
 
@@ -219,8 +215,8 @@ nav: Reports
 
     <div class="row">
         <div class="column">
-            <article class="reportbox">
-                <h4 class="sr-only">Report Box with Progress</h4>
+            <figure class="reportbox">
+                <figcaption class="sr-only">Report Box with Progress</figcaption>
                 <div><span class="icon-bg-bookmark"></span></div>
 
                 <label>
@@ -229,13 +225,13 @@ nav: Reports
                     <progress value="75" max="100">75%</progress>
                     <span>75% Progess</span>
                 </label>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;article class="reportbox [report-success report-warning report-danger]"&gt;
-                    &lt;h4 class="sr-only"&gt;Report Box with Progress&lt;/h4&gt;
+                &lt;figure class="reportbox [report-success report-warning report-danger]"&gt;
+                    &lt;figcaption class="sr-only"&gt;Report Box with Progress&lt;/figcaption&gt;
                     &lt;div&gt;&lt;span class="icon-bg-bookmark"&gt;&lt;/span&gt;&lt;/div&gt;
 
                     &lt;label&gt;
@@ -244,7 +240,7 @@ nav: Reports
                         &lt;progress value="75" max="100"&gt;75%&lt;/progress&gt;
                         &lt;span&gt;75% Progess&lt;/span&gt;
                     &lt;/label&gt;
-                &lt;/article&gt;
+                &lt;/figure&gt;
             </code></pre>
         </div>
     </div>
@@ -257,12 +253,10 @@ nav: Reports
 
     <div class="row">
         <div class="column">
-            <article class="reportbox">
-                <h4 class="sr-only">Report Box with Progress and Image</h4>
+            <figure class="reportbox">
+                <figcaption class="sr-only">Report Box with Progress and Image</figcaption>
 
-                <figure>
-                    <img src="{{site.url}}/img/demo/report-teddy-bear.jpg" alt="Teddy bear" loading="lazy">
-                </figure>
+                <img src="{{site.url}}/img/demo/report-teddy-bear.jpg" alt="Teddy bear" loading="lazy">
 
                 <label>
                     <span>Bear Care Support</span>
@@ -270,17 +264,15 @@ nav: Reports
                     <progress value="55" max="100">55%</progress>
                     <span>55% Progess</span>
                 </label>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;article class="reportbox [report-success report-warning report-danger]"&gt;
-                    &lt;h4 class="sr-only"&gt;Report Box with Progress and Image&lt;/h4&gt;
+                &lt;figure class="reportbox [report-success report-warning report-danger]"&gt;
+                    &lt;figcaption class="sr-only"&gt;Report Box with Progress and Image&lt;/figcaption&gt;
 
-                    &lt;figure&gt;
-                        &lt;img src="{{site.url}}/img/demo/report-teddy-bear.jpg" alt="Teddy bear" loading="lazy"&gt;
-                    &lt;/figure&gt;
+                    &lt;img src="{{site.url}}/img/demo/report-teddy-bear.jpg" alt="Teddy bear" loading="lazy"&gt;
 
                     &lt;label&gt;
                         &lt;span&gt;Bear Care Support&lt;/span&gt;
@@ -288,7 +280,7 @@ nav: Reports
                         &lt;progress value="55" max="100"&gt;55%&lt;/progress&gt;
                         &lt;span&gt;55% Progess&lt;/span&gt;
                     &lt;/label&gt;
-                &lt;/article&gt;
+                &lt;/figure&gt;
             </code></pre>
         </div>
     </div>
@@ -302,8 +294,8 @@ nav: Reports
         <div class="column">
             <h3>Reportbox Success Progress</h3>
 
-            <article class="reportbox report-success">
-                <h4 class="sr-only">Report Box Success with Progress</h4>
+            <figure class="reportbox report-success">
+                <figcaption class="sr-only">Report Box Success with Progress</figcaption>
                 <div><span class="icon-bg-phone"></span></div>
 
                 <label>
@@ -312,18 +304,16 @@ nav: Reports
                     <progress value="80" max="100">80%</progress>
                     <span>80% Progess</span>
                 </label>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <h3>Reportbox Warning Progress</h3>
 
-            <article class="reportbox report-warning">
-                <h4 class="sr-only">Report Box Warning with Progress</h4>
+            <figure class="reportbox report-warning">
+                <figcaption class="sr-only">Report Box Warning with Progress</figcaption>
 
-                <figure>
-                    <img src="{{site.url}}/img/demo/report-teddy-bear-music.jpg" alt="Teddy bear with guitar" loading="lazy">
-                </figure>
+                <img src="{{site.url}}/img/demo/report-teddy-bear-music.jpg" alt="Teddy bear with guitar" loading="lazy">
 
                 <label>
                     <span>Songs Practised</span>
@@ -331,14 +321,14 @@ nav: Reports
                     <progress value="15" max="100">15%</progress>
                     <span>15% Progess</span>
                 </label>
-            </article>
+            </figure>
         </div>
 
         <div class="column">
             <h3>Reportbox Danger Progress</h3>
 
-            <article class="reportbox report-danger">
-                <h4 class="sr-only">Report Box Danger with Progress</h4>
+            <figure class="reportbox report-danger">
+                <figcaption class="sr-only">Report Box Danger with Progress</figcaption>
                 <div><span class="icon-bg-bell"></span></div>
 
                 <label>
@@ -347,7 +337,7 @@ nav: Reports
                     <progress value="55" max="100">55%</progress>
                     <span>55% Progess</span>
                 </label>
-            </article>
+            </figure>
         </div>
     </div>
 </main>

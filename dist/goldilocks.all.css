@@ -7688,7 +7688,7 @@ a.tag:hover
 }
 
 /* image setup */
-.infobox > div > figure
+.infobox > div > img
 {
     display: block;
 
@@ -7696,12 +7696,6 @@ a.tag:hover
     height: 5rem;
     margin: 0;
     padding: 0;
-}
-
-.infobox > div > figure > img
-{
-    width: 100%;
-    height: 100%;
 
     border-radius: var(--radius-elem);
 
@@ -7959,6 +7953,7 @@ a.tag:hover
 {
     display: flex;
     overflow-x: scroll;
+    flex-direction: row;
 
     min-width: 10rem;
     max-width: -webkit-max-content;
@@ -8018,24 +8013,12 @@ a.tag:hover
 
 
 /* image setup */
-.reportbox > figure
+.reportbox > img
 {
     width: 5rem;
     height: 5rem;
     margin: 0;
     padding: 0;
-}
-
-.reportbox > figure:has(+ label)
-{
-    width: 6rem;
-    height: 6rem;
-}
-
-.reportbox > figure > img
-{
-    width: auto;
-    height: auto;
 
     border: solid .25rem var(--border-main);
     border-radius: var(--radius-elem);
@@ -8043,6 +8026,24 @@ a.tag:hover
     -o-object-fit: cover;
        object-fit: cover;
 }
+
+.reportbox > img:has(+ label)
+{
+    width: 6rem;
+    height: 6rem;
+}
+
+
+/*
+.reportbox > img {
+    border-radius: var(--radius-elem);
+    border: solid 0.25rem var(--border-main);
+    height: auto;
+    width: auto;
+    object-fit: cover;
+}
+
+ */
 
 
 /* text setup */
@@ -8164,17 +8165,17 @@ a.tag:hover
 
 /* image border colours */
 
-.report-success > figure > img
+.report-success > img
 {
     border-color: var(--success);
 }
 
-.report-warning > figure > img
+.report-warning > img
 {
     border-color: var(--warning);
 }
 
-.report-danger > figure > img
+.report-danger > img
 {
     border-color: var(--danger);
 }
