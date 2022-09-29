@@ -2,7 +2,7 @@
 ![GitHub](https://img.shields.io/github/license/zaphodbb-pm/goldilocks-css)
 
 # Goldilocks-CSS
-A customer first CSS design library.
+A business first CSS design library.
 
 ## Introduction
 **Goldilocks-CSS** is a lightweight, responsive, standards compliant and up-to-date HTML5 / CSS3 solution to meet the needs of product / business managers who need to pay for and manage scarce resources.
