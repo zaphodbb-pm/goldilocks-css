@@ -7028,11 +7028,25 @@ a.tag:hover
 }
 .comments
 {
+    margin: 0;
+    padding: 0;
+}
+
+.comments > li
+{
     display: flex;
+    flex-direction: column;
 
-    padding-top: var(--padding-normal);
+    list-style: none;
+}
 
-    border-top: 1px solid var(--border-main);
+.comments > li.comment,
+.comments > li.with-form
+{
+    flex-direction: row;
+
+    padding-top: var(--pad-horz);
+    padding-bottom: var(--padding-normal);
 
     align-items: flex-start;
     justify-content: flex-start;
@@ -7041,30 +7055,29 @@ a.tag:hover
          column-gap: var(--gap-col);
 }
 
-.comments:first-child
+.comments > li.comment:last-child
 {
-    padding-top: 0;
-
-    border-top: none;
+    border-bottom: 1px solid var(--border-main);
 }
 
-.comments > div
+/* layout content parts */
+.comments > li.comment > div
 {
     width: 100%;
 }
 
-.comments > div > *
+.comments > li.comment > div > *
 {
     margin: 0 0 var(--mar-vert) 0;
     padding: 0;
 }
 
-.comments > div > *:last-child
+.comments > li.comment > div > p > a > span
 {
-    margin: 0;
+    font-size: var(--size-5);
 }
 
-.comments > div > time
+.comments > li.comment > div > time
 {
     font-size: .8em;
     font-style: italic;
@@ -7074,9 +7087,17 @@ a.tag:hover
     margin-top: -.75rem;
 }
 
+.comments > li.comment > div > footer
+{
+    display: flex;
 
-/* indent follow on responses to primary comment */
-.comments.is-level-2
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* recursive comments list */
+.comments > li > ul
 {
     margin: var(--mar-vert) 0 0 3rem;
     padding-top: var(--padding);
@@ -7084,29 +7105,17 @@ a.tag:hover
     border-top: 1px solid var(--border-main);
 }
 
-.comments.is-level-3
-{
-    margin: var(--mar-vert) 0 0 6rem;
-    padding-top: var(--padding);
 
-    border-top: 1px solid var(--border-main);
-}
-
-
-/* standard input form needs some adjustments */
-.comments.with-form > form
+/* form at bottom of comments list */
+.comments > li.with-form > form
 {
     width: 100%;
-    padding: 0 var(--pad-horz);
-
-    border-radius: var(--radius-comp);
 }
 
-.comments.with-form > figure
+.comments > li.with-form > figure
 {
     margin-top: 1.5rem;
 }
-
 .divider-box,
 .divider-box-horz
 {
