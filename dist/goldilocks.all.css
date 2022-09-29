@@ -6374,8 +6374,6 @@ a.tag:hover
 /** column specific layout **/
 .charts-column tbody tr td
 {
-    font-size: .1em;
-
     position: relative;
 
     display: inline-block;
