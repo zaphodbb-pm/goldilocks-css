@@ -6560,6 +6560,12 @@ a.tag:hover
     aspect-ratio: 1 / 1;
 }
 
+.charts-donut tbody tr td span,
+.charts-pie tbody tr td span
+{
+    color: transparent;
+}
+
 
 .charts-donut tbody tr td:after
 {

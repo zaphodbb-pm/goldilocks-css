@@ -226,7 +226,6 @@
     aspect-ratio: 1 / 1;
     border-radius: var(--radius-rounded);
     display: block;
-
     text-align: center;
 
     transform: rotate( calc( var(--start) * 360deg ) );
@@ -235,6 +234,11 @@
             currentColor  0deg calc( (var(--size) - var(--buffer)) * 360deg ),
             transparent calc( (var(--size) - var(--buffer)) * 360deg ) 360deg
     );
+}
+
+.charts-donut tbody tr td span,
+.charts-pie tbody tr td span {
+    color: transparent;
 }
 
 
