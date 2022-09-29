@@ -173,6 +173,27 @@
     color: var(--grey-dark);
 }
 
+.gauge-donut.gauge-primary data:before,
+.gauge-ring.gauge-primary data:before,
+.gauge-meter.gauge-primary data:before
+{
+    color: var(--primary);
+}
+
+.gauge-donut.gauge-secondary data:before,
+.gauge-ring.gauge-secondary data:before,
+.gauge-meter.gauge-secondary data:before
+{
+    color: var(--secondary);
+}
+
+.gauge-donut.gauge-tertiary data:before,
+.gauge-ring.gauge-tertiary data:before,
+.gauge-meter.gauge-tertiary data:before
+{
+    color: var(--tertiary);
+}
+
 .gauge-donut.gauge-success data:before,
 .gauge-ring.gauge-success data:before,
 .gauge-meter.gauge-success data:before
