@@ -6323,7 +6323,7 @@ a.tag:hover
 
     --labels-size: 0rem;
     --caption-size: 0rem;
-    --grid-offset: 0rem;
+    --grid-offset: 1px;
     --column-buffer-td: .5rem;
     --column-buffer: .25rem;
     --column-count: 1;

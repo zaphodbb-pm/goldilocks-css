@@ -40,7 +40,7 @@
 
     --labels-size: 0rem;
     --caption-size: 0rem;
-    --grid-offset: 0rem;
+    --grid-offset: 1px;
     --column-buffer-td: 0.5rem;
     --column-buffer: 0.25rem;
     --column-count: 1;
