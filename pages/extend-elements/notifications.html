@@ -14,16 +14,15 @@ nav: Notifications
         <section class="column">
             <h2>Commentary</h2>
 
-            <p>The <strong>notification</strong> block is a simple coloured block, based on the HTML <code>article</code> tag, to highlight
-                something meaningful to a user.  The notification block is often a system generated message to notify a result after a user action.
-                It does not use a heading in its structure as headings are not mandatory.
+            <p>The <strong>notification</strong> block is a simple coloured block, based on the HTML <code>aside</code> tag,
+                to highlight something meaningful to a user.  The notification block is often a system generated message
+                to notify a result after a user action and hence is an aside to the main page content.
             </p>
 
-            <p>Note that from the <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">HTML specification</a>
-                an <code>article</code> element represents a complete, or self-contained, composition in a document, page, application,
-                or site and that is, in principle, independently distributable or reusable, e.g. in syndication.
-                This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment,
-                an interactive widget or gadget, or any other independent item of content.
+            <p>Note that from the <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">HTML specification</a>
+                an <code>aside</code> element represents a section of a page that consists of content that is tangentially
+                related to the content around the aside element.
+                The <code>aside</code> should be considered separate from that main page content.
             </p>
 
             <p><strong>Notification</strong> block backgrounds can be colourized with the element colour helpers that set the text and
@@ -83,160 +82,160 @@ nav: Notifications
         <div class="column">
 
             <div class="stack-centered stack-gap-medium">
-                <article class="notification">
+                <aside class="notification">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum Default</p>
-                </article>
+                </aside>
 
-                <article class="notification is-primary">
+                <aside class="notification is-primary">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-primary</p>
-                </article>
+                </aside>
 
-                <article class="notification is-secondary">
+                <aside class="notification is-secondary">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-secondary</p>
-                </article>
+                </aside>
 
-                <article class="notification is-tertiary">
+                <aside class="notification is-tertiary">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-tertiary</p>
-                </article>
+                </aside>
 
-                <article class="notification is-link">
+                <aside class="notification is-link">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-link</p>
-                </article>
+                </aside>
 
-                <article class="notification is-success">
+                <aside class="notification is-success">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-success</p>
-                </article>
+                </aside>
 
-                <article class="notification is-warning">
+                <aside class="notification is-warning">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-warning</p>
-                </article>
+                </aside>
 
-                <article class="notification is-danger">
+                <aside class="notification is-danger">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-danger</p>
-                </article>
+                </aside>
 
-                <article class="notification is-primary-light">
+                <aside class="notification is-primary-light">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-primary-light</p>
-                </article>
+                </aside>
 
-                <article class="notification is-secondary-light">
+                <aside class="notification is-secondary-light">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-secondary-light</p>
-                </article>
+                </aside>
 
-                <article class="notification is-tertiary-light">
+                <aside class="notification is-tertiary-light">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-tertiary-light</p>
-                </article>
+                </aside>
 
-                <article class="notification is-link-light">
+                <aside class="notification is-link-light">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-link-light</p>
-                </article>
+                </aside>
 
-                <article class="notification is-success-light">
+                <aside class="notification is-success-light">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-success-light</p>
-                </article>
+                </aside>
 
-                <article class="notification is-warning-light">
+                <aside class="notification is-warning-light">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-warning-light</p>
-                </article>
+                </aside>
 
-                <article class="notification is-danger-light">
+                <aside class="notification is-danger-light">
                     <button class="delete" type="button" aria-label="delete"></button>
                     <p>Lorem Ipsum is-danger-light</p>
-                </article>
+                </aside>
             </div>
 
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;article class="notification"&gt;
+                &lt;aside class="notification"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum Default&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-primary"&gt;
+                &lt;aside class="notification is-primary"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-primary&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-secondary"&gt;
+                &lt;aside class="notification is-secondary"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-secondary&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-tertiary"&gt;
+                &lt;aside class="notification is-tertiary"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-tertiary&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-link"&gt;
+                &lt;aside class="notification is-link"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-link&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-success"&gt;
+                &lt;aside class="notification is-success"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-success&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-warning"&gt;
+                &lt;aside class="notification is-warning"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-warning&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-danger"&gt;
+                &lt;aside class="notification is-danger"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-danger&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-primary-light"&gt;
+                &lt;aside class="notification is-primary-light"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-primary-light&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-secondary-light"&gt;
+                &lt;aside class="notification is-secondary-light"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-secondary-light&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-tertiary-light"&gt;
+                &lt;aside class="notification is-tertiary-light"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-tertiary-light&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-link-light"&gt;
+                &lt;aside class="notification is-link-light"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-link-light&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-success-light"&gt;
+                &lt;aside class="notification is-success-light"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-success-light&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-warning-light"&gt;
+                &lt;aside class="notification is-warning-light"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-warning-light&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
 
-                &lt;article class="notification is-danger-light"&gt;
+                &lt;aside class="notification is-danger-light"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
                     &lt;p&gt;Lorem Ipsum is-danger-light&lt;/p&gt;
-                &lt;/article&gt;
+                &lt;/aside&gt;
             </code></pre>
         </div>
 
