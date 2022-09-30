@@ -101,7 +101,9 @@ nav: Modal
 
                 <tr>
                     <td>Variables:</td>
-                    <td>--bg-main, --bg-main-ter, --border-main-darker, --mar-horz, --radius-comp, --size-4, --text-darker</td>
+                    <td>--bg-main, --bg-main-ter, --border-main-darker, --mar-horz,
+                        --pad-horz, --pad-vert, --radius-comp, --size-4, --text-darker
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -114,9 +116,7 @@ nav: Modal
     <div class="row">
         <div class="column">
 
-            <button id="modal-opener" class="is-primary-outlined has-hover">
-                <a href="#modal-one">Open Modal</a>
-            </button>
+            <a href="#modal-one" id="modal-opener" class="button is-primary-outlined has-hover">Open Modal</a>
 
             <p class="is-size-5 is-text-semibold" style="margin-top: 5rem;">Basic Modal Form</p>
 
@@ -133,10 +133,8 @@ nav: Modal
                         </div>
 
                         <footer>
-                            <button class="is-success has-hover">Save</button>
-                            <button class="is-danger-outlined has-hover">
-                                <a href="#modal-opener">Cancel</a>
-                            </button>
+                            <button type="button" class="is-primary has-hover">Save</button>
+                            <a href="#modal-opener" class="button is-danger-outlined has-hover">Cancel</a>
                         </footer>
                     </article>
                 </div>
@@ -156,10 +154,8 @@ nav: Modal
                     </div>
 
                     <footer>
-                        <button class="is-success has-hover">Save Changes</button>
-                        <button class="is-danger-outlined has-hover">
-                            <a href="#modal-opener">Cancel Action</a>
-                        </button>
+                        <button type="button" class="is-primary has-hover">Save Changes</button>
+                        <a href="#modal-opener" class="button is-danger-outlined has-hover">Cancel Action</a>
                     </footer>
                 </article>
             </div>
@@ -167,7 +163,7 @@ nav: Modal
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;button id="modal-opener" class="is-primary has-hover"&gt;
+                &lt;button type="button" id="modal-opener" class="is-primary has-hover"&gt;
                     &lt;a href="#modal-one"&gt;Open Modal&lt;/a&gt;
                 &lt;/button&gt;
 
@@ -184,10 +180,8 @@ nav: Modal
                             &lt;/div&gt;
 
                             &lt;footer&gt;
-                                &lt;button class="is-success has-hover"&gt;Save Changes&lt;/button&gt;
-                                &lt;button class="is-danger-outlined has-hover"&gt;
-                                    &lt;a href="#modal-opener"&gt;Cancel Action&lt;/a&gt;
-                                &lt;/button&gt;
+                                &lt;button class="is-primary has-hover"&gt;Save Changes&lt;/button&gt;
+                                &lt;a href="#modal-opener" class="button is-danger-outlined has-hover"&gt;Cancel Action&lt;/a&gt;
                             &lt;/footer&gt;
                         &lt;/article&gt;
                     &lt;/div&gt;

@@ -1288,7 +1288,7 @@ button,
     display: inline-flex;
 
     height: 2.5em;
-    padding: .5em 1em;
+    padding: var(--pad-vert) var(--pad-horz);
 
     cursor: pointer;
     text-align: center;
@@ -1447,6 +1447,12 @@ button[class*='outlined'].has-hover:hover,
 {
     padding-right: calc(1em + 1px);
     padding-left: calc(1em + 1px);
+}
+
+.button[class*='outlined'].has-hover:hover
+{
+    padding-top: calc(var(--pad-vert) + 1px );
+    padding-bottom: calc(var(--pad-vert) + 1px );
 }
 
 button .icon:first-child,
