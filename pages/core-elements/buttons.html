@@ -18,6 +18,11 @@ nav: Buttons
                 The button has four sizes that can be changed with a modifier.  Buttons can be grouped into a button bar.
                 Icons can be added to a button to show on the left.</p>
 
+            <p>Note that the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type">default action</a>
+                of a button is "submit".  A general button <b>not</b> associated with a <code>form</code> element should have the 
+                attribute <code>type="button"</code> which changes its default behaviour and can be handled by an event mechanism.
+            </p>
+
             <p>UI / UX designers have many opinions on how to use buttons.
                 One useful article is <a href="https://www.uxpin.com/studio/blog/button-design/" target=_blank>button design</a>.
                 Note also that for accessibility reasons, buttons should also have an
@@ -97,14 +102,14 @@ nav: Buttons
             <h4>Basic Buttons</h4>
 
             <div class="stack">
-                <button class="" aria-label="Default">Default</button>
-                <button class="is-primary" aria-label="Primary">Primary</button>
-                <button class="is-secondary" aria-label="Secondary">Secondary</button>
-                <button class="is-tertiary" aria-label="Tertiary">Tertiary</button>
-                <button class="is-link" aria-label="Link">Link</button>
-                <button class="is-success" aria-label="Success">Success</button>
-                <button class="is-warning" aria-label="Warning">Warning</button>
-                <button class="is-danger" aria-label="Danger">Danger</button>
+                <button type="button" class="" aria-label="Default">Default</button>
+                <button type="button" class="is-primary" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary" aria-label="Secondary">Secondary</button>
+                <button type="button" class="is-tertiary" aria-label="Tertiary">Tertiary</button>
+                <button type="button" class="is-link" aria-label="Link">Link</button>
+                <button type="button" class="is-success" aria-label="Success">Success</button>
+                <button type="button" class="is-warning" aria-label="Warning">Warning</button>
+                <button type="button" class="is-danger" aria-label="Danger">Danger</button>
             </div>
         </section>
 
@@ -112,14 +117,14 @@ nav: Buttons
             <h4>Buttons with Hover</h4>
 
             <div class="stack">
-                <button class="has-hover" aria-label="Default">Default</button>
-                <button class="is-primary has-hover" aria-label="Primary">Primary</button>
-                <button class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-                <button class="is-tertiary has-hover" aria-label="Tertiary">Tertiary</button>
-                <button class="is-link has-hover" aria-label="Link">Link</button>
-                <button class="is-success has-hover" aria-label="Success">Success</button>
-                <button class="is-warning has-hover" aria-label="Warning">Warning</button>
-                <button class="is-danger has-hover" aria-label="Danger">Danger</button>
+                <button type="button" class="has-hover" aria-label="Default">Default</button>
+                <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
+                <button type="button" class="is-tertiary has-hover" aria-label="Tertiary">Tertiary</button>
+                <button type="button" class="is-link has-hover" aria-label="Link">Link</button>
+                <button type="button" class="is-success has-hover" aria-label="Success">Success</button>
+                <button type="button" class="is-warning has-hover" aria-label="Warning">Warning</button>
+                <button type="button" class="is-danger has-hover" aria-label="Danger">Danger</button>
             </div>
         </section>
 
@@ -127,29 +132,29 @@ nav: Buttons
             <h4>Outlined + Hover</h4>
 
             <div class="stack">
-                <button class="has-hover" aria-label="Default">Default</button>
-                <button class="is-primary-outlined has-hover" aria-label="Primary">Primary</button>
-                <button class="is-secondary-outlined has-hover" aria-label="Secondary">Secondary</button>
-                <button class="is-tertiary-outlined has-hover" aria-label="Tertiary">Tertiary</button>
-                <button class="is-link-outlined has-hover" aria-label="Link">Link</button>
-                <button class="is-success-outlined has-hover" aria-label="Success">Success</button>
-                <button class="is-warning-outlined has-hover" aria-label="Warning">Warning</button>
-                <button class="is-danger-outlined has-hover" aria-label="Danger">Danger</button>
+                <button type="button" class="has-hover" aria-label="Default">Default</button>
+                <button type="button" class="is-primary-outlined has-hover" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary-outlined has-hover" aria-label="Secondary">Secondary</button>
+                <button type="button" class="is-tertiary-outlined has-hover" aria-label="Tertiary">Tertiary</button>
+                <button type="button" class="is-link-outlined has-hover" aria-label="Link">Link</button>
+                <button type="button" class="is-success-outlined has-hover" aria-label="Success">Success</button>
+                <button type="button" class="is-warning-outlined has-hover" aria-label="Warning">Warning</button>
+                <button type="button" class="is-danger-outlined has-hover" aria-label="Danger">Danger</button>
             </div>
         </section>
 
         <section class="column is-span-2">
             <h4>Combined HTML Code Example</h4>
             <pre><code class="language-html">
-                &lt;button class="is-primary"  aria-label="Primary"&gt;
+                &lt;button type="button" class="is-primary"  aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
-                &lt;button class="is-primary has-hover" aria-label="Primary"&gt;
+                &lt;button type="button" class="is-primary has-hover" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
-                &lt;button class="is-primary-outlined has-hover" aria-label="Primary"&gt;
+                &lt;button type="button" class="is-primary-outlined has-hover" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
@@ -166,14 +171,14 @@ nav: Buttons
             <h4>Inverted + Hover</h4>
 
             <div class="stack">
-                <button class="is-default-inverted has-hover" aria-label="Default">Default</button>
-                <button class="is-primary-inverted has-hover" aria-label="Primary">Primary</button>
-                <button class="is-secondary-inverted has-hover" aria-label="Secondary">Secondary</button>
-                <button class="is-tertiary-inverted has-hover" aria-label="Tertiary">Tertiary</button>
-                <button class="is-link-inverted has-hover" aria-label="Link">Link</button>
-                <button class="is-success-inverted has-hover" aria-label="Success">Success</button>
-                <button class="is-warning-inverted has-hover" aria-label="Warning">Warning</button>
-                <button class="is-danger-inverted has-hover" aria-label="Danger">Danger</button>
+                <button type="button" class="is-default-inverted has-hover" aria-label="Default">Default</button>
+                <button type="button" class="is-primary-inverted has-hover" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary-inverted has-hover" aria-label="Secondary">Secondary</button>
+                <button type="button" class="is-tertiary-inverted has-hover" aria-label="Tertiary">Tertiary</button>
+                <button type="button" class="is-link-inverted has-hover" aria-label="Link">Link</button>
+                <button type="button" class="is-success-inverted has-hover" aria-label="Success">Success</button>
+                <button type="button" class="is-warning-inverted has-hover" aria-label="Warning">Warning</button>
+                <button type="button" class="is-danger-inverted has-hover" aria-label="Danger">Danger</button>
             </div>
         </section>
 
@@ -181,14 +186,14 @@ nav: Buttons
             <h4>Loading Buttons</h4>
 
             <div class="stack">
-                <button class="btn-default is-loading-dark" aria-label="Default">Default</button>
-                <button class="is-primary is-loading" aria-label="Primary">Primary</button>
-                <button class="is-secondary is-loading" aria-label="Secondary">Secondary</button>
-                <button class="is-tertiary is-loading" aria-label="Tertiary">Tertiary</button>
-                <button class="is-link is-loading" aria-label="Link">Link</button>
-                <button class="is-success is-loading" aria-label="Success">Success</button>
-                <button class="is-warning is-loading" aria-label="Warning">Warning</button>
-                <button class="is-danger is-loading" aria-label="Danger">Danger</button>
+                <button type="button" class="btn-default is-loading-dark" aria-label="Default">Default</button>
+                <button type="button" class="is-primary is-loading" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary is-loading" aria-label="Secondary">Secondary</button>
+                <button type="button" class="is-tertiary is-loading" aria-label="Tertiary">Tertiary</button>
+                <button type="button" class="is-link is-loading" aria-label="Link">Link</button>
+                <button type="button" class="is-success is-loading" aria-label="Success">Success</button>
+                <button type="button" class="is-warning is-loading" aria-label="Warning">Warning</button>
+                <button type="button" class="is-danger is-loading" aria-label="Danger">Danger</button>
             </div>
         </section>
 
@@ -196,29 +201,29 @@ nav: Buttons
             <h4>Disabled + Rounded</h4>
 
             <div class="stack">
-                <button disabled class="is-rounded" aria-label="Default">Default</button>
-                <button disabled class="is-primary is-rounded" aria-label="Primary">Primary</button>
-                <button disabled class="is-secondary is-rounded" aria-label="Secondary">Secondary</button>
-                <button disabled class="is-tertiary is-rounded" aria-label="Tertiary">Tertiary</button>
-                <button disabled class="is-link is-rounded" aria-label="Link">Link</button>
-                <button disabled class="is-success is-rounded" aria-label="Success">Success</button>
-                <button disabled class="is-warning is-rounded" aria-label="Warning">Warning</button>
-                <button disabled class="is-danger is-rounded" aria-label="Danger">Danger</button>
+                <button type="button" disabled class="is-rounded" aria-label="Default">Default</button>
+                <button type="button" disabled class="is-primary is-rounded" aria-label="Primary">Primary</button>
+                <button type="button" disabled class="is-secondary is-rounded" aria-label="Secondary">Secondary</button>
+                <button type="button" disabled class="is-tertiary is-rounded" aria-label="Tertiary">Tertiary</button>
+                <button type="button" disabled class="is-link is-rounded" aria-label="Link">Link</button>
+                <button type="button" disabled class="is-success is-rounded" aria-label="Success">Success</button>
+                <button type="button" disabled class="is-warning is-rounded" aria-label="Warning">Warning</button>
+                <button type="button" disabled class="is-danger is-rounded" aria-label="Danger">Danger</button>
             </div>
         </section>
 
         <section class="column is-span-2">
             <h4>Combined HTML Code Example</h4>
             <pre><code class="language-html">
-                &lt;button class="is-primary-inverted has-hover" aria-label="Primary"&gt;
+                &lt;button type="button" class="is-primary-inverted has-hover" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
-                 &lt;button class="is-primary is-loading" aria-label="Primary"&gt;
+                 &lt;button type="button" class="is-primary is-loading" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
-                &lt;button disabled class="is-primary is-rounded" aria-label="Primary"&gt;
+                &lt;button type="button" disabled class="is-primary is-rounded" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
             </code></pre>
@@ -234,10 +239,10 @@ nav: Buttons
         <section class="column">
             <h4>Basic Button + Size + Icon</h4>
             <div class="stack">
-                <button class="" aria-label="Default + normal">Default + normal</button>
-                <button class="is-primary is-small" aria-label="Primary Small">Primary Small</button>
-                <button class="is-secondary is-medium" aria-label="Secondary Medium">Secondary Medium</button>
-                <button class="is-tertiary is-large" aria-label="Tertiary Large">
+                <button type="button" class="" aria-label="Default + normal">Default + normal</button>
+                <button type="button" class="is-primary is-small" aria-label="Primary Small">Primary Small</button>
+                <button type="button" class="is-secondary is-medium" aria-label="Secondary Medium">Secondary Medium</button>
+                <button type="button" class="is-tertiary is-large" aria-label="Tertiary Large">
                     <span class="icon-bg-bell"></span>
                     <span>Tertiary Large</span>
                 </button>
@@ -248,13 +253,13 @@ nav: Buttons
         <section class="column">
             <h4>Basic Button + Full Width</h4>
             <div class="stack">
-                <button class="width-full has-hover" aria-label="Default + normal">Default + normal</button>
-                <button class="is-primary width-full has-hover" aria-label="Primary">Primary</button>
-                <button class="is-secondary-outlined width-full has-hover" aria-label="Secondary">
+                <button type="button" class="width-full has-hover" aria-label="Default + normal">Default + normal</button>
+                <button type="button" class="is-primary width-full has-hover" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary-outlined width-full has-hover" aria-label="Secondary">
                     <span class="icon-bg-clock"></span>
                     <span>Secondary</span>
                 </button>
-                <button class="is-tertiary-inverted width-full has-hover" aria-label="Tertiary">
+                <button type="button" class="is-tertiary-inverted width-full has-hover" aria-label="Tertiary">
                     <span>Tertiary</span>
                     <span class="icon-bg-link"></span>
                 </button>
@@ -264,31 +269,31 @@ nav: Buttons
         <section class="column is-span-2">
             <h4>Combined Code Example</h4>
             <pre><code class="language-html">
-                &lt;button class="is-primary is-small" aria-label="Tertiary"&gt;
+                &lt;button type="button" class="is-primary is-small" aria-label="Tertiary"&gt;
                     Primary Small
                 &lt;/button&gt;
 
-                &lt;button class="is-secondary is-medium" aria-label="Tertiary"&gt;
+                &lt;button type="button" class="is-secondary is-medium" aria-label="Tertiary"&gt;
                     Secondary Medium
                 &lt;/button&gt;
 
-                &lt;button class="is-tertiary is-large" aria-label="Tertiary"&gt;
+                &lt;button type="button" class="is-tertiary is-large" aria-label="Tertiary"&gt;
                     &lt;span class="icon-bg-bell"&gt;&lt;/span&gt;
                     &lt;span&gt;Tertiary Large&lt;/span&gt;
                 &lt;/button&gt;
 
                 &lt;a class="button is-danger has-hover" href="#core-element_buttons"&gt;Link as Button&lt;/a&gt;
 
-                &lt;button class="is-primary width-full has-hover" aria-label="Primary"&gt;
+                &lt;button type="button" class="is-primary width-full has-hover" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
-                &lt;button class="is-secondary-outlined width-full has-hover" aria-label="Secondary"&gt;
+                &lt;button type="button" class="is-secondary-outlined width-full has-hover" aria-label="Secondary"&gt;
                     &lt;span class="icon-bg-clock"&gt;&lt;/span&gt;
                     &lt;span&gt;Secondary&lt;/span&gt;
                 &lt;/button&gt;
 
-                &lt;button class="is-tertiary-inverted width-full has-hover" aria-label="Tertiary"&gt;
+                &lt;button type="button" class="is-tertiary-inverted width-full has-hover" aria-label="Tertiary"&gt;
                     &lt;span&gt;Tertiary&lt;/span&gt;
                     &lt;span class="icon-bg-link"&gt;&lt;/span&gt;
                 &lt;/button&gt;
@@ -304,38 +309,38 @@ nav: Buttons
 
     <div class="stack">
         <div class="buttons are-small space-vert">
-            <button class="btn-default has-hover" aria-label="Default">Default</button>
-            <button class="is-primary has-hover" aria-label="Primary">Primary</button>
-            <button class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-            <button class="is-warning has-hover" aria-label="Warning">Warning</button>
+            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
+            <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
+            <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
+            <button type="button" class="is-warning has-hover" aria-label="Warning">Warning</button>
         </div>
 
         <div class="buttons space-vert">
-            <button class="btn-default has-hover" aria-label="Default">Default</button>
-            <button class="is-primary has-hover" aria-label="Primary">Primary</button>
-            <button class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-            <button class="is-warning has-hover" aria-label="Warning">Warning</button>
+            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
+            <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
+            <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
+            <button type="button" class="is-warning has-hover" aria-label="Warning">Warning</button>
         </div>
 
         <div class="buttons are-medium space-vert">
-            <button class="btn-default has-hover" aria-label="Default">Default</button>
-            <button class="is-primary has-hover" aria-label="Primary">Primary</button>
-            <button class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-            <button class="is-warning has-hover" aria-label="Warning">Warning</button>
+            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
+            <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
+            <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
+            <button type="button" class="is-warning has-hover" aria-label="Warning">Warning</button>
         </div>
 
         <div class="buttons are-large space-vert">
-            <button class="btn-default has-hover" aria-label="Default">Default</button>
-            <button class="is-primary has-hover" aria-label="Primary">Primary</button>
-            <button class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-            <button class="is-warning has-hover" aria-label="Warning">Warning</button>
+            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
+            <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
+            <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
+            <button type="button" class="is-warning has-hover" aria-label="Warning">Warning</button>
         </div>
 
         <div class="buttons are-small space-vert">
-            <button class="btn-default has-hover" aria-label="Default">Default</button>
-            <button class="is-primary-outlined has-hover" aria-label="Primary Outlined">Primary Outlined</button>
-            <button class="is-secondary-outlined has-hover" aria-label="Secondary Outlined">Secondary Outlined</button>
-            <button class="is-tertiary-outlined has-hover" aria-label="Tertiary Outlined">Tertiary Outlined</button>
+            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
+            <button type="button" class="is-primary-outlined has-hover" aria-label="Primary Outlined">Primary Outlined</button>
+            <button type="button" class="is-secondary-outlined has-hover" aria-label="Secondary Outlined">Secondary Outlined</button>
+            <button type="button" class="is-tertiary-outlined has-hover" aria-label="Tertiary Outlined">Tertiary Outlined</button>
         </div>
     </div>
 
@@ -343,24 +348,24 @@ nav: Buttons
     <h4>Button Group Code Example</h4>
     <pre><code class="language-html">
         &lt;div class="buttons"&gt;
-            &lt;button class="btn-default has-hover" aria-label="Default"&gt;Default&lt;/button&gt;
-            &lt;button class="is-primary has-hover" aria-label="Primary"&gt;Primary&lt;/button&gt;
-            &lt;button class="is-secondary has-hover" aria-label="Secondary"&gt;Secondary&lt;/button&gt;
-            &lt;button class="is-warning has-hover" aria-label="Warning"&gt;Warning&lt;/button&gt;
+            &lt;button type="button" class="btn-default has-hover" aria-label="Default"&gt;Default&lt;/button&gt;
+            &lt;button type="button" class="is-primary has-hover" aria-label="Primary"&gt;Primary&lt;/button&gt;
+            &lt;button type="button" class="is-secondary has-hover" aria-label="Secondary"&gt;Secondary&lt;/button&gt;
+            &lt;button type="button" class="is-warning has-hover" aria-label="Warning"&gt;Warning&lt;/button&gt;
         &lt;/div&gt;
 
         &lt;div class="buttons [options: are-small are-medium are-large]"&gt;
-            &lt;button class="btn-default has-hover" aria-label="Default"&gt;Default&lt;/button&gt;
-            &lt;button class="is-primary has-hover" aria-label="Primary"&gt;Primary&lt;/button&gt;
-            &lt;button class="is-secondary has-hover" aria-label="Secondary"&gt;Secondary&lt;/button&gt;
-            &lt;button class="is-warning has-hover" aria-label="Warning"&gt;Warning&lt;/button&gt;
+            &lt;button type="button" class="btn-default has-hover" aria-label="Default"&gt;Default&lt;/button&gt;
+            &lt;button type="button" class="is-primary has-hover" aria-label="Primary"&gt;Primary&lt;/button&gt;
+            &lt;button type="button" class="is-secondary has-hover" aria-label="Secondary"&gt;Secondary&lt;/button&gt;
+            &lt;button type="button" class="is-warning has-hover" aria-label="Warning"&gt;Warning&lt;/button&gt;
         &lt;/div&gt;
 
         &lt;div class="buttons"&gt;
-            &lt;button class="btn-default has-hover" aria-label="Default"&gt;Default&lt;/button&gt;
-            &lt;button class="is-primary-outlined has-hover" aria-label="Primary Outlined"&gt;Primary Outlined&lt;/button&gt;
-            &lt;button class="is-secondary-outlined has-hover" aria-label="Secondary Outlined"&gt;Secondary Outlined&lt;/button&gt;
-            &lt;button class="is-tertiary-outlined has-hover" aria-label="Tertiary Outlined"&gt;Tertiary Outlined&lt;/button&gt;
+            &lt;button type="button" class="btn-default has-hover" aria-label="Default"&gt;Default&lt;/button&gt;
+            &lt;button type="button" class="is-primary-outlined has-hover" aria-label="Primary Outlined"&gt;Primary Outlined&lt;/button&gt;
+            &lt;button type="button" class="is-secondary-outlined has-hover" aria-label="Secondary Outlined"&gt;Secondary Outlined&lt;/button&gt;
+            &lt;button type="button" class="is-tertiary-outlined has-hover" aria-label="Tertiary Outlined"&gt;Tertiary Outlined&lt;/button&gt;
         &lt;/div&gt;
     </code></pre>
 </main>
