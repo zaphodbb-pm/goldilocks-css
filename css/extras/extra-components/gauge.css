@@ -140,6 +140,7 @@
 
 .gauge-ring data span {
     color: var(--text-invert);
+    background-color: var(--bg-main-invert);
 }
 
 .gauge-meter data span {
