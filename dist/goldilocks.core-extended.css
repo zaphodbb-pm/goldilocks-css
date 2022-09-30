@@ -6672,6 +6672,11 @@ a.tag:hover
     height: 10rem;
 }
 
+.has-height-12rem
+{
+    height: 12rem;
+}
+
 .has-height-15rem
 {
     height: 15rem;
@@ -6712,6 +6717,11 @@ a.tag:hover
 .is-container-10rem
 {
     height: 10rem;
+}
+
+.is-container-12rem
+{
+    height: 12rem;
 }
 
 .is-container-15rem

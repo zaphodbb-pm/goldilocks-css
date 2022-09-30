@@ -3289,6 +3289,11 @@ h4 + .sub-title,
     height: 10rem;
 }
 
+.has-height-12rem
+{
+    height: 12rem;
+}
+
 .has-height-15rem
 {
     height: 15rem;
@@ -3329,6 +3334,11 @@ h4 + .sub-title,
 .is-container-10rem
 {
     height: 10rem;
+}
+
+.is-container-12rem
+{
+    height: 12rem;
 }
 
 .is-container-15rem
