@@ -178,18 +178,15 @@
 
 
 /** donut specific layout **/
-.charts-donut,
-.charts-pie {
-    width: auto;
-    aspect-ratio: 1 / 1;
-}
-
-
 .charts-donut tbody tr,
 .charts-pie tbody tr {
     height: 100%;
-    width: auto;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
 }
+
 
 
 .charts-pie tbody tr td {
@@ -198,7 +195,6 @@
 
     margin: 0 0;
     position: absolute;
-    left: 0;
     height: calc(100% - var(--padding-normal) );
     aspect-ratio: 1 / 1;
     border-radius: var(--radius-rounded);
