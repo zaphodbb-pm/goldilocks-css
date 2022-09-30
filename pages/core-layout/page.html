@@ -150,7 +150,7 @@ nav: Page
     </div>
 
     <div class="page-wrapper">
-        <div class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar">
+        <div class="page-main-nav navbar is-warning" role="region" aria-label="Main Navbar">
             <div class="navbar-left">
                 <a href="#page-layout-top">
                     <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo to Home">
@@ -288,7 +288,7 @@ nav: Page
     <div class="space-vert-large">
         <pre><code class="language-html">
             &lt;div class="page-wrapper"&gt;
-                &lt;div class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar"&gt;
+                &lt;div class="page-main-nav navbar is-warning" role="region" aria-label="Main Navbar""&gt;
                     &lt;div class="navbar-left"&gt;
                         &lt;a href="#page-layout-top"&gt;
                             &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Logo to Home"&gt;
@@ -437,7 +437,7 @@ nav: Page
     </div>
 
     <div class="page-wrapper has-slidebar" id="page-layout-top-2">
-        <nav class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar">
+        <div class="page-main-nav navbar is-warning" role="region" aria-label="Main Navbar">
             <div class="navbar-left">
                 <div class="main-slide-bar">
                     <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
@@ -543,9 +543,9 @@ nav: Page
                     </ul>
                 </nav>
             </div>
-        </nav>
+        </div>
 
-        <div class="page-sidenav" aria-label="Extended Side Bar Navigation">
+        <div class="page-sidenav" role="region"  aria-label="Extended Side Bar Navigation">
             <div class="sidenavs">
                 <nav>
                     <ul>
@@ -637,7 +637,7 @@ nav: Page
     <div class="space-vert-large">
         <pre><code class="language-html">
             &lt;div class="page-wrapper has-slidebar" id="page-layout-top-2"&gt;
-                &lt;nav class="page-main-nav navbar is-warning" aria-label="Main Navigation Bar"&gt;
+                &lt;div class="page-main-nav navbar is-warning" role="region" aria-label="Main Navbar"&gt;
                     &lt;div class="navbar-left"&gt;
                         &lt;div class="main-slide-bar"&gt;
                             &lt;input type="checkbox" class="openSidebarMenu" id="openSidebarMenu"&gt;
@@ -743,9 +743,9 @@ nav: Page
                             &lt;/ul&gt;
                         &lt;/nav&gt;
                     &lt;/div&gt;
-                &lt;/nav&gt;
+                &lt;/div&gt;
         
-                &lt;div class="page-sidenav" aria-label="Extended Side Bar Navigation"&gt;
+                &lt;div class="page-sidenav" role="region" aria-label="Extended Side Bar Navigation"&gt;
                     &lt;div class="sidenavs"&gt;
                         &lt;nav&gt;
                             &lt;ul&gt;
@@ -858,9 +858,9 @@ nav: Page
             <p>Designed and built for the overworked Product Manager who needs to get a product into the customers hands on time.</p>
 
             <p>Code licensed <a href="https://github.com/zaphodbb-pm/goldilocks-css/blob/master/LICENSE.txt" title="MIT License">MIT</a>
-                <br/>
+                <br>
                 Website content <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC">CC BY 4.0.</a>
-                <br/>
+                <br>
                 Currently V0.1.0
             </p>
         </div>
