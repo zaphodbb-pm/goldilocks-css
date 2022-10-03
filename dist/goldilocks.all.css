@@ -3573,7 +3573,7 @@ details.accordion.is-expander-danger summary
     display: flex;
 
     height: var(--navbar-height);
-    padding: 0;
+    padding: 0 var(--pad-vert);
 
     text-decoration: none;
 

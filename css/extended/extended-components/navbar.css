@@ -82,7 +82,7 @@
 .navbar-right > nav > ul > li > a:not(.button) {
     color: inherit;
     text-decoration: none;
-    padding: 0;
+    padding: 0 var(--pad-vert);
     display: flex;
     align-items: center;
     justify-content: center;
