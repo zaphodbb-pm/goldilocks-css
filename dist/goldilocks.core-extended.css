@@ -3660,16 +3660,15 @@ details.accordion.is-expander-danger summary
     -webkit-mask-position: center center;
 }
 
-.navbar .goto-top
+.navbar .goto-top:before
 {
     /* adds up chevron */
     background-color: currentColor;
 
-    -webkit-mask-image: var(--indicator-up);
             mask-image: var(--indicator-up);
             mask-repeat: no-repeat;
             mask-position: top center;
-    -webkit-mask-image: var(--indicator-down);
+    -webkit-mask-image: var(--indicator-up);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: top center;
 }
