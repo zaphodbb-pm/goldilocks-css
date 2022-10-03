@@ -166,9 +166,17 @@
     -webkit-mask-position: center center;
 }
 
+.navbar .goto-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .navbar .goto-top:before {
     /* adds up chevron */
     content: "";
+    height: 1em;
+    width: 1em;
     background-color: currentColor;
     mask-image: var(--indicator-up);
     mask-repeat: no-repeat;

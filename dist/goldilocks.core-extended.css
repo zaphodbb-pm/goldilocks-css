@@ -3660,9 +3660,20 @@ details.accordion.is-expander-danger summary
     -webkit-mask-position: center center;
 }
 
+.navbar .goto-top
+{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
 .navbar .goto-top:before
 {
+    width: 1em;
+    height: 1em;
     /* adds up chevron */
+
     content: '';
 
     background-color: currentColor;
