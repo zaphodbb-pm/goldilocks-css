@@ -3660,14 +3660,6 @@ details.accordion.is-expander-danger summary
     -webkit-mask-position: center center;
 }
 
-.navbar .goto-top
-{
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
 .navbar .goto-top:before
 {
     width: 1em;
@@ -3680,10 +3672,10 @@ details.accordion.is-expander-danger summary
 
             mask-image: var(--indicator-up);
             mask-repeat: no-repeat;
-            mask-position: top center;
+            mask-position: center center;
     -webkit-mask-image: var(--indicator-up);
     -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: top center;
+    -webkit-mask-position: center center;
 }
 
 
