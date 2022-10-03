@@ -40,24 +40,6 @@
     z-index: var(--navbar-z);
 }
 
-/* add sticky nav and / or widget bar */
-.page-wrapper > .page-main-nav.is-sticky {
-    position: sticky;
-    top: 0;
-    height: auto;
-}
-
-.page-wrapper-widgets > .page-widgets.is-sticky {
-    position: sticky;
-    top: 0;
-    height: auto;
-}
-
-.page-wrapper-widgets  > .page-main-nav.is-sticky {
-    position: sticky;
-    top: var(--widgetbar-height);
-    height: auto;
-}
 
 /* add fixed nav and / or widget bar */
 .page-wrapper > .page-main-nav.is-fixed {
@@ -90,6 +72,7 @@
 .page-wrapper-widgets  > .page-main-nav.is-fixed ~ .page-header {
     margin-top: calc( var(--widgetbar-height) + var(--navbar-height) );
 }
+
 
 /* place other items */
 .page-wrapper > .page-header,
