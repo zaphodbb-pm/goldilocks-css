@@ -83,6 +83,14 @@
     margin-top: calc( var(--widgetbar-height) + var(--navbar-height) );
 }
 
+.page-wrapper > .page-main-nav.is-fixed ~ .page-header {
+    margin-top: var(--navbar-height);
+}
+
+.page-wrapper-widgets  > .page-main-nav.is-fixed ~ .page-header {
+    margin-top: calc( var(--widgetbar-height) + var(--navbar-height) );
+}
+
 /* place other items */
 .page-wrapper > .page-header,
 .page-wrapper-widgets > .page-header {
