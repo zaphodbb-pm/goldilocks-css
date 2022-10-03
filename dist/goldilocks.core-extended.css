@@ -1011,8 +1011,13 @@ pre
     position: fixed;
     top: var(--widgetbar-height);
 
-    width: calc( 100% - 2 * var(--pad-horz));
+    width: 100vw;
     height: auto;
+}
+
+.page-wrapper-widgets > .page-main-nav.is-fixed + .page-sidenav
+{
+    margin-top: calc( var(--widgetbar-height) + var(--navbar-height) );
 }
 
 /* place other items */
