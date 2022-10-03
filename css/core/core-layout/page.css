@@ -37,6 +37,7 @@
 .page-wrapper > .page-main-nav,
 .page-wrapper-widgets > .page-main-nav {
     grid-area: main-nav;
+    z-index: var(--navbar-z);
 }
 
 /* add sticky nav and / or widget bar */

@@ -958,6 +958,8 @@ pre
 .page-wrapper > .page-main-nav,
 .page-wrapper-widgets > .page-main-nav
 {
+    z-index: var(--navbar-z);
+
     grid-area: main-nav;
 }
 
