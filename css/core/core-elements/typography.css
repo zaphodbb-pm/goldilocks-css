@@ -173,31 +173,31 @@ h4 + .sub-title,
 
 /* define text colours */
 .has-text-primary {
-    color: var(--primary);
+    color: var(--primary-text);
 }
 
 .has-text-secondary {
-    color: var(--secondary);
+    color: var(--secondary-text);
 }
 
 .has-text-tertiary {
-    color: var(--tertiary);
+    color: var(--tertiary-text);
 }
 
 .has-text-link {
-    color: var(--link);
+    color: var(--link-text);
 }
 
 .has-text-success {
-    color: var(--success-dark);
+    color: var(--success-text);
 }
 
 .has-text-warning {
-    color: var(--warning-dark);
+    color: var(--warning-text);
 }
 
 .has-text-danger {
-    color: var(--danger);
+    color: var(--danger-text);
 }
 
 .has-text-white {

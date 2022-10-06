@@ -14,9 +14,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     */
     --main-color: 140;                  /** primary hue value **/
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
-    --main-color-sl: 53%, 35%;          /** saturation and lightness **/
-    --main-color-sl-light: 100%, 90%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 100%, 48%;    /** color lightening saturation and lightness **/
+
+    --main-color-sl-light: 100%, 96%;   /** color lightening saturation and lightness **/
+    --main-color-sl-dark: 90%, 27%;     /** color lightening saturation and lightness **/
 
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
@@ -24,16 +24,17 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 
     /* build main theme colours */
-    --primary: hsl( var(--main-color), 80%, 65% );
-    --secondary: hsl( var(--main-color-complement-low), 75%, 75% );
-    --tertiary: hsl( var(--main-color-complement-high), 85%, 65% );
+    --primary: hsl( var(--main-color), 75%, 31% );
+    --secondary: hsl( var(--main-color-complement-low), 70%, 50% );
+    --tertiary: hsl( var(--main-color-complement-high), 70%, 45% );
 
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl( var(--main-color), 100%, 15%);
-    --secondary-text: hsl( var(--main-color-complement-low), 100%, 15%);
-    --tertiary-text: hsl( var(--main-color-complement-high), 100%, 15%);
-    --primary-text-invert: hsl( var(--main-color), 100%, 10%);
+    --primary-text: hsl( var(--main-color), 100%, 28%);
+    --secondary-text: hsl( var(--main-color-complement-low), 100%, 47%);
+    --tertiary-text: hsl( var(--main-color-complement-high), 100%, 47%);
+
+    --primary-text-invert: hsl( var(--main-color), 100%, 98%);
     --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
     --tertiary-text-invert: hsl( var(--main-color-complement-high), 100%, 100%);
 
@@ -47,28 +48,28 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --secondary-dark:  hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
     --tertiary-dark:  hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
 
-    --link: hsl(217, 80%, 68%);
+    --link: hsl(217, 75%, 50%);
     --link-light:  hsl(217, 70%, 90%);
     --link-dark: hsl(217, 75%, 40%);
-    --link-text: hsl( 217, 100%, 15%);
+    --link-text: hsl( 217, 100%, 55%);
     --link-text-invert: hsl( 217, 100%, 98%);
 
-    --success: hsl(150, 85%, 75%);
+    --success: hsl(150, 80%, 60%);
     --success-light:  hsl(141, 80%, 96%);
-    --success-dark: hsl(141, 70%, 31%);
-    --success-text: hsl( 141, 100%, 15%);
+    --success-dark: hsl(141, 70%, 33%);
+    --success-text: hsl( 141, 100%, 28%);
     --success-text-invert: hsl( 141, 100%, 95%);
 
-    --warning: hsl(48, 900%, 55%);
+    --warning: hsl(48, 90%, 55%);
     --warning-light:  hsl(48, 100%, 95%);
-    --warning-dark: hsl(48, 100%, 40%);
-    --warning-text: hsl( 48, 100%, 20%);
+    --warning-dark: hsl(48, 100%, 45%);
+    --warning-text: hsl( 48, 100%, 30%);
     --warning-text-invert: hsl( 48, 100%, 95%);
 
-    --danger: hsl(348, 80%, 70%);
+    --danger: hsl(348, 80%, 51%);
     --danger-light:  hsl(348, 90%, 97%);
-    --danger-dark: hsl(348, 86%, 33%);
-    --danger-text: hsl( 348, 100%, 20%);
+    --danger-dark: hsl(348, 86%, 36%);
+    --danger-text: hsl( 348, 100%, 50%);
     --danger-text-invert: hsl( 348, 100%, 100%);
 
     --grey-light: hsl(0, 0%, 75%);

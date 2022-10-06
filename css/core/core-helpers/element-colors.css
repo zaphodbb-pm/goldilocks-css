@@ -3,7 +3,7 @@
 .is-primary-light.has-hover:hover,
 .is-primary-outlined.has-hover:hover,
 .is-primary-dark.has-hover:hover {
-    color:  var(--primary-text);
+    color:  var(--primary-text-invert);
     background-color: var(--primary);
     border: 0 solid var(--primary-dark);
     opacity: 1;
@@ -52,7 +52,7 @@
 .is-secondary-light.has-hover:hover,
 .is-secondary-outlined.has-hover:hover,
 .is-secondary-dark.has-hover:hover {
-    color:  var(--secondary-text);
+    color:  var(--secondary-text-invert);
     background-color: var(--secondary);
     border: 0 solid var(--secondary-dark);
     opacity: 1;
@@ -99,7 +99,7 @@
 .is-tertiary-light.has-hover:hover,
 .is-tertiary-outlined.has-hover:hover,
 .is-tertiary-dark.has-hover:hover {
-    color:  var(--tertiary-text);
+    color:  var(--tertiary-text-invert);
     background-color: var(--tertiary);
     border: 0 solid var(--tertiary-dark);
     opacity: 1;
@@ -146,7 +146,7 @@
 .is-link-light.has-hover:hover,
 .is-link-outlined.has-hover:hover,
 .is-link-dark.has-hover:hover {
-    color:  var(--link-text);
+    color:  var(--link-text-invert);
     background-color: var(--link);
     border: 0 solid var(--link-dark);
     opacity: 1;
@@ -291,7 +291,7 @@
 .is-danger-light.has-hover:hover,
 .is-danger-outlined.has-hover:hover,
 .is-danger-dark.has-hover:hover {
-    color:  var(--danger-text);
+    color:  var(--danger-text-invert);
     background-color: var(--danger);
     border: 0 solid var(--danger-dark);
     opacity: 1;
