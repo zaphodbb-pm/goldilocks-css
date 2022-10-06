@@ -10,7 +10,7 @@
 }
 
 .is-primary-light {
-    color: var(--primary-dark);
+    color: var(--primary-text);
     background-color: var(--primary-light);
     border: 0 solid var(--primary);
     opacity: 1;
@@ -59,7 +59,7 @@
 }
 
 .is-secondary-light {
-    color: var(--secondary-dark);
+    color: var(--secondary-text);
     background-color: var(--secondary-light);
     border: 0 solid var(--secondary);
     opacity: 1;
@@ -106,7 +106,7 @@
 }
 
 .is-tertiary-light {
-    color: var(--tertiary-dark);
+    color: var(--tertiary-text);
     background-color: var(--tertiary-light);
     border: 0 solid var(--tertiary);
     opacity: 1;
@@ -153,7 +153,7 @@
 }
 
 .is-link-light {
-    color: var(--link-dark);
+    color: var(--link-text);
     background-color: var(--link-light);
     border: 0 solid var(--link);
     opacity: 1;
@@ -200,7 +200,7 @@
 }
 
 .is-success-light {
-    color: var(--success-dark);
+    color: var(--success-text);
     background-color: var(--success-light);
     border: 0 solid var(--success);
     opacity: 1;
@@ -248,7 +248,7 @@
 }
 
 .is-warning-light {
-    color: var(--warning-dark);
+    color: var(--warning-text);
     background-color: var(--warning-light);
     border: 0 solid var(--warning);
     opacity: 1;
@@ -298,7 +298,7 @@
 }
 
 .is-danger-light {
-    color: var(--danger-dark);
+    color: var(--danger-text);
     background-color: var(--danger-light);
     border: 0 solid var(--danger);
     opacity: 1;
