@@ -5057,7 +5057,7 @@ button.badge::after
 
 .badge.is-badge-danger::after
 {
-    color: var(--danger-text);
+    color: var(--danger-text-invert);
     background-color: var(--danger);
 }
 
