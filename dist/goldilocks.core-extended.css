@@ -165,12 +165,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --success: hsl(150, 65%, 53%);
     --success-light: hsl(141, 70%, 96%);
     --success-dark: hsl(141, 70%, 31%);
-    --success-text: hsl( 141, 100%, 26%);
+    --success-text: hsl( 141, 75%, 20%);
     --success-text-invert: hsl( 141, 100%, 95%);
     --warning: hsl(48, 100%, 48%);
     --warning-light: hsl(48, 100%, 95%);
     --warning-dark: hsl(48, 100%, 40%);
-    --warning-text: hsl( 48, 100%, 28%);
+    --warning-text: hsl( 48, 80%, 22%);
     --warning-text-invert: hsl( 48, 100%, 95%);
     --danger: hsl(348, 86%, 48%);
     --danger-light: hsl(348, 90%, 97%);
@@ -255,7 +255,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --primary-dark: hsl( var(--main-color), var(--main-color-sl-dark) );
     --secondary-dark: hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
     --tertiary-dark: hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
-    --link: hsl(217, 75%, 55%);
+    --link: hsl(217, 75%, 65%);
     --link-light: hsl(217, 70%, 90%);
     --link-dark: hsl(217, 75%, 40%);
     --link-text: hsl( 217, 100%, 55%);
@@ -314,7 +314,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 /** set global environment **/
 html
 {
-    font-size: var(--base-font-size);
+    font-size: 100%;
 
     overflow-x: hidden;
     overflow-y: scroll;
@@ -334,6 +334,7 @@ html
 body
 {
     font-family: var(--family-sans-serif);
+    font-size: var(--base-font-size);
     font-weight: var(--weight-normal);
     line-height: var(--line-height-150);
 
