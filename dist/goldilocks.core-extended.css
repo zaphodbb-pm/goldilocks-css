@@ -1491,20 +1491,6 @@ button.is-loading-dark,
 }
 
 
-@-webkit-keyframes spinAround
-{
-    from
-    {
-        transform: rotate(0deg);
-    }
-
-    to
-    {
-        transform: rotate(359deg);
-    }
-}
-
-
 @keyframes spinAround
 {
     from
@@ -1531,8 +1517,7 @@ button.is-loading::after,
     height: 1em;
 
     content: '';
-    -webkit-animation: spinAround .5s infinite linear;
-            animation: spinAround .5s infinite linear;
+    animation: spinAround .5s infinite linear;
 
     border: 2px solid var(--bg-main);
     border-top-color: transparent;
@@ -1553,8 +1538,7 @@ button.is-loading-dark::after,
     height: 1em;
 
     content: '';
-    -webkit-animation: spinAround .5s infinite linear;
-            animation: spinAround .5s infinite linear;
+    animation: spinAround .5s infinite linear;
 
     border: 2px solid var(--bg-main-invert);
     border-top-color: transparent;
@@ -3207,9 +3191,8 @@ details.accordion.is-expander-danger summary
 
     display: none;
 
-    width: -webkit-max-content;
-    width:    -moz-max-content;
-    width:         max-content;
+    width: -moz-max-content;
+    width:      max-content;
     min-width: 12rem;
     max-width: 18rem;
     padding-top: 4px;
@@ -5042,32 +5025,21 @@ button.badge::after
     transform: translate(50%,-50%);
 }
 
-/*
-.badge.has-icon::after {
-    position: absolute;
-    left: 60%;
-    top: 15%;
-    transform: translate(50%,-50%);
-    z-index: 5;
-}
-
- */
-
 .badge.is-badge-primary::after
 {
-    color: var(--primary-text);
+    color: var(--primary-text-invert);
     background-color: var(--primary);
 }
 
 .badge.is-badge-secondary::after
 {
-    color: var(--secondary-text);
+    color: var(--secondary-text-invert);
     background-color: var(--secondary);
 }
 
 .badge.is-badge-tertiary::after
 {
-    color: var(--tertiary-text);
+    color: var(--tertiary-text-invert);
     background-color: var(--tertiary);
 }
 
@@ -5091,7 +5063,7 @@ button.badge::after
 
 .badge.is-badge-link::after
 {
-    color: var(--link-text);
+    color: var(--link-text-invert);
     background-color: var(--link);
 }
 

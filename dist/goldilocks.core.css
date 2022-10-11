@@ -1491,20 +1491,6 @@ button.is-loading-dark,
 }
 
 
-@-webkit-keyframes spinAround
-{
-    from
-    {
-        transform: rotate(0deg);
-    }
-
-    to
-    {
-        transform: rotate(359deg);
-    }
-}
-
-
 @keyframes spinAround
 {
     from
@@ -1531,8 +1517,7 @@ button.is-loading::after,
     height: 1em;
 
     content: '';
-    -webkit-animation: spinAround .5s infinite linear;
-            animation: spinAround .5s infinite linear;
+    animation: spinAround .5s infinite linear;
 
     border: 2px solid var(--bg-main);
     border-top-color: transparent;
@@ -1553,8 +1538,7 @@ button.is-loading-dark::after,
     height: 1em;
 
     content: '';
-    -webkit-animation: spinAround .5s infinite linear;
-            animation: spinAround .5s infinite linear;
+    animation: spinAround .5s infinite linear;
 
     border: 2px solid var(--bg-main-invert);
     border-top-color: transparent;

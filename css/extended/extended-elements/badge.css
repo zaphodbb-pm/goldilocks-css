@@ -48,29 +48,18 @@ button.badge::after {
     z-index: 5;
 }
 
-/*
-.badge.has-icon::after {
-    position: absolute;
-    left: 60%;
-    top: 15%;
-    transform: translate(50%,-50%);
-    z-index: 5;
-}
-
- */
-
 .badge.is-badge-primary::after {
-    color: var(--primary-text);
+    color: var(--primary-text-invert);
     background-color: var(--primary);
 }
 
 .badge.is-badge-secondary::after {
-    color: var(--secondary-text);
+    color: var(--secondary-text-invert);
     background-color: var(--secondary);
 }
 
 .badge.is-badge-tertiary::after {
-    color: var(--tertiary-text);
+    color: var(--tertiary-text-invert);
     background-color: var(--tertiary);
 }
 
@@ -90,6 +79,6 @@ button.badge::after {
 }
 
 .badge.is-badge-link::after {
-    color: var(--link-text);
+    color: var(--link-text-invert);
     background-color: var(--link);
 }
