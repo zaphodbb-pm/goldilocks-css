@@ -80,7 +80,7 @@
 
 .widgetbar-radios input:checked + span {
     background-color: var(--secondary);
-    color: var(--secondary-text);
+    color: var(--secondary-text-invert);
     border-radius: var(--radius-comp);
 }
 

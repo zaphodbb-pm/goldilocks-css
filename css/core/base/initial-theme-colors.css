@@ -52,13 +52,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --success: hsl(150, 65%, 53%);
     --success-light:  hsl(141, 70%, 96%);
     --success-dark: hsl(141, 70%, 31%);
-    --success-text: hsl( 141, 100%, 26%);
+    --success-text: hsl( 141, 75%, 20%);
     --success-text-invert: hsl( 141, 100%, 95%);
 
     --warning: hsl(48, 100%, 48%);
     --warning-light:  hsl(48, 100%, 95%);
     --warning-dark: hsl(48, 100%, 40%);
-    --warning-text: hsl( 48, 100%, 28%);
+    --warning-text: hsl( 48, 80%, 22%);
     --warning-text-invert: hsl( 48, 100%, 95%);
 
     --danger: hsl(348, 86%, 48%);
