@@ -2481,7 +2481,7 @@ h6
 h1 + .sub-title,
 .is-title-1 + .sub-title
 {
-    font-size: var(--size-4);
+    font-size: var(--size-3);
 
     margin-top: -1em;
     margin-bottom: var(--size-1);
@@ -2490,7 +2490,7 @@ h1 + .sub-title,
 h2 + .sub-title,
 .is-title-2 + .sub-title
 {
-    font-size: var(--size-5);
+    font-size: var(--size-4);
 
     margin-top: -1.2em;
     margin-bottom: var(--size-2);
