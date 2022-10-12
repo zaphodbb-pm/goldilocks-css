@@ -18,7 +18,8 @@ nav: Carousel
                 no javascript required. Nothing fancy, but can also be used for mobile devices.
             </p>
 
-            <p>The <code>.carousel-wrapper</code> class defines the parent container and sets up the grid.  <code>.carousel</code> class
+            <p>The <code>.carousel-wrapper</code> class defines the parent container <code>section</code> element and sets up the grid.
+                A heading tag, visible only to screen readers, is required for a <code>section</code>.  The <code>.carousel</code> class
                 controls the horizontal display of images. The <code>.no-scrollbar</code> class is an optional modifier that hides
                 the bottom scrollbar.
             </p>
@@ -81,7 +82,8 @@ nav: Carousel
 
     <h3>Carousel with Scroll Bar</h3>
 
-    <div class="carousel-wrapper">
+    <section class="carousel-wrapper">
+        <h4 class="sr-only">Carousel Example</h4>
         <div class="carousel">
             <ul>
                 <li><img src="{{site.url}}/img/demo/main7.jpg" alt="Northern lights over forest"></li>
@@ -94,13 +96,14 @@ nav: Carousel
                 <li><img src="{{site.url}}/img/demo/main6.jpg" alt="Courtyard bordered by trees"></li>
             </ul>
         </div>
-    </div>
+    </section>
 
     <div class="space-component-medium "></div>
 
     <h3>Carousel no Scroll Bar</h3>
 
-    <div class="carousel-wrapper">
+    <section class="carousel-wrapper">
+        <h4 class="sr-only">Carousel Example</h4>
         <div class="carousel">
             <ul class="no-scrollbar">
                 <li><img src="{{site.url}}/img/demo/main7.jpg" alt="Northern lights over forest"></li>
@@ -113,12 +116,13 @@ nav: Carousel
                 <li><img src="{{site.url}}/img/demo/main6.jpg" alt="Courtyard bordered by trees"></li>
             </ul>
         </div>
-    </div>
+    </section>
 
     <div class="space-component-medium "></div>
 
     <pre><code class="language-html">
         &lt;div class="carousel-wrapper"&gt;
+            &lt;h4 class="sr-only"&gt;Carousel Example&lt;/h4&gt;
             &lt;div class="carousel"&gt;
                 &lt;ul class="[no-scrollbar]"&gt;
                     &lt;li&gt;&lt;img src="{{site.url}}/img/demo/main7.jpg" alt="Northern lights over forest"&gt;&lt;/li&gt;
