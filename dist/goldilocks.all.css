@@ -7,7 +7,7 @@
     --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
     /* Base measurement unit to be used for font, margins and padding */
     /* changing the base scale allows a user to change the font sizes to meet accessibility needs */
-    --base-rem: 16px;
+    --base-rem: 1rem;
     --base-scale: 1;
     /* Typography */
     /** Note: text colors are set in file: initial-colors.css **/
