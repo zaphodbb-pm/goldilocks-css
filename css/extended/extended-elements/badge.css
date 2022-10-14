@@ -1,84 +1,88 @@
-.badge {
+[class*="badge"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-.05rem,-.75rem);
     position: relative;
-    white-space: nowrap;
-}
 
-.badge[data-badge]::after {
-    font-size: .75rem;
-    height: .95rem;
-    line-height: 1.25;
-    min-width: .75rem;
+    min-width: .7rem;
+    height: 1rem;
     padding: .1rem .25rem;
-    text-align: center;
-    white-space: nowrap;
-}
 
-.badge:not([data-badge])::after, .badge[data-badge]::after {
+    font-size: .85rem;
+    font-weight: var(--weight-medium);
+    line-height: 1;
+    color: var(--text-invert);
+    white-space: nowrap;
+
     background: var(--grey-dark);
     background-clip: padding-box;
     border-radius: 1rem;
     box-shadow: 0 0 0 0.1rem var(--bg-main);
-    color: var(--text-btn);
-    content: attr(data-badge);
-    display: inline-block;
-    transform: translate(-.05rem,-.75rem);
 }
 
-
-.badge:not([data-badge])::after, .badge[data-badge=""]::after {
-    height: 6px;
-    min-width: 6px;
+[class*="badge"]:empty {
+    height: 0.5rem;
+    min-width: 0.5rem;
+    width: 0.5rem;
     padding: 0;
-    width: 6px;
 }
 
-button.badge::after {
+button:has(span),
+figure:has(span){
+    position: relative;
+}
+
+button > [class*="badge"] {
     position: absolute;
     right: -0.5rem;
     top: 0;
-    transform: translate(50%,-50%);
 }
 
-.badge.avatar::after,
-.badge.has-icon::after {
+figure > [class*="badge"] {
     position: absolute;
-    left: 60%;
-    top: 16%;
-    transform: translate(50%,-50%);
-    z-index: 5;
+    right: -0.5rem;
+    top: 0.5rem;
+    z-index: 2;
 }
 
-.badge.is-badge-primary::after {
+figure:not(.avatar) > [class*="badge"] {
+    top: 0.25rem;
+}
+
+
+/* colour controls */
+.badge-primary {
     color: var(--primary-text-invert);
     background-color: var(--primary);
 }
 
-.badge.is-badge-secondary::after {
+.badge-secondary {
     color: var(--secondary-text-invert);
     background-color: var(--secondary);
 }
 
-.badge.is-badge-tertiary::after {
+.badge-tertiary {
     color: var(--tertiary-text-invert);
     background-color: var(--tertiary);
 }
 
-.badge.is-badge-success::after {
-    color: var(--success-text);
-    background-color: var(--success);
+.badge-success {
+    color: var(--success-text-invert);
+    background-color: var(--success-dark);
 }
 
-.badge.is-badge-warning::after {
-    color: var(--warning-text);
-    background-color: var(--warning);
+.badge-warning {
+    color: var(--warning-text-invert);
+    background-color: var(--warning-dark);
 }
 
-.badge.is-badge-danger::after {
+.badge-danger {
     color: var(--danger-text-invert);
     background-color: var(--danger);
 }
 
-.badge.is-badge-link::after {
+.badge-link {
     color: var(--link-text-invert);
     background-color: var(--link);
 }

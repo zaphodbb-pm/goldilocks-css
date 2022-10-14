@@ -14,13 +14,13 @@ nav: Badges
         <section class="column">
             <h2>Commentary</h2>
 
-            <p>The <strong>badge</strong> element is modifier for most elements that adds number indicators.  Typically badges are used to
-                show unread items or outstanding notifications.
+            <p>The <strong>badge</strong> element adds number indicators to other elements that wrap the badge.
+                Typically, badges are used to show unread items or outstanding notifications.
             </p>
 
-            <p>The <code>data-badge</code> attribute holds the numerical content to show.  This badge appears as a target at the top
-                right of the modified element.  The colour of the badge target can be modified with classes.  If there is no <code>data-badge</code>
-                or the attribute is not specified, the badge will appear as a dot.</p>
+            <p>A <code>span</code> element is used to display a number.  This element also has a <code>role</code> set to "status"
+                and defines a live region containing advisory information for the user.  An "aria-label" provides a
+                context for screen readers.</p>
 
             <p>Typical practices for using badges are:</p>
             <ul>
@@ -44,32 +44,29 @@ nav: Badges
                 <tbody>
                 <tr>
                     <td><code>.badge</code></td>
-                    <td>Defines an element (typically a <code>span</code>, <code>figure</code>  or <code>button</code>
-                        element that can receive numerical data.
+                    <td>Defines a default <code>span</code> element that can receive numerical data.
+                        This element is usually wrapped by a parent <code>p</code>, <code>figure</code>  or <code>button</code>.
                     </td>
                 </tr>
 
                 <tr>
-                    <td><code>data-badge="8"</code></td>
-                    <td>Is the content for display in the badge target</td>
+                    <td>Badge colours:</td>
+                    <td><code>.badge-primary</code>, <code>.badge-secondary</code>, <code>.badge-tertiary</code>,
+                        <code>.badge-link</code>, <code>.badge-success</code>, <code>.badge-warning</code>, <code>.badge-danger</code>
+                    </td>
                 </tr>
 
                 <tr>
                     <td><code>.avatar</code></td>
-                    <td>Optional class to adjust for the shape of an avatar.</td>
+                    <td>Optional class for a parent <code>figure</code> wrapper to adjust for the shape of an avatar.</td>
                 </tr>
 
                 <tr>
                     <td><code>.has-icon</code></td>
-                    <td>Optional class to adjust for the shape of an icon.  Icons have a right margin that needs to be taken into account</td>
+                    <td>Optional class for a parent <code>figure</code> wrapper to adjust for the shape of an icon.
+                        Icons have a right margin that needs to be taken into account</td>
                 </tr>
 
-                <tr>
-                    <td>Colour modifiers::</td>
-                    <td><code>.is-badge-primary</code>, <code>.is-badge-secondary</code>, <code>.is-badge-tertiary</code>,
-                        <code>.is-badge-link</code>, <code>.is-badge-success</code>, <code>.is-badge-warning</code>, <code>.is-badge-danger</code>,
-                    </td>
-                </tr>
                 </tbody>
             </table>
 
@@ -101,21 +98,49 @@ nav: Badges
         <div class="column">
 
             <div class="stack-centered">
-                <span class="badge">Badge Default</span>
-                <span class="badge is-badge-primary" data-badge="8" title="unread messages">Badge Primary</span>
-                <span class="badge is-badge-success" data-badge="88" title="unread messages">Badge Success</span>
-                <span class="badge is-badge-warning" data-badge="888" title="unread messages">Badge Warning</span>
-                <span class="badge is-badge-danger" data-badge="8888" title="unread messages">Badge Danger</span>
+                <p>Default
+                    <span class="badge" role="status" aria-label="Example value"></span>
+                </p>
+
+                <p>Badge Tertiary
+                    <span class="badge-tertiary" role="status" aria-label="Unread messages">8</span>
+                </p>
+
+                <p>Badge Success
+                    <span class="badge-success" role="status" aria-label="Unread messages">88</span>
+                </p>
+
+                <p>Badge Warning
+                    <span class="badge-warning" role="status" aria-label="Unread messages">888</span>
+                </p>
+
+                <p>Badge Danger
+                    <span class="badge-danger" role="status" aria-label="Unread messages">8888</span>
+                </p>
             </div>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;span class="badge"&gt;Badge Default&lt;/span&gt;
-                &lt;span class="badge is-badge-primary" data-badge="8" title="unread messages"&gt;Badge Primary&lt;/span&gt;
-                &lt;span class="badge is-badge-success" data-badge="88" title="unread messages"&gt;Badge Success&lt;/span&gt;
-                &lt;span class="badge is-badge-warning" data-badge="888" title="unread messages"&gt;Badge Warning&lt;/span&gt;
-                &lt;span class="badge is-badge-danger" data-badge="8888" title="unread messages"&gt;Badge Danger&lt;/span&gt;
+                &lt;p&gt;Default
+                    &lt;span class="badge" role="status" aria-label="Example value"&gt;&lt;/span&gt;
+                &lt;/p&gt;
+
+                &lt;p&gt;Badge Tertiary
+                    &lt;span class="badge-tertiary" role="status" aria-label="Unread messages"&gt;8&lt;/span&gt;
+                &lt;/p&gt;
+
+                &lt;p&gt;Badge Success
+                    &lt;span class="badge-success" role="status" aria-label="Unread messages"&gt;88&lt;/span&gt;
+                &lt;/p&gt;
+
+                &lt;p&gt;Badge Warning
+                    &lt;span class="badge-warning" role="status" aria-label="Unread messages"&gt;888&lt;/span&gt;
+                &lt;/p&gt;
+
+                &lt;p&gt;Badge Danger
+                    &lt;span class="badge-danger" role="status" aria-label="Unread messages"&gt;8888&lt;/span&gt;
+                &lt;/p&gt;
             </code></pre>
         </div>
     </div>
@@ -125,43 +150,51 @@ nav: Badges
     <h3>Button and Image Badge Attachments</h3>
     <div class="row">
         <div class="column">
-
             <div class="stack-centered stack-gap-medium">
-                <button type="button" class="is-secondary badge is-badge-warning" data-badge="88"  title="unread messages">
+
+                <button type="button" class="is-secondary">
                     Button Info
+                    <span class="badge-link" role="status" aria-label="Unread messages">88</span>
                 </button>
 
-                <button type="button" class="is-link badge is-badge-danger" data-badge="888"  title="unread messages">
+                <button type="button" class="is-link">
                     Button Link
+                    <span class="badge-danger" role="status" aria-label="Unread messages">888</span>
                 </button>
 
-                <figure class="avatar avatar-lg badge is-badge-primary" data-badge="8" data-initial="YZ"  title="unread messages">
+                <figure class="avatar avatar-lg" data-initial="YZ">
                     <img src="{{site.url}}/img/demo/gl-woman4.png" alt="YZ">
+                    <span class="badge-primary" role="status" aria-label="Notifications">888</span>
                 </figure>
 
-                <figure class="badge is-badge-danger has-icon" data-badge="88"  title="icon example">
+                <figure class="has-icon">
                     <span class="icon-bg-bell"></span>
+                    <span class="badge-danger" role="status" aria-label="Notifications">88</span>
                 </figure>
-            </div>
 
+            </div>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;button type="button" class="is-secondary badge is-badge-warning" data-badge="88" title="unread messages"&gt;
+                &lt;button type="button" class="is-secondary"&gt;
                     Button Info
+                    &lt;span class="badge-link" role="status" aria-label="Unread messages"&gt;88&lt;/span&gt;
                 &lt;/button&gt;
 
-                &lt;button type="button" class="is-link badge is-badge-danger" data-badge="888" title="unread messages"&gt;
+                &lt;button type="button" class="is-link"&gt;
                     Button Link
+                    &lt;span class="badge-danger" role="status" aria-label="Unread messages"&gt;888&lt;/span&gt;
                 &lt;/button&gt;
 
-                &lt;figure class="badge is-badge-danger has-icon" data-badge="88" data-initial="YZ" title="unread messages"&gt;
+                &lt;figure class="avatar avatar-lg" data-initial="YZ"&gt;
                     &lt;img src="{{site.url}}/img/demo/gl-woman4.png" alt="YZ"&gt;
+                    &lt;span class="badge-primary" role="status" aria-label="Notifications"&gt;888&lt;/span&gt;
                 &lt;/figure&gt;
 
-                &lt;figure class="badge is-badge-danger has-icon" data-badge="8" title="unread messages"&gt;
+                &lt;figure class="has-icon"&gt;
                     &lt;span class="icon-bg-bell"&gt;&lt;/span&gt;
+                    &lt;span class="badge-danger" role="status" aria-label="Notifications"&gt;88&lt;/span&gt;
                 &lt;/figure&gt;
             </code></pre>
         </div>
