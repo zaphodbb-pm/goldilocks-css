@@ -19,7 +19,7 @@
     /** Note: text colors are set in file: initial-colors.css **/
 
     /** basic is a fixed font size for all screen sizes **/
-    --base-font-size: calc( var(--base-scale) * var(--base-rem) );
+    --base-font-size: calc( var(--base-scale) * 100% );
 
     /** alternatively, you can use a variable font size for all screen sizes
     - font-size is variable and tracks viewport to a width of 100rem (1600 px)

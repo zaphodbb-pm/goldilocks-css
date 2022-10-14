@@ -7,7 +7,7 @@ html {
     margin: 0;
     padding: 0;
 
-    font-size: 100%;
+    font-size: var(--base-font-size);
     background-color: var(--bg-main);
 
     box-sizing: border-box;
@@ -23,8 +23,6 @@ html {
 body{
     margin: 0;
     padding: 0;
-
-    font-size: var(--base-font-size);
     font-family: var(--family-sans-serif);
     font-weight: var(--weight-normal);
     line-height: var(--line-height-150);

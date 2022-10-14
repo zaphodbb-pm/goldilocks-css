@@ -12,7 +12,7 @@
     /* Typography */
     /** Note: text colors are set in file: initial-colors.css **/
     /** basic is a fixed font size for all screen sizes **/
-    --base-font-size: calc( var(--base-scale) * var(--base-rem) );
+    --base-font-size: calc( var(--base-scale) * 100% );
     /** alternatively, you can use a variable font size for all screen sizes
     - font-size is variable and tracks viewport to a width of 100rem (1600 px)
         - maximum font-size is set to 3 * base (48px)
@@ -314,7 +314,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 /** set global environment **/
 html
 {
-    font-size: 100%;
+    font-size: var(--base-font-size);
 
     overflow-x: hidden;
     overflow-y: scroll;
@@ -334,7 +334,6 @@ html
 body
 {
     font-family: var(--family-sans-serif);
-    font-size: var(--base-font-size);
     font-weight: var(--weight-normal);
     line-height: var(--line-height-150);
 
@@ -1279,7 +1278,7 @@ pre
 button,
 .button
 {
-    font-size: 1em;
+    font-size: 1rem;
     line-height: 1.5;
 
     display: inline-flex;
