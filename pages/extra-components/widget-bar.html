@@ -114,17 +114,17 @@ nav: Widget Bar
                     <fieldset>
                         <legend>Choose Text Size</legend>
                         <label>
-                            <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
+                            <input type="radio" name="text-sizes" checked onchange="setTextSize('100%')" title="Select normal text size">
                             <span>T1</span>
                         </label>
 
                         <label>
-                            <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
+                            <input type="radio" name="text-sizes" onchange="setTextSize('150%')" title="Select 1.5 times text size">
                             <span>T2</span>
                         </label>
 
                         <label>
-                            <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
+                            <input type="radio" name="text-sizes" onchange="setTextSize('225%')" title="Select 2.25 times text size">
                             <span>T3</span>
                         </label>
                     </fieldset>
@@ -132,7 +132,7 @@ nav: Widget Bar
 
                 <script>
                     function setTextSize(size){
-                        document.querySelector(':root').style.setProperty("--base-scale", size);
+                        document.querySelector(':root').style.setProperty("--base-html-factor", size);
                     }
                 </script>
             </div>
@@ -145,17 +145,17 @@ nav: Widget Bar
                         &lt;fieldset&gt;
                             &lt;legend&gt;Choose Text Size&lt;/legend&gt;
                             &lt;label&gt;
-                                &lt;input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size"&gt;
+                                &lt;input type="radio" name="text-sizes" checked onchange="setTextSize('100%')" title="Select normal text size"&gt;
                                 &lt;span&gt;T1&lt;/span&gt;
                             &lt;/label&gt;
 
                             &lt;label&gt;
-                                &lt;input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size"&gt;
+                                &lt;input type="radio" name="text-sizes" onchange="setTextSize('150%')" title="Select 1.5 times text size"&gt;
                                 &lt;span&gt;T2&lt;/span&gt;
                             &lt;/label&gt;
 
                             &lt;label&gt;
-                                &lt;input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size"&gt;
+                                &lt;input type="radio" name="text-sizes" onchange="setTextSize('225%')" title="Select 2.25 times text size"&gt;
                                 &lt;span&gt;T3&lt;/span&gt;
                             &lt;/label&gt;
                         &lt;/fieldset&gt;
@@ -163,7 +163,7 @@ nav: Widget Bar
 
                     &lt;script&gt;
                         function setTextSize(size){
-                            document.querySelector(':root').style.setProperty("--base-scale", size);
+                            document.querySelector(':root').style.setProperty("--base-html-factor", size);
                         }
                     &lt;/script&gt;
                 &lt;/div&gt;
@@ -430,17 +430,17 @@ nav: Widget Bar
             <fieldset>
                 <legend>Choose Text Size</legend>
                 <label>
-                    <input type="radio" name="text-sizes" checked onchange="setTextSize('1')" title="Select normal text size">
+                    <input type="radio" name="text-sizes" checked onchange="setTextSize('100%')" title="Select normal text size">
                     <span>T1</span>
                 </label>
 
                 <label>
-                    <input type="radio" name="text-sizes" onchange="setTextSize('1.5')" title="Select 1.5 times text size">
+                    <input type="radio" name="text-sizes" onchange="setTextSize('150%')" title="Select 1.5 times text size">
                     <span>T2</span>
                 </label>
 
                 <label>
-                    <input type="radio" name="text-sizes" onchange="setTextSize('2.25')" title="Select 2.25 times text size">
+                    <input type="radio" name="text-sizes" onchange="setTextSize('225%')" title="Select 2.25 times text size">
                     <span>T3</span>
                 </label>
             </fieldset>
@@ -448,7 +448,7 @@ nav: Widget Bar
 
         <script>
             function setTextSize(size){
-                document.querySelector(':root').style.setProperty("--base-scale", size);
+                document.querySelector(':root').style.setProperty("--base-html-factor", size);
             }
         </script>
 
