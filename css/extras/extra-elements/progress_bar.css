@@ -202,7 +202,7 @@ progress:indeterminate::-ms-fill {
     display: flex;
     align-items: center;
     border-radius: 9999px;
-    margin-top: calc(var(--base-rem) * var(--base-scale) / 5);
+    margin-top: calc(var(--base-rem) / 5);
     width: calc( 100% - 6ch );
 }
 

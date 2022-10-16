@@ -15,12 +15,14 @@ nav: Tags
             <h2>Commentary</h2>
 
             <p>The <strong>tag</strong> element is adapted from <a href="https://bulma.io/documentation/elements/tag/" target=_blank>Bulma</a>.
-                The difference is that <strong>Goldilocks-CSS</strong> uses the native HTML <code>data</code> tag with value attribute set to content text.
+                The difference is that <strong>Goldilocks-CSS</strong> uses the native HTML <code>span</code> tag and sets the role to "note".
+                The "aria-label" can be used to add more context to the tag type.
                 This allows screen readers to extract relevant semantic information.
             </p>
 
-            <p>The tag element provides add on information for a variety of use cases. The tag elements can be concatenated into a
-                tracking list with target click areas.</p>
+            <p>The tag element provides add on information for a variety of use cases. Individual tags can be combined to create
+                compound tags that are a name and value sequence. The tag elements can also be concatenated into a
+                list with target click areas.</p>
         </section>
 
         <section class="column">
@@ -34,7 +36,12 @@ nav: Tags
                 <tbody>
                 <tr>
                     <td><code>.tag</code></td>
-                    <td>Defines tag and its setup.</td>
+                    <td>Defines a single tag and its setup. The role is set to "note" and an "aria-label" can provide more context.</td>
+                </tr>
+
+                <tr>
+                    <td>Colour options:</td>
+                    <td>Any of the <b>element</b> colour modifiers from the Colour Palette helpers.</td>
                 </tr>
 
                 <tr>
@@ -43,23 +50,33 @@ nav: Tags
                 </tr>
 
                 <tr>
-                    <td><code>.tags</code></td>
-                    <td>Creates horizontal grouped tags using flexbox.</td>
-                </tr>
-
-                <tr>
-                    <td><code>.has-addons</code></td>
-                    <td>Combines tags into one display component.</td>
-                </tr>
-
-                <tr>
                     <td>Size options:</td>
                     <td><code>.tag-normal</code>, <code>.tag-medium</code>, <code>.tag-large</code></td>
                 </tr>
 
                 <tr>
-                    <td>Colour options:</td>
-                    <td>Any of the <b>element</b> colour modifiers from the Colour Palette helpers.</td>
+                    <td><code>.tags</code></td>
+                    <td>Creates horizontal grouped set of single tags using flexbox.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-compound</code></td>
+                    <td>Combines a tag set into one compound display component.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-delete</code></td>
+                    <td>For <code>.is-compound</code> compound tags, an <code>a</code> link can be set to display an "x" target.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.are-medium</code>, <code>.are-large</code></td>
+                    <td>Styles font size for a group of tags.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.tag-list</code></td>
+                    <td>Creates a horizontal display of <b>compound</b> tags created by <code>.is-compound</code>.</td>
                 </tr>
                 </tbody>
             </table>
@@ -77,11 +94,12 @@ nav: Tags
 
                 <tr>
                     <td>Variables:</td>
-                    <td> --mar-horz, --mar-vert</td>
+                    <td>--bg-element, --grey-light, --grey-lighter, --line-height-150, --mar-horz, --radius,
+                        --size-5, --size-6, --size-7, --text, --weight-medium
+                    </td>
                 </tr>
                 </tbody>
             </table>
-
         </section>
     </div>
 
@@ -91,38 +109,79 @@ nav: Tags
 
     <div class="row">
         <div class="column">
+
             <div class="stack-centered stack-gap">
-                <data class="tag" value="Default"></data>
-                <data class="tag is-primary" value="Primary"></data>
-                <data class="tag is-secondary" value="Secondary"></data>
-                <data class="tag is-tertiary" value="Tertiary"></data>
-                <data class="tag is-link" value="Link"></data>
-                <data class="tag is-success" value="Success"></data>
-                <data class="tag is-warning" value="Warning"></data>
-                <data class="tag is-danger" value="Danger"></data>
-                <data class="tag is-dark" value="Dark"></data>
-                <data class="tag is-grey" value="Grey"></data>
+                <span class="tag" role="note" aria-label="Example tag">Default</span>
+                <span class="tag is-primary" role="note" aria-label="Example tag">Primary</span>
+                <span class="tag is-secondary" role="note" aria-label="Example tag">Secondary</span>
+                <span class="tag is-tertiary" role="note" aria-label="Example tag">Tertiary</span>
+                <span class="tag is-link" role="note" aria-label="Example tag">Link</span>
+                <span class="tag is-success" role="note" aria-label="Example tag">Success</span>
+                <span class="tag is-warning" role="note" aria-label="Example tag">Warning</span>
+                <span class="tag is-danger" role="note" aria-label="Example tag">Danger</span>
+                <span class="tag is-dark" role="note" aria-label="Example tag">Dark</span>
+                <span class="tag is-grey" role="note" aria-label="Example tag">Grey</span>
+            </div>
+
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;span class="tag" role="note" aria-label="Example tag"&gt;Default&lt;/span&gt;
+                &lt;span class="tag is-primary" role="note" aria-label="Example tag"&gt;Primary&lt;/span&gt;
+                &lt;span class="tag is-secondary" role="note" aria-label="Example tag"&gt;Secondary&lt;/span&gt;
+                &lt;span class="tag is-tertiary" role="note" aria-label="Example tag"&gt;Tertiary&lt;/span&gt;
+                &lt;span class="tag is-link" role="note" aria-label="Example tag"&gt;Link&lt;/span&gt;
+                &lt;span class="tag is-success" role="note" aria-label="Example tag"&gt;Success&lt;/span&gt;
+                &lt;span class="tag is-warning" role="note" aria-label="Example tag"&gt;Warning&lt;/span&gt;
+                &lt;span class="tag is-danger" role="note" aria-label="Example tag"&gt;Danger&lt;/span&gt;
+                &lt;span class="tag is-dark" role="note" aria-label="Example tag"&gt;Dark&lt;/span&gt;
+                &lt;span class="tag is-grey" role="note" aria-label="Example tag"&gt;Grey&lt;/span&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Tags with Close Button</h3>
+
+    <div class="row">
+        <div class="column">
+            <div class="stack-centered stack-gap">
+
+                <span class="tag is-success" role="note" aria-label="Compound tag simple">
+                    Success + Delete
+                    <button type="button" class="delete" aria-label="delete"></button>
+                </span>
+
+                <span class="tag tag-medium is-warning" role="note" aria-label="Compound tag simple">
+                    Warning + Delete
+                    <button type="button" class="delete" aria-label="delete"></button>
+                </span>
+
+                <span class="tag tag-large is-danger is-rounded" role="note" aria-label="Compound tag simple">
+                    Danger + Delete
+                    <button type="button" class="delete" aria-label="delete"></button>
+                </span>
             </div>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;data class="tag" value="Default"&gt;&lt;/data&gt;
-                &lt;data class="tag is-primary" value="Primary"&gt;&lt;/data&gt;
+               &lt;span class="tag is-success" role="note" aria-label="Compound tag simple"&gt;
+                    Success + Delete
+                    &lt;button type="button" class="delete" aria-label="delete"&gt;&lt;/button&gt;
+               &lt;/span&gt;
 
-                &lt;data class="tag is-secondary" value="Secondary"&gt;&lt;/data&gt;
-                &lt;data class="tag is-tertiary" value="Tertiary"&gt;&lt;/data&gt;
+                &lt;span class="tag tag-medium is-warning" role="note" aria-label="Compound tag simple"&gt;
+                    Warning + Delete
+                    &lt;button type="button" class="delete" aria-label="delete"&gt;&lt;/button&gt;
+                &lt;/span&gt;
 
-                &lt;data class="tag is-link" value="Link"&gt;&lt;/data&gt;
-
-                &lt;data class="tag is-success" value="Success"&gt;&lt;/data&gt;
-
-                &lt;data class="tag is-warning" value="Warning"&gt;&lt;/data&gt;
-                &lt;data class="tag is-danger" value="Danger"&gt;&lt;/data&gt;
-
-                &lt;data class="tag is-dark" value="Dark"&gt;&lt;/data&gt;
-
-                &lt;data class="tag is-grey" value="Grey"&gt;&lt;/data&gt;
+                &lt;span class="tag tag-large is-danger is-rounded" role="note" aria-label="Compound tag simple"&gt;
+                    Danger + Delete
+                    &lt;button type="button" class="delete" aria-label="delete"&gt;&lt;/button&gt;
+                &lt;/span&gt;
             </code></pre>
         </div>
     </div>
@@ -135,60 +194,46 @@ nav: Tags
         <div class="column">
             <div class="stack-centered stack-gap">
 
-                <div class="tags are-medium">
-                    <data class="tag" value="All"></data>
-                    <data class="tag" value="Medium"></data>
-                    <data class="tag" value="Size"></data>
+                <div class="tags is-compound" role="note" aria-label="Compound tag">
+                    <span class="tag">Package</span>
+                    <span class="tag is-primary">Category</span>
                 </div>
 
-                <div class="tags are-large">
-                    <data class="tag is-success" value="All"></data>
-                    <data class="tag is-warning" value="Large"></data>
-                    <data class="tag is-danger" value="Size"></data>
-                </div>
-
-                <data class="tag is-success" value="Success + Delete">
-                    <button type="button" class="delete is-small" aria-label="delete"></button>
-                </data>
-
-                <data class="tag tag-medium is-warning " value="Warning + Delete">
-                    <button type="button" class="delete is-medium" aria-label="delete"></button>
-                </data>
-
-                <data class="tag tag-large is-danger is-rounded" value="Danger + Delete">
-                    <button type="button" class="delete is-large" aria-label="delete"></button>
-                </data>
-
-                <div class="tags has-addons">
-                    <data class="tag" value="Package"></data>
-                    <data class="tag is-primary" value="Category"></data>
-                </div>
-
-                <div class="tags has-addons">
-                    <data class="tag is-tertiary" value="User Name"></data>
+                <div class="tags is-compound" role="note" aria-label="Compound tag">
+                    <span class="tag is-tertiary">User Name</span>
                     <a href="#page-top" class="tag is-delete" aria-label="delete"></a>
                 </div>
 
-                <div class="tags has-addons">
-                    <data class="tag is-dark" value="npm"></data>
-                    <data class="tag is-danger" value="0.9.2"></data>
+                <div class="tags is-compound" role="note" aria-label="Compound tag">
+                    <span class="tag is-dark">npm</span>
+                    <span class="tag is-danger">0.9.2</span>
                 </div>
 
-                <div class="tags has-addons">
-                    <data class="tag is-dark" value="build"></data>
-                    <data class="tag is-success" value="passing"></data>
+                <div class="tags is-compound" role="note" aria-label="Compound tag">
+                    <span class="tag is-dark">build</span>
+                    <span class="tag is-success">passing</span>
                 </div>
 
-                <div class="tags has-addons">
-                    <data class="tag is-dark is-rounded" value="chat"></data>
-                    <data class="tag is-primary is-rounded" value="on gitter"></data>
+                <div class="tags is-compound is-rounded" role="note" aria-label="Compound tag">
+                    <span class="tag is-dark ">chat</span>
+                    <span class="tag is-primary">on gitter</span>
                 </div>
 
-                <div class="tags has-addons are-large">
-                    <data class="tag is-dark" value="">
+                <div class="tags is-compound are-large" role="note" aria-label="Compound tag">
+                    <span class="tag is-dark">
                         <span class="icon-bg-file"></span>
-                    </data>
-                    <data class="tag is-primary" value=" 10 files"></data>
+                    </span>
+                    <span class="tag is-primary">10 files</span>
+                </div>
+
+                <div class="space-vert-medium"></div>
+
+                <div class="tags is-compound is-rounded" role="note" aria-label="Complex compound tag">
+                    <a href="#page-top" class="tag is-delete" aria-label="delete"></a>
+                    <span class="tag is-secondary">Complex</span>
+                    <span class="tag is-primary">Compound</span>
+                    <span class="tag is-tertiary">Tag</span>
+                    <span class="tag is-warning"><span class="is-text-bold">:-)</span></span>
                 </div>
 
             </div>
@@ -196,61 +241,122 @@ nav: Tags
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;div class="tags are-medium"&gt;
-                    &lt;data class="tag" value="All"&gt;&lt;/data&gt;
-                    &lt;data class="tag" value="Medium"&gt;&lt;/data&gt;
-                    &lt;data class="tag" value="Size"&gt;&lt;/data&gt;
+                &lt;div class="tags is-compound" role="note" aria-label="Compound tag"&gt;
+                    &lt;span class="tag"&gt;Package&lt;/span&gt;
+                    &lt;span class="tag is-primary"&gt;Category&lt;/span&gt;
                 &lt;/div&gt;
 
-                &lt;div class="tags are-large"&gt;
-                    &lt;data class="tag is-success" value="All"&gt;&lt;/data&gt;
-                    &lt;data class="tag is-warning" value="Large"&gt;&lt;/data&gt;
-                    &lt;data class="tag is-danger" value="Size"&gt;&lt;/data&gt;
-                &lt;/div&gt;
-
-                &lt;data class="tag is-success" value="Success + Delete"&gt;
-                    &lt;button type="button" class="delete is-small" aria-label="delete"&gt;&lt;/button&gt;
-                &lt;/data&gt;
-
-                &lt;data class="tag tag-medium is-warning " value="Warning + Delete"&gt;
-                    &lt;button type="button" class="delete is-medium" aria-label="delete"&gt;&lt;/button&gt;
-                &lt;/data&gt;
-
-                &lt;data class="tag tag-large is-danger is-rounded" value="Danger + Delete"&gt;
-                    &lt;button type="button" class="delete is-large" aria-label="delete"&gt;&lt;/button&gt;
-                &lt;/data&gt;
-
-                &lt;div class="tags has-addons"&gt;
-                    &lt;data class="tag" value="Package"&gt;&lt;/data&gt;
-                    &lt;data class="tag is-primary" value="Category"&gt;&lt;/data&gt;
-                &lt;/div&gt;
-
-                &lt;div class="tags has-addons"&gt;
-                    &lt;data class="tag is-tertiary" value="User Name"&gt;&lt;/data&gt;
+                &lt;div class="tags is-compound" role="note" aria-label="Compound tag"&gt;
+                    &lt;span class="tag is-tertiary"&gt;User Name&lt;/span&gt;
                     &lt;a href="#page-top" class="tag is-delete" aria-label="delete"&gt;&lt;/a&gt;
                 &lt;/div&gt;
 
-                &lt;div class="tags has-addons"&gt;
-                    &lt;data class="tag is-dark" value="npm"&gt;&lt;/data&gt;
-                    &lt;data class="tag is-danger" value="0.9.2"&gt;&lt;/data&gt;
+                &lt;div class="tags is-compound" role="note" aria-label="Compound tag"&gt;
+                    &lt;span class="tag is-dark"&gt;npm&lt;/span&gt;
+                    &lt;span class="tag is-danger"&gt;0.9.2&lt;/span&gt;
                 &lt;/div&gt;
 
-                &lt;div class="tags has-addons"&gt;
-                    &lt;data class="tag is-dark" value="build"&gt;&lt;/data&gt;
-                    &lt;data class="tag is-success" value="passing"&gt;&lt;/data&gt;
+                &lt;div class="tags is-compound" role="note" aria-label="Compound tag"&gt;
+                    &lt;span class="tag is-dark"&gt;build&lt;/span&gt;
+                    &lt;span class="tag is-success"&gt;passing&lt;/span&gt;
                 &lt;/div&gt;
 
-                &lt;div class="tags has-addons"&gt;
-                    &lt;data class="tag is-dark is-rounded" value="chat"&gt;&lt;/data&gt;
-                    &lt;data class="tag is-primary is-rounded" value="on gitter"&gt;&lt;/data&gt;
+                &lt;div class="tags is-compound is-rounded" role="note" aria-label="Compound tag"&gt;
+                    &lt;span class="tag is-dark"&gt;chat&lt;/span&gt;
+                    &lt;span class="tag is-primary"&gt;on gitter&lt;/span&gt;
                 &lt;/div&gt;
 
-                &lt;div class="tags has-addons are-large"&gt;
-                    &lt;data class="tag is-dark" value=""&gt;
+                &lt;div class="tags is-compound are-large" role="note" aria-label="Compound tag"&gt;
+                    &lt;span class="tag is-dark"&gt;
                         &lt;span class="icon-bg-file"&gt;&lt;/span&gt;
-                    &lt;/data&gt;
-                    &lt;data class="tag is-primary" value=" 10 files"&gt;&lt;/data&gt;
+                    &lt;/span&gt;
+                    &lt;span class="tag is-primary"&gt;10 files&lt;/span&gt;
                 &lt;/div&gt;
+
+                &lt;div class="tags is-compound is-rounded" role="note" aria-label="Complex compound tag"&gt;
+                    &lt;a href="#page-top" class="tag is-delete" aria-label="delete"&gt;&lt;/a&gt;
+                    &lt;span class="tag is-secondary"&gt;Complex&lt;/span&gt;
+                    &lt;span class="tag is-primary"&gt;Compound&lt;/span&gt;
+                    &lt;span class="tag is-tertiary"&gt;Tag&lt;/span&gt;
+                    &lt;span class="tag is-warning"&gt;&lt;span class="is-text-bold"&gt;:-)&lt;/span&gt;&lt;/span&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium "></div>
+
+    <h3>Tag Lists</h3>
+
+    <div class="row">
+        <div class="column">
+            <div class="stack-centered stack-gap">
+
+                <div class="tags are-medium" role="note" aria-label="Tag list">
+                    <span class="tag">All</span>
+                    <span class="tag">Medium</span>
+                    <span class="tag">Size</span>
+                </div>
+
+                <div class="tags are-large" role="note" aria-label="Tag list">
+                    <span class="tag is-success">All</span>
+                    <span class="tag is-warning">Large</span>
+                    <span class="tag is-danger">Size</span>
+                </div>
+
+                <div class="space-vert-medium"></div>
+
+                <ul class="tag-list" aria-label="Tag list">
+                    <li class="tags is-compound">
+                        <span class="tag is-tertiary">Apples</span>
+                        <a href="#page-top" class="tag is-delete" aria-label="delete"></a>
+                    </li>
+
+                    <li class="tags is-compound">
+                        <span class="tag is-tertiary">Oranges</span>
+                        <a href="#page-top" class="tag is-delete" aria-label="delete"></a>
+                    </li>
+
+                    <li class="tags is-compound">
+                        <span class="tag is-tertiary">Pears</span>
+                        <a href="#page-top" class="tag is-delete" aria-label="delete"></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+               &lt;div class="tags are-medium" role="note" aria-label="Tag list"&gt;
+                    &lt;span class="tag"&gt;All&lt;/span&gt;
+                    &lt;span class="tag"&gt;Medium&lt;/span&gt;
+                    &lt;span class="tag"&gt;Size&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;div class="tags are-large" role="note" aria-label="Tag list"&gt;
+                    &lt;span class="tag is-success"&gt;All&lt;/span&gt;
+                    &lt;span class="tag is-warning"&gt;Large&lt;/span&gt;
+                    &lt;span class="tag is-danger"&gt;Size&lt;/span&gt;
+                &lt;/div&gt;
+
+
+               &lt;ul class="tag-list" aria-label="Tag list"&gt;
+                    &lt;li class="tags is-compound"&gt;
+                        &lt;span class="tag is-tertiary"&gt;Apples&lt;/span&gt;
+                        &lt;a href="#page-top" class="tag is-delete" aria-label="delete"&gt;&lt;/a&gt;
+                    &lt;/li&gt;
+
+                    &lt;li class="tags is-compound"&gt;
+                        &lt;span class="tag is-tertiary"&gt;Oranges&lt;/span&gt;
+                        &lt;a href="#page-top" class="tag is-delete" aria-label="delete"&gt;&lt;/a&gt;
+                    &lt;/li&gt;
+
+                    &lt;li class="tags is-compound"&gt;
+                        &lt;span class="tag is-tertiary"&gt;Pears&lt;/span&gt;
+                        &lt;a href="#page-top" class="tag is-delete" aria-label="delete"&gt;&lt;/a&gt;
+                    &lt;/li&gt;
+               &lt;/ul&gt;
             </code></pre>
         </div>
     </div>

@@ -9,17 +9,16 @@
 
 
     /* Base measurement unit to be used for font, margins and padding */
-    /* changing the base scale allows a user to change the font sizes to meet accessibility needs */
+    /* changing the base html factor allows a user to change the font sizes to meet accessibility needs */
     --base-html-factor: 100%;
     --base-rem: 1rem;
-    --base-scale: 1;
 
 
     /* Typography */
     /** Note: text colors are set in file: initial-colors.css **/
 
     /** basic is a fixed font size for all screen sizes **/
-    --base-font-size: calc( var(--base-scale) * var(--base-rem) );
+    --base-font-size: var(--base-rem);
 
     /** alternatively, you can use a variable font size for all screen sizes
     - font-size is variable and tracks viewport to a width of 100rem (1600 px)

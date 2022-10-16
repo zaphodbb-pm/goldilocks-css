@@ -18,7 +18,10 @@ nav: Ribbons
                 The <strong>ribbon</strong> is typically used to highlight a feature or to signal the state of the parent component.
             </p>
 
-            <p>Size and posiotnin options are available.  The <strong>ribbon</strong> can also have its colour set
+            <p>A landmark is added by setting <code>role</code> to "note".  This signals that the ribbon is not part of the main content,
+                but rather is an additional piece of text that enhances the main content.</p>
+
+            <p>Size and position options are available.  The <strong>ribbon</strong> can also have its colour set
                 through any of the element colour options.
             </p>
         </section>
@@ -35,12 +38,12 @@ nav: Ribbons
                 <tr>
                     <td><code>.has-ribbon</code>, <code>.has-ribbon-left</code>, <code>.has-ribbon-right</code></td>
                     <td>Attached to a parent container to signal that a ribbon on a child elementt needs to be shown.
-                        Default positon is top-right.  Other options are top-left and bottom-right</td>
+                        Default position is top-right.  Other options are top-left and bottom-right</td>
                 </tr>
 
                 <tr>
                     <td><code>.ribbon</code></td>
-                    <td>Defines a child element inside a container that will be posiitoned and styled to show the ribbon.</td>
+                    <td>Defines a child element inside a container that will be positioned and styled to show the ribbon.</td>
                 </tr>
 
                 <tr>
@@ -94,85 +97,85 @@ nav: Ribbons
         <div class="column">
             <div class="stack stack-gap">
                 <div class="box-shadow has-ribbon has-bg-grey">
-                    <div class="ribbon">Default</div>
+                    <div class="ribbon" role="note">Default</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon has-bg-grey">
-                    <div class="ribbon is-white">White</div>
+                    <div class="ribbon is-white" role="note">White</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-primary has-shadow">Primary Shadow</div>
+                    <div class="ribbon is-primary has-shadow" role="note">Primary Shadow</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-primary-outlined has-shadow">Primary Outlined Shadow</div>
+                    <div class="ribbon is-primary-outlined has-shadow" role="note">Primary Outlined Shadow</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-secondary">Secondary</div>
+                    <div class="ribbon is-secondary" role="note">Secondary</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-secondary-outlined">Secondary Outlined</div>
+                    <div class="ribbon is-secondary-outlined" role="note">Secondary Outlined</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-success">Success</div>
+                    <div class="ribbon is-success" role="note">Success</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-success-outlined">Success Outlined</div>
+                    <div class="ribbon is-success-outlined" role="note">Success Outlined</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-warning">Warning</div>
+                    <div class="ribbon is-warning" role="note">Warning</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-warning-outlined">Warning Outlined</div>
+                    <div class="ribbon is-warning-outlined" role="note">Warning Outlined</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-danger">Danger</div>
+                    <div class="ribbon is-danger" role="note">Danger</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-danger-outlined">Danger Outlined</div>
+                    <div class="ribbon is-danger-outlined" role="note">Danger Outlined</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-dark">Dark</div>
+                    <div class="ribbon is-dark" role="note">Dark</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-grey has-shadow">Grey with Shadow</div>
+                    <div class="ribbon is-grey has-shadow" role="note">Grey with Shadow</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
@@ -182,72 +185,72 @@ nav: Ribbons
         <div class="column">
             <pre><code class="language-html">
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon"&gt;Default&lt;/div&gt;
+                    &lt;div class="ribbon" role="note"&gt;Default&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-white"&gt;White&lt;/div&gt;
+                    &lt;div class="ribbon is-white" role="note"&gt;White&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-primary has-shadow"&gt;Primary Shadow&lt;/div&gt;
+                    &lt;div class="ribbon is-primary has-shadow" role="note"&gt;Primary Shadow&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-primary-outlined has-shadow"&gt;Primary Outlined Shadow&lt;/div&gt;
+                    &lt;div class="ribbon is-primary-outlined has-shadow" role="note"&gt;Primary Outlined Shadow&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-secondary"&gt;Secondary&lt;/div&gt;
+                    &lt;div class="ribbon is-secondary" role="note"&gt;Secondary&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-secondary-outlined"&gt;Secondary Outlined&lt;/div&gt;
+                    &lt;div class="ribbon is-secondary-outlined" role="note"&gt;Secondary Outlined&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-success"&gt;Success&lt;/div&gt;
+                    &lt;div class="ribbon is-success" role="note"&gt;Success&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-success-outlined"&gt;Success Outlined&lt;/div&gt;
+                    &lt;div class="ribbon is-success-outlined" role="note"&gt;Success Outlined&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-warning"&gt;Warning&lt;/div&gt;
+                    &lt;div class="ribbon is-warning" role="note"&gt;Warning&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-warning-outlined"&gt;Warning Outlined&lt;/div&gt;
+                    &lt;div class="ribbon is-warning-outlined" role="note"&gt;Warning Outlined&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-danger"&gt;Danger&lt;/div&gt;
+                    &lt;div class="ribbon is-danger" role="note"&gt;Danger&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-danger-outlined"&gt;Danger Outlined&lt;/div&gt;
+                    &lt;div class="ribbon is-danger-outlined" role="note"&gt;Danger Outlined&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-dark"&gt;Dark&lt;/div&gt;
+                    &lt;div class="ribbon is-dark" role="note"&gt;Dark&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                     &lt;div class="ribbon is-grey has-shadow"&gt;Grey with Shadow&lt;/div&gt;
+                     &lt;div class="ribbon is-grey has-shadow" role="note"&gt;Grey with Shadow&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
             </code></pre>
@@ -262,31 +265,31 @@ nav: Ribbons
 
             <div class="stack">
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-primary-outlined is-small">Small ribbon - outlined</div>
+                    <div class="ribbon is-primary-outlined is-small" role="note">Small ribbon - outlined</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-primary is-medium">Medium ribbon</div>
+                    <div class="ribbon is-primary is-medium" role="note">Medium ribbon</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon">
-                    <div class="ribbon is-primary is-large ">Large ribbon</div>
+                    <div class="ribbon is-primary is-large" role="note">Large ribbon</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon-left">
-                    <div class="ribbon is-primary is-small">Left ribbon</div>
+                    <div class="ribbon is-primary is-small" role="note">Left ribbon</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
 
                 <div class="box-shadow has-ribbon-bottom">
-                    <div class="ribbon is-primary is-small">Bottom ribbon small</div>
+                    <div class="ribbon is-primary is-small" role="note">Bottom ribbon small</div>
                     <p></p>
                     <p>Box content</p>
                 </div>
@@ -296,27 +299,27 @@ nav: Ribbons
         <div class="column">
             <pre><code class="language-html">
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-primary-outlined is-small"&gt;Small ribbon - outlined&lt;/div&gt;
+                    &lt;div class="ribbon is-primary-outlined is-small" role="note"&gt;Small ribbon - outlined&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-primary is-medium"&gt;Medium ribbon&lt;/div&gt;
+                    &lt;div class="ribbon is-primary is-medium" role="note"&gt;Medium ribbon&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon"&gt;
-                    &lt;div class="ribbon is-primary is-large "&gt;Large ribbon&lt;/div&gt;
+                    &lt;div class="ribbon is-primary is-large" role="note"&gt;Large ribbon&lt;/div&gt;
                     Box content
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon-left"&gt;
-                    &lt;div class="ribbon is-primary is-small"&gt;Left ribbon&lt;/div&gt;
+                    &lt;div class="ribbon is-primary is-small" role="note"&gt;Left ribbon&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;div class="box-shadow has-ribbon-bottom"&gt;
-                    &lt;div class="ribbon is-primary is-small"&gt;Bottom ribbon small&lt;/div&gt;
+                    &lt;div class="ribbon is-primary is-small" role="note"&gt;Bottom ribbon small&lt;/div&gt;
                     &lt;p&gt;Box content&lt;/p&gt;
                 &lt;/div&gt;
             </code></pre>
