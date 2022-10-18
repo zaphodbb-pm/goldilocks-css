@@ -10,7 +10,7 @@
     padding-right: 3rem;
 }
 
-.dropdown .dropdown-trigger button::after {
+.dropdown .dropdown-trigger button:not(.no-chevron)::after {
     content: "";
     height: 1.5rem;
     width: 1.5rem;

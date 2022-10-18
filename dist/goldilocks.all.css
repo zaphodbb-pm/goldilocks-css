@@ -3161,7 +3161,7 @@ details.accordion.is-expander-danger summary
     padding-right: 3rem;
 }
 
-.dropdown .dropdown-trigger button::after
+.dropdown .dropdown-trigger button:not(.no-chevron)::after
 {
     position: absolute;
     top: .5em;
@@ -3582,8 +3582,10 @@ details.accordion.is-expander-danger summary
     border-radius: unset;
 }
 
-.navbar .dropdown .dropdown-trigger > button:first-child::after,
-.navbar .dropdown .dropdown-trigger > .button:first-child::after
+.navbar .dropdown .dropdown-trigger > button:not(.no-chevron):first-child::after,
+.navbar .dropdown .dropdown-trigger > .button:not(.no-chevron):first-child::after,
+.navbar .dropdown:hover .dropdown-trigger > button:not(.no-chevron):first-child::after,
+.navbar .dropdown:hover .dropdown-trigger > .button:not(.no-chevron):first-child::after
 {
     position: absolute;
     top: 0;
@@ -3605,6 +3607,25 @@ details.accordion.is-expander-danger summary
     -webkit-mask-position: center center;
 }
 
+.navbar .dropdown .dropdown-trigger > button.no-chevron,
+.navbar .dropdown .dropdown-trigger > .button.no-chevron,
+.navbar .dropdown:hover .dropdown-trigger > button.no-chevron,
+.navbar .dropdown:hover .dropdown-trigger > .button.no-chevron
+{
+    padding: 0;
+}
+
+.navbar .dropdown .dropdown-trigger > button.no-chevron [class*='icon-bg-']:not(.icon-nav),
+.navbar .dropdown .dropdown-trigger > .button.no-chevron [class*='icon-bg-']:not(.icon-nav),
+.navbar .dropdown:hover .dropdown-trigger > button.no-chevron [class*='icon-bg-']:not(.icon-nav),
+.navbar .dropdown:hover .dropdown-trigger > .button.no-chevron [class*='icon-bg-']:not(.icon-nav)
+{
+    font-size: calc(var(--navbar-height) * .5);
+
+    padding: 0;
+}
+
+
 .navbar .dropdown:hover .dropdown-trigger > button:first-child,
 .navbar .dropdown:hover .dropdown-trigger > .button:first-child
 {
@@ -3614,27 +3635,26 @@ details.accordion.is-expander-danger summary
 }
 
 
+/*
 .navbar .dropdown:hover .dropdown-trigger > button:first-child::after,
-.navbar .dropdown:hover .dropdown-trigger > .button:first-child::after
-{
-    position: absolute;
-
-    width: 1.5rem;
+.navbar .dropdown:hover .dropdown-trigger > .button:first-child::after {
+    content: "";
     height: 100%;
-
-    content: '';
+    width: 1.5rem;
+    position: absolute;
     transition: none;
-    /* adds down chevron */
 
+    / adds down chevron /
     background-color: currentColor;
-
-            mask-image: var(--indicator-down);
-            mask-repeat: no-repeat;
-            mask-position: center center;
+    mask-image: var(--indicator-down);
+    mask-repeat: no-repeat;
+    mask-position: center center;
     -webkit-mask-image: var(--indicator-down);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center center;
 }
+
+ */
 
 .navbar .goto-top:before
 {
@@ -4986,6 +5006,11 @@ details.accordion.is-expander-danger summary
 
     align-items: center;
     justify-content: center;
+}
+
+[class*='badge'].no-border
+{
+    box-shadow: unset;
 }
 
 [class*='badge']:empty

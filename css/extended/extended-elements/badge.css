@@ -21,6 +21,10 @@
     box-shadow: 0 0 0 0.1rem var(--bg-main);
 }
 
+[class*="badge"].no-border {
+    box-shadow: unset;
+}
+
 [class*="badge"]:empty {
     height: 0.5rem;
     min-width: 0.5rem;
