@@ -340,6 +340,196 @@ nav: Navbar
 
 
 
+
+    <h3 id="navbar-with-icons">Navbar with notification and avatar dropdowns</h3>
+
+    <div class="navbar is-secondary-light is-mobile" role="region" aria-label="Main Navbar" style="max-height: 35vh">
+        <div class="navbar-left">
+            <a href="#navbar-with-icons" aria-label="Site Logo Points to Home Page">
+                <img src="{{site.url}}/img/goldi3-logo.png" alt="Project Home Logo">
+            </a>
+        </div>
+
+        <div class="navbar-center">
+            <nav aria-label="Main Section">
+                <ul>
+                    <li>
+                        <a href="#navbar-with-icons" class="icon-nav">
+                            <span class="icon-bg-home"></span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#navbar-with-icons" class="icon-nav">
+                            <span class="icon-bg-music"></span>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#navbar-with-icons" class="icon-nav">
+                            <span class="icon-bg-phone"></span>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="navbar-right">
+            <nav>
+                <ul>
+                    <li>
+                        <div class="dropdown is-right">
+                            <div class="dropdown-trigger" tabindex="0">
+                                <div class="button is-primary no-chevron" aria-haspopup="true" aria-controls="navbar-dropdown-notification">
+                                    <figure>
+                                        <span class="icon-bg-cog"></span>
+                                        <span class="badge badge-danger no-border" role="status" aria-label="New notifications">6</span>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-menu" id="navbar-dropdown-notification">
+                                <nav aria-label="Dropdown Menu">
+                                    <ul>
+                                        <li><a href="#navbar-with-icons">One</a></li>
+                                        <li><a href="#navbar-with-icons">Two</a></li>
+                                        <li><hr></li>
+                                        <li><a href="#navbar-with-icons">Three</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="dropdown is-right">
+
+                            <div class="dropdown-trigger" tabindex="0">
+                                <div class="dropdown-trigger" tabindex="0">
+                                    <div class="button is-primary no-chevron" aria-haspopup="true" aria-controls="navbar-dropdown-menu2">
+                                        <figure class="avatar avatar-nm">
+                                            <img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-menu" id="navbar-dropdown-profile">
+                                <nav aria-label="Dropdown Menu">
+                                    <ul>
+                                        <li><a href="#navbar-with-icons">My Profile</a></li>
+                                        <li><a href="#navbar-with-icons">Change Password</a></li>
+                                        <li><hr></li>
+                                        <li><a href="#navbar-with-icons">Log Out</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="space-vert-large">
+        <pre><code class="language-html">
+            &lt;div class="navbar is-secondary-light is-mobile" role="region" aria-label="Main Navbar" style="max-height: 35vh"&gt;
+                &lt;div class="navbar-left"&gt;
+                    &lt;a href="#navbar-with-icons" aria-label="Site Logo Points to Home Page"&gt;
+                        &lt;img src="{{site.url}}/img/goldi3-logo.png" alt="Project Home Logo"&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+        
+                &lt;div class="navbar-center"&gt;
+                    &lt;nav aria-label="Main Section"&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;
+                                &lt;a href="#navbar-with-icons" class="icon-nav"&gt;
+                                    &lt;span class="icon-bg-home"&gt;&lt;/span&gt;
+                                    &lt;span&gt;Home&lt;/span&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href="#navbar-with-icons" class="icon-nav"&gt;
+                                    &lt;span class="icon-bg-music"&gt;&lt;/span&gt;
+                                    &lt;span&gt;About&lt;/span&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                &lt;a href="#navbar-with-icons" class="icon-nav"&gt;
+                                    &lt;span class="icon-bg-phone"&gt;&lt;/span&gt;
+                                    &lt;span&gt;Contact&lt;/span&gt;
+                                &lt;/a&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/div&gt;
+        
+                &lt;div class="navbar-right"&gt;
+                    &lt;nav&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;
+                                &lt;div class="dropdown is-right"&gt;
+                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
+                                        &lt;div class="button is-primary no-chevron" aria-haspopup="true" aria-controls="navbar-dropdown-notification"&gt;
+                                            &lt;figure&gt;
+                                                &lt;span class="icon-bg-cog"&gt;&lt;/span&gt;
+                                                &lt;span class="badge badge-danger no-border" role="status" aria-label="New notifications"&gt;6&lt;/span&gt;
+                                            &lt;/figure&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+        
+                                    &lt;div class="dropdown-menu" id="navbar-dropdown-notification"&gt;
+                                        &lt;nav aria-label="Dropdown Menu"&gt;
+                                            &lt;ul&gt;
+                                                &lt;li&gt;&lt;a href="#navbar-with-icons"&gt;One&lt;/a&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;a href="#navbar-with-icons"&gt;Two&lt;/a&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;hr&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;a href="#navbar-with-icons"&gt;Three&lt;/a&gt;&lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/nav&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                            
+                            &lt;li&gt;
+                                &lt;div class="dropdown is-right"&gt;
+        
+                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
+                                        &lt;div class="dropdown-trigger" tabindex="0"&gt;
+                                            &lt;div class="button is-primary no-chevron" aria-haspopup="true" aria-controls="navbar-dropdown-menu2"&gt;
+                                                &lt;figure class="avatar avatar-nm"&gt;
+                                                    &lt;img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal"&gt;
+                                                &lt;/figure&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+        
+                                    &lt;div class="dropdown-menu" id="navbar-dropdown-profile"&gt;
+                                        &lt;nav aria-label="Dropdown Menu"&gt;
+                                            &lt;ul&gt;
+                                                &lt;li&gt;&lt;a href="#navbar-with-icons"&gt;My Profile&lt;/a&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;a href="#navbar-with-icons"&gt;Change Password&lt;/a&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;hr&gt;&lt;/li&gt;
+                                                &lt;li&gt;&lt;a href="#navbar-with-icons"&gt;Log Out&lt;/a&gt;&lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/nav&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        </code></pre>
+    </div>
+
+    <div class="space-component-medium"></div>
+
+
+
+
     <h3 id="mobile-navbar">Navbar with <small><code>.is-mobile</code></small></h3>
 
     <div class="navbar is-secondary-light is-mobile" role="region" aria-label="Main Navbar" style="max-height: 35vh">
