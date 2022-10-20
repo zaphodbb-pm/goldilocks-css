@@ -4102,6 +4102,16 @@ details.accordion.is-expander-danger summary
     background: transparent;
 }
 
+.sidenavs > nav
+{
+    margin-bottom: var(--margin);
+}
+
+.sidenavs > nav li
+{
+    margin: 0;
+}
+
 .sidenavs > nav a
 {
     width: auto;
@@ -4186,8 +4196,7 @@ details.accordion.is-expander-danger summary
 .sidenavs a:hover,
 .sidenav-block a:hover
 {
-    /*padding-right: calc(var(--pad-horz) - 2px);*/
-    padding-right: calc(.5rem - 2px);
+    padding-right: calc( var(--pad-horz) - 2px);
 
     border-right: 2px solid var(--link);
     background-color: var(--bg-main-ter);
@@ -5124,7 +5133,7 @@ figure:not(.avatar) > [class*='badge']
     margin: 0;
     padding: 0;
 
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     -moz-column-gap: 0;
          column-gap: 0;
     row-gap: 0;

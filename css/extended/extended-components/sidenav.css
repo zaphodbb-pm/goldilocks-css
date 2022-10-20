@@ -25,6 +25,14 @@
     display:flex;
 }
 
+.sidenavs > nav {
+    margin-bottom: var(--margin);
+}
+
+.sidenavs > nav li {
+    margin: 0
+}
+
 .sidenavs > nav a {
     width: auto;
 }
@@ -90,9 +98,7 @@
 .sidenav-block a:hover {
     border-right: 2px solid var(--link);
     background-color: var(--bg-main-ter);
-    /*padding-right: calc(var(--pad-horz) - 2px);*/
-
-    padding-right: calc(0.5rem - 2px);
+    padding-right: calc( var(--pad-horz) - 2px);
 }
 
 .sidenav-block > label:hover {

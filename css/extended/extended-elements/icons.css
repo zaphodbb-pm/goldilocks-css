@@ -21,7 +21,7 @@
 .icon-nav-horz {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 0;
     margin:0;
     column-gap: 0;
