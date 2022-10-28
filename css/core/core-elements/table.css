@@ -49,14 +49,6 @@
     width: 100%;
 }
 
-.table-scroll {
-    -webkit-overflow-scrolling: touch;
-    display: block;
-    overflow-x: auto;
-    max-width: 100%;
-    white-space: nowrap;
-}
-
 .table.is-striped tbody tr:nth-of-type(odd) {
     background-color: var(--bg-main-ter);
     color: var(--text);
@@ -75,6 +67,20 @@
 .table.is-bordered tr:last-child td,
 .table.is-bordered tr:last-child th {
     border-bottom-width: 1px;
+}
+
+/* allow for table scrolling of wide tables */
+.table-scroll {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 0);
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.table-scroll .table {
+    width: 100%;
+    white-space: nowrap;
 }
 
 
@@ -172,6 +178,7 @@
 .table.scrollbreak-col-9 th:nth-of-type(9)
 {
     white-space: normal;
-    max-width: 20ch;
+    max-width: 60ch;
+    min-width: 40ch;
     word-break: break-word;
 }

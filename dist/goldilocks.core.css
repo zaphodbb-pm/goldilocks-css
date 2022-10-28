@@ -2298,18 +2298,6 @@ img
     width: 100%;
 }
 
-.table-scroll
-{
-    display: block;
-    overflow-x: auto;
-
-    max-width: 100%;
-
-    white-space: nowrap;
-
-    -webkit-overflow-scrolling: touch;
-}
-
 .table.is-striped tbody tr:nth-of-type(odd)
 {
     color: var(--text);
@@ -2332,6 +2320,25 @@ img
 .table.is-bordered tr:last-child th
 {
     border-bottom-width: 1px;
+}
+
+/* allow for table scrolling of wide tables */
+.table-scroll
+{
+    display: grid;
+    overflow-x: auto;
+
+    max-width: 100%;
+
+    grid-template-columns: repeat(auto-fit, 0);
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll .table
+{
+    width: 100%;
+
+    white-space: nowrap;
 }
 
 
@@ -2428,7 +2435,8 @@ img
 .table.scrollbreak-col-9 td:nth-of-type(9),
 .table.scrollbreak-col-9 th:nth-of-type(9)
 {
-    max-width: 20ch;
+    min-width: 40ch;
+    max-width: 60ch;
 
     white-space: normal;
     word-break: break-word;
