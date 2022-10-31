@@ -3,10 +3,10 @@
     <label for="slide-core-helpers">Core Helpers</label>
     <nav>
         <ul>
-            <li><a href="{{site.url}}/pages/core-helpers/colours.html">Colour Palette</a></li>
-            <li><a href="{{site.url}}/pages/core-helpers/heights.html">Heights</a></li>
-            <li><a href="{{site.url}}/pages/core-helpers/positions.html">Positions</a></li>
-            <li><a href="{{site.url}}/pages/core-helpers/widths.html">Widths</a></li>
+            <li><a href="{{site.url}}/pages/core-helpers/colours.html" class="{% if page.nav == "Colour Palette" %}is-active{% endif %}">Colour Palette</a></li>
+            <li><a href="{{site.url}}/pages/core-helpers/heights.html" class="{% if page.nav == "Heights" %}is-active{% endif %}">Heights</a></li>
+            <li><a href="{{site.url}}/pages/core-helpers/positions.html" class="{% if page.nav == "Positions" %}is-active{% endif %}">Positions</a></li>
+            <li><a href="{{site.url}}/pages/core-helpers/widths.html" class="{% if page.nav == "Widths" %}is-active{% endif %}">Widths</a></li>
         </ul>
     </nav>
 </div>

@@ -3,12 +3,12 @@
     <label for="slide-core-layout">Core Layout</label>
     <nav>
         <ul>
-            <li><a href="{{site.url}}/pages/core-layout/box.html">Box</a></li>
-            <li><a href="{{site.url}}/pages/core-layout/grid.html">Grid</a></li>
-            <li><a href="{{site.url}}/pages/core-layout/level.html">Level</a></li>
-            <li><a href="{{site.url}}/pages/core-layout/page.html">Page</a></li>
-            <li><a href="{{site.url}}/pages/core-layout/spacing.html">Spacing</a></li>
-            <li><a href="{{site.url}}/pages/core-layout/stack.html">Stack</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/box.html" class="{% if page.nav == "Box" %}is-active{% endif %}">Box</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/grid.html" class="{% if page.nav == "Grid" %}is-active{% endif %}">Grid</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/level.html" class="{% if page.nav == "Level" %}is-active{% endif %}">Level</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/page.html" class="{% if page.nav == "Page" %}is-active{% endif %}">Page</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/spacing.html" class="{% if page.nav == "Spacing" %}is-active{% endif %}">Spacing</a></li>
+            <li><a href="{{site.url}}/pages/core-layout/stack.html" class="{% if page.nav == "Stack" %}is-active{% endif %}">Stack</a></li>
         </ul>
     </nav>
 </div>

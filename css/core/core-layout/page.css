@@ -45,7 +45,12 @@
 .page-wrapper > .page-main-nav.is-fixed {
     position: fixed;
     top: 0;
+    width: 100vw;
     height: auto;
+}
+
+.page-wrapper  > .page-main-nav.is-fixed + .page-sidenav {
+    margin-top:  var(--navbar-height);
 }
 
 .page-wrapper-widgets > .page-widgets.is-fixed {

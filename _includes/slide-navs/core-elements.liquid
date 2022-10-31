@@ -3,13 +3,13 @@
     <label for="slide-core-elements">Core Elements</label>
     <nav>
         <ul>
-            <li><a href="{{site.url}}/pages/core-elements/buttons.html">Buttons</a></li>
-            <li><a href="{{site.url}}/pages/core-elements/form.html">Form</a></li>
-            <li><a href="{{site.url}}/pages/core-elements/horizontal-rule.html">Horizontal Rule</a></li>
-            <li><a href="{{site.url}}/pages/core-elements/image.html">Image</a></li>
-            <li><a href="{{site.url}}/pages/core-elements/lists.html">Lists</a></li>
-            <li><a href="{{site.url}}/pages/core-elements/table.html">Table</a></li>
-            <li><a href="{{site.url}}/pages/core-elements/typography.html">Typography</a></li>
+            <li><a href="{{site.url}}/pages/core-elements/buttons.html" class="{% if page.nav == "Buttons" %}is-active{% endif %}">Buttons</a></li>
+            <li><a href="{{site.url}}/pages/core-elements/form.html" class="{% if page.nav == "Form" %}is-active{% endif %}">Form</a></li>
+            <li><a href="{{site.url}}/pages/core-elements/horizontal-rule.html" class="{% if page.nav == "Horizontal Rule" %}is-active{% endif %}">Horizontal Rule</a></li>
+            <li><a href="{{site.url}}/pages/core-elements/image.html" class="{% if page.nav == "Images" %}is-active{% endif %}">Images</a></li>
+            <li><a href="{{site.url}}/pages/core-elements/lists.html" class="{% if page.nav == "Lists" %}is-active{% endif %}">Lists</a></li>
+            <li><a href="{{site.url}}/pages/core-elements/table.html" class="{% if page.nav == "Table" %}is-active{% endif %}">Table</a></li>
+            <li><a href="{{site.url}}/pages/core-elements/typography.html" class="{% if page.nav == "Typography" %}is-active{% endif %}">Typography</a></li>
         </ul>
     </nav>
 </div>
