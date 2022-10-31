@@ -130,6 +130,9 @@
     width: 100%;
 }
 
+.sidebarMenuInner .sidenavs a.is-active {
+    width: auto;
+}
 
 /* Content area for block of links */
 .sidebar-block {

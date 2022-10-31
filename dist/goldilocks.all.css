@@ -4430,6 +4430,10 @@ details.accordion.is-expander-danger summary
     background-color: var(--bg-component);
 }
 
+.sidebarMenuInner .sidenavs a.is-active
+{
+    width: auto;
+}
 
 /* Content area for block of links */
 .sidebar-block
