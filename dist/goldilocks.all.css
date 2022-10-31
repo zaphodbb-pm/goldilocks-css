@@ -4422,6 +4422,7 @@ details.accordion.is-expander-danger summary
 
 .sidebarMenuInner a:hover
 {
+    width: 100%;
     padding-right: calc(.5rem - 2px);
 
     border-right: 2px solid var(--link);

@@ -126,6 +126,7 @@
     border-right: 2px solid var(--link);
     background-color: var(--bg-component);
     padding-right: calc(0.5rem - 2px);
+    width: 100%;
 }
 
 
