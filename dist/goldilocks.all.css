@@ -4420,6 +4420,7 @@ details.accordion.is-expander-danger summary
     margin-left: 0;
 }
 
+.sidebarMenuInner a.is-active,
 .sidebarMenuInner a:hover
 {
     width: 100%;
@@ -4428,7 +4429,6 @@ details.accordion.is-expander-danger summary
     border-right: 2px solid var(--link);
     background-color: var(--bg-component);
 }
-
 
 
 /* Content area for block of links */
