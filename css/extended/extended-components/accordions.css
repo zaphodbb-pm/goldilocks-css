@@ -7,6 +7,9 @@ details.accordion {
 
 details.accordion summary {
     position: relative;
+    display: flex;
+    align-items: center;
+
     margin: 0;
     padding: var(--padding-normal) 3em var(--padding-normal) var(--padding-normal);
     background: var(--bg-main-ter);
