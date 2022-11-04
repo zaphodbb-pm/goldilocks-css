@@ -59,7 +59,24 @@
             <line x1="16" y1="2" x2="16" y2="6"/> \
             <line x1="8" y1="2" x2="8" y2="6"/> \
             <line x1="3" y1="10" x2="21" y2="10"/> \
-        </svg>');-webkit-mask-image:var(--icon-bg-calendar-url);mask-image:var(--icon-bg-calendar-url)}.icon-bg-clock{--icon-bg-clock-url:url('data:image/svg+xml;charset=utf8,\
+        </svg>');-webkit-mask-image:var(--icon-bg-calendar-url);mask-image:var(--icon-bg-calendar-url)}.icon-bg-circle-minus{--icon-bg-circle-minus-url:url('data:image/svg+xml;charset=utf8,\
+        <svg xmlns="http://www.w3.org/2000/svg" \
+            viewBox="0  0  24  24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> \
+            <circle cx="12" cy="12" r="10"></circle>\
+            <line x1="8" y1="12" x2="16" y2="12"></line>\
+        </svg>');-webkit-mask-image:var(--icon-bg-circle-minus-url);mask-image:var(--icon-bg-circle-minus-url)}.icon-bg-circle-plus{--icon-bg-circle-plus-url:url('data:image/svg+xml;charset=utf8,\
+        <svg xmlns="http://www.w3.org/2000/svg" \
+            viewBox="0  0  24  24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> \
+            <circle cx="12" cy="12" r="10"></circle>\
+            <line x1="12" y1="8" x2="12" y2="16"></line>\
+            <line x1="8" y1="12" x2="16" y2="12"></line>\
+        </svg>');-webkit-mask-image:var(--icon-bg-circle-plus-url);mask-image:var(--icon-bg-circle-plus-url)}.icon-bg-circle-x{--icon-bg-circle-x-url:url('data:image/svg+xml;charset=utf8,\
+        <svg xmlns="http://www.w3.org/2000/svg" \
+            viewBox="0  0  24  24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> \
+            <circle cx="12" cy="12" r="10"></circle>\
+            <line x1="15" y1="9" x2="9" y2="15"></line>\
+            <line x1="9" y1="9" x2="15" y2="15"></line> \
+        </svg>');-webkit-mask-image:var(--icon-bg-circle-x-url);mask-image:var(--icon-bg-circle-x-url)}.icon-bg-clock{--icon-bg-clock-url:url('data:image/svg+xml;charset=utf8,\
         <svg xmlns="http://www.w3.org/2000/svg" \
             viewBox="0  0  24  24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> \
             <circle cx="12" cy="12" r="10"/> \
