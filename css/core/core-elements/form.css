@@ -319,3 +319,31 @@
 .form .switch input:checked + span::after {
     left: 2.75rem;
 }
+
+/* adds a help icon to top left part of field */
+.form.has-help-text {
+    position: relative;
+}
+
+.form.has-help-text > span {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    margin: 0;
+    line-height: 0;
+    padding: 0.25em;
+    background-color: var(--bg-main);
+    color: var(--secondary);
+}
+
+.form.has-help-text > span > * {
+    margin: 0;
+    height: 1em;
+    width: 1em;
+    cursor: pointer;
+}
+
+.form.has-help-text > p {
+    margin-top: -1rem;
+    margin-left: 1rem;
+}
