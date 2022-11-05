@@ -2104,7 +2104,7 @@ button.delete.is-small
     background-color: var(--bg-main);
 }
 
-.has-help-text > span > *
+.has-help-text > span > span:not(.icon-nav)
 {
     width: 1em;
     height: 1em;

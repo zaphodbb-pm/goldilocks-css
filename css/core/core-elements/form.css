@@ -343,7 +343,7 @@
     z-index: 1;
 }
 
-.has-help-text > span > * {
+.has-help-text > span > span:not(.icon-nav) {
     margin: 0;
     height: 1em;
     width: 1em;
