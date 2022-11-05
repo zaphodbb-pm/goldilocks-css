@@ -57,9 +57,15 @@
 .form > label > input,
 .form > label > textarea,
 .form > label > select,
+.form .has-help-text label > input,
+.form .has-help-text label > textarea,
+.form .has-help-text label > select,
 .form .field-group > label > input,
 .form .field-group > label > textarea,
-.form .field-group > label > select {
+.form .field-group > label > select,
+.form .field-group .has-help-text label > input,
+.form .field-group .has-help-text label > textarea,
+.form .field-group .has-help-text label > select {
     background-color: var(--bg-main-elem);
     border: 1px solid var(--border-main-darker);
     border-radius: var(--radius-elem);
