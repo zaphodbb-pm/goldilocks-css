@@ -321,11 +321,11 @@
 }
 
 /* adds a help icon to top left part of field */
-.form.has-help-text {
+.has-help-text {
     position: relative;
 }
 
-.form.has-help-text > span {
+.has-help-text > span {
     position: absolute;
     top: -0.5rem;
     right: -0.5rem;
@@ -334,16 +334,17 @@
     padding: 0.25em;
     background-color: var(--bg-main);
     color: var(--secondary);
+    z-index: 1;
 }
 
-.form.has-help-text > span > * {
+.has-help-text > span > * {
     margin: 0;
     height: 1em;
     width: 1em;
     cursor: pointer;
 }
 
-.form.has-help-text > p {
+.has-help-text > p {
     margin-top: -1rem;
     margin-left: 1rem;
 }
