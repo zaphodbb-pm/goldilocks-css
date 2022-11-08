@@ -51,21 +51,23 @@
     font-size: var(--size-7);
     color: var(--text-elem);
     z-index: 10;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 
-.form > label > input,
-.form > label > textarea,
-.form > label > select,
-.form .has-help-text label > input,
-.form .has-help-text label > textarea,
-.form .has-help-text label > select,
-.form .field-group > label > input,
-.form .field-group > label > textarea,
-.form .field-group > label > select,
-.form .field-group .has-help-text label > input,
-.form .field-group .has-help-text label > textarea,
-.form .field-group .has-help-text label > select {
+.form > label input,
+.form > label textarea,
+.form > label select,
+.form .has-help-text label input,
+.form .has-help-text label textarea,
+.form .has-help-text label select,
+.form .field-group > label input,
+.form .field-group > label textarea,
+.form .field-group > label select,
+.form .field-group .has-help-text label input,
+.form .field-group .has-help-text label textarea,
+.form .field-group .has-help-text label select {
     background-color: var(--bg-main-elem);
     border: 1px solid var(--border-main-darker);
     border-radius: var(--radius-elem);
@@ -82,17 +84,32 @@
 
     box-shadow: none;
     margin: 0;
-    padding: 0.75rem 3.5rem 0.5rem 0.75rem;
+    padding: var(--pad-vert) var(--pad-horz);
 
     width: 100%;
 }
 
 
 .form > label select,
-.form .has-field-addons > label > select{
+.form .has-help-text label select,
+.form .field-group > label select,
+.form .field-group .has-help-text label select {
+    padding-right: 2.5rem;
+}
+
+.form label input[type="checkbox"],
+.form .field-group label input[type="checkbox"] {
+    appearance: auto;
+    --webkit-appearance: auto;
+    width: auto;
+}
+
+
+.form label select,
+.form .has-field-addons label select{
     /* builds "chevron down" svg image for select box */
     background-image: var(--indicator);
-    background-position: right 1em center;
+    background-position: right 0.5em center;
     background-size: 1.5em 1.5em;
     background-repeat: no-repeat;
     background-origin: padding-box;
@@ -122,6 +139,13 @@
     border-radius: var(--radius-elem);
 }
 
+
+.form fieldset.is-vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 0;
+}
+
 .form fieldset legend {
     background-color: var(--bg-main-elem);
     padding: 0 calc( 0.5 * var(--pad-horz) );
@@ -130,23 +154,19 @@
     color: var(--text-elem);
 }
 
-.form fieldset > label {
+.form fieldset label {
     margin: 0;
     display: flex;
     align-items: center;
 }
 
-.form fieldset label > span {
-    margin: 0 calc( 0.5 * var(--gap-col) );
-}
 
-
-.form label > input:focus-visible,
-.form label > textarea:focus-visible,
-.form label > select:focus-visible,
-.form label > div:focus-visible {
+.form label input:focus-visible,
+.form label textarea:focus-visible,
+.form label select:focus-visible,
+.form label div:focus-visible {
     outline: none;
-    border: 2px solid var(--primary);
+    border:2px solid var(--primary);
 }
 
 .form label .icon:last-child,
@@ -155,7 +175,7 @@
 }
 
 .field-error {
-    border: 1px solid var(--danger);
+    border: 2px solid var(--danger) !important;
     border-radius: var(--radius-elem);
 }
 
@@ -194,7 +214,31 @@
     border-top-left-radius: var(--radius-elem);
     border-bottom-left-radius: var(--radius-elem);
     border-right: none;
+    padding: 0;
 }
+
+.form .has-field-addons > :first-child:has(input),
+.form .has-field-addons > :last-child:has(input) {
+    border: none;
+}
+
+.form .has-field-addons > :last-child:has(input) {
+    padding: 0;
+}
+
+.form .has-field-addons > :first-child input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height: calc(2.5rem + 2px);
+}
+
+.form .has-field-addons > :last-child input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: calc(2.5rem + 2px);
+    padding: 0;
+}
+
 
 .form .has-field-addons > :last-child {
     border-top-right-radius: var(--radius-elem);
@@ -206,14 +250,14 @@
     border: none;
 }
 
-.form .has-field-addons label.is-fullwidth {
+.form .has-field-addons .is-fullwidth {
     width: 100%;
 }
 
 
-.form .has-field-addons > label > input,
-.form .has-field-addons > label > textarea,
-.form .has-field-addons > label > select {
+.form .has-field-addons > label input,
+.form .has-field-addons > label textarea,
+.form .has-field-addons > label select {
     position: relative;
     color: var(--text-elem);
     font-size: var(--size-6);
@@ -231,7 +275,7 @@
     width: 100%;
 }
 
-.form .has-field-addons  > label > select {
+.form .has-field-addons  > label select {
     padding-right: 3.5rem;
     width: auto;
 }
@@ -278,7 +322,7 @@
 }
 
 .form .switch input {
-    display: none;
+    display: none !important;
 }
 
 
@@ -340,6 +384,7 @@
     padding: 0.25em;
     background-color: var(--bg-main);
     color: var(--secondary);
+    border-radius: 50%;
     z-index: 1;
 }
 

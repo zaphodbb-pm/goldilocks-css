@@ -7,7 +7,7 @@
 .tabs > input {
     display:block; /* "enable" hidden elements in IE/edge */
     position:absolute; /* then hide them off-screen */
-    left:-100%;
+    left:-100vw;
 }
 
 .tabs > ul {
@@ -81,7 +81,6 @@
 .tabs > ul label {
     -webkit-touch-callout:none;
     -webkit-user-select:none;
-    -khtml-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none;
@@ -145,7 +144,7 @@
     border-bottom: 1px solid var(--bg-main) !important;
 
     margin-bottom: -1px;
-    background-color: var(--bg-main);
+    background-color: inherit;
 }
 
 

@@ -95,11 +95,11 @@
     --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
     /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
     --indicator: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg"  \
-        width="24" height="24" viewBox="0  0  24  24"  \
-        fill="none" stroke="#CF63AB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline  points="6  9  12  15  18  9"/>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+    %20viewBox=\'0%200%2024%2024\'%20\
+    fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E\
+    %3Cpolyline%20points=\'6%209%2012%2015%2018%209\'/%3E\
+    %3C/svg%3E');
     --indicator-down: url('data:image/svg+xml;charset=utf8,\
     <svg xmlns="http://www.w3.org/2000/svg" \
         width="24" height="24" viewBox="0 0 24 24" \
@@ -306,6 +306,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-bg: var(--black-bis);
     --text-code: var(--secondary-light);;
 }
+
+/** other special items that need control **/
+
 
 /* Pure css HTML base elements and reset */
 /** note that some HTML tags are set in other element files **/
@@ -1742,25 +1745,29 @@ button.delete.is-small
     top: calc( -.75 * var(--margin));
     left: var(--margin);
 
+    overflow: hidden;
+
     padding: 0  calc( .5 * var(--pad-horz) );
+
+    white-space: nowrap;
 
     color: var(--text-elem);
     background-color: var(--bg-main-elem);
 }
 
 
-.form > label > input,
-.form > label > textarea,
-.form > label > select,
-.form .has-help-text label > input,
-.form .has-help-text label > textarea,
-.form .has-help-text label > select,
-.form .field-group > label > input,
-.form .field-group > label > textarea,
-.form .field-group > label > select,
-.form .field-group .has-help-text label > input,
-.form .field-group .has-help-text label > textarea,
-.form .field-group .has-help-text label > select
+.form > label input,
+.form > label textarea,
+.form > label select,
+.form .has-help-text label input,
+.form .has-help-text label textarea,
+.form .has-help-text label select,
+.form .field-group > label input,
+.form .field-group > label textarea,
+.form .field-group > label select,
+.form .field-group .has-help-text label input,
+.form .field-group .has-help-text label textarea,
+.form .field-group .has-help-text label select
 {
     font-size: var(--size-6);
 
@@ -1771,7 +1778,7 @@ button.delete.is-small
     box-sizing: border-box;
     width: 100%;
     margin: 0;
-    padding: .75rem 3.5rem .5rem .75rem;
+    padding: var(--pad-vert) var(--pad-horz);
 
     color: var(--text-elem);
     border: 1px solid var(--border-main-darker);
@@ -1786,7 +1793,27 @@ button.delete.is-small
 
 
 .form > label select,
-.form .has-field-addons > label > select
+.form .has-help-text label select,
+.form .field-group > label select,
+.form .field-group .has-help-text label select
+{
+    padding-right: 2.5rem;
+}
+
+.form label input[type='checkbox'],
+.form .field-group label input[type='checkbox']
+{
+    width: auto;
+
+    -webkit-appearance: auto;
+       -moz-appearance: auto;
+            appearance: auto;
+    --webkit-appearance: auto;
+}
+
+
+.form label select,
+.form .has-field-addons label select
 {
     cursor: pointer;
 
@@ -1795,7 +1822,7 @@ button.delete.is-small
     background-image: var(--indicator);
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: right 1em center;
+    background-position: right .5em center;
     background-clip: border-box;
     background-origin: padding-box;
     background-size: 1.5em 1.5em;
@@ -1823,6 +1850,15 @@ button.delete.is-small
     gap: var(--gap-row) var(--gap-col);
 }
 
+
+.form fieldset.is-vertical
+{
+    flex-direction: column;
+
+    align-items: flex-start;
+    row-gap: 0;
+}
+
 .form fieldset legend
 {
     font-size: var(--size-7);
@@ -1834,7 +1870,7 @@ button.delete.is-small
     background-color: var(--bg-main-elem);
 }
 
-.form fieldset > label
+.form fieldset label
 {
     display: flex;
 
@@ -1843,16 +1879,11 @@ button.delete.is-small
     align-items: center;
 }
 
-.form fieldset label > span
-{
-    margin: 0 calc( .5 * var(--gap-col) );
-}
 
-
-.form label > input:focus-visible,
-.form label > textarea:focus-visible,
-.form label > select:focus-visible,
-.form label > div:focus-visible
+.form label input:focus-visible,
+.form label textarea:focus-visible,
+.form label select:focus-visible,
+.form label div:focus-visible
 {
     border: 2px solid var(--primary);
     outline: none;
@@ -1866,7 +1897,7 @@ button.delete.is-small
 
 .field-error
 {
-    border: 1px solid var(--danger);
+    border: 2px solid var(--danger) !important;
     border-radius: var(--radius-elem);
 }
 
@@ -1910,10 +1941,41 @@ button.delete.is-small
 
 .form .has-field-addons > :first-child
 {
+    padding: 0;
+
     border-right: none;
     border-top-left-radius: var(--radius-elem);
     border-bottom-left-radius: var(--radius-elem);
 }
+
+.form .has-field-addons > :first-child:has(input),
+.form .has-field-addons > :last-child:has(input)
+{
+    border: none;
+}
+
+.form .has-field-addons > :last-child:has(input)
+{
+    padding: 0;
+}
+
+.form .has-field-addons > :first-child input
+{
+    height: calc(2.5rem + 2px);
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form .has-field-addons > :last-child input
+{
+    height: calc(2.5rem + 2px);
+    padding: 0;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 
 .form .has-field-addons > :last-child
 {
@@ -1927,15 +1989,15 @@ button.delete.is-small
     border: none;
 }
 
-.form .has-field-addons label.is-fullwidth
+.form .has-field-addons .is-fullwidth
 {
     width: 100%;
 }
 
 
-.form .has-field-addons > label > input,
-.form .has-field-addons > label > textarea,
-.form .has-field-addons > label > select
+.form .has-field-addons > label input,
+.form .has-field-addons > label textarea,
+.form .has-field-addons > label select
 {
     font-size: var(--size-6);
 
@@ -1956,7 +2018,7 @@ button.delete.is-small
     -webkit-appearance: none;
 }
 
-.form .has-field-addons > label > select
+.form .has-field-addons > label select
 {
     width: auto;
     padding-right: 3.5rem;
@@ -2018,7 +2080,7 @@ button.delete.is-small
 
 .form .switch input
 {
-    display: none;
+    display: none !important;
 }
 
 
@@ -2101,6 +2163,7 @@ button.delete.is-small
     padding: .25em;
 
     color: var(--secondary);
+    border-radius: 50%;
     background-color: var(--bg-main);
 }
 
@@ -3135,8 +3198,6 @@ details.accordion.is-expander-danger summary
 .card > header
 {
     padding: 1.5rem;
-
-    background-color: transparent;
 }
 
 .card > header > :is(h2, h3, h4, h5, h6)
@@ -3146,14 +3207,30 @@ details.accordion.is-expander-danger summary
 
     margin: 0;
 
-    color: var(--text-darker);
+    color: inherit;
 }
 
 .card > header > :is(h2, h3, h4, h5, h6) + p
 {
     font-weight: var(--weight-semibold);
 
-    color: var(--text-light);
+    opacity: 70%;
+}
+
+.card > header:first-child
+{
+    -webkit-border-top-left-radius: inherit;
+            border-top-left-radius: inherit;
+    -webkit-border-top-right-radius: inherit;
+            border-top-right-radius: inherit;
+}
+
+.card > header:last-child
+{
+    -webkit-border-bottom-right-radius: inherit;
+            border-bottom-right-radius: inherit;
+    -webkit-border-bottom-left-radius: inherit;
+            border-bottom-left-radius: inherit;
 }
 
 .card > figure
@@ -4705,7 +4782,7 @@ details.accordion.is-expander-danger summary
 .tabs > input
 {
     position: absolute; /* then hide them off-screen */
-    left: -100%;
+    left: -100vw;
 
     display: block; /* "enable" hidden elements in IE/edge */
 }
@@ -4881,7 +4958,7 @@ details.accordion.is-expander-danger summary
     border-bottom: 1px solid var(--bg-main) !important;
     border-left: 1px solid var(--border-main-darker) !important;
     border-radius: var(--radius) var(--radius) 0 0;
-    background-color: var(--bg-main);
+    background-color: inherit;
 }
 
 
@@ -8274,18 +8351,6 @@ a.tag:hover
     width: 6rem;
     height: 6rem;
 }
-
-
-/*
-.reportbox > img {
-    border-radius: var(--radius-elem);
-    border: solid 0.25rem var(--border-main);
-    height: auto;
-    width: auto;
-    object-fit: cover;
-}
-
- */
 
 
 /* text setup */

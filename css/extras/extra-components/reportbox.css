@@ -66,18 +66,6 @@
 }
 
 
-/*
-.reportbox > img {
-    border-radius: var(--radius-elem);
-    border: solid 0.25rem var(--border-main);
-    height: auto;
-    width: auto;
-    object-fit: cover;
-}
-
- */
-
-
 /* text setup */
 .reportbox > p,
 .reportbox > label {
