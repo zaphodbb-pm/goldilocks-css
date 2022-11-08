@@ -1895,6 +1895,13 @@ button.delete.is-small
     margin: 0;
 }
 
+.form fieldset input[type='checkbox'] + span,
+.form fieldset input[type='radio'] + span
+{
+    margin-left: var(--mar-horz);
+}
+
+
 .field-error
 {
     border: 2px solid var(--danger) !important;
