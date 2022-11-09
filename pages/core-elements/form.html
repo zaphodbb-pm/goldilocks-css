@@ -24,6 +24,14 @@ nav: Form
                 Included here is a simple javascript routine to collect and display the form's inputs.  Validation is typically handled through
                 javascript before sending to the server.
             </p>
+
+            <p>Long forms are often required for system administration or configuration purposes. An optional tabbed form
+                variant is provided that breaks a long form into tabs that have related inputs.  This is all CSS controlled -
+                no javascript required.  The form submit button sees all of the form fields and hence all these fields will be
+                sent to the server. Note customers will usually not see these long forms!  ... should not see.  Just in case,
+                for screen readers, the tab controls are hidden and the full form is semantically structured to be readable by
+                assistive technologies.
+            </p>
         </section>
 
         <section class="column">
@@ -89,7 +97,31 @@ nav: Form
 
                 <tr>
                     <td><code>.form-footer</code></td>
-                    <td>container for submit and other buttons</td>
+                    <td>Container for submit and other buttons</td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-form-tabbed</code></td>
+                    <td>Optional modifier for <code>.form</code> class in the <code>form</code> element signifies that this form
+                        contains a tabbed structure.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.form-tabs</code></td>
+                    <td>Master container for the radio buttons that select the <code>.form-group</code> to show as
+                        well as containing the list of tabs text.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.form-group-container</code></td>
+                    <td>Parent container for <code>.form-groups</code>. This is a wrapper to needed to set presentation of
+                        the <code>.form-group</code>s.</td>
+                </tr>
+
+                <tr>
+                    <td><code>.form-group</code></td>
+                    <td>Container for various form fields.  The <code>.form-group</code> is moved out of or into the viewport
+                        by clicking on a label in the master container.</td>
                 </tr>
                 </tbody>
             </table>
@@ -605,6 +637,363 @@ nav: Form
                             &lt;span&gt;Three&lt;/span&gt;
                         &lt;/label&gt;
                     &lt;/fieldset&gt;
+
+                    &lt;div class="form-footer"&gt;
+                        &lt;button type="submit" class="is-primary has-hover"&gt;Submit!&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+
+                &lt;script&gt;
+                    const submit = document.getElementById("test-form");
+
+                    submit.addEventListener('submit', (ev) =&gt; {
+                        ev.preventDefault();
+
+                        const preamble = "Some simple javascript for demonstration only.\nValues picked up in form:\n\n";
+                        const fields = ["input_field", "select1", "color_field", "date_field", "time_field", "text2_field",
+                            "switch_field", "select2", "email_field", "phone_field", "radio-group1", "checkboxes"];
+
+                        let out = {};
+
+                        fields.forEach( field => {
+                            switch(field){
+                                /* a group of checkboxes is annoying to handle, need to use its state to extract values */
+                                case "checkboxes":
+                                    out[field] = [];
+
+                                    Object.values(submit2.elements[field]).forEach( box => {
+                                        if(box.checked){
+                                            out[field].push(box.value);
+                                        }
+                                    });
+                                    break;
+
+                                /* a checkbox is also a pain in the butt! */
+                                case "switch_field":
+                                    out[field] = !!submit2?.elements[field]?.checked;
+                                    break;
+
+                                default:
+                                    out[field] = submit2.elements[field].value;
+                            }
+                        });
+
+                        window.alert( `${preamble} ${JSON.stringify(out, null, '  ')}`);
+                    })
+                &lt;/script&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium"></div>
+
+
+
+
+    <h3>Tabbed Form Structure</h3>
+    <div class="row">
+        <div class="column">
+
+            <form id="test-form-tabbed" class="form is-form-tabbed" method="post">
+                <p class="is-secondary">Tabbed Form</p>
+
+                <div class="form-tabs">
+                    <input type="radio" name="tab_unit_01" id="tabs_content_01" hidden  checked aria-hidden="true">
+                    <input type="radio" name="tab_unit_01" id="tabs_content_02" hidden  aria-hidden="true">
+                    <input type="radio" name="tab_unit_01" id="tabs_content_03" hidden  aria-hidden="true">
+
+                    <ul hidden aria-hidden="true">
+                        <li><label for="tabs_content_01">One</label></li>
+                        <li><label for="tabs_content_02">Two</label></li>
+                        <li><label for="tabs_content_03">Three</label></li>
+                    </ul>
+
+                    <div class="form-group-container">
+                        <div class="form-group" id="one">
+                            <label>
+                                <span>Input Field</span>
+                                <input type="text" placeholder="Text input" name="input_field">
+                            </label>
+
+                            <div class="field-group">
+                                <label class="select">
+                                    <span>Select</span>
+                                    <select name="select1">
+                                        <option value="one">Select One</option>
+                                        <option value="two">Select Two</option>
+                                    </select>
+                                </label>
+
+                                <label class="select">
+                                    <span>Colour</span>
+                                    <input type="color" name="color_field">
+                                </label>
+                            </div>
+
+                            <div class="field-group">
+                                <label>
+                                    <span>Date Field</span>
+                                    <input type="date" name="date_field">
+                                </label>
+
+                                <label>
+                                    <span>Time Field</span>
+                                    <input type="time" value="09:00" name="time_field">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="two">
+                            <label>
+                                <span>Input Field Two</span>
+                                <input type="text" placeholder="Text input" name="text2_field">
+                            </label>
+
+                            <label>
+                                <span>Switch</span>
+                                <span class="switch">
+                            <input type="checkbox" name="switch_field" value="toggle-on">
+                            <span>Toggle Switch Value</span>
+                        </span>
+                            </label>
+
+                            <label>
+                                <span>Select</span>
+                                <select name="select2">
+                                    <option value="one">Select One</option>
+                                    <option value="two">Select Two</option>
+                                </select>
+                            </label>
+
+                            <div class="field-group">
+                                <label>
+                                    <span>Email Field</span>
+                                    <input type="email" name="email_field">
+                                </label>
+
+                                <label>
+                                    <span>Phone Field</span>
+                                    <input type="tel" name="phone_field">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="three">
+                            <fieldset>
+                                <legend>Radio Group</legend>
+
+                                <label>
+                                    <input type="radio" name="radio-group1" value="One">
+                                    <span>One</span>
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="radio-group1" value="Two">
+                                    <span>Two</span>
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="radio-group1" value="Three">
+                                    <span>Three</span>
+                                </label>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Checkbox Group</legend>
+
+                                <label>
+                                    <input type="checkbox" name="checkboxes" value="One">
+                                    <span>One</span>
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="checkboxes" value="Two">
+                                    <span>Two</span>
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="checkboxes" value="Three">
+                                    <span>Three</span>
+                                </label>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="is-primary has-hover">Submit!</button>
+                </div>
+            </form>
+
+            <script>
+                const submit3 = document.getElementById("test-form-tabbed");
+
+                submit3.addEventListener('submit', (ev) => {
+                    ev.preventDefault();
+
+                    const preamble = "Some simple javascript for demonstration only.\nValues picked up in form:\n\n";
+                    const fields = ["input_field", "select1", "color_field", "date_field", "time_field", "text2_field",
+                        "switch_field", "select2", "email_field", "phone_field", "radio-group1", "checkboxes"];
+
+                    let out = {};
+
+                    fields.forEach( field => {
+                        switch(field){
+                            /* a group of checkboxes is annoying to handle, need to use its state to extract values */
+                            case "checkboxes":
+                                out[field] = [];
+
+                                Object.values(submit3.elements[field]).forEach( box => {
+                                    if(box.checked){
+                                        out[field].push(box.value);
+                                    }
+                                });
+                                break;
+
+                            /* a checkbox is also a pain in the butt! */
+                            case "switch_field":
+                                out[field] = !!submit3?.elements[field]?.checked;
+                                break;
+
+                            default:
+                                out[field] = submit3.elements[field].value;
+                        }
+                    });
+
+                    window.alert( `${preamble} ${JSON.stringify(out, null, '  ')}`);
+                })
+            </script>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;form id="test-form-tabbed" class="form is-form-tabbed" method="post"&gt;
+                    &lt;p class="is-secondary"&gt;Tabbed Form&lt;/p&gt;
+
+                    &lt;div class="form-tabs"&gt;
+                        &lt;input type="radio" name="tab_unit_01" id="tabs_content_01" hidden  checked aria-hidden="true"&gt;
+                        &lt;input type="radio" name="tab_unit_01" id="tabs_content_02" hidden  aria-hidden="true"&gt;
+                        &lt;input type="radio" name="tab_unit_01" id="tabs_content_03" hidden  aria-hidden="true"&gt;
+
+                        &lt;ul hidden aria-hidden="true"&gt;
+                            &lt;li&gt;&lt;label for="tabs_content_01"&gt;One&lt;/label&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;label for="tabs_content_02"&gt;Two&lt;/label&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;label for="tabs_content_03"&gt;Three&lt;/label&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+
+                        &lt;div class="form-group-container"&gt;
+                            &lt;div class="form-group" id="one"&gt;
+                                &lt;label&gt;
+                                    &lt;span&gt;Input Field&lt;/span&gt;
+                                    &lt;input type="text" placeholder="Text input" name="input_field"&gt;
+                                &lt;/label&gt;
+
+                                &lt;div class="field-group"&gt;
+                                    &lt;label class="select"&gt;
+                                        &lt;span&gt;Select&lt;/span&gt;
+                                        &lt;select name="select1"&gt;
+                                            &lt;option value="one"&gt;Select One&lt;/option&gt;
+                                            &lt;option value="two"&gt;Select Two&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/label&gt;
+
+                                    &lt;label class="select"&gt;
+                                        &lt;span&gt;Colour&lt;/span&gt;
+                                        &lt;input type="color" name="color_field"&gt;
+                                    &lt;/label&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="field-group"&gt;
+                                    &lt;label&gt;
+                                        &lt;span&gt;Date Field&lt;/span&gt;
+                                        &lt;input type="date" name="date_field"&gt;
+                                    &lt;/label&gt;
+
+                                    &lt;label&gt;
+                                        &lt;span&gt;Time Field&lt;/span&gt;
+                                        &lt;input type="time" value="09:00" name="time_field"&gt;
+                                    &lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class="form-group" id="two"&gt;
+                                &lt;label&gt;
+                                    &lt;span&gt;Input Field Two&lt;/span&gt;
+                                    &lt;input type="text" placeholder="Text input" name="text2_field"&gt;
+                                &lt;/label&gt;
+
+                                &lt;label&gt;
+                                    &lt;span&gt;Switch&lt;/span&gt;
+                                    &lt;span class="switch"&gt;
+                                &lt;input type="checkbox" name="switch_field" value="toggle-on"&gt;
+                                &lt;span&gt;Toggle Switch Value&lt;/span&gt;
+                            &lt;/span&gt;
+                                &lt;/label&gt;
+
+                                &lt;label&gt;
+                                    &lt;span&gt;Select&lt;/span&gt;
+                                    &lt;select name="select2"&gt;
+                                        &lt;option value="one"&gt;Select One&lt;/option&gt;
+                                        &lt;option value="two"&gt;Select Two&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/label&gt;
+
+                                &lt;div class="field-group"&gt;
+                                    &lt;label&gt;
+                                        &lt;span&gt;Email Field&lt;/span&gt;
+                                        &lt;input type="email" name="email_field"&gt;
+                                    &lt;/label&gt;
+
+                                    &lt;label&gt;
+                                        &lt;span&gt;Phone Field&lt;/span&gt;
+                                        &lt;input type="tel" name="phone_field"&gt;
+                                    &lt;/label&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class="form-group" id="three"&gt;
+                                &lt;fieldset&gt;
+                                    &lt;legend&gt;Radio Group&lt;/legend&gt;
+
+                                    &lt;label&gt;
+                                        &lt;input type="radio" name="radio-group1" value="One"&gt;
+                                        &lt;span&gt;One&lt;/span&gt;
+                                    &lt;/label&gt;
+
+                                    &lt;label&gt;
+                                        &lt;input type="radio" name="radio-group1" value="Two"&gt;
+                                        &lt;span&gt;Two&lt;/span&gt;
+                                    &lt;/label&gt;
+
+                                    &lt;label&gt;
+                                        &lt;input type="radio" name="radio-group1" value="Three"&gt;
+                                        &lt;span&gt;Three&lt;/span&gt;
+                                    &lt;/label&gt;
+                                &lt;/fieldset&gt;
+
+                                &lt;fieldset&gt;
+                                    &lt;legend&gt;Checkbox Group&lt;/legend&gt;
+
+                                    &lt;label&gt;
+                                        &lt;input type="checkbox" name="checkboxes" value="One"&gt;
+                                        &lt;span&gt;One&lt;/span&gt;
+                                    &lt;/label&gt;
+
+                                    &lt;label&gt;
+                                        &lt;input type="checkbox" name="checkboxes" value="Two"&gt;
+                                        &lt;span&gt;Two&lt;/span&gt;
+                                    &lt;/label&gt;
+
+                                    &lt;label&gt;
+                                        &lt;input type="checkbox" name="checkboxes" value="Three"&gt;
+                                        &lt;span&gt;Three&lt;/span&gt;
+                                    &lt;/label&gt;
+                                &lt;/fieldset&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
 
                     &lt;div class="form-footer"&gt;
                         &lt;button type="submit" class="is-primary has-hover"&gt;Submit!&lt;/button&gt;

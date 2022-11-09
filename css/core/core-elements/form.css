@@ -7,12 +7,16 @@
     color: var(--text-elem);
 }
 
-.has-form-shadow {
+.form.has-form-shadow {
     padding: var(--padding-medium) var(--padding-large);
     border-radius: var(--radius-comp);
     box-shadow: var(--shadow);
 }
 
+
+
+
+/* form elements control */
 .form .field-group {
     margin:  var(--margin-form) 0;
     padding: 0;
@@ -56,9 +60,9 @@
 }
 
 
-.form > label input,
-.form > label textarea,
-.form > label select,
+.form label input,
+.form label textarea,
+.form label select,
 .form .has-help-text label input,
 .form .has-help-text label textarea,
 .form .has-help-text label select,
@@ -90,7 +94,7 @@
 }
 
 
-.form > label select,
+.form label select,
 .form .has-help-text label select,
 .form .field-group > label select,
 .form .field-group .has-help-text label select {
@@ -98,7 +102,9 @@
 }
 
 .form label input[type="checkbox"],
-.form .field-group label input[type="checkbox"] {
+.form .field-group label input[type="checkbox"],
+.form label input[type="radio"],
+.form .field-group label input[type="radio"] {
     appearance: auto;
     --webkit-appearance: auto;
     width: auto;
@@ -118,6 +124,10 @@
     background-color: transparent;
 
     cursor: pointer;
+}
+
+.form label input::placeholder {
+    color: var(--text-light);
 }
 
 
@@ -306,6 +316,10 @@
     padding: 0 1em;
 }
 
+.form.is-form-tabbed .form-footer {
+    padding: var(--margin-form)
+}
+
 .form input[type="submit"] {
     background-color: transparent;
     border: none;
@@ -404,4 +418,134 @@
 .has-help-text > p {
     margin-top: -1rem;
     margin-left: 1rem;
+}
+
+
+
+/* optional tabbed form controls */
+.form.is-form-tabbed {
+    position: relative;
+    border-radius: var(--radius-comp);
+    box-shadow: var(--shadow);
+    margin: 0;
+    padding: 0;
+}
+
+/** optional form header **/
+.form.is-form-tabbed > p {
+    padding: var(--pad-horz);
+    font-size: var(--size-3);
+    font-weight: var(--weight-semibold);
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.form.is-form-tabbed > p:not([class*='is-']) {
+    background-color: var(--bg-element);
+}
+
+.form .form-tabs {
+    overflow-x: scroll;
+}
+
+.form .form-tabs > input {
+    display:block; /* "enable" hidden elements in IE/edge */
+    position:absolute; /* then hide them off-screen */
+    left:-100vw;
+}
+
+.form .form-tabs > ul {
+    position:relative;
+    z-index:999;
+    list-style:none;
+    display:flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-main-darker);
+    margin: 0;
+    padding: 0 var(--padding);
+    font-size: var(--size-6);
+}
+
+.form .form-tabs ul li {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-indent: 0;
+}
+
+.form .form-tabs ul label {
+    text-decoration: none;
+    color: var(--text-comp);
+    line-height: 1;
+
+    display:inline-flex;
+    align-items: center;
+    padding:0.5em 1em;
+    border-right-width:0;
+    cursor: pointer;
+    margin: 0;
+}
+
+.form .form-tabs ul label:hover {
+    background-color: var(--bg-main-ter);
+    border-bottom: 1px solid var(--border-main-darker);
+    margin-bottom: 0;
+    color: var(--text-darker);
+}
+
+.form .form-tabs ul label span:last-child {
+    margin: 0 0 0 0.5em;
+    font-size: 1em;
+}
+
+.form .form-tabs ul label span:first-child {
+    margin: 0 0.5em 0 0;
+    font-size: 1em;
+}
+
+
+.form .form-group-container {
+    position:relative;
+    padding: var(--padding);
+}
+
+.form .form-group-container .form-group {
+    position:absolute;
+    top:-999em;
+    left:-999em;
+}
+
+.form .form-tabs > input:nth-child(1):checked ~  ul li:nth-child(1) label,
+.form .form-tabs > input:nth-child(2):checked ~  ul li:nth-child(2) label,
+.form .form-tabs > input:nth-child(3):checked ~  ul li:nth-child(3) label,
+.form .form-tabs > input:nth-child(4):checked ~  ul li:nth-child(4) label,
+.form .form-tabs > input:nth-child(5):checked ~  ul li:nth-child(5) label,
+.form .form-tabs > input:nth-child(6):checked ~  ul li:nth-child(6) label,
+.form .form-tabs > input:nth-child(7):checked ~  ul li:nth-child(7) label,
+.form .form-tabs > input:nth-child(8):checked ~  ul li:nth-child(8) label,
+.form .form-tabs > input:nth-child(9):checked ~  ul li:nth-child(9) label {
+    border-radius: var(--radius) var(--radius) 0 0;
+    border-left: 1px solid var(--border-main-darker) !important;
+    border-top: 1px solid var(--border-main-darker) !important;
+    border-right: 1px solid var(--border-main-darker) !important;
+    border-bottom: 1px solid var(--bg-main) !important;
+    color: var(--link);
+    font-weight: var(--weight-semibold);
+
+    margin-bottom: -1px;
+    background-color: inherit;
+}
+
+
+.form.is-form-tabbed > .form-tabs input:nth-child(1):checked ~ div.form-group-container > div.form-group:nth-child(1),
+.form.is-form-tabbed > .form-tabs input:nth-child(2):checked ~ div.form-group-container > div.form-group:nth-child(2),
+.form.is-form-tabbed > .form-tabs input:nth-child(3):checked ~ div.form-group-container > div.form-group:nth-child(3),
+.form.is-form-tabbed > .form-tabs input:nth-child(4):checked ~ div.form-group-container > div.form-group:nth-child(4),
+.form.is-form-tabbed > .form-tabs input:nth-child(5):checked ~ div.form-group-container > div.form-group:nth-child(5),
+.form.is-form-tabbed > .form-tabs input:nth-child(6):checked ~ div.form-group-container > div.form-group:nth-child(6),
+.form.is-form-tabbed > .form-tabs input:nth-child(7):checked ~ div.form-group-container > div.form-group:nth-child(7),
+.form.is-form-tabbed > .form-tabs input:nth-child(8):checked ~ div.form-group-container > div.form-group:nth-child(8),
+.form.is-form-tabbed > .form-tabs input:nth-child(9):checked ~ div.form-group-container > div.form-group:nth-child(9) {
+    position: static;
 }

@@ -1689,7 +1689,7 @@ button.delete.is-small
     box-shadow: none;
 }
 
-.has-form-shadow
+.form.has-form-shadow
 {
     padding: var(--padding-medium) var(--padding-large);
 
@@ -1697,6 +1697,10 @@ button.delete.is-small
     box-shadow: var(--shadow);
 }
 
+
+
+
+/* form elements control */
 .form .field-group
 {
     display: flex;
@@ -1756,9 +1760,9 @@ button.delete.is-small
 }
 
 
-.form > label input,
-.form > label textarea,
-.form > label select,
+.form label input,
+.form label textarea,
+.form label select,
 .form .has-help-text label input,
 .form .has-help-text label textarea,
 .form .has-help-text label select,
@@ -1792,7 +1796,7 @@ button.delete.is-small
 }
 
 
-.form > label select,
+.form label select,
 .form .has-help-text label select,
 .form .field-group > label select,
 .form .field-group .has-help-text label select
@@ -1801,7 +1805,9 @@ button.delete.is-small
 }
 
 .form label input[type='checkbox'],
-.form .field-group label input[type='checkbox']
+.form .field-group label input[type='checkbox'],
+.form label input[type='radio'],
+.form .field-group label input[type='radio']
 {
     width: auto;
 
@@ -1826,6 +1832,21 @@ button.delete.is-small
     background-clip: border-box;
     background-origin: padding-box;
     background-size: 1.5em 1.5em;
+}
+
+.form label input::-moz-placeholder
+{
+    color: var(--text-light);
+}
+
+.form label input:-ms-input-placeholder
+{
+    color: var(--text-light);
+}
+
+.form label input::placeholder
+{
+    color: var(--text-light);
 }
 
 
@@ -2058,6 +2079,11 @@ button.delete.is-small
     padding: 0 1em;
 }
 
+.form.is-form-tabbed .form-footer
+{
+    padding: var(--margin-form);
+}
+
 .form input[type='submit']
 {
     font-size: inherit;
@@ -2187,6 +2213,173 @@ button.delete.is-small
 {
     margin-top: -1rem;
     margin-left: 1rem;
+}
+
+
+
+/* optional tabbed form controls */
+.form.is-form-tabbed
+{
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    border-radius: var(--radius-comp);
+    box-shadow: var(--shadow);
+}
+
+/** optional form header **/
+.form.is-form-tabbed > p
+{
+    font-size: var(--size-3);
+    font-weight: var(--weight-semibold);
+
+    padding: var(--pad-horz);
+
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.form.is-form-tabbed > p:not([class*='is-'])
+{
+    background-color: var(--bg-element);
+}
+
+.form .form-tabs
+{
+    overflow-x: scroll;
+}
+
+.form .form-tabs > input
+{
+    position: absolute; /* then hide them off-screen */
+    left: -100vw;
+
+    display: block; /* "enable" hidden elements in IE/edge */
+}
+
+.form .form-tabs > ul
+{
+    font-size: var(--size-6);
+
+    position: relative;
+    z-index: 999;
+
+    display: flex;
+
+    margin: 0;
+    padding: 0 var(--padding);
+
+    list-style: none;
+
+    border-bottom: 1px solid var(--border-main-darker);
+
+    flex-wrap: wrap;
+}
+
+.form .form-tabs ul li
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    text-decoration: none;
+    text-indent: 0;
+}
+
+.form .form-tabs ul label
+{
+    line-height: 1;
+
+    display: inline-flex;
+
+    margin: 0;
+    padding: .5em 1em;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    color: var(--text-comp);
+    border-right-width: 0;
+
+    align-items: center;
+}
+
+.form .form-tabs ul label:hover
+{
+    margin-bottom: 0;
+
+    color: var(--text-darker);
+    border-bottom: 1px solid var(--border-main-darker);
+    background-color: var(--bg-main-ter);
+}
+
+.form .form-tabs ul label span:last-child
+{
+    font-size: 1em;
+
+    margin: 0 0 0 .5em;
+}
+
+.form .form-tabs ul label span:first-child
+{
+    font-size: 1em;
+
+    margin: 0 .5em 0 0;
+}
+
+
+.form .form-group-container
+{
+    position: relative;
+
+    padding: var(--padding);
+}
+
+.form .form-group-container .form-group
+{
+    position: absolute;
+    top: -999em;
+    left: -999em;
+}
+
+.form .form-tabs > input:nth-child(1):checked ~ ul li:nth-child(1) label,
+.form .form-tabs > input:nth-child(2):checked ~ ul li:nth-child(2) label,
+.form .form-tabs > input:nth-child(3):checked ~ ul li:nth-child(3) label,
+.form .form-tabs > input:nth-child(4):checked ~ ul li:nth-child(4) label,
+.form .form-tabs > input:nth-child(5):checked ~ ul li:nth-child(5) label,
+.form .form-tabs > input:nth-child(6):checked ~ ul li:nth-child(6) label,
+.form .form-tabs > input:nth-child(7):checked ~ ul li:nth-child(7) label,
+.form .form-tabs > input:nth-child(8):checked ~ ul li:nth-child(8) label,
+.form .form-tabs > input:nth-child(9):checked ~ ul li:nth-child(9) label
+{
+    font-weight: var(--weight-semibold);
+
+    margin-bottom: -1px;
+
+    color: var(--link);
+    border-top: 1px solid var(--border-main-darker) !important;
+    border-right: 1px solid var(--border-main-darker) !important;
+    border-bottom: 1px solid var(--bg-main) !important;
+    border-left: 1px solid var(--border-main-darker) !important;
+    border-radius: var(--radius) var(--radius) 0 0;
+    background-color: inherit;
+}
+
+
+.form.is-form-tabbed > .form-tabs input:nth-child(1):checked ~ div.form-group-container > div.form-group:nth-child(1),
+.form.is-form-tabbed > .form-tabs input:nth-child(2):checked ~ div.form-group-container > div.form-group:nth-child(2),
+.form.is-form-tabbed > .form-tabs input:nth-child(3):checked ~ div.form-group-container > div.form-group:nth-child(3),
+.form.is-form-tabbed > .form-tabs input:nth-child(4):checked ~ div.form-group-container > div.form-group:nth-child(4),
+.form.is-form-tabbed > .form-tabs input:nth-child(5):checked ~ div.form-group-container > div.form-group:nth-child(5),
+.form.is-form-tabbed > .form-tabs input:nth-child(6):checked ~ div.form-group-container > div.form-group:nth-child(6),
+.form.is-form-tabbed > .form-tabs input:nth-child(7):checked ~ div.form-group-container > div.form-group:nth-child(7),
+.form.is-form-tabbed > .form-tabs input:nth-child(8):checked ~ div.form-group-container > div.form-group:nth-child(8),
+.form.is-form-tabbed > .form-tabs input:nth-child(9):checked ~ div.form-group-container > div.form-group:nth-child(9)
+{
+    position: static;
 }
 
 figure
