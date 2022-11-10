@@ -1691,12 +1691,39 @@ button.delete.is-small
 
 .form.has-form-shadow
 {
-    padding: var(--padding-medium) var(--padding-large);
+    position: relative;
+
+    margin: 0;
+    padding: var(--padding-medium);
 
     border-radius: var(--radius-comp);
     box-shadow: var(--shadow);
 }
 
+
+/** optional form header **/
+.form.has-form-shadow > p,
+.form.is-form-tabbed > p
+{
+    font-size: var(--size-3);
+    font-weight: var(--weight-semibold);
+
+    padding: var(--pad-horz);
+
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.form.has-form-shadow > p
+{
+    margin: calc(-1 * var(--padding-medium)) calc(-1 * var(--padding-medium)) var(--padding-large);
+}
+
+.form.has-form-shadow > p:not([class*='is-']),
+.form.is-form-tabbed > p:not([class*='is-'])
+{
+    background-color: var(--bg-element);
+}
 
 
 
@@ -2230,22 +2257,6 @@ button.delete.is-small
     box-shadow: var(--shadow);
 }
 
-/** optional form header **/
-.form.is-form-tabbed > p
-{
-    font-size: var(--size-3);
-    font-weight: var(--weight-semibold);
-
-    padding: var(--pad-horz);
-
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-}
-
-.form.is-form-tabbed > p:not([class*='is-'])
-{
-    background-color: var(--bg-element);
-}
 
 .form .form-tabs
 {
@@ -2270,7 +2281,7 @@ button.delete.is-small
     display: flex;
 
     margin: 0;
-    padding: 0 var(--padding);
+    padding: 0 var(--padding-medium);
 
     list-style: none;
 
@@ -2336,7 +2347,7 @@ button.delete.is-small
 {
     position: relative;
 
-    padding: var(--padding);
+    padding: var(--padding-medium);
 }
 
 .form .form-group-container .form-group
