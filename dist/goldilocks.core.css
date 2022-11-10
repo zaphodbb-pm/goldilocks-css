@@ -1991,6 +1991,7 @@ button.delete.is-small
 {
     height: calc(2.5rem + 2px);
 
+    border: 1px solid var(--border-main-darker);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -1998,8 +1999,8 @@ button.delete.is-small
 .form .has-field-addons > :last-child input
 {
     height: calc(2.5rem + 2px);
-    padding: 0;
 
+    border: 1px solid var(--border-main-darker);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
