@@ -2159,7 +2159,6 @@ button.delete.is-small
 .form .switch span::before
 {
     position: absolute;
-    top: .75rem;
     left: 2rem;
 
     display: block;
@@ -2178,7 +2177,6 @@ button.delete.is-small
 .form .switch span::after
 {
     position: absolute;
-    top: 1rem;
     left: 1.25rem;
 
     display: block;

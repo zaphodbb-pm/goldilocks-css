@@ -94,3 +94,8 @@
     overflow: auto;
     padding: 20px;
 }
+
+.modal-card > div:last-child {
+    border-bottom-left-radius: var(--radius-comp);
+    border-bottom-right-radius: var(--radius-comp);
+}

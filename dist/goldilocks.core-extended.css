@@ -2159,7 +2159,6 @@ button.delete.is-small
 .form .switch span::before
 {
     position: absolute;
-    top: .75rem;
     left: 2rem;
 
     display: block;
@@ -2178,7 +2177,6 @@ button.delete.is-small
 .form .switch span::after
 {
     position: absolute;
-    top: 1rem;
     left: 1.25rem;
 
     display: block;
@@ -3776,6 +3774,12 @@ details.accordion.is-expander-danger summary
     -webkit-overflow-scrolling: touch;
     flex-grow: 1;
     flex-shrink: 1;
+}
+
+.modal-card > div:last-child
+{
+    border-bottom-right-radius: var(--radius-comp);
+    border-bottom-left-radius: var(--radius-comp);
 }
 
 .navbar
