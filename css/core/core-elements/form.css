@@ -17,40 +17,31 @@
 
 
 /** optional form header **/
-.form.has-form-shadow > p,
-.form.is-form-tabbed > p,
-.form.has-form-shadow > div.level,
-.form.is-form-tabbed > div.level {
+.form.has-form-shadow header,
+.form.is-form-tabbed header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: var(--pad-horz);
     font-size: var(--size-5);
     font-weight: var(--weight-semibold);
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
+    margin-bottom: 0;
 }
 
-.form.has-form-shadow > div.level,
-.form.is-form-tabbed > div.level {
-    margin-bottom: var(--margin);
-}
 
-.form.has-form-shadow > div.level p,
-.form.is-form-tabbed > div.level p {
-    padding: 0;
-    margin: 0;
-}
-
-.form.has-form-shadow > p,
-.form.has-form-shadow > div.level {
+.form.has-form-shadow header {
     margin: calc(-1 * var(--padding-medium)) calc(-1 * var(--padding-medium)) var(--padding-large);
 }
 
-.form.has-form-shadow > p:not([class*='is-']),
-.form.has-form-shadow > div.level:not([class*='is-']),
-.form.is-form-tabbed > p:not([class*='is-']),
-.form.is-form-tabbed > div.level:not([class*='is-']) {
-    background-color: var(--bg-element);
+.form.is-form-tabbed header {
+    margin: 0 0 var(--padding-large) 0;
 }
 
+.form.has-form-shadow header:not([class*='is-']) {
+    background-color: var(--bg-element);
+}
 
 
 /* form elements control */
@@ -347,7 +338,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--margin);
 }
 
 .form .form-footer .button {
