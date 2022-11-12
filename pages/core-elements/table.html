@@ -87,7 +87,7 @@ nav: Table
                 <tr>
                     <td><code>.scrollbreak-col-x</code></td>
                     <td>x is [1-9]; Typically a modifier for <code>.table</code> when using the <code>.table-scroll</code>
-                         container.  This allows certain columns to wrap their cell text (optional column styling)</td>
+                        container.  This allows certain columns to wrap their cell text (optional column styling)</td>
                 </tr>
                 </tbody>
             </table>
@@ -194,7 +194,7 @@ nav: Table
 
     <div class="space-component-medium "></div>
 
-    <h3>Table full width and striped</h3>
+    <h3>Table Full Width and Striped</h3>
     <div class="row">
         <div class="column">
             <table class="table is-fullwidth is-striped centered-col-1 numbers-col-3">
@@ -312,7 +312,7 @@ nav: Table
                 &lt;div class="table-scroll"&gt;
                     &lt;table class="table has-hover centered-col-1 numbers-col-3 scrollbreak-col-4"&gt;
                         &lt;caption&gt;Caption: Table is scrollable and has a column with text right&lt;/caption&gt;
-    
+
                         &lt;thead&gt;
                         &lt;tr&gt;
                             &lt;th&gt;#&lt;/th&gt;
@@ -322,7 +322,7 @@ nav: Table
                             &lt;th&gt;Delivery&lt;/th&gt;
                         &lt;/tr&gt;
                         &lt;/thead&gt;
-    
+
                         &lt;tbody&gt;
                         &lt;tr&gt;
                             &lt;td&gt;1&lt;/td&gt;
@@ -331,7 +331,7 @@ nav: Table
                             &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
                             &lt;td&gt;Available in 2 weeks&lt;/td&gt;
                         &lt;/tr&gt;
-    
+
                         &lt;tr class="is-danger-light"&gt;
                             &lt;td&gt;22&lt;/td&gt;
                             &lt;td&gt;Socks&lt;/td&gt;
@@ -339,7 +339,7 @@ nav: Table
                             &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
                             &lt;td&gt;Available in 1 week&lt;/td&gt;
                         &lt;/tr&gt;
-    
+
                         &lt;tr&gt;
                             &lt;td&gt;333&lt;/td&gt;
                             &lt;td&gt;Pants&lt;/td&gt;
@@ -347,7 +347,7 @@ nav: Table
                             &lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;
                             &lt;td&gt;Available in 3 weeks&lt;/td&gt;
                         &lt;/tr&gt;
-    
+
                         &lt;tr&gt;
                             &lt;td&gt;4444&lt;/td&gt;
                             &lt;td&gt;Belt&lt;/td&gt;
@@ -356,7 +356,7 @@ nav: Table
                             &lt;td&gt;Available in 2 weeks&lt;/td&gt;
                         &lt;/tr&gt;
                         &lt;/tbody&gt;
-    
+
                         &lt;tfoot&gt;
                         &lt;tr&gt;
                             &lt;td&gt;&lt;/td&gt;
@@ -368,6 +368,60 @@ nav: Table
                         &lt;/tfoot&gt;
                     &lt;/table&gt;
                 &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-component-medium"></div>
+
+
+    <h3>Table with Box and Header</h3>
+    <div class="row">
+        <div class="column">
+            <section class="table-boxed">
+                <header class="is-secondary">Optional Table Header & .is-secondary</header>
+
+                <table class="table is-fullwidth centered-col-1 numbers-col-3">
+                    <thead>
+                    <tr><th>#</th><th>Item</th><th>Value</th><th>Description</th></tr>
+                    </thead>
+
+                    <tbody>
+                    <tr><td>1</td><td>Shoes</td><td>$95</td><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td></tr>
+                    <tr><td>22</td><td>Socks</td><td>$15</td><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td></tr>
+                    <tr><td>333</td><td>Pants</td><td>$105</td><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td></tr>
+                    <tr><td>4444</td><td>Belt</td><td>$35</td><td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td></tr>
+                    </tbody>
+
+                    <tfoot>
+                    <tr><td></td><td>Total</td><td class="has-text-secondary">$250</td><td></td></tr>
+                    </tfoot>
+                </table>
+            </section>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;section class="table-boxed"&gt;
+                    &lt;header class="is-secondary"&gt;Optional Table Header & .is-secondary&lt;/header&gt;
+
+                    &lt;table class="table is-fullwidth centered-col-1 numbers-col-3"&gt;
+                        &lt;thead&gt;
+                        &lt;tr&gt;&lt;th&gt;#&lt;/th&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;
+                        &lt;/thead&gt;
+
+                        &lt;tbody&gt;
+                        &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Shoes&lt;/td&gt;&lt;td&gt;$95&lt;/td&gt;&lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;Socks&lt;/td&gt;&lt;td&gt;$15&lt;/td&gt;&lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;333&lt;/td&gt;&lt;td&gt;Pants&lt;/td&gt;&lt;td&gt;$105&lt;/td&gt;&lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;4444&lt;/td&gt;&lt;td&gt;Belt&lt;/td&gt;&lt;td&gt;$35&lt;/td&gt;&lt;td&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/td&gt;&lt;/tr&gt;
+                        &lt;/tbody&gt;
+
+                        &lt;tfoot&gt;
+                        &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;Total&lt;/td&gt;&lt;td class="has-text-secondary"&gt;$250&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;/tfoot&gt;
+                    &lt;/table&gt;
+                &lt;/section&gt;
             </code></pre>
         </div>
     </div>

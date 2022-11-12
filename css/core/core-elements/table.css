@@ -84,6 +84,28 @@
 }
 
 
+/* optional box shadow wrapper */
+.table-boxed {
+    position: relative;
+    margin: 0;
+    padding: 0 0 var(--padding-medium) 0;
+    border-radius: var(--radius-comp);
+    box-shadow: var(--shadow);
+}
+
+.table-boxed header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--pad-horz);
+    font-size: var(--size-5);
+    font-weight: var(--weight-semibold);
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    margin-bottom: var(--margin-form);
+}
+
+
 
 /** allows for right alignment of a column of values **/
 .table.numbers-col-1 td:nth-of-type(1),
