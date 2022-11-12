@@ -2678,7 +2678,7 @@ img
     position: relative;
 
     margin: 0;
-    padding: 0 0 var(--padding-medium) 0;
+    padding: var(--padding-medium);
 
     border-radius: var(--radius-comp);
     box-shadow: var(--shadow);
@@ -2691,7 +2691,7 @@ img
 
     display: flex;
 
-    margin-bottom: var(--margin-form);
+    margin: calc(-1 * var(--padding)) calc(-1 * var(--padding)) var(--padding) calc(-1 * var(--padding));
     padding: var(--pad-horz);
 
     border-top-left-radius: inherit;
