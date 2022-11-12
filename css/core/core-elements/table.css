@@ -88,7 +88,7 @@
 .table-boxed {
     position: relative;
     margin: 0;
-    padding: var(--padding-medium);
+    padding: var(--padding);
     border-radius: var(--radius-comp);
     box-shadow: var(--shadow);
 }
