@@ -8508,8 +8508,9 @@ a.tag:hover
 /* icon setup */
 .reportbox > div
 {
-    width: 5rem;
-    height: 5rem;
+    line-height: 0;
+
+    margin: 0;
     padding: var(--padding);
 
     color: var(--text-invert);
@@ -8519,10 +8520,11 @@ a.tag:hover
 
 .reportbox > div > span:not(.icon-nav)
 {
-    font-size: 4rem;
+    font-size: 3rem;
+    line-height: 0;
 
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     margin: 1rem;
 }
 
