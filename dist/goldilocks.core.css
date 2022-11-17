@@ -370,18 +370,6 @@ select
     padding: 0;
 }
 
-textarea::-moz-placeholder,
-input::-moz-placeholder
-{
-    color: inherit;
-}
-
-textarea:-ms-input-placeholder,
-input:-ms-input-placeholder
-{
-    color: inherit;
-}
-
 textarea::placeholder,
 input::placeholder
 {
@@ -452,7 +440,6 @@ dl > dd
 
     list-style: none;
 
-    -webkit-margin-start: 1rem;
     margin-inline-start: 1rem;
 }
 
@@ -615,8 +602,7 @@ pre
 
     grid-template-columns: 100%;
     row-gap: var(--gutter);
-    -moz-column-gap: var(--gutter);
-         column-gap: var(--gutter);
+    column-gap: var(--gutter);
     justify-items: stretch;
     align-items: stretch;
 }
@@ -780,8 +766,7 @@ pre
 
     align-items: center;
     flex-wrap: wrap;
-    -moz-column-gap: var(--gap-col);
-         column-gap: var(--gap-col);
+    column-gap: var(--gap-col);
     row-gap: var(--gap-row);
 }
 
@@ -866,8 +851,7 @@ pre
 
         padding-left: var(--gap-col);
 
-        -moz-column-gap: var(--gap-col);
-             column-gap: var(--gap-col);
+        column-gap: var(--gap-col);
         row-gap: var(--gap-row);
         align-items: flex-start;
     }
@@ -905,8 +889,7 @@ pre
     .level-start.is-mobile,
     .level-end.is-mobile
     {
-        -moz-column-gap: calc( .75 * var(--gap-col) );
-             column-gap: calc( .75 * var(--gap-col) );
+        column-gap: calc( .75 * var(--gap-col) );
         row-gap: calc( .75 * var(--gap-row) );
     }
 
@@ -924,8 +907,7 @@ pre
 {
     display: grid;
 
-    -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
     row-gap: 0;
     grid-template-columns: auto 4fr;
     grid-template-rows: repeat(5, auto);
@@ -940,8 +922,7 @@ pre
 {
     display: grid;
 
-    -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
     row-gap: 0;
     grid-template-columns: auto 4fr;
     grid-template-rows: repeat(6, auto);
@@ -1074,8 +1055,7 @@ pre
     background-color: var(--bg-component);
 
     justify-content: space-between;
-    -moz-column-gap: calc( 2 * var(--gap-col) );
-         column-gap: calc( 2 * var(--gap-col) );
+    column-gap: calc( 2 * var(--gap-col) );
     row-gap: var(--gap-row);
     flex-wrap: wrap;
 }
@@ -1254,8 +1234,7 @@ pre
     padding: 0;
 
     flex-wrap: wrap;
-    -moz-column-gap: var(--gap-col);
-         column-gap: var(--gap-col);
+    column-gap: var(--gap-col);
     row-gap: var(--gap-row);
 }
 
@@ -1347,23 +1326,19 @@ button.is-default-inverted,
     color: var(--text-comp);
     border: none;
 
-    -webkit-text-decoration-color: var(--text-comp);
-            text-decoration-color: var(--text-comp);
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
+    text-decoration-color: var(--text-comp);
+    text-decoration-line: underline;
     text-underline-offset: .25em;
 }
 
 button.is-default-inverted.has-hover:hover,
 .button.is-default-inverted.has-hover:hover
 {
-            text-decoration: underline var(--text-elem);
+    text-decoration: underline var(--text-elem);
 
     color: var(--text-elem);
     border: none;
     background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--text-elem);
 }
 
 button.is-rounded,
@@ -1527,7 +1502,8 @@ button.is-loading::after,
     height: 1em;
 
     content: '';
-    animation: spinAround .5s infinite linear;
+    -webkit-animation: spinAround .5s infinite linear;
+            animation: spinAround .5s infinite linear;
 
     border: 2px solid var(--bg-main);
     border-top-color: transparent;
@@ -1548,7 +1524,8 @@ button.is-loading-dark::after,
     height: 1em;
 
     content: '';
-    animation: spinAround .5s infinite linear;
+    -webkit-animation: spinAround .5s infinite linear;
+            animation: spinAround .5s infinite linear;
 
     border: 2px solid var(--bg-main-invert);
     border-top-color: transparent;
@@ -1748,6 +1725,7 @@ button.delete.is-small
     border: none;
 
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     gap: var(--gap-row) var(--gap-col);
 }
@@ -1755,6 +1733,8 @@ button.delete.is-small
 .form .field-group > *
 {
     flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 12rem;
 }
 
 .form label
@@ -1848,9 +1828,7 @@ button.delete.is-small
 {
     width: auto;
 
-    -webkit-appearance: auto;
-       -moz-appearance: auto;
-            appearance: auto;
+    appearance: auto;
     --webkit-appearance: auto;
 }
 
@@ -1869,16 +1847,6 @@ button.delete.is-small
     background-clip: border-box;
     background-origin: padding-box;
     background-size: 1.5em 1.5em;
-}
-
-.form label input::-moz-placeholder
-{
-    color: var(--text-light);
-}
-
-.form label input:-ms-input-placeholder
-{
-    color: var(--text-light);
 }
 
 .form label input::placeholder
@@ -2157,6 +2125,7 @@ button.delete.is-small
 {
     display: flex;
 
+    height: 1.5rem;
     padding-left: 4.5rem;
 
     border: none;
@@ -2246,6 +2215,14 @@ button.delete.is-small
 .has-help-text > p
 {
     margin-top: -1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+
+.field-group .has-help-text > p
+{
+    margin-top: 0;
     margin-left: 1rem;
 }
 
@@ -2261,12 +2238,6 @@ button.delete.is-small
 
     border-radius: var(--radius-comp);
     box-shadow: var(--shadow);
-}
-
-
-.form .form-tabs
-{
-    overflow-x: scroll;
 }
 
 .form .form-tabs > input
@@ -2450,14 +2421,12 @@ img
 
 .img-fit-cover
 {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
 }
 
 .img-fit-contain
 {
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
 }
 
 .img-as-content
@@ -2539,8 +2508,7 @@ img
 /** defaults to having image cover area **/
 :is([class*='has-aspect'])
 {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
 }
 
 /** make sure that any (optional) caption remains under the image **/
@@ -3223,26 +3191,23 @@ h4 + .sub-title,
 
 .is-primary-inverted
 {
-            text-decoration: underline var(--primary);
+    text-decoration: underline var(--primary);
 
     color: var(--primary);
     border: none;
     background-color: var(--bg-main);
 
-    -webkit-text-decoration: underline var(--primary);
     text-underline-offset: .25em;
 }
 
 .is-primary-inverted.has-hover:hover
 {
-            text-decoration: underline var(--primary-dark);
+    text-decoration: underline var(--primary-dark);
 
     opacity: 1;
     color: var(--primary-dark);
     border: none;
     background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--primary-dark);
 }
 
 
@@ -3285,26 +3250,23 @@ h4 + .sub-title,
 
 .is-secondary-inverted
 {
-            text-decoration: underline var(--secondary);
+    text-decoration: underline var(--secondary);
 
     color: var(--secondary);
     border: none;
     background-color: var(--bg-main);
 
-    -webkit-text-decoration: underline var(--secondary);
     text-underline-offset: .25em;
 }
 
 .is-secondary-inverted.has-hover:hover
 {
-            text-decoration: underline var(--secondary-dark);
+    text-decoration: underline var(--secondary-dark);
 
     opacity: 1;
     color: var(--secondary-dark);
     border: none;
     background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--secondary-dark);
 }
 
 
@@ -3345,26 +3307,23 @@ h4 + .sub-title,
 
 .is-tertiary-inverted
 {
-            text-decoration: underline var(--tertiary);
+    text-decoration: underline var(--tertiary);
 
     color: var(--tertiary);
     border: none;
     background-color: var(--bg-main);
 
-    -webkit-text-decoration: underline var(--tertiary);
     text-underline-offset: .25em;
 }
 
 .is-tertiary-inverted.has-hover:hover
 {
-            text-decoration: underline var(--tertiary-dark);
+    text-decoration: underline var(--tertiary-dark);
 
     opacity: 1;
     color: var(--tertiary-dark);
     border: none;
     background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--tertiary-dark);
 }
 
 
@@ -3405,26 +3364,23 @@ h4 + .sub-title,
 
 .is-link-inverted
 {
-            text-decoration: underline var(--link);
+    text-decoration: underline var(--link);
 
     color: var(--link);
     border: none;
     background-color: var(--bg-main);
 
-    -webkit-text-decoration: underline var(--link);
     text-underline-offset: .25em;
 }
 
 .is-link-inverted.has-hover:hover
 {
-            text-decoration: underline var(--link-dark);
+    text-decoration: underline var(--link-dark);
 
     opacity: 1;
     color: var(--link-dark);
     border: none;
     background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--link-dark);
 }
 
 
@@ -3465,26 +3421,23 @@ h4 + .sub-title,
 
 .is-success-inverted
 {
-            text-decoration: underline var(--success);
+    text-decoration: underline var(--success);
 
     color: var(--success);
     border: none;
     background-color: var(--bg-main);
 
-    -webkit-text-decoration: underline var(--success);
     text-underline-offset: .25em;
 }
 
 .is-success-inverted.has-hover:hover
 {
-            text-decoration: underline var(--success-dark);
+    text-decoration: underline var(--success-dark);
 
     opacity: 1;
     color: var(--success-dark);
     border: none;
     background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--success-dark);
 }
 
 
@@ -3526,26 +3479,23 @@ h4 + .sub-title,
 
 .is-warning-inverted
 {
-            text-decoration: underline var(--warning);
+    text-decoration: underline var(--warning);
 
     color: var(--warning);
     border: none;
     background-color: var(--bg-main);
 
-    -webkit-text-decoration: underline var(--warning);
     text-underline-offset: .25em;
 }
 
 .is-warning-inverted.has-hover:hover
 {
-            text-decoration: underline var(--warning-dark);
+    text-decoration: underline var(--warning-dark);
 
     opacity: 1;
     color: var(--warning-dark);
     border: none;
     background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--warning-dark);
 }
 
 
@@ -3589,26 +3539,23 @@ h4 + .sub-title,
 
 .is-danger-inverted
 {
-            text-decoration: underline var(--danger);
+    text-decoration: underline var(--danger);
 
     color: var(--danger);
     border: none;
     background-color: var(--bg-main);
 
-    -webkit-text-decoration: underline var(--danger);
     text-underline-offset: .25em;
 }
 
 .is-danger-inverted.has-hover:hover
 {
-            text-decoration: underline var(--danger-dark);
+    text-decoration: underline var(--danger-dark);
 
     opacity: 1;
     color: var(--danger-dark);
     border: none;
     background-color: var(--bg-element);
-
-    -webkit-text-decoration: underline var(--danger-dark);
 }
 
 
@@ -3759,6 +3706,11 @@ h4 + .sub-title,
     right: 0;
 
     height: 100%;
+}
+
+.add-cursor
+{
+    cursor: pointer;
 }
 
 

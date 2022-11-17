@@ -46,17 +46,21 @@
 
 /* form elements control */
 .form .field-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-row) var(--gap-col);
+
     margin:  var(--margin-form) 0;
     padding: 0;
     border: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: var(--gap-row) var(--gap-col);
 }
 
 .form .field-group > * {
     flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 12rem;
 }
 
 .form label {
@@ -379,6 +383,7 @@
     align-items: center;
     padding-left: 4.5rem;
     border: none;
+    height: 1.5rem;
 }
 
 .form .switch span::before {
@@ -444,6 +449,13 @@
 .has-help-text > p {
     margin-top: -1rem;
     margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.field-group .has-help-text > p {
+    margin-top: 0;
+    margin-left: 1rem;
 }
 
 
@@ -455,11 +467,6 @@
     box-shadow: var(--shadow);
     margin: 0;
     padding: 0;
-}
-
-
-.form .form-tabs {
-    overflow-x: scroll;
 }
 
 .form .form-tabs > input {

@@ -13,7 +13,7 @@ function buildCore() {
             './css/core/core-elements/*.css',
             './css/core/core-helpers/*.css'
         ])
-        .pipe(autoprefixer())
+        //.pipe(autoprefixer())
         .pipe(concat("goldilocks.core.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
@@ -27,7 +27,7 @@ function buildCore() {
 function buildExtended() {
     return gulpit
         .src('./css/extended/**/*.css')
-        .pipe(autoprefixer())
+        //.pipe(autoprefixer())
         .pipe(concat("goldilocks.extended.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
@@ -41,7 +41,7 @@ function buildExtended() {
 function buildExtras() {
     return gulpit
         .src('./css/extras/**/*.css')
-        .pipe(autoprefixer())
+        //.pipe(autoprefixer())
         .pipe(concat("goldilocks.extras.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
@@ -61,7 +61,7 @@ function buildCoreExtended() {
             './css/extended/**/*.css',
             './css/core/core-helpers/*.css'
         ])
-        .pipe(autoprefixer())
+        //.pipe(autoprefixer())
         .pipe(concat("goldilocks.core-extended.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
@@ -82,7 +82,7 @@ function buildAll() {
             './css/extras/**/*.css',
             './css/core/core-helpers/*.css'
         ])
-        .pipe(autoprefixer())
+        //.pipe(autoprefixer())
         .pipe(concat("goldilocks.all.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))

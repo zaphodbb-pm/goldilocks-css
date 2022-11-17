@@ -44,6 +44,8 @@
 
 .reportbox > div:has(+ label) > span:not(.icon-nav) {
     font-size: 4rem;
+    height: 4rem;
+    width: 4rem;
 }
 
 

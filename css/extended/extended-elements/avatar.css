@@ -1,7 +1,7 @@
 .avatar {
-    background: var(--secondary);
+    background: var(--bg-element);
     border-radius: 50%;
-    color: rgba(255,255,255,.85);
+    color: var(--text-elem);
     display: inline-block;
 
     margin: 0;

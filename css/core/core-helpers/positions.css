@@ -28,6 +28,10 @@
     height: 100%;
 }
 
+.add-cursor {
+    cursor: pointer;
+}
+
 
 
 /* controls to hide content but allow screen readers to still see them */
