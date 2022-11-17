@@ -28,26 +28,32 @@
     padding: var(--padding);
     border-radius: var(--radius-rounded);
     background-color: var(--grey-dark);
-    height: 3rem;
-    width: 3rem;
+    height: 5rem;
+    width: 5rem;
 }
 
 .reportbox > div > span:not(.icon-nav) {
-    font-size: 3rem;
-    margin: 0;
+    font-size: 4rem;
+    height: 4rem;
+    width: 4rem;
+    margin: 1rem;
 }
 
+
+/*
 .reportbox > div:has(+ label) {
     height: 4rem;
     width: 4rem;
 }
+
+
 
 .reportbox > div:has(+ label) > span:not(.icon-nav) {
     font-size: 4rem;
     height: 4rem;
     width: 4rem;
 }
-
+ */
 
 
 /* image setup */

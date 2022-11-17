@@ -8508,8 +8508,8 @@ a.tag:hover
 /* icon setup */
 .reportbox > div
 {
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
+    height: 5rem;
     padding: var(--padding);
 
     color: var(--text-invert);
@@ -8519,25 +8519,28 @@ a.tag:hover
 
 .reportbox > div > span:not(.icon-nav)
 {
-    font-size: 3rem;
-
-    margin: 0;
-}
-
-.reportbox > div:has(+ label)
-{
-    width: 4rem;
-    height: 4rem;
-}
-
-.reportbox > div:has(+ label) > span:not(.icon-nav)
-{
     font-size: 4rem;
 
     width: 4rem;
     height: 4rem;
+    margin: 1rem;
 }
 
+
+/*
+.reportbox > div:has(+ label) {
+    height: 4rem;
+    width: 4rem;
+}
+
+
+
+.reportbox > div:has(+ label) > span:not(.icon-nav) {
+    font-size: 4rem;
+    height: 4rem;
+    width: 4rem;
+}
+ */
 
 
 /* image setup */
