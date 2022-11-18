@@ -33,7 +33,7 @@
 .tabs > ul label {
     text-decoration: none;
     color: var(--text-comp);
-    line-height: 1;
+    line-height: 1.3;
 
     display:inline-flex;
     align-items: center;
