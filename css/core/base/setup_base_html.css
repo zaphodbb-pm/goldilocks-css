@@ -135,7 +135,7 @@ details summary > * {
 pre {
     font-family: var(--family-monospace);
     font-size: 1rem;
-    background-color: var(--white-ter);
+    background-color: var(--white-bis);
     border-left: var(--pad-vert) solid var(--tertiary);
     overflow-y: hidden;
     overflow-x: scroll;
@@ -160,7 +160,7 @@ pre > code {
     font-size: 1em;
     color: currentColor;
     background-color: transparent;
-    padding: 0 0 0 1em;
+    padding: 0 1em;
 
     border-radius: 0;
     display: block;

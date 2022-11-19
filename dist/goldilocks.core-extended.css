@@ -491,7 +491,7 @@ pre
     padding: 0;
 
     border-left: var(--pad-vert) solid var(--tertiary);
-    background-color: var(--white-ter);
+    background-color: var(--white-bis);
 }
 
 code
@@ -518,7 +518,7 @@ pre > code
     overflow-x: scroll;
 
     max-width: 100%;
-    padding: 0 0 0 1em;
+    padding: 0 1em;
 
     white-space: pre;
 
@@ -3139,6 +3139,11 @@ details.accordion[open] summary
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 
+    filter: invert(2%);
+}
+
+.accordions details.accordion[open] summary
+{
     filter: invert(5%);
 }
 

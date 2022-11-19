@@ -58,6 +58,10 @@ details.accordion summary:hover {
 details.accordion[open] summary {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    filter: invert(2%);
+}
+
+.accordions details.accordion[open] summary {
     filter: invert(5%);
 }
 
