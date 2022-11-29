@@ -477,7 +477,7 @@
 
 .form .form-tabs > ul {
     position:relative;
-    z-index:999;
+    z-index:9;
     list-style:none;
     display:flex;
     flex-wrap: wrap;

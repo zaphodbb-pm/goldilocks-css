@@ -490,7 +490,7 @@ pre
     margin: 0;
     padding: 0;
 
-    border-left: var(--pad-vert) solid var(--tertiary);
+    border-left: .25rem solid var(--tertiary);
     background-color: var(--white-bis);
 }
 
@@ -518,7 +518,7 @@ pre > code
     overflow-x: scroll;
 
     max-width: 100%;
-    padding: 0 1em;
+    padding: var(--padding);
 
     white-space: pre;
 
@@ -2253,7 +2253,7 @@ button.delete.is-small
     font-size: var(--size-6);
 
     position: relative;
-    z-index: 999;
+    z-index: 9;
 
     display: flex;
 
