@@ -6494,7 +6494,7 @@ figure:not(.avatar) > [class*='badge']
     height: var(--size-4);
     margin: 0   var(--padding);
 
-    vertical-align: middle;
+    vertical-align: text-bottom;
 
     background-color: currentColor;
     background-repeat: no-repeat;
