@@ -40,6 +40,7 @@
 [class*="icon-bg-"]:not(.icon-nav) {
     height: var(--size-4);
     width: var(--size-4);
+    vertical-align: middle;
     margin: 0   var(--padding);
     background-color: currentColor;
     background-repeat: no-repeat;

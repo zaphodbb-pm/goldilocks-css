@@ -6494,6 +6494,8 @@ figure:not(.avatar) > [class*='badge']
     height: var(--size-4);
     margin: 0   var(--padding);
 
+    vertical-align: middle;
+
     background-color: currentColor;
     background-repeat: no-repeat;
     background-position: center;
@@ -6505,8 +6507,8 @@ figure:not(.avatar) > [class*='badge']
 
 [class*='icon-bg-'].is-extra-large
 {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 [class*='icon-bg-'].is-large
