@@ -214,9 +214,9 @@
 }
 
 .is-success-outlined {
-    color: var(--success);
+    color: var(--success-dark);
     background-color: var(--bg-main);
-    border: 1px solid var(--success);
+    border: 1px solid var(--success-dark);
 }
 
 .is-success-inverted {
