@@ -4,7 +4,7 @@
 .level-end {
     align-items: center;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 0;
     margin:0;
     column-gap: var(--gap-col);
@@ -15,8 +15,8 @@
     justify-content: space-between;
 }
 
-.level.has-wrap {
-    flex-wrap: wrap;
+.level.has-nowrap {
+    flex-wrap: nowrap;
 }
 
 .level-centered {

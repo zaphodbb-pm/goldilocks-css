@@ -765,7 +765,7 @@ pre
     padding: 0;
 
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     column-gap: var(--gap-col);
     row-gap: var(--gap-row);
 }
@@ -775,9 +775,9 @@ pre
     justify-content: space-between;
 }
 
-.level.has-wrap
+.level.has-nowrap
 {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .level-centered
