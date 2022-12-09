@@ -234,12 +234,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --main-color: 140;                  /** primary hue value **/
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
     --main-color-sl-light: 100%, 92%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 90%, 37%;     /** color lightening saturation and lightness **/
+    --main-color-sl-dark: 90%, 47%;     /** color lightening saturation and lightness **/
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
     /* build main theme colours */
     --primary: hsl( var(--main-color), 75%, 31% );
-    --secondary: hsl( var(--main-color-complement-low), 70%, 50% );
+    --secondary: hsl( var(--main-color-complement-low), 70%, 60% );
     --tertiary: hsl( var(--main-color-complement-high), 70%, 45% );
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: hsl( var(--main-color), 100%, 28%);
@@ -259,16 +259,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --link-light: hsl(217, 70%, 90%);
     --link-dark: hsl(217, 75%, 40%);
     --link-text: hsl( 217, 100%, 55%);
-    --link-text-invert: hsl( 217, 100%, 98%);
+    --link-text-invert: hsl( 217, 100%, 28%);
     --success: hsl(150, 80%, 60%);
     --success-light: hsl(141, 80%, 96%);
     --success-dark: hsl(141, 70%, 33%);
-    --success-text: hsl( 141, 100%, 28%);
+    --success-text: hsl( 141, 100%, 18%);
     --success-text-invert: hsl( 141, 100%, 95%);
     --warning: hsl(48, 90%, 55%);
     --warning-light: hsl(48, 100%, 95%);
     --warning-dark: hsl(48, 100%, 45%);
-    --warning-text: hsl( 48, 100%, 30%);
+    --warning-text: hsl( 48, 100%, 20%);
     --warning-text-invert: hsl( 48, 100%, 95%);
     --danger: hsl(348, 80%, 51%);
     --danger-light: hsl(348, 90%, 97%);
