@@ -91,6 +91,7 @@
     padding: var(--padding);
     border-radius: var(--radius-comp);
     box-shadow: var(--shadow);
+    background-color: var(--bg-main-elem);
 }
 
 .table-boxed header {

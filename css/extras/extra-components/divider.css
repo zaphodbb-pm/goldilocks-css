@@ -1,6 +1,6 @@
 .divider-box,
 .divider-box-horz {
-    background-color: var(--bg-main-comp);
+    background-color: var(--bg-main-elem);
     padding: var(--padding-normal);
 }
 

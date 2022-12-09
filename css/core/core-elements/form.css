@@ -421,7 +421,7 @@
     left: 2.75rem;
 }
 
-/* adds a help icon to top left part of field */
+/* adds a help icon to top right part of field */
 .has-help-text {
     position: relative;
 }
@@ -433,7 +433,7 @@
     margin: 0;
     line-height: 0;
     padding: 0.25em;
-    background-color: var(--bg-main);
+    background-color: var(--bg-element);
     color: var(--secondary);
     border-radius: 50%;
     z-index: 1;

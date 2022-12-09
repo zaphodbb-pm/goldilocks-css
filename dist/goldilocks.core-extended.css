@@ -83,7 +83,7 @@
     --navbar-offset: 0;
     --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Widgetbar settings */
-    --widgetbar-height: calc( 2 * var(--base-font-size) );
+    --widgetbar-height: calc( 2 * var(--base-font-size) + .25rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Breadcrumb setting */
     /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
@@ -233,8 +233,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     */
     --main-color: 140;                  /** primary hue value **/
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
-    --main-color-sl-light: 100%, 96%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 90%, 27%;     /** color lightening saturation and lightness **/
+    --main-color-sl-light: 100%, 92%;   /** color lightening saturation and lightness **/
+    --main-color-sl-dark: 90%, 37%;     /** color lightening saturation and lightness **/
     --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
     --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
     /* build main theme colours */
@@ -255,7 +255,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --primary-dark: hsl( var(--main-color), var(--main-color-sl-dark) );
     --secondary-dark: hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
     --tertiary-dark: hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
-    --link: hsl(217, 75%, 65%);
+    --link: hsl(217, 75%, 75%);
     --link-light: hsl(217, 70%, 90%);
     --link-dark: hsl(217, 75%, 40%);
     --link-text: hsl( 217, 100%, 55%);
@@ -491,7 +491,7 @@ pre
     padding: 0;
 
     border-left: .25rem solid var(--tertiary);
-    background-color: var(--white-bis);
+    background-color: var(--bg-main-code);
 }
 
 code
@@ -2185,7 +2185,7 @@ button.delete.is-small
     left: 2.75rem;
 }
 
-/* adds a help icon to top left part of field */
+/* adds a help icon to top right part of field */
 .has-help-text
 {
     position: relative;
@@ -2205,7 +2205,7 @@ button.delete.is-small
 
     color: var(--secondary);
     border-radius: 50%;
-    background-color: var(--bg-main);
+    background-color: var(--bg-element);
 }
 
 .has-help-text > span > span:not(.icon-nav)
@@ -2654,6 +2654,7 @@ img
     padding: var(--padding);
 
     border-radius: var(--radius-comp);
+    background-color: var(--bg-main-elem);
     box-shadow: var(--shadow);
 }
 
@@ -5899,6 +5900,20 @@ figure:not(.avatar) > [class*='badge']
         </svg>');
     -webkit-mask-image: var(--icon-bg-grid-url);
             mask-image: var(--icon-bg-grid-url);
+}
+
+.icon-bg-group
+{
+    --icon-bg-group-url: url('data:image/svg+xml;charset=utf8,\
+        <svg xmlns="http://www.w3.org/2000/svg" \
+            viewBox="0  0  32  32" fill="black" stroke="none"> \
+            <path d="M 5 5 L 5 9 L 6 9 L 6 23 L 5 23 L 5 27 L 9 27 L 9 26 L 23 26 L 23 27 L 27 27 L 27 23 L 26 23 \
+            L 26 9 L 27 9 L 27 5 L 23 5 L 23 6 L 9 6 L 9 5 Z M 9 8 L 23 8 L 23 9 L 24 9 L 24 23 L 23 23 L 23 24 L 9 24 \
+            L 9 23 L 8 23 L 8 9 L 9 9 Z M 10 10 L 10 18 L 14 18 L 14 22 L 22 22 L 22 14 L 18 14 L 18 10 Z \
+            M 12 12 L 16 12 L 16 16 L 12 16 Z M 18 16 L 20 16 L 20 20 L 16 20 L 16 18 L 18 18 Z"/> \
+        </svg>');
+    -webkit-mask-image: var(--icon-bg-group-url);
+            mask-image: var(--icon-bg-group-url);
 }
 
 .icon-bg-help

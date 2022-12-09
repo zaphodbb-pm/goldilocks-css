@@ -135,7 +135,7 @@ details summary > * {
 pre {
     font-family: var(--family-monospace);
     font-size: 1rem;
-    background-color: var(--white-bis);
+    background-color: var(--bg-main-code);
     border-left: 0.25rem solid var(--tertiary);
     overflow-y: hidden;
     overflow-x: scroll;
