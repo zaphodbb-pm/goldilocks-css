@@ -57,7 +57,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --success: hsl(150, 80%, 60%);
     --success-light:  hsl(141, 80%, 96%);
     --success-dark: hsl(141, 70%, 33%);
-    --success-text: hsl( 141, 100%, 18%);
+    --success-text: hsl( 141, 100%, 38%);
     --success-text-invert: hsl( 141, 100%, 95%);
 
     --warning: hsl(48, 90%, 55%);
