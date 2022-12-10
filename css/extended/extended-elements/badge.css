@@ -77,8 +77,8 @@ figure:not(.avatar) > [class*="badge"] {
 }
 
 .badge-warning {
-    color: var(--warning-text-invert);
-    background-color: var(--warning-dark);
+    color: var(--warning-text);
+    background-color: var(--warning);
 }
 
 .badge-danger {
