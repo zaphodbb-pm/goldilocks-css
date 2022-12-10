@@ -25,8 +25,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     /* build main theme colours */
     --primary: hsl( var(--main-color), 75%, 31% );
-    --secondary: hsl( var(--main-color-complement-low), 70%, 60% );
-    --tertiary: hsl( var(--main-color-complement-high), 60%, 60% );
+    --secondary: hsl( var(--main-color-complement-low), 70%, 50% );
+    --tertiary: hsl( var(--main-color-complement-high), 60%, 50% );
 
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
