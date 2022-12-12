@@ -7,13 +7,13 @@
             <legend>Choose Light or Dark Theme</legend>
 
             <label>
-                <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')">
+                <input type="radio" name="theme-setting" id="theme-mode-light" checked onchange="setTheme('Light')">
                 <span class="icon-bg-day"></span>
                 <span class="sr-only">Light / day mode</span>
             </label>
 
             <label>
-                <input type="radio" name="heading-sizes" onchange="setTheme('Dark')">
+                <input type="radio" name="theme-setting" id="theme-mode-dark" onchange="setTheme('Dark')">
                 <span class="icon-bg-night"></span>
                 <span class="sr-only">Dark / night mode</span>
             </label>
@@ -21,38 +21,57 @@
     </form>
 
     <script>
+        //*** check local storage for any light / dark theme mode setting
+        let theme = localStorage.getItem("site-theme-mode") || "Light";
+        setTheme(theme);
+
         function setTheme(theme){
             if(theme === "Dark"){
                 document.body.classList.add('main-theme-dark');
+                localStorage.setItem("site-theme-mode", "Dark");
+                let radiobtn = document.getElementById("theme-mode-dark");
+                radiobtn.checked = true;
             }else{
                 document.body.classList.remove('main-theme-dark');
+                localStorage.setItem("site-theme-mode", "Light");
+                let radiobtn = document.getElementById("theme-mode-light");
+                radiobtn.checked = true;
             }
         }
     </script>
 
-    <form class="widgetbar-radios">
+    <form class="widgetbar-radios" name="siteTextSizes">
         <fieldset>
             <legend>Choose Font Size</legend>
             <label>
-                <input type="radio" name="text-sizes" checked onchange="setTextSize('100%')" title="Select normal text size">
+                <input type="radio" name="textSizes" checked onchange="setTextSize('100%')" title="Select normal text size">
                 <span>T1</span>
             </label>
 
             <label>
-                <input type="radio" name="text-sizes" onchange="setTextSize('150%')" title="Select 1.5 times text size">
+                <input type="radio" name="textSizes" onchange="setTextSize('150%')" title="Select 1.5 times text size">
                 <span>T2</span>
             </label>
 
             <label>
-                <input type="radio" name="text-sizes" onchange="setTextSize('225%')" title="Select 2.25 times text size">
+                <input type="radio" name="textSizes" onchange="setTextSize('225%')" title="Select 2.25 times text size">
                 <span>T3</span>
             </label>
         </fieldset>
     </form>
 
     <script>
+        //*** fix text size across page refreshes
+        const textSizesValues = ["100%", "150%", "225%"];
+        let sizeInitial = localStorage.getItem("site-size-setting") || "100%";
+        setTextSize(sizeInitial)
+
         function setTextSize(size){
             document.querySelector(':root').style.setProperty("--base-html-factor", size);
+            localStorage.setItem("site-size-setting", size);
+
+            let idx = textSizesValues.findIndex( elem => elem ===  size);
+            document.siteTextSizes.textSizes[idx].checked = true;
         }
     </script>
 </div>

@@ -110,21 +110,21 @@ nav: Widget Bar
     <div class="row">
         <div class="column">
             <div class="widgetbar-bordered">
-                <form class="widgetbar-radios">
+                <form class="widgetbar-radios" name="siteTextSizes">
                     <fieldset>
                         <legend>Choose Text Size</legend>
                         <label>
-                            <input type="radio" name="text-sizes" checked onchange="setTextSize('100%')" title="Select normal text size">
+                            <input type="radio" name="textSizes" checked onchange="setTextSize('100%')" title="Select normal text size">
                             <span>T1</span>
                         </label>
 
                         <label>
-                            <input type="radio" name="text-sizes" onchange="setTextSize('150%')" title="Select 1.5 times text size">
+                            <input type="radio" name="textSizes" onchange="setTextSize('150%')" title="Select 1.5 times text size">
                             <span>T2</span>
                         </label>
 
                         <label>
-                            <input type="radio" name="text-sizes" onchange="setTextSize('225%')" title="Select 2.25 times text size">
+                            <input type="radio" name="textSizes" onchange="setTextSize('225%')" title="Select 2.25 times text size">
                             <span>T3</span>
                         </label>
                     </fieldset>
@@ -141,29 +141,38 @@ nav: Widget Bar
         <div class="column">
             <pre><code class="language-html">
                 &lt;div class="widgetbar-bordered"&gt;
-                    &lt;form class="widgetbar-radios"&gt;
+                    &lt;form class="widgetbar-radios" name="siteTextSizes"&gt;
                         &lt;fieldset&gt;
                             &lt;legend&gt;Choose Text Size&lt;/legend&gt;
                             &lt;label&gt;
-                                &lt;input type="radio" name="text-sizes" checked onchange="setTextSize('100%')" title="Select normal text size"&gt;
+                                &lt;input type="radio" name="textSizes" checked onchange="setTextSize('100%')" title="Select normal text size"&gt;
                                 &lt;span&gt;T1&lt;/span&gt;
                             &lt;/label&gt;
 
                             &lt;label&gt;
-                                &lt;input type="radio" name="text-sizes" onchange="setTextSize('150%')" title="Select 1.5 times text size"&gt;
+                                &lt;input type="radio" name="textSizes" onchange="setTextSize('150%')" title="Select 1.5 times text size"&gt;
                                 &lt;span&gt;T2&lt;/span&gt;
                             &lt;/label&gt;
 
                             &lt;label&gt;
-                                &lt;input type="radio" name="text-sizes" onchange="setTextSize('225%')" title="Select 2.25 times text size"&gt;
+                                &lt;input type="radio" name="textSizes" onchange="setTextSize('225%')" title="Select 2.25 times text size"&gt;
                                 &lt;span&gt;T3&lt;/span&gt;
                             &lt;/label&gt;
                         &lt;/fieldset&gt;
                     &lt;/form&gt;
 
                     &lt;script&gt;
+                        //*** fix text size across page refreshes
+                        const textSizesValues = ["100%", "150%", "225%"];
+                        let sizeInitial = localStorage.getItem("site-size-setting") || "100%";
+                        setTextSize(sizeInitial)
+
                         function setTextSize(size){
                             document.querySelector(':root').style.setProperty("--base-html-factor", size);
+                            localStorage.setItem("site-size-setting", size);
+
+                            let idx = textSizesValues.findIndex( elem => elem ===  size);
+                            document.siteTextSizes.textSizes[idx].checked = true;
                         }
                     &lt;/script&gt;
                 &lt;/div&gt;
@@ -272,13 +281,13 @@ nav: Widget Bar
                         <legend>Choose Light or Dark Theme</legend>
 
                         <label>
-                            <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')">
+                            <input type="radio" name="theme-setting" checked onchange="setTheme('Light')">
                             <span class="icon-bg-day"></span>
                             <span class="sr-only">Light / day mode</span>
                         </label>
 
                         <label>
-                            <input type="radio" name="heading-sizes" onchange="setTheme('Dark')">
+                            <input type="radio" name="theme-setting" onchange="setTheme('Dark')">
                             <span class="icon-bg-night"></span>
                             <span class="sr-only">Dark / night mode</span>
                         </label>
@@ -307,13 +316,13 @@ nav: Widget Bar
                             &lt;legend&gt;Choose Light or Dark Theme&lt;/legend&gt;
 
                             &lt;label&gt;
-                                &lt;input type="radio" name="heading-sizes" checked onchange="setTheme('Light')"&gt;
+                                &lt;input type="radio" name="theme-setting" checked onchange="setTheme('Light')"&gt;
                                 &lt;span class="icon-bg-day"&gt;&lt;/span&gt;
                                 &lt;span class="sr-only"&gt;Light / day mode&lt;/span&gt;
                             &lt;/label&gt;
 
                             &lt;label&gt;
-                                &lt;input type="radio" name="heading-sizes" onchange="setTheme('Dark')"&gt;
+                                &lt;input type="radio" name="theme-setting" onchange="setTheme('Dark')"&gt;
                                 &lt;span class="icon-bg-night"&gt;&lt;/span&gt;
                                 &lt;span class="sr-only"&gt;Dark / night mode&lt;/span&gt;
                             &lt;/label&gt;
@@ -321,11 +330,21 @@ nav: Widget Bar
                     &lt;/form&gt;
 
                     &lt;script&gt;
+                        //*** check local storage for any light / dark theme mode setting
+                        let theme = localStorage.getItem("site-theme-mode") || "Light";
+                        setTheme(theme);
+
                         function setTheme(theme){
                             if(theme === "Dark"){
                                 document.body.classList.add('main-theme-dark');
+                                localStorage.setItem("site-theme-mode", "Dark");
+                                let radiobtn = document.getElementById("theme-mode-dark");
+                                radiobtn.checked = true;
                             }else{
                                 document.body.classList.remove('main-theme-dark');
+                                localStorage.setItem("site-theme-mode", "Light");
+                                let radiobtn = document.getElementById("theme-mode-light");
+                                radiobtn.checked = true;
                             }
                         }
                     &lt;/script&gt;
