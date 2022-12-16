@@ -1,7 +1,5 @@
 /* Sadly, grid needs some help for columns at mobile widths  */
 .row {
-    margin:  0;
-    padding: 0;
     display: grid;
     grid-template-columns: 100%;
     row-gap: var(--gutter);
@@ -16,8 +14,6 @@
 }
 
 .row .column {
-    margin: 0;
-    padding: 0;
     align-items: start;
     max-width: 100vw;
 }

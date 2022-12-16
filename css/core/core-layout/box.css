@@ -4,7 +4,6 @@
     color: var(--text);
     display: block;
     padding: var(--padding-normal);
-    margin: 0;
     height: auto;
     width: calc( 100% - 2 * var(--padding-normal) );
 }

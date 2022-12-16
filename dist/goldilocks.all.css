@@ -362,7 +362,8 @@ article,
 textarea,
 iframe,
 input,
-select
+select,
+div
 {
     font-family: inherit;
 
@@ -577,7 +578,6 @@ pre
 
     width: calc( 100% - 2 * var(--padding-normal) );
     height: auto;
-    margin: 0;
     padding: var(--padding-normal);
 
     color: var(--text);
@@ -597,8 +597,6 @@ pre
     display: grid;
 
     max-width: 100vw;
-    margin: 0;
-    padding: 0;
 
     grid-template-columns: 100%;
     row-gap: var(--gutter);
@@ -615,8 +613,6 @@ pre
 .row .column
 {
     max-width: 100vw;
-    margin: 0;
-    padding: 0;
 
     align-items: start;
 }
@@ -760,9 +756,6 @@ pre
 .level-end
 {
     display: flex;
-
-    margin: 0;
-    padding: 0;
 
     align-items: center;
     flex-wrap: wrap;
@@ -1235,8 +1228,6 @@ pre
     flex-direction: column;
 
     width: 100%;
-    margin: 0;
-    padding: 0;
 
     flex-wrap: wrap;
     column-gap: var(--gap-col);
