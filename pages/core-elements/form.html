@@ -744,6 +744,11 @@ nav: Form
                                 <input type="text" placeholder="Text input" name="input_field">
                             </label>
 
+                            <label>
+                                <span>Number Field</span>
+                                <input type="number"  name="number_field">
+                            </label>
+
                             <div class="field-group">
                                 <label class="select">
                                     <span>Select</span>
@@ -862,7 +867,7 @@ nav: Form
                     ev.preventDefault();
 
                     const preamble = "Some simple javascript for demonstration only.\nValues picked up in form:\n\n";
-                    const fields = ["input_field", "select1", "color_field", "date_field", "time_field", "text2_field",
+                    const fields = ["input_field", "number_field", "select1", "color_field", "date_field", "time_field", "text2_field",
                         "switch_field", "select2", "email_field", "phone_field", "radio-group1", "checkboxes"];
 
                     let out = {};

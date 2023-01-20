@@ -1,5 +1,4 @@
 .charts-wrapper {
-    margin: 0;
     display: flex;
     column-gap: calc( 2 * var(--gap-col) );
     align-items: center;

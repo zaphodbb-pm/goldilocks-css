@@ -1,5 +1,4 @@
 .message {
-    margin:0;
     position: relative;
     border-radius: var(--radius);
     font-size: var(--size-6);

@@ -5,7 +5,6 @@
     align-items: center;
     column-gap: calc( var(--gap-col) * 2 );
 
-    margin: 0;
     padding: var(--padding-medium);
     min-width: 10rem;
     max-width: max-content;

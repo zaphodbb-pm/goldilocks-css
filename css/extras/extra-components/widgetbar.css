@@ -7,7 +7,6 @@
     align-items: center;
     justify-content: flex-end;
     border: none;
-    margin: 0;
     padding: 0 var(--pad-horz);
     height: var(--widgetbar-height);
     z-index: var(--widget-z);

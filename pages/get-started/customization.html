@@ -31,7 +31,6 @@ nav: Customization
     --base-rem: 1rem;
 
 
-
     /* Typography */
     /** Note: text colors are set in file: initial-colors.css **/
 
@@ -92,6 +91,13 @@ nav: Customization
     --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
 
 
+    /* basic spacing values */
+    /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
+    --space-element: var(--base-font-size);
+    --space-block: calc(2 * var(--base-font-size));
+    --space-collection: calc(4 * var(--base-font-size));
+    --space-container: calc(5 * var(--base-font-size));
+
 
     /* Flexbox element spacing */
     --gap-row: calc( 1 * var(--base-font-size) );
@@ -102,6 +108,9 @@ nav: Customization
     /* Elements Controls */
     --pad-horz: var(--base-font-size);
     --pad-vert: calc( 0.5 * var(--base-font-size) );
+    --pad-horz-small: calc( 0.5 * var(--base-font-size) );
+    --pad-vert-small: calc( 0.25 * var(--base-font-size) );
+
     --padding: calc(0.75 * var(--base-font-size));
     --padding-normal: var(--base-font-size);
     --padding-medium: calc( 1.5 * var(--base-font-size) );
@@ -132,7 +141,7 @@ nav: Customization
 
 
     /* Widgetbar settings */
-    --widgetbar-height: calc( 2 * var(--base-font-size) );
+    --widgetbar-height: calc( 2 * var(--base-font-size) + 0.25rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
 
 
@@ -153,27 +162,35 @@ nav: Customization
 
 
     /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
-    --indicator: url('data:image/svg+xml;charset=utf8,\
-        &lt;svg xmlns="http://www.w3.org/2000/svg"  \
-             width="24" height="24" viewBox="0  0  24  24"  \
-             fill="none" stroke="#CF63AB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"&lg;\
-            &lt;polyline  points="6  9  12  15  18  9"/&lg;\
-        &lt;/svg&lg;');
+    --indicator: url("data:image/svg+xml;charset=utf8,\
+    %3Csvg%20xmlns='http://www.w3.org/2000/svg'\
+    %20viewBox='0%200%2024%2024'%20\
+    fill='none'%20stroke='currentColor'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3E\
+    %3Cpolyline%20points='6%209%2012%2015%2018%209'/%3E\
+    %3C/svg%3E");
 
     --indicator-down: url('data:image/svg+xml;charset=utf8,\
-        &lt;svg xmlns="http://www.w3.org/2000/svg" \
-             width="24" height="24" viewBox="0 0 24 24" \
-             fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"&lg;\
-            &lt;polyline points="6 9 12 15 18 9"/&lg;\
-        &lt;/svg&lg;');
+    &lt;svg xmlns="http://www.w3.org/2000/svg" \
+         width="24" height="24" viewBox="0 0 24 24" \
+         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"&gt;\
+        &lt;polyline points="6 9 12 15 18 9"/&gt;\
+    &lt;/svg&gt;');
+
+    --indicator-up: url('data:image/svg+xml;charset=utf8,\
+    &lt;svg xmlns="http://www.w3.org/2000/svg" \
+         width="24" height="24" viewBox="0 0 24 24" \
+         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"&gt;\
+        &lt;polyline points="18 15 12 9 6 15"&gt;&lt;/polyline&gt;\
+    &lt;/svg&gt;');
 
     --indicator-right: url('data:image/svg+xml;charset=utf8,\
-        &lt;svg xmlns="http://www.w3.org/2000/svg" \
-             width="24" height="24" viewBox="0 0 24 24" \
-             fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"&lg;\
-            &lt;polyline points="9 18 15 12 9 6"/&lg;\
-        &lt;/svg&lg;');
+    &lt;svg xmlns="http://www.w3.org/2000/svg" \
+         width="24" height="24" viewBox="0 0 24 24" \
+         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"&gt;\
+        &lt;polyline points="9 18 15 12 9 6"/&gt;\
+    &lt;/svg&gt;');
 }
+
 
     </code></pre>
 

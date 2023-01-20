@@ -91,7 +91,7 @@ button.is-small,
     font-weight: var(--weight-medium);
     padding: var(--pad-vert-small) var(--pad-horz-small);
     line-height: 1.2;
-    height: auto;
+    height: 2rem;
 }
 
 button.is-small:not(.is-rounded),
@@ -111,11 +111,6 @@ button[disabled],
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-}
-
-.buttons button,
-.buttons .button {
-    margin: 0;
 }
 
 
