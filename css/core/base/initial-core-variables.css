@@ -74,6 +74,13 @@
     --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
 
 
+    /* basic spacing values */
+    /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
+    --space-element: var(--base-font-size);
+    --space-block: calc(2 * var(--base-font-size));
+    --space-collection: calc(4 * var(--base-font-size));
+    --space-container: calc(5 * var(--base-font-size));
+
 
     /* Flexbox element spacing */
     --gap-row: calc( 1 * var(--base-font-size) );

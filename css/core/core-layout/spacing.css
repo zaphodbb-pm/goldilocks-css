@@ -1,52 +1,74 @@
 /* spacing options */
 
-.space {
-    margin: var(--margin) var(--margin);
+/** spacing between related HTML tags such as buttons, headings, etc.  **/
+.space-element {
+    margin: var(--space-element) var(--space-element);
 }
 
-.space-medium {
-    margin: var(--margin-medium);
+.space-element-horz {
+    margin: 0 var(--space-element);
 }
 
-.space-large {
-    margin: var(--margin-large);
+.space-element-vert {
+    margin: var(--space-element) 0;
 }
 
-.space-horz {
-    margin: 0 var(--margin);
+
+/** spacing between similar content such cards, lists, etc.  **/
+.space-block {
+    margin: var(--space-block) var(--space-block);
 }
 
-.space-horz-medium {
-    margin: 0 var(--margin-medium);
+.space-block-horz {
+    margin: 0 var(--space-block);
 }
 
-.space-horz-large {
-    margin: 0 var(--margin-large);
+.space-block-vert {
+    margin: var(--space-block) 0;
 }
 
-.space-vert {
-    margin: var(--margin) 0;
+
+/** spacing between collections within a container  **/
+.space-collection {
+    margin: var(--space-collection) var(--space-collection);
 }
 
-.space-vert-medium {
-    margin: var(--margin-medium) 0;
+.space-collection-horz {
+    margin: 0 var(--space-collection);
 }
 
-.space-vert-large {
-    margin: var(--margin-large) 0;
+.space-collection-vert {
+    margin: var(--space-collection) 0;
 }
 
-.space-component {
+
+/** spacing between unrelated content  **/
+.space-container {
+    margin: var(--space-container) var(--space-container);
+}
+
+.space-container-horz {
+    margin: 0 var(--space-container);
+}
+
+.space-container-vert {
+    margin: var(--space-container) 0;
+}
+
+
+
+/** inter-item spacing - reduces need to nest content in yet another div **/
+.space-items {
     height: 1px;
-    margin: var(--margin) 0;
+    margin: var(--space-element) 0;
 }
 
-.space-component-medium {
+.space-items-medium {
     height: 1px;
-    margin: var(--margin-medium) 0;
+    margin: var(--space-block) 0;
 }
 
-.space-component-large {
+.space-items-large {
     height: 1px;
-    margin: var(--margin-large) 0;
+    margin: var(--space-container) 0;
 }

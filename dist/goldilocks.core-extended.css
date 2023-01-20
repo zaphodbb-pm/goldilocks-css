@@ -56,6 +56,12 @@
     --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
     --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
     --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
+    /* basic spacing values */
+    /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
+    --space-element: var(--base-font-size);
+    --space-block: calc(2 * var(--base-font-size));
+    --space-collection: calc(4 * var(--base-font-size));
+    --space-container: calc(5 * var(--base-font-size));
     /* Flexbox element spacing */
     --gap-row: calc( 1 * var(--base-font-size) );
     --gap-col: calc( 1 * var(--base-font-size) );
@@ -1159,67 +1165,92 @@ pre
 
 /* spacing options */
 
-.space
+/** spacing between related HTML tags such as buttons, headings, etc.  **/
+.space-element
 {
-    margin: var(--margin) var(--margin);
+    margin: var(--space-element) var(--space-element);
 }
 
-.space-medium
+.space-element-horz
 {
-    margin: var(--margin-medium);
+    margin: 0 var(--space-element);
 }
 
-.space-large
+.space-element-vert
 {
-    margin: var(--margin-large);
+    margin: var(--space-element) 0;
 }
 
-.space-horz
+
+/** spacing between similar content such cards, lists, etc.  **/
+.space-block
 {
-    margin: 0 var(--margin);
+    margin: var(--space-block) var(--space-block);
 }
 
-.space-horz-medium
+.space-block-horz
 {
-    margin: 0 var(--margin-medium);
+    margin: 0 var(--space-block);
 }
 
-.space-horz-large
+.space-block-vert
 {
-    margin: 0 var(--margin-large);
+    margin: var(--space-block) 0;
 }
 
-.space-vert
+
+/** spacing between collections within a container  **/
+.space-collection
 {
-    margin: var(--margin) 0;
+    margin: var(--space-collection) var(--space-collection);
 }
 
-.space-vert-medium
+.space-collection-horz
 {
-    margin: var(--margin-medium) 0;
+    margin: 0 var(--space-collection);
 }
 
-.space-vert-large
+.space-collection-vert
 {
-    margin: var(--margin-large) 0;
+    margin: var(--space-collection) 0;
 }
 
-.space-component
+
+/** spacing between unrelated content  **/
+.space-container
+{
+    margin: var(--space-container) var(--space-container);
+}
+
+.space-container-horz
+{
+    margin: 0 var(--space-container);
+}
+
+.space-container-vert
+{
+    margin: var(--space-container) 0;
+}
+
+
+
+/** inter-item spacing - reduces need to nest content in yet another div **/
+.space-items
 {
     height: 1px;
-    margin: var(--margin) 0;
+    margin: var(--space-element) 0;
 }
 
-.space-component-medium
+.space-items-medium
 {
     height: 1px;
-    margin: var(--margin-medium) 0;
+    margin: var(--space-block) 0;
 }
 
-.space-component-large
+.space-items-large
 {
     height: 1px;
-    margin: var(--margin-large) 0;
+    margin: var(--space-container) 0;
 }
 
 .stack,
