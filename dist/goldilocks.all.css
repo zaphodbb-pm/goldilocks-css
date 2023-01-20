@@ -62,6 +62,8 @@
     /* Elements Controls */
     --pad-horz: var(--base-font-size);
     --pad-vert: calc( .5 * var(--base-font-size) );
+    --pad-horz-small: calc( .5 * var(--base-font-size) );
+    --pad-vert-small: calc( .25 * var(--base-font-size) );
     --padding: calc(.75 * var(--base-font-size));
     --padding-normal: var(--base-font-size);
     --padding-medium: calc( 1.5 * var(--base-font-size) );
@@ -1370,6 +1372,10 @@ button.is-small,
 {
     font-size: var(--size-7);
     font-weight: var(--weight-medium);
+    line-height: 1.2;
+
+    height: auto;
+    padding: var(--pad-vert-small) var(--pad-horz-small);
 }
 
 button.is-small:not(.is-rounded),

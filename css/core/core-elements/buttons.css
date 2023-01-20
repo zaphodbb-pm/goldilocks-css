@@ -86,9 +86,12 @@ button.is-normal,
 
 button.is-small,
 .button.is-small,
-.buttons.are-small > button{
+.buttons.are-small > button {
     font-size: var(--size-7);
     font-weight: var(--weight-medium);
+    padding: var(--pad-vert-small) var(--pad-horz-small);
+    line-height: 1.2;
+    height: auto;
 }
 
 button.is-small:not(.is-rounded),

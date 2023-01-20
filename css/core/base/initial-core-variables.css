@@ -84,6 +84,9 @@
     /* Elements Controls */
     --pad-horz: var(--base-font-size);
     --pad-vert: calc( 0.5 * var(--base-font-size) );
+    --pad-horz-small: calc( 0.5 * var(--base-font-size) );
+    --pad-vert-small: calc( 0.25 * var(--base-font-size) );
+
     --padding: calc(0.75 * var(--base-font-size));
     --padding-normal: var(--base-font-size);
     --padding-medium: calc( 1.5 * var(--base-font-size) );
