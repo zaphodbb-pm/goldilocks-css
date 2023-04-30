@@ -13,10 +13,6 @@
     justify-content: space-between;
 }
 
-.level.has-nowrap {
-    flex-wrap: nowrap;
-}
-
 .level-centered {
     justify-content: center;
 }
@@ -27,6 +23,14 @@
 
 .level-end {
     justify-content: flex-end;
+}
+
+.level.has-nowrap,
+.level-start.has-nowrap,
+.level-centered.has-nowrap,
+.level-end.has-nowrap
+{
+    flex-wrap: nowrap;
 }
 
 .level.align-top,
