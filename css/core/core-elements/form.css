@@ -138,6 +138,7 @@
     appearance: auto;
     --webkit-appearance: auto;
     width: auto;
+    height: auto;
 }
 
 

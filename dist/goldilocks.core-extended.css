@@ -365,6 +365,11 @@ header
     margin: 0;
 }
 
+main
+{
+    overflow-y: hidden;
+}
+
 a,
 article,
 button,
@@ -1861,6 +1866,7 @@ button.delete.is-small
 .form .field-group label input[type='radio']
 {
     width: auto;
+    height: auto;
 
     appearance: auto;
     --webkit-appearance: auto;
@@ -6847,6 +6853,7 @@ a.tag:hover
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
+    row-gap: .75rem;
 }
 
 .tags .tag:not(:last-child)

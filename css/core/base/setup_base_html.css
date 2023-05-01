@@ -38,6 +38,10 @@ header {
     overflow-x: hidden;
 }
 
+main {
+    overflow-y: hidden;
+}
+
 a,
 article,
 button,

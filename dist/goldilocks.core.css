@@ -365,6 +365,11 @@ header
     margin: 0;
 }
 
+main
+{
+    overflow-y: hidden;
+}
+
 a,
 article,
 button,
@@ -1861,6 +1866,7 @@ button.delete.is-small
 .form .field-group label input[type='radio']
 {
     width: auto;
+    height: auto;
 
     appearance: auto;
     --webkit-appearance: auto;
