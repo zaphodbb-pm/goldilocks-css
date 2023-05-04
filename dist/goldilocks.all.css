@@ -938,6 +938,20 @@ pre
     'side-nav .';
 }
 
+.page-wrapper-right-panel
+{
+    display: grid;
+
+    column-gap: 0;
+    row-gap: 0;
+    grid-template-columns: 4fr auto;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 'main-nav main-nav'
+    'header header'
+    'main-content right-panel'
+    'footer footer';
+}
+
 .page-wrapper-widgets
 {
     display: grid;
