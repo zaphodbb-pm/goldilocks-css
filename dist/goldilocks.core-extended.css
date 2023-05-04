@@ -2742,7 +2742,7 @@ img
     box-shadow: var(--shadow);
 }
 
-.table-boxed header
+.table-boxed > header
 {
     font-size: var(--size-5);
     font-weight: var(--weight-semibold);

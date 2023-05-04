@@ -92,7 +92,7 @@
     background-color: var(--bg-main-elem);
 }
 
-.table-boxed header {
+.table-boxed > header {
     display: flex;
     align-items: center;
     justify-content: space-between;
