@@ -48,10 +48,6 @@
     grid-area: widgets;
 }
 
-.page-wrapper-right-panel > .main-right-panel {
-    grid-area: right-panel;
-}
-
 .page-wrapper > .page-main-nav,
 .page-wrapper-right-panel > .page-main-nav,
 .page-wrapper-widgets > .page-main-nav
@@ -135,6 +131,11 @@
 .page-wrapper-right-panel > .main-content,
 .page-wrapper-widgets > .main-content {
     grid-area: main-content;
+    padding: max(0.75rem, min(1.5rem, 3vw));
+}
+
+.page-wrapper-right-panel > .main-right-panel {
+    grid-area: right-panel;
     padding: max(0.75rem, min(1.5rem, 3vw));
 }
 

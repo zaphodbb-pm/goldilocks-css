@@ -974,11 +974,6 @@ pre
     grid-area: widgets;
 }
 
-.page-wrapper-right-panel > .main-right-panel
-{
-    grid-area: right-panel;
-}
-
 .page-wrapper > .page-main-nav,
 .page-wrapper-right-panel > .page-main-nav,
 .page-wrapper-widgets > .page-main-nav
@@ -1079,6 +1074,13 @@ pre
     padding: max(.75rem, min(1.5rem, 3vw));
 
     grid-area: main-content;
+}
+
+.page-wrapper-right-panel > .main-right-panel
+{
+    padding: max(.75rem, min(1.5rem, 3vw));
+
+    grid-area: right-panel;
 }
 
 .page-wrapper > .page-footer,
