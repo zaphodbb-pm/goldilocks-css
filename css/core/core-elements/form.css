@@ -184,7 +184,7 @@
 .form fieldset.is-vertical {
     flex-direction: column;
     align-items: flex-start;
-    row-gap: 0;
+    row-gap: var(--margin);
 }
 
 .form fieldset legend {
