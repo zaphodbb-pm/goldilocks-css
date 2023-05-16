@@ -1536,17 +1536,19 @@ button[disabled],
 }
 
 /** ensure that hover doesn't distort button size **/
-.button[class*='outlined']:not(.is-small).has-hover:hover
-{
+
+/*
+.button[class*="outlined"]:not(.is-small).has-hover:hover {
     padding-top: calc(var(--pad-vert) + 1px );
     padding-bottom: calc(var(--pad-vert) + 1px );
 }
 
-.button[class*='outlined'].is-small.has-hover:hover
-{
+.button[class*="outlined"].is-small.has-hover:hover {
     padding-top: calc(var(--pad-vert-small) + 1px );
     padding-bottom: calc(var(--pad-vert-small) + 1px );
 }
+
+ */
 
 button .icon:first-child,
 .button .icon:first-child
