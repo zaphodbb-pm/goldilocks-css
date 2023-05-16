@@ -203,3 +203,10 @@
     min-width: 40ch;
     word-break: break-word;
 }
+
+
+.table td .code-max-width {
+    display: block;
+    max-width: 10rem;
+    white-space: break-spaces;
+}

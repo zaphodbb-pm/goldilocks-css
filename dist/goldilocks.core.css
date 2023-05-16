@@ -2888,6 +2888,16 @@ img
     word-break: break-word;
 }
 
+
+.table td .code-max-width
+{
+    display: block;
+
+    max-width: 10rem;
+
+    white-space: break-spaces;
+}
+
 /* Typography elements */
 
 /** define characteristics of heading text **/
