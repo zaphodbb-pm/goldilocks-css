@@ -20,28 +20,28 @@ h6 {font-size: var(--size-6); margin-bottom: var(--size-6); }
 h1 + .sub-title,
 .is-title-1 + .sub-title {
     font-size: var(--size-3);
-    margin-top: -1em;
+    margin-top: -0.5em;
     margin-bottom: var(--size-1);
 }
 
 h2 + .sub-title,
 .is-title-2 + .sub-title {
     font-size: var(--size-4);
-    margin-top: -1em;
+    margin-top: -0.5em;
     margin-bottom: var(--size-2);
 }
 
 h3 + .sub-title,
 .is-title-3 + .sub-title {
     font-size: var(--size-5);
-    margin-top: -1em;
+    margin-top: -0.5em;
     margin-bottom: var(--size-3);
 }
 
 h4 + .sub-title,
 .is-title-4 + .sub-title {
     font-size: var(--size-6);
-    margin-top: -1em;
+    margin-top: -0.5em;
     margin-bottom: var(--size-4);
 }
 
