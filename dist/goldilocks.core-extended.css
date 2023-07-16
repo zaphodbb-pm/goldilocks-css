@@ -1367,6 +1367,11 @@ pre
     align-items: flex-end;
 }
 
+.stack-gap-small
+{
+    row-gap: calc(.5 * var(--gap-row) );
+}
+
 .stack-gap-medium
 {
     row-gap: calc(3 * var(--gap-row) );
