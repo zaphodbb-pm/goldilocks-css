@@ -36,6 +36,10 @@
     column-width: calc( var(--magazine-width) / 1.33);
 }
 
+.magazine .page-wide {
+    column-span: all;
+}
+
 .magazine .mag-block {
     display: block;
     margin: 2rem 0;
