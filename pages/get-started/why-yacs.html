@@ -1,0 +1,133 @@
+---
+layout: default
+parent-tab: get-started
+title: Why Yet Another CSS System?
+nav: Why YACS
+---
+
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
+
+<main class="main-content">
+    <article class="magazine has-serif">
+        <h2>Overview</h2>
+
+        <p>Since 2011, there have been many CSS frameworks introduced into the market.  The most notable being Bootstrap, Bulma and lately Tailwind.
+            Designed primarily for the front-end developer, they have provided a simpler and more consistent solution to creatively styling HTML layouts.
+            They all solve the problem of letting development move along quickly, but they also trade-off the best customer experience through large
+            file sizes and the need for javascript for some component functionality.  Utility type CSS frameworks also burden (increase) the HTML files and
+            don't make of caching to reduce Time to First Paint (TTFP) and increase page load times.
+        </p>
+
+        <p>Unfortunately, they also come with technical debt.  Most notably, many of these frameworks stray away from HTML5 standards compliance
+            and are, too often, semantically incorrect.  These frameworks also do not use the latest changes in CSS3.  The use of classes is verbose and
+            the class name terminology can also be non-intuitive sometimes.  Many have not been updated to the latest CSS3 capabilities.
+        </p>
+
+        <p>Furthermore, the marketing of these frameworks is very noisy and make the developer believe that they are the only viable solution.
+            They also tend to overpromise and underdeliver, often leading to frustration and wasted time for developers.  A delayed project also gets
+            scrutiny from the folks paying the bills.
+        </p>
+
+        <p>
+            But what is the realty?  The table below shows the usage statistics and market shares of CSS frameworks as of February 2026.  It is
+            interesting to note that Bootstrap is still the most popular framework. Despite the fact that Tailwind has gained a lot of traction,
+            it only represents a small fraction of the market at 0.3% overall and at 1.6% of the CSS market share.  Most interesting is that 4 out of 5
+            websites do not use any CSS framework, implying that they have been built with custom or in-house CSS.
+        </p>
+
+        <figure class="img-as-content">
+            <img src="{{site.url}}/img/demo/Website%20CSS%20usage%202026%20Feb" alt="Graph of CSS framework usage statistics" loading="lazy" width="600" height="345">
+            <figcaption>
+                Usage statistics and market shares of CSS frameworks
+                <cite><a href="https://w3techs.com/technologies/overview/css_framework">
+                    W3Techs</a></cite>
+            </figcaption>
+        </figure>
+
+        <p>Web development techniques have matured in the last decade.  <a href="http://w3c.org" target=_blank>W3C</a> has
+            updated both HTML and CSS standards to accommodate the changing needs of the business of website / application building.
+            These latest versions of the web standards have become powerful enough to reduce the reliance on Javascript
+            to control the user experience.  This maturation of web standards has delivered very comprehensive capabilities.
+            Modern evergreen browsers have become very sophisticated and efficient in handling HTML5 for structure and CSS3 for
+            presentation to the point that Javascript use can be minimized or, in some cases such as static web pages, can be eliminated.
+            Javascript can return to its roots to provide a way for the web page to communicate with the server to fetch user data and to
+            hydrate HTML scaffolding.
+        </p>
+
+        <p>The widespread adoption and use of web technologies has increased the supply of companies capable of delivering websites to
+            meet the needs of the buyers.  This competition has also increased the competitive pressures on web page / application builders.
+            The plethora of frameworks and languages available makes architectural choices critical and has a major impact on project
+            costs and delivery times. Note that all frameworks / libraries work as advertised and do their job to help build web pages,
+            but do so at varying cost points. These changes have shifted the focus from developer-driven innovation to the
+            product manager who has to live in a world of constraints of both time and money.
+        </p>
+
+        <p>The product manager has a mandate for managing a project’s profit and loss.  The loss part is easy: hire developers and
+            just keep building stuff. The profit side is hard … really hard.  In order to have profit, a project needs to have
+            customers that spend money (ie generate revenue). This revenue is the money available to a project manager to build
+            more stuff and, more importantly, debug and maintain stuff that has already been built.  Limited revenue also
+            limits the developer team size.  All of these constraints force the product manager into trade-offs: user experience
+            is important, only some features can be built, code must be debugged and maintained, customer support has to be paid for, etc.
+        </p>
+
+        <p>Although every developer looks for unopinionated tools to use, the reality is that as soon as a product plan is struck,
+            technology decisions are made that create a very opinionated tool kit that the team is required to use.
+            There are many benefits to doing so for development.  These benefits also flow directly to the business side as well.
+            Unfortunately, technology stacks are often constructed from many libraries that can add a tremendous amount of complexity
+            that then becomes difficult to manage.  This then requires much more labour to make work properly and can delay the
+            product's entry into the market.
+        </p>
+
+
+        <h2>Another Way Forward</h2>
+
+        <p>
+            We have accumulated a lot of experiences from UX designers on
+            <a href="https://www.nngroup.com/topic/psychology-and-ux/?asset=articles#articles" target=_blank>what works on a website</a>
+            and what to avoid.
+            These experiences have been distilled into a set of best practices that can be applied to any web project.
+            So, rather than focussing on new shiny bling, we can focus on the (mundane) best practices that have been proven to work.
+        </p>
+
+        <figure class="blockquote">
+            <blockquote cite="https://www.goodreads.com/quotes/search?utf8=%E2%9C%93&q=peter+blois&commit=Search">
+                <p>We are like dwarfs standing on the shoulders of giants; thanks to them, we see farther than they.
+                    Busying ourselves with the treatises written by the ancients, we take their choice thoughts,
+                    buried by age and human neglect, and we raise them, as it were from death to renewed life. </p>
+            </blockquote>
+            <figcaption>
+                <a href="https://en.wikipedia.org/wiki/Peter_of_Blois" target=_blank> Pierre de Blois; c.1130 – c.1211</a>,
+                <cite>Theology of the Reformers</cite>
+            </figcaption>
+        </figure>
+
+        <p><strong>Goldilocks-CSS</strong> is inspired from the work of many people devoted to improving all aspects of web
+            design and technology.
+        </p>
+
+        <p>
+            <strong>Goldilocks-CSS</strong> is a project designed to improve the user experience and to meet the needs of the business
+            rather than the developer alone.
+            <strong>Goldilocks-CSS</strong> is driven by the <a href="https://en.wikipedia.org/wiki/Goldilocks_principle" target=_blank>Goldilocks Principle </a>
+            and strives to <b>find the sweet spot</b> between a good user experience and efficient project execution.
+            <strong>Goldilocks-CSS</strong> is more of a modular set of best practices rather than a just a framework.
+            <strong>Goldilocks-CSS</strong> helps the product manager deliver products in a timely way by:
+        </p>
+
+        <ul class="is-indented-1">
+            <li>Being a comprehensive source of truth for consistent web page creation;</li>
+            <li>Using semantic HTML5 for content structure to meet accessibility requirements (and hence reduce litigation);</li>
+            <li>Adhering to HTML and CSS standards to future-proof your project;</li>
+            <li>Leveraging modern CSS3 to create a “no Javascript” presentation layer;</li>
+            <li>Reducing javascript code complexity;</li>
+            <li>Increasing HTML code readability for maintenance work by minimizing presentation layer cruft.</li>
+        </ul>
+
+        <p>The objective is faster time to market at a much lower cost.
+            See <a href="{{site.url}}/pages/get-started/key-drivers.html">Key Business Drivers</a>.
+        </p>
+
+    </article>
+</main>
