@@ -8,8 +8,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);
 
     /* main theme colour parameters
-        - based on split complementary color selection
-        - for triadic color selection, set --main-color-offset to 120 degrees
+        - based on  complementary color selection
     */
     --main-color: 140;                  /** primary hue value **/
     --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
