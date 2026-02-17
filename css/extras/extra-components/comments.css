@@ -1,68 +1,72 @@
-.comments {
-}
+@layer extras {
 
-.comments > li {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-}
+    .comments {
+    }
 
-.comments > li.comment,
-.comments > li.with-form {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    column-gap: var(--gap-col);
-    padding-top: var(--pad-horz);
-    padding-bottom: var(--padding-normal);
-}
+    .comments > li {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
 
-.comments > li.comment:last-child {
-    border-bottom: 1px solid var(--border-main);
-}
+    .comments > li.comment,
+    .comments > li.with-form {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        column-gap: var(--gap-col);
+        padding-top: var(--pad-horz);
+        padding-bottom: var(--padding-normal);
+    }
 
-/* layout content parts */
-.comments > li.comment > div {
-    width: 100%;
-}
+    .comments > li.comment:last-child {
+        border-bottom: 1px solid var(--border-main);
+    }
 
-.comments > li.comment > div > * {
-    padding: 0;
-    margin: 0 0 var(--mar-vert) 0;
-}
+    /* layout content parts */
+    .comments > li.comment > div {
+        width: 100%;
+    }
 
-.comments > li.comment > div > p > a > span {
-    font-size: var(--size-5);
-}
+    .comments > li.comment > div > * {
+        padding: 0;
+        margin: 0 0 var(--mar-vert) 0;
+    }
 
-.comments > li.comment > div > time {
-    font-size: 0.8em;
-    font-style: italic;
-    margin-top: -0.75rem;
-    display: block;
-}
+    .comments > li.comment > div > p > a > span {
+        font-size: var(--size-5);
+    }
 
-.comments > li.comment > div > footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    .comments > li.comment > div > time {
+        font-size: 0.8em;
+        font-style: italic;
+        margin-top: -0.75rem;
+        display: block;
+    }
 
-
-/* recursive comments list */
-.comments > li > ul {
-    border-top: 1px solid var(--border-main);
-    padding-top: var(--padding);
-    margin: var(--mar-vert) 0 0 3rem;
-}
+    .comments > li.comment > div > footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
 
-/* form at bottom of comments list */
-.comments > li.with-form  > form {
-    width: 100%;
-}
+    /* recursive comments list */
+    .comments > li > ul {
+        border-top: 1px solid var(--border-main);
+        padding-top: var(--padding);
+        margin: var(--mar-vert) 0 0 3rem;
+    }
 
-.comments > li.with-form > figure {
-    margin-top: 1.5rem;
+
+    /* form at bottom of comments list */
+    .comments > li.with-form > form {
+        width: 100%;
+    }
+
+    .comments > li.with-form > figure {
+        margin-top: 1.5rem;
+    }
+
 }

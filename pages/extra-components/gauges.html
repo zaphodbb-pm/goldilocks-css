@@ -29,7 +29,7 @@ nav: Gauges
                 <li><b>Default:</b> generic information display;</li>
                 <li><b>Primary:</b> displayed data is important;</li>
                 <li><b>Secondary:</b> displayed data is relevant;</li>
-                <li><b>Tertiary:</b> displayed data is for information;</li>
+                <li><b>complement:</b> displayed data is for information;</li>
                 <li><b>Success:</b> displayed data is within satisfactory range;</li>
                 <li><b>Warning:</b> displayed data is starting to move out of satisfactory range;</li>
                 <li><b>Danger:</b> displayed data is outside of satisfactory range.</li>
@@ -63,7 +63,7 @@ nav: Gauges
 
                 <tr>
                     <td>Optional colour modifiers.</td>
-                    <td><code>.gauge-primary</code>, <code>.gauge-secondary</code>, <code>.gauge-tertiary</code>,
+                    <td><code>.gauge-primary</code>, <code>.gauge-secondary</code>, <code>.gauge-complement</code>,
                         <code>.gauge-success</code>, <code>.gauge-warning</code>, <code>.gauge-danger</code></td>
                 </tr>
                 </tbody>
@@ -84,7 +84,7 @@ nav: Gauges
                     <td>Variables:</td>
                     <td>--bg-main, --bg-main-invert, --danger, --grey-dark, --grey-light,
                         --primary, --secondary, --size-2, --size-5,
-                        --success, --tertiary, --text, --text-invert, --warning, --weight-bold, --weight-semibold
+                        --success, --complement, --text, --text-invert, --warning, --weight-bold, --weight-semibold
                     </td>
                 </tr>
 
@@ -118,7 +118,7 @@ nav: Gauges
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;figure class="gauge-donut [gauge-primary gauge-secondary gauge-tertiary gauge-success gauge-warning gauge-alert]"&gt;
+                &lt;figure class="gauge-donut [gauge-primary gauge-secondary gauge-complement gauge-success gauge-warning gauge-alert]"&gt;
                     &lt;data value="65" style="--gauge-value: 65; --gauge-max: 100;"&gt;
                         &lt;span&gt;65&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
                     &lt;/data&gt;
@@ -145,7 +145,7 @@ nav: Gauges
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;figure class="gauge-ring [gauge-primary gauge-secondary gauge-tertiary gauge-success gauge-warning gauge-alert]"&gt;
+                &lt;figure class="gauge-ring [gauge-primary gauge-secondary gauge-complement gauge-success gauge-warning gauge-alert]"&gt;
                     &lt;data value="25" style="--gauge-value: 25; --gauge-max: 100;"&gt;
                         &lt;span&gt;25&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
                     &lt;/data&gt;
@@ -171,7 +171,7 @@ nav: Gauges
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;figure class="gauge-meter [gauge-primary gauge-secondary gauge-tertiary gauge-success gauge-warning gauge-alert]"&gt;
+                &lt;figure class="gauge-meter [gauge-primary gauge-secondary gauge-complement gauge-success gauge-warning gauge-alert]"&gt;
                     &lt;data value="55" style="--gauge-value: 55; --gauge-max: 100;"&gt;
                         &lt;span&gt;55&lt;sup&gt;%&lt;/sup&gt;&lt;/span&gt;
                     &lt;/data&gt;

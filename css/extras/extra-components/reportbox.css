@@ -1,226 +1,225 @@
-.reportbox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: calc( var(--gap-col) * 2 );
+@layer extras {
 
-    padding: var(--padding-medium);
-    min-width: 10rem;
-    max-width: max-content;
+    .reportbox {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: calc(var(--gap-col) * 2);
 
-    border: solid 1px var(--border-main);
-    border-radius: var(--radius-comp);
-    background-color: var(--bg-component);
-    overflow-x: scroll;
-}
+        padding: var(--padding-medium);
+        min-width: 10rem;
+        max-width: max-content;
 
-.reportbox p {
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
+        border: solid 1px var(--border-main);
+        border-radius: var(--radius-comp);
+        background-color: var(--bg-component);
+        overflow-x: scroll;
+    }
 
-/* icon setup */
-.reportbox > div {
-    color: var(--text-invert);
-    padding: 0;
-    margin: 0;
-    line-height: 0;
-    border-radius: var(--radius-rounded);
-    background-color: var(--grey-dark);
-}
+    .reportbox p {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+    }
 
-.reportbox > div > span:not(.icon-nav) {
-    width: 3rem;
-    height: 3rem;
-    margin: 1rem;
-    line-height: 0;
-    font-size: 3rem;
-}
+    /* icon setup */
+    .reportbox > div {
+        color: var(--text-invert);
+        padding: 0;
+        margin: 0;
+        line-height: 0;
+        border-radius: var(--radius-rounded);
+        background-color: var(--grey-dark);
+    }
 
-
-/* image setup */
-.reportbox > img {
-    margin: 0;
-    padding: 0;
-    height: 5rem;
-    width: 5rem;
-
-    border-radius: var(--radius-elem);
-    border: solid 0.25rem var(--border-main);
-    object-fit: cover;
-}
-
-.reportbox > img:has(+ label) {
-    height: 6rem;
-    width: 6rem;
-}
+    .reportbox > div > span:not(.icon-nav) {
+        width: 3rem;
+        height: 3rem;
+        margin: 1rem;
+        line-height: 0;
+        font-size: 3rem;
+    }
 
 
-/* text setup */
-.reportbox > p,
-.reportbox > label {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+    /* image setup */
+    .reportbox > img {
+        margin: 0;
+        padding: 0;
+        height: 5rem;
+        width: 5rem;
 
-.reportbox > p {
-    row-gap: var(--gap-row);
-}
+        border-radius: var(--radius-elem);
+        border: solid 0.25rem var(--border-main);
+        object-fit: cover;
+    }
 
-
-.reportbox > p > span:first-child,
-.reportbox > label > span:first-child {
-    font-size: var(--size-5);
-    color: var(--text-light);
-    font-weight: var(--weight-semibold);
-    white-space: nowrap;
-}
-
-/* controls for progress bar */
-.reportbox > label > span:first-child {
-    margin-bottom: var(--mar-vert);
-}
-
-.reportbox > p > span:nth-child(2),
-.reportbox > label > span:nth-child(2) {
-    font-size: var(--size-1);
-    font-weight: var(--weight-bold);
-}
+    .reportbox > img:has(+ label) {
+        height: 6rem;
+        width: 6rem;
+    }
 
 
-.reportbox > label > progress + span {
-    font-size: 0.9em;
-    margin-top: var(--mar-horz);
-    color: var(--text-light)
-}
+    /* text setup */
+    .reportbox > p,
+    .reportbox > label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-.reportbox label progress {
-    margin-top: var(--margin);
-    height: calc( var(--size-6) / 2);
-}
-
-.reportbox label progress::-webkit-progress-bar {
-    background-color: var(--grey-light);
-}
-
-.reportbox label progress::-moz-progress-bar {
-    background-color: var(--grey-dark);
-}
-.reportbox label progress::-webkit-progress-value {
-    background-color: var(--grey-dark);
-}
-
-.reportbox label progress::-ms-fill {
-    background-color: var(--grey-dark);
-    border: none;
-}
+    .reportbox > p {
+        row-gap: var(--gap-row);
+    }
 
 
+    .reportbox > p > span:first-child,
+    .reportbox > label > span:first-child {
+        font-size: var(--size-5);
+        color: var(--text-light);
+        font-weight: var(--weight-semibold);
+        white-space: nowrap;
+    }
+
+    /* controls for progress bar */
+    .reportbox > label > span:first-child {
+        margin-bottom: var(--mar-vert);
+    }
+
+    .reportbox > p > span:nth-child(2),
+    .reportbox > label > span:nth-child(2) {
+        font-size: var(--size-1);
+        font-weight: var(--weight-bold);
+    }
 
 
+    .reportbox > label > progress + span {
+        font-size: 0.9em;
+        margin-top: var(--mar-horz);
+        color: var(--text-light)
+    }
 
-/* state colours */
-.report-success {
-    border: solid 1px var(--success);
-}
+    .reportbox label progress {
+        margin-top: var(--margin);
+        height: calc(var(--size-6) / 2);
+    }
 
-.report-warning {
-    border: solid 1px var(--warning);
-}
+    .reportbox label progress::-webkit-progress-bar {
+        background-color: var(--grey-light);
+    }
 
-.report-danger {
-    border: solid 1px var(--danger);
-}
+    .reportbox label progress::-moz-progress-bar {
+        background-color: var(--grey-dark);
+    }
 
-/* icon colours */
-.report-success > div {
-    background-color: var(--success-dark);
-    color: var(--text-invert);
-}
+    .reportbox label progress::-webkit-progress-value {
+        background-color: var(--grey-dark);
+    }
 
-.report-warning > div {
-    background-color: var(--warning);
-    color: var(--text);
-}
-
-.report-danger > div {
-    background-color: var(--danger);
-    color: var(--text-invert);
-}
+    .reportbox label progress::-ms-fill {
+        background-color: var(--grey-dark);
+        border: none;
+    }
 
 
-/* image border colours */
+    /* state colours */
+    .report-success {
+        border: solid 1px var(--success);
+    }
 
-.report-success > img {
-    border-color: var(--success);
-}
+    .report-warning {
+        border: solid 1px var(--warning);
+    }
 
-.report-warning > img {
-    border-color: var(--warning);
-}
+    .report-danger {
+        border: solid 1px var(--danger);
+    }
 
-.report-danger > img {
-    border-color: var(--danger);
-}
+    /* icon colours */
+    .report-success > div {
+        background-color: var(--success-dark);
+        color: var(--text-invert);
+    }
 
-/* text colours */
-.report-success > p > span:nth-child(2),
-.report-success > label > span:nth-child(2) {
-    color: var(--success-dark);
-}
+    .report-warning > div {
+        background-color: var(--warning);
+        color: var(--text);
+    }
 
-.report-warning > p > span:nth-child(2),
-.report-warning > label > span:nth-child(2) {
-    color: var(--warning);
-}
-
-.report-danger > p > span:nth-child(2),
-.report-danger > label > span:nth-child(2) {
-    color: var(--danger);
-}
-
-
-/* progress bar colours */
-.report-success label progress::-webkit-progress-value{
-    background-color: var(--success-dark);
-}
-
-.report-success label progress::-moz-progress-bar {
-    background-color: var(--success-dark);
-}
-
-.report-success label  progress::-ms-fill {
-    background-color: var(--success-dark);
-}
+    .report-danger > div {
+        background-color: var(--danger);
+        color: var(--text-invert);
+    }
 
 
+    /* image border colours */
+    .report-success > img {
+        border-color: var(--success);
+    }
 
-.report-warning label progress::-webkit-progress-value{
-    background-color: var(--warning);
-}
+    .report-warning > img {
+        border-color: var(--warning);
+    }
 
-.report-warning label progress::-moz-progress-bar {
-    background-color: var(--warning);
-}
+    .report-danger > img {
+        border-color: var(--danger);
+    }
 
-.report-warning label  progress::-ms-fill {
-    background-color: var(--warning);
-}
+    /* text colours */
+    .report-success > p > span:nth-child(2),
+    .report-success > label > span:nth-child(2) {
+        color: var(--success-dark);
+    }
+
+    .report-warning > p > span:nth-child(2),
+    .report-warning > label > span:nth-child(2) {
+        color: var(--warning);
+    }
+
+    .report-danger > p > span:nth-child(2),
+    .report-danger > label > span:nth-child(2) {
+        color: var(--danger);
+    }
 
 
+    /* progress bar colours */
+    .report-success label progress::-webkit-progress-value {
+        background-color: var(--success-dark);
+    }
 
-.report-danger label progress::-webkit-progress-value{
-    background-color: var(--danger);
-}
+    .report-success label progress::-moz-progress-bar {
+        background-color: var(--success-dark);
+    }
 
-.report-danger label progress::-moz-progress-bar {
-    background-color: var(--danger);
-}
+    .report-success label progress::-ms-fill {
+        background-color: var(--success-dark);
+    }
 
-.report-danger  label progress::-ms-fill {
-    background-color: var(--danger);
+
+    .report-warning label progress::-webkit-progress-value {
+        background-color: var(--warning);
+    }
+
+    .report-warning label progress::-moz-progress-bar {
+        background-color: var(--warning);
+    }
+
+    .report-warning label progress::-ms-fill {
+        background-color: var(--warning);
+    }
+
+
+    .report-danger label progress::-webkit-progress-value {
+        background-color: var(--danger);
+    }
+
+    .report-danger label progress::-moz-progress-bar {
+        background-color: var(--danger);
+    }
+
+    .report-danger label progress::-ms-fill {
+        background-color: var(--danger);
+    }
+
 }

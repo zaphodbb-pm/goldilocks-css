@@ -1,92 +1,91 @@
-[class*="badge"] {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transform: translate(-.05rem,-.75rem);
-    position: relative;
+@layer extended {
 
-    min-width: .7rem;
-    height: 1rem;
-    padding: .1rem .25rem;
+    [class*="badge"] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-.05rem, -.75rem);
+        position: relative;
 
-    font-size: .85rem;
-    font-weight: var(--weight-medium);
-    line-height: 1;
-    color: var(--text-invert);
-    white-space: nowrap;
+        min-width: .7rem;
+        height: 1rem;
+        padding: .1rem .25rem;
 
-    background: var(--grey-dark);
-    background-clip: padding-box;
-    border-radius: 1rem;
-    box-shadow: 0 0 0 0.1rem var(--bg-main);
-}
+        font-size: .85rem;
+        font-weight: var(--weight-semibold);
+        line-height: 1;
+        color: var(--text-invert);
+        white-space: nowrap;
 
-[class*="badge"].no-border {
-    box-shadow: unset;
-}
+        background: var(--grey-dark);
+        background-clip: padding-box;
+        border-radius: 1rem;
+        box-shadow: 0 0 0 0.1rem var(--bg-main);
+    }
 
-[class*="badge"]:empty {
-    height: 0.5rem;
-    min-width: 0.5rem;
-    width: 0.5rem;
-    padding: 0;
-}
+    [class*="badge"].no-border {
+        box-shadow: unset;
+    }
 
-button:has(span),
-figure:has(span){
-    position: relative;
-}
+    [class*="badge"]:empty {
+        height: 0.5rem;
+        min-width: 0.5rem;
+        width: 0.5rem;
+        padding: 0;
+    }
 
-button > [class*="badge"] {
-    position: absolute;
-    right: -0.5rem;
-    top: 0;
-}
+    button:has(span),
+    figure:has(span) {
+        position: relative;
+    }
 
-figure > [class*="badge"] {
-    position: absolute;
-    right: -0.5rem;
-    top: 0.5rem;
-    z-index: 2;
-}
+    button > [class*="badge"] {
+        position: absolute;
+        right: -0.5rem;
+        top: 0;
+    }
 
-figure:not(.avatar) > [class*="badge"] {
-    top: 0.25rem;
-}
+    figure > [class*="badge"] {
+        position: absolute;
+        right: -0.5rem;
+        top: 0.5rem;
+        z-index: 2;
+    }
+
+    figure:not(.avatar) > [class*="badge"] {
+        top: 0.25rem;
+    }
 
 
-/* colour controls */
-.badge-primary {
-    color: var(--primary-text-invert);
-    background-color: var(--primary);
-}
+    /* colour controls */
+    .badge-primary {
+        color: var(--primary-text-invert);
+        background-color: var(--primary);
+    }
 
-.badge-secondary {
-    color: var(--secondary-text-invert);
-    background-color: var(--secondary);
-}
+    .badge-secondary {
+        color: var(--secondary-text-invert);
+        background-color: var(--secondary);
+    }
 
-.badge-tertiary {
-    color: var(--tertiary-text-invert);
-    background-color: var(--tertiary);
-}
+    .badge-complement {
+        color: var(--complement-text-invert);
+        background-color: var(--complement);
+    }
 
-.badge-success {
-    color: var(--success-text-invert);
-    background-color: var(--success-dark);
-}
+    .badge-success {
+        color: var(--success-text-invert);
+        background-color: var(--success-dark);
+    }
 
-.badge-warning {
-    color: var(--warning-text);
-    background-color: var(--warning);
-}
+    .badge-warning {
+        color: var(--warning-text);
+        background-color: var(--warning);
+    }
 
-.badge-danger {
-    color: var(--danger-text-invert);
-    background-color: var(--danger);
-}
+    .badge-danger {
+        color: var(--danger-text-invert);
+        background-color: var(--danger);
+    }
 
-.badge-link {
-    color: var(--link-text-invert);
-    background-color: var(--link);
 }

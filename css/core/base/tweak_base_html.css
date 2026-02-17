@@ -1,32 +1,39 @@
-/* fix for prism code highlighter */
-pre > code .tag {
-    background: transparent !important;
-    align-items: baseline;
-    border-radius: unset;
-    display: unset;
-    font-size: unset;
-    height: auto;
-    justify-content: unset;
-    line-height: normal;
-    padding: 0;
-    white-space: nowrap;
-}
+@layer base {
 
-pre[class*=language-] {
-    border: none;
-}
+    /* fix for prism code highlighter */
+    pre > code .tag {
+        background: transparent !important;
+        align-items: baseline;
+        border-radius: unset;
+        display: unset;
+        font-size: unset;
+        height: auto;
+        justify-content: unset;
+        line-height: normal;
+        padding: 0;
+        white-space: nowrap;
+    }
 
-pre > code[class*=language-] {
-    margin: 0 !important;
-    padding: 1rem 1.5rem;
-    max-height: 30rem;
-    min-height: 10rem;
-    min-width: 10rem;
-    overflow: auto;
-}
+    pre[class*=language-] {
+        border: none;
+    }
 
-pre {
-    padding: 0 !important;
-    margin: 0 !important;
+    pre > code[class*=language-] {
+        margin: 0 !important;
+        padding: 1rem 1.5rem;
+        max-height: 30rem;
+        min-height: 10rem;
+        min-width: 10rem;
+        overflow: auto;
+    }
+
+    /*
+    pre {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+     */
+
 }
 

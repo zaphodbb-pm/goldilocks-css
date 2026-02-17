@@ -1,221 +1,208 @@
 /* Typography elements */
 
-/** define characteristics of heading text **/
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text-darker);
-    font-weight: var(--weight-semibold);
-    margin: 0 0 0 0;
-    padding: 0;
-    line-height: 1.2;
-}
+@layer elements {
+    /** define characteristics of heading text **/
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--text-darker);
+        font-weight: var(--weight-semibold);
+        margin: 0 0 0 0;
+        padding: 0;
+        line-height: 1.2;
+    }
 
-h1 {font-size: var(--size-1); margin-bottom: var(--size-1); }
-h2 {font-size: var(--size-2); margin-bottom: var(--size-2); }
-h3 {font-size: var(--size-3); margin-bottom: var(--size-3); }
-h4 {font-size: var(--size-4); margin-bottom: var(--size-4); }
-h5 {font-size: var(--size-5); margin-bottom: var(--size-5); }
-h6 {font-size: var(--size-6); margin-bottom: var(--size-6); }
+    h1 {
+        font-size: var(--size-1);
+        margin-bottom: var(--size-1);
+    }
 
-/* sub-titles for headings for only three top headings */
-h1 + .sub-title,
-.is-title-1 + .sub-title {
-    font-size: var(--size-3);
-    margin-top: -0.5em;
-    margin-bottom: var(--size-1);
-}
+    h2 {
+        font-size: var(--size-2);
+        margin-bottom: var(--size-2);
+    }
 
-h2 + .sub-title,
-.is-title-2 + .sub-title {
-    font-size: var(--size-4);
-    margin-top: -0.5em;
-    margin-bottom: var(--size-2);
-}
+    h3 {
+        font-size: var(--size-3);
+        margin-bottom: var(--size-3);
+    }
 
-h3 + .sub-title,
-.is-title-3 + .sub-title {
-    font-size: var(--size-5);
-    margin-top: -0.5em;
-    margin-bottom: var(--size-3);
-}
+    h4 {
+        font-size: var(--size-4);
+        margin-bottom: var(--size-4);
+    }
 
-h4 + .sub-title,
-.is-title-4 + .sub-title {
-    font-size: var(--size-6);
-    margin-top: -0.5em;
-    margin-bottom: var(--size-4);
-}
+    h5 {
+        font-size: var(--size-5);
+        margin-bottom: var(--size-5);
+    }
 
+    h6 {
+        font-size: var(--size-6);
+        margin-bottom: var(--size-6);
+    }
 
-/* define font families */
-.is-family-primary {
-    font-family: var(--family-sans-serif);
-}
+    /* sub-titles for headings for only three top headings */
+    h1 + .sub-title {
+        font-size: var(--size-3);
+        margin-top: -0.5em;
+        margin-bottom: var(--size-1);
+    }
 
-.is-family-secondary {
-    font-family: var(--family-serif);
-}
+    h2 + .sub-title {
+        font-size: var(--size-4);
+        margin-top: -0.5em;
+        margin-bottom: var(--size-2);
+    }
 
-.is-family-code {
-    font-family: var(--family-monospace);
-}
+    h3 + .sub-title {
+        font-size: var(--size-5);
+        margin-top: -0.5em;
+        margin-bottom: var(--size-3);
+    }
 
-/* sets font-size is any element */
-.is-title-1,
-.is-title-2,
-.is-title-3,
-.is-title-4,
-.is-title-5,
-.is-title-6,
-.is-title-7 {
-    font-weight: var(--weight-semibold);
-    margin: 0 0 1rem 0;
-}
-
-.is-title-1,
-.is-size-1 {
-    font-size: var(--size-1);
-}
-
-.is-title-2,
-.is-size-2 {
-    font-size: var(--size-2);
-}
-
-.is-title-3,
-.is-size-3 {
-    font-size: var(--size-3);
-}
-
-.is-title-4,
-.is-size-4 {
-    font-size: var(--size-4);
-}
-
-.is-title-5,
-.is-size-5 {
-    font-size: var(--size-5);
-}
-
-.is-title-6,
-.is-size-6 {
-    font-size: var(--size-6);
-}
-
-.is-title-7,
-.is-size-7 {
-    font-size: var(--size-7);
-}
-
-/* defines margin controls */
-.is-indented-1 {
-    margin-left: calc(2 * var(--margin) );
-}
-
-.is-indented-1:dir(rtl) {
-    margin-right: calc(2 * var(--margin) );
-}
-
-.is-indented-2 {
-    margin-left: calc( 4 * var(--margin) );
-}
-
-.is-indented-2:dir(rtl) {
-    margin-right: calc( 4 * var(--margin) );
-}
-
-.is-indented-3 {
-    margin-left: calc( 6 * var(--margin) );
-}
-
-.is-indented-3:dir(rtl) {
-    margin-right: calc( 6 * var(--margin) );
-}
+    h4 + .sub-title {
+        font-size: var(--size-6);
+        margin-top: -0.5em;
+        margin-bottom: var(--size-4);
+    }
 
 
-/** define text modifiers **/
-.has-text-centered {
-    text-align: center;
-}
+    /* define font families */
+    .is-family-primary {
+        font-family: var(--family-sans-serif), sans-serif;
+    }
 
-.has-text-start {
-    text-align: start;
-}
+    .is-family-secondary {
+        font-family: var(--family-serif), serif;
+    }
 
-.has-text-end {
-    text-align: end;
-}
+    .is-family-code {
+        font-family: var(--family-monospace), monospace;
+    }
 
-.has-text-justified {
-    text-align: justify;
-}
+    .is-size-1 {
+        font-size: var(--size-1);
+    }
 
-/* defines text weights */
-.is-text-light {
-    font-weight: var(--weight-light);
-}
+    .is-size-2 {
+        font-size: var(--size-2);
+    }
 
-.is-text-normal {
-    font-weight: var(--weight-normal);
-}
+    .is-size-3 {
+        font-size: var(--size-3);
+    }
 
-.is-text-medium {
-    font-weight: var(--weight-medium);
-}
+    .is-size-4 {
+        font-size: var(--size-4);
+    }
 
-.is-text-semibold {
-    font-weight: var(--weight-semibold);
-}
+    .is-size-5 {
+        font-size: var(--size-5);
+    }
 
-.is-text-bold {
-    font-weight: var(--weight-bold);
-}
+    .is-size-6 {
+        font-size: var(--size-6);
+    }
+
+    .is-size-7 {
+        font-size: var(--size-7);
+    }
+
+    /* defines margin controls */
+    .is-indented-1 {
+        margin-left: calc(2 * var(--margin));
+    }
+
+    .is-indented-1:dir(rtl) {
+        margin-right: calc(2 * var(--margin));
+    }
+
+    .is-indented-2 {
+        margin-left: calc(4 * var(--margin));
+    }
+
+    .is-indented-2:dir(rtl) {
+        margin-right: calc(4 * var(--margin));
+    }
+
+    .is-indented-3 {
+        margin-left: calc(6 * var(--margin));
+    }
+
+    .is-indented-3:dir(rtl) {
+        margin-right: calc(6 * var(--margin));
+    }
 
 
-/* define text colours */
-.has-text-primary {
-    color: var(--primary-text);
-}
+    /** define text modifiers **/
+    .has-text-centered {
+        text-align: center;
+    }
 
-.has-text-secondary {
-    color: var(--secondary-text);
-}
+    .has-text-start {
+        text-align: start;
+    }
 
-.has-text-tertiary {
-    color: var(--tertiary-text);
-}
+    .has-text-end {
+        text-align: end;
+    }
 
-.has-text-link {
-    color: var(--link-text);
-}
+    .has-text-justified {
+        text-align: justify;
+    }
 
-.has-text-success {
-    color: var(--success-text);
-}
+    /* defines text weights */
+    .is-text-light {
+        font-weight: var(--weight-light);
+    }
 
-.has-text-warning {
-    color: var(--warning-text);
-}
+    .is-text-normal {
+        font-weight: var(--weight-normal);
+    }
 
-.has-text-danger {
-    color: var(--danger-text);
-}
+    .is-text-semibold {
+        font-weight: var(--weight-semibold);
+    }
 
-.has-text-white {
-    color: var(--bg-main);
-}
+    .is-text-bold {
+        font-weight: var(--weight-bold);
+    }
 
-.has-text-black {
-    color: var(--bg-main-invert);
-}
 
-.has-text-grey {
-    color: var(--grey);
-}
+    /* define text colours */
+    .has-text-primary {
+        color: var(--primary-text);
+    }
 
-.has-text-dark {
-    color: var(--grey-dark);
-}
+    .has-text-secondary {
+        color: var(--secondary-text);
+    }
 
-.has-text-light {
-    color: var(--grey-light);
+    .has-text-complement {
+        color: var(--complement-text);
+    }
+
+    .has-text-link {
+        color: var(--link-text);
+    }
+
+    .has-text-white {
+        color: var(--bg-main);
+    }
+
+    .has-text-black {
+        color: var(--bg-main-invert);
+    }
+
+    .has-text-grey {
+        color: var(--grey);
+    }
+
+    .has-text-dark {
+        color: var(--grey-dark);
+    }
+
+    .has-text-light {
+        color: var(--grey-light);
+    }
+
 }

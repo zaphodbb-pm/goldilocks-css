@@ -1,190 +1,194 @@
-.infobox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    min-width: 10rem;
-    max-width: max-content;
-    box-shadow: var(--shadow);
+@layer extras {
 
-    border-radius: var(--radius-comp);
-    background-color: var(--bg-component);
-    overflow-x: scroll;
-}
+    .infobox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        min-width: 10rem;
+        max-width: max-content;
+        box-shadow: var(--shadow);
 
-/* position info text */
-.infobox > div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--padding-medium);
-    column-gap: calc( var(--gap-col) * 2 );
-}
+        border-radius: var(--radius-comp);
+        background-color: var(--bg-component);
+        overflow-x: scroll;
+    }
 
-.infobox > div > p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    margin: 0;
-}
+    /* position info text */
+    .infobox > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--padding-medium);
+        column-gap: calc(var(--gap-col) * 2);
+    }
 
-.infobox > div > p span:first-child {
-    font-size: calc( 2 * var(--size-3) );
-    font-weight: var(--weight-bold);
-    margin-bottom: var(--mar-vert);
-}
+    .infobox > div > p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        margin: 0;
+    }
 
-.infobox > div > p span:first-child sup{
-    font-size: 0.66em;
-    vertical-align: top;
-}
+    .infobox > div > p span:first-child {
+        font-size: calc(2 * var(--size-3));
+        font-weight: var(--weight-bold);
+        margin-bottom: var(--mar-vert);
+    }
 
-.infobox > div > p span:first-child sub{
-    font-size: 0.66em;
-    vertical-align: bottom;
-}
+    .infobox > div > p span:first-child sup {
+        font-size: 0.66em;
+        vertical-align: top;
+    }
 
-.infobox > div > p span:nth-child(2) {
-    font-size: var(--size-5);
-    color: var(--text-light);
-    font-weight: var(--weight-semibold);
-    white-space: nowrap;
-}
+    .infobox > div > p span:first-child sub {
+        font-size: 0.66em;
+        vertical-align: bottom;
+    }
 
-
-/* position icon */
-.infobox > div > div {
-    border-radius: var(--radius-rounded);
-    color: var(--grey-dark);
-    line-height: 0;
-}
-
-.infobox > div > div > span:not(.icon-nav) {
-    font-size: 4rem;
-    margin: 0;
-    height: 4rem;
-    width: 4rem;
-    line-height: 0;
-    padding: 0;
-}
+    .infobox > div > p span:nth-child(2) {
+        font-size: var(--size-5);
+        color: var(--text-light);
+        font-weight: var(--weight-semibold);
+        white-space: nowrap;
+    }
 
 
-/* builds box footer with link */
-.infobox > a {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    position: relative;
+    /* position icon */
+    .infobox > div > div {
+        border-radius: var(--radius-rounded);
+        color: var(--grey-dark);
+        line-height: 0;
+    }
 
-    background-color: var(--grey-dark);
-    color: white;
-    font-weight: var(--weight-medium);
-    text-decoration: none;
-}
-
-.infobox > a > span {
-    position: relative;
-    padding-right: 2rem;
-    margin: var(--mar-vert) var(--mar-horz);
-}
-
-.infobox > a > span::after {
-    content: "";
-    height: 1.5em;
-    width: 2.5em;
-    position: absolute;
-
-    transition: all 0.3s;
-    background-color: currentColor;
-    mask-image: var(--indicator-right);
-    mask-repeat: no-repeat;
-    mask-position: center center;
-    -webkit-mask-image: var(--indicator-right);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center center;
-}
+    .infobox > div > div > span:not(.icon-nav) {
+        font-size: 4rem;
+        margin: 0;
+        height: 4rem;
+        width: 4rem;
+        line-height: 0;
+        padding: 0;
+    }
 
 
-/* state colours */
-/** main box **/
-.infobox-primary {
-    background-color: var(--primary-light);
-}
+    /* builds box footer with link */
+    .infobox > a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
 
-.infobox-secondary {
-    background-color: var(--secondary-light);
-}
+        background-color: var(--grey-dark);
+        color: white;
+        font-weight: var(--weight-semibold);
+        text-decoration: none;
+    }
 
-.infobox-tertiary {
-    background-color: var(--tertiary-light);
-}
+    .infobox > a > span {
+        position: relative;
+        padding-right: 2rem;
+        margin: var(--mar-vert) var(--mar-horz);
+    }
 
-/** box text **/
-.infobox.infobox-primary > div > p {
-    color: var(--primary-dark);
-}
+    .infobox > a > span::after {
+        content: "";
+        height: 1.5em;
+        width: 2.5em;
+        position: absolute;
 
-.infobox.infobox-secondary > div > p {
-    color: var(--secondary-dark);
-}
-
-.infobox.infobox-tertiary > div > p {
-    color: var(--tertiary-dark);
-}
-
-.infobox.infobox-primary > div > p span:nth-child(2) {
-    color: var(--primary-dark);
-}
-
-.infobox.infobox-secondary > div > p span:nth-child(2) {
-    color: var(--secondary-dark);
-}
-
-.infobox.infobox-tertiary > div > p span:nth-child(2) {
-    color: var(--tertiary-dark);
-}
-
-/** footer **/
-.infobox-primary > a {
-    background-color: var(--primary);
-    color: var(--primary-text-invert);
-}
-
-.infobox-secondary > a {
-    background-color: var(--secondary);
-    color: var(--secondary-text-invert);
-}
-
-.infobox-tertiary > a {
-    background-color: var(--tertiary);
-    color: var(--tertiary-text-invert);
-}
+        transition: all 0.3s;
+        background-color: currentColor;
+        mask-image: var(--indicator-right);
+        mask-repeat: no-repeat;
+        mask-position: center center;
+        -webkit-mask-image: var(--indicator-right);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+    }
 
 
-/** icon **/
-.infobox-primary > div > div{
-    color: var(--primary);
-}
+    /* state colours */
+    /** main box **/
+    .infobox-primary {
+        background-color: var(--primary-light);
+    }
 
-.infobox-secondary > div > div {
-    color: var(--secondary);
-}
+    .infobox-secondary {
+        background-color: var(--secondary-light);
+    }
 
-.infobox-tertiary > div > div {
-    color: var(--tertiary);
-}
+    .infobox-complement {
+        background-color: var(--complement-light);
+    }
 
-/* image setup */
-.infobox > div > img {
-    margin: 0;
-    padding: 0;
-    height: 5rem;
-    width: 5rem;
-    display:block;
-    border-radius: var(--radius-elem);
-    object-fit: cover;
+    /** box text **/
+    .infobox.infobox-primary > div > p {
+        color: var(--primary-dark);
+    }
+
+    .infobox.infobox-secondary > div > p {
+        color: var(--secondary-dark);
+    }
+
+    .infobox.infobox-complement > div > p {
+        color: var(--complement-dark);
+    }
+
+    .infobox.infobox-primary > div > p span:nth-child(2) {
+        color: var(--primary-dark);
+    }
+
+    .infobox.infobox-secondary > div > p span:nth-child(2) {
+        color: var(--secondary-dark);
+    }
+
+    .infobox.infobox-complement > div > p span:nth-child(2) {
+        color: var(--complement-dark);
+    }
+
+    /** footer **/
+    .infobox-primary > a {
+        background-color: var(--primary);
+        color: var(--primary-text-invert);
+    }
+
+    .infobox-secondary > a {
+        background-color: var(--secondary);
+        color: var(--secondary-text-invert);
+    }
+
+    .infobox-complement > a {
+        background-color: var(--complement);
+        color: var(--complement-text-invert);
+    }
+
+
+    /** icon **/
+    .infobox-primary > div > div {
+        color: var(--primary);
+    }
+
+    .infobox-secondary > div > div {
+        color: var(--secondary);
+    }
+
+    .infobox-complement > div > div {
+        color: var(--complement);
+    }
+
+    /* image setup */
+    .infobox > div > img {
+        margin: 0;
+        padding: 0;
+        height: 5rem;
+        width: 5rem;
+        display: block;
+        border-radius: var(--radius-elem);
+        object-fit: cover;
+    }
+
 }

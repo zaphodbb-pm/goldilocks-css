@@ -1,239 +1,226 @@
-progress {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    border-radius: 9999px;
-    display: block;
-    height: var(--size-6);
-    overflow: hidden;
-    padding: 0;
-    width: 100%;
-}
+@layer extras {
 
-progress::-webkit-progress-bar {
-    background-color: var(--bg-element);
-}
-
-progress::-webkit-progress-value {
-    background-color: var(--grey-dark);
-}
-
-progress::-moz-progress-bar {
-    background-color: var(--grey-dark);
-}
-
-progress::-ms-fill {
-    background-color: var(--grey-dark);
-    border: none;
-}
-
-
-
-progress.is-progress-primary::-webkit-progress-value {
-    background-color: var(--primary);
-}
-
-progress.is-progress-primary::-moz-progress-bar {
-    background-color: var(--primary);
-}
-
-progress.is-progress-primary::-ms-fill {
-    background-color: var(--primary);
-}
-
-progress.is-progress-primary:indeterminate {
-    background-image: linear-gradient(to right, var(--primary) 30%, var(--bg-element) 30%);
-}
-
-progress.is-progress-secondary::-webkit-progress-value {
-    background-color: var(--secondary);
-}
-
-progress.is-progress-secondary::-moz-progress-bar {
-    background-color: var(--secondary);
-}
-
-progress.is-progress-secondary::-ms-fill {
-    background-color: var(--secondary);
-}
-
-progress.is-progress-secondary:indeterminate {
-    background-image: linear-gradient(to right, var(--secondary) 30%, var(--bg-element) 30%);
-}
-
-progress.is-progress-tertiary::-webkit-progress-value {
-    background-color: var(--tertiary);
-}
-
-progress.is-progress-tertiary::-moz-progress-bar {
-    background-color: var(--tertiary);
-}
-
-progress.is-progress-tertiary::-ms-fill {
-    background-color: var(--tertiary);
-}
-
-progress.is-progress-tertiary:indeterminate {
-    background-image: linear-gradient(to right, var(--tertiary) 30%, var(--bg-element) 30%);
-}
-
-progress.is-progress-link::-webkit-progress-value {
-    background-color: var(--link);
-}
-
-progress.is-progress-link::-moz-progress-bar {
-    background-color: var(--link);
-}
-
-progress.is-progress-link::-ms-fill {
-    background-color: var(--link);
-}
-
-progress.is-progress-link:indeterminate {
-    background-image: linear-gradient(to right, var(--link) 30%, var(--bg-element) 30%);
-}
-
-progress.is-progress-success::-webkit-progress-value {
-    background-color: var(--success);
-}
-
-progress.is-progress-success::-moz-progress-bar {
-    background-color: var(--success);
-}
-
-progress.is-progress-success::-ms-fill {
-    background-color: var(--success);
-}
-
-progress.is-progress-success:indeterminate {
-    background-image: linear-gradient(to right, var(--success) 30%, var(--bg-element) 30%);
-}
-
-progress.is-progress-warning::-webkit-progress-value {
-    background-color: var(--warning);
-}
-
-progress.is-progress-warning::-moz-progress-bar {
-    background-color: var(--warning);
-}
-
-progress.is-progress-warning::-ms-fill {
-    background-color: var(--warning);
-}
-
-progress.is-progress-warning:indeterminate {
-    background-image: linear-gradient(to right, var(--warning) 30%, var(--bg-element) 30%);
-}
-
-progress.is-progress-danger::-webkit-progress-value {
-    background-color: var(--danger);
-}
-
-progress.is-progress-danger::-moz-progress-bar {
-    background-color: var(--danger);
-}
-
-progress.is-progress-danger::-ms-fill {
-    background-color: var(--danger);
-}
-
-progress.is-progress-danger:indeterminate {
-    background-image: linear-gradient(to right, var(--danger) 30%, var(--bg-element) 30%);
-}
-
-progress:indeterminate {
-    -webkit-animation-duration: 1.5s;
-    animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-name: moveIndeterminate;
-    animation-name: moveIndeterminate;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    background-color: var(--bg-element);
-    background-image: linear-gradient(to right, var(--black-ter) 30%, var(--bg-element) 30%);
-    background-position: top left;
-    background-repeat: no-repeat;
-    background-size: 150% 150%;
-}
-
-progress:indeterminate::-webkit-progress-bar {
-    background-color: transparent;
-}
-
-progress:indeterminate::-moz-progress-bar {
-    background-color: transparent;
-}
-
-progress:indeterminate::-ms-fill {
-    animation-name: none;
-}
-
-@-webkit-keyframes moveIndeterminate {
-    from {
-        background-position: 200% 0;
+    progress {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        border-radius: 9999px;
+        display: block;
+        height: var(--size-6);
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
     }
-    to {
-        background-position: -200% 0;
+
+    progress::-webkit-progress-bar {
+        background-color: var(--bg-element);
     }
-}
 
-@keyframes moveIndeterminate {
-    from {
-        background-position: 200% 0;
+    progress::-webkit-progress-value {
+        background-color: var(--grey-dark);
     }
-    to {
-        background-position: -200% 0;
+
+    progress::-moz-progress-bar {
+        background-color: var(--grey-dark);
     }
-}
+
+    progress::-ms-fill {
+        background-color: var(--grey-dark);
+        border: none;
+    }
 
 
-.progress-wrapper {
-    display: block;
-    margin: var(--mar-vert) 0;
-    width: 100%;
-    position: relative;
-    font-size: var(--size-6);
+    progress.is-progress-primary::-webkit-progress-value {
+        background-color: var(--primary);
+    }
 
-    --progress-value-offset: 0px;
-}
+    progress.is-progress-primary::-moz-progress-bar {
+        background-color: var(--primary);
+    }
 
-.progress-wrapper > progress{
-    display: flex;
-    align-items: center;
-    border-radius: 9999px;
-    margin-top: calc(var(--base-rem) / 5);
-    width: calc( 100% - 6ch );
-}
+    progress.is-progress-primary::-ms-fill {
+        background-color: var(--primary);
+    }
 
-.progress-wrapper.is-small > progress {
-    height: var(--size-7);
-}
+    progress.is-progress-primary:indeterminate {
+        background-image: linear-gradient(to right, var(--primary) 30%, var(--bg-element) 30%);
+    }
 
-.progress-wrapper.is-medium > progress {
-    height: var(--size-4);
-}
+    progress.is-progress-secondary::-webkit-progress-value {
+        background-color: var(--secondary);
+    }
 
-.progress-wrapper.is-large > progress {
-    height: var(--size-2);
-}
+    progress.is-progress-secondary::-moz-progress-bar {
+        background-color: var(--secondary);
+    }
 
-.progress-wrapper.is-small {
-    --progress-value-offset: calc( calc(var(--size-7) - var(--size-6)) / 2);
-}
+    progress.is-progress-secondary::-ms-fill {
+        background-color: var(--secondary);
+    }
 
-.progress-wrapper.is-medium {
-    --progress-value-offset: calc( calc(var(--size-4) - var(--size-6)) / 2);
-}
+    progress.is-progress-secondary:indeterminate {
+        background-image: linear-gradient(to right, var(--secondary) 30%, var(--bg-element) 30%);
+    }
 
-.progress-wrapper.is-large {
-    --progress-value-offset: calc( calc(var(--size-2) - var(--size-6)) / 2);
-}
+    progress.is-progress-complement::-webkit-progress-value {
+        background-color: var(--complement);
+    }
 
-.progress-wrapper[data-show]::after{
-    content: attr(data-show);
-    position: absolute;
-    bottom: var(--progress-value-offset);
-    right: 0;
-    line-height: 1;
+    progress.is-progress-complement::-moz-progress-bar {
+        background-color: var(--complement);
+    }
+
+    progress.is-progress-complement::-ms-fill {
+        background-color: var(--complement);
+    }
+
+    progress.is-progress-complement:indeterminate {
+        background-image: linear-gradient(to right, var(--complement) 30%, var(--bg-element) 30%);
+    }
+
+    progress.is-progress-success::-webkit-progress-value {
+        background-color: var(--success);
+    }
+
+    progress.is-progress-success::-moz-progress-bar {
+        background-color: var(--success);
+    }
+
+    progress.is-progress-success::-ms-fill {
+        background-color: var(--success);
+    }
+
+    progress.is-progress-success:indeterminate {
+        background-image: linear-gradient(to right, var(--success) 30%, var(--bg-element) 30%);
+    }
+
+    progress.is-progress-warning::-webkit-progress-value {
+        background-color: var(--warning);
+    }
+
+    progress.is-progress-warning::-moz-progress-bar {
+        background-color: var(--warning);
+    }
+
+    progress.is-progress-warning::-ms-fill {
+        background-color: var(--warning);
+    }
+
+    progress.is-progress-warning:indeterminate {
+        background-image: linear-gradient(to right, var(--warning) 30%, var(--bg-element) 30%);
+    }
+
+    progress.is-progress-danger::-webkit-progress-value {
+        background-color: var(--danger);
+    }
+
+    progress.is-progress-danger::-moz-progress-bar {
+        background-color: var(--danger);
+    }
+
+    progress.is-progress-danger::-ms-fill {
+        background-color: var(--danger);
+    }
+
+    progress.is-progress-danger:indeterminate {
+        background-image: linear-gradient(to right, var(--danger) 30%, var(--bg-element) 30%);
+    }
+
+    progress:indeterminate {
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: moveIndeterminate;
+        animation-name: moveIndeterminate;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        background-color: var(--bg-element);
+        background-image: linear-gradient(to right, var(--black-ter) 30%, var(--bg-element) 30%);
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: 150% 150%;
+    }
+
+    progress:indeterminate::-webkit-progress-bar {
+        background-color: transparent;
+    }
+
+    progress:indeterminate::-moz-progress-bar {
+        background-color: transparent;
+    }
+
+    progress:indeterminate::-ms-fill {
+        animation-name: none;
+    }
+
+    @-webkit-keyframes moveIndeterminate {
+        from {
+            background-position: 200% 0;
+        }
+        to {
+            background-position: -200% 0;
+        }
+    }
+
+    @keyframes moveIndeterminate {
+        from {
+            background-position: 200% 0;
+        }
+        to {
+            background-position: -200% 0;
+        }
+    }
+
+
+    .progress-wrapper {
+        display: block;
+        margin: var(--mar-vert) 0;
+        width: 100%;
+        position: relative;
+        font-size: var(--size-6);
+
+        --progress-value-offset: 0px;
+    }
+
+    .progress-wrapper > progress {
+        display: flex;
+        align-items: center;
+        border-radius: 9999px;
+        margin-top: calc(var(--base-rem) / 5);
+        width: calc(100% - 6ch);
+    }
+
+    .progress-wrapper.is-small > progress {
+        height: var(--size-7);
+    }
+
+    .progress-wrapper.is-medium > progress {
+        height: var(--size-4);
+    }
+
+    .progress-wrapper.is-large > progress {
+        height: var(--size-2);
+    }
+
+    .progress-wrapper.is-small {
+        --progress-value-offset: calc(calc(var(--size-7) - var(--size-6)) / 2);
+    }
+
+    .progress-wrapper.is-medium {
+        --progress-value-offset: calc(calc(var(--size-4) - var(--size-6)) / 2);
+    }
+
+    .progress-wrapper.is-large {
+        --progress-value-offset: calc(calc(var(--size-2) - var(--size-6)) / 2);
+    }
+
+    .progress-wrapper[data-show]::after {
+        content: attr(data-show);
+        position: absolute;
+        bottom: var(--progress-value-offset);
+        right: 0;
+        line-height: 1;
+    }
+
 }

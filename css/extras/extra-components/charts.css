@@ -1,616 +1,609 @@
-.charts-wrapper {
-    display: flex;
-    column-gap: calc( 2 * var(--gap-col) );
-    align-items: center;
-    justify-content: space-around;
-    background-color: var(--bg-component);
-    padding: var(--padding-normal);
-    border-radius: var(--radius-comp);
-
-    --color: var(--main-color-complement-low, 0);
-    --color-offset: 75;
-    --color-satlight: 90%, 45%, 0.80;
-
-    --color-1: hsla( var(--color), var(--color-satlight));
-    --color-2: hsla( calc( var(--color) + var(--color-offset) ), var(--color-satlight));
-    --color-3: hsla( calc( var(--color) + 2 * var(--color-offset) ), var(--color-satlight));
-    --color-4: hsla( calc( var(--color) + 3 * var(--color-offset) ), var(--color-satlight));
-    --color-5: hsla( calc( var(--color) + 4 * var(--color-offset) ), var(--color-satlight));
-    --color-6: hsla( calc( var(--color) + 5 * var(--color-offset) ), var(--color-satlight));
-    --color-7: hsla( calc( var(--color) + 6 * var(--color-offset) ), var(--color-satlight));
-    --color-8: hsla( calc( var(--color) + 7 * var(--color-offset) ), var(--color-satlight));
-    --color-9: hsla( calc( var(--color) + 8 * var(--color-offset) ), var(--color-satlight));
-    --color-10: hsla( calc( var(--color) + 9 * var(--color-offset) ), var(--color-satlight));
-}
-
-.charts-column,
-.charts-line,
-.charts-pie,
-.charts-donut {
-    width: 100%;
-    height: calc(100% - var(--caption-size) );
-    position: relative;
-    empty-cells: show;
-
-    border-collapse: collapse;
-    border-spacing: 0;
-    overflow: initial;
-    background-color: transparent;
-
-    --labels-size: 0rem;
-    --caption-size: 0rem;
-    --grid-offset: 1px;
-    --column-buffer-td: 0.5rem;
-    --column-buffer: 0.25rem;
-    --column-count: 1;
-}
-
-
-/* main graph */
-.charts-column tbody,
-.charts-line tbody,
-.charts-pie tbody,
-.charts-donut tbody{
-    position: absolute;
-    height: calc( 100% - var(--labels-size) - var(--caption-size));
-    width: 100%;
-    bottom: var(--labels-size);
-}
-
-.charts-column tbody tr,
-.charts-line tbody tr {
-    display: flex;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    position: absolute;
-    bottom: 0;
-
-    width: 100%;
-    height: 100%;
-}
-
-.charts-column tbody tr th,
-.charts-line tbody tr th,
-.charts-pie tbody tr th,
-.charts-donut tbody tr th {
-    position: absolute;
-    left: -200vh;
-}
-
-
-/** column specific layout **/
-.charts-column tbody tr td {
-    display: inline-block;
-    position: relative;
-    margin: 0 var(--column-buffer-td);
-    height: calc(100% * var(--td-value, 1) / var(--chart-max) - var(--grid-offset) );
-    width: 100%;
-    text-align: center;
-
-    border-top-left-radius: var(--radius-elem);
-    border-top-right-radius: var(--radius-elem);
-    border-spacing: 0;
-
-    color: transparent;
-}
-
-.charts-column tbody tr td::after {
-    content: "";
-    background-color: var(--color-1);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    border-top-left-radius: var(--radius-comp);
-    border-top-right-radius: var(--radius-comp);
-}
-
-
-/** line chart specific layout **/
-.charts-line tbody {
-    overflow: hidden;
-}
-
-.charts-line tbody tr td {
-    --start: calc( var(--td-start) / var(--chart-max) );        /* normalize starting point */
-    --size: calc( var(--td-value) / var(--chart-max) );         /* normalize value point */
-
-    display: inline-block;
-    position: relative;
-    margin: 0 0;
-    width: 100%;
-    height: 100%;
-
-    text-align: center;
-    color: transparent;
-
-    background-color: transparent;
-}
-
-
-.charts-line tbody tr td:before {
-    content: "";
-
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: -50%;
-
-    background-color: var(--color-1);
-    --line-size: 2px;
-
-    clip-path: polygon(
-            0 calc(100% * (1 - var(--start, var(--size)))),
-            100% calc(100% * (1 - var(--size))),
-            100% calc(100% * (1 - var(--size)) - var(--line-size)),
-            0 calc(100% * (1 - var(--start, var(--size))) - var(--line-size))
-    );
-}
-
-/** remove first line on graph **/
-.charts-line tbody tr td:nth-child(2):before,
-.charts-line.multiple tbody tr td:nth-child(2):before {
-    content: "";
-    clip-path: unset;
-    background-color: transparent !important;
-}
+@layer extras {
+
+    .charts-wrapper {
+        display: flex;
+        column-gap: calc(2 * var(--gap-col));
+        align-items: center;
+        justify-content: space-around;
+        background-color: var(--bg-component);
+        padding: var(--padding-normal);
+        border-radius: var(--radius-comp);
+
+        --color: var(--primary, 0);
+        --color-offset: 75;
+        --color-satlight: 90%, 45%, 0.80;
+
+        --color-1: hsla(var(--color), var(--color-satlight));
+        --color-2: hsla(calc(var(--color) + var(--color-offset)), var(--color-satlight));
+        --color-3: hsla(calc(var(--color) + 2 * var(--color-offset)), var(--color-satlight));
+        --color-4: hsla(calc(var(--color) + 3 * var(--color-offset)), var(--color-satlight));
+        --color-5: hsla(calc(var(--color) + 4 * var(--color-offset)), var(--color-satlight));
+        --color-6: hsla(calc(var(--color) + 5 * var(--color-offset)), var(--color-satlight));
+        --color-7: hsla(calc(var(--color) + 6 * var(--color-offset)), var(--color-satlight));
+        --color-8: hsla(calc(var(--color) + 7 * var(--color-offset)), var(--color-satlight));
+        --color-9: hsla(calc(var(--color) + 8 * var(--color-offset)), var(--color-satlight));
+        --color-10: hsla(calc(var(--color) + 9 * var(--color-offset)), var(--color-satlight));
+    }
+
+    .charts-column,
+    .charts-line,
+    .charts-pie,
+    .charts-donut {
+        width: 100%;
+        height: calc(100% - var(--caption-size));
+        position: relative;
+        empty-cells: show;
+
+        border-collapse: collapse;
+        border-spacing: 0;
+        overflow: initial;
+        background-color: transparent;
+
+        --labels-size: 0rem;
+        --caption-size: 0rem;
+        --grid-offset: 1px;
+        --column-buffer-td: 0.5rem;
+        --column-buffer: 0.25rem;
+        --column-count: 1;
+    }
+
+
+    /* main graph */
+    .charts-column tbody,
+    .charts-line tbody,
+    .charts-pie tbody,
+    .charts-donut tbody {
+        position: absolute;
+        height: calc(100% - var(--labels-size) - var(--caption-size));
+        width: 100%;
+        bottom: var(--labels-size);
+    }
+
+    .charts-column tbody tr,
+    .charts-line tbody tr {
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    .charts-column tbody tr th,
+    .charts-line tbody tr th,
+    .charts-pie tbody tr th,
+    .charts-donut tbody tr th {
+        position: absolute;
+        left: -200vh;
+    }
+
+
+    /** column specific layout **/
+    .charts-column tbody tr td {
+        display: inline-block;
+        position: relative;
+        margin: 0 var(--column-buffer-td);
+        height: calc(100% * var(--td-value, 1) / var(--chart-max) - var(--grid-offset));
+        width: 100%;
+        text-align: center;
+
+        border-top-left-radius: var(--radius-elem);
+        border-top-right-radius: var(--radius-elem);
+        border-spacing: 0;
+
+        color: transparent;
+    }
+
+    .charts-column tbody tr td::after {
+        content: "";
+        background-color: var(--color-1);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        border-top-left-radius: var(--radius-comp);
+        border-top-right-radius: var(--radius-comp);
+    }
+
+
+    /** line chart specific layout **/
+    .charts-line tbody {
+        overflow: hidden;
+    }
+
+    .charts-line tbody tr td {
+        --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
+        --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
+
+        display: inline-block;
+        position: relative;
+        margin: 0 0;
+        width: 100%;
+        height: 100%;
+
+        text-align: center;
+        color: transparent;
+
+        background-color: transparent;
+    }
+
+
+    .charts-line tbody tr td:before {
+        content: "";
+
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: -50%;
+
+        background-color: var(--color-1);
+        --line-size: 2px;
+
+        clip-path: polygon(
+                0 calc(100% * (1 - var(--start, var(--size)))),
+                100% calc(100% * (1 - var(--size))),
+                100% calc(100% * (1 - var(--size)) - var(--line-size)),
+                0 calc(100% * (1 - var(--start, var(--size))) - var(--line-size))
+        );
+    }
+
+    /** remove first line on graph **/
+    .charts-line tbody tr td:nth-child(2):before,
+    .charts-line.multiple tbody tr td:nth-child(2):before {
+        content: "";
+        clip-path: unset;
+        background-color: transparent !important;
+    }
+
+
+    /** add circle at data point **/
+    .charts-line tbody tr td:after {
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        z-index: 1;
+
+        position: absolute;
+        right: calc(50% - 0.25rem);
+        bottom: calc(100% * var(--size) - 0.25rem);
+
+        background-color: var(--color-1);
+        border-radius: var(--radius-rounded);
+    }
+
+
+    /** donut specific layout **/
+    .charts-donut tbody tr,
+    .charts-pie tbody tr {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .charts-pie tbody tr td {
+        --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
+        --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
+
+        margin: 0 0;
+        position: absolute;
+        height: calc(100% - var(--padding-normal));
+        aspect-ratio: 1 / 1;
+        border-radius: var(--radius-rounded);
+        display: block;
+        text-align: center;
+
+        transform: rotate(calc(var(--start) * 360deg));
+
+        background: conic-gradient(
+                currentColor 0deg calc(var(--size) * 360deg),
+                transparent calc(var(--size) * 360deg) 360deg
+        );
+    }
+
+
+    .charts-donut tbody tr td {
+        --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
+        --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
+        --buffer: 0;
+
+        margin: 0 0;
+        position: absolute;
+        height: calc(100% - var(--padding-normal));
+        aspect-ratio: 1 / 1;
+        border-radius: var(--radius-rounded);
+        display: block;
+        text-align: center;
+
+        transform: rotate(calc(var(--start) * 360deg));
+
+        background: conic-gradient(
+                currentColor 0deg calc((var(--size) - var(--buffer)) * 360deg),
+                transparent calc((var(--size) - var(--buffer)) * 360deg) 360deg
+        );
+    }
+
+    .charts-donut tbody tr td span,
+    .charts-pie tbody tr td span {
+        color: transparent;
+    }
+
+
+    .charts-donut tbody tr td:after {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 20%;
+
+        height: 60%;
+        aspect-ratio: 1 / 1;
+        border-radius: var(--radius-rounded);
+        display: block;
+        background-color: var(--bg-component);
+    }
+
+
+    .charts-donut.has-buffer tbody tr td {
+        --buffer: calc(3 / 360);
+    }
+
+
+    /* show data values */
+    .charts-column.show-values tbody tr td span,
+    .charts-line.show-values tbody tr td span {
+        position: absolute;
+        left: 0;
+        top: -1.5rem;
+        text-align: center;
+        width: 100%;
+
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: var(--text)
+    }
+
+    .charts-line.show-values tbody tr td span {
+        left: unset;
+        right: calc(50% - 1ch);
+        top: calc(100% * (1 - var(--size)) - 2rem);
+        text-align: end;
+        z-index: 3;
+    }
+
+    .charts-pie.show-values tbody tr td span,
+    .charts-donut.show-values tbody tr td span {
+        position: absolute;
+        z-index: 3;
+        transform: translate(100%, -100%);
+        font-size: 0.9rem;
+        color: var(--text);
+    }
+
+
+    /* table caption */
+    .charts-column caption,
+    .charts-line caption,
+    .charts-pie caption,
+    .charts-donut caption {
+        height: 0;
+    }
+
+    .charts-column.show-caption,
+    .charts-line.show-caption,
+    .charts-pie.show-caption,
+    .charts-donut.show-caption {
+        --caption-size: 3rem;
+    }
+
+    .charts-column.show-caption caption,
+    .charts-line.show-caption caption,
+    .charts-pie.show-caption caption,
+    .charts-donut.show-caption caption {
+        display: table-caption;
+        font-weight: bold;
+        font-size: var(--size-4);
+        padding: 0 0 1.5rem 0;
+        height: auto;
+    }
+
+
+    /* x-axis labels */
+    .charts-column thead,
+    .charts-line thead,
+    .charts-pie thead,
+    .charts-donut thead {
+        position: absolute;
+        left: -200vh;
+    }
+
+    .charts-column.show-labels,
+    .charts-line.show-labels {
+        --labels-size: 3rem;
+    }
+
+    .charts-column.show-labels thead,
+    .charts-line.show-labels thead {
+        display: flex;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .charts-column.show-labels thead tr,
+    .charts-line.show-labels thead tr {
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        align-items: center;
+        width: 100%;
+        height: 3rem;
+    }
+
+    .charts-column.show-labels thead tr th,
+    .charts-line.show-labels thead tr th {
+        width: 100%;
+        margin-inline-start: 0.25rem;
+        margin-inline-end: 0.25rem;
+    }
+
+    .charts-column.show-labels thead tr th:first-child,
+    .charts-line.show-labels thead tr th:first-child {
+        position: absolute;
+        left: -200vh;
+    }
+
+
+    /* graph grid lines */
+    .charts-column.show-grid,
+    .charts-line.show-grid {
+        --grid-offset: 2px;
+    }
+
+    .charts-column.show-grid tbody,
+    .charts-line.show-grid tbody {
+        border-left: solid 1px var(--border-main);
+        border-right: solid 1px var(--border-main);
+        border-bottom: solid 1px var(--border-main);
+
+        background-size: 100% 20%;
+        background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
+    }
+
+    .charts-column.show-grid tbody tr td,
+    .charts-line.show-grid tbody tr td {
+        bottom: 1px;
+    }
+
+
+    /* chart legend */
+    .charts-wrapper ul li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .charts-wrapper ul li:before {
+        content: "";
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+
+        vertical-align: middle;
+        -webkit-margin-end: 0.5rem;
+        margin-inline-end: 0.5rem;
+        background-color: var(--text-comp);
+    }
+
+
+    /* support multiple columns per category */
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 1) td:after {
+        left: 0;
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 2) td:after {
+        left: calc(100% / var(--column-count));
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 3) td:after {
+        left: calc(2 * 100% / var(--column-count));
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 4) td:after {
+        left: calc(3 * 100% / var(--column-count));
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 5) td:after {
+        left: calc(4 * 100% / var(--column-count));
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 6) td:after {
+        left: calc(5 * 100% / var(--column-count));
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 7) td:after {
+        left: calc(6 * 100% / var(--column-count));
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 8) td:after {
+        left: calc(7 * 100% / var(--column-count));
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 9) td:after {
+        left: calc(8 * 100% / var(--column-count));
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 10) td:after {
+        left: calc(9 * 100% / var(--column-count));
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+
+    /* colours for multi-column work */
+    .charts-column.multiple tbody tr:nth-child(10n + 1) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:after,
+    .charts-wrapper ul li:nth-child(10n + 1):before {
+        background-color: var(--color-1);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 1),
+    .charts-donut tbody tr td:nth-of-type(10n + 1) {
+        color: var(--color-1);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 2) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:after,
+    .charts-wrapper ul li:nth-child(10n + 2):before {
+        background-color: var(--color-2);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 2),
+    .charts-donut tbody tr td:nth-of-type(10n + 2) {
+        color: var(--color-2);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 3) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 3):after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:after,
+    .charts-wrapper ul li:nth-child(10n + 3):before {
+        background-color: var(--color-3);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 3),
+    .charts-donut tbody tr td:nth-of-type(10n + 3) {
+        color: var(--color-3);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 4) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 4):after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:after,
+    .charts-wrapper ul li:nth-child(10n + 4):before {
+        background-color: var(--color-4);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 4),
+    .charts-donut tbody tr td:nth-of-type(10n + 4) {
+        color: var(--color-4);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 5) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:after,
+    .charts-wrapper ul li:nth-child(10n + 5):before {
+        background-color: var(--color-5);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 5),
+    .charts-donut tbody tr td:nth-of-type(10n + 5) {
+        color: var(--color-5);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 6) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:after,
+    .charts-wrapper ul li:nth-child(10n + 6):before {
+        background-color: var(--color-6);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 6),
+    .charts-donut tbody tr td:nth-of-type(10n + 6) {
+        color: var(--color-6);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 7) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:after,
+    .charts-wrapper ul li:nth-child(10n + 7):before {
+        background-color: var(--color-7);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 7),
+    .charts-donut tbody tr td:nth-of-type(10n + 7) {
+        color: var(--color-7);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 8) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:after,
+    .charts-wrapper ul li:nth-child(10n + 8):before {
+        background-color: var(--color-8);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 8),
+    .charts-donut tbody tr td:nth-of-type(10n + 8) {
+        color: var(--color-8);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 9) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:after,
+    .charts-wrapper ul li:nth-child(10n + 9):before {
+        background-color: var(--color-9);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 9),
+    .charts-donut tbody tr td:nth-of-type(10n + 9) {
+        color: var(--color-9);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 10) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:after,
+    .charts-wrapper ul li:nth-child(10n + 10):before {
+        background-color: var(--color-10);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 10),
+    .charts-donut tbody tr td:nth-of-type(10n + 10) {
+        color: var(--color-10);
+    }
 
-
-/** add circle at data point **/
-.charts-line tbody tr td:after {
-    content: "";
-    width: 0.5rem;
-    height: 0.5rem;
-    z-index: 1;
-
-    position: absolute;
-    right: calc( 50% - 0.25rem);
-    bottom: calc( 100% * var(--size) - 0.25rem );
-
-    background-color: var(--color-1);
-    border-radius: var(--radius-rounded);
-}
-
-
-
-/** donut specific layout **/
-.charts-donut tbody tr,
-.charts-pie tbody tr {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-}
-
-
-
-.charts-pie tbody tr td {
-    --start: calc( var(--td-start) / var(--chart-max) );        /* normalize starting point */
-    --size: calc( var(--td-value) / var(--chart-max) );         /* normalize value point */
-
-    margin: 0 0;
-    position: absolute;
-    height: calc(100% - var(--padding-normal) );
-    aspect-ratio: 1 / 1;
-    border-radius: var(--radius-rounded);
-    display: block;
-    text-align: center;
-
-    transform: rotate( calc( var(--start) * 360deg ) );
-
-    background: conic-gradient(
-            currentColor  0deg calc( var(--size) * 360deg ),
-            transparent calc( var(--size) * 360deg ) 360deg
-    );
-}
-
-
-
-.charts-donut tbody tr td {
-    --start: calc( var(--td-start) / var(--chart-max) );        /* normalize starting point */
-    --size: calc( var(--td-value) / var(--chart-max) );         /* normalize value point */
-    --buffer: 0;
-
-    margin: 0 0;
-    position: absolute;
-    height: calc(100% - var(--padding-normal) );
-    aspect-ratio: 1 / 1;
-    border-radius: var(--radius-rounded);
-    display: block;
-    text-align: center;
-
-    transform: rotate( calc( var(--start) * 360deg ) );
-
-    background: conic-gradient(
-            currentColor  0deg calc( (var(--size) - var(--buffer)) * 360deg ),
-            transparent calc( (var(--size) - var(--buffer)) * 360deg ) 360deg
-    );
-}
-
-.charts-donut tbody tr td span,
-.charts-pie tbody tr td span {
-    color: transparent;
-}
-
-
-.charts-donut tbody tr td:after {
-    content: "";
-    position: absolute;
-    top: 20%;
-    left: 20%;
-
-    height: 60%;
-    aspect-ratio: 1 / 1;
-    border-radius: var(--radius-rounded);
-    display: block;
-    background-color: var(--bg-component);
-}
-
-
-.charts-donut.has-buffer tbody tr td {
-    --buffer: calc( 3 / 360);
-}
-
-
-
-/* show data values */
-.charts-column.show-values tbody tr td span,
-.charts-line.show-values tbody tr td span {
-    position: absolute;
-    left: 0;
-    top: -1.5rem;
-    text-align: center;
-    width: 100%;
-
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--text)
-}
-
-.charts-line.show-values tbody tr td span {
-    left: unset;
-    right: calc( 50% - 1ch);
-    top: calc( 100% * (1 - var(--size)) - 2rem);
-    text-align: end;
-    z-index: 3;
-}
-
-.charts-pie.show-values tbody tr td span,
-.charts-donut.show-values tbody tr td span {
-    position: absolute;
-    z-index: 3;
-    transform: translate(100%, -100%);
-    font-size: 0.9rem;
-    color: var(--text);
-}
-
-
-/* table caption */
-.charts-column caption,
-.charts-line caption,
-.charts-pie caption,
-.charts-donut caption {
-    height: 0;
-}
-
-.charts-column.show-caption,
-.charts-line.show-caption,
-.charts-pie.show-caption,
-.charts-donut.show-caption {
-    --caption-size: 3rem;
-}
-
-.charts-column.show-caption caption,
-.charts-line.show-caption caption,
-.charts-pie.show-caption caption,
-.charts-donut.show-caption caption {
-    display: table-caption;
-    font-weight: bold;
-    font-size: var(--size-4);
-    padding: 0 0 1.5rem 0;
-    height: auto;
-}
-
-
-
-/* x-axis labels */
-.charts-column thead,
-.charts-line thead,
-.charts-pie thead,
-.charts-donut thead{
-    position: absolute;
-    left: -200vh;
-}
-
-.charts-column.show-labels,
-.charts-line.show-labels {
-    --labels-size: 3rem;
-}
-
-.charts-column.show-labels thead,
-.charts-line.show-labels thead {
-    display: flex;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-}
-
-.charts-column.show-labels thead tr,
-.charts-line.show-labels thead tr{
-    display: flex;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    align-items: center;
-    width: 100%;
-    height: 3rem;
-}
-
-.charts-column.show-labels thead tr th,
-.charts-line.show-labels thead tr th {
-    width: 100%;
-    margin-inline-start: 0.25rem;
-    margin-inline-end: 0.25rem;
-}
-
-.charts-column.show-labels thead tr th:first-child,
-.charts-line.show-labels thead tr th:first-child {
-    position: absolute;
-    left: -200vh;
-}
-
-
-
-
-
-/* graph grid lines */
-.charts-column.show-grid,
-.charts-line.show-grid {
-    --grid-offset: 2px;
-}
-
-.charts-column.show-grid tbody,
-.charts-line.show-grid tbody {
-    border-left: solid 1px var(--border-main);
-    border-right: solid 1px var(--border-main);
-    border-bottom: solid 1px var(--border-main);
-
-    background-size: 100% 20%;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--border-main)), to(transparent));
-    background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
-}
-
-.charts-column.show-grid tbody tr td,
-.charts-line.show-grid tbody tr td {
-    bottom: 1px;
-}
-
-
-/* chart legend */
-.charts-wrapper ul li {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-.charts-wrapper ul li:before {
-    content: "";
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-
-    vertical-align: middle;
-    -webkit-margin-end: 0.5rem;
-    margin-inline-end: 0.5rem;
-    background-color: var(--text-comp);
-}
-
-
-
-/* support multiple columns per category */
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 1) td:after {
-    left: 0;
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 2) td:after {
-    left: calc( 100% / var(--column-count) );
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 3) td:after {
-    left: calc( 2 * 100% / var(--column-count) );
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 4) td:after {
-    left: calc( 3 * 100% / var(--column-count) );
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 5) td:after {
-    left: calc( 4 * 100% / var(--column-count) );
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 6) td:after {
-    left: calc( 5 * 100% / var(--column-count) );
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 7) td:after {
-    left: calc( 6 * 100% / var(--column-count) );
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 8) td:after {
-    left: calc( 7 * 100% / var(--column-count) );
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 9) td:after {
-    left: calc( 8 * 100% / var(--column-count) );
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 10) td:after {
-    left: calc( 9 * 100% / var(--column-count) );
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
-
-
-
-/* colours for multi-column work */
-.charts-column.multiple tbody tr:nth-child(10n + 1) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 1) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 1) td:after,
-.charts-wrapper ul li:nth-child(10n + 1):before {
-    background-color: var(--color-1);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 1),
-.charts-donut tbody tr td:nth-of-type(10n + 1) {
-    color: var(--color-1);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 2) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 2) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 2) td:after,
-.charts-wrapper ul li:nth-child(10n + 2):before {
-    background-color: var(--color-2);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 2),
-.charts-donut tbody tr td:nth-of-type(10n + 2) {
-    color: var(--color-2);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 3) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 3):after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 3) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 3) td:after,
-.charts-wrapper ul li:nth-child(10n + 3):before {
-    background-color: var(--color-3);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 3),
-.charts-donut tbody tr td:nth-of-type(10n + 3) {
-    color: var(--color-3);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 4) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 4):after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 4) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 4) td:after,
-.charts-wrapper ul li:nth-child(10n + 4):before {
-    background-color: var(--color-4);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 4),
-.charts-donut tbody tr td:nth-of-type(10n + 4) {
-    color: var(--color-4);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 5) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 5) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 5) td:after,
-.charts-wrapper ul li:nth-child(10n + 5):before {
-    background-color: var(--color-5);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 5),
-.charts-donut tbody tr td:nth-of-type(10n + 5) {
-    color: var(--color-5);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 6) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 6) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 6) td:after,
-.charts-wrapper ul li:nth-child(10n + 6):before {
-    background-color: var(--color-6);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 6),
-.charts-donut tbody tr td:nth-of-type(10n + 6) {
-    color: var(--color-6);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 7) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 7) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 7) td:after,
-.charts-wrapper ul li:nth-child(10n + 7):before {
-    background-color: var(--color-7);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 7),
-.charts-donut tbody tr td:nth-of-type(10n + 7) {
-    color: var(--color-7);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 8) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 8) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 8) td:after,
-.charts-wrapper ul li:nth-child(10n + 8):before {
-    background-color: var(--color-8);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 8),
-.charts-donut tbody tr td:nth-of-type(10n + 8) {
-    color: var(--color-8);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 9) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 9) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 9) td:after,
-.charts-wrapper ul li:nth-child(10n + 9):before {
-    background-color: var(--color-9);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 9),
-.charts-donut tbody tr td:nth-of-type(10n + 9) {
-    color: var(--color-9);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 10) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 10) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 10) td:after,
-.charts-wrapper ul li:nth-child(10n + 10):before {
-    background-color: var(--color-10);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 10),
-.charts-donut tbody tr td:nth-of-type(10n + 10) {
-    color: var(--color-10);
 }

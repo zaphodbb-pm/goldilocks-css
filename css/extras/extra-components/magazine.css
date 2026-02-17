@@ -1,60 +1,65 @@
 /** large volume text layouts **/
-.magazine {
-    padding: var(--padding);
-    column-width: var(--magazine-width);
-    column-gap: calc(1.5 *  var(--gutter) );
-    orphans: 2;
-    widows: 3;
-    font-family: var(--family-sans-serif);
-    line-height: 1.6em;
-    word-spacing: 0.1em;
-}
 
-.magazine h2,
-.magazine h3,
-.magazine h4,
-.magazine h5,
-.magazine h6 {
-    margin-bottom: 0.5em;
-}
+@layer extras {
 
-.magazine > div {
-    margin-bottom: var(--margin-medium);
-}
+    .magazine {
+        padding: var(--padding);
+        column-width: var(--magazine-width);
+        column-gap: calc(1.5 * var(--gutter));
+        orphans: 2;
+        widows: 3;
+        font-family: var(--family-sans-serif), sans-serif;
+        line-height: 1.6em;
+        word-spacing: 0.1em;
+    }
 
-.magazine.has-serif {
-    font-family: var(--family-serif);
-    font-size: 1.1em;
-    line-height: 1.6em;
-}
+    .magazine h2,
+    .magazine h3,
+    .magazine h4,
+    .magazine h5,
+    .magazine h6 {
+        margin-bottom: 0.5em;
+    }
 
-.magazine.is-wide {
-    column-width: calc( var(--magazine-width) * 1.33);
-}
+    .magazine > div {
+        margin-bottom: var(--margin-medium);
+    }
 
-.magazine.is-narrow {
-    column-width: calc( var(--magazine-width) / 1.33);
-}
+    .magazine.has-serif {
+        font-family: var(--family-serif), serif;
+        font-size: 1.1em;
+        line-height: 1.6em;
+    }
 
-.magazine .page-wide {
-    column-span: all;
-}
+    .magazine.is-wide {
+        column-width: calc(var(--magazine-width) * 1.33);
+    }
 
-.magazine .mag-block {
-    display: block;
-    margin: 2rem 0;
-    break-inside: avoid;
-}
+    .magazine.is-narrow {
+        column-width: calc(var(--magazine-width) / 1.33);
+    }
 
-.magazine .mag-block:first-child {
-    margin-top: 0;
-}
+    .magazine .page-wide {
+        column-span: all;
+    }
 
-.magazine .mag-block:last-child {
-    margin-bottom: 0;
-}
+    .magazine .mag-block {
+        display: block;
+        margin: 2rem 0;
+        break-inside: avoid;
+    }
 
-.magazine .is-highlighted {
-    padding: var(--padding);
-    background-color: var(--bg-highlight);
+    .magazine .mag-block:first-child {
+        margin-top: 0;
+    }
+
+    .magazine .mag-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .magazine .is-highlighted {
+        padding: var(--padding);
+        background-color: var(--bg-highlight);
+    }
+
 }

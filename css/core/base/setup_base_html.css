@@ -1,181 +1,183 @@
 /* Pure css HTML base elements and reset */
 /** note that some HTML tags are set in other element files **/
 
+@layer base {
 
-/** set global environment **/
-html {
-    margin: 0;
-    padding: 0;
+    /** set global environment **/
+    html {
+        margin: 0;
+        padding: 0;
 
-    font-size: var(--base-html-factor);
-    background-color: var(--bg-main);
+        font-size: var(--base-html-factor);
+        background-color: var(--bg-main);
 
-    box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: scroll;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: scroll;
 
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
 
-/** set display environment */
-body{
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    font-family: var(--family-sans-serif);
-    font-weight: var(--weight-normal);
-    line-height: var(--line-height-150);
-    color: var(--text);
-    background-color: var(--bg-main);
-}
+    /** set display environment */
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        font-family: var(--family-sans-serif), sans-serif;
+        font-weight: var(--weight-normal);
+        line-height: var(--line-height-150);
+        color: var(--text);
+        background-color: var(--bg-main);
+    }
 
-/** set key HTML tags */
-main,
-header {
-    margin: 0;
-    overflow-x: hidden;
-}
+    /** set key HTML tags */
+    main,
+    header {
+        margin: 0;
+        overflow-x: hidden;
+    }
 
-main {
-    overflow-y: hidden;
-}
+    main {
+        overflow-y: hidden;
+    }
 
-a,
-article,
-button,
-div,
-figure,
-form,
-iframe,
-img,
-input,
-section,
-select,
-table,
-textarea
-{
-    padding: 0;
-    margin: 0;
-    font-family: inherit;
-}
+    a,
+    article,
+    button,
+    div,
+    figure,
+    form,
+    iframe,
+    img,
+    input,
+    section,
+    select,
+    table,
+    textarea {
+        padding: 0;
+        margin: 0;
+        font-family: inherit;
+    }
 
-textarea::placeholder,
-input::placeholder {
-    color: inherit;
-}
+    textarea::placeholder,
+    input::placeholder {
+        color: inherit;
+    }
 
-p {
-    padding: 0;
-    margin: 0 0 1.5rem 0;
-}
+    p {
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+    }
 
-p:last-child {
-    margin-bottom: 0;
-}
+    p:last-child {
+        margin-bottom: 0;
+    }
 
-p.scrollable {
-    overflow-x: auto;
-    scrollbar-width: none;
-}
+    p.scrollable {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
 
-p.scrollable::-webkit-scrollbar {
-    display: none;
-}
+    p.scrollable::-webkit-scrollbar {
+        display: none;
+    }
 
-a {
-    color: var(--link);
-}
+    a {
+        color: var(--link);
+    }
 
-ul, ol, dl {
-    padding: 0;
-    margin: 0;
-}
+    ul, ol, dl {
+        padding: 0;
+        margin: 0;
+    }
 
-P + ul, p + ol, p + dl {
-    margin-bottom: 1.5rem;
-}
+    P + ul, p + ol, p + dl {
+        margin-bottom: 1.5rem;
+    }
 
-ul > li {
-    list-style: disc;
-    margin: 0 0 0.75rem 1rem;
-}
+    ul > li {
+        list-style: disc;
+        margin: 0 0 0.75rem 1rem;
+    }
 
-ol > li {
-    list-style: decimal;
-    margin: 0 0 0.75rem 1.5rem;
-}
+    ol > li {
+        list-style: decimal;
+        margin: 0 0 0.75rem 1.5rem;
+    }
 
-dl > dd {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 0.75rem;
-    margin-inline-start: 1rem;
-}
+    dl > dd {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0.75rem;
+        margin-inline-start: 1rem;
+    }
 
 
-blockquote {
-    margin: 0;
-}
+    blockquote {
+        margin: 0;
+    }
 
-hr {
-    padding: 0;
-    margin: 1rem 0;
-    border: 1px solid var(--grey-light);
-}
+    hr {
+        padding: 0;
+        margin: 1rem 0;
+        border: 1px solid var(--grey-light);
+    }
 
-small {
-    font-size: 80%;
-    font-weight: 400; /* (added) */
-}
+    small {
+        font-size: 80%;
+        font-weight: 400;
+    }
 
-details {
-    margin: 0;
-    padding: 0;
-}
+    details {
+        margin: 0;
+        padding: 0;
+    }
 
-details summary {
-    cursor: pointer;
-}
+    details summary {
+        cursor: pointer;
+    }
 
-details summary > * {
-    display: inline;
-}
+    details summary > * {
+        display: inline;
+    }
 
-pre {
-    font-family: var(--family-monospace);
-    font-size: 1rem;
-    background-color: var(--bg-main-code);
-    border-left: 0.25rem solid var(--tertiary);
-    overflow-y: hidden;
-    overflow-x: scroll;
-    margin: 0;
-    padding: 0;
-}
+    pre {
+        font-family: var(--family-monospace), monospace;
+        font-size: 1rem;
+        background-color: var(--bg-main-code);
+        border-left: 0.25rem solid var(--secondary);
+        overflow-y: hidden;
+        overflow-x: scroll;
+        margin: 0;
+        padding: 0;
+    }
 
-code {
-    font-size: 1rem;
-    font-family: var(--family-monospace);
-    font-weight: normal;
+    code {
+        font-size: 1rem;
+        font-family: var(--family-monospace), monospace;
+        font-weight: normal;
 
-    color: var(--text-code);
-    background-color: var(--bg-main-code);
-    border-radius: var(--radius);
-    margin: 0;
-    padding: 0.125em 0.5em;
-    white-space: nowrap;
-}
+        color: var(--text-code);
+        background-color: var(--bg-main-code);
+        border-radius: var(--radius);
+        margin: 0;
+        padding: 0.125em 0.5em;
+        white-space: nowrap;
+    }
 
-pre > code {
-    font-size: 1em;
-    color: currentColor;
-    background-color: transparent;
-    padding: var(--padding);
+    pre > code {
+        font-size: 1em;
+        color: currentColor;
+        background-color: transparent;
+        padding: var(--padding);
 
-    border-radius: 0;
-    display: block;
-    white-space: pre;
-    max-width: 100%;
-    overflow-x: scroll;
+        border-radius: 0;
+        display: block;
+        white-space: pre;
+        max-width: 100%;
+        overflow-x: scroll;
+    }
+
 }

@@ -1,74 +1,75 @@
-/* spacing options */
+@layer layout {
+    /* spacing options */
+    /** spacing between related HTML tags such as buttons, headings, etc.  **/
+    .space-element {
+        margin: var(--space-element) var(--space-element);
+    }
 
-/** spacing between related HTML tags such as buttons, headings, etc.  **/
-.space-element {
-    margin: var(--space-element) var(--space-element);
-}
+    .space-element-horz {
+        margin: 0 var(--space-element);
+    }
 
-.space-element-horz {
-    margin: 0 var(--space-element);
-}
-
-.space-element-vert {
-    margin: var(--space-element) 0;
-}
-
-
-/** spacing between similar content such cards, lists, etc.  **/
-.space-block {
-    margin: var(--space-block) var(--space-block);
-}
-
-.space-block-horz {
-    margin: 0 var(--space-block);
-}
-
-.space-block-vert {
-    margin: var(--space-block) 0;
-}
+    .space-element-vert {
+        margin: var(--space-element) 0;
+    }
 
 
-/** spacing between collections within a container  **/
-.space-collection {
-    margin: var(--space-collection) var(--space-collection);
-}
+    /** spacing between similar content such cards, lists, etc.  **/
+    .space-block {
+        margin: var(--space-block) var(--space-block);
+    }
 
-.space-collection-horz {
-    margin: 0 var(--space-collection);
-}
+    .space-block-horz {
+        margin: 0 var(--space-block);
+    }
 
-.space-collection-vert {
-    margin: var(--space-collection) 0;
-}
-
-
-/** spacing between unrelated content  **/
-.space-container {
-    margin: var(--space-container) var(--space-container);
-}
-
-.space-container-horz {
-    margin: 0 var(--space-container);
-}
-
-.space-container-vert {
-    margin: var(--space-container) 0;
-}
+    .space-block-vert {
+        margin: var(--space-block) 0;
+    }
 
 
+    /** spacing between collections within a container  **/
+    .space-collection {
+        margin: var(--space-collection) var(--space-collection);
+    }
 
-/** inter-item spacing - reduces need to nest content in yet another div **/
-.space-items {
-    height: 1px;
-    margin: var(--space-element) 0;
-}
+    .space-collection-horz {
+        margin: 0 var(--space-collection);
+    }
 
-.space-items-medium {
-    height: 1px;
-    margin: var(--space-block) 0;
-}
+    .space-collection-vert {
+        margin: var(--space-collection) 0;
+    }
 
-.space-items-large {
-    height: 1px;
-    margin: var(--space-container) 0;
+
+    /** spacing between unrelated content  **/
+    .space-container {
+        margin: var(--space-container) var(--space-container);
+    }
+
+    .space-container-horz {
+        margin: 0 var(--space-container);
+    }
+
+    .space-container-vert {
+        margin: var(--space-container) 0;
+    }
+
+
+    /** inter-item spacing - reduces need to nest content in yet another div **/
+    .space-items {
+        height: 1px;
+        margin: var(--space-element) 0;
+    }
+
+    .space-items-medium {
+        height: 1px;
+        margin: var(--space-block) 0;
+    }
+
+    .space-items-large {
+        height: 1px;
+        margin: var(--space-container) 0;
+    }
+
 }

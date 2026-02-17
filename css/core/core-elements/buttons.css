@@ -1,219 +1,220 @@
-/* Buttons */
+/* buttons.css */
 
-button, .button {
-    border-radius: var(--radius-elem);
-    cursor: pointer;
-    justify-content: center;
-    padding: var(--pad-vert) var(--pad-horz);
-    align-items: center;
-    box-shadow: none;
-    display: inline-flex;
+@layer elements {
 
-    text-align: center;
-    white-space: nowrap;
-    font-size: 1rem;
-    height: 2.5em;
-    line-height: 1.5;
-}
+    button, .button {
+        border-radius: var(--radius-elem);
+        cursor: pointer;
+        justify-content: center;
+        padding: var(--pad-vert) var(--pad-horz);
+        align-items: center;
+        box-shadow: none;
+        display: inline-flex;
 
-button {
-    color: var(--text-comp);
-    background-color: var(--bg-main);
-    border: 1px solid var(--border-main-darker);
-}
-
-button:focus, .button:focus {
-    outline: none;
-}
-
-button.has-hover:hover {
-    color: var(--text-elem);
-    background-color: var(--bg-element);
-    border: 1px solid  var(--bg-element);
-}
-
-a.button {
-    height: auto;
-    text-decoration: none;
-}
-
-button > a {
-    color: inherit;
-}
-
-
-button.is-default-inverted,
-.button.is-default-inverted {
-    color: var(--text-comp);
-    border: none;
-    text-decoration-color: var(--text-comp);
-    text-decoration-line: underline;
-    text-underline-offset: 0.25em;
-}
-
-button.is-default-inverted.has-hover:hover,
-.button.is-default-inverted.has-hover:hover
-{
-    color: var(--text-elem);
-    text-decoration: underline var(--text-elem);
-    background-color: var(--bg-element);
-    border: none;
-}
-
-button.is-rounded,
-.button.is-rounded {
-    border-radius: 9999px;
-}
-
-button.is-large,
-.button.is-large,
-.buttons.are-large > button
-{
-    font-size: var(--size-4);
-}
-
-button.is-medium,
-.button.is-medium,
-.buttons.are-medium > button {
-    font-size: var(--size-5);
-}
-
-button.is-normal,
-.button.is-normal,
-.buttons.are-normal > button{
-    font-size: var(--size-6);
-}
-
-button.is-small,
-.button.is-small,
-.buttons.are-small > button {
-    font-size: var(--size-7);
-    font-weight: var(--weight-medium);
-    padding: var(--pad-vert-small) var(--pad-horz-small);
-    line-height: 1.2;
-    height: 2rem;
-}
-
-button.is-small:not(.is-rounded),
-.button.is-small:not(.is-rounded) {
-    border-radius: calc(var(--radius-elem) / 2);
-}
-
-button[disabled],
-.button[disabled] {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-/* group buttons */
-.buttons {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-
-.buttons button:not(:last-child),
-.buttons .button:not(:last-child) {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    margin-right: -1px;
-}
-
-.buttons button:not(:first-child),
-.buttons .button:not(:first-child) {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-}
-
-/** ensure that hover doesn't distort button size **/
-.button[class*="outlined"]:not(.is-small).has-hover:hover {
-    padding-top: calc(var(--pad-vert) + 1px );
-    padding-bottom: calc(var(--pad-vert) + 1px );
-}
-
-.button[class*="outlined"].is-small.has-hover:hover {
-    padding-top: calc(var(--pad-vert-small) + 1px );
-    padding-bottom: calc(var(--pad-vert-small) + 1px );
-}
-
-button .icon:first-child,
-.button .icon:first-child {
-    margin-left: calc(-0.25em - 1px);
-    margin-right: 0.25em;
-    font-size: 1em;
-}
-
-button .icon:last-child,
-.button .icon:last-child {
-    margin-right: calc(-0.25em - 1px);
-    margin-left: 0.25em;
-    font-size: 1em;
-}
-
-button .icon:only-child,
-.button .icon:only-child {
-    margin-right: 0.25em;
-    margin-left: 0.25em;
-    font-size: 1em;
-}
-
-/* set-up for waiting spinner */
-button.is-loading, button.is-loading-dark,
-.button.is-loading, .button.is-loading-dark {
-    color: transparent !important;
-    pointer-events: none;
-}
-
-
-@keyframes spinAround {
-    from {
-        transform: rotate(0deg);
+        text-align: center;
+        white-space: nowrap;
+        font-size: 1rem;
+        height: 2.5em;
+        line-height: 1.5;
     }
 
-    to {
-        transform: rotate(359deg);
+    button {
+        color: var(--text-comp);
+        background-color: var(--bg-main);
+        border: 1px solid var(--border-main-darker);
     }
+
+    button:focus, .button:focus {
+        outline: none;
+    }
+
+    button.has-hover:hover {
+        color: var(--text-elem);
+        background-color: var(--bg-element);
+        border: 1px solid var(--bg-element);
+    }
+
+    a.button {
+        height: auto;
+        text-decoration: none;
+    }
+
+    button > a {
+        color: inherit;
+    }
+
+
+    button.is-default-inverted,
+    .button.is-default-inverted {
+        color: var(--text-comp);
+        border: none;
+        text-decoration-color: var(--text-comp);
+        text-decoration-line: underline;
+        text-underline-offset: 0.25em;
+    }
+
+    button.is-default-inverted.has-hover:hover,
+    .button.is-default-inverted.has-hover:hover {
+        color: var(--text-elem);
+        text-decoration: underline var(--text-elem);
+        background-color: var(--bg-element);
+        border: none;
+    }
+
+    button.is-rounded,
+    .button.is-rounded {
+        border-radius: 9999px;
+    }
+
+    button.is-large,
+    .button.is-large,
+    .buttons.are-large > button {
+        font-size: var(--size-4);
+    }
+
+    button.is-medium,
+    .button.is-medium,
+    .buttons.are-medium > button {
+        font-size: var(--size-5);
+    }
+
+    button.is-normal,
+    .button.is-normal,
+    .buttons.are-normal > button {
+        font-size: var(--size-6);
+    }
+
+    button.is-small,
+    .button.is-small,
+    .buttons.are-small > button {
+        font-size: var(--size-7);
+        font-weight: var(--weight-semibold);
+        padding: var(--pad-vert-small) var(--pad-horz-small);
+        line-height: 1.2;
+        height: 2rem;
+    }
+
+    button.is-small:not(.is-rounded),
+    .button.is-small:not(.is-rounded) {
+        border-radius: calc(var(--radius-elem) / 2);
+    }
+
+    button[disabled],
+    .button[disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* group buttons */
+    .buttons {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+
+    .buttons button:not(:last-child),
+    .buttons .button:not(:last-child) {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        margin-right: -1px;
+    }
+
+    .buttons button:not(:first-child),
+    .buttons .button:not(:first-child) {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    /** ensure that hover doesn't distort button size **/
+    .button[class*="outlined"]:not(.is-small).has-hover:hover {
+        padding-top: calc(var(--pad-vert) + 1px);
+        padding-bottom: calc(var(--pad-vert) + 1px);
+    }
+
+    .button[class*="outlined"].is-small.has-hover:hover {
+        padding-top: calc(var(--pad-vert-small) + 1px);
+        padding-bottom: calc(var(--pad-vert-small) + 1px);
+    }
+
+    button .icon:first-child,
+    .button .icon:first-child {
+        margin-left: calc(-0.25em - 1px);
+        margin-right: 0.25em;
+        font-size: 1em;
+    }
+
+    button .icon:last-child,
+    .button .icon:last-child {
+        margin-right: calc(-0.25em - 1px);
+        margin-left: 0.25em;
+        font-size: 1em;
+    }
+
+    button .icon:only-child,
+    .button .icon:only-child {
+        margin-right: 0.25em;
+        margin-left: 0.25em;
+        font-size: 1em;
+    }
+
+    /* set-up for waiting spinner */
+    button.is-loading, button.is-loading-dark,
+    .button.is-loading, .button.is-loading-dark {
+        color: transparent !important;
+        pointer-events: none;
+    }
+
+
+    @keyframes spinAround {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(359deg);
+        }
+    }
+
+    button.is-loading::after,
+    .button.is-loading::after {
+        -webkit-animation: spinAround .5s infinite linear;
+        animation: spinAround .5s infinite linear;
+        border-radius: 9999px;
+
+        border: 2px solid var(--bg-main);
+        border-right-color: transparent;
+        border-top-color: transparent;
+
+        content: "";
+        display: block;
+        height: 1em;
+        width: 1em;
+
+        position: relative;
+        right: calc(50% - (1em / 2) - 4px);
+        top: calc(50% - (1em / 2) - 2px);
+    }
+
+    button.is-loading-dark::after,
+    .button.is-loading-dark::after {
+        -webkit-animation: spinAround .5s infinite linear;
+        animation: spinAround .5s infinite linear;
+        border-radius: 9999px;
+
+        border: 2px solid var(--bg-main-invert);
+        border-right-color: transparent;
+        border-top-color: transparent;
+
+        content: "";
+        display: block;
+        height: 1em;
+        width: 1em;
+
+        position: relative;
+        right: calc(50% - (1em / 2) - 4px);
+        top: calc(50% - (1em / 2) - 2px);
+    }
+
 }
-
-button.is-loading::after,
-.button.is-loading::after {
-    -webkit-animation: spinAround .5s infinite linear;
-    animation: spinAround .5s infinite linear;
-    border-radius: 9999px;
-
-    border: 2px solid var(--bg-main);
-    border-right-color: transparent;
-    border-top-color: transparent;
-
-    content: "";
-    display: block;
-    height: 1em;
-    width: 1em;
-
-    position: relative;
-    right: calc(50% - (1em / 2) - 4px);
-    top: calc(50% - (1em / 2) - 2px);
-}
-
-button.is-loading-dark::after,
-.button.is-loading-dark::after {
-    -webkit-animation: spinAround .5s infinite linear;
-    animation: spinAround .5s infinite linear;
-    border-radius: 9999px;
-
-    border: 2px solid var(--bg-main-invert);
-    border-right-color: transparent;
-    border-top-color: transparent;
-
-    content: "";
-    display: block;
-    height: 1em;
-    width: 1em;
-
-    position: relative;
-    right: calc(50% - (1em / 2) - 4px);
-    top: calc(50% - (1em / 2) - 2px);
-}
-

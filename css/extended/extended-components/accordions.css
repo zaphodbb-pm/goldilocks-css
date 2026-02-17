@@ -1,175 +1,177 @@
 /* Accordion styles */
-details.accordion {
-    background: transparent;
-    border-radius: var(--radius-comp);
-    box-shadow: var(--shadow);
-}
 
-details.accordion summary {
-    position: relative;
-    display: flex;
-    align-items: center;
+@layer extended {
 
-    margin: 0;
-    padding: var(--padding-normal) 3em var(--padding-normal) var(--padding-normal);
-    background: var(--bg-main-ter);
+    details.accordion {
+        background: transparent;
+        border-radius: var(--radius-comp);
+        box-shadow: var(--shadow);
+    }
 
-    color: var(--text-comp);
-    font-weight: var(--weight-semibold);
+    details.accordion summary {
+        position: relative;
+        display: flex;
+        align-items: center;
 
-    width: calc(100% - var(--padding-normal) - 3em);
-    border-radius: var(--radius-comp);
-    border: none;
-    list-style: none;
+        margin: 0;
+        padding: var(--padding-normal) 3em var(--padding-normal) var(--padding-normal);
+        background: var(--bg-main-ter);
 
-    overflow: hidden;
-}
+        color: var(--text-comp);
+        font-weight: var(--weight-semibold);
 
-details.accordion summary::-webkit-details-marker {display: none; }
+        width: calc(100% - var(--padding-normal) - 3em);
+        border-radius: var(--radius-comp);
+        border: none;
+        list-style: none;
 
+        overflow: hidden;
+    }
 
-/* add our own spinner marker */
-details.accordion summary::after {
-    position: absolute;
-    content: "❯";
-    width: 1em;
-    height: 1em;
-    right: 0.5em;
-    top: 1.5em;
-    transform: translate(0, -50%);
-    transition: all 0.35s;
-}
-
-details.accordion > p,
-details.accordion > div,
-details.accordion > article
-{
-    padding: var(--padding-normal);
-    border-bottom-right-radius: var(--radius-comp);
-    border-bottom-left-radius: var(--radius-comp);
-    color: var(--text);
-}
-
-details.accordion summary:hover {
-    filter: invert(5%);
-}
-
-/* style accordion when open */
-details.accordion[open] summary {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    filter: invert(2%);
-}
-
-.accordions details.accordion[open] summary {
-    filter: invert(5%);
-}
-
-details.accordion[open] summary::after {
-    transform: translate(0, -50%) rotate(90deg) ;
-    position: absolute;
-    transition: all 0.35s;
-    top: 2em;
-}
+    details.accordion summary::-webkit-details-marker {
+        display: none;
+    }
 
 
-/* second type of expander accordion */
-details.accordion[class*="is-expander"] {
-    box-shadow: none;
-}
+    /* add our own spinner marker */
+    details.accordion summary::after {
+        position: absolute;
+        content: "❯";
+        width: 1em;
+        height: 1em;
+        right: 0.5em;
+        top: 1.5em;
+        transform: translate(0, -50%);
+        transition: all 0.35s;
+    }
 
-details.accordion[class*="is-expander"] summary {
-    background: var(--bg-main);
-    padding: var(--padding-normal) 3em var(--padding-normal) var(--padding-normal);
-    border-bottom: 2px solid var(--border-main-darker);
-    border-radius: var(--radius-comp) var(--radius-comp) 0 0;
-    list-style: none;
-}
+    details.accordion > p,
+    details.accordion > div,
+    details.accordion > article {
+        padding: var(--padding-normal);
+        border-bottom-right-radius: var(--radius-comp);
+        border-bottom-left-radius: var(--radius-comp);
+        color: var(--text);
+    }
 
-details.accordion.is-expander-primary summary {
-    border-color: var(--primary);
-}
+    details.accordion summary:hover {
+        filter: invert(5%);
+    }
 
-details.accordion.is-expander-secondary summary {
-    border-color: var(--secondary);
-}
+    /* style accordion when open */
+    details.accordion[open] summary {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        filter: invert(2%);
+    }
 
-details.accordion.is-expander-tertiary summary {
-    border-color: var(--tertiary);
-}
+    .accordions details.accordion[open] summary {
+        filter: invert(5%);
+    }
 
-details.accordion.is-expander-link summary {
-    border-color: var(--link);
-}
-
-details.accordion.is-expander-success summary {
-    border-color: var(--success);
-}
-
-details.accordion.is-expander-warning summary {
-    border-color: var(--warning);
-}
-
-details.accordion.is-expander-danger summary {
-    border-color: var(--danger);
-}
-
-
-/* grouped set of accordions */
-.accordions {
-    overflow: hidden;
-    margin: var(--mar-vert) 0;
-    padding: 0;
-    border: none;
-    box-shadow: var(--shadow);
-    width: 100%;
-    border-radius: var(--radius-comp);
-}
-
-.accordions .accordion[open]:not(:last-child) > p,
-.accordions .accordion[open]:not(:last-child) > div,
-.accordions .accordion[open]:not(:last-child) > article {
-    padding-bottom: calc(2 * var(--padding-normal) );
-}
-
-.accordions .accordion[open][class*="is-expander"] > p,
-.accordions .accordion[open][class*="is-expander"] > div,
-.accordions .accordion[open][class*="is-expander"] > article {
-    border: 1px solid var(--border-main);
-    border-top: none;
-    padding-bottom: var(--padding-normal);
-    background-color: var(--bg-main-bis);
-}
-
-.accordions .accordion summary {
-    border-radius: 0;
-}
-
-.accordions .accordion:first-child summary {
-    border-top-right-radius: var(--radius-comp);
-    border-top-left-radius: var(--radius-comp);
-}
+    details.accordion[open] summary::after {
+        transform: translate(0, -50%) rotate(90deg);
+        position: absolute;
+        transition: all 0.35s;
+        top: 2em;
+    }
 
 
-.accordions .accordion[class*="is-expander"] {
-    box-shadow: none;
-    margin: var(--margin);
-}
+    /* second type of expander accordion */
+    details.accordion[class*="is-expander"] {
+        box-shadow: none;
+    }
 
-.accordions .accordion:last-child:not([class*="is-expander"]) summary {
-    border-bottom-right-radius: var(--radius-comp);
-    border-bottom-left-radius: var(--radius-comp);
-}
+    details.accordion[class*="is-expander"] summary {
+        background: var(--bg-main);
+        padding: var(--padding-normal) 3em var(--padding-normal) var(--padding-normal);
+        border-bottom: 2px solid var(--border-main-darker);
+        border-radius: var(--radius-comp) var(--radius-comp) 0 0;
+        list-style: none;
+    }
 
-.accordions .accordion[open] {
-    border-radius: 0;
-}
+    details.accordion.is-expander-primary summary {
+        border-color: var(--primary);
+    }
 
-.accordions .accordion:last-child[open] {
-    border-bottom-right-radius: var(--radius-comp);
-    border-bottom-left-radius: var(--radius-comp);
-}
+    details.accordion.is-expander-secondary summary {
+        border-color: var(--secondary);
+    }
 
-.accordions .accordion:last-child[open]:not([class*="is-expander"]) summary {
-    border-radius: 0;
+    details.accordion.is-expander-complement summary {
+        border-color: var(--complement);
+    }
+
+    details.accordion.is-expander-success summary {
+        border-color: var(--success);
+    }
+
+    details.accordion.is-expander-warning summary {
+        border-color: var(--warning);
+    }
+
+    details.accordion.is-expander-danger summary {
+        border-color: var(--danger);
+    }
+
+
+    /* grouped set of accordions */
+    .accordions {
+        overflow: hidden;
+        margin: var(--mar-vert) 0;
+        padding: 0;
+        border: none;
+        box-shadow: var(--shadow);
+        width: 100%;
+        border-radius: var(--radius-comp);
+    }
+
+    .accordions .accordion[open]:not(:last-child) > p,
+    .accordions .accordion[open]:not(:last-child) > div,
+    .accordions .accordion[open]:not(:last-child) > article {
+        padding-bottom: calc(2 * var(--padding-normal));
+    }
+
+    .accordions .accordion[open][class*="is-expander"] > p,
+    .accordions .accordion[open][class*="is-expander"] > div,
+    .accordions .accordion[open][class*="is-expander"] > article {
+        border: 1px solid var(--border-main);
+        border-top: none;
+        padding-bottom: var(--padding-normal);
+        background-color: var(--bg-main-bis);
+    }
+
+    .accordions .accordion summary {
+        border-radius: 0;
+    }
+
+    .accordions .accordion:first-child summary {
+        border-top-right-radius: var(--radius-comp);
+        border-top-left-radius: var(--radius-comp);
+    }
+
+
+    .accordions .accordion[class*="is-expander"] {
+        box-shadow: none;
+        margin: var(--margin);
+    }
+
+    .accordions .accordion:last-child:not([class*="is-expander"]) summary {
+        border-bottom-right-radius: var(--radius-comp);
+        border-bottom-left-radius: var(--radius-comp);
+    }
+
+    .accordions .accordion[open] {
+        border-radius: 0;
+    }
+
+    .accordions .accordion:last-child[open] {
+        border-bottom-right-radius: var(--radius-comp);
+        border-bottom-left-radius: var(--radius-comp);
+    }
+
+    .accordions .accordion:last-child[open]:not([class*="is-expander"]) summary {
+        border-radius: 0;
+    }
+
 }

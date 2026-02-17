@@ -1,212 +1,210 @@
-.table {
-    border-spacing: 0;
-    overflow-x: auto;
-    text-align: left;
-    border-collapse: collapse;
+@layer elements {
 
-    background-color: inherit;
-    color: inherit;
-}
+    table {
+        border-spacing: 0;
+        overflow-x: auto;
+        text-align: left;
+        border-collapse: collapse;
 
-.table > caption {
-    font-size: var(--size-5);
-    font-weight: var(--weight-semibold);
-    padding-bottom: var(--pad-vert);
-}
+        background-color: inherit;
+        color: inherit;
+    }
 
-.table td, .table th {
-    padding: var(--pad-vert) var(--pad-horz);
-    vertical-align: top;
-}
+    table > caption {
+        font-size: var(--size-5);
+        font-weight: var(--weight-semibold);
+        padding-bottom: var(--pad-vert);
+    }
 
-.table td span, .table th span {
-    padding: var(--pad-vert) var(--pad-horz);
-    margin: var(--mar-vert) var(--mar-horz) ;
-}
+    table td, table th {
+        padding: var(--pad-vert) var(--pad-horz);
+        vertical-align: top;
+    }
 
-.table thead th {
-    border-bottom: 2px solid var(--border-main-darker);
-}
+    table td span, table th span {
+        padding: var(--pad-vert) var(--pad-horz);
+        margin: var(--mar-vert) var(--mar-horz);
+    }
 
-.table tbody td {
-    border-bottom: 1px solid var(--border-main-darker);
-}
+    table thead th {
+        border-bottom: 2px solid var(--border-main-darker);
+    }
 
-.table tbody tr:last-child td {
-    border-bottom: none;
-}
+    table tbody td {
+        border-bottom: 1px solid var(--border-main-darker);
+    }
 
-.table tfoot td {
-    border-top: 2px solid var(--border-main-darker);
-    font-weight: var(--weight-semibold);
-}
+    table tbody tr:last-child td {
+        border-bottom: none;
+    }
 
-
-/** add in other table styling */
-.table.is-fullwidth {
-    width: 100%;
-}
-
-.table.is-striped tbody tr:nth-of-type(odd) {
-    background-color: var(--bg-main-ter);
-    color: var(--text);
-}
-
-.table.has-hover tbody tr:hover {
-    background-color: var(--bg-hover);
-    color: var(--text-elem);
-}
-
-.table.is-bordered td,
-.table.is-bordered th {
-    border-width: 1px;
-}
-
-.table.is-bordered tr:last-child td,
-.table.is-bordered tr:last-child th {
-    border-bottom-width: 1px;
-}
-
-/* allow for table scrolling of wide tables */
-.table-scroll {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 0);
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
-    max-width: 100%;
-}
-
-.table-scroll .table {
-    width: 100%;
-    white-space: nowrap;
-}
+    table tfoot td {
+        border-top: 2px solid var(--border-main-darker);
+        font-weight: var(--weight-semibold);
+    }
 
 
-/* optional box shadow wrapper */
-.table-boxed {
-    position: relative;
-    margin: 0;
-    padding: var(--padding);
-    border-radius: var(--radius-comp);
-    box-shadow: var(--shadow);
-    background-color: var(--bg-main-elem);
-}
+    /** add in other table styling */
+    table.is-fullwidth {
+        width: 100%;
+    }
 
-.table-boxed > header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--pad-horz);
-    margin: calc(-1 * var(--padding)) calc(-1 * var(--padding)) var(--padding) calc(-1 * var(--padding));
-    font-size: var(--size-5);
-    font-weight: var(--weight-semibold);
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-}
+    table.is-striped tbody tr:nth-of-type(odd) {
+        background-color: var(--bg-main-ter);
+        color: var(--text);
+    }
 
+    table.has-hover tbody tr:hover {
+        background-color: var(--bg-hover);
+        color: var(--text-elem);
+    }
 
+    table.is-bordered td,
+    table.is-bordered th {
+        border-width: 1px;
+    }
 
-/** allows for right alignment of a column of values **/
-.table.numbers-col-1 td:nth-of-type(1),
-.table.numbers-col-1 th:nth-of-type(1),
-.table.numbers-col-2 td:nth-of-type(2),
-.table.numbers-col-2 th:nth-of-type(2),
-.table.numbers-col-3 td:nth-of-type(3),
-.table.numbers-col-3 th:nth-of-type(3),
-.table.numbers-col-4 td:nth-of-type(4),
-.table.numbers-col-4 th:nth-of-type(4),
-.table.numbers-col-5 td:nth-of-type(5),
-.table.numbers-col-5 th:nth-of-type(5),
-.table.numbers-col-6 td:nth-of-type(6),
-.table.numbers-col-6 th:nth-of-type(6),
-.table.numbers-col-7 td:nth-of-type(7),
-.table.numbers-col-7 th:nth-of-type(7),
-.table.numbers-col-8 td:nth-of-type(8),
-.table.numbers-col-8 th:nth-of-type(8),
-.table.numbers-col-9 td:nth-of-type(9),
-.table.numbers-col-9 th:nth-of-type(9)
-{
-    text-align: end;
-    white-space: nowrap;
-}
+    table.is-bordered tr:last-child td,
+    table.is-bordered tr:last-child th {
+        border-bottom-width: 1px;
+    }
 
-/** allows for center alignment of a column of values **/
-.table.centered-col-1 td:nth-of-type(1),
-.table.centered-col-1 th:nth-of-type(1),
-.table.centered-col-2 td:nth-of-type(2),
-.table.centered-col-2 th:nth-of-type(2),
-.table.centered-col-3 td:nth-of-type(3),
-.table.centered-col-3 th:nth-of-type(3),
-.table.centered-col-4 td:nth-of-type(4),
-.table.centered-col-4 th:nth-of-type(4),
-.table.centered-col-5 td:nth-of-type(5),
-.table.centered-col-5 th:nth-of-type(5),
-.table.centered-col-6 td:nth-of-type(6),
-.table.centered-col-6 th:nth-of-type(6),
-.table.centered-col-7 td:nth-of-type(7),
-.table.centered-col-7 th:nth-of-type(7),
-.table.centered-col-8 td:nth-of-type(8),
-.table.centered-col-8 th:nth-of-type(8),
-.table.centered-col-9 td:nth-of-type(9),
-.table.centered-col-9 th:nth-of-type(9)
-{
-    text-align: center;
-}
+    /* allow for table scrolling of wide tables */
+    .table-scroll {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 0);
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    .table-scroll table {
+        width: 100%;
+        white-space: nowrap;
+    }
 
 
+    /* optional box shadow wrapper */
+    .table-boxed {
+        position: relative;
+        margin: 0;
+        padding: var(--padding);
+        border-radius: var(--radius-comp);
+        box-shadow: var(--shadow);
+        background-color: var(--bg-main-elem);
+    }
 
-/** disable word breaks on a per column basis **/
-.table.nobreak-col-1 td:nth-of-type(1),
-.table.nobreak-col-1 th:nth-of-type(1),
-.table.nobreak-col-2 td:nth-of-type(2),
-.table.nobreak-col-2 th:nth-of-type(2),
-.table.nobreak-col-3 td:nth-of-type(3),
-.table.nobreak-col-3 th:nth-of-type(3),
-.table.nobreak-col-4 td:nth-of-type(4),
-.table.nobreak-col-4 th:nth-of-type(4),
-.table.nobreak-col-5 td:nth-of-type(5),
-.table.nobreak-col-5 th:nth-of-type(5),
-.table.nobreak-col-6 td:nth-of-type(6),
-.table.nobreak-col-6 th:nth-of-type(6),
-.table.nobreak-col-7 td:nth-of-type(7),
-.table.nobreak-col-7 th:nth-of-type(7),
-.table.nobreak-col-8 td:nth-of-type(8),
-.table.nobreak-col-8 th:nth-of-type(8),
-.table.nobreak-col-9 td:nth-of-type(9),
-.table.nobreak-col-9 th:nth-of-type(9)
-{
-    white-space: nowrap;
-}
-
-/** enable word breaks for scrolled table on a per column basis **/
-.table.scrollbreak-col-1 td:nth-of-type(1),
-.table.scrollbreak-col-1 th:nth-of-type(1),
-.table.scrollbreak-col-2 td:nth-of-type(2),
-.table.scrollbreak-col-2 th:nth-of-type(2),
-.table.scrollbreak-col-3 td:nth-of-type(3),
-.table.scrollbreak-col-3 th:nth-of-type(3),
-.table.scrollbreak-col-4 td:nth-of-type(4),
-.table.scrollbreak-col-4 th:nth-of-type(4),
-.table.scrollbreak-col-5 td:nth-of-type(5),
-.table.scrollbreak-col-5 th:nth-of-type(5),
-.table.scrollbreak-col-6 td:nth-of-type(6),
-.table.scrollbreak-col-6 th:nth-of-type(6),
-.table.scrollbreak-col-7 td:nth-of-type(7),
-.table.scrollbreak-col-7 th:nth-of-type(7),
-.table.scrollbreak-col-8 td:nth-of-type(8),
-.table.scrollbreak-col-8 th:nth-of-type(8),
-.table.scrollbreak-col-9 td:nth-of-type(9),
-.table.scrollbreak-col-9 th:nth-of-type(9)
-{
-    white-space: normal;
-    max-width: 60ch;
-    min-width: 40ch;
-    word-break: break-word;
-}
+    .table-boxed > header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--pad-horz);
+        margin: calc(-1 * var(--padding)) calc(-1 * var(--padding)) var(--padding) calc(-1 * var(--padding));
+        font-size: var(--size-5);
+        font-weight: var(--weight-semibold);
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+    }
 
 
-.table td .code-max-width {
-    display: block;
-    max-width: 10rem;
-    white-space: break-spaces;
+    /** allows for right alignment of a column of values **/
+    table.numbers-col-1 td:nth-of-type(1),
+    table.numbers-col-1 th:nth-of-type(1),
+    table.numbers-col-2 td:nth-of-type(2),
+    table.numbers-col-2 th:nth-of-type(2),
+    table.numbers-col-3 td:nth-of-type(3),
+    table.numbers-col-3 th:nth-of-type(3),
+    table.numbers-col-4 td:nth-of-type(4),
+    table.numbers-col-4 th:nth-of-type(4),
+    table.numbers-col-5 td:nth-of-type(5),
+    table.numbers-col-5 th:nth-of-type(5),
+    table.numbers-col-6 td:nth-of-type(6),
+    table.numbers-col-6 th:nth-of-type(6),
+    table.numbers-col-7 td:nth-of-type(7),
+    table.numbers-col-7 th:nth-of-type(7),
+    table.numbers-col-8 td:nth-of-type(8),
+    table.numbers-col-8 th:nth-of-type(8),
+    table.numbers-col-9 td:nth-of-type(9),
+    table.numbers-col-9 th:nth-of-type(9) {
+        text-align: end;
+        white-space: nowrap;
+    }
+
+    /** allows for center alignment of a column of values **/
+    table.centered-col-1 td:nth-of-type(1),
+    table.centered-col-1 th:nth-of-type(1),
+    table.centered-col-2 td:nth-of-type(2),
+    table.centered-col-2 th:nth-of-type(2),
+    table.centered-col-3 td:nth-of-type(3),
+    table.centered-col-3 th:nth-of-type(3),
+    table.centered-col-4 td:nth-of-type(4),
+    table.centered-col-4 th:nth-of-type(4),
+    table.centered-col-5 td:nth-of-type(5),
+    table.centered-col-5 th:nth-of-type(5),
+    table.centered-col-6 td:nth-of-type(6),
+    table.centered-col-6 th:nth-of-type(6),
+    table.centered-col-7 td:nth-of-type(7),
+    table.centered-col-7 th:nth-of-type(7),
+    table.centered-col-8 td:nth-of-type(8),
+    table.centered-col-8 th:nth-of-type(8),
+    table.centered-col-9 td:nth-of-type(9),
+    table.centered-col-9 th:nth-of-type(9) {
+        text-align: center;
+    }
+
+
+    /** disable word breaks on a per column basis **/
+    table.nobreak-col-1 td:nth-of-type(1),
+    table.nobreak-col-1 th:nth-of-type(1),
+    table.nobreak-col-2 td:nth-of-type(2),
+    table.nobreak-col-2 th:nth-of-type(2),
+    table.nobreak-col-3 td:nth-of-type(3),
+    table.nobreak-col-3 th:nth-of-type(3),
+    table.nobreak-col-4 td:nth-of-type(4),
+    table.nobreak-col-4 th:nth-of-type(4),
+    table.nobreak-col-5 td:nth-of-type(5),
+    table.nobreak-col-5 th:nth-of-type(5),
+    table.nobreak-col-6 td:nth-of-type(6),
+    table.nobreak-col-6 th:nth-of-type(6),
+    table.nobreak-col-7 td:nth-of-type(7),
+    table.nobreak-col-7 th:nth-of-type(7),
+    table.nobreak-col-8 td:nth-of-type(8),
+    table.nobreak-col-8 th:nth-of-type(8),
+    table.nobreak-col-9 td:nth-of-type(9),
+    table.nobreak-col-9 th:nth-of-type(9) {
+        white-space: nowrap;
+    }
+
+    /** enable word breaks for scrolled table on a per column basis **/
+    table.scrollbreak-col-1 td:nth-of-type(1),
+    table.scrollbreak-col-1 th:nth-of-type(1),
+    table.scrollbreak-col-2 td:nth-of-type(2),
+    table.scrollbreak-col-2 th:nth-of-type(2),
+    table.scrollbreak-col-3 td:nth-of-type(3),
+    table.scrollbreak-col-3 th:nth-of-type(3),
+    table.scrollbreak-col-4 td:nth-of-type(4),
+    table.scrollbreak-col-4 th:nth-of-type(4),
+    table.scrollbreak-col-5 td:nth-of-type(5),
+    table.scrollbreak-col-5 th:nth-of-type(5),
+    table.scrollbreak-col-6 td:nth-of-type(6),
+    table.scrollbreak-col-6 th:nth-of-type(6),
+    table.scrollbreak-col-7 td:nth-of-type(7),
+    table.scrollbreak-col-7 th:nth-of-type(7),
+    table.scrollbreak-col-8 td:nth-of-type(8),
+    table.scrollbreak-col-8 th:nth-of-type(8),
+    table.scrollbreak-col-9 td:nth-of-type(9),
+    table.scrollbreak-col-9 th:nth-of-type(9) {
+        white-space: normal;
+        max-width: 60ch;
+        min-width: 40ch;
+        word-break: break-word;
+    }
+
+
+    table td .code-max-width {
+        display: block;
+        max-width: 10rem;
+        white-space: break-spaces;
+    }
+
 }

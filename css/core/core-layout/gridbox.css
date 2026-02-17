@@ -1,126 +1,128 @@
-/* Sadly, grid needs some help for columns at mobile widths  */
-.row {
-    display: grid;
-    grid-template-columns: 100%;
-    row-gap: var(--gutter);
-    column-gap: var(--gutter);
-    justify-items: stretch;
-    align-items: stretch;
-    max-width: 100vw;
-}
-
-.row.is-centered-vert {
-    align-items: center;
-}
-
-.row .column {
-    align-items: start;
-    max-width: 100vw;
-}
-
-.row .column.has-background{
-    padding: 0.5rem;
-    background-color: var(--bg-grid);
-}
-
-.row.is-centered-vert .column{
-    height: auto;
-}
-
-
-/* Also sadly, @media does not support variables and so we need to hard code the mobile breakpoint */
-@media screen and (min-width: 576px){
+@layer layout {
+    /* Sadly, grid needs some help for columns at mobile widths  */
     .row {
-        --min-grid-width: var(--grid-min-width);
-        grid-template-columns: repeat( auto-fit,  minmax( var(--grid-min-width), 1fr) );
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: var(--gutter);
+        column-gap: var(--gutter);
+        justify-items: stretch;
+        align-items: stretch;
+        max-width: 100vw;
     }
 
-    .row.abs-width {
-        --min-grid-width: var(--grid-min-px-width);
-        grid-template-columns: repeat( auto-fit,  minmax(var(--min-grid-width), 1fr) );
+    .row.is-centered-vert {
+        align-items: center;
     }
 
     .row .column {
-        min-width: var(--min-grid-width);
+        align-items: start;
+        max-width: 100vw;
     }
 
-    /** This is a shortcut for making all columns the same width **/
-    /** uses a multiple of minimum width; nominally 5rem **/
-    /** if .row.abs-width, then minimum width is nominally 100px **/
-    .row.has-1x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( var(--min-grid-width), 1fr) );
+    .row .column.has-background {
+        padding: 0.5rem;
+        background-color: var(--bg-grid);
     }
 
-    .row.has-2x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 2 ), 1fr) );
+    .row.is-centered-vert .column {
+        height: auto;
     }
 
-    .row.has-3x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 3 ), 1fr) );
-    }
 
-    .row.has-4x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 4 ), 1fr) );
-    }
+    /* Also sadly, @media does not support variables and so we need to hard code the mobile breakpoint */
+    @media screen and (min-width: 576px) {
+        .row {
+            --min-grid-width: var(--grid-min-width);
+            grid-template-columns: repeat( auto-fit, minmax(var(--grid-min-width), 1fr) );
+        }
 
-    .row.has-5x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 5 ), 1fr) );
-    }
+        .row.abs-width {
+            --min-grid-width: var(--grid-min-px-width);
+            grid-template-columns: repeat( auto-fit, minmax(var(--min-grid-width), 1fr) );
+        }
 
-    .row.has-6x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 6 ), 1fr) );
-    }
+        .row .column {
+            min-width: var(--min-grid-width);
+        }
 
-    .row.has-7x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 7 ), 1fr) );
-    }
+        /** This is a shortcut for making all columns the same width **/
+        /** uses a multiple of minimum width; nominally 5rem **/
+        /** if .row.abs-width, then minimum width is nominally 100px **/
+        .row.has-1x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(var(--min-grid-width), 1fr) );
+        }
 
-    .row.has-8x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 8 ), 1fr) );
-    }
+        .row.has-2x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 2), 1fr) );
+        }
 
-    .row.has-9x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 9 ), 1fr) );
-    }
+        .row.has-3x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 3), 1fr) );
+        }
 
-    .row.has-10x-minwidth {
-        grid-template-columns: repeat( auto-fit, minmax( calc(var(--min-grid-width) * 10 ), 1fr) );
-    }
+        .row.has-4x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 4), 1fr) );
+        }
 
-    /** control each column span independently **/
-    .column.is-span-1 {
-        grid-column: auto / span 1;
-    }
+        .row.has-5x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 5), 1fr) );
+        }
 
-    .column.is-span-2 {
-        grid-column: auto / span 2;
-    }
+        .row.has-6x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 6), 1fr) );
+        }
 
-    .column.is-span-3 {
-        grid-column: auto / span 3;
-    }
+        .row.has-7x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 7), 1fr) );
+        }
 
-    .column.is-span-4 {
-        grid-column: auto / span 4;
-    }
+        .row.has-8x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 8), 1fr) );
+        }
 
-    .column.is-span-5 {
-        grid-column: auto / span 5;
-    }
+        .row.has-9x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 9), 1fr) );
+        }
 
-    .column.is-span-6 {
-        grid-column: auto / span 6;
-    }
+        .row.has-10x-minwidth {
+            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 10), 1fr) );
+        }
 
-    .column.is-span-7 {
-        grid-column: auto / span 7;
-    }
+        /** control each column span independently **/
+        .column.is-span-1 {
+            grid-column: auto / span 1;
+        }
 
-    .column.is-span-8 {
-        grid-column: auto / span 8;
-    }
+        .column.is-span-2 {
+            grid-column: auto / span 2;
+        }
 
-    .column.is-fullwidth {
-        grid-column: 1 / -1;
+        .column.is-span-3 {
+            grid-column: auto / span 3;
+        }
+
+        .column.is-span-4 {
+            grid-column: auto / span 4;
+        }
+
+        .column.is-span-5 {
+            grid-column: auto / span 5;
+        }
+
+        .column.is-span-6 {
+            grid-column: auto / span 6;
+        }
+
+        .column.is-span-7 {
+            grid-column: auto / span 7;
+        }
+
+        .column.is-span-8 {
+            grid-column: auto / span 8;
+        }
+
+        .column.is-fullwidth {
+            grid-column: 1 / -1;
+        }
     }
 }

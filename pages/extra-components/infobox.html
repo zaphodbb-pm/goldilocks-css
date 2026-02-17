@@ -24,7 +24,7 @@ nav: Infobox
                 <li><b>Default:</b> generic information display;</li>
                 <li><b>Primary:</b> displayed data is important;</li>
                 <li><b>Secondary:</b> displayed data is useful;</li>
-                <li><b>Tertiary:</b> displayed data is for reminding.</li>
+                <li><b>complement:</b> displayed data is for reminding.</li>
             </ul>
 
             <p>The text area holds important information.  Both <code>sup</code> and <code>sub</code> HTML tags are supported.
@@ -68,7 +68,7 @@ nav: Infobox
                 </tr>
 
                 <tr>
-                    <td><code>.infobox-tertiary</code></td>
+                    <td><code>.infobox-complement</code></td>
                     <td>Optional modifier to indicate that data is mostly a reminder.</td>
                 </tr>
                 </tbody>
@@ -91,7 +91,7 @@ nav: Infobox
                         --pad-vert, --padding-medium, --mar-horz, --mar-vert, --radius-comp, --radius-elem, --radius-rounded,
                         --primary, --primary-dark, --primary-light,
                         --secondary, --secondary-dark, --secondary-light, --shadow, --size-3, --size-5,
-                        --tertiary, --tertiary-dark, --tertiary-light,
+                        --complement, --complement-dark, --complement-light,
                         --text-light, --text-invert, --weight-bold, --weight-semibold</td>
                 </tr>
                 </tbody>
@@ -119,7 +119,7 @@ nav: Infobox
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;figure class="infobox [infobox-primary infobox-secondary infobox-tertiary] "&gt;
+                &lt;figure class="infobox [infobox-primary infobox-secondary infobox-complement] "&gt;
                     &lt;figcaption class="sr-only"&gt;Default info box&lt;/figcaption&gt;
                     &lt;div&gt;
                         &lt;p&gt;
@@ -159,7 +159,7 @@ nav: Infobox
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;figure class="infobox [infobox-primary infobox-secondary infobox-tertiary] "&gt;
+                &lt;figure class="infobox [infobox-primary infobox-secondary infobox-complement] "&gt;
                     &lt;figcaption class="sr-only"&gt;Info box with image and footer&lt;/figcaption&gt;
                     &lt;div&gt;
                         &lt;p&gt;
@@ -218,9 +218,9 @@ nav: Infobox
         </div>
 
         <div class="column">
-            <h3>Infobox Tertiary</h3>
+            <h3>Infobox complement</h3>
 
-            <figure class="infobox infobox-tertiary">
+            <figure class="infobox infobox-complement">
                 <figcaption class="sr-only">Tracking baggage loss rates</figcaption>
                 <div>
                     <p>

@@ -1,15 +1,16 @@
-.box,
-.box-shadow{
-    background-color: var(--bg-component);
-    color: var(--text);
-    display: block;
-    padding: var(--padding-normal);
-    height: auto;
-    width: calc( 100% - 2 * var(--padding-normal) );
-}
+@layer layout{
+    .box,
+    .box-shadow{
+        background-color: var(--bg-component);
+        color: var(--text);
+        display: block;
+        padding: var(--padding-normal);
+        height: auto;
+        width: calc( 100% - 2 * var(--padding-normal) );
+    }
 
-
-.box-shadow {
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    .box-shadow {
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+    }
 }

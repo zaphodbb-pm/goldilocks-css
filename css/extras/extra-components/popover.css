@@ -1,63 +1,67 @@
-.popover {
-    display: inline-block;
-    position: relative;
-}
+@layer extras {
 
-.popover .popover-container {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    opacity: 0;
-    padding: var(--pad-horz);
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform .2s;
-    width: 20rem;
-    z-index: 300;
+    .popover {
+        display: inline-block;
+        position: relative;
+    }
 
-    border: 0;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    background-color: var(--bg-main-comp);
-    margin: var(--mar-vert) var(--mar-horz) ;
-}
+    .popover .popover-container {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        opacity: 0;
+        padding: var(--pad-horz);
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform .2s;
+        width: 20rem;
+        z-index: 300;
+
+        border: 0;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        background-color: var(--bg-main-comp);
+        margin: var(--mar-vert) var(--mar-horz);
+    }
 
 
-.popover *:focus + .popover-container,
-.popover:hover .popover-container,
-.popover:focus .popover-container,
-.popover:active .popover-container {
-    z-index: 300;
-    display: block;
-    opacity: 1;
-    transform: translate(-50%, calc(-100% - 2 * var(--mar-vert)) ) scale(1);
-}
+    .popover *:focus + .popover-container,
+    .popover:hover .popover-container,
+    .popover:focus .popover-container,
+    .popover:active .popover-container {
+        z-index: 300;
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, calc(-100% - 2 * var(--mar-vert))) scale(1);
+    }
 
-.popover.pop-bottom .popover-container {
-    left: 50%;
-    top: 100%;
-}
+    .popover.pop-bottom .popover-container {
+        left: 50%;
+        top: 100%;
+    }
 
-.popover.pop-bottom *:focus + .popover-container,
-.popover.pop-bottom:hover .popover-container {
-    transform: translate(-50%, 0) scale(1);
-}
+    .popover.pop-bottom *:focus + .popover-container,
+    .popover.pop-bottom:hover .popover-container {
+        transform: translate(-50%, 0) scale(1);
+    }
 
-.popover.pop-right .popover-container {
-    left: 100%;
-    top: 50%;
-}
+    .popover.pop-right .popover-container {
+        left: 100%;
+        top: 50%;
+    }
 
-.popover.pop-right *:focus + .popover-container,
-.popover.pop-right:hover .popover-container {
-    transform: translate(0, -50%) scale(1);
-}
+    .popover.pop-right *:focus + .popover-container,
+    .popover.pop-right:hover .popover-container {
+        transform: translate(0, -50%) scale(1);
+    }
 
-.popover.pop-left .popover-container {
-    left: 0;
-    top: 50%;
-}
+    .popover.pop-left .popover-container {
+        left: 0;
+        top: 50%;
+    }
 
-.popover.pop-left *:focus + .popover-container,
-.popover.pop-left:hover .popover-container {
-    transform: translate( calc(-100% - 2 * var(--mar-horz)), -50%) scale(1);
+    .popover.pop-left *:focus + .popover-container,
+    .popover.pop-left:hover .popover-container {
+        transform: translate(calc(-100% - 2 * var(--mar-horz)), -50%) scale(1);
+    }
+
 }

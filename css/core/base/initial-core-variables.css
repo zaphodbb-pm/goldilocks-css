@@ -1,175 +1,185 @@
-:root {
-    /* version 0.1.0 - April 29, 2022 - v3 */
 
-    /* awareness variables - for info only */
-    /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
-    /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
-    --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
+    /* version 1.0.0 - February 17, 2026 - v4 */
+
+    /* Layers organization */
+    @layer base, layout, elements, extended, extras, custom;
 
 
 
-    /* Base measurement unit to be used for font, margins and padding */
-    /* changing the base html factor allows a user to change the font sizes to meet accessibility needs */
-    --base-html-factor: 100%;
-    --base-rem: 1rem;
+    @layer base {
+
+        :root {
+
+        /* Awareness variables - for info only */
+        /** Typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
+        /** Files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
+        --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
 
 
-    /* Typography */
-    /** Note: text colors are set in file: initial-colors.css **/
-
-    /** basic is a fixed font size for all screen sizes **/
-    --base-font-size: var(--base-rem);
-
-    /** alternatively, you can use a variable font size for all screen sizes
-    - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-        - maximum font-size is set to 3 * base (48px)
-     **/
-    /** --base-font-size:  clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) ); **/
-
-    /** Default is to use system fonts as much as possible **/
-    --family-sans-serif: "Tahoma", "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", "Roboto", sans-serif;
-    --family-serif: "Georgia", "Times New Roman", serif;
-    --family-monospace: monospace;
-    --render-mode: optimizeLegibility;
-
-    /** Define font weights here **/
-    --weight-light: 300;
-    --weight-normal: 400;
-    --weight-medium: 500;
-    --weight-semibold: 600;
-    --weight-bold: 700;
-
-    /** Text line heights to match size **/
-    --line-height-125: 125%;
-    --line-height-150: 150%;
-    --line-height-175: 175%;
-    --line-height-200: 200%;
-
-    /** Sizing pattern - typically for text **/
-    --size-factor: 1.125;
-
-    --size-1: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-2: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-3: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-4: calc( 1rem * var(--size-factor) * var(--size-factor) );
-    --size-5: calc( 1rem * var(--size-factor) );
-    --size-6: 1rem;
-    --size-7: calc( 1rem / var(--size-factor) );
-
-    /* Example 1.125 scale factor:
-    --size-1: 1.80rem;
-    --size-2: 1.60rem;
-    --size-3: 1.42rem;
-    --size-4: 1.27rem;
-    --size-5: 1.13rem;
-    --size-6: 1rem;
-    --size-7: 0.9rem;
-     */
+        /* Base measurement unit to be used for font, margins and padding */
+        /* Changing the base html factor allows a user to change the font sizes to meet accessibility needs */
+        --base-html-factor: 100%;
+        --base-rem: 1rem;
 
 
 
-    /* Grid Key Variables */
-    --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
-    --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
-    --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
+        /* Typography */
+        /** Note: text colors are set in file: initial-colors.css **/
 
+        /** Default is to use system fonts as much as possible **/
+        --family-sans-serif: "Tahoma", "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", "Roboto", sans-serif;
+        --family-serif: "Georgia", "Times New Roman", serif;
+        --family-monospace: monospace;
+        --render-mode: optimizeLegibility;
 
-    /* basic spacing values */
-    /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
-    --space-element: var(--base-font-size);
-    --space-block: calc(2 * var(--base-font-size));
-    --space-collection: calc(4 * var(--base-font-size));
-    --space-container: calc(5 * var(--base-font-size));
+        /** Define font weights here **/
+        --weight-light: 300;
+        --weight-normal: 400;
+        --weight-semibold: 600;
+        --weight-bold: 700;
 
+        /** Adjustable using a variable font size for all screen sizes
+            - font-size is variable and tracks viewport to a width of 100rem (1600 px)
+            - maximum font-size is set to 3 * base (nominal 48px)
+         **/
+        --base-font-size:  clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) );
 
-    /* Flexbox element spacing */
-    --gap-row: calc( 1 * var(--base-font-size) );
-    --gap-col: calc( 1 * var(--base-font-size) );
+        /** Text line heights to match size **/
+        --line-height-125: 125%;
+        --line-height-150: 150%;
+        --line-height-175: 175%;
+        --line-height-200: 200%;
 
+        /** Sizing pattern - typically for text **/
+        /*** typical factors: (see https://typescale.com)
+            1.125 (Major Second) - A balanced choice for most UI designs.
+            1.2 (Minor Third) - Suitable for more information-dense UI designs.
+            1.25 (Major Third) - A very popular choice that provides enough distinction between heading levels.
+            1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
+        ***/
 
+        --size-factor: 1.125;
 
-    /* Elements Controls */
-    --pad-horz: var(--base-font-size);
-    --pad-vert: calc( 0.5 * var(--base-font-size) );
-    --pad-horz-small: calc( 0.5 * var(--base-font-size) );
-    --pad-vert-small: calc( 0.25 * var(--base-font-size) );
-
-    --padding: calc(0.75 * var(--base-font-size));
-    --padding-normal: var(--base-font-size);
-    --padding-medium: calc( 1.5 * var(--base-font-size) );
-    --padding-large: calc( 3 * var(--base-font-size) );
-
-    --mar-horz: calc( 0.5 * var(--base-font-size) );
-    --mar-vert: calc( 0.5 * var(--base-font-size) );
-    --margin: var(--base-font-size);
-    --margin-form: calc(1.5 * var(--base-font-size));
-    --margin-medium: calc(3 * var(--base-font-size));
-    --margin-large: calc(5 * var(--base-font-size));
-
-
-
-    /* Component Controls */
-    --radius: calc(0.5 * var(--base-font-size));
-    --radius-small: calc(0.5 * var(--radius));
-    --radius-comp: calc(1 * var(--radius));
-    --radius-elem: calc(1.5 * var(--radius));
-    --radius-rounded: 10000px;
-
-
-    /* Navbar settings */
-    --navbar-height: 4rem;
-    --navbar-offset: 0;
-    --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
+        --size-7: calc( 1rem / var(--size-factor) );                /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
+        --size-6: 1rem;                                             /* Example 1.125 scale factor:  --size-6 = 1 rem; */
+        --size-5: calc( var(--size-6) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
+        --size-4: calc( var(--size-5) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
+        --size-3: calc( var(--size-4) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
+        --size-2: calc( var(--size-3) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
+        --size-1: calc( var(--size-2) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
 
 
 
-    /* Widgetbar settings */
-    --widgetbar-height: calc( 2 * var(--base-font-size) + 0.25rem);
-    --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
-
-
-    /* Breadcrumb setting */
-    /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
-    --breadcrumb-separator: "/";
-
-
-    /* magazine normal width */
-    --magazine-width: 40ch;
+        /* Grid Key Variables */
+        --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
+        --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
+        --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
 
 
 
-    /* carousel image height */
-    --carousel-image-height: 8rem;
-    --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
+        /* basic spacing values */
+        /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
+        --space-element: var(--base-font-size);
+        --space-block: calc(2 * var(--base-font-size));
+        --space-collection: calc(4 * var(--base-font-size));
+        --space-container: calc(5 * var(--base-font-size));
 
 
 
-    /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
-    --indicator: url("data:image/svg+xml;charset=utf8,\
+        /* Flexbox element spacing */
+        --gap-row: calc( 1 * var(--base-font-size) );
+        --gap-col: calc( 1 * var(--base-font-size) );
+
+
+
+        /* Elements Controls */
+        --pad-horz: var(--base-font-size);
+        --pad-vert: calc( 0.5 * var(--base-font-size) );
+        --pad-horz-small: calc( 0.5 * var(--base-font-size) );
+        --pad-vert-small: calc( 0.25 * var(--base-font-size) );
+
+        --padding: calc(0.75 * var(--base-font-size));
+        --padding-normal: var(--base-font-size);
+        --padding-medium: calc( 1.5 * var(--base-font-size) );
+        --padding-large: calc( 3 * var(--base-font-size) );
+
+        --mar-horz: calc( 0.5 * var(--base-font-size) );
+        --mar-vert: calc( 0.5 * var(--base-font-size) );
+        --margin: var(--base-font-size);
+        --margin-form: calc(1.5 * var(--base-font-size));
+        --margin-medium: calc(3 * var(--base-font-size));
+        --margin-large: calc(5 * var(--base-font-size));
+
+
+
+        /* Component Controls */
+        --radius: calc(0.5 * var(--base-font-size));
+        --radius-small: calc(0.5 * var(--radius));
+        --radius-comp: calc(1 * var(--radius));
+        --radius-elem: calc(1.5 * var(--radius));
+        --radius-rounded: 10000px;
+
+
+
+        /* Navbar settings */
+        --navbar-height: 4rem;
+        --navbar-offset: 0;
+        --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
+
+
+
+        /* Widgetbar settings */
+        --widgetbar-height: calc( 2 * var(--base-font-size) + 0.25rem);
+        --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
+
+
+
+        /* Breadcrumb setting */
+        /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
+        --breadcrumb-separator: "/";
+
+
+
+        /* magazine normal width */
+        --magazine-width: 40ch;
+
+
+
+        /* carousel image height */
+        --carousel-image-height: 8rem;
+        --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
+
+
+
+        /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
+        --indicator: url("data:image/svg+xml;charset=utf8,\
     %3Csvg%20xmlns='http://www.w3.org/2000/svg'\
     %20viewBox='0%200%2024%2024'%20\
     fill='none'%20stroke='currentColor'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3E\
     %3Cpolyline%20points='6%209%2012%2015%2018%209'/%3E\
     %3C/svg%3E");
 
-    --indicator-down: url('data:image/svg+xml;charset=utf8,\
+        --indicator-down: url('data:image/svg+xml;charset=utf8,\
     <svg xmlns="http://www.w3.org/2000/svg" \
         width="24" height="24" viewBox="0 0 24 24" \
         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
         <polyline points="6 9 12 15 18 9"/>\
     </svg>');
 
-    --indicator-up: url('data:image/svg+xml;charset=utf8,\
+        --indicator-up: url('data:image/svg+xml;charset=utf8,\
     <svg xmlns="http://www.w3.org/2000/svg" \
         width="24" height="24" viewBox="0 0 24 24" \
         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
         <polyline points="18 15 12 9 6 15"></polyline>\
     </svg>');
 
-    --indicator-right: url('data:image/svg+xml;charset=utf8,\
+        --indicator-right: url('data:image/svg+xml;charset=utf8,\
     <svg xmlns="http://www.w3.org/2000/svg" \
         width="24" height="24" viewBox="0 0 24 24" \
         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
         <polyline points="9 18 15 12 9 6"/>\
     </svg>');
+
+    }
+
 }

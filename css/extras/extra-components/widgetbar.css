@@ -1,119 +1,124 @@
 /* widgetbar.css */
-.widgetbar,
-.widgetbar-bordered {
-    display: flex;
-    column-gap: var(--gap-col);
-    row-gap: var(--gap-row);
-    align-items: center;
-    justify-content: flex-end;
-    border: none;
-    padding: 0 var(--pad-horz);
-    height: var(--widgetbar-height);
-    z-index: var(--widget-z);
-    background-color: var(--bg-component);
-    width: calc(100% - 2 * var(--pad-horz) );
-}
 
-.widgetbar-bordered {
-    border: 1px solid var(--border-main);
-    height: calc(var(--widgetbar-height) - 2px) ;
-}
+@layer extras {
 
-.widgetbar fieldset,
-.widgetbar-bordered fieldset {
-    display: flex;
-    border: none;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-}
+    .widgetbar,
+    .widgetbar-bordered {
+        display: flex;
+        column-gap: var(--gap-col);
+        row-gap: var(--gap-row);
+        align-items: center;
+        justify-content: flex-end;
+        border: none;
+        padding: 0 var(--pad-horz);
+        height: var(--widgetbar-height);
+        z-index: var(--widget-z);
+        background-color: var(--bg-component);
+        width: calc(100% - 2 * var(--pad-horz));
+    }
 
-.widgetbar legend,
-.widgetbar-bordered legend {
-    overflow: hidden;
-    height: 0;
-    width: 0;
-}
+    .widgetbar-bordered {
+        border: 1px solid var(--border-main);
+        height: calc(var(--widgetbar-height) - 2px);
+    }
 
-/* common widget parents */
-.widgetbar-radios,
-.widgetbar-switch,
-.widgetbar-link {
-    display: flex;
-    margin: 0.25rem 0;
-    padding: 0;
-    align-items: center;
-    font-weight: var(--weight-semibold);
-    background-color: var(--bg-element);
-    border-radius: var(--radius-comp);
-}
+    .widgetbar fieldset,
+    .widgetbar-bordered fieldset {
+        display: flex;
+        border: none;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
 
-.widgetbar-item-border {
-    border: 1px solid var(--secondary);
-    border-radius: var(--radius-comp);
-}
+    .widgetbar legend,
+    .widgetbar-bordered legend {
+        overflow: hidden;
+        height: 0;
+        width: 0;
+    }
 
+    /* common widget parents */
+    .widgetbar-radios,
+    .widgetbar-switch,
+    .widgetbar-link {
+        display: flex;
+        margin: 0.25rem 0;
+        padding: 0;
+        align-items: center;
+        font-weight: var(--weight-semibold);
+        background-color: var(--bg-element);
+        border-radius: var(--radius-comp);
+    }
 
-/* text size selector */
-.widgetbar-radios > span {
-    padding: 0 var(--pad-vert) 0 var(--pad-horz);
-}
-
-.widgetbar-radios label {
-    display: flex;
-    align-items: center;
-}
-
-.widgetbar-radios input {
-    display: none;
-}
-
-.widgetbar-radios input + span {
-    cursor: pointer;
-    margin: 0 !important;
-    padding: 0.25em 0.5em !important;
-    font-size: 1em !important;
-    line-height: 1;
-    color:var(--text);
-}
-
-.widgetbar-radios input:checked + span {
-    background-color: var(--secondary);
-    color: var(--secondary-text-invert);
-    border-radius: var(--radius-comp);
-}
+    .widgetbar-item-border {
+        border: 1px solid var(--secondary);
+        border-radius: var(--radius-comp);
+    }
 
 
-/* link widgets */
-.widgetbar-link {
-    background-color: transparent;
-    border-radius: var(--radius-comp);
-    font-size: 0.75em;
-}
+    /* text size selector */
+    .widgetbar-radios > span {
+        padding: 0 var(--pad-vert) 0 var(--pad-horz);
+    }
 
-.widgetbar-link a {
-    color: var(--secondary);
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 0.125em 0.25em;
-    text-decoration: none;
-}
+    .widgetbar-radios label {
+        display: flex;
+        align-items: center;
+    }
 
-.widgetbar-link a span {
-    margin-left: 0.5em;
-}
+    .widgetbar-radios input {
+        display: none;
+    }
 
-.widgetbar-link a :is([class*=".icon-bg-"]) {
-    margin: 0;
-}
+    .widgetbar-radios input + span {
+        cursor: pointer;
+        margin: 0 !important;
+        padding: 0.25em 0.5em !important;
+        font-size: 1em !important;
+        line-height: 1;
+        color: var(--text);
+    }
 
-.widgetbar-link a:hover {
-    color: var(--bg-main);
-    background-color: var(--secondary);
-    border-radius: var(--radius-comp);
-}
+    .widgetbar-radios input:checked + span {
+        background-color: var(--secondary);
+        color: var(--secondary-text-invert);
+        border-radius: var(--radius-comp);
+    }
 
-.widgetbar-link span {
-    font-weight: var(--weight-semibold);
+
+    /* link widgets */
+    .widgetbar-link {
+        background-color: transparent;
+        border-radius: var(--radius-comp);
+        font-size: 0.75em;
+    }
+
+    .widgetbar-link a {
+        color: var(--secondary);
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0.125em 0.25em;
+        text-decoration: none;
+    }
+
+    .widgetbar-link a span {
+        margin-left: 0.5em;
+    }
+
+    .widgetbar-link a :is([class*=".icon-bg-"]) {
+        margin: 0;
+    }
+
+    .widgetbar-link a:hover {
+        color: var(--bg-main);
+        background-color: var(--secondary);
+        border-radius: var(--radius-comp);
+    }
+
+    .widgetbar-link span {
+        font-weight: var(--weight-semibold);
+    }
+
 }

@@ -1,76 +1,80 @@
-.card {
-    background-color: var(--bg-component);
-    border-radius: var(--radius-comp);
-    box-shadow: var(--shadow);
-    color: var(--text-comp);
-    width: 100%;
-    position: relative;
-}
+@layer extended {
 
-.card > header {
-    padding: 1.5rem;
-}
+    .card {
+        background-color: var(--bg-component);
+        border-radius: var(--radius-comp);
+        box-shadow: var(--shadow);
+        color: var(--text-comp);
+        width: 100%;
+        position: relative;
+    }
 
-.card > header > :is(h2, h3, h4, h5, h6) {
-    font-size: var(--size-5);
-    font-weight: var(--weight-bold);
-    margin: 0;
-    color: inherit;
-}
+    .card > header {
+        padding: 1.5rem;
+    }
 
-.card > header > :is(h2, h3, h4, h5, h6) + p {
-    opacity: 70%;
-    font-weight: var(--weight-semibold);
-}
+    .card > header > :is(h2, h3, h4, h5, h6) {
+        font-size: var(--size-5);
+        font-weight: var(--weight-bold);
+        margin: 0;
+        color: inherit;
+    }
 
-.card > header:first-child {
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-    -webkit-border-top-left-radius: inherit;
-    -webkit-border-top-right-radius: inherit;
-}
+    .card > header > :is(h2, h3, h4, h5, h6) + p {
+        opacity: 70%;
+        font-weight: var(--weight-semibold);
+    }
 
-.card > header:last-child {
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
+    .card > header:first-child {
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        -webkit-border-top-left-radius: inherit;
+        -webkit-border-top-right-radius: inherit;
+    }
 
-    -webkit-border-bottom-left-radius: inherit;
-    -webkit-border-bottom-right-radius: inherit;
-}
+    .card > header:last-child {
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
 
-.card > figure {
-    display: block;
-    position: relative;
-}
+        -webkit-border-bottom-left-radius: inherit;
+        -webkit-border-bottom-right-radius: inherit;
+    }
 
-.card > figure:first-child img {
-    border-top-left-radius: var(--radius-comp);
-    border-top-right-radius: var(--radius-comp);
-}
+    .card > figure {
+        display: block;
+        position: relative;
+    }
 
-.card > figure:last-child img {
-    border-bottom-left-radius: var(--radius-comp);
-    border-bottom-right-radius: var(--radius-comp);
-}
+    .card > figure:first-child img {
+        border-top-left-radius: var(--radius-comp);
+        border-top-right-radius: var(--radius-comp);
+    }
 
-.card > div {
-    background-color: transparent;
-    padding: 1.5rem;
-}
+    .card > figure:last-child img {
+        border-bottom-left-radius: var(--radius-comp);
+        border-bottom-right-radius: var(--radius-comp);
+    }
 
-.card > header + div {
-    padding-top: 0;
-}
+    .card > div {
+        background-color: transparent;
+        padding: 1.5rem;
+    }
 
-.card > div .comment:not(:last-child) {
-    margin-bottom: var(--mar-vert);
-}
+    .card > header + div {
+        padding-top: 0;
+    }
 
-.card > footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    background-color: transparent;
-    border-top: 1px solid var(--border-main);
-    padding: 1.5rem;
+    .card > div .comment:not(:last-child) {
+        margin-bottom: var(--mar-vert);
+    }
+
+    .card > footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        background-color: transparent;
+        border-top: 1px solid var(--border-main);
+        padding: 1.5rem;
+    }
+
 }

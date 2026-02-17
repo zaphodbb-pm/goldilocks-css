@@ -1,60 +1,65 @@
-.carousel-wrapper {
-    display: grid;
-    place-items: center;
-    background: var(--bg-element);
-    margin: var(--margin) 0;
-    padding: 0 var(--pad-horz);
-}
+@layer extras {
 
-.carousel {
-    background: var(--bg-element);
-    overflow-y: scroll;
-    width: 100%;
-}
+    .carousel-wrapper {
+        display: grid;
+        place-items: center;
+        background: var(--bg-element);
+        margin: var(--margin) 0;
+        padding: 0 var(--pad-horz);
+    }
 
-.carousel > * {
-    grid-column: 1 / -1;
-}
+    .carousel {
+        background: var(--bg-element);
+        overflow-y: scroll;
+        width: 100%;
+    }
 
-.carousel > ul {
-    display: grid;
-    grid-gap: calc(var(--gutter) / 2);
-    grid-template-columns: var(--gutter);
-    grid-template-rows: 1fr;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax( var(--carousel-image-width) , 1fr);
-    overflow-x: scroll;
-    scroll-snap-type: x proximity;
-    margin: var(--mar-vert) 0;
-    padding-bottom: 1rem;
-}
+    .carousel > * {
+        grid-column: 1 / -1;
+    }
 
-.carousel > ul::before {
-    content: '';
-    width: 0.5rem;
-}
+    .carousel > ul {
+        display: grid;
+        grid-gap: calc(var(--gutter) / 2);
+        grid-template-columns: var(--gutter);
+        grid-template-rows: 1fr;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(var(--carousel-image-width), 1fr);
+        overflow-x: scroll;
+        scroll-snap-type: x proximity;
+        margin: var(--mar-vert) 0;
+        padding-bottom: 1rem;
+    }
 
-.carousel > ul > li {
-    scroll-snap-align: center;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    border-radius: var(--radius);
-}
+    .carousel > ul::before {
+        content: '';
+        width: 0.5rem;
+    }
 
-.carousel > ul img{
-    height: var(--carousel-image-height);
-    object-fit: cover;
-}
+    .carousel > ul > li {
+        scroll-snap-align: center;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        border-radius: var(--radius);
+    }
 
-.carousel .no-scrollbar {
-    scrollbar-width: none;
-    padding-bottom: 0;
-}
-.carousel .no-scrollbar::-webkit-scrollbar {
-    display: none;
+    .carousel > ul img {
+        height: var(--carousel-image-height);
+        object-fit: cover;
+    }
+
+    .carousel .no-scrollbar {
+        scrollbar-width: none;
+        padding-bottom: 0;
+    }
+
+    .carousel .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
 }

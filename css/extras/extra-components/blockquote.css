@@ -1,48 +1,52 @@
-.blockquote {
-    display: block;
-    padding: var(--pad-vert) var(--pad-horz);
-    margin: var(--margin-medium) auto;
-    max-width: 60ch;
+@layer extras {
 
-    background-color: var(--bg-component);
-    border-left: 0.3rem solid var(--secondary);
-    break-inside: avoid;
-}
-
-.blockquote > blockquote {
-    color: var(--text-darker);
-    font-size: var(--size-5);
-    font-weight: var(--weight-medium);
-    font-family: var(--family-serif);
-    line-height: var(--line-height-150);
-}
-
-.blockquote > figcaption {
-    font-family: var(--family-sans-serif);
-    font-size: var(--size-6);
-    text-align: left;
-    line-height: var(--line-height-125);
-    padding: var(--pad-vert) var(--pad-horz);
-}
-
-.blockquote > figcaption > cite {
-    display: block;
-    font-weight: var(--weight-normal);
-    font-style: italic;
-    text-indent: 2ch;
-}
-
-.blockquote > figcaption::before {
-    content: "— ";
-}
-
-@media screen and (max-width: 576px){
     .blockquote {
-        max-width: 100%;
+        display: block;
+        padding: var(--pad-vert) var(--pad-horz);
+        margin: var(--margin-medium) auto;
+        max-width: 60ch;
+
+        background-color: var(--bg-component);
+        border-left: 0.3rem solid var(--secondary);
+        break-inside: avoid;
     }
 
-    .blockquote > figcaption cite {
-        display: block;
-        padding-left: 1rem;
+    .blockquote > blockquote {
+        color: var(--text-darker);
+        font-size: var(--size-5);
+        font-weight: var(--weight-semibold);
+        font-family: var(--family-serif), serif;
+        line-height: var(--line-height-150);
     }
+
+    .blockquote > figcaption {
+        font-family: var(--family-sans-serif), sans-serif;
+        font-size: var(--size-6);
+        text-align: left;
+        line-height: var(--line-height-125);
+        padding: var(--pad-vert) var(--pad-horz);
+    }
+
+    .blockquote > figcaption > cite {
+        display: block;
+        font-weight: var(--weight-normal);
+        font-style: italic;
+        text-indent: 2ch;
+    }
+
+    .blockquote > figcaption::before {
+        content: "— ";
+    }
+
+    @media screen and (max-width: 576px) {
+        .blockquote {
+            max-width: 100%;
+        }
+
+        .blockquote > figcaption cite {
+            display: block;
+            padding-left: 1rem;
+        }
+    }
+
 }

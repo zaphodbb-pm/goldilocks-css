@@ -1,70 +1,74 @@
-/* fixed heights for elements / components */
-.has-height-5rem {
-    height: 5rem;
-}
+/* heights.css - fixed heights for elements / components */
 
-.has-height-10rem {
-    height: 10rem;
-}
+@layer layout {
 
-.has-height-12rem {
-    height: 12rem;
-}
+    .has-height-5rem {
+        height: 5rem;
+    }
 
-.has-height-15rem {
-    height: 15rem;
-}
+    .has-height-10rem {
+        height: 10rem;
+    }
 
-.has-height-20rem {
-    height: 20rem;
-}
+    .has-height-12rem {
+        height: 12rem;
+    }
 
-.has-height-25rem {
-    height: 25rem;
-}
+    .has-height-15rem {
+        height: 15rem;
+    }
 
-.has-height-30rem {
-    height: 30rem;
-}
+    .has-height-20rem {
+        height: 20rem;
+    }
 
-.has-height-40rem {
-    height: 40rem;
-}
+    .has-height-25rem {
+        height: 25rem;
+    }
 
-/* defines general purpose containers to create, for example, a hero section */
+    .has-height-30rem {
+        height: 30rem;
+    }
 
-[class*="is-container"]{
-    width: 100%;
-}
+    .has-height-40rem {
+        height: 40rem;
+    }
 
-.is-container-5rem {
-    height: 5rem;
-}
+    /* defines general purpose containers to create, for example, a hero section */
+    [class*="is-container"] {
+        width: 100%;
+    }
 
-.is-container-10rem {
-    height: 10rem;
-}
+    .is-container-5rem {
+        height: 5rem;
+    }
 
-.is-container-12rem {
-    height: 12rem;
-}
+    .is-container-10rem {
+        height: 10rem;
+    }
 
-.is-container-15rem {
-    height: 15rem;
-}
+    .is-container-12rem {
+        height: 12rem;
+    }
 
-.is-container-20rem {
-    height: 20rem;
-}
+    .is-container-15rem {
+        height: 15rem;
+    }
 
-.is-container-25rem {
-    height: 25rem;
-}
+    .is-container-20rem {
+        height: 20rem;
+    }
 
-.is-container-30rem {
-    height: 30rem;
-}
+    .is-container-25rem {
+        height: 25rem;
+    }
 
-.is-container-40rem {
-    height: 40rem;
+    .is-container-30rem {
+        height: 30rem;
+    }
+
+    .is-container-40rem {
+        height: 40rem;
+    }
+
 }

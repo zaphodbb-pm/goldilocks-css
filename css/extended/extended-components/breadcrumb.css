@@ -1,88 +1,92 @@
-.breadcrumb {
-    font-size: 1rem;
-    white-space: nowrap;
-    display: block;
-    width: 100%;
-}
+@layer extended {
 
-.breadcrumb ul,
-.breadcrumb ol {
-    align-items: flex-start;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex-direction: row;
-}
+    .breadcrumb {
+        font-size: 1rem;
+        white-space: nowrap;
+        display: block;
+        width: 100%;
+    }
 
-.breadcrumb a {
-    align-items: center;
-    color: var(--link);
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-}
+    .breadcrumb ul,
+    .breadcrumb ol {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
 
-.breadcrumb a:hover {
-    color: var(--text-darker);
-}
+    .breadcrumb a {
+        align-items: center;
+        color: var(--link);
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
 
-.breadcrumb li {
-    list-style: none;
-    text-indent: 0;
-    align-items: center;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
+    .breadcrumb a:hover {
+        color: var(--text-darker);
+    }
 
-.breadcrumb li:last-child a {
-    color: var(--text-darker);
-    cursor: default;
-    pointer-events: none;
-}
+    .breadcrumb li {
+        list-style: none;
+        text-indent: 0;
+        align-items: center;
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
 
-.breadcrumb li + li::before {
-    color: var(--link);
-    content: var(--breadcrumb-separator);
-    padding: 0 var(--pad-horz);
-}
+    .breadcrumb li:last-child a {
+        color: var(--text-darker);
+        cursor: default;
+        pointer-events: none;
+    }
 
-.breadcrumb.is-centered ol,
-.breadcrumb.is-centered ul {
-    justify-content: center;
-}
+    .breadcrumb li + li::before {
+        color: var(--link);
+        content: var(--breadcrumb-separator);
+        padding: 0 var(--pad-horz);
+    }
 
-.breadcrumb.is-right ol,
-.breadcrumb.is-right ul {
-    justify-content: flex-end;
-}
+    .breadcrumb.is-centered ol,
+    .breadcrumb.is-centered ul {
+        justify-content: center;
+    }
 
-.breadcrumb.is-small {
-    font-size: var(--size-7);
-}
+    .breadcrumb.is-right ol,
+    .breadcrumb.is-right ul {
+        justify-content: flex-end;
+    }
 
-.breadcrumb.is-small li + li::before {
-    padding: 0 calc( 0.5 * var(--pad-horz) );
-}
+    .breadcrumb.is-small {
+        font-size: var(--size-7);
+    }
 
-.breadcrumb.is-medium {
-    font-size:var(--size-5);
-}
+    .breadcrumb.is-small li + li::before {
+        padding: 0 calc(0.5 * var(--pad-horz));
+    }
 
-.breadcrumb.is-large {
-    font-size: var(--size-4);
-}
+    .breadcrumb.is-medium {
+        font-size: var(--size-5);
+    }
+
+    .breadcrumb.is-large {
+        font-size: var(--size-4);
+    }
 
 
-/* control for background icon */
-.breadcrumb  li span:last-child {
-    margin: 0 0 0 0.5em;
-    font-size:1em;
-}
+    /* control for background icon */
+    .breadcrumb li span:last-child {
+        margin: 0 0 0 0.5em;
+        font-size: 1em;
+    }
 
-.breadcrumb li span:first-child {
-    margin: 0 0.5em 0 0;
-    font-size:1em;
+    .breadcrumb li span:first-child {
+        margin: 0 0.5em 0 0;
+        font-size: 1em;
+    }
+
 }

@@ -1,72 +1,77 @@
 /* icon main controls */
-.icon {
-    height: 1em;
-    width: 1em;
-    font-size: var(--size-4);
-    margin: 0 var(--padding);
-}
 
-.icon-nav {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 0;
-    margin:0;
-    column-gap: 0;
-    row-gap: 0;
+@layer extended {
 
-    align-items: center;
-}
+    .icon {
+        height: 1em;
+        width: 1em;
+        font-size: var(--size-4);
+        margin: 0 var(--padding);
+    }
 
-.icon-nav-horz {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 0;
-    margin:0;
-    column-gap: 0;
-    row-gap: 0;
+    .icon-nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+        column-gap: 0;
+        row-gap: 0;
 
-    justify-content: flex-start;
-    align-items: center;
-}
+        align-items: center;
+    }
 
-.icon-nav-horz .icon {
-    margin-left: 0;
-}
+    .icon-nav-horz {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 0;
+        margin: 0;
+        column-gap: 0;
+        row-gap: 0;
+
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .icon-nav-horz .icon {
+        margin-left: 0;
+    }
 
 
-/* using backgrounds for svg images */
-[class*="icon-bg-"]:not(.icon-nav) {
-    height: var(--size-4);
-    width: var(--size-4);
-    vertical-align: text-bottom;
-    margin: 0   var(--padding);
-    background-color: currentColor;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    display: inline-block;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-}
+    /* using backgrounds for svg images */
+    [class*="icon-bg-"]:not(.icon-nav) {
+        height: var(--size-4);
+        width: var(--size-4);
+        vertical-align: text-bottom;
+        margin: 0 var(--padding);
+        background-color: currentColor;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        display: inline-block;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+    }
 
-[class*="icon-bg-"].is-extra-large {
-    height: 2.5rem;
-    width: 2.5rem;
-}
+    [class*="icon-bg-"].is-extra-large {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
 
-[class*="icon-bg-"].is-large {
-    height: var(--size-1);
-    width: var(--size-1);
-}
+    [class*="icon-bg-"].is-large {
+        height: var(--size-1);
+        width: var(--size-1);
+    }
 
-[class*="icon-bg-"].is-medium {
-    height: var(--size-3);
-    width: var(--size-3);
-}
+    [class*="icon-bg-"].is-medium {
+        height: var(--size-3);
+        width: var(--size-3);
+    }
 
-[class*="icon-bg-"].is-small {
-    height: var(--size-6);
-    width: var(--size-6);
+    [class*="icon-bg-"].is-small {
+        height: var(--size-6);
+        width: var(--size-6);
+    }
+
 }
