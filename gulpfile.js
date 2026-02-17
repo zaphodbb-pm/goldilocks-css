@@ -6,6 +6,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const concat = require("gulp-concat")
 
 function buildCore() {
+    console.log("Building Core");
     return gulpit
         .src([
             './css/core/base/*.css',
@@ -24,6 +25,7 @@ function buildCore() {
 }
 
 function buildElements() {
+    console.log("Building Elements");
     return gulpit
         .src([
             './css/core/base/*.css',
@@ -43,6 +45,7 @@ function buildElements() {
 }
 
 function buildExtended() {
+    console.log("Building Extended");
     return gulpit
         .src('./css/extended/**/*.css')
         //.pipe(autoprefixer())
@@ -57,6 +60,7 @@ function buildExtended() {
 }
 
 function buildExtras() {
+    console.log("Building Extras");
     return gulpit
         .src('./css/extras/**/*.css')
         //.pipe(autoprefixer())
@@ -71,6 +75,7 @@ function buildExtras() {
 }
 
 function buildCoreExtended() {
+    console.log("Building Core Extended");
     return gulpit
         .src([
             './css/core/base/*.css',
@@ -91,6 +96,7 @@ function buildCoreExtended() {
 }
 
 function buildAll() {
+    console.log("Building All");
     return gulpit
         .src([
             './css/core/base/*.css',

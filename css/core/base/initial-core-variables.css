@@ -5,10 +5,7 @@
     @layer base, layout, elements, extended, extras, custom;
 
 
-
-    @layer base {
-
-        :root {
+    :root {
 
         /* Awareness variables - for info only */
         /** Typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
@@ -181,5 +178,3 @@
     </svg>');
 
     }
-
-}

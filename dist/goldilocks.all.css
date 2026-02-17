@@ -5,42 +5,38 @@
     @layer base, layout, elements, extended, extras, custom;
 
 
-
-@layer base
+:root
 {
-
-    :root
-    {
         /* Awareness variables - for info only */
         /** Typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
         /** Files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
-        --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
+    --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
         /* Base measurement unit to be used for font, margins and padding */
         /* Changing the base html factor allows a user to change the font sizes to meet accessibility needs */
-        --base-html-factor: 100%;
-        --base-rem: 1rem;
+    --base-html-factor: 100%;
+    --base-rem: 1rem;
         /* Typography */
         /** Note: text colors are set in file: initial-colors.css **/
         /** Default is to use system fonts as much as possible **/
-        --family-sans-serif: 'Tahoma', 'Helvetica Neue', 'Helvetica', 'Arial', 'Segoe UI', 'Roboto', sans-serif;
-        --family-serif: 'Georgia', 'Times New Roman', serif;
-        --family-monospace: monospace;
-        --render-mode: optimizeLegibility;
+    --family-sans-serif: 'Tahoma', 'Helvetica Neue', 'Helvetica', 'Arial', 'Segoe UI', 'Roboto', sans-serif;
+    --family-serif: 'Georgia', 'Times New Roman', serif;
+    --family-monospace: monospace;
+    --render-mode: optimizeLegibility;
         /** Define font weights here **/
-        --weight-light: 300;
-        --weight-normal: 400;
-        --weight-semibold: 600;
-        --weight-bold: 700;
+    --weight-light: 300;
+    --weight-normal: 400;
+    --weight-semibold: 600;
+    --weight-bold: 700;
         /** Adjustable using a variable font size for all screen sizes
             - font-size is variable and tracks viewport to a width of 100rem (1600 px)
             - maximum font-size is set to 3 * base (nominal 48px)
          **/
-        --base-font-size: clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) );
+    --base-font-size: clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) );
         /** Text line heights to match size **/
-        --line-height-125: 125%;
-        --line-height-150: 150%;
-        --line-height-175: 175%;
-        --line-height-200: 200%;
+    --line-height-125: 125%;
+    --line-height-150: 150%;
+    --line-height-175: 175%;
+    --line-height-200: 200%;
         /** Sizing pattern - typically for text **/
         /*** typical factors: (see https://typescale.com)
             1.125 (Major Second) - A balanced choice for most UI designs.
@@ -48,186 +44,181 @@
             1.25 (Major Third) - A very popular choice that provides enough distinction between heading levels.
             1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
         ***/
-        --size-factor: 1.125;
-        --size-7: calc( 1rem / var(--size-factor) );                /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
-        --size-6: 1rem;                                             /* Example 1.125 scale factor:  --size-6 = 1 rem; */
-        --size-5: calc( var(--size-6) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
-        --size-4: calc( var(--size-5) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
-        --size-3: calc( var(--size-4) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
-        --size-2: calc( var(--size-3) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
-        --size-1: calc( var(--size-2) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
+    --size-factor: 1.125;
+    --size-7: calc( 1rem / var(--size-factor) );                /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
+    --size-6: 1rem;                                             /* Example 1.125 scale factor:  --size-6 = 1 rem; */
+    --size-5: calc( var(--size-6) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
+    --size-4: calc( var(--size-5) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
+    --size-3: calc( var(--size-4) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
+    --size-2: calc( var(--size-3) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
+    --size-1: calc( var(--size-2) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
         /* Grid Key Variables */
-        --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
-        --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
-        --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
+    --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
+    --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
+    --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
         /* basic spacing values */
         /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
-        --space-element: var(--base-font-size);
-        --space-block: calc(2 * var(--base-font-size));
-        --space-collection: calc(4 * var(--base-font-size));
-        --space-container: calc(5 * var(--base-font-size));
+    --space-element: var(--base-font-size);
+    --space-block: calc(2 * var(--base-font-size));
+    --space-collection: calc(4 * var(--base-font-size));
+    --space-container: calc(5 * var(--base-font-size));
         /* Flexbox element spacing */
-        --gap-row: calc( 1 * var(--base-font-size) );
-        --gap-col: calc( 1 * var(--base-font-size) );
+    --gap-row: calc( 1 * var(--base-font-size) );
+    --gap-col: calc( 1 * var(--base-font-size) );
         /* Elements Controls */
-        --pad-horz: var(--base-font-size);
-        --pad-vert: calc( .5 * var(--base-font-size) );
-        --pad-horz-small: calc( .5 * var(--base-font-size) );
-        --pad-vert-small: calc( .25 * var(--base-font-size) );
-        --padding: calc(.75 * var(--base-font-size));
-        --padding-normal: var(--base-font-size);
-        --padding-medium: calc( 1.5 * var(--base-font-size) );
-        --padding-large: calc( 3 * var(--base-font-size) );
-        --mar-horz: calc( .5 * var(--base-font-size) );
-        --mar-vert: calc( .5 * var(--base-font-size) );
-        --margin: var(--base-font-size);
-        --margin-form: calc(1.5 * var(--base-font-size));
-        --margin-medium: calc(3 * var(--base-font-size));
-        --margin-large: calc(5 * var(--base-font-size));
+    --pad-horz: var(--base-font-size);
+    --pad-vert: calc( .5 * var(--base-font-size) );
+    --pad-horz-small: calc( .5 * var(--base-font-size) );
+    --pad-vert-small: calc( .25 * var(--base-font-size) );
+    --padding: calc(.75 * var(--base-font-size));
+    --padding-normal: var(--base-font-size);
+    --padding-medium: calc( 1.5 * var(--base-font-size) );
+    --padding-large: calc( 3 * var(--base-font-size) );
+    --mar-horz: calc( .5 * var(--base-font-size) );
+    --mar-vert: calc( .5 * var(--base-font-size) );
+    --margin: var(--base-font-size);
+    --margin-form: calc(1.5 * var(--base-font-size));
+    --margin-medium: calc(3 * var(--base-font-size));
+    --margin-large: calc(5 * var(--base-font-size));
         /* Component Controls */
-        --radius: calc(.5 * var(--base-font-size));
-        --radius-small: calc(.5 * var(--radius));
-        --radius-comp: calc(1 * var(--radius));
-        --radius-elem: calc(1.5 * var(--radius));
-        --radius-rounded: 10000px;
+    --radius: calc(.5 * var(--base-font-size));
+    --radius-small: calc(.5 * var(--radius));
+    --radius-comp: calc(1 * var(--radius));
+    --radius-elem: calc(1.5 * var(--radius));
+    --radius-rounded: 10000px;
         /* Navbar settings */
-        --navbar-height: 4rem;
-        --navbar-offset: 0;
-        --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
+    --navbar-height: 4rem;
+    --navbar-offset: 0;
+    --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
         /* Widgetbar settings */
-        --widgetbar-height: calc( 2 * var(--base-font-size) + .25rem);
-        --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
+    --widgetbar-height: calc( 2 * var(--base-font-size) + .25rem);
+    --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
         /* Breadcrumb setting */
         /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
-        --breadcrumb-separator: '/';
+    --breadcrumb-separator: '/';
         /* magazine normal width */
-        --magazine-width: 40ch;
+    --magazine-width: 40ch;
         /* carousel image height */
-        --carousel-image-height: 8rem;
-        --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
+    --carousel-image-height: 8rem;
+    --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
         /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
-        --indicator: url('data:image/svg+xml;charset=utf8,\
+    --indicator: url('data:image/svg+xml;charset=utf8,\
     %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
     %20viewBox=\'0%200%2024%2024\'%20\
     fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E\
     %3Cpolyline%20points=\'6%209%2012%2015%2018%209\'/%3E\
     %3C/svg%3E');
-        --indicator-down: url('data:image/svg+xml;charset=utf8,\
+    --indicator-down: url('data:image/svg+xml;charset=utf8,\
     <svg xmlns="http://www.w3.org/2000/svg" \
         width="24" height="24" viewBox="0 0 24 24" \
         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
         <polyline points="6 9 12 15 18 9"/>\
     </svg>');
-        --indicator-up: url('data:image/svg+xml;charset=utf8,\
+    --indicator-up: url('data:image/svg+xml;charset=utf8,\
     <svg xmlns="http://www.w3.org/2000/svg" \
         width="24" height="24" viewBox="0 0 24 24" \
         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
         <polyline points="18 15 12 9 6 15"></polyline>\
     </svg>');
-        --indicator-right: url('data:image/svg+xml;charset=utf8,\
+    --indicator-right: url('data:image/svg+xml;charset=utf8,\
     <svg xmlns="http://www.w3.org/2000/svg" \
         width="24" height="24" viewBox="0 0 24 24" \
         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
         <polyline points="9 18 15 12 9 6"/>\
     </svg>');
-    }
 }
-
-@layer base
+:root
 {
-
-    :root
-    {
-        /* Common shadow treatment for boxed elements */
-        --shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .15), 0 0 0 1px rgba(10, 10, 10, .02);
-        /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
-        /* main theme colour parameters - based on  complement color selection */
-        --main-color: 140;                                  /** primary hue value **/
-        --main-saturation: 70%;                             /** primary saturation value **/
-        --main-lightness: 31%;                              /** primary lightness value **/
-        --secondary-saturation: 75%;                        /** secondary saturation value **/
-        --secondary-lightness: 20%;                         /** secondary saturation value **/
-        --complement-main: calc(var(--main-color) + 180);   /** complement hue value **/
-        --complement-saturation: 70%;                       /** complement saturation value **/
-        --complement-lightness: 40%;                        /** complement lightness value **/
-        /* build main theme colours */
-        --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
-        --secondary: hsl(var(--main-color), var(--complement-saturation), var(--complement-lightness));
-        --complement: hsl(var(--complement-main), var(--complement-saturation), var(--complement-lightness));
-        /* define text colours for main theme, adjusted for expected theme colour luminosity */
-        --primary-text: hsl(var(--main-color), 100%, 25%);
-        --secondary-text: hsl(var(--main-color-complement-low), 100%, 30%);
-        --complement-text: hsl(var(--complement), 100%, 30%);
-        --primary-text-invert: hsl(var(--main-color), 100%, 99%);
-        --secondary-text-invert: hsl(var(--main-color-complement-low), 100%, 99%);
-        --complement-text-invert: hsl(var(--main-color-complement-high), 100%, 99%);
-        /* optional light colors; use carefully as accessibility is hard to achieve */
-        --primary-light: hsl(var(--main-color), var(--main-color-sl-light));
-        --secondary-light: hsl(var(--main-color-complement-low), var(--main-color-sl-light));
-        --complement-light: hsl(var(--main-color-complement-high), var(--main-color-sl-light));
-        --primary-dark: hsl(var(--main-color), var(--main-color-sl-dark));
-        --secondary-dark: hsl(var(--main-color-complement-low), var(--main-color-sl-dark));
-        --complement-dark: hsl(var(--main-color-complement-high), var(--main-color-sl-dark));
-        --link: hsl(217, 71%, 48%);
-        --link-light: hsl(217, 70%, 90%);
-        --link-dark: hsl(217, 71%, 30%);
-        --link-text: hsl(217, 100%, 30%);
-        --link-text-invert: hsl(217, 100%, 95%);
-        --success: hsl(150, 75%, 53%);
-        --success-light: hsl(141, 70%, 96%);
-        --success-dark: hsl(141, 70%, 31%);
-        --success-text: hsl(141, 65%, 20%);
-        --success-text-invert: hsl(141, 100%, 95%);
-        --warning: hsl(48, 100%, 48%);
-        --warning-light: hsl(48, 100%, 95%);
-        --warning-dark: hsl(48, 100%, 40%);
-        --warning-text: hsl(48, 80%, 22%);
-        --warning-text-invert: hsl(48, 100%, 95%);
-        --danger: hsl(348, 86%, 48%);
-        --danger-light: hsl(348, 90%, 97%);
-        --danger-dark: hsl(348, 86%, 33%);
-        --danger-text: hsl(348, 100%, 35%);
-        --danger-text-invert: hsl(348, 100%, 100%);
-        /* additional greys */
-        --black: hsl(0, 0%, 2%);
-        --black-bis: hsl(0, 0%, 10%);
-        --black-ter: hsl(0, 0%, 16%);
-        --grey-darker: hsl(0, 0%, 25%);
-        --grey-dark: hsl(0, 0%, 40%);
-        --grey: hsl(0, 0%, 60%);
-        --grey-light: hsl(0, 0%, 85%);
-        --grey-lighter: hsl(0, 0%, 93%);
-        --white-ter: hsl(0, 0%, 95%);
-        --white-bis: hsl(0, 0%, 98%);
-        --white: hsl(0, 0%, 100%);
-        /* set the body level colours for light mode*/
-        --border-main: var(--grey-light);
-        --border-main-darker: var(--grey);
-        --bg-main: var(--white);
-        --bg-main-elem: var(--white);
-        --bg-main-comp: var(--white);
-        --bg-main-bis: var(--white-bis);
-        --bg-main-ter: var(--white-ter);
-        --bg-main-invert: var(--black-ter);
-        --bg-main-code: var(--white-ter);
-        --bg-grid: var(--white-ter);
-        --bg-element: var(--white-ter);
-        --bg-component: var(--white-bis);
-        --bg-highlight: var(--warning-light);
-        --bg-hover: var(--grey-lighter);
-        --text: var(--black-ter);
-        --text-invert: var(--white);
-        --text-light: var(--grey-dark);
-        --text-darker: var(--black);
-        --text-elem: var(--black-ter);
-        --text-comp: var(--black-ter);
-        --text-invert-ter: var(--white-ter);
-        --text-btn: var(--black);
-        --text-btn-invert: var(--white);
-        --text-bg: var(--white);
-        --text-code: var(--secondary-dark);
-    }
+    /* Common shadow treatment for boxed elements */
+    --shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .15), 0 0 0 1px rgba(10, 10, 10, .02);
+    /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
+    /* main theme colour parameters - based on  complement color selection */
+    --main-color: 140;                                  /** primary hue value **/
+    --main-saturation: 70%;                             /** primary saturation value **/
+    --main-lightness: 31%;                              /** primary lightness value **/
+    --secondary-saturation: 75%;                        /** secondary saturation value **/
+    --secondary-lightness: 20%;                         /** secondary saturation value **/
+    --complement-main: calc(var(--main-color) + 180);   /** complement hue value **/
+    --complement-saturation: 70%;                       /** complement saturation value **/
+    --complement-lightness: 40%;                        /** complement lightness value **/
+    /* build main theme colours */
+    --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
+    --secondary: hsl(var(--main-color), var(--complement-saturation), var(--complement-lightness));
+    --complement: hsl(var(--complement-main), var(--complement-saturation), var(--complement-lightness));
+    /* define text colours for main theme, adjusted for expected theme colour luminosity */
+    --primary-text: hsl(var(--main-color), 100%, 25%);
+    --secondary-text: hsl(var(--main-color-complement-low), 100%, 30%);
+    --complement-text: hsl(var(--complement), 100%, 30%);
+    --primary-text-invert: hsl(var(--main-color), 100%, 99%);
+    --secondary-text-invert: hsl(var(--main-color-complement-low), 100%, 99%);
+    --complement-text-invert: hsl(var(--main-color-complement-high), 100%, 99%);
+    /* optional light colors; use carefully as accessibility is hard to achieve */
+    --primary-light: hsl(var(--main-color), var(--main-color-sl-light));
+    --secondary-light: hsl(var(--main-color-complement-low), var(--main-color-sl-light));
+    --complement-light: hsl(var(--main-color-complement-high), var(--main-color-sl-light));
+    --primary-dark: hsl(var(--main-color), var(--main-color-sl-dark));
+    --secondary-dark: hsl(var(--main-color-complement-low), var(--main-color-sl-dark));
+    --complement-dark: hsl(var(--main-color-complement-high), var(--main-color-sl-dark));
+    --link: hsl(217, 71%, 48%);
+    --link-light: hsl(217, 70%, 90%);
+    --link-dark: hsl(217, 71%, 30%);
+    --link-text: hsl(217, 100%, 30%);
+    --link-text-invert: hsl(217, 100%, 95%);
+    --success: hsl(150, 75%, 53%);
+    --success-light: hsl(141, 70%, 96%);
+    --success-dark: hsl(141, 70%, 31%);
+    --success-text: hsl(141, 65%, 20%);
+    --success-text-invert: hsl(141, 100%, 95%);
+    --warning: hsl(48, 100%, 48%);
+    --warning-light: hsl(48, 100%, 95%);
+    --warning-dark: hsl(48, 100%, 40%);
+    --warning-text: hsl(48, 80%, 22%);
+    --warning-text-invert: hsl(48, 100%, 95%);
+    --danger: hsl(348, 86%, 48%);
+    --danger-light: hsl(348, 90%, 97%);
+    --danger-dark: hsl(348, 86%, 33%);
+    --danger-text: hsl(348, 100%, 35%);
+    --danger-text-invert: hsl(348, 100%, 100%);
+    /* additional greys */
+    --black: hsl(0, 0%, 2%);
+    --black-bis: hsl(0, 0%, 10%);
+    --black-ter: hsl(0, 0%, 16%);
+    --grey-darker: hsl(0, 0%, 25%);
+    --grey-dark: hsl(0, 0%, 40%);
+    --grey: hsl(0, 0%, 60%);
+    --grey-light: hsl(0, 0%, 85%);
+    --grey-lighter: hsl(0, 0%, 93%);
+    --white-ter: hsl(0, 0%, 95%);
+    --white-bis: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+    /* set the body level colours for light mode*/
+    --border-main: var(--grey-light);
+    --border-main-darker: var(--grey);
+    --bg-main: var(--white);
+    --bg-main-elem: var(--white);
+    --bg-main-comp: var(--white);
+    --bg-main-bis: var(--white-bis);
+    --bg-main-ter: var(--white-ter);
+    --bg-main-invert: var(--black-ter);
+    --bg-main-code: var(--white-ter);
+    --bg-grid: var(--white-ter);
+    --bg-element: var(--white-ter);
+    --bg-component: var(--white-bis);
+    --bg-highlight: var(--warning-light);
+    --bg-hover: var(--grey-lighter);
+    --text: var(--black-ter);
+    --text-invert: var(--white);
+    --text-light: var(--grey-dark);
+    --text-darker: var(--black);
+    --text-elem: var(--black-ter);
+    --text-comp: var(--black-ter);
+    --text-invert-ter: var(--white-ter);
+    --text-btn: var(--black);
+    --text-btn-invert: var(--white);
+    --text-bg: var(--white);
+    --text-code: var(--secondary-dark);
 }
+
 /*
 main dark theme color definitions
 use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors

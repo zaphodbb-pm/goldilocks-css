@@ -1,117 +1,113 @@
-@layer base {
+:root {
+    /* Common shadow treatment for boxed elements */
+    --shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);
 
-    :root {
-        /* Common shadow treatment for boxed elements */
-        --shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);
+    /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
+    /* main theme colour parameters - based on  complement color selection */
+    --main-color: 140;                                  /** primary hue value **/
+    --main-saturation: 70%;                             /** primary saturation value **/
+    --main-lightness: 31%;                              /** primary lightness value **/
 
-        /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
-        /* main theme colour parameters - based on  complement color selection */
-        --main-color: 140;                                  /** primary hue value **/
-        --main-saturation: 70%;                             /** primary saturation value **/
-        --main-lightness: 31%;                              /** primary lightness value **/
+    --secondary-saturation: 75%;                        /** secondary saturation value **/
+    --secondary-lightness: 20%;                         /** secondary saturation value **/
 
-        --secondary-saturation: 75%;                        /** secondary saturation value **/
-        --secondary-lightness: 20%;                         /** secondary saturation value **/
+    --complement-main: calc(var(--main-color) + 180);   /** complement hue value **/
+    --complement-saturation: 70%;                       /** complement saturation value **/
+    --complement-lightness: 40%;                        /** complement lightness value **/
 
-        --complement-main: calc(var(--main-color) + 180);   /** complement hue value **/
-        --complement-saturation: 70%;                       /** complement saturation value **/
-        --complement-lightness: 40%;                        /** complement lightness value **/
+    /* build main theme colours */
+    --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
+    --secondary: hsl(var(--main-color), var(--complement-saturation), var(--complement-lightness));
+    --complement: hsl(var(--complement-main), var(--complement-saturation), var(--complement-lightness));
 
-        /* build main theme colours */
-        --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
-        --secondary: hsl(var(--main-color), var(--complement-saturation), var(--complement-lightness));
-        --complement: hsl(var(--complement-main), var(--complement-saturation), var(--complement-lightness));
+    /* define text colours for main theme, adjusted for expected theme colour luminosity */
+    --primary-text: hsl(var(--main-color), 100%, 25%);
+    --secondary-text: hsl(var(--main-color-complement-low), 100%, 30%);
+    --complement-text: hsl(var(--complement), 100%, 30%);
 
-        /* define text colours for main theme, adjusted for expected theme colour luminosity */
-        --primary-text: hsl(var(--main-color), 100%, 25%);
-        --secondary-text: hsl(var(--main-color-complement-low), 100%, 30%);
-        --complement-text: hsl(var(--complement), 100%, 30%);
+    --primary-text-invert: hsl(var(--main-color), 100%, 99%);
+    --secondary-text-invert: hsl(var(--main-color-complement-low), 100%, 99%);
+    --complement-text-invert: hsl(var(--main-color-complement-high), 100%, 99%);
 
-        --primary-text-invert: hsl(var(--main-color), 100%, 99%);
-        --secondary-text-invert: hsl(var(--main-color-complement-low), 100%, 99%);
-        --complement-text-invert: hsl(var(--main-color-complement-high), 100%, 99%);
+    /* optional light colors; use carefully as accessibility is hard to achieve */
+    --primary-light: hsl(var(--main-color), var(--main-color-sl-light));
+    --secondary-light: hsl(var(--main-color-complement-low), var(--main-color-sl-light));
+    --complement-light: hsl(var(--main-color-complement-high), var(--main-color-sl-light));
 
-        /* optional light colors; use carefully as accessibility is hard to achieve */
-        --primary-light: hsl(var(--main-color), var(--main-color-sl-light));
-        --secondary-light: hsl(var(--main-color-complement-low), var(--main-color-sl-light));
-        --complement-light: hsl(var(--main-color-complement-high), var(--main-color-sl-light));
+    --primary-dark: hsl(var(--main-color), var(--main-color-sl-dark));
+    --secondary-dark: hsl(var(--main-color-complement-low), var(--main-color-sl-dark));
+    --complement-dark: hsl(var(--main-color-complement-high), var(--main-color-sl-dark));
 
-        --primary-dark: hsl(var(--main-color), var(--main-color-sl-dark));
-        --secondary-dark: hsl(var(--main-color-complement-low), var(--main-color-sl-dark));
-        --complement-dark: hsl(var(--main-color-complement-high), var(--main-color-sl-dark));
+    --link: hsl(217, 71%, 48%);
+    --link-light: hsl(217, 70%, 90%);
+    --link-dark: hsl(217, 71%, 30%);
+    --link-text: hsl(217, 100%, 30%);
+    --link-text-invert: hsl(217, 100%, 95%);
 
-        --link: hsl(217, 71%, 48%);
-        --link-light: hsl(217, 70%, 90%);
-        --link-dark: hsl(217, 71%, 30%);
-        --link-text: hsl(217, 100%, 30%);
-        --link-text-invert: hsl(217, 100%, 95%);
+    --success: hsl(150, 75%, 53%);
+    --success-light: hsl(141, 70%, 96%);
+    --success-dark: hsl(141, 70%, 31%);
+    --success-text: hsl(141, 65%, 20%);
+    --success-text-invert: hsl(141, 100%, 95%);
 
-        --success: hsl(150, 75%, 53%);
-        --success-light: hsl(141, 70%, 96%);
-        --success-dark: hsl(141, 70%, 31%);
-        --success-text: hsl(141, 65%, 20%);
-        --success-text-invert: hsl(141, 100%, 95%);
+    --warning: hsl(48, 100%, 48%);
+    --warning-light: hsl(48, 100%, 95%);
+    --warning-dark: hsl(48, 100%, 40%);
+    --warning-text: hsl(48, 80%, 22%);
+    --warning-text-invert: hsl(48, 100%, 95%);
 
-        --warning: hsl(48, 100%, 48%);
-        --warning-light: hsl(48, 100%, 95%);
-        --warning-dark: hsl(48, 100%, 40%);
-        --warning-text: hsl(48, 80%, 22%);
-        --warning-text-invert: hsl(48, 100%, 95%);
-
-        --danger: hsl(348, 86%, 48%);
-        --danger-light: hsl(348, 90%, 97%);
-        --danger-dark: hsl(348, 86%, 33%);
-        --danger-text: hsl(348, 100%, 35%);
-        --danger-text-invert: hsl(348, 100%, 100%);
+    --danger: hsl(348, 86%, 48%);
+    --danger-light: hsl(348, 90%, 97%);
+    --danger-dark: hsl(348, 86%, 33%);
+    --danger-text: hsl(348, 100%, 35%);
+    --danger-text-invert: hsl(348, 100%, 100%);
 
 
-        /* additional greys */
-        --black: hsl(0, 0%, 2%);
-        --black-bis: hsl(0, 0%, 10%);
-        --black-ter: hsl(0, 0%, 16%);
+    /* additional greys */
+    --black: hsl(0, 0%, 2%);
+    --black-bis: hsl(0, 0%, 10%);
+    --black-ter: hsl(0, 0%, 16%);
 
-        --grey-darker: hsl(0, 0%, 25%);
-        --grey-dark: hsl(0, 0%, 40%);
-        --grey: hsl(0, 0%, 60%);
-        --grey-light: hsl(0, 0%, 85%);
-        --grey-lighter: hsl(0, 0%, 93%);
+    --grey-darker: hsl(0, 0%, 25%);
+    --grey-dark: hsl(0, 0%, 40%);
+    --grey: hsl(0, 0%, 60%);
+    --grey-light: hsl(0, 0%, 85%);
+    --grey-lighter: hsl(0, 0%, 93%);
 
-        --white-ter: hsl(0, 0%, 95%);
-        --white-bis: hsl(0, 0%, 98%);
-        --white: hsl(0, 0%, 100%);
+    --white-ter: hsl(0, 0%, 95%);
+    --white-bis: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
 
 
-        /* set the body level colours for light mode*/
-        --border-main: var(--grey-light);
-        --border-main-darker: var(--grey);
+    /* set the body level colours for light mode*/
+    --border-main: var(--grey-light);
+    --border-main-darker: var(--grey);
 
-        --bg-main: var(--white);
-        --bg-main-elem: var(--white);
-        --bg-main-comp: var(--white);
-        --bg-main-bis: var(--white-bis);
-        --bg-main-ter: var(--white-ter);
-        --bg-main-invert: var(--black-ter);
-        --bg-main-code: var(--white-ter);
+    --bg-main: var(--white);
+    --bg-main-elem: var(--white);
+    --bg-main-comp: var(--white);
+    --bg-main-bis: var(--white-bis);
+    --bg-main-ter: var(--white-ter);
+    --bg-main-invert: var(--black-ter);
+    --bg-main-code: var(--white-ter);
 
-        --bg-grid: var(--white-ter);
-        --bg-element: var(--white-ter);
-        --bg-component: var(--white-bis);
-        --bg-highlight: var(--warning-light);
-        --bg-hover: var(--grey-lighter);
+    --bg-grid: var(--white-ter);
+    --bg-element: var(--white-ter);
+    --bg-component: var(--white-bis);
+    --bg-highlight: var(--warning-light);
+    --bg-hover: var(--grey-lighter);
 
-        --text: var(--black-ter);
-        --text-invert: var(--white);
-        --text-light: var(--grey-dark);
-        --text-darker: var(--black);
+    --text: var(--black-ter);
+    --text-invert: var(--white);
+    --text-light: var(--grey-dark);
+    --text-darker: var(--black);
 
-        --text-elem: var(--black-ter);
-        --text-comp: var(--black-ter);
-        --text-invert-ter: var(--white-ter);
+    --text-elem: var(--black-ter);
+    --text-comp: var(--black-ter);
+    --text-invert-ter: var(--white-ter);
 
-        --text-btn: var(--black);
-        --text-btn-invert: var(--white);
-        --text-bg: var(--white);
-        --text-code: var(--secondary-dark);
-    }
-
+    --text-btn: var(--black);
+    --text-btn-invert: var(--white);
+    --text-bg: var(--white);
+    --text-code: var(--secondary-dark);
 }
