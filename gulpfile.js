@@ -10,11 +10,29 @@ function buildCore() {
         .src([
             './css/core/base/*.css',
             './css/core/core-layout/*.css',
-            './css/core/core-elements/*.css',
             './css/core/core-helpers/*.css'
         ])
         //.pipe(autoprefixer())
         .pipe(concat("goldilocks.core.css"))
+        .pipe(csscomb())
+        .pipe(gulpit.dest('./dist'))
+        .pipe(cleancss())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulpit.dest('./dist'));
+}
+
+function buildElements() {
+    return gulpit
+        .src([
+            './css/core/base/*.css',
+            './css/core/core-layout/*.css',
+            './css/core/core-helpers/*.css',
+            './css/core/core-elements/*.css'
+        ])
+        //.pipe(autoprefixer())
+        .pipe(concat("goldilocks.elements.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
         .pipe(cleancss())
@@ -77,10 +95,10 @@ function buildAll() {
         .src([
             './css/core/base/*.css',
             './css/core/core-layout/*.css',
+            './css/core/core-helpers/*.css',
             './css/core/core-elements/*.css',
             './css/extended/**/*.css',
             './css/extras/**/*.css',
-            './css/core/core-helpers/*.css'
         ])
         //.pipe(autoprefixer())
         .pipe(concat("goldilocks.all.css"))
@@ -100,6 +118,7 @@ function watch() {
 
 //exports.watch = watch;
 exports.buildCore = buildCore;
+exports.buildElements = buildElements;
 exports.buildExtended = buildExtended;
 exports.buildExtras = buildExtras;
 exports.buildCoreExtended = buildCoreExtended;
