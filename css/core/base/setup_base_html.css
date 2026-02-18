@@ -1,9 +1,11 @@
+/* Define layers organization for all sebsequent files */
+@layer base, layout, elements, extended, extras, custom;
+
 /* Pure css HTML base elements and reset */
+/** set global environment **/
 /** note that some HTML tags are set in other element files **/
 
 @layer base {
-
-    /** set global environment **/
     html {
         margin: 0;
         padding: 0;

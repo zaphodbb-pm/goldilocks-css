@@ -1,9 +1,6 @@
 
     /* version 1.0.0 - February 17, 2026 - v4 */
-
-    /* Layers organization */
-    @layer base, layout, elements, extended, extras, custom;
-
+    /** Note that variables can set programatically and so do not need to be in a layer **/
 
     :root {
 
@@ -11,6 +8,7 @@
         /** Typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
         /** Files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
         --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
+
 
 
         /* Base measurement unit to be used for font, margins and padding */
