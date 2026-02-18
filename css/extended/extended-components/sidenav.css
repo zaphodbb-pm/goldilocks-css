@@ -121,7 +121,7 @@
 
     .sidenav-block input:checked + label::after {
         transform: rotate(90deg);
-        top: 0.5em;
+        top: 0.75em;
         right: 0;
     }
 

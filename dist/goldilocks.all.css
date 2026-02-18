@@ -5596,7 +5596,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .sidenav-block input:checked + label::after
     {
-        top: .5em;
+        top: .75em;
         right: 0;
 
         transform: rotate(90deg);
