@@ -5522,7 +5522,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         position: absolute;
         /* adds right chevron */
-        top: .5em;
+        top: .75em;
         right: 0;
 
         width: 2.5rem;

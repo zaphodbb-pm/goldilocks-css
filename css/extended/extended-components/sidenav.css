@@ -67,7 +67,7 @@
         position: absolute;
 
         /* adds right chevron */
-        top: 0.5em;
+        top: 0.75em;
         right: 0;
         background-color: currentColor;
         mask-image: var(--indicator-right);
