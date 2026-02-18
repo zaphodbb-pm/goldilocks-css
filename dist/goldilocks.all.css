@@ -22,6 +22,7 @@
     /** Define font weights here **/
     --weight-light: 300;
     --weight-normal: 400;
+    --weight-medium: 500;
     --weight-semibold: 600;
     --weight-bold: 700;
     /** Adjustable using a variable font size for all screen sizes
@@ -5508,7 +5509,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .sidenav-block > label
     {
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
 
         position: relative;
 

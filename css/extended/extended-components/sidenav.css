@@ -54,7 +54,7 @@
 
     .sidenav-block > label {
         margin: 0;
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
         cursor: pointer;
         position: relative;
         padding: var(--pad-vert) 2.5rem var(--pad-vert) var(--pad-horz);
