@@ -35,19 +35,6 @@
     --complement-text-invert: hsl(var(--complement-main), 100%, 99%);
 
 
-    /* For dark theme, lighten theme colours by 10% */
-    .main-theme-dark {
-        --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness) + 10%);
-        --secondary: hsl(var(--main-color), var(--secondary-saturation), var(--secondary-lightness) + 10% );
-        --complement: hsl(var(--complement-main), var(--complement-saturation), var(--complement-lightness) + 10%);
-
-        --primary-text: hsl( var(--main-color), 100%, 28%);
-        --secondary-text: hsl( var(--main-color), 100%, 47%);
-        --complement-text: hsl( var(--complement-main), 100%, 47%);
-    }
-
-
-
     /* optional light colors; use carefully as accessibility is hard to achieve */
     --primary-light: hsl(var(--main-color), 70%, 70%);
     --secondary-light: hsl(var(--main-color), var(--main-color-sl-light));
@@ -123,4 +110,16 @@
     --text-btn-invert: var(--white);
     --text-bg: var(--white);
     --text-code: var(--secondary-dark);
+}
+
+
+/* For dark theme, lighten theme colours by 10% */
+.main-theme-dark {
+    --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness) + 10%);
+    --secondary: hsl(var(--main-color), var(--secondary-saturation), var(--secondary-lightness) + 10% );
+    --complement: hsl(var(--complement-main), var(--complement-saturation), var(--complement-lightness) + 10%);
+
+    --primary-text: hsl( var(--main-color), 100%, 28%);
+    --secondary-text: hsl( var(--main-color), 100%, 47%);
+    --complement-text: hsl( var(--complement-main), 100%, 47%);
 }

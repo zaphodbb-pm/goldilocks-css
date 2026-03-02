@@ -141,42 +141,36 @@
     --complement-lightness: 40%;                        /** complement lightness value **/
     /* build main theme colours */
     --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
-    --secondary: hsl(var(--main-color), var(--complement-saturation), var(--complement-lightness));
+    --secondary: hsl(var(--main-color), var(--secondary-saturation), var(--secondary-lightness));
     --complement: hsl(var(--complement-main), var(--complement-saturation), var(--complement-lightness));
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: hsl(var(--main-color), 100%, 25%);
-    --secondary-text: hsl(var(--main-color-complement-low), 100%, 30%);
-    --complement-text: hsl(var(--complement), 100%, 30%);
+    --secondary-text: hsl(var(--main-color), 100%, 30%);
+    --complement-text: hsl(var(--complement-main), 100%, 30%);
     --primary-text-invert: hsl(var(--main-color), 100%, 99%);
-    --secondary-text-invert: hsl(var(--main-color-complement-low), 100%, 99%);
-    --complement-text-invert: hsl(var(--main-color-complement-high), 100%, 99%);
+    --secondary-text-invert: hsl(var(--main-color), 100%, 99%);
+    --complement-text-invert: hsl(var(--complement-main), 100%, 99%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
-    --primary-light: hsl(var(--main-color), var(--main-color-sl-light));
-    --secondary-light: hsl(var(--main-color-complement-low), var(--main-color-sl-light));
-    --complement-light: hsl(var(--main-color-complement-high), var(--main-color-sl-light));
-    --primary-dark: hsl(var(--main-color), var(--main-color-sl-dark));
-    --secondary-dark: hsl(var(--main-color-complement-low), var(--main-color-sl-dark));
-    --complement-dark: hsl(var(--main-color-complement-high), var(--main-color-sl-dark));
+    --primary-light: hsl(var(--main-color), 70%, 70%);
+    --secondary-light: hsl(var(--main-color), var(--main-color-sl-light));
+    --complement-light: hsl(var(--complement-main), var(--main-color-sl-light));
+    --primary-dark: hsl(var(--main-color), 70%, 30%);
+    --secondary-dark: hsl(var(--main-color), 70%, 20%);
+    --complement-dark: hsl(var(--complement-main), 50%, 30%);
     --link: hsl(217, 71%, 48%);
-    --link-light: hsl(217, 70%, 90%);
-    --link-dark: hsl(217, 71%, 30%);
     --link-text: hsl(217, 100%, 30%);
-    --link-text-invert: hsl(217, 100%, 95%);
     --success: hsl(150, 75%, 53%);
     --success-light: hsl(141, 70%, 96%);
     --success-dark: hsl(141, 70%, 31%);
     --success-text: hsl(141, 65%, 20%);
-    --success-text-invert: hsl(141, 100%, 95%);
     --warning: hsl(48, 100%, 48%);
     --warning-light: hsl(48, 100%, 95%);
     --warning-dark: hsl(48, 100%, 40%);
     --warning-text: hsl(48, 80%, 22%);
-    --warning-text-invert: hsl(48, 100%, 95%);
     --danger: hsl(348, 86%, 48%);
     --danger-light: hsl(348, 90%, 97%);
     --danger-dark: hsl(348, 86%, 33%);
     --danger-text: hsl(348, 100%, 35%);
-    --danger-text-invert: hsl(348, 100%, 100%);
     /* additional greys */
     --black: hsl(0, 0%, 2%);
     --black-bis: hsl(0, 0%, 10%);
@@ -215,6 +209,18 @@
     --text-btn-invert: var(--white);
     --text-bg: var(--white);
     --text-code: var(--secondary-dark);
+}
+
+
+/* For dark theme, lighten theme colours by 10% */
+.main-theme-dark
+{
+    --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness) + 10%);
+    --secondary: hsl(var(--main-color), var(--secondary-saturation), var(--secondary-lightness) + 10% );
+    --complement: hsl(var(--complement-main), var(--complement-saturation), var(--complement-lightness) + 10%);
+    --primary-text: hsl( var(--main-color), 100%, 28%);
+    --secondary-text: hsl( var(--main-color), 100%, 47%);
+    --complement-text: hsl( var(--complement-main), 100%, 47%);
 }
 
 /*
