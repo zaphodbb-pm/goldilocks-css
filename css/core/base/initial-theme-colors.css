@@ -109,7 +109,7 @@
     --text-btn: var(--black);
     --text-btn-invert: var(--white);
     --text-bg: var(--white);
-    --text-code: var(--secondary-dark);
+    --text-code: var(--primary);
 }
 
 
