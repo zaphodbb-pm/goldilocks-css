@@ -1,8 +1,5 @@
 @layer extras {
 
-    .comments {
-    }
-
     .comments > li {
         list-style: none;
         display: flex;

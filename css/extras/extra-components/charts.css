@@ -9,7 +9,7 @@
         padding: var(--padding-normal);
         border-radius: var(--radius-comp);
 
-        --color: var(--primary, 0);
+        --color: var(--main-color, 0);
         --color-offset: 75;
         --color-satlight: 90%, 45%, 0.80;
 

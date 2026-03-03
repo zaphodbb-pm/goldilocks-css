@@ -149,7 +149,7 @@
         font-family: var(--family-monospace), monospace;
         font-size: 1rem;
         background-color: var(--bg-main-code);
-        border-left: 0.25rem solid var(--secondary);
+        border-left: 0.25rem solid var(--primary);
         overflow-y: hidden;
         overflow-x: scroll;
         margin: 0;

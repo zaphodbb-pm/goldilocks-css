@@ -151,11 +151,11 @@
     --secondary-text-invert: hsl(var(--main-color), 100%, 99%);
     --complement-text-invert: hsl(var(--complement-main), 100%, 99%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
-    --primary-light: hsl(var(--main-color), 70%, 70%);
-    --secondary-light: hsl(var(--main-color), var(--main-color-sl-light));
-    --complement-light: hsl(var(--complement-main), var(--main-color-sl-light));
+    --primary-light: hsl(var(--main-color), 80%, 70%);
+    --secondary-light: hsl(var(--main-color), 70%, 70%);
+    --complement-light: hsl(var(--complement-main), 80%, 70%);
     --primary-dark: hsl(var(--main-color), 70%, 30%);
-    --secondary-dark: hsl(var(--main-color), 70%, 20%);
+    --secondary-dark: hsl(var(--main-color), 60%, 20%);
     --complement-dark: hsl(var(--complement-main), 50%, 30%);
     --link: hsl(217, 71%, 48%);
     --link-text: hsl(217, 100%, 30%);
@@ -511,7 +511,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         margin: 0;
         padding: 0;
 
-        border-left: .25rem solid var(--secondary);
+        border-left: .25rem solid var(--primary);
         background-color: var(--bg-main-code);
     }
 
@@ -7898,7 +7898,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         margin: var(--margin-medium) auto;
         padding: var(--pad-vert) var(--pad-horz);
 
-        border-left: .3rem solid var(--secondary);
+        border-left: .3rem solid var(--primary);
         background-color: var(--bg-component);
 
         break-inside: avoid;
@@ -7908,7 +7908,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         font-family: var(--family-serif), serif;
         font-size: var(--size-5);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
         line-height: var(--line-height-150);
 
         color: var(--text-darker);
@@ -8057,7 +8057,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         column-gap: calc(2 * var(--gap-col));
         align-items: center;
         justify-content: space-around;
-        --color: var(--primary, 0);
+        --color: var(--main-color, 0);
         --color-offset: 75;
         --color-satlight: 90%, 45%, .80;
         --color-1: hsla(var(--color), var(--color-satlight));
@@ -8776,10 +8776,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 }
 @layer extras
 {
-    .comments
-    {
-    }
-
     .comments > li
     {
         display: flex;
