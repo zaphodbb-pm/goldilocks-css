@@ -1,4 +1,4 @@
-@layer extras {
+
 
     .charts-wrapper {
         display: flex;
@@ -25,10 +25,10 @@
         --color-10: hsla(calc(var(--color) + 9 * var(--color-offset)), var(--color-satlight));
     }
 
-    table.charts-column,
-    table.charts-line,
-    table.charts-pie,
-    table.charts-donut {
+    .charts-column,
+    .charts-line,
+    .charts-pie,
+    .charts-donut {
         width: 100%;
         height: calc(100% - var(--caption-size));
         position: relative;
@@ -49,18 +49,18 @@
 
 
     /* main graph */
-    table.charts-column tbody,
-    table.charts-line tbody,
-    table.charts-pie tbody,
-    table.charts-donut tbody {
+    .charts-column tbody,
+    .charts-line tbody,
+    .charts-pie tbody,
+    .charts-donut tbody {
         position: absolute;
         height: calc(100% - var(--labels-size) - var(--caption-size));
         width: 100%;
         bottom: var(--labels-size);
     }
 
-    table.charts-column tbody tr,
-    table.charts-line tbody tr {
+    .charts-column tbody tr,
+    .charts-line tbody tr {
         display: flex;
         flex-basis: 0;
         flex-grow: 1;
@@ -74,17 +74,17 @@
         height: 100%;
     }
 
-    table.charts-column tbody tr th,
-    table.charts-line tbody tr th,
-    table.charts-pie tbody tr th,
-    table.charts-donut tbody tr th {
+    .charts-column tbody tr th,
+    .charts-line tbody tr th,
+    .charts-pie tbody tr th,
+    .charts-donut tbody tr th {
         position: absolute;
         left: -200vh;
     }
 
 
     /** column specific layout **/
-    table.charts-column tbody tr td {
+    .charts-column tbody tr td {
         display: inline-block;
         position: relative;
         margin: 0 var(--column-buffer-td);
@@ -99,7 +99,7 @@
         color: transparent;
     }
 
-    table.charts-column tbody tr td::after {
+    .charts-column tbody tr td::after {
         content: "";
         background-color: var(--color-1);
         width: 100%;
@@ -112,11 +112,11 @@
 
 
     /** line chart specific layout **/
-    table.charts-line tbody {
+    .charts-line tbody {
         overflow: hidden;
     }
 
-    table.charts-line tbody tr td {
+    .charts-line tbody tr td {
         --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
         --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
 
@@ -133,7 +133,7 @@
     }
 
 
-    table.charts-line tbody tr td:before {
+    .charts-line tbody tr td:before {
         content: "";
 
         width: 100%;
@@ -153,8 +153,8 @@
     }
 
     /** remove first line on graph **/
-    table.charts-line tbody tr td:nth-child(2):before,
-    table.charts-line.multiple tbody tr td:nth-child(2):before {
+    .charts-line tbody tr td:nth-child(2):before,
+    .charts-line.multiple tbody tr td:nth-child(2):before {
         content: "";
         clip-path: unset;
         background-color: transparent !important;
@@ -162,7 +162,7 @@
 
 
     /** add circle at data point **/
-    table.charts-line tbody tr td:after {
+    .charts-line tbody tr td:after {
         content: "";
         width: 0.5rem;
         height: 0.5rem;
@@ -178,8 +178,8 @@
 
 
     /** donut specific layout **/
-    table.charts-donut tbody tr,
-    table.charts-pie tbody tr {
+    .charts-donut tbody tr,
+    .charts-pie tbody tr {
         height: 100%;
         width: 100%;
         position: absolute;
@@ -188,7 +188,7 @@
     }
 
 
-    table.charts-pie tbody tr td {
+    .charts-pie tbody tr td {
         --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
         --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
 
@@ -209,7 +209,7 @@
     }
 
 
-    table.charts-donut tbody tr td {
+    .charts-donut tbody tr td {
         --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
         --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
         --buffer: 0;
@@ -230,13 +230,13 @@
         );
     }
 
-    table.charts-donut tbody tr td span,
-    table.charts-pie tbody tr td span {
+    .charts-donut tbody tr td span,
+    .charts-pie tbody tr td span {
         color: transparent;
     }
 
 
-    table.charts-donut tbody tr td:after {
+    .charts-donut tbody tr td:after {
         content: "";
         position: absolute;
         top: 20%;
@@ -250,14 +250,14 @@
     }
 
 
-    table.charts-donut.has-buffer tbody tr td {
+    .charts-donut.has-buffer tbody tr td {
         --buffer: calc(3 / 360);
     }
 
 
     /* show data values */
-    table.charts-column.show-values tbody tr td span,
-    table.charts-line.show-values tbody tr td span {
+    .charts-column.show-values tbody tr td span,
+    .charts-line.show-values tbody tr td span {
         position: absolute;
         left: 0;
         top: -1.5rem;
@@ -269,7 +269,7 @@
         color: var(--text)
     }
 
-    table.charts-line.show-values tbody tr td span {
+    .charts-line.show-values tbody tr td span {
         left: unset;
         right: calc(50% - 1ch);
         top: calc(100% * (1 - var(--size)) - 2rem);
@@ -277,8 +277,8 @@
         z-index: 3;
     }
 
-    table.charts-pie.show-values tbody tr td span,
-    table.charts-donut.show-values tbody tr td span {
+    .charts-pie.show-values tbody tr td span,
+    .charts-donut.show-values tbody tr td span {
         position: absolute;
         z-index: 3;
         transform: translate(100%, -100%);
@@ -287,25 +287,25 @@
     }
 
 
-    /* table caption */
-    table.charts-column caption,
-    table.charts-line caption,
-    table.charts-pie caption,
-    table.charts-donut caption {
+    /*  caption */
+    .charts-column caption,
+    .charts-line caption,
+    .charts-pie caption,
+    .charts-donut caption {
         height: 0;
     }
 
-    table.charts-column.show-caption,
-    table.charts-line.show-caption,
-    table.charts-pie.show-caption,
-    table.charts-donut.show-caption {
+    .charts-column.show-caption,
+    .charts-line.show-caption,
+    .charts-pie.show-caption,
+    .charts-donut.show-caption {
         --caption-size: 3rem;
     }
 
-    table.charts-column.show-caption caption,
-    table.charts-line.show-caption caption,
-    table.charts-pie.show-caption caption,
-    table.charts-donut.show-caption caption {
+    .charts-column.show-caption caption,
+    .charts-line.show-caption caption,
+    .charts-pie.show-caption caption,
+    .charts-donut.show-caption caption {
         display: table-caption;
         font-weight: bold;
         font-size: var(--size-4);
@@ -315,21 +315,21 @@
 
 
     /* x-axis labels */
-    table.charts-column thead,
-    table.charts-line thead,
-    table.charts-pie thead,
-    table.charts-donut thead {
+    .charts-column thead,
+    .charts-line thead,
+    .charts-pie thead,
+    .charts-donut thead {
         position: absolute;
         left: -200vh;
     }
 
-    table.charts-column.show-labels,
-    table.charts-line.show-labels {
+    .charts-column.show-labels,
+    .charts-line.show-labels {
         --labels-size: 3rem;
     }
 
-    table.charts-column.show-labels thead,
-    table.charts-line.show-labels thead {
+    .charts-column.show-labels thead,
+    .charts-line.show-labels thead {
         display: flex;
         position: absolute;
         left: 0;
@@ -337,8 +337,8 @@
         width: 100%;
     }
 
-    table.charts-column.show-labels thead tr,
-    table.charts-line.show-labels thead tr {
+    .charts-column.show-labels thead tr,
+    .charts-line.show-labels thead tr {
         display: flex;
         flex-basis: 0;
         flex-grow: 1;
@@ -348,28 +348,28 @@
         height: 3rem;
     }
 
-    table.charts-column.show-labels thead tr th,
-    table.charts-line.show-labels thead tr th {
+    .charts-column.show-labels thead tr th,
+    .charts-line.show-labels thead tr th {
         width: 100%;
         margin-inline-start: 0.25rem;
         margin-inline-end: 0.25rem;
     }
 
-    table.charts-column.show-labels thead tr th:first-child,
-    table.charts-line.show-labels thead tr th:first-child {
+    .charts-column.show-labels thead tr th:first-child,
+    .charts-line.show-labels thead tr th:first-child {
         position: absolute;
         left: -200vh;
     }
 
 
     /* graph grid lines */
-    table.charts-column.show-grid,
-    table.charts-line.show-grid {
+    .charts-column.show-grid,
+    .charts-line.show-grid {
         --grid-offset: 2px;
     }
 
-    table.charts-column.show-grid tbody,
-    table.charts-line.show-grid tbody {
+    .charts-column.show-grid tbody,
+    .charts-line.show-grid tbody {
         border-left: solid 1px var(--border-main);
         border-right: solid 1px var(--border-main);
         border-bottom: solid 1px var(--border-main);
@@ -378,20 +378,20 @@
         background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
     }
 
-    table.charts-column.show-grid tbody tr td,
-    table.charts-line.show-grid tbody tr td {
+    .charts-column.show-grid tbody tr td,
+    .charts-line.show-grid tbody tr td {
         bottom: 1px;
     }
 
 
     /* chart legend */
-    table.charts-wrapper ul li {
+    .charts-wrapper ul li {
         list-style: none;
         display: flex;
         align-items: center;
     }
 
-    table.charts-wrapper ul li:before {
+    .charts-wrapper ul li:before {
         content: "";
         display: inline-block;
         width: 1rem;
@@ -405,205 +405,204 @@
 
 
     /* support multiple columns per category */
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 1) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 1) td:after {
         left: 0;
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 2) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 2) td:after {
         left: calc(100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 3) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 3) td:after {
         left: calc(2 * 100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 4) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 4) td:after {
         left: calc(3 * 100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 5) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 5) td:after {
         left: calc(4 * 100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 6) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 6) td:after {
         left: calc(5 * 100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 7) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 7) td:after {
         left: calc(6 * 100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 8) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 8) td:after {
         left: calc(7 * 100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 9) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 9) td:after {
         left: calc(8 * 100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
-    table.charts-column.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
-    table.charts-column.multiple tbody tr:nth-child(10n + 10) td:after {
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 10) td:after {
         left: calc(9 * 100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
     }
 
 
     /* colours for multi-column work */
-    table.charts-column.multiple tbody tr:nth-child(10n + 1) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 1) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 1) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 1):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 1) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:after,
+    .charts-wrapper ul li:nth-child(10n + 1):before {
         background-color: var(--color-1);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 1),
-    table.charts-donut tbody tr td:nth-of-type(10n + 1) {
+    .charts-pie tbody tr td:nth-of-type(10n + 1),
+    .charts-donut tbody tr td:nth-of-type(10n + 1) {
         color: var(--color-1);
     }
 
 
-    table.charts-column.multiple tbody tr:nth-child(10n + 2) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 2) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 2) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 2):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 2) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:after,
+    .charts-wrapper ul li:nth-child(10n + 2):before {
         background-color: var(--color-2);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 2),
-    table.charts-donut tbody tr td:nth-of-type(10n + 2) {
+    .charts-pie tbody tr td:nth-of-type(10n + 2),
+    .charts-donut tbody tr td:nth-of-type(10n + 2) {
         color: var(--color-2);
     }
 
 
-    table.charts-column.multiple tbody tr:nth-child(10n + 3) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 3):after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 3) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 3) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 3):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 3) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 3):after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:after,
+    .charts-wrapper ul li:nth-child(10n + 3):before {
         background-color: var(--color-3);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 3),
-    table.charts-donut tbody tr td:nth-of-type(10n + 3) {
+    .charts-pie tbody tr td:nth-of-type(10n + 3),
+    .charts-donut tbody tr td:nth-of-type(10n + 3) {
         color: var(--color-3);
     }
 
 
-    table.charts-column.multiple tbody tr:nth-child(10n + 4) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 4):after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 4) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 4) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 4):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 4) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 4):after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:after,
+    .charts-wrapper ul li:nth-child(10n + 4):before {
         background-color: var(--color-4);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 4),
-    table.charts-donut tbody tr td:nth-of-type(10n + 4) {
+    .charts-pie tbody tr td:nth-of-type(10n + 4),
+    .charts-donut tbody tr td:nth-of-type(10n + 4) {
         color: var(--color-4);
     }
 
 
-    table.charts-column.multiple tbody tr:nth-child(10n + 5) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 5) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 5) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 5):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 5) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:after,
+    .charts-wrapper ul li:nth-child(10n + 5):before {
         background-color: var(--color-5);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 5),
-    table.charts-donut tbody tr td:nth-of-type(10n + 5) {
+    .charts-pie tbody tr td:nth-of-type(10n + 5),
+    .charts-donut tbody tr td:nth-of-type(10n + 5) {
         color: var(--color-5);
     }
 
 
-    table.charts-column.multiple tbody tr:nth-child(10n + 6) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 6) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 6) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 6):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 6) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:after,
+    .charts-wrapper ul li:nth-child(10n + 6):before {
         background-color: var(--color-6);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 6),
-    table.charts-donut tbody tr td:nth-of-type(10n + 6) {
+    .charts-pie tbody tr td:nth-of-type(10n + 6),
+    .charts-donut tbody tr td:nth-of-type(10n + 6) {
         color: var(--color-6);
     }
 
 
-    table.charts-column.multiple tbody tr:nth-child(10n + 7) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 7) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 7) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 7):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 7) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:after,
+    .charts-wrapper ul li:nth-child(10n + 7):before {
         background-color: var(--color-7);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 7),
-    table.charts-donut tbody tr td:nth-of-type(10n + 7) {
+    .charts-pie tbody tr td:nth-of-type(10n + 7),
+    .charts-donut tbody tr td:nth-of-type(10n + 7) {
         color: var(--color-7);
     }
 
 
-    table.charts-column.multiple tbody tr:nth-child(10n + 8) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 8) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 8) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 8):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 8) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:after,
+    .charts-wrapper ul li:nth-child(10n + 8):before {
         background-color: var(--color-8);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 8),
-    table.charts-donut tbody tr td:nth-of-type(10n + 8) {
+    .charts-pie tbody tr td:nth-of-type(10n + 8),
+    .charts-donut tbody tr td:nth-of-type(10n + 8) {
         color: var(--color-8);
     }
 
 
-    table.charts-column.multiple tbody tr:nth-child(10n + 9) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 9) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 9) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 9):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 9) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:after,
+    .charts-wrapper ul li:nth-child(10n + 9):before {
         background-color: var(--color-9);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 9),
-    table.charts-donut tbody tr td:nth-of-type(10n + 9) {
+    .charts-pie tbody tr td:nth-of-type(10n + 9),
+    .charts-donut tbody tr td:nth-of-type(10n + 9) {
         color: var(--color-9);
     }
 
 
-    table.charts-column.multiple tbody tr:nth-child(10n + 10) td:after,
-    table.charts-column.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 10) td:before,
-    table.charts-line.multiple tbody tr:nth-of-type(10n + 10) td:after,
-    table.charts-wrapper ul li:nth-child(10n + 10):before {
+    .charts-column.multiple tbody tr:nth-child(10n + 10) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:after,
+    .charts-wrapper ul li:nth-child(10n + 10):before {
         background-color: var(--color-10);
     }
 
-    table.charts-pie tbody tr td:nth-of-type(10n + 10),
-    table.charts-donut tbody tr td:nth-of-type(10n + 10) {
+    .charts-pie tbody tr td:nth-of-type(10n + 10),
+    .charts-donut tbody tr td:nth-of-type(10n + 10) {
         color: var(--color-10);
     }
-
-}
+    
