@@ -1,185 +1,181 @@
-/* Define layers organization for all sebsequent files */
-@layer base, layout, elements, extended, extras, custom;
-
 /* Pure css HTML base elements and reset */
-/** set global environment **/
 /** note that some HTML tags are set in other element files **/
 
-@layer base {
-    html {
-        margin: 0;
-        padding: 0;
 
-        font-size: var(--base-html-factor);
-        background-color: var(--bg-main);
+/** set global environment **/
+html {
+    margin: 0;
+    padding: 0;
 
-        box-sizing: border-box;
-        overflow-x: hidden;
-        overflow-y: scroll;
+    font-size: var(--base-html-factor);
+    background-color: var(--bg-main);
 
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-    }
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
-    /** set display environment */
-    body {
-        margin: 0;
-        padding: 0;
-        font-size: 1rem;
-        font-family: var(--family-sans-serif), sans-serif;
-        font-weight: var(--weight-normal);
-        line-height: var(--line-height-150);
-        color: var(--text);
-        background-color: var(--bg-main);
-    }
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
 
-    /** set key HTML tags */
-    main,
-    header {
-        margin: 0;
-        overflow-x: hidden;
-    }
+/** set display environment */
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: var(--family-sans-serif) sans-serif;
+    font-weight: var(--weight-normal);
+    line-height: var(--line-height-150);
+    color: var(--text);
+    background-color: var(--bg-main);
+}
 
-    main {
-        overflow-y: hidden;
-    }
+/** set key HTML tags */
+main,
+header {
+    margin: 0;
+    overflow-x: hidden;
+}
 
-    a,
-    article,
-    button,
-    div,
-    figure,
-    form,
-    iframe,
-    img,
-    input,
-    section,
-    select,
-    table,
-    textarea {
-        padding: 0;
-        margin: 0;
-        font-family: inherit;
-    }
+main {
+    overflow-y: hidden;
+}
 
-    textarea::placeholder,
-    input::placeholder {
-        color: inherit;
-    }
+a,
+article,
+button,
+div,
+figure,
+form,
+iframe,
+img,
+input,
+section,
+select,
+table,
+textarea
+{
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+}
 
-    p {
-        padding: 0;
-        margin: 0 0 1.5rem 0;
-    }
+textarea::placeholder,
+input::placeholder {
+    color: inherit;
+}
 
-    p:last-child {
-        margin-bottom: 0;
-    }
+p {
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
 
-    p.scrollable {
-        overflow-x: auto;
-        scrollbar-width: none;
-    }
+p:last-child {
+    margin-bottom: 0;
+}
 
-    p.scrollable::-webkit-scrollbar {
-        display: none;
-    }
+p.scrollable {
+    overflow-x: auto;
+    scrollbar-width: none;
+}
 
-    a {
-        color: var(--link);
-    }
+p.scrollable::-webkit-scrollbar {
+    display: none;
+}
 
-    ul, ol, dl {
-        padding: 0;
-        margin: 0;
-    }
+a {
+    color: var(--link);
+}
 
-    P + ul, p + ol, p + dl {
-        margin-bottom: 1.5rem;
-    }
+ul, ol, dl {
+    padding: 0;
+    margin: 0;
+}
 
-    ul > li {
-        list-style: disc;
-        margin: 0 0 0.75rem 1rem;
-    }
+P + ul, p + ol, p + dl {
+    margin-bottom: 1.5rem;
+}
 
-    ol > li {
-        list-style: decimal;
-        margin: 0 0 0.75rem 1.5rem;
-    }
+ul > li {
+    list-style: disc;
+    margin: 0 0 0.75rem 1rem;
+}
 
-    dl > dd {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 0.75rem;
-        margin-inline-start: 1rem;
-    }
+ol > li {
+    list-style: decimal;
+    margin: 0 0 0.75rem 1.5rem;
+}
+
+dl > dd {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0.75rem;
+    margin-inline-start: 1rem;
+}
 
 
-    blockquote {
-        margin: 0;
-    }
+blockquote {
+    margin: 0;
+}
 
-    hr {
-        padding: 0;
-        margin: 1rem 0;
-        border: 1px solid var(--grey-light);
-    }
+hr {
+    padding: 0;
+    margin: 1rem 0;
+    border: 1px solid var(--grey-light);
+}
 
-    small {
-        font-size: 80%;
-        font-weight: 400;
-    }
+small {
+    font-size: 80%;
+    font-weight: 400; /* (added) */
+}
 
-    details {
-        margin: 0;
-        padding: 0;
-    }
+details {
+    margin: 0;
+    padding: 0;
+}
 
-    details summary {
-        cursor: pointer;
-    }
+details summary {
+    cursor: pointer;
+}
 
-    details summary > * {
-        display: inline;
-    }
+details summary > * {
+    display: inline;
+}
 
-    pre {
-        font-family: var(--family-monospace), monospace;
-        font-size: 1rem;
-        background-color: var(--bg-main-code);
-        border-left: 0.25rem solid var(--primary);
-        overflow-y: hidden;
-        overflow-x: scroll;
-        margin: 0;
-        padding: 0;
-    }
+pre {
+    font-family: var(--family-monospace) monospace;
+    font-size: 1rem;
+    background-color: var(--bg-main-code);
+    border-left: 0.25rem solid var(--tertiary);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin: 0;
+    padding: 0;
+}
 
-    code {
-        font-size: 1rem;
-        font-family: var(--family-monospace), monospace;
-        font-weight: normal;
+code {
+    font-size: 1rem;
+    font-family: var(--family-monospace) monospace;
+    font-weight: normal;
 
-        color: var(--text-code);
-        background-color: var(--bg-main-code);
-        border-radius: var(--radius);
-        margin: 0;
-        padding: 0.125em 0.5em;
-        white-space: nowrap;
-    }
+    color: var(--text-code);
+    background-color: var(--bg-main-code);
+    border-radius: var(--radius);
+    margin: 0;
+    padding: 0.125em 0.5em;
+    white-space: nowrap;
+}
 
-    pre > code {
-        font-size: 1em;
-        color: currentColor;
-        background-color: transparent;
-        padding: var(--padding);
+pre > code {
+    font-size: 1em;
+    color: currentColor;
+    background-color: transparent;
+    padding: var(--padding);
 
-        border-radius: 0;
-        display: block;
-        white-space: pre;
-        max-width: 100%;
-        overflow-x: scroll;
-    }
-
+    border-radius: 0;
+    display: block;
+    white-space: pre;
+    max-width: 100%;
+    overflow-x: scroll;
 }

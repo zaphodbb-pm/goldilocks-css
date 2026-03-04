@@ -1,7 +1,5 @@
 /* positions.css */
 
-@layer layout {
-
 .is-fixed-top {
     position: fixed;
     top: 0;
@@ -76,4 +74,3 @@
     white-space: normal !important;
 }
 
-}
