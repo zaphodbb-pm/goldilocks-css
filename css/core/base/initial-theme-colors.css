@@ -5,43 +5,38 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 
 :root {
+    /* Common shadow treatment for boxed elements */
     --shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);
 
-    /* main theme colour parameters
-        - based on split complementary color selection
-        - for triadic color selection, set --main-color-offset to 120 degrees
-    */
-    --main-color: 140;                  /** primary hue value **/
-    --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
 
-    --main-color-sl-light: 100%, 96%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 100%, 23%;    /** color darkening saturation and darkness **/
-
-    --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
-    --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
+    /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
+    /* main theme colour parameters - based on  complement color selection */
+    --main-color: 140;                                  /** primary hue value **/
+    --main-saturation: 70%;                             /** primary saturation value **/
+    --main-lightness: 30%;                              /** primary lightness value **/
 
     /* build main theme colours */
-    --primary: hsl( var(--main-color), 70%, 31% );
-    --secondary: hsl( var(--main-color-complement-low), 70%, 45% );
-    --tertiary: hsl( var(--main-color-complement-high), 70%, 40%);
+    --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
+    --secondary: color-mix(var(--primary), black 70%);
+    --complement: hsl(calc(var(--main-color) + 180), var(--main-saturation), var(--main-lightness));
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl( var(--main-color), 100%, 25%);
-    --secondary-text: hsl( var(--main-color-complement-low), 100%, 30%);
-    --tertiary-text: hsl( var(--main-color-complement-high), 100%, 30%);
+    --primary-text: hsl( var(--main-color), 100%, 30%);
+    --secondary-text: hsl( var(--main-color), 100%, 15%);
+    --complement-text: hsl( calc(var(--main-color) + 180), 100%, 30%);
 
-    --primary-text-invert: hsl( var(--main-color), 100%, 99%);
-    --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
-    --tertiary-text-invert: hsl( var(--main-color-complement-high), 100%, 99%);
+    --primary-text-invert: color-mix(var(--primary-text), white 95%);
+    --secondary-text-invert: color-mix(var(--secondary-text), white 95%);
+    --complement-text-invert: color-mix(var(--complement-text), white 95%);
 
     /* optional light colors; use carefully as accessibility is hard to achieve */
-    --primary-light:  hsl( var(--main-color), var(--main-color-sl-light));
-    --secondary-light:  hsl( var(--main-color-complement-low), var(--main-color-sl-light));
-    --tertiary-light:  hsl( var(--main-color-complement-high), var(--main-color-sl-light));
+    --primary-light:  color-mix(var(--primary), white 85%);
+    --secondary-light:  color-mix(var(--secondary), white 85%);
+    --complement-light:  color-mix(var(--complement), white 85%);
 
-    --primary-dark:  hsl( var(--main-color), var(--main-color-sl-dark) );
-    --secondary-dark:  hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
-    --tertiary-dark:  hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
+    --primary-dark:  color-mix(var(--primary), black 15%);
+    --secondary-dark:  color-mix(var(--secondary), black 15%);
+    --complement-dark:  color-mix(var(--complement), black 15%);
 
     --link: hsl(217, 71%, 48%);
     --link-light:  hsl(217, 70%, 90%);
@@ -114,6 +109,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-btn: var(--black);
     --text-btn-invert: var(--white);
     --text-bg: var(--white);
-    --text-code: var(--secondary-dark);
+    --text-code: var(--complement);
 }
 

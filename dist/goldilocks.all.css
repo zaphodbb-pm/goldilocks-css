@@ -136,35 +136,31 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 :root
 {
+    /* Common shadow treatment for boxed elements */
     --shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .15), 0 0 0 1px rgba(10, 10, 10, .02);
-    /* main theme colour parameters
-        - based on split complementary color selection
-        - for triadic color selection, set --main-color-offset to 120 degrees
-    */
-    --main-color: 140;                  /** primary hue value **/
-    --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
-    --main-color-sl-light: 100%, 96%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 100%, 23%;    /** color darkening saturation and darkness **/
-    --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
-    --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
+    /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
+    /* main theme colour parameters - based on  complement color selection */
+    --main-color: 140;                                  /** primary hue value **/
+    --main-saturation: 70%;                             /** primary saturation value **/
+    --main-lightness: 30%;                              /** primary lightness value **/
     /* build main theme colours */
-    --primary: hsl( var(--main-color), 70%, 31% );
-    --secondary: hsl( var(--main-color-complement-low), 70%, 45% );
-    --tertiary: hsl( var(--main-color-complement-high), 70%, 40%);
+    --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
+    --secondary: color-mix(var(--primary), black 70%);
+    --complement: hsl(calc(var(--main-color) + 180), var(--main-saturation), var(--main-lightness));
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl( var(--main-color), 100%, 25%);
-    --secondary-text: hsl( var(--main-color-complement-low), 100%, 30%);
-    --tertiary-text: hsl( var(--main-color-complement-high), 100%, 30%);
-    --primary-text-invert: hsl( var(--main-color), 100%, 99%);
-    --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
-    --tertiary-text-invert: hsl( var(--main-color-complement-high), 100%, 99%);
+    --primary-text: hsl( var(--main-color), 100%, 30%);
+    --secondary-text: hsl( var(--main-color), 100%, 15%);
+    --complement-text: hsl( calc(var(--main-color) + 180), 100%, 30%);
+    --primary-text-invert: color-mix(var(--primary-text), white 95%);
+    --secondary-text-invert: color-mix(var(--secondary-text), white 95%);
+    --complement-text-invert: color-mix(var(--complement-text), white 95%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
-    --primary-light: hsl( var(--main-color), var(--main-color-sl-light));
-    --secondary-light: hsl( var(--main-color-complement-low), var(--main-color-sl-light));
-    --tertiary-light: hsl( var(--main-color-complement-high), var(--main-color-sl-light));
-    --primary-dark: hsl( var(--main-color), var(--main-color-sl-dark) );
-    --secondary-dark: hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
-    --tertiary-dark: hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
+    --primary-light: color-mix(var(--primary), white 85%);
+    --secondary-light: color-mix(var(--secondary), white 85%);
+    --complement-light: color-mix(var(--complement), white 85%);
+    --primary-dark: color-mix(var(--primary), black 15%);
+    --secondary-dark: color-mix(var(--secondary), black 15%);
+    --complement-dark: color-mix(var(--complement), black 15%);
     --link: hsl(217, 71%, 48%);
     --link-light: hsl(217, 70%, 90%);
     --link-dark: hsl(217, 71%, 30%);
@@ -222,7 +218,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-btn: var(--black);
     --text-btn-invert: var(--white);
     --text-bg: var(--white);
-    --text-code: var(--secondary-dark);
+    --text-code: var(--complement);
 }
 
 
@@ -248,21 +244,21 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /* build main theme colours */
     --primary: hsl( var(--main-color), 75%, 31% );
     --secondary: hsl( var(--main-color-complement-low), 70%, 50% );
-    --tertiary: hsl( var(--main-color-complement-high), 60%, 50% );
+    --complement: hsl( var(--main-color-complement-high), 60%, 50% );
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: hsl( var(--main-color), 100%, 28%);
     --secondary-text: hsl( var(--main-color-complement-low), 100%, 47%);
-    --tertiary-text: hsl( var(--main-color-complement-high), 100%, 47%);
+    --complement-text: hsl( var(--main-color-complement-high), 100%, 47%);
     --primary-text-invert: hsl( var(--main-color), 100%, 98%);
     --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
-    --tertiary-text-invert: hsl( var(--main-color-complement-high), 100%, 100%);
+    --complement-text-invert: hsl( var(--main-color-complement-high), 100%, 100%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
     --primary-light: hsl( var(--main-color), var(--main-color-sl-light));
     --secondary-light: hsl( var(--main-color-complement-low), var(--main-color-sl-light));
-    --tertiary-light: hsl( var(--main-color-complement-high), var(--main-color-sl-light));
+    --complement-light: hsl( var(--main-color-complement-high), var(--main-color-sl-light));
     --primary-dark: hsl( var(--main-color), var(--main-color-sl-dark) );
     --secondary-dark: hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
-    --tertiary-dark: hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
+    --complement-dark: hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
     --link: hsl(217, 75%, 75%);
     --link-light: hsl(217, 70%, 90%);
     --link-dark: hsl(217, 75%, 40%);
@@ -321,232 +317,237 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 /* Pure css HTML base elements and reset */
 /** note that some HTML tags are set in other element files **/
 
+/* Define layers organization for all subsequent files */
+@layer base, layout, elements, extended, extras, custom;
 
-/** set global environment **/
-html
+
+@layer base
 {
-    font-size: var(--base-html-factor);
+    /** set global environment **/
+    html
+    {
+        font-size: var(--base-html-factor);
 
-    overflow-x: hidden;
-    overflow-y: scroll;
+        overflow-x: hidden;
+        overflow-y: scroll;
 
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
 
-    background-color: var(--bg-main);
+        background-color: var(--bg-main);
 
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    /** set display environment */
+    body
+    {
+        font-family: var(--family-sans-serif) sans-serif;
+        font-size: 1rem;
+        font-weight: var(--weight-normal);
+        line-height: var(--line-height-150);
+
+        margin: 0;
+        padding: 0;
+
+        color: var(--text);
+        background-color: var(--bg-main);
+    }
+
+    /** set key HTML tags */
+    main,
+    header
+    {
+        overflow-x: hidden;
+
+        margin: 0;
+    }
+
+    main
+    {
+        overflow-y: hidden;
+    }
+
+    a,
+    article,
+    button,
+    div,
+    figure,
+    form,
+    iframe,
+    img,
+    input,
+    section,
+    select,
+    table,
+    textarea
+    {
+        font-family: inherit;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    textarea::placeholder,
+    input::placeholder
+    {
+        color: inherit;
+    }
+
+    p
+    {
+        margin: 0 0 1.5rem 0;
+        padding: 0;
+    }
+
+    p:last-child
+    {
+        margin-bottom: 0;
+    }
+
+    p.scrollable
+    {
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    p.scrollable::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+    a
+    {
+        color: var(--link);
+    }
+
+    ul,
+    ol,
+    dl
+    {
+        margin: 0;
+        padding: 0;
+    }
+
+    p + ul,
+    p + ol,
+    p + dl
+    {
+        margin-bottom: 1.5rem;
+    }
+
+    ul > li
+    {
+        margin: 0 0 .75rem 1rem;
+
+        list-style: disc;
+    }
+
+    ol > li
+    {
+        margin: 0 0 .75rem 1.5rem;
+
+        list-style: decimal;
+    }
+
+    dl > dd
+    {
+        margin-bottom: .75rem;
+        padding: 0;
+
+        list-style: none;
+
+        margin-inline-start: 1rem;
+    }
+
+
+    blockquote
+    {
+        margin: 0;
+    }
+
+    hr
+    {
+        margin: 1rem 0;
+        padding: 0;
+
+        border: 1px solid var(--grey-light);
+    }
+
+    small
+    {
+        font-size: 80%;
+        font-weight: 400; /* (added) */
+    }
+
+    details
+    {
+        margin: 0;
+        padding: 0;
+    }
+
+    details summary
+    {
+        cursor: pointer;
+    }
+
+    details summary > *
+    {
+        display: inline;
+    }
+
+    pre
+    {
+        font-family: var(--family-monospace) monospace;
+        font-size: 1rem;
+
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        margin: 0;
+        padding: 0;
+
+        border-left: .25rem solid var(--complement);
+        background-color: var(--bg-main-code);
+    }
+
+    code
+    {
+        font-family: var(--family-monospace) monospace;
+        font-size: 1rem;
+        font-weight: normal;
+
+        margin: 0;
+        padding: .125em .5em;
+
+        white-space: nowrap;
+
+        color: var(--text-code);
+        border-radius: var(--radius);
+        background-color: var(--bg-main-code);
+    }
+
+    pre > code
+    {
+        font-size: 1em;
+
+        display: block;
+        overflow-x: scroll;
+
+        max-width: 100%;
+        padding: var(--padding);
+
+        white-space: pre;
+
+        color: currentColor;
+        border-radius: 0;
+        background-color: transparent;
+    }
 }
-
-/** set display environment */
-body
-{
-    font-family: var(--family-sans-serif) sans-serif;
-    font-size: 1rem;
-    font-weight: var(--weight-normal);
-    line-height: var(--line-height-150);
-
-    margin: 0;
-    padding: 0;
-
-    color: var(--text);
-    background-color: var(--bg-main);
-}
-
-/** set key HTML tags */
-main,
-header
-{
-    overflow-x: hidden;
-
-    margin: 0;
-}
-
-main
-{
-    overflow-y: hidden;
-}
-
-a,
-article,
-button,
-div,
-figure,
-form,
-iframe,
-img,
-input,
-section,
-select,
-table,
-textarea
-{
-    font-family: inherit;
-
-    margin: 0;
-    padding: 0;
-}
-
-textarea::placeholder,
-input::placeholder
-{
-    color: inherit;
-}
-
-p
-{
-    margin: 0 0 1.5rem 0;
-    padding: 0;
-}
-
-p:last-child
-{
-    margin-bottom: 0;
-}
-
-p.scrollable
-{
-    overflow-x: auto;
-
-    scrollbar-width: none;
-}
-
-p.scrollable::-webkit-scrollbar
-{
-    display: none;
-}
-
-a
-{
-    color: var(--link);
-}
-
-ul,
-ol,
-dl
-{
-    margin: 0;
-    padding: 0;
-}
-
-p + ul,
-p + ol,
-p + dl
-{
-    margin-bottom: 1.5rem;
-}
-
-ul > li
-{
-    margin: 0 0 .75rem 1rem;
-
-    list-style: disc;
-}
-
-ol > li
-{
-    margin: 0 0 .75rem 1.5rem;
-
-    list-style: decimal;
-}
-
-dl > dd
-{
-    margin-bottom: .75rem;
-    padding: 0;
-
-    list-style: none;
-
-    margin-inline-start: 1rem;
-}
-
-
-blockquote
-{
-    margin: 0;
-}
-
-hr
-{
-    margin: 1rem 0;
-    padding: 0;
-
-    border: 1px solid var(--grey-light);
-}
-
-small
-{
-    font-size: 80%;
-    font-weight: 400; /* (added) */
-}
-
-details
-{
-    margin: 0;
-    padding: 0;
-}
-
-details summary
-{
-    cursor: pointer;
-}
-
-details summary > *
-{
-    display: inline;
-}
-
-pre
-{
-    font-family: var(--family-monospace) monospace;
-    font-size: 1rem;
-
-    overflow-x: scroll;
-    overflow-y: hidden;
-
-    margin: 0;
-    padding: 0;
-
-    border-left: .25rem solid var(--tertiary);
-    background-color: var(--bg-main-code);
-}
-
-code
-{
-    font-family: var(--family-monospace) monospace;
-    font-size: 1rem;
-    font-weight: normal;
-
-    margin: 0;
-    padding: .125em .5em;
-
-    white-space: nowrap;
-
-    color: var(--text-code);
-    border-radius: var(--radius);
-    background-color: var(--bg-main-code);
-}
-
-pre > code
-{
-    font-size: 1em;
-
-    display: block;
-    overflow-x: scroll;
-
-    max-width: 100%;
-    padding: var(--padding);
-
-    white-space: pre;
-
-    color: currentColor;
-    border-radius: 0;
-    background-color: transparent;
-}
-
 /* fix for prism code highlighter */
 pre > code .tag
 {
@@ -8004,744 +8005,737 @@ a.tag:hover
     display: none;
 }
 
-.charts-wrapper
-{
-    display: flex;
-
-    padding: var(--padding-normal);
-
-    border-radius: var(--radius-comp);
-    background-color: var(--bg-component);
-
-    column-gap: calc( 2 * var(--gap-col) );
-    align-items: center;
-    justify-content: space-around;
-    --color: var(--main-color-complement-low, 0);
-    --color-offset: 75;
-    --color-satlight: 90%, 45%, .80;
-    --color-1: hsla( var(--color), var(--color-satlight));
-    --color-2: hsla( calc( var(--color) + var(--color-offset) ), var(--color-satlight));
-    --color-3: hsla( calc( var(--color) + 2 * var(--color-offset) ), var(--color-satlight));
-    --color-4: hsla( calc( var(--color) + 3 * var(--color-offset) ), var(--color-satlight));
-    --color-5: hsla( calc( var(--color) + 4 * var(--color-offset) ), var(--color-satlight));
-    --color-6: hsla( calc( var(--color) + 5 * var(--color-offset) ), var(--color-satlight));
-    --color-7: hsla( calc( var(--color) + 6 * var(--color-offset) ), var(--color-satlight));
-    --color-8: hsla( calc( var(--color) + 7 * var(--color-offset) ), var(--color-satlight));
-    --color-9: hsla( calc( var(--color) + 8 * var(--color-offset) ), var(--color-satlight));
-    --color-10: hsla( calc( var(--color) + 9 * var(--color-offset) ), var(--color-satlight));
-}
-
-.charts-column,
-.charts-line,
-.charts-pie,
-.charts-donut
-{
-    position: relative;
+@layer extended
+{
+    .charts-wrapper
+    {
+        display: flex;
+
+        padding: var(--padding-normal);
+
+        border-radius: var(--radius-comp);
+        background-color: var(--bg-component);
+
+        column-gap: calc(2 * var(--gap-col));
+        align-items: center;
+        justify-content: space-around;
+        --color: var(--main-color-complement-low, 0);
+        --color-offset: 75;
+        --color-satlight: 90%, 45%, .80;
+        --color-1: hsla(var(--color), var(--color-satlight));
+        --color-2: hsla(calc(var(--color) + var(--color-offset)), var(--color-satlight));
+        --color-3: hsla(calc(var(--color) + 2 * var(--color-offset)), var(--color-satlight));
+        --color-4: hsla(calc(var(--color) + 3 * var(--color-offset)), var(--color-satlight));
+        --color-5: hsla(calc(var(--color) + 4 * var(--color-offset)), var(--color-satlight));
+        --color-6: hsla(calc(var(--color) + 5 * var(--color-offset)), var(--color-satlight));
+        --color-7: hsla(calc(var(--color) + 6 * var(--color-offset)), var(--color-satlight));
+        --color-8: hsla(calc(var(--color) + 7 * var(--color-offset)), var(--color-satlight));
+        --color-9: hsla(calc(var(--color) + 8 * var(--color-offset)), var(--color-satlight));
+        --color-10: hsla(calc(var(--color) + 9 * var(--color-offset)), var(--color-satlight));
+    }
+
+    .charts-column,
+    .charts-line,
+    .charts-pie,
+    .charts-donut
+    {
+        position: relative;
+
+        overflow: initial;
+
+        width: 100%;
+        height: calc(100% - var(--caption-size));
+
+        empty-cells: show;
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        background-color: transparent;
+
+        --labels-size: 0rem;
+        --caption-size: 0rem;
+        --grid-offset: 1px;
+        --column-buffer-td: .5rem;
+        --column-buffer: .25rem;
+        --column-count: 1;
+    }
+
+
+    /* main graph */
+    .charts-column tbody,
+    .charts-line tbody,
+    .charts-pie tbody,
+    .charts-donut tbody
+    {
+        position: absolute;
+        bottom: var(--labels-size);
+
+        width: 100%;
+        height: calc(100% - var(--labels-size) - var(--caption-size));
+    }
+
+    .charts-column tbody tr,
+    .charts-line tbody tr
+    {
+        position: absolute;
+        bottom: 0;
+
+        display: flex;
+
+        width: 100%;
+        height: 100%;
+
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        align-items: flex-end;
+        justify-content: space-evenly;
+    }
+
+    .charts-column tbody tr th,
+    .charts-line tbody tr th,
+    .charts-pie tbody tr th,
+    .charts-donut tbody tr th
+    {
+        position: absolute;
+        left: -200vh;
+    }
+
+
+    /** column specific layout **/
+    .charts-column tbody tr td
+    {
+        position: relative;
 
-    overflow: initial;
+        display: inline-block;
 
-    width: 100%;
-    height: calc(100% - var(--caption-size) );
+        width: 100%;
+        height: calc(100% * var(--td-value, 1) / var(--chart-max) - var(--grid-offset));
+        margin: 0 var(--column-buffer-td);
 
-    empty-cells: show;
-    border-spacing: 0;
-    border-collapse: collapse;
+        border-spacing: 0;
 
-    background-color: transparent;
+        text-align: center;
 
-    --labels-size: 0rem;
-    --caption-size: 0rem;
-    --grid-offset: 1px;
-    --column-buffer-td: .5rem;
-    --column-buffer: .25rem;
-    --column-count: 1;
-}
+        color: transparent;
+        border-top-left-radius: var(--radius-elem);
+        border-top-right-radius: var(--radius-elem);
+    }
 
-
-/* main graph */
-.charts-column tbody,
-.charts-line tbody,
-.charts-pie tbody,
-.charts-donut tbody
-{
-    position: absolute;
-    bottom: var(--labels-size);
-
-    width: 100%;
-    height: calc( 100% - var(--labels-size) - var(--caption-size));
-}
-
-.charts-column tbody tr,
-.charts-line tbody tr
-{
-    position: absolute;
-    bottom: 0;
-
-    display: flex;
-
-    width: 100%;
-    height: 100%;
-
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    align-items: flex-end;
-    justify-content: space-evenly;
-}
-
-.charts-column tbody tr th,
-.charts-line tbody tr th,
-.charts-pie tbody tr th,
-.charts-donut tbody tr th
-{
-    position: absolute;
-    left: -200vh;
-}
+    .charts-column tbody tr td::after
+    {
+        position: absolute;
+        left: 0;
 
+        width: 100%;
+        height: 100%;
 
-/** column specific layout **/
-.charts-column tbody tr td
-{
-    position: relative;
+        content: '';
 
-    display: inline-block;
+        border-top-left-radius: var(--radius-comp);
+        border-top-right-radius: var(--radius-comp);
+        background-color: var(--color-1);
+    }
 
-    width: 100%;
-    height: calc(100% * var(--td-value, 1) / var(--chart-max) - var(--grid-offset) );
-    margin: 0 var(--column-buffer-td);
 
-    border-spacing: 0;
+    /** line chart specific layout **/
+    .charts-line tbody
+    {
+        overflow: hidden;
+    }
 
-    text-align: center;
+    .charts-line tbody tr td
+    {
+        position: relative;
 
-    color: transparent;
-    border-top-left-radius: var(--radius-elem);
-    border-top-right-radius: var(--radius-elem);
-}
+        display: inline-block;
 
-.charts-column tbody tr td::after
-{
-    position: absolute;
-    left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0 0;
 
-    width: 100%;
-    height: 100%;
+        text-align: center;
 
-    content: '';
+        color: transparent;
+        background-color: transparent;
 
-    border-top-left-radius: var(--radius-comp);
-    border-top-right-radius: var(--radius-comp);
-    background-color: var(--color-1);
-}
+        --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
+        --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
+    }
 
 
-/** line chart specific layout **/
-.charts-line tbody
-{
-    overflow: hidden;
-}
+    .charts-line tbody tr td:before
+    {
+        position: absolute;
+        left: -50%;
 
-.charts-line tbody tr td
-{
-    position: relative;
+        width: 100%;
+        height: 100%;
 
-    display: inline-block;
+        content: '';
 
-    width: 100%;
-    height: 100%;
-    margin: 0 0;
+        background-color: var(--color-1);
 
-    text-align: center;
+        --line-size: 2px;
+        clip-path: polygon(
+        0 calc(100% * (1 - var(--start, var(--size)))),
+        100% calc(100% * (1 - var(--size))),
+        100% calc(100% * (1 - var(--size)) - var(--line-size)),
+        0 calc(100% * (1 - var(--start, var(--size))) - var(--line-size))
+        );
+    }
 
-    color: transparent;
-    background-color: transparent;
+    /** remove first line on graph **/
+    .charts-line tbody tr td:nth-child(2):before,
+    .charts-line.multiple tbody tr td:nth-child(2):before
+    {
+        content: '';
 
-    --start: calc( var(--td-start) / var(--chart-max) );        /* normalize starting point */
-    --size: calc( var(--td-value) / var(--chart-max) );         /* normalize value point */
-}
+        background-color: transparent !important;
 
+        clip-path: unset;
+    }
 
-.charts-line tbody tr td:before
-{
-    position: absolute;
-    left: -50%;
-
-    width: 100%;
-    height: 100%;
-
-    content: '';
-
-    background-color: var(--color-1);
-
-    --line-size: 2px;
-    clip-path: polygon(
-    0 calc(100% * (1 - var(--start, var(--size)))),
-    100% calc(100% * (1 - var(--size))),
-    100% calc(100% * (1 - var(--size)) - var(--line-size)),
-    0 calc(100% * (1 - var(--start, var(--size))) - var(--line-size))
-    );
-}
-
-/** remove first line on graph **/
-.charts-line tbody tr td:nth-child(2):before,
-.charts-line.multiple tbody tr td:nth-child(2):before
-{
-    content: '';
 
-    background-color: transparent !important;
+    /** add circle at data point **/
+    .charts-line tbody tr td:after
+    {
+        position: absolute;
+        z-index: 1;
+        right: calc(50% - .25rem);
+        bottom: calc(100% * var(--size) - .25rem);
 
-    clip-path: unset;
-}
+        width: .5rem;
+        height: .5rem;
 
+        content: '';
 
-/** add circle at data point **/
-.charts-line tbody tr td:after
-{
-    position: absolute;
-    z-index: 1;
-    right: calc( 50% - .25rem);
-    bottom: calc( 100% * var(--size) - .25rem );
+        border-radius: var(--radius-rounded);
+        background-color: var(--color-1);
+    }
 
-    width: .5rem;
-    height: .5rem;
 
-    content: '';
+    /** donut specific layout **/
+    .charts-donut tbody tr,
+    .charts-pie tbody tr
+    {
+        position: absolute;
 
-    border-radius: var(--radius-rounded);
-    background-color: var(--color-1);
-}
+        display: flex;
 
+        width: 100%;
+        height: 100%;
 
+        justify-content: center;
+    }
 
-/** donut specific layout **/
-.charts-donut tbody tr,
-.charts-pie tbody tr
-{
-    position: absolute;
 
-    display: flex;
+    .charts-pie tbody tr td
+    {
+        position: absolute;
 
-    width: 100%;
-    height: 100%;
+        display: block;
 
-    justify-content: center;
-}
+        height: calc(100% - var(--padding-normal));
+        margin: 0 0;
 
+        transform: rotate(calc(var(--start) * 360deg));
+        text-align: center;
 
+        border-radius: var(--radius-rounded);
+        background: conic-gradient(
+        currentColor 0deg calc(var(--size) * 360deg),
+        transparent calc(var(--size) * 360deg) 360deg
+        );
 
-.charts-pie tbody tr td
-{
-    position: absolute;
+        --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
+        --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
+        aspect-ratio: 1 / 1;
+    }
 
-    display: block;
 
-    height: calc(100% - var(--padding-normal) );
-    margin: 0 0;
+    .charts-donut tbody tr td
+    {
+        position: absolute;
 
-    transform: rotate( calc( var(--start) * 360deg ) );
-    text-align: center;
+        display: block;
 
-    border-radius: var(--radius-rounded);
-    background: conic-gradient(
-    currentColor  0deg calc( var(--size) * 360deg ),
-    transparent calc( var(--size) * 360deg ) 360deg
-    );
+        height: calc(100% - var(--padding-normal));
+        margin: 0 0;
 
-    --start: calc( var(--td-start) / var(--chart-max) );        /* normalize starting point */
-    --size: calc( var(--td-value) / var(--chart-max) );         /* normalize value point */
-    aspect-ratio: 1 / 1;
-}
+        transform: rotate(calc(var(--start) * 360deg));
+        text-align: center;
 
+        border-radius: var(--radius-rounded);
+        background: conic-gradient(
+        currentColor 0deg calc((var(--size) - var(--buffer)) * 360deg),
+        transparent calc((var(--size) - var(--buffer)) * 360deg) 360deg
+        );
 
+        --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
+        --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
+        --buffer: 0;
+        aspect-ratio: 1 / 1;
+    }
 
-.charts-donut tbody tr td
-{
-    position: absolute;
+    .charts-donut tbody tr td span,
+    .charts-pie tbody tr td span
+    {
+        color: transparent;
+    }
 
-    display: block;
 
-    height: calc(100% - var(--padding-normal) );
-    margin: 0 0;
+    .charts-donut tbody tr td:after
+    {
+        position: absolute;
+        top: 20%;
+        left: 20%;
 
-    transform: rotate( calc( var(--start) * 360deg ) );
-    text-align: center;
+        display: block;
 
-    border-radius: var(--radius-rounded);
-    background: conic-gradient(
-    currentColor  0deg calc( (var(--size) - var(--buffer)) * 360deg ),
-    transparent calc( (var(--size) - var(--buffer)) * 360deg ) 360deg
-    );
+        height: 60%;
 
-    --start: calc( var(--td-start) / var(--chart-max) );        /* normalize starting point */
-    --size: calc( var(--td-value) / var(--chart-max) );         /* normalize value point */
-    --buffer: 0;
-    aspect-ratio: 1 / 1;
-}
+        content: '';
 
-.charts-donut tbody tr td span,
-.charts-pie tbody tr td span
-{
-    color: transparent;
-}
+        border-radius: var(--radius-rounded);
+        background-color: var(--bg-component);
 
+        aspect-ratio: 1 / 1;
+    }
 
-.charts-donut tbody tr td:after
-{
-    position: absolute;
-    top: 20%;
-    left: 20%;
 
-    display: block;
+    .charts-donut.has-buffer tbody tr td
+    {
+        --buffer: calc(3 / 360);
+    }
 
-    height: 60%;
 
-    content: '';
+    /* show data values */
+    .charts-column.show-values tbody tr td span,
+    .charts-line.show-values tbody tr td span
+    {
+        font-size: .8rem;
+        font-weight: bold;
 
-    border-radius: var(--radius-rounded);
-    background-color: var(--bg-component);
+        position: absolute;
+        top: -1.5rem;
+        left: 0;
 
-    aspect-ratio: 1 / 1;
-}
+        width: 100%;
 
+        text-align: center;
 
-.charts-donut.has-buffer tbody tr td
-{
-    --buffer: calc( 3 / 360);
-}
+        color: var(--text);
+    }
 
+    .charts-line.show-values tbody tr td span
+    {
+        z-index: 3;
+        top: calc(100% * (1 - var(--size)) - 2rem);
+        right: calc(50% - 1ch);
+        left: unset;
 
+        text-align: end;
+    }
 
-/* show data values */
-.charts-column.show-values tbody tr td span,
-.charts-line.show-values tbody tr td span
-{
-    font-size: .8rem;
-    font-weight: bold;
+    .charts-pie.show-values tbody tr td span,
+    .charts-donut.show-values tbody tr td span
+    {
+        font-size: .9rem;
 
-    position: absolute;
-    top: -1.5rem;
-    left: 0;
+        position: absolute;
+        z-index: 3;
 
-    width: 100%;
+        transform: translate(100%, -100%);
 
-    text-align: center;
+        color: var(--text);
+    }
 
-    color: var(--text);
-}
 
-.charts-line.show-values tbody tr td span
-{
-    z-index: 3;
-    top: calc( 100% * (1 - var(--size)) - 2rem);
-    right: calc( 50% - 1ch);
-    left: unset;
-
-    text-align: end;
-}
-
-.charts-pie.show-values tbody tr td span,
-.charts-donut.show-values tbody tr td span
-{
-    font-size: .9rem;
+    /* table caption */
+    .charts-column caption,
+    .charts-line caption,
+    .charts-pie caption,
+    .charts-donut caption
+    {
+        height: 0;
+    }
 
-    position: absolute;
-    z-index: 3;
+    .charts-column.show-caption,
+    .charts-line.show-caption,
+    .charts-pie.show-caption,
+    .charts-donut.show-caption
+    {
+        --caption-size: 3rem;
+    }
 
-    transform: translate(100%, -100%);
+    .charts-column.show-caption caption,
+    .charts-line.show-caption caption,
+    .charts-pie.show-caption caption,
+    .charts-donut.show-caption caption
+    {
+        font-size: var(--size-4);
+        font-weight: bold;
 
-    color: var(--text);
-}
+        display: table-caption;
 
+        height: auto;
+        padding: 0 0 1.5rem 0;
+    }
 
-/* table caption */
-.charts-column caption,
-.charts-line caption,
-.charts-pie caption,
-.charts-donut caption
-{
-    height: 0;
-}
-
-.charts-column.show-caption,
-.charts-line.show-caption,
-.charts-pie.show-caption,
-.charts-donut.show-caption
-{
-    --caption-size: 3rem;
-}
-
-.charts-column.show-caption caption,
-.charts-line.show-caption caption,
-.charts-pie.show-caption caption,
-.charts-donut.show-caption caption
-{
-    font-size: var(--size-4);
-    font-weight: bold;
 
-    display: table-caption;
+    /* x-axis labels */
+    .charts-column thead,
+    .charts-line thead,
+    .charts-pie thead,
+    .charts-donut thead
+    {
+        position: absolute;
+        left: -200vh;
+    }
 
-    height: auto;
-    padding: 0 0 1.5rem 0;
-}
+    .charts-column.show-labels,
+    .charts-line.show-labels
+    {
+        --labels-size: 3rem;
+    }
 
+    .charts-column.show-labels thead,
+    .charts-line.show-labels thead
+    {
+        position: absolute;
+        bottom: 0;
+        left: 0;
 
+        display: flex;
 
-/* x-axis labels */
-.charts-column thead,
-.charts-line thead,
-.charts-pie thead,
-.charts-donut thead
-{
-    position: absolute;
-    left: -200vh;
-}
-
-.charts-column.show-labels,
-.charts-line.show-labels
-{
-    --labels-size: 3rem;
-}
-
-.charts-column.show-labels thead,
-.charts-line.show-labels thead
-{
-    position: absolute;
-    bottom: 0;
-    left: 0;
+        width: 100%;
+    }
 
-    display: flex;
+    .charts-column.show-labels thead tr,
+    .charts-line.show-labels thead tr
+    {
+        display: flex;
 
-    width: 100%;
-}
+        width: 100%;
+        height: 3rem;
 
-.charts-column.show-labels thead tr,
-.charts-line.show-labels thead tr
-{
-    display: flex;
-
-    width: 100%;
-    height: 3rem;
-
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    align-items: center;
-}
-
-.charts-column.show-labels thead tr th,
-.charts-line.show-labels thead tr th
-{
-    width: 100%;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        align-items: center;
+    }
 
-    margin-inline-start: .25rem;
-    margin-inline-end: .25rem;
-}
+    .charts-column.show-labels thead tr th,
+    .charts-line.show-labels thead tr th
+    {
+        width: 100%;
 
-.charts-column.show-labels thead tr th:first-child,
-.charts-line.show-labels thead tr th:first-child
-{
-    position: absolute;
-    left: -200vh;
-}
+        margin-inline-start: .25rem;
+        margin-inline-end: .25rem;
+    }
 
+    .charts-column.show-labels thead tr th:first-child,
+    .charts-line.show-labels thead tr th:first-child
+    {
+        position: absolute;
+        left: -200vh;
+    }
 
 
+    /* graph grid lines */
+    .charts-column.show-grid,
+    .charts-line.show-grid
+    {
+        --grid-offset: 2px;
+    }
 
+    .charts-column.show-grid tbody,
+    .charts-line.show-grid tbody
+    {
+        border-right: solid 1px var(--border-main);
+        border-bottom: solid 1px var(--border-main);
+        border-left: solid 1px var(--border-main);
+        /*background-image: -webkit-gradient(linear, left top, left bottom, from(var(--border-main)), to(transparent));*/
+        background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
+        background-size: 100% 20%;
+    }
 
-/* graph grid lines */
-.charts-column.show-grid,
-.charts-line.show-grid
-{
-    --grid-offset: 2px;
-}
-
-.charts-column.show-grid tbody,
-.charts-line.show-grid tbody
-{
-    border-right: solid 1px var(--border-main);
-    border-bottom: solid 1px var(--border-main);
-    border-left: solid 1px var(--border-main);
-    /*background-image: -webkit-gradient(linear, left top, left bottom, from(var(--border-main)), to(transparent));*/
-    background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
-    background-size: 100% 20%;
-}
-
-.charts-column.show-grid tbody tr td,
-.charts-line.show-grid tbody tr td
-{
-    bottom: 1px;
-}
+    .charts-column.show-grid tbody tr td,
+    .charts-line.show-grid tbody tr td
+    {
+        bottom: 1px;
+    }
 
 
-/* chart legend */
-.charts-wrapper ul li
-{
-    display: flex;
+    /* chart legend */
+    .charts-wrapper ul li
+    {
+        display: flex;
 
-    list-style: none;
+        list-style: none;
 
-    align-items: center;
-}
+        align-items: center;
+    }
 
-.charts-wrapper ul li:before
-{
-    display: inline-block;
+    .charts-wrapper ul li:before
+    {
+        display: inline-block;
 
-    width: 1rem;
-    height: 1rem;
+        width: 1rem;
+        height: 1rem;
 
-    content: '';
-    vertical-align: middle;
+        content: '';
+        vertical-align: middle;
 
-    background-color: var(--text-comp);
+        background-color: var(--text-comp);
 
-    -webkit-margin-end: .5rem;
-    margin-inline-end: .5rem;
-}
+        -webkit-margin-end: .5rem;
+        margin-inline-end: .5rem;
+    }
 
 
+    /* support multiple columns per category */
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 1) td:after
+    {
+        left: 0;
 
-/* support multiple columns per category */
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 1) td:after
-{
-    left: 0;
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 2) td:after
+    {
+        left: calc(100% / var(--column-count));
 
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 2) td:after
-{
-    left: calc( 100% / var(--column-count) );
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 3) td:after
+    {
+        left: calc(2 * 100% / var(--column-count));
 
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 3) td:after
-{
-    left: calc( 2 * 100% / var(--column-count) );
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 4) td:after
+    {
+        left: calc(3 * 100% / var(--column-count));
 
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 4) td:after
-{
-    left: calc( 3 * 100% / var(--column-count) );
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 5) td:after
+    {
+        left: calc(4 * 100% / var(--column-count));
 
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 5) td:after
-{
-    left: calc( 4 * 100% / var(--column-count) );
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 6) td:after
+    {
+        left: calc(5 * 100% / var(--column-count));
 
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 6) td:after
-{
-    left: calc( 5 * 100% / var(--column-count) );
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 7) td:after
+    {
+        left: calc(6 * 100% / var(--column-count));
 
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 7) td:after
-{
-    left: calc( 6 * 100% / var(--column-count) );
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 8) td:after
+    {
+        left: calc(7 * 100% / var(--column-count));
 
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 8) td:after
-{
-    left: calc( 7 * 100% / var(--column-count) );
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 9) td:after
+    {
+        left: calc(8 * 100% / var(--column-count));
 
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 9) td:after
-{
-    left: calc( 8 * 100% / var(--column-count) );
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
+    .charts-column.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
+    .charts-column.multiple tbody tr:nth-child(10n + 10) td:after
+    {
+        left: calc(9 * 100% / var(--column-count));
 
-.charts-column.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
-.charts-column.multiple tbody tr:nth-child(10n + 10) td:after
-{
-    left: calc( 9 * 100% / var(--column-count) );
+        width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
 
-    width: calc( 100% / var(--column-count) - var(--column-buffer) );
-}
 
+    /* colours for multi-column work */
+    .charts-column.multiple tbody tr:nth-child(10n + 1) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:after,
+    .charts-wrapper ul li:nth-child(10n + 1):before
+    {
+        background-color: var(--color-1);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 1),
+    .charts-donut tbody tr td:nth-of-type(10n + 1)
+    {
+        color: var(--color-1);
+    }
 
 
-/* colours for multi-column work */
-.charts-column.multiple tbody tr:nth-child(10n + 1) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 1) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 1) td:after,
-.charts-wrapper ul li:nth-child(10n + 1):before
-{
-    background-color: var(--color-1);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 1),
-.charts-donut tbody tr td:nth-of-type(10n + 1)
-{
-    color: var(--color-1);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 2) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 2) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 2) td:after,
-.charts-wrapper ul li:nth-child(10n + 2):before
-{
-    background-color: var(--color-2);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 2),
-.charts-donut tbody tr td:nth-of-type(10n + 2)
-{
-    color: var(--color-2);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 3) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 3):after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 3) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 3) td:after,
-.charts-wrapper ul li:nth-child(10n + 3):before
-{
-    background-color: var(--color-3);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 3),
-.charts-donut tbody tr td:nth-of-type(10n + 3)
-{
-    color: var(--color-3);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 4) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 4):after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 4) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 4) td:after,
-.charts-wrapper ul li:nth-child(10n + 4):before
-{
-    background-color: var(--color-4);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 4),
-.charts-donut tbody tr td:nth-of-type(10n + 4)
-{
-    color: var(--color-4);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 5) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 5) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 5) td:after,
-.charts-wrapper ul li:nth-child(10n + 5):before
-{
-    background-color: var(--color-5);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 5),
-.charts-donut tbody tr td:nth-of-type(10n + 5)
-{
-    color: var(--color-5);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 6) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 6) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 6) td:after,
-.charts-wrapper ul li:nth-child(10n + 6):before
-{
-    background-color: var(--color-6);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 6),
-.charts-donut tbody tr td:nth-of-type(10n + 6)
-{
-    color: var(--color-6);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 7) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 7) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 7) td:after,
-.charts-wrapper ul li:nth-child(10n + 7):before
-{
-    background-color: var(--color-7);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 7),
-.charts-donut tbody tr td:nth-of-type(10n + 7)
-{
-    color: var(--color-7);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 8) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 8) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 8) td:after,
-.charts-wrapper ul li:nth-child(10n + 8):before
-{
-    background-color: var(--color-8);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 8),
-.charts-donut tbody tr td:nth-of-type(10n + 8)
-{
-    color: var(--color-8);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 9) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 9) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 9) td:after,
-.charts-wrapper ul li:nth-child(10n + 9):before
-{
-    background-color: var(--color-9);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 9),
-.charts-donut tbody tr td:nth-of-type(10n + 9)
-{
-    color: var(--color-9);
-}
-
-
-.charts-column.multiple tbody tr:nth-child(10n + 10) td:after,
-.charts-column.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
-.charts-line.multiple tbody tr:nth-of-type(10n + 10) td:before,
-.charts-line.multiple tbody tr:nth-of-type(10n + 10) td:after,
-.charts-wrapper ul li:nth-child(10n + 10):before
-{
-    background-color: var(--color-10);
-}
-
-.charts-pie tbody tr td:nth-of-type(10n + 10),
-.charts-donut tbody tr td:nth-of-type(10n + 10)
-{
-    color: var(--color-10);
+    .charts-column.multiple tbody tr:nth-child(10n + 2) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:after,
+    .charts-wrapper ul li:nth-child(10n + 2):before
+    {
+        background-color: var(--color-2);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 2),
+    .charts-donut tbody tr td:nth-of-type(10n + 2)
+    {
+        color: var(--color-2);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 3) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 3):after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:after,
+    .charts-wrapper ul li:nth-child(10n + 3):before
+    {
+        background-color: var(--color-3);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 3),
+    .charts-donut tbody tr td:nth-of-type(10n + 3)
+    {
+        color: var(--color-3);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 4) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 4):after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:after,
+    .charts-wrapper ul li:nth-child(10n + 4):before
+    {
+        background-color: var(--color-4);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 4),
+    .charts-donut tbody tr td:nth-of-type(10n + 4)
+    {
+        color: var(--color-4);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 5) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:after,
+    .charts-wrapper ul li:nth-child(10n + 5):before
+    {
+        background-color: var(--color-5);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 5),
+    .charts-donut tbody tr td:nth-of-type(10n + 5)
+    {
+        color: var(--color-5);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 6) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:after,
+    .charts-wrapper ul li:nth-child(10n + 6):before
+    {
+        background-color: var(--color-6);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 6),
+    .charts-donut tbody tr td:nth-of-type(10n + 6)
+    {
+        color: var(--color-6);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 7) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:after,
+    .charts-wrapper ul li:nth-child(10n + 7):before
+    {
+        background-color: var(--color-7);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 7),
+    .charts-donut tbody tr td:nth-of-type(10n + 7)
+    {
+        color: var(--color-7);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 8) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:after,
+    .charts-wrapper ul li:nth-child(10n + 8):before
+    {
+        background-color: var(--color-8);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 8),
+    .charts-donut tbody tr td:nth-of-type(10n + 8)
+    {
+        color: var(--color-8);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 9) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:after,
+    .charts-wrapper ul li:nth-child(10n + 9):before
+    {
+        background-color: var(--color-9);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 9),
+    .charts-donut tbody tr td:nth-of-type(10n + 9)
+    {
+        color: var(--color-9);
+    }
+
+
+    .charts-column.multiple tbody tr:nth-child(10n + 10) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:before,
+    .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:after,
+    .charts-wrapper ul li:nth-child(10n + 10):before
+    {
+        background-color: var(--color-10);
+    }
+
+    .charts-pie tbody tr td:nth-of-type(10n + 10),
+    .charts-donut tbody tr td:nth-of-type(10n + 10)
+    {
+        color: var(--color-10);
+    }
 }
 
 
