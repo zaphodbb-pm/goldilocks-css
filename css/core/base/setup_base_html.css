@@ -29,7 +29,7 @@
         margin: 0;
         padding: 0;
         font-size: 1rem;
-        font-family: var(--family-sans-serif) sans-serif;
+        font-family: var(--family-sans-serif), sans-serif;
         font-weight: var(--weight-normal);
         line-height: var(--line-height-150);
         color: var(--text);
@@ -149,7 +149,7 @@
     }
 
     pre {
-        font-family: var(--family-monospace) monospace;
+        font-family: var(--family-monospace), monospace;
         font-size: 1rem;
         background-color: var(--bg-main-code);
         border-left: 0.25rem solid var(--complement);
@@ -161,7 +161,7 @@
 
     code {
         font-size: 1rem;
-        font-family: var(--family-monospace) monospace;
+        font-family: var(--family-monospace), monospace;
         font-weight: normal;
 
         color: var(--text-code);

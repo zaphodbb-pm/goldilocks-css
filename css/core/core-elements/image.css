@@ -4,7 +4,7 @@ figure {
 }
 
 figcaption {
-    font-family: var(--family-sans-serif) sans-serif;
+    font-family: var(--family-sans-serif), sans-serif;
     font-size: 1.125rem;
     font-weight: var(--weight-medium);
     margin-top: var(--mar-vert);

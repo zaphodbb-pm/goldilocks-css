@@ -48,15 +48,15 @@ h4 + .sub-title,
 
 /* define font families */
 .is-family-primary {
-    font-family: var(--family-sans-serif) sans-serif;
+    font-family: var(--family-sans-serif), sans-serif;
 }
 
 .is-family-secondary {
-    font-family: var(--family-serif) serif;
+    font-family: var(--family-serif), serif;
 }
 
 .is-family-code {
-    font-family: var(--family-monospace) monospace;
+    font-family: var(--family-monospace), monospace;
 }
 
 /* sets font-size is any element */
@@ -181,7 +181,7 @@ h4 + .sub-title,
 }
 
 .has-text-tertiary {
-    color: var(--tertiary-text);
+    color: var(--complement-text);
 }
 
 .has-text-link {

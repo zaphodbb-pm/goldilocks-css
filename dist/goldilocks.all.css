@@ -340,7 +340,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /** set display environment */
     body
     {
-        font-family: var(--family-sans-serif) sans-serif;
+        font-family: var(--family-sans-serif), sans-serif;
         font-size: 1rem;
         font-weight: var(--weight-normal);
         line-height: var(--line-height-150);
@@ -497,7 +497,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     pre
     {
-        font-family: var(--family-monospace) monospace;
+        font-family: var(--family-monospace), monospace;
         font-size: 1rem;
 
         overflow-x: scroll;
@@ -512,7 +512,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     code
     {
-        font-family: var(--family-monospace) monospace;
+        font-family: var(--family-monospace), monospace;
         font-size: 1rem;
         font-weight: normal;
 
@@ -3387,7 +3387,7 @@ figure
 
 figcaption
 {
-    font-family: var(--family-sans-serif) sans-serif;
+    font-family: var(--family-sans-serif), sans-serif;
     font-size: 1.125rem;
     font-weight: var(--weight-medium);
 
@@ -3865,17 +3865,17 @@ h4 + .sub-title,
 /* define font families */
 .is-family-primary
 {
-    font-family: var(--family-sans-serif) sans-serif;
+    font-family: var(--family-sans-serif), sans-serif;
 }
 
 .is-family-secondary
 {
-    font-family: var(--family-serif) serif;
+    font-family: var(--family-serif), serif;
 }
 
 .is-family-code
 {
-    font-family: var(--family-monospace) monospace;
+    font-family: var(--family-monospace), monospace;
 }
 
 /* sets font-size is any element */
