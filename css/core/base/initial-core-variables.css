@@ -17,15 +17,6 @@
     /* Typography */
     /** Note: text colors are set in file: initial-colors.css **/
 
-    /** basic is a fixed font size for all screen sizes **/
-    --base-font-size: var(--base-rem);
-
-    /** alternatively, you can use a variable font size for all screen sizes
-    - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-        - maximum font-size is set to 3 * base (48px)
-     **/
-    /** --base-font-size:  clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) ); **/
-
     /** Default is to use system fonts as much as possible **/
     --family-sans-serif: "Tahoma", "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", "Roboto", sans-serif;
     --family-serif: "Georgia", "Times New Roman", serif;
@@ -39,6 +30,12 @@
     --weight-semibold: 600;
     --weight-bold: 700;
 
+    /** Adjustable using a variable font size for all screen sizes
+        - font-size is variable and tracks viewport to a width of 100rem (1600 px)
+        - maximum font-size is set to 3 * base (nominal 48px)
+     **/
+    --base-font-size:  clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) );
+
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
@@ -46,25 +43,22 @@
     --line-height-200: 200%;
 
     /** Sizing pattern - typically for text **/
+    /*** typical factors: (see https://typescale.com)
+        1.125 (Major Second) - A balanced choice for most UI designs.
+        1.2 (Minor Third) - Suitable for more information-dense UI designs.
+        1.25 (Major Third) - A very popular choice that provides enough distinction between heading levels.
+        1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
+    ***/
+
     --size-factor: 1.125;
 
-    --size-1: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-2: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-3: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-4: calc( 1rem * var(--size-factor) * var(--size-factor) );
-    --size-5: calc( 1rem * var(--size-factor) );
-    --size-6: 1rem;
-    --size-7: calc( 1rem / var(--size-factor) );
-
-    /* Example 1.125 scale factor:
-    --size-1: 1.80rem;
-    --size-2: 1.60rem;
-    --size-3: 1.42rem;
-    --size-4: 1.27rem;
-    --size-5: 1.13rem;
-    --size-6: 1rem;
-    --size-7: 0.9rem;
-     */
+    --size-7: calc( 1rem / var(--size-factor) );                /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
+    --size-6: 1rem;                                             /* Example 1.125 scale factor:  --size-6 = 1 rem; */
+    --size-5: calc( var(--size-6) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
+    --size-4: calc( var(--size-5) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
+    --size-3: calc( var(--size-4) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
+    --size-2: calc( var(--size-3) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
+    --size-1: calc( var(--size-2) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
 
 
 
