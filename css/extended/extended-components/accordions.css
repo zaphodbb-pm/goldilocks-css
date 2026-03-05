@@ -99,7 +99,7 @@
         border-color: var(--secondary);
     }
 
-    details.accordion.is-expander-tertiary summary {
+    details.accordion.is-expander-complement summary {
         border-color: var(--complement);
     }
 

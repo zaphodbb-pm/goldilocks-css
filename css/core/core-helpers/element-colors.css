@@ -95,37 +95,37 @@
     }
 
 
-    .is-tertiary,
-    .is-tertiary-light.has-hover:hover,
-    .is-tertiary-outlined.has-hover:hover,
-    .is-tertiary-dark.has-hover:hover {
+    .is-complement,
+    .is-complement-light.has-hover:hover,
+    .is-complement-outlined.has-hover:hover,
+    .is-complement-dark.has-hover:hover {
         color: var(--complement-text-invert);
         background-color: var(--complement);
         border: 0 solid var(--complement-dark);
         opacity: 1;
     }
 
-    .is-tertiary-light {
+    .is-complement-light {
         color: var(--complement-text);
         background-color: var(--complement-light);
         border: 0 solid var(--complement);
         opacity: 1;
     }
 
-    .is-tertiary-dark, .is-tertiary.has-hover:hover {
+    .is-complement-dark, .is-complement.has-hover:hover {
         color: var(--complement-text-invert);
         background-color: var(--complement-dark);
         border: 0 solid var(--complement-dark);
         opacity: 1;
     }
 
-    .is-tertiary-outlined {
+    .is-complement-outlined {
         color: var(--complement-dark);
         background-color: var(--bg-main);
         border: 1px solid var(--complement-dark);
     }
 
-    .is-tertiary-inverted {
+    .is-complement-inverted {
         color: var(--complement);
         background-color: var(--bg-main);
         border: none;
@@ -133,7 +133,7 @@
         text-underline-offset: 0.25em;
     }
 
-    .is-tertiary-inverted.has-hover:hover {
+    .is-complement-inverted.has-hover:hover {
         color: var(--complement-dark);
         background-color: var(--bg-element);
         text-decoration: underline var(--complement-dark);

@@ -180,7 +180,7 @@ h4 + .sub-title,
     color: var(--secondary-text);
 }
 
-.has-text-tertiary {
+.has-text-complement {
     color: var(--complement-text);
 }
 

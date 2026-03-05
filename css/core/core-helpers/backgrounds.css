@@ -18,11 +18,11 @@
         background-color: var(--secondary-light);
     }
 
-    .has-bg-tertiary {
+    .has-bg-complement {
         background-color: var(--complement);
     }
 
-    .has-bg-tertiary-light {
+    .has-bg-complement-light {
         background-color: var(--complement-light);
     }
 

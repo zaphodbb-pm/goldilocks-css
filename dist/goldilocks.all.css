@@ -1419,12 +1419,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--secondary-light);
     }
 
-    .has-bg-tertiary
+    .has-bg-complement
     {
         background-color: var(--complement);
     }
 
-    .has-bg-tertiary-light
+    .has-bg-complement-light
     {
         background-color: var(--complement-light);
     }
@@ -1604,10 +1604,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 
 
-    .is-tertiary,
-    .is-tertiary-light.has-hover:hover,
-    .is-tertiary-outlined.has-hover:hover,
-    .is-tertiary-dark.has-hover:hover
+    .is-complement,
+    .is-complement-light.has-hover:hover,
+    .is-complement-outlined.has-hover:hover,
+    .is-complement-dark.has-hover:hover
     {
         opacity: 1;
         color: var(--complement-text-invert);
@@ -1615,7 +1615,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--complement);
     }
 
-    .is-tertiary-light
+    .is-complement-light
     {
         opacity: 1;
         color: var(--complement-text);
@@ -1623,8 +1623,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--complement-light);
     }
 
-    .is-tertiary-dark,
-    .is-tertiary.has-hover:hover
+    .is-complement-dark,
+    .is-complement.has-hover:hover
     {
         opacity: 1;
         color: var(--complement-text-invert);
@@ -1632,14 +1632,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--complement-dark);
     }
 
-    .is-tertiary-outlined
+    .is-complement-outlined
     {
         color: var(--complement-dark);
         border: 1px solid var(--complement-dark);
         background-color: var(--bg-main);
     }
 
-    .is-tertiary-inverted
+    .is-complement-inverted
     {
         text-decoration: underline var(--complement);
 
@@ -1650,7 +1650,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         text-underline-offset: .25em;
     }
 
-    .is-tertiary-inverted.has-hover:hover
+    .is-complement-inverted.has-hover:hover
     {
         text-decoration: underline var(--complement-dark);
 
@@ -4025,7 +4025,7 @@ h4 + .sub-title,
     color: var(--secondary-text);
 }
 
-.has-text-tertiary
+.has-text-complement
 {
     color: var(--complement-text);
 }
@@ -4197,7 +4197,7 @@ h4 + .sub-title,
         border-color: var(--secondary);
     }
 
-    details.accordion.is-expander-tertiary summary
+    details.accordion.is-expander-complement summary
     {
         border-color: var(--complement);
     }
@@ -6451,10 +6451,10 @@ figure:not(.avatar) > [class*='badge']
     background-color: var(--secondary);
 }
 
-.badge-tertiary
+.badge-complement
 {
-    color: var(--tertiary-text-invert);
-    background-color: var(--tertiary);
+    color: var(--complement-text-invert);
+    background-color: var(--complement);
 }
 
 .badge-success

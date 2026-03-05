@@ -66,9 +66,9 @@ figure:not(.avatar) > [class*="badge"] {
     background-color: var(--secondary);
 }
 
-.badge-tertiary {
-    color: var(--tertiary-text-invert);
-    background-color: var(--tertiary);
+.badge-complement {
+    color: var(--complement-text-invert);
+    background-color: var(--complement);
 }
 
 .badge-success {
