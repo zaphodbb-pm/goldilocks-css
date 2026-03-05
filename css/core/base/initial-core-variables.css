@@ -18,8 +18,8 @@
     /** Note: text colors are set in file: initial-colors.css **/
 
     /** Default is to use system fonts as much as possible **/
-    --family-sans-serif: "Tahoma", "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", "Roboto", sans-serif;
-    --family-serif: "Georgia", "Times New Roman", serif;
+    --family-sans-serif: "Tahoma", "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", "Roboto";
+    --family-serif: "Georgia", "Times New Roman";
     --family-monospace: monospace;
     --render-mode: optimizeLegibility;
 

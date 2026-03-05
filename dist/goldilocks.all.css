@@ -12,8 +12,8 @@
     /* Typography */
     /** Note: text colors are set in file: initial-colors.css **/
     /** Default is to use system fonts as much as possible **/
-    --family-sans-serif: 'Tahoma', 'Helvetica Neue', 'Helvetica', 'Arial', 'Segoe UI', 'Roboto', sans-serif;
-    --family-serif: 'Georgia', 'Times New Roman', serif;
+    --family-sans-serif: 'Tahoma', 'Helvetica Neue', 'Helvetica', 'Arial', 'Segoe UI', 'Roboto';
+    --family-serif: 'Georgia', 'Times New Roman';
     --family-monospace: monospace;
     --render-mode: optimizeLegibility;
     /** Define font weights here **/
@@ -5437,177 +5437,180 @@ details.accordion.is-expander-danger summary
 }
 
 /* Fixed Sidenav styles */
-.sidenavs
+@layer extended
 {
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
+    .sidenavs
+    {
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
 
-    margin: 0;
-    padding: var(--padding) 0;
+        margin: 0;
+        padding: var(--padding) 0;
 
-    justify-content: flex-start;
-    row-gap: .5rem;
-}
+        justify-content: flex-start;
+        row-gap: .5rem;
+    }
 
-.sidenavs li
-{
-    list-style: none;
-}
+    .sidenavs li
+    {
+        list-style: none;
+    }
 
-.sidenavs a
-{
-    display: flex;
-    overflow: hidden;
+    .sidenavs a
+    {
+        display: flex;
+        overflow: hidden;
 
-    width: 100%;
-    margin: 0;
-    padding: var(--pad-vert) var(--pad-horz);
+        width: 100%;
+        margin: 0;
+        padding: var(--pad-vert) var(--pad-horz);
 
-    text-decoration: none;
-    text-indent: 0;
+        text-decoration: none;
+        text-indent: 0;
 
-    color: var(--link);
-    background: transparent;
-}
+        color: var(--link);
+        background: transparent;
+    }
 
-.sidenavs > nav
-{
-    margin-bottom: var(--margin);
-}
+    .sidenavs > nav
+    {
+        margin-bottom: var(--margin);
+    }
 
-.sidenavs > nav li
-{
-    margin: 0;
-}
+    .sidenavs > nav li
+    {
+        margin: 0;
+    }
 
-.sidenavs > nav a
-{
-    width: auto;
-}
+    .sidenavs > nav a
+    {
+        width: auto;
+    }
 
-.sidenav-block
-{
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
+    .sidenav-block
+    {
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
 
-    width: 100%;
-    margin: 0;
-    padding: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
 
-    color: var(--text-elem);
-    background: transparent;
+        color: var(--text-elem);
+        background: transparent;
 
-    justify-content: flex-start;
-}
+        justify-content: flex-start;
+    }
 
-.sidenav-block > label
-{
-    font-weight: var(--weight-medium);
+    .sidenav-block > label
+    {
+        font-weight: var(--weight-medium);
 
-    position: relative;
+        position: relative;
 
-    margin: 0;
-    padding: var(--pad-vert) 2.5rem var(--pad-vert) var(--pad-horz);
+        margin: 0;
+        padding: var(--pad-vert) 2.5rem var(--pad-vert) var(--pad-horz);
 
-    cursor: pointer;
-}
+        cursor: pointer;
+    }
 
-.sidenav-block > label::after
-{
-    position: absolute;
-    /* adds right chevron */
-    top: .5em;
-    right: 0;
+    .sidenav-block > label::after
+    {
+        position: absolute;
+        /* adds right chevron */
+        top: 1em;
+        right: 0;
 
-    width: 2.5rem;
-    height: 1.5rem;
+        width: 2.5rem;
+        height: 1.5rem;
 
-    content: '';
-    transition: all .3s;
+        content: '';
+        transition: all .3s;
 
-    background-color: currentColor;
+        background-color: currentColor;
 
-            mask-image: var(--indicator-right);
-            mask-repeat: no-repeat;
-            mask-position: center center;
-    -webkit-mask-image: var(--indicator-right);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center center;
-}
+                mask-image: var(--indicator-right);
+                mask-repeat: no-repeat;
+                mask-position: center center;
+        -webkit-mask-image: var(--indicator-right);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+    }
 
-.sidenav-block > nav
-{
-    display: flex;
-    flex-direction: column;
+    .sidenav-block > nav
+    {
+        display: flex;
+        flex-direction: column;
 
-    max-height: 0;
-    padding: 0;
+        max-height: 0;
+        padding: 0;
 
-    transition: all .3s;
+        transition: all .3s;
 
-    color: var(--text-elem);
-    background-color: inherit;
-}
+        color: var(--text-elem);
+        background-color: inherit;
+    }
 
-.sidenav-block > nav > ul > li
-{
-    display: flex;
+    .sidenav-block > nav > ul > li
+    {
+        display: flex;
 
-    margin: 0;
+        margin: 0;
 
-    list-style: none;
-}
-
-
-.sidenavs a.is-active,
-.sidenavs a:hover,
-.sidenav-block a:hover
-{
-    padding-right: calc( var(--pad-horz) - 2px);
-
-    border-right: 2px solid var(--link);
-    background-color: var(--bg-main-ter);
-}
-
-.sidenav-block > label:hover
-{
-    color: inherit;
-    background-color: var(--bg-main-ter);
-}
+        list-style: none;
+    }
 
 
-/* react to user actions */
-.sidenav-block input[type='checkbox']
-{
-    display: none;
-}
+    .sidenavs a.is-active,
+    .sidenavs a:hover,
+    .sidenav-block a:hover
+    {
+        padding-right: calc(var(--pad-horz) - 2px);
 
-.sidenav-block input:checked + label
-{
-    color: inherit;
-}
+        border-right: 2px solid var(--link);
+        background-color: var(--bg-main-ter);
+    }
 
-.sidenav-block input:checked + label::after
-{
-    top: .5em;
-    right: 0;
+    .sidenav-block > label:hover
+    {
+        color: inherit;
+        background-color: var(--bg-main-ter);
+    }
 
-    transform: rotate(90deg);
-}
 
-.sidenav-block input:checked + label:hover
-{
-    color: inherit;
-    background-color: var(--bg-main-ter);
-}
+    /* react to user actions */
+    .sidenav-block input[type='checkbox']
+    {
+        display: none;
+    }
 
-.sidenav-block input:checked ~ nav
-{
-    max-height: 100vh;
-    margin-bottom: 1rem;
-    padding: var(--pad-vert) 0 var(--pad-vert) var(--pad-vert);
+    .sidenav-block input:checked + label
+    {
+        color: inherit;
+    }
+
+    .sidenav-block input:checked + label::after
+    {
+        top: 1em;
+        right: 0;
+
+        transform: rotate(90deg);
+    }
+
+    .sidenav-block input:checked + label:hover
+    {
+        color: inherit;
+        background-color: var(--bg-main-ter);
+    }
+
+    .sidenav-block input:checked ~ nav
+    {
+        max-height: 100vh;
+        margin-bottom: 1rem;
+        padding: var(--pad-vert) 0 var(--pad-vert) var(--pad-vert);
+    }
 }
 
 /* navbar slide out menu */
@@ -7883,7 +7886,7 @@ a.tag:hover
         margin: var(--margin-medium) auto;
         padding: var(--pad-vert) var(--pad-horz);
 
-        border-left: .3rem solid var(--secondary);
+        border-left: .3rem solid var(--primary);
         background-color: var(--bg-component);
 
         break-inside: avoid;
@@ -7891,7 +7894,7 @@ a.tag:hover
 
     .blockquote > blockquote
     {
-        font-family: var(--family-serif) serif;
+        font-family: var(--family-serif), serif;
         font-size: var(--size-5);
         font-weight: var(--weight-medium);
         line-height: var(--line-height-150);
@@ -7901,7 +7904,7 @@ a.tag:hover
 
     .blockquote > figcaption
     {
-        font-family: var(--family-sans-serif) sans-serif;
+        font-family: var(--family-sans-serif), sans-serif;
         font-size: var(--size-6);
         line-height: var(--line-height-125);
 

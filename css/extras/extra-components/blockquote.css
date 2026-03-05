@@ -7,7 +7,7 @@
         max-width: 60ch;
 
         background-color: var(--bg-component);
-        border-left: 0.3rem solid var(--secondary);
+        border-left: 0.3rem solid var(--primary);
         break-inside: avoid;
     }
 
@@ -15,12 +15,12 @@
         color: var(--text-darker);
         font-size: var(--size-5);
         font-weight: var(--weight-medium);
-        font-family: var(--family-serif) serif;
+        font-family: var(--family-serif), serif;
         line-height: var(--line-height-150);
     }
 
     .blockquote > figcaption {
-        font-family: var(--family-sans-serif) sans-serif;
+        font-family: var(--family-sans-serif), sans-serif;
         font-size: var(--size-6);
         text-align: left;
         line-height: var(--line-height-125);
