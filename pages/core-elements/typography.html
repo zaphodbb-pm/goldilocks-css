@@ -82,9 +82,9 @@ nav: Typography
 
                 <tr>
                     <td>Colour options:</td>
-                    <td><code>.has-text-danger</code>, <code>.has-text-dark</code>, <code>.has-text-black</code>, <code>.has-text-light</code>,
-                        <code>.has-text-link</code>, <code>.has-text-primary</code>, <code>.has-text-secondary</code>, <code>.has-text-success</code>,
-                        <code>.has-text-complement</code>, <code>.has-text-warning</code>, <code>.has-text-white</code>
+                    <td><code>.has-text-primary</code>, <code>.has-text-secondary</code>, <code>.has-text-complement</code>,
+                        <code>.has-text-link</code>, <code>.has-text-white</code>, <code>.has-text-black</code>,
+                        <code>.has-text-grey</code>, <code>.has-text-dark</code>
                     </td>
 
                 </tr>
@@ -220,22 +220,22 @@ nav: Typography
 
                 <p class="has-text-justified">
                     <span>.has-text-justified</span>
-                    <span class="has-text-danger">.has-text-danger</span>
-                    <span class="has-text-danger">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                    <span>default text</span>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                 </p>
 
                 <p class="has-text-start">
                     <span>.has-text-start</span>
-                    <span class="has-text-warning">.has-text-warning</span>
+                    <span> with default text</span>
                 </p>
 
                 <p class="has-text-centered">
                     <span>.has-text-centered</span>
-                    <span class="has-text-success">.has-text-success</span>
+                    <span> with default text</span>
                 </p>
 
                 <p class="has-text-start">
-                    <span class="has-text-black is-size-7">.has-text-black  .is-size-7</span>
+                    <span>  .is-size-7 with default text</span>
                 </p>
 
                 <p class="has-text-start has-bg-dark">
@@ -247,63 +247,66 @@ nav: Typography
                 </p>
 
                 <p class="has-text-start has-bg-dark">
-                    <span class="has-text-light is-size-1">.has-text-light .is-size-1</span>
+                    <span class="has-text-grey is-size-1">.has-text-grey .is-size-1</span>
                 </p>
             </div>
 
             <div class="column">
                <pre><code class="language-html">
                    &lt;p&gt;
-                       &lt;span&gt;text is left (default)&lt;/span&gt;
-                       &lt;span class="has-text-primary"&gt;.has-text-primary&lt;/span&gt;
+                    &lt;span&gt;text is left (default)&lt;/span&gt;
+                    &lt;span class="has-text-primary"&gt;.has-text-primary&lt;/span&gt;
                    &lt;/p&gt;
 
-                   &lt;p class="has-text-centered"&gt;
-                       &lt;span&gt;.has-text-centered&lt;/span&gt;
-                       &lt;span class="has-text-secondary"&gt;.has-text-secondary&lt;/span&gt;
-                   &lt;/p&gt;
-
-                   &lt;p class="has-text-start"&gt;
-                       &lt;span&gt;.has-text-start&lt;/span&gt;
-                       &lt;span class="has-text-complement"&gt;.has-text-complement&lt;/span&gt;
-                   &lt;/p&gt;
-
-                   &lt;p class="has-text-end"&gt;
-                       &lt;span&gt;.has-text-end&lt;/span&gt;
-                       &lt;span class="has-text-link"&gt;.has-text-link&lt;/span&gt;
-                   &lt;/p&gt;
-
-                   &lt;p class="has-text-justified"&gt;
-                       &lt;span&gt;.has-text-justified&lt;/span&gt;
-                       &lt;span class="has-text-danger"&gt;.has-text-danger&lt;/span&gt;
-                       &lt;span class="has-text-danger"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/span&gt;
-                   &lt;/p&gt;
-
-                   &lt;p class="has-text-start"&gt;
-                       &lt;span&gt;.has-text-start&lt;/span&gt;
-                       &lt;span class="has-text-warning"&gt;.has-text-warning&lt;/span&gt;
-                   &lt;/p&gt;
-
-                   &lt;p class="has-text-centered"&gt;
-                       &lt;span&gt;.has-text-centered&lt;/span&gt;
-                       &lt;span class="has-text-success"&gt;.has-text-success&lt;/span&gt;
-                   &lt;/p&gt;
-
-                   &lt;p class="has-text-start"&gt;
-                       &lt;span class="has-text-black is-size-7"&gt;.has-text-black  .is-size-7&lt;/span&gt;
-                   &lt;/p&gt;
-
+                    &lt;p class="has-text-centered"&gt;
+                    &lt;span&gt;.has-text-centered&lt;/span&gt;
+                    &lt;span class="has-text-secondary"&gt;.has-text-secondary&lt;/span&gt;
+                    &lt;/p&gt;
+    
+                    &lt;p class="has-text-start"&gt;
+                        &lt;span&gt;.has-text-start&lt;/span&gt;
+                        &lt;span class="has-text-complement"&gt;.has-text-complement&lt;/span&gt;
+                    &lt;/p&gt;
+    
+                    &lt;p class="has-text-end"&gt;
+                        &lt;span&gt;.has-text-end&lt;/span&gt;
+                        &lt;span class="has-text-link"&gt;.has-text-link&lt;/span&gt;
+                    &lt;/p&gt;
+    
+                    &lt;p class="has-text-justified"&gt;
+                        &lt;span&gt;.has-text-justified&lt;/span&gt;
+                        &lt;span&gt;default text&lt;/span&gt;
+                        &lt;span&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/span&gt;
+                    &lt;/p&gt;
+    
+                    &lt;p class="has-text-start"&gt;
+                        &lt;span&gt;.has-text-start&lt;/span&gt;
+                        &lt;span&gt; with default text&lt;/span&gt;
+                    &lt;/p&gt;
+    
+                    &lt;p class="has-text-centered"&gt;
+                        &lt;span&gt;.has-text-centered&lt;/span&gt;
+                        &lt;span&gt; with default text&lt;/span&gt;
+                    &lt;/p&gt;
+    
+                    &lt;p class="has-text-start"&gt;
+                        &lt;span&gt;  .is-size-7 with default text&lt;/span&gt;
+                    &lt;/p&gt;
+    
+                    &lt;p class="has-text-start has-bg-dark"&gt;
+                        &lt;span class="has-text-white is-size-5"&gt;.has-text-white  .is-size-5&lt;/span&gt;
+                    &lt;/p&gt;
+    
+                    &lt;p class="has-text-start"&gt;
+                        &lt;span class="has-text-dark is-size-3"&gt;.has-text-dark .is-size-3&lt;/span&gt;
+                    &lt;/p&gt;
+    
                    &lt;p class="has-text-start has-bg-dark"&gt;
-                       &lt;span class="has-text-white is-size-5"&gt;.has-text-white  .is-size-5&lt;/span&gt;
-                   &lt;/p&gt;
-
-                   &lt;p class="has-text-start"&gt;
-                       &lt;span class="has-text-dark is-size-3"&gt;.has-text-dark .is-size-3&lt;/span&gt;
-                   &lt;/p&gt;
-
-                   &lt;p class="has-text-start has-bg-dark"&gt;
-                       &lt;span class="has-text-light is-size-1"&gt;.has-text-light .is-size-1&lt;/span&gt;
-                   &lt;/p&gt;
+                       &lt;span class="has-text-grey is-size-1"&gt;.has-text-grey .is-size-1&lt;/span&gt;
+                        &lt;span class="has-text-grey is-size-1"&gt;.has-text-grey .is-size-1&lt;/span&gt;
+                    &lt;/p&gt;
+                        &lt;span class="has-text-grey is-size-1"&gt;.has-text-grey .is-size-1&lt;/span&gt;
+                    &lt;/p&gt;
                </code></pre>
             </div>
         </div>

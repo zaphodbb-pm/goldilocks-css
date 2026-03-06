@@ -213,18 +213,6 @@
         color: var(--link-text);
     }
 
-    .has-text-success {
-        color: var(--success-text);
-    }
-
-    .has-text-warning {
-        color: var(--warning-text);
-    }
-
-    .has-text-danger {
-        color: var(--danger-text);
-    }
-
     .has-text-white {
         color: var(--bg-main);
     }
@@ -241,7 +229,4 @@
         color: var(--grey-dark);
     }
 
-    .has-text-light {
-        color: var(--grey-light);
-    }
 }

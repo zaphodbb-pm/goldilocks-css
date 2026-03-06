@@ -330,8 +330,8 @@
     }
 
     .form input {
-        height: 2.5em;
-        line-height: 1.5;
+        height: 3em;
+        /* line-height: 1.5; */
     }
 
     .form textarea {

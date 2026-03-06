@@ -3060,9 +3060,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .form input
     {
-        line-height: 1.5;
-
-        height: 2.5em;
+        height: 3em;
+        /* line-height: 1.5; */
     }
 
     .form textarea
@@ -4065,21 +4064,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--link-text);
     }
 
-    .has-text-success
-    {
-        color: var(--success-text);
-    }
-
-    .has-text-warning
-    {
-        color: var(--warning-text);
-    }
-
-    .has-text-danger
-    {
-        color: var(--danger-text);
-    }
-
     .has-text-white
     {
         color: var(--bg-main);
@@ -4098,11 +4082,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .has-text-dark
     {
         color: var(--grey-dark);
-    }
-
-    .has-text-light
-    {
-        color: var(--grey-light);
     }
 }
 
