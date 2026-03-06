@@ -25,7 +25,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --secondary-text: color-mix(var(--secondary), black 10%);
     --complement-text: color-mix(var(--complement), black 10%);
 
-    --primary-text-invert: color-mix(var(--primary-text), white 95%);
+    --primary-text-invert: color-mix(var(--primary-text), black 95%);
     --secondary-text-invert: color-mix(var(--secondary-text), white 95%);
     --complement-text-invert: color-mix(var(--complement-text), white 95%);
 
