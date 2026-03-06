@@ -2,7 +2,6 @@
 
 @layer extended {
 
-
     details.accordion {
         background: transparent;
         border-radius: var(--radius-comp);

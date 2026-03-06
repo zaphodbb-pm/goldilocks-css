@@ -13,17 +13,17 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /* main theme colour parameters - based on  complement color selection */
     --main-color: 140;                                  /** primary hue value **/
     --main-saturation: 70%;                             /** primary saturation value **/
-    --main-lightness: 30%;                              /** primary lightness value **/
+    --main-lightness: 40%;                              /** primary lightness value **/
 
     /* build main theme colours */
     --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
-    --secondary: color-mix(var(--primary), black 70%);
+    --secondary: color-mix(var(--primary), black 40%);
     --complement: hsl(calc(var(--main-color) + 180), var(--main-saturation), var(--main-lightness));
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl( var(--main-color), 100%, 30%);
-    --secondary-text: hsl( var(--main-color), 100%, 15%);
-    --complement-text: hsl( calc(var(--main-color) + 180), 100%, 30%);
+    --primary-text: color-mix(var(--primary), black 10%);
+    --secondary-text: color-mix(var(--secondary), black 10%);
+    --complement-text: color-mix(var(--complement), black 10%);
 
     --primary-text-invert: color-mix(var(--primary-text), white 95%);
     --secondary-text-invert: color-mix(var(--secondary-text), white 95%);
@@ -39,10 +39,18 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --complement-dark:  color-mix(var(--complement), black 15%);
 
     --link: hsl(217, 71%, 48%);
+    --link-light:  color-mix(var(--link), white 80%);
+    --link-dark: color-mix(var(--link), black 20%);
+    --link-text: color-mix(var(--link), black 30%);
+    --link-text-invert: color-mix(var(--link), white 85%);
+
+    /*
     --link-light:  hsl(217, 70%, 90%);
     --link-dark: hsl(217, 71%, 30%);
     --link-text: hsl( 217, 100%, 30%);
     --link-text-invert: hsl( 217, 100%, 95%);
+
+     */
 
     --success: hsl(150, 75%, 53%);
     --success-light:  hsl(141, 70%, 96%);
