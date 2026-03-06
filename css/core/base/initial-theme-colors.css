@@ -42,25 +42,25 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --link-light:  color-mix(var(--link), white 90%);
     --link-dark: color-mix(var(--link), black 15%);
     --link-text: color-mix(var(--link), black 30%);
-    --link-text-invert: color-mix(var(--link), white 90%);
+    --link-text-invert: white;
 
     --success: hsl(150, 75%, 53%);
     --success-light:  color-mix(var(--success), white 90%);
     --success-dark: color-mix(var(--success), black 15%);
     --success-text: color-mix(var(--success), black 35%);
-    --success-text-invert: color-mix(var(--success), white 90%);
+    --success-text-invert: black;
 
     --warning: hsl(48, 100%, 48%);
     --warning-light:  color-mix(var(--warning), white 90%);
     --warning-dark: color-mix(var(--warning), black 15%);
     --warning-text: color-mix(var(--warning), black 40%);
-    --warning-text-invert: color-mix(var(--warning), white 90%);
+    --warning-text-invert: black;
 
     --danger: hsl(348, 86%, 48%);
     --danger-light:  color-mix(var(--danger), white 90%);
     --danger-dark: color-mix(var(--danger), black 15%);
     --danger-text: color-mix(var(--danger), black 30%);
-    --danger-text-invert: color-mix(var(--danger), white 90%);
+    --danger-text-invert: white;
 
 
     /* additional greys */
