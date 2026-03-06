@@ -2769,7 +2769,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         position: absolute;
         z-index: 10;
-        top: calc(-.75 * var(--margin));
+        top: calc(-.5 * var(--margin));
         left: var(--margin);
 
         overflow: hidden;

@@ -80,7 +80,7 @@
     .form label > span:first-child {
         position: absolute;
         left: var(--margin);
-        top: calc(-0.75 * var(--margin));
+        top: calc(-0.5 * var(--margin));
         background-color: var(--bg-main-elem);
         padding: 0 calc(0.5 * var(--pad-horz));
         font-weight: var(--weight-medium);
