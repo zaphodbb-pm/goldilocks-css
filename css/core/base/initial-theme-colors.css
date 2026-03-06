@@ -39,10 +39,28 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --complement-dark:  color-mix(var(--complement), black 15%);
 
     --link: hsl(217, 71%, 48%);
-    --link-light:  color-mix(var(--link), white 80%);
-    --link-dark: color-mix(var(--link), black 20%);
-    --link-text: color-mix(var(--link), black 30%);
-    --link-text-invert: color-mix(var(--link), white 85%);
+    --link-light:  color-mix(var(--link), white 85%);
+    --link-dark: color-mix(var(--link), black 15%);
+    --link-text: color-mix(var(--link), black 35%);
+    --link-text-invert: color-mix(var(--link), white 90%);
+
+    --success: hsl(150, 75%, 53%);
+    --success-light:  color-mix(var(--success), white 85%);
+    --success-dark: color-mix(var(--success), black 15%);
+    --success-text: color-mix(var(--success), black 35%);
+    --success-text-invert: color-mix(var(--success), white 90%);
+
+    --warning: hsl(48, 100%, 48%);
+    --warning-light:  color-mix(var(--warning), white 85%);
+    --warning-dark: color-mix(var(--warning), black 15%);
+    --warning-text: color-mix(var(--warning), black 35%);
+    --warning-text-invert: color-mix(var(--warning), white 90%);
+
+    --danger: hsl(348, 86%, 48%);
+    --danger-light:  color-mix(var(--danger), white 85%);
+    --danger-dark: color-mix(var(--danger), black 15%);
+    --danger-text: color-mix(var(--danger), black 35%);
+    --danger-text-invert: color-mix(var(--danger), white 90%);
 
     /*
     --link-light:  hsl(217, 70%, 90%);
@@ -52,23 +70,32 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
      */
 
+    /*
     --success: hsl(150, 75%, 53%);
     --success-light:  hsl(141, 70%, 96%);
     --success-dark: hsl(141, 70%, 31%);
     --success-text: hsl( 141, 65%, 20%);
     --success-text-invert: hsl( 141, 100%, 95%);
+   
+     */
 
+    /*
     --warning: hsl(48, 100%, 48%);
     --warning-light:  hsl(48, 100%, 95%);
     --warning-dark: hsl(48, 100%, 40%);
     --warning-text: hsl( 48, 80%, 22%);
     --warning-text-invert: hsl( 48, 100%, 95%);
+    
+     */
 
+    /*
     --danger: hsl(348, 86%, 48%);
     --danger-light:  hsl(348, 90%, 97%);
     --danger-dark: hsl(348, 86%, 33%);
     --danger-text: hsl( 348, 100%, 35%);
     --danger-text-invert: hsl( 348, 100%, 100%);
+
+     */
 
 
     /* additional greys */
