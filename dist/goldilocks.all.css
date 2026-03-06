@@ -6471,44 +6471,38 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /* colour controls */
     .badge-primary
     {
-        color: contrast-color(var(--primary) );
+        color: var(--primary-text-invert);
         background-color: var(--primary);
     }
 
     .badge-secondary
     {
-        color: contrast-color(var(--secondary));
+        color: var(--secondary-text-invert);
         background-color: var(--secondary);
     }
 
     .badge-complement
     {
-        color: contrast-color(var(--complement));
+        color: var(--complement-text-invert);
         background-color: var(--complement);
     }
 
     .badge-success
     {
-        color: contrast-color(var(--success));
+        color: var(--success-text-invert);
         background-color: var(--success);
     }
 
     .badge-warning
     {
-        color: contrast-color(var(--warning));
+        color: var(--warning-text-invert);
         background-color: var(--warning);
     }
 
     .badge-danger
     {
-        color: contrast-color(var(--danger));
+        color: var(--danger-text-invert);
         background-color: var(--danger);
-    }
-
-    .badge-link
-    {
-        color: contrast-color(var(--link));
-        background-color: var(--link);
     }
 }
 
