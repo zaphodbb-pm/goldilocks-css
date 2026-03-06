@@ -21,7 +21,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --complement: hsl(calc(var(--main-color) + 180), var(--main-saturation), var(--main-lightness));
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: color-mix(var(--primary), black 10%);
+    --primary-text: color-mix(var(--primary), black 20%);
     --secondary-text: color-mix(var(--secondary), black 10%);
     --complement-text: color-mix(var(--complement), black 10%);
 
@@ -47,13 +47,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --success: hsl(150, 75%, 53%);
     --success-light:  color-mix(var(--success), white 90%);
     --success-dark: color-mix(var(--success), black 15%);
-    --success-text: color-mix(var(--success), black 30%);
+    --success-text: color-mix(var(--success), black 35%);
     --success-text-invert: color-mix(var(--success), white 90%);
 
     --warning: hsl(48, 100%, 48%);
     --warning-light:  color-mix(var(--warning), white 90%);
     --warning-dark: color-mix(var(--warning), black 15%);
-    --warning-text: color-mix(var(--warning), black 30%);
+    --warning-text: color-mix(var(--warning), black 40%);
     --warning-text-invert: color-mix(var(--warning), white 90%);
 
     --danger: hsl(348, 86%, 48%);
