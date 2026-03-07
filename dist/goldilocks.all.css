@@ -10194,7 +10194,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         border: none;
         border-radius: 9999px;
 
-        appearance: none;
+           -moz-appearance: none;
+        -webkit-appearance: none;
     }
 
     progress::-webkit-progress-bar
@@ -10219,8 +10220,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 
 
-    progress.is-progress-primary::-webkit-progress-value,
-    progress.is-progress-primary::-moz-progress-bar,
+    progress.is-progress-primary::-webkit-progress-value
+    {
+        background-color: var(--primary);
+    }
+
+    progress.is-progress-primary::-moz-progress-bar
+    {
+        background-color: var(--primary);
+    }
+
     progress.is-progress-primary::-ms-fill
     {
         background-color: var(--primary);
@@ -10231,8 +10240,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--primary) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-secondary::-webkit-progress-value,
-    progress.is-progress-secondary::-moz-progress-bar,
+    progress.is-progress-secondary::-webkit-progress-value
+    {
+        background-color: var(--secondary);
+    }
+
+    progress.is-progress-secondary::-moz-progress-bar
+    {
+        background-color: var(--secondary);
+    }
+
     progress.is-progress-secondary::-ms-fill
     {
         background-color: var(--secondary);
@@ -10243,32 +10260,36 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--secondary) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-tertiary::-webkit-progress-value,
-    progress.is-progress-tertiary::-moz-progress-bar,
-    progress.is-progress-tertiary::-ms-fill
+    progress.is-progress-complement::-webkit-progress-value
     {
         background-color: var(--complement);
     }
 
-    progress.is-progress-tertiary:indeterminate
+    progress.is-progress-complement::-moz-progress-bar
+    {
+        background-color: var(--complement);
+    }
+
+    progress.is-progress-complement::-ms-fill
+    {
+        background-color: var(--complement);
+    }
+
+    progress.is-progress-complement:indeterminate
     {
         background-image: linear-gradient(to right, var(--complement) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-link::-webkit-progress-value,
-    progress.is-progress-link::-moz-progress-bar,
-    progress.is-progress-link::-ms-fill
+    progress.is-progress-success::-webkit-progress-value
     {
-        background-color: var(--link);
+        background-color: var(--success);
     }
 
-    progress.is-progress-link:indeterminate
+    progress.is-progress-success::-moz-progress-bar
     {
-        background-image: linear-gradient(to right, var(--link) 30%, var(--bg-element) 30%);
+        background-color: var(--success);
     }
 
-    progress.is-progress-success::-webkit-progress-value,
-    progress.is-progress-success::-moz-progress-bar,
     progress.is-progress-success::-ms-fill
     {
         background-color: var(--success);
@@ -10279,8 +10300,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--success) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-warning::-webkit-progress-value,
-    progress.is-progress-warning::-moz-progress-bar,
+    progress.is-progress-warning::-webkit-progress-value
+    {
+        background-color: var(--warning);
+    }
+
+    progress.is-progress-warning::-moz-progress-bar
+    {
+        background-color: var(--warning);
+    }
+
     progress.is-progress-warning::-ms-fill
     {
         background-color: var(--warning);
@@ -10291,8 +10320,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--warning) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-danger::-webkit-progress-value,
-    progress.is-progress-danger::-moz-progress-bar,
+    progress.is-progress-danger::-webkit-progress-value
+    {
+        background-color: var(--danger);
+    }
+
+    progress.is-progress-danger::-moz-progress-bar
+    {
+        background-color: var(--danger);
+    }
+
     progress.is-progress-danger::-ms-fill
     {
         background-color: var(--danger);
@@ -10305,7 +10342,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     progress:indeterminate
     {
-        animation: moveIndeterminate 1.5s linear infinite;
+        -webkit-animation-name: moveIndeterminate;
+                animation-name: moveIndeterminate;
+        -webkit-animation-duration: 1.5s;
+                animation-duration: 1.5s;
+        -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
 
         background-color: var(--bg-element);
         background-image: linear-gradient(to right, var(--black-ter) 30%, var(--bg-element) 30%);
@@ -10327,6 +10371,18 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     progress:indeterminate::-ms-fill
     {
         animation-name: none;
+    }
+
+    @-webkit-keyframes moveIndeterminate
+    {
+        from
+        {
+            background-position: 200% 0;
+        }
+        to
+        {
+            background-position: -200% 0;
+        }
     }
 
     @keyframes moveIndeterminate
@@ -10363,6 +10419,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         width: calc(100% - 6ch);
         margin-top: calc(var(--base-rem) / 5);
 
+        border-radius: 9999px;
+
         align-items: center;
     }
 
@@ -10383,17 +10441,17 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .progress-wrapper.is-small
     {
-        --progress-value-offset: calc((var(--size-7) - var(--size-6)) / 2);
+        --progress-value-offset: calc(calc(var(--size-7) - var(--size-6)) / 2);
     }
 
     .progress-wrapper.is-medium
     {
-        --progress-value-offset: calc((var(--size-4) - var(--size-6)) / 2);
+        --progress-value-offset: calc(calc(var(--size-4) - var(--size-6)) / 2);
     }
 
     .progress-wrapper.is-large
     {
-        --progress-value-offset: calc((var(--size-2) - var(--size-6)) / 2);
+        --progress-value-offset: calc(calc(var(--size-2) - var(--size-6)) / 2);
     }
 
     .progress-wrapper[data-show]::after
