@@ -10569,7 +10569,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .tooltip::after
     {
         font-size: var(--size-7);
-        font-weight: var(--weight-medium);
+        font-weight: var(--weight-normal);
 
         position: absolute;
         z-index: 300;
@@ -10595,6 +10595,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-main-invert);
     }
 
+    .tooltip[disabled],
+    .tooltip.disabled
+    {
+        pointer-events: auto;
+    }
+
+
+    /** default - controls tooltip going up plus arrow **/
     .tooltip::before
     {
         position: absolute;
@@ -10610,14 +10618,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         transform: translate(-50%, 0);
 
         opacity: 0;
-        border: .5rem solid;
-        border-color: var(--bg-main-invert) transparent transparent;
-    }
-
-    .tooltip[disabled],
-    .tooltip.disabled
-    {
-        pointer-events: auto;
+        border-width: .5rem;
+        border-style: solid;
+        border-color: var(--bg-main-invert) transparent transparent transparent;
     }
 
     .tooltip:focus::after,
@@ -10632,9 +10635,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         opacity: 1;
     }
 
+
+    /** controls tooltip going right plus arrow **/
     .tooltip.tooltip-right::before
     {
         top: auto;
+        right: auto;
         bottom: 50%;
         left: 100%;
 
@@ -10663,10 +10669,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         transform: translate(.75rem, 50%);
     }
 
+
+    /** controls tooltip going left plus arrow **/
     .tooltip.tooltip-left::before
     {
         right: 100%;
         bottom: 50%;
+        left: auto;
 
         transform: translate(1rem, 50%);
 
@@ -10677,6 +10686,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         right: 100%;
         bottom: 50%;
+        left: auto;
 
         transform: translate(1.5rem, 50%);
     }
@@ -10693,19 +10703,23 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         transform: translate(.25rem, calc(50% + .25rem));
     }
 
+
+    /** controls tooltip going down plus arrow **/
     .tooltip.tooltip-bottom::before
     {
         top: 100%;
+        bottom: auto;
         left: 50%;
 
         transform: translate(-50%, -1rem);
 
-        border-color: transparent transparent var(--bg-main-invert);
+        border-color: transparent transparent var(--bg-main-invert) transparent;
     }
 
     .tooltip.tooltip-bottom::after
     {
         top: 100%;
+        bottom: auto;
 
         transform: translate(-50%, -.4rem);
     }

@@ -1,4 +1,5 @@
 @layer extras {
+
     .tooltip {
         position: relative;
     }
@@ -11,9 +12,9 @@
         content: attr(data-tooltip);
         display: block;
         font-size: var(--size-7);
-        font-weight: var(--weight-medium);
+        font-weight: var(--weight-normal);
         left: 50%;
-        max-width: 20rem;
+
         opacity: 0;
         overflow: hidden;
         padding: .2rem .4rem;
@@ -23,27 +24,32 @@
         transform: translate(-50%, 0.5rem);
         transition: opacity .2s, transform .2s;
         white-space: pre;
-        z-index: 300;
-    }
-
-    .tooltip::before {
-        border: 0.5rem solid;
-        border-color: var(--bg-main-invert) transparent transparent;
-        content: "";
-        height: 0;
-        left: 50%;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        transform: translate(-50%, 0);
-        transition: opacity .2s, transform .2s;
-        width: 0;
+        max-width: 20rem;
         z-index: 300;
     }
 
     .tooltip[disabled],
     .tooltip.disabled {
         pointer-events: auto;
+    }
+
+
+    /** default - controls tooltip going up plus arrow **/
+    .tooltip::before {
+        content: "";
+        opacity: 0;
+        position: absolute;
+        transform: translate(-50%, 0);
+        transition: opacity .2s, transform .2s;
+        top: 0;
+        left: 50%;
+
+        height: 0;
+        width: 0;
+        border-width: 0.5rem;
+        border-style: solid;
+        border-color: var(--bg-main-invert) transparent transparent transparent;
+        z-index: 300;
     }
 
     .tooltip:focus::after,
@@ -56,17 +62,20 @@
         transform: translate(-50%, -.75rem);
     }
 
+
+    /** controls tooltip going right plus arrow **/
     .tooltip.tooltip-right::before {
-        border-color: transparent var(--bg-main-invert) transparent transparent;
         bottom: 50%;
+        right: auto;
         left: 100%;
         top: auto;
         transform: translate(-1.25rem, 50%);
+        border-color: transparent var(--bg-main-invert) transparent transparent;
     }
 
     .tooltip.tooltip-right::after {
-        bottom: 50%;
         left: 100%;
+        bottom: 50%;
         transform: translate(-.25rem, 50%);
     }
 
@@ -80,15 +89,19 @@
         transform: translate(0.75rem, 50%);
     }
 
+
+    /** controls tooltip going left plus arrow **/
     .tooltip.tooltip-left::before {
-        border-color: transparent transparent transparent var(--bg-main-invert);
         bottom: 50%;
+        left: auto;
         right: 100%;
         transform: translate(1rem, 50%);
+        border-color: transparent transparent transparent var(--bg-main-invert);
     }
 
     .tooltip.tooltip-left::after {
         bottom: 50%;
+        left: auto;
         right: 100%;
         transform: translate(1.5rem, 50%);
     }
@@ -103,14 +116,18 @@
         transform: translate(0.25rem, calc(50% + 0.25rem));
     }
 
+
+    /** controls tooltip going down plus arrow **/
     .tooltip.tooltip-bottom::before {
-        border-color: transparent transparent var(--bg-main-invert);
-        left: 50%;
+        bottom: auto;
         top: 100%;
+        left: 50%;
         transform: translate(-50%, -1rem);
+        border-color: transparent transparent var(--bg-main-invert) transparent;
     }
 
     .tooltip.tooltip-bottom::after {
+        bottom: auto;
         top: 100%;
         transform: translate(-50%, -.4rem);
     }
@@ -126,4 +143,5 @@
     .tooltip.tooltip-bottom:active::before {
         transform: translate(-50%, -0.25rem);
     }
+
 }
