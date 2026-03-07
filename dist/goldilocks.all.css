@@ -10194,8 +10194,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         border: none;
         border-radius: 9999px;
 
-           -moz-appearance: none;
-        -webkit-appearance: none;
+        appearance: none;
     }
 
     progress::-webkit-progress-bar
@@ -10220,16 +10219,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 
 
-    progress.is-progress-primary::-webkit-progress-value
-    {
-        background-color: var(--primary);
-    }
-
-    progress.is-progress-primary::-moz-progress-bar
-    {
-        background-color: var(--primary);
-    }
-
+    progress.is-progress-primary::-webkit-progress-value,
+    progress.is-progress-primary::-moz-progress-bar,
     progress.is-progress-primary::-ms-fill
     {
         background-color: var(--primary);
@@ -10240,16 +10231,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--primary) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-secondary::-webkit-progress-value
-    {
-        background-color: var(--secondary);
-    }
-
-    progress.is-progress-secondary::-moz-progress-bar
-    {
-        background-color: var(--secondary);
-    }
-
+    progress.is-progress-secondary::-webkit-progress-value,
+    progress.is-progress-secondary::-moz-progress-bar,
     progress.is-progress-secondary::-ms-fill
     {
         background-color: var(--secondary);
@@ -10260,16 +10243,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--secondary) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-tertiary::-webkit-progress-value
-    {
-        background-color: var(--complement);
-    }
-
-    progress.is-progress-tertiary::-moz-progress-bar
-    {
-        background-color: var(--complement);
-    }
-
+    progress.is-progress-tertiary::-webkit-progress-value,
+    progress.is-progress-tertiary::-moz-progress-bar,
     progress.is-progress-tertiary::-ms-fill
     {
         background-color: var(--complement);
@@ -10280,16 +10255,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--complement) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-link::-webkit-progress-value
-    {
-        background-color: var(--link);
-    }
-
-    progress.is-progress-link::-moz-progress-bar
-    {
-        background-color: var(--link);
-    }
-
+    progress.is-progress-link::-webkit-progress-value,
+    progress.is-progress-link::-moz-progress-bar,
     progress.is-progress-link::-ms-fill
     {
         background-color: var(--link);
@@ -10300,16 +10267,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--link) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-success::-webkit-progress-value
-    {
-        background-color: var(--success);
-    }
-
-    progress.is-progress-success::-moz-progress-bar
-    {
-        background-color: var(--success);
-    }
-
+    progress.is-progress-success::-webkit-progress-value,
+    progress.is-progress-success::-moz-progress-bar,
     progress.is-progress-success::-ms-fill
     {
         background-color: var(--success);
@@ -10320,16 +10279,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--success) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-warning::-webkit-progress-value
-    {
-        background-color: var(--warning);
-    }
-
-    progress.is-progress-warning::-moz-progress-bar
-    {
-        background-color: var(--warning);
-    }
-
+    progress.is-progress-warning::-webkit-progress-value,
+    progress.is-progress-warning::-moz-progress-bar,
     progress.is-progress-warning::-ms-fill
     {
         background-color: var(--warning);
@@ -10340,16 +10291,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-image: linear-gradient(to right, var(--warning) 30%, var(--bg-element) 30%);
     }
 
-    progress.is-progress-danger::-webkit-progress-value
-    {
-        background-color: var(--danger);
-    }
-
-    progress.is-progress-danger::-moz-progress-bar
-    {
-        background-color: var(--danger);
-    }
-
+    progress.is-progress-danger::-webkit-progress-value,
+    progress.is-progress-danger::-moz-progress-bar,
     progress.is-progress-danger::-ms-fill
     {
         background-color: var(--danger);
@@ -10362,14 +10305,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     progress:indeterminate
     {
-        -webkit-animation-name: moveIndeterminate;
-                animation-name: moveIndeterminate;
-        -webkit-animation-duration: 1.5s;
-                animation-duration: 1.5s;
-        -webkit-animation-timing-function: linear;
-                animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
+        animation: moveIndeterminate 1.5s linear infinite;
 
         background-color: var(--bg-element);
         background-image: linear-gradient(to right, var(--black-ter) 30%, var(--bg-element) 30%);
@@ -10391,18 +10327,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     progress:indeterminate::-ms-fill
     {
         animation-name: none;
-    }
-
-    @-webkit-keyframes moveIndeterminate
-    {
-        from
-        {
-            background-position: 200% 0;
-        }
-        to
-        {
-            background-position: -200% 0;
-        }
     }
 
     @keyframes moveIndeterminate
@@ -10439,8 +10363,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         width: calc(100% - 6ch);
         margin-top: calc(var(--base-rem) / 5);
 
-        border-radius: 9999px;
-
         align-items: center;
     }
 
@@ -10461,17 +10383,17 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .progress-wrapper.is-small
     {
-        --progress-value-offset: calc(calc(var(--size-7) - var(--size-6)) / 2);
+        --progress-value-offset: calc((var(--size-7) - var(--size-6)) / 2);
     }
 
     .progress-wrapper.is-medium
     {
-        --progress-value-offset: calc(calc(var(--size-4) - var(--size-6)) / 2);
+        --progress-value-offset: calc((var(--size-4) - var(--size-6)) / 2);
     }
 
     .progress-wrapper.is-large
     {
-        --progress-value-offset: calc(calc(var(--size-2) - var(--size-6)) / 2);
+        --progress-value-offset: calc((var(--size-2) - var(--size-6)) / 2);
     }
 
     .progress-wrapper[data-show]::after
@@ -10487,6 +10409,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 }
 @layer extras
 {
+    /* Container classes for elements with ribbons */
     .has-ribbon,
     .has-ribbon-left,
     .has-ribbon-bottom
@@ -10494,10 +10417,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         position: relative;
     }
 
+    /* Base ribbon styles */
     .ribbon
     {
+        /* Typography */
         font-size: var(--size-6);
         font-weight: var(--weight-normal);
+        /* Positioning */
 
         position: absolute;
         z-index: 2;
@@ -10505,18 +10431,22 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         right: 0;
 
         padding-right: var(--pad-horz);
+        /* Spacing */
         padding-left: var(--pad-horz);
 
         text-align: center;
         white-space: nowrap;
+        /* Borders */
 
         border-right: none;
         border-top-left-radius: var(--radius-small);
         border-bottom-left-radius: var(--radius-small);
+        /* Layout */
 
         justify-content: center;
     }
 
+    /* Left-aligned ribbon variation */
     .has-ribbon-left .ribbon
     {
         right: auto;
@@ -10527,13 +10457,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         border-radius: 0 var(--radius-small) var(--radius-small) 0;
     }
 
+    /* Bottom-aligned ribbon variation */
     .has-ribbon-bottom .ribbon
     {
         top: auto;
         bottom: .5em;
     }
 
-
+    /* Ribbon with shadow */
     .ribbon.has-shadow
     {
         right: -.25rem;
@@ -10541,6 +10472,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         box-shadow: var(--shadow);
     }
 
+    /* Size variations */
     .ribbon.is-small
     {
         font-size: var(--size-7);
@@ -10562,6 +10494,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding-bottom: var(--pad-vert);
     }
 
+    /* Style variations */
     .ribbon.is-outlined
     {
         background-color: transparent;
@@ -10604,14 +10537,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-main-invert);
     }
 
-    .tooltip[disabled],
-    .tooltip.disabled
-    {
-        pointer-events: auto;
-    }
-
-
-    /** default - controls tooltip going up plus arrow **/
     .tooltip::before
     {
         position: absolute;
@@ -10627,9 +10552,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         transform: translate(-50%, 0);
 
         opacity: 0;
-        border-width: .5rem;
-        border-style: solid;
-        border-color: var(--bg-main-invert) transparent transparent transparent;
+        border: .5rem solid;
+        border-color: var(--bg-main-invert) transparent transparent;
+    }
+
+    .tooltip[disabled],
+    .tooltip.disabled
+    {
+        pointer-events: auto;
     }
 
     .tooltip:focus::after,
@@ -10644,12 +10574,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         opacity: 1;
     }
 
-
-    /** controls tooltip going right plus arrow **/
     .tooltip.tooltip-right::before
     {
         top: auto;
-        right: auto;
         bottom: 50%;
         left: 100%;
 
@@ -10678,13 +10605,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         transform: translate(.75rem, 50%);
     }
 
-
-    /** controls tooltip going left plus arrow **/
     .tooltip.tooltip-left::before
     {
         right: 100%;
         bottom: 50%;
-        left: auto;
 
         transform: translate(1rem, 50%);
 
@@ -10695,7 +10619,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         right: 100%;
         bottom: 50%;
-        left: auto;
 
         transform: translate(1.5rem, 50%);
     }
@@ -10712,23 +10635,19 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         transform: translate(.25rem, calc(50% + .25rem));
     }
 
-
-    /** controls tooltip going down plus arrow **/
     .tooltip.tooltip-bottom::before
     {
         top: 100%;
-        bottom: auto;
         left: 50%;
 
         transform: translate(-50%, -1rem);
 
-        border-color: transparent transparent var(--bg-main-invert) transparent;
+        border-color: transparent transparent var(--bg-main-invert);
     }
 
     .tooltip.tooltip-bottom::after
     {
         top: 100%;
-        bottom: auto;
 
         transform: translate(-50%, -.4rem);
     }

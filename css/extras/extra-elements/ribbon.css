@@ -1,30 +1,39 @@
 @layer extras {
-
+    /* Container classes for elements with ribbons */
     .has-ribbon,
     .has-ribbon-left,
     .has-ribbon-bottom {
         position: relative;
     }
 
+    /* Base ribbon styles */
     .ribbon {
-        border-right: none;
-
-        font-size: var(--size-6);
-        justify-content: center;
-        padding-left: var(--pad-horz);
-        padding-right: var(--pad-horz);
-        text-align: center;
-        white-space: nowrap;
+        /* Positioning */
         position: absolute;
         top: 0.5em;
         right: 0;
-        font-weight: var(--weight-normal);
         z-index: 2;
 
+        /* Layout */
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+
+        /* Spacing */
+        padding-left: var(--pad-horz);
+        padding-right: var(--pad-horz);
+
+        /* Typography */
+        font-size: var(--size-6);
+        font-weight: var(--weight-normal);
+
+        /* Borders */
+        border-right: none;
         border-top-left-radius: var(--radius-small);
         border-bottom-left-radius: var(--radius-small);
     }
 
+    /* Left-aligned ribbon variation */
     .has-ribbon-left .ribbon {
         right: auto;
         left: 0;
@@ -33,17 +42,19 @@
         border-radius: 0 var(--radius-small) var(--radius-small) 0;
     }
 
+    /* Bottom-aligned ribbon variation */
     .has-ribbon-bottom .ribbon {
         top: auto;
         bottom: 0.5em;
     }
 
-
+    /* Ribbon with shadow */
     .ribbon.has-shadow {
         box-shadow: var(--shadow);
         right: -0.25rem;
     }
 
+    /* Size variations */
     .ribbon.is-small {
         font-size: var(--size-7);
     }
@@ -60,6 +71,7 @@
         padding-bottom: var(--pad-vert);
     }
 
+    /* Style variations */
     .ribbon.is-outlined {
         background-color: transparent;
     }
