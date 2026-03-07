@@ -7952,6 +7952,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         text-align: left;
     }
 
+    .blockquote > figcaption::before
+    {
+        content: '— ';
+    }
+
     .blockquote > figcaption > cite
     {
         font-weight: var(--weight-normal);
@@ -7960,11 +7965,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         display: block;
 
         text-indent: 2ch;
-    }
-
-    .blockquote > figcaption::before
-    {
-        content: '— ';
     }
 
     @media screen and (max-width: 576px)

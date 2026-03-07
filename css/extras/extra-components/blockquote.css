@@ -2,13 +2,13 @@
 
     .blockquote {
         display: block;
-        padding: var(--pad-vert) var(--pad-horz);
-        margin: var(--margin-medium) auto;
         max-width: 60ch;
+        margin: var(--margin-medium) auto;
+        padding: var(--pad-vert) var(--pad-horz);
 
-        background-color: var(--bg-component);
-        border-left: 0.3rem solid var(--primary);
         break-inside: avoid;
+        border-left: 0.3rem solid var(--primary);
+        background-color: var(--bg-component);
     }
 
     .blockquote > blockquote {
@@ -20,22 +20,23 @@
     }
 
     .blockquote > figcaption {
+        padding: var(--pad-vert) var(--pad-horz);
+
         font-family: var(--family-sans-serif), sans-serif;
         font-size: var(--size-6);
-        text-align: left;
         line-height: var(--line-height-125);
-        padding: var(--pad-vert) var(--pad-horz);
-    }
-
-    .blockquote > figcaption > cite {
-        display: block;
-        font-weight: var(--weight-normal);
-        font-style: italic;
-        text-indent: 2ch;
+        text-align: left;
     }
 
     .blockquote > figcaption::before {
         content: "— ";
+    }
+
+    .blockquote > figcaption > cite {
+        display: block;
+        font-style: italic;
+        font-weight: var(--weight-normal);
+        text-indent: 2ch;
     }
 
     @media screen and (max-width: 576px) {
