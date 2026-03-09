@@ -7730,14 +7730,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .tag
     {
         font-size: var(--size-7);
-        font-weight: var(--weight-medium);
+        font-weight: var(--weight-semibold);
         line-height: var(--line-height-150);
 
         display: inline-flex;
 
         height: 2em;
-        padding-right: .75em;
-        padding-left: .75em;
+        padding-right: 1em;
+        padding-left: 1em;
 
         white-space: nowrap;
 
