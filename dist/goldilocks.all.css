@@ -8416,7 +8416,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         position: absolute;
         z-index: 3;
 
-        transform: rotate( calc( (var(--start) + var(--size) / 2 ) * (-360deg) ) );
+        transform: rotate( calc( var(--start) * (-360deg) ) );
 
         color: var(--text);
 
