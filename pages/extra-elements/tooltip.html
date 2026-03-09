@@ -77,64 +77,52 @@ nav: Tooltips
         <div class="column">
             <div class="stack-centered stack-gap-large">
 
-                <strong class="has-text-primary">
+                <strong class="has-text-primary tooltip" data-tooltip="Top Tooltip Text">
                     .tooltip (default top)
-                    <span class="tooltip" data-tooltip="Top Tooltip Text"></span>
                 </strong>
 
-                <strong class="has-text-secondary">
+                <strong class="has-text-secondary tooltip tooltip-right" data-tooltip="Right Tooltip Text">
                     .tooltip .tooltip-right
-                    <span class="tooltip tooltip-right" data-tooltip="Right Tooltip Text"></span>
                 </strong>
 
-                <strong class="has-text-complement">
+                <strong class="has-text-complement tooltip tooltip-right" data-tooltip="Bottom Tooltip Text">
                     .tooltip .tooltip-bottom
-                    <span class="tooltip tooltip-right" data-tooltip="Bottom Tooltip Text"></span>
                 </strong>
 
-                <span>
+                <span class="tooltip tooltip-left" data-tooltip="Left Tooltip Text">
                     <a href="#page-top">.tooltip .tooltip-left</a>
-                    <span class="tooltip tooltip-left" data-tooltip="Left Tooltip Text"></span>
                 </span>
 
-                <strong>
+                <p class="tooltip tooltip-right"
+                      data-tooltip="This tooltip &#10; has multiline text &#10; that can be shown">
                     .tooltip multiline
-                    <span class="tooltip tooltip-right"
-                          data-tooltip="This tooltip &#10; has multiline text &#10; that can be shown">
-                    </span>
-                </strong>
+                </p>
 
             </div>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;strong class="has-text-primary"&gt;
+                &lt;strong class="has-text-primary tooltip" data-tooltip="Top Tooltip Text"&gt;
                     .tooltip (default top)
-                    &lt;span class="tooltip" data-tooltip="Top Tooltip Text"&gt;&lt;/span&gt;
                 &lt;/strong&gt;
 
-                &lt;strong class="has-text-secondary"&gt;
+                &lt;strong class="has-text-secondary tooltip tooltip-right" data-tooltip="Right Tooltip Text"&gt;
                     .tooltip .tooltip-right
-                    &lt;span class="tooltip tooltip-right" data-tooltip="Right Tooltip Text"&gt;&lt;/span&gt;
                 &lt;/strong&gt;
 
-                &lt;strong class="has-text-complement"&gt;
+                &lt;strong class="has-text-complement tooltip tooltip-right" data-tooltip="Bottom Tooltip Text"&gt;
                     .tooltip .tooltip-bottom
-                    &lt;span class="tooltip tooltip-right" data-tooltip="Bottom Tooltip Text"&gt;&lt;/span&gt;
                 &lt;/strong&gt;
 
-                &lt;span&gt;
+                &lt;span class="tooltip tooltip-left" data-tooltip="Left Tooltip Text"&gt;
                     &lt;a href="#page-top"&gt;.tooltip .tooltip-left&lt;/a&gt;
-                    &lt;span class="tooltip tooltip-left" data-tooltip="Left Tooltip Text"&gt;&lt;/span&gt;
                 &lt;/span&gt;
 
-                &lt;strong&gt;
+                &lt;p class="tooltip tooltip-right"
+                   data-tooltip="This tooltip &#10; has multiline text &#10; that can be shown"&gt;
                     .tooltip multiline
-                    &lt;span class="tooltip tooltip-right"
-                          data-tooltip="This tooltip &#10; has multiline text &#10; that can be shown"&gt;
-                    &lt;/span&gt;
-                &lt;/strong&gt;
+                &lt;/p&gt;
             </code></pre>
         </div>
     </div>
