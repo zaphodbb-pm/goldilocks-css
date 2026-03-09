@@ -102,10 +102,6 @@
         border-color: var(--complement);
     }
 
-    details.accordion.is-expander-link summary {
-        border-color: var(--link);
-    }
-
     details.accordion.is-expander-success summary {
         border-color: var(--success);
     }
