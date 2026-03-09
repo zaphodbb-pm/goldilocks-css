@@ -1,7 +1,6 @@
-@layer extras {
+/* comments.css */
 
-    .comments {
-    }
+@layer extras {
 
     .comments > li {
         list-style: none;

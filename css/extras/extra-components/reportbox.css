@@ -1,3 +1,5 @@
+/* reportbox.css */
+
 @layer extras {
 
     .reportbox {
@@ -73,7 +75,6 @@
         row-gap: var(--gap-row);
     }
 
-
     .reportbox > p > span:first-child,
     .reportbox > label > span:first-child {
         font-size: var(--size-5);
@@ -92,7 +93,6 @@
         font-size: var(--size-1);
         font-weight: var(--weight-bold);
     }
-
 
     .reportbox > label > progress + span {
         font-size: 0.9em;

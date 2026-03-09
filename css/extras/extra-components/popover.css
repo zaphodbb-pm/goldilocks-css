@@ -63,4 +63,24 @@
     .popover.pop-left:hover .popover-container {
         transform: translate(calc(-100% - 2 * var(--mar-horz)), -50%) scale(1);
     }
+
+
+    [popover]:popover-open {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    [popover] {
+
+        /* Final state of the exit animation */
+        opacity: 0;
+        transform: scaleX(0);
+
+        transition:
+                opacity 0.7s,
+                transform 0.7s,
+                overlay 0.7s allow-discrete,
+                display 0.7s allow-discrete;
+        /* Equivalent to transition: all 0.7s allow-discrete; */
+    }
 }

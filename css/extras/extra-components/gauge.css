@@ -1,3 +1,5 @@
+/* gauge.css */
+
 @layer extras {
 
     .gauge-donut,
@@ -14,7 +16,7 @@
     .gauge-meter figcaption {
         margin: var(--margin) 0;
         font-size: var(--size-5);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
         color: var(--text);
     }
 
@@ -136,7 +138,7 @@
         position: relative;
         color: var(--text);
         font-size: var(--size-2);
-        font-weight: var(--weight-bold);
+        font-weight: var(--weight-semibold);
         z-index: 3;
     }
 
@@ -187,9 +189,9 @@
         color: var(--secondary);
     }
 
-    .gauge-donut.gauge-tertiary data:before,
-    .gauge-ring.gauge-tertiary data:before,
-    .gauge-meter.gauge-tertiary data:before {
+    .gauge-donut.gauge-complement data:before,
+    .gauge-ring.gauge-complement data:before,
+    .gauge-meter.gauge-complement data:before {
         color: var(--complement);
     }
 

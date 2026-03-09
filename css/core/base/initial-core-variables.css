@@ -131,7 +131,6 @@
     --magazine-width: 40ch;
 
 
-
     /* carousel image height */
     --carousel-image-height: 8rem;
     --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */

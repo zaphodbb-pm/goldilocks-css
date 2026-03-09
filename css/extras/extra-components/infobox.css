@@ -1,3 +1,5 @@
+/* infobox.css */
+
 @layer extras {
 
     .infobox {
@@ -121,7 +123,7 @@
         background-color: var(--secondary-light);
     }
 
-    .infobox-tertiary {
+    .infobox-complement {
         background-color: var(--complement-light);
     }
 
@@ -134,7 +136,7 @@
         color: var(--secondary-dark);
     }
 
-    .infobox.infobox-tertiary > div > p {
+    .infobox.infobox-complement > div > p {
         color: var(--complement-dark);
     }
 
@@ -146,7 +148,7 @@
         color: var(--secondary-dark);
     }
 
-    .infobox.infobox-tertiary > div > p span:nth-child(2) {
+    .infobox.infobox-complement > div > p span:nth-child(2) {
         color: var(--complement-dark);
     }
 
@@ -161,7 +163,7 @@
         color: var(--secondary-text-invert);
     }
 
-    .infobox-tertiary > a {
+    .infobox-complement > a {
         background-color: var(--complement);
         color: var(--complement-text-invert);
     }
@@ -176,7 +178,7 @@
         color: var(--secondary);
     }
 
-    .infobox-tertiary > div > div {
+    .infobox-complement > div > div {
         color: var(--complement);
     }
 

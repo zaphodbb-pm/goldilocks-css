@@ -7915,6 +7915,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
+/*blockquote.css*/
+
 @layer extras
 {
     .blockquote
@@ -7982,6 +7984,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         }
     }
 }
+
+/* carousel.css */
 
 @layer extras
 {
@@ -8064,6 +8068,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         scrollbar-width: none;
     }
 
+    /** Hide scrollbar for Chrome, Safari and Opera - needs a separate rule to work */
     .carousel .no-scrollbar::-webkit-scrollbar
     {
         display: none;
@@ -8084,7 +8089,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         column-gap: calc(2 * var(--gap-col));
         align-items: center;
         justify-content: space-around;
-        --color: var(--main-color-complement-low, 0);
+        --color: var(--main-color, 0);
         --color-offset: 75;
         --color-satlight: 90%, 45%, .80;
         --color-1: hsla(var(--color), var(--color-satlight));
@@ -8411,9 +8416,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         position: absolute;
         z-index: 3;
 
-        transform: translate(100%, -100%);
+        transform: rotate( calc( (var(--start) + var(--size) / 2 ) * (-360deg) ) );
 
         color: var(--text);
+
+        translate: 100% -100%;
     }
 
 
@@ -8521,7 +8528,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         border-right: solid 1px var(--border-main);
         border-bottom: solid 1px var(--border-main);
         border-left: solid 1px var(--border-main);
-        /*background-image: -webkit-gradient(linear, left top, left bottom, from(var(--border-main)), to(transparent));*/
         background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
         background-size: 100% 20%;
     }
@@ -8802,12 +8808,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--color-10);
     }
 }
+/* comments.css */
+
 @layer extras
 {
-    .comments
-    {
-    }
-
     .comments > li
     {
         display: flex;
@@ -8892,6 +8896,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         margin-top: 1.5rem;
     }
 }
+/* divider.css */
+
 @layer extras
 {
     .divider-box,
@@ -8988,6 +8994,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
+/* gauge.css */
+
 @layer extras
 {
     .gauge-donut,
@@ -9006,7 +9014,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .gauge-meter figcaption
     {
         font-size: var(--size-5);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
 
         margin: var(--margin) 0;
 
@@ -9155,7 +9163,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .gauge-meter data span
     {
         font-size: var(--size-2);
-        font-weight: var(--weight-bold);
+        font-weight: var(--weight-semibold);
 
         position: relative;
         z-index: 3;
@@ -9217,9 +9225,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--secondary);
     }
 
-    .gauge-donut.gauge-tertiary data:before,
-    .gauge-ring.gauge-tertiary data:before,
-    .gauge-meter.gauge-tertiary data:before
+    .gauge-donut.gauge-complement data:before,
+    .gauge-ring.gauge-complement data:before,
+    .gauge-meter.gauge-complement data:before
     {
         color: var(--complement);
     }
@@ -9245,6 +9253,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--danger);
     }
 }
+/* infobox.css */
+
 @layer extras
 {
     .infobox
@@ -9406,7 +9416,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--secondary-light);
     }
 
-    .infobox-tertiary
+    .infobox-complement
     {
         background-color: var(--complement-light);
     }
@@ -9422,7 +9432,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--secondary-dark);
     }
 
-    .infobox.infobox-tertiary > div > p
+    .infobox.infobox-complement > div > p
     {
         color: var(--complement-dark);
     }
@@ -9437,7 +9447,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--secondary-dark);
     }
 
-    .infobox.infobox-tertiary > div > p span:nth-child(2)
+    .infobox.infobox-complement > div > p span:nth-child(2)
     {
         color: var(--complement-dark);
     }
@@ -9455,7 +9465,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--secondary);
     }
 
-    .infobox-tertiary > a
+    .infobox-complement > a
     {
         color: var(--complement-text-invert);
         background-color: var(--complement);
@@ -9473,7 +9483,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--secondary);
     }
 
-    .infobox-tertiary > div > div
+    .infobox-complement > div > div
     {
         color: var(--complement);
     }
@@ -9493,7 +9503,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         object-fit: cover;
     }
 }
+/* magazine.css */
 /** large volume text layouts **/
+
 @layer extras
 {
     .magazine
@@ -9573,6 +9585,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-highlight);
     }
 }
+
+/* message.css */
 
 @layer extras
 {
@@ -9741,7 +9755,30 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         transform: translate(calc(-100% - 2 * var(--mar-horz)), -50%) scale(1);
     }
+
+
+    [popover]:popover-open
+    {
+        transform: scaleX(1);
+
+        opacity: 1;
+    }
+
+    [popover]
+    {
+        transition: opacity .7s,
+        transform .7s,
+        overlay .7s allow-discrete,
+        display .7s allow-discrete;
+        transform: scaleX(0);
+        /* Final state of the exit animation */
+
+        opacity: 0;
+        /* Equivalent to transition: all 0.7s allow-discrete; */
+    }
 }
+
+/* reportbox.css */
 
 @layer extras
 {
@@ -9833,7 +9870,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         row-gap: var(--gap-row);
     }
 
-
     .reportbox > p > span:first-child,
     .reportbox > label > span:first-child
     {
@@ -9857,7 +9893,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         font-size: var(--size-1);
         font-weight: var(--weight-bold);
     }
-
 
     .reportbox > label > progress + span
     {
@@ -10018,6 +10053,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 }
 
 /* widgetbar.css */
+
 @layer extras
 {
     .widgetbar,
@@ -10660,13 +10696,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .tooltip.tooltip-right:focus::after,
     .tooltip.tooltip-right:hover::after
     {
-        transform: translate(1.75rem, 50%);
+        transform: translate(2.25rem, 50%);
     }
 
     .tooltip.tooltip-right:focus::before,
     .tooltip.tooltip-right:hover::before
     {
-        transform: translate(.75rem, 50%);
+        transform: translate(1.25rem, 50%);
     }
 
 

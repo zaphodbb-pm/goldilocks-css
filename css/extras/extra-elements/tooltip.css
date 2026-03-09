@@ -81,12 +81,12 @@
 
     .tooltip.tooltip-right:focus::after,
     .tooltip.tooltip-right:hover::after {
-        transform: translate(1.75rem, 50%);
+        transform: translate(2.25rem, 50%);
     }
 
     .tooltip.tooltip-right:focus::before,
     .tooltip.tooltip-right:hover::before {
-        transform: translate(0.75rem, 50%);
+        transform: translate(1.25rem, 50%);
     }
 
 

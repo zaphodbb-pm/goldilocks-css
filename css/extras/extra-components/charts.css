@@ -9,7 +9,7 @@
         padding: var(--padding-normal);
         border-radius: var(--radius-comp);
 
-        --color: var(--main-color-complement-low, 0);
+        --color: var(--main-color, 0);
         --color-offset: 75;
         --color-satlight: 90%, 45%, 0.80;
 
@@ -29,6 +29,13 @@
     .charts-line,
     .charts-pie,
     .charts-donut {
+        --labels-size: 0rem;
+        --caption-size: 0rem;
+        --grid-offset: 1px;
+        --column-buffer-td: 0.5rem;
+        --column-buffer: 0.25rem;
+        --column-count: 1;
+
         width: 100%;
         height: calc(100% - var(--caption-size));
         position: relative;
@@ -38,13 +45,6 @@
         border-spacing: 0;
         overflow: initial;
         background-color: transparent;
-
-        --labels-size: 0rem;
-        --caption-size: 0rem;
-        --grid-offset: 1px;
-        --column-buffer-td: 0.5rem;
-        --column-buffer: 0.25rem;
-        --column-count: 1;
     }
 
 
@@ -281,7 +281,8 @@
     .charts-donut.show-values tbody tr td span {
         position: absolute;
         z-index: 3;
-        transform: translate(100%, -100%);
+        transform: rotate( calc( (var(--start) + var(--size) / 2 ) * (-360deg) ) );
+        translate: 100% -100%;
         font-size: 0.9rem;
         color: var(--text);
     }
@@ -375,7 +376,6 @@
         border-bottom: solid 1px var(--border-main);
 
         background-size: 100% 20%;
-        /*background-image: -webkit-gradient(linear, left top, left bottom, from(var(--border-main)), to(transparent));*/
         background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
     }
 

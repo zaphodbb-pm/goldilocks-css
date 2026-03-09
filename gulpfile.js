@@ -126,8 +126,8 @@ function watch() {
 //exports.watch = watch;
 exports.buildCore = buildCore;
 exports.buildCoreElements = buildCoreElements;
-//exports.buildExtended = buildExtended;
-//exports.buildExtras = buildExtras;
+exports.buildExtended = buildExtended;
+exports.buildExtras = buildExtras;
 exports.buildCoreExtended = buildCoreExtended;
 exports.buildAll = buildAll;
 exports.default = buildAll;

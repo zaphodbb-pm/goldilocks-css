@@ -1,33 +1,31 @@
-
-/* version 1.0.0 - February 17, 2026 - v4 */
-/** Note that variables can set programatically and so do not need to be in a layer **/
-
 :root
 {
-    /* Awareness variables - for info only */
-    /** Typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
-    /** Files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
+    /* version 0.1.0 - April 29, 2022 - v3 */
+    /* awareness variables - for info only */
+    /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
+    /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
     --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
     /* Base measurement unit to be used for font, margins and padding */
-    /* Changing the base html factor allows a user to change the font sizes to meet accessibility needs */
+    /* changing the base html factor allows a user to change the font sizes to meet accessibility needs */
     --base-html-factor: 100%;
     --base-rem: 1rem;
     /* Typography */
     /** Note: text colors are set in file: initial-colors.css **/
     /** Default is to use system fonts as much as possible **/
-    --family-sans-serif: 'Tahoma', 'Helvetica Neue', 'Helvetica', 'Arial', 'Segoe UI', 'Roboto', sans-serif;
-    --family-serif: 'Georgia', 'Times New Roman', serif;
+    --family-sans-serif: 'Tahoma', 'Helvetica Neue', 'Helvetica', 'Arial', 'Segoe UI', 'Roboto';
+    --family-serif: 'Georgia', 'Times New Roman';
     --family-monospace: monospace;
     --render-mode: optimizeLegibility;
     /** Define font weights here **/
     --weight-light: 300;
     --weight-normal: 400;
+    --weight-medium: 500;
     --weight-semibold: 600;
     --weight-bold: 700;
     /** Adjustable using a variable font size for all screen sizes
-            - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-            - maximum font-size is set to 3 * base (nominal 48px)
-         **/
+        - font-size is variable and tracks viewport to a width of 100rem (1600 px)
+        - maximum font-size is set to 3 * base (nominal 48px)
+     **/
     --base-font-size: clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) );
     /** Text line heights to match size **/
     --line-height-125: 125%;
@@ -36,11 +34,11 @@
     --line-height-200: 200%;
     /** Sizing pattern - typically for text **/
     /*** typical factors: (see https://typescale.com)
-            1.125 (Major Second) - A balanced choice for most UI designs.
-            1.2 (Minor Third) - Suitable for more information-dense UI designs.
-            1.25 (Major Third) - A very popular choice that provides enough distinction between heading levels.
-            1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
-        ***/
+        1.125 (Major Second) - A balanced choice for most UI designs.
+        1.2 (Minor Third) - Suitable for more information-dense UI designs.
+        1.25 (Major Third) - A very popular choice that provides enough distinction between heading levels.
+        1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
+    ***/
     --size-factor: 1.125;
     --size-7: calc( 1rem / var(--size-factor) );                /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
     --size-6: 1rem;                                             /* Example 1.125 scale factor:  --size-6 = 1 rem; */
@@ -124,6 +122,13 @@
         <polyline points="9 18 15 12 9 6"/>\
     </svg>');
 }
+
+/*
+main theme color definitions
+use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
+ */
+
+
 :root
 {
     /* Common shadow treatment for boxed elements */
@@ -132,50 +137,45 @@
     /* main theme colour parameters - based on  complement color selection */
     --main-color: 140;                                  /** primary hue value **/
     --main-saturation: 70%;                             /** primary saturation value **/
-    --main-lightness: 31%;                              /** primary lightness value **/
-    --secondary-saturation: 75%;                        /** secondary saturation value **/
-    --secondary-lightness: 20%;                         /** secondary saturation value **/
-    --complement-main: calc(var(--main-color) + 180);   /** complement hue value **/
-    --complement-saturation: 70%;                       /** complement saturation value **/
-    --complement-lightness: 40%;                        /** complement lightness value **/
+    --main-lightness: 40%;                              /** primary lightness value **/
     /* build main theme colours */
     --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
-    --secondary: hsl(var(--main-color), var(--complement-saturation), var(--complement-lightness));
-    --complement: hsl(var(--complement-main), var(--complement-saturation), var(--complement-lightness));
+    --secondary: color-mix(var(--primary), black 40%);
+    --complement: hsl(calc(var(--main-color) + 180), var(--main-saturation), var(--main-lightness));
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl(var(--main-color), 100%, 25%);
-    --secondary-text: hsl(var(--main-color-complement-low), 100%, 30%);
-    --complement-text: hsl(var(--complement), 100%, 30%);
-    --primary-text-invert: hsl(var(--main-color), 100%, 99%);
-    --secondary-text-invert: hsl(var(--main-color-complement-low), 100%, 99%);
-    --complement-text-invert: hsl(var(--main-color-complement-high), 100%, 99%);
+    --primary-text: color-mix(var(--primary), black 20%);
+    --secondary-text: color-mix(var(--secondary), black 10%);
+    --complement-text: color-mix(var(--complement), black 10%);
+    --primary-text-invert: color-mix(var(--primary-text), black 95%);
+    --secondary-text-invert: color-mix(var(--secondary-text), white 95%);
+    --complement-text-invert: color-mix(var(--complement-text), white 95%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
-    --primary-light: hsl(var(--main-color), var(--main-color-sl-light));
-    --secondary-light: hsl(var(--main-color-complement-low), var(--main-color-sl-light));
-    --complement-light: hsl(var(--main-color-complement-high), var(--main-color-sl-light));
-    --primary-dark: hsl(var(--main-color), var(--main-color-sl-dark));
-    --secondary-dark: hsl(var(--main-color-complement-low), var(--main-color-sl-dark));
-    --complement-dark: hsl(var(--main-color-complement-high), var(--main-color-sl-dark));
+    --primary-light: color-mix(var(--primary), white 90%);
+    --secondary-light: color-mix(var(--secondary), white 90%);
+    --complement-light: color-mix(var(--complement), white 90%);
+    --primary-dark: color-mix(var(--primary), black 10%);
+    --secondary-dark: color-mix(var(--secondary), black 10%);
+    --complement-dark: color-mix(var(--complement), black 10%);
     --link: hsl(217, 71%, 48%);
-    --link-light: hsl(217, 70%, 90%);
-    --link-dark: hsl(217, 71%, 30%);
-    --link-text: hsl(217, 100%, 30%);
-    --link-text-invert: hsl(217, 100%, 95%);
+    --link-light: color-mix(var(--link), white 90%);
+    --link-dark: color-mix(var(--link), black 15%);
+    --link-text: color-mix(var(--link), black 30%);
+    --link-text-invert: white;
     --success: hsl(150, 75%, 53%);
-    --success-light: hsl(141, 70%, 96%);
-    --success-dark: hsl(141, 70%, 31%);
-    --success-text: hsl(141, 65%, 20%);
-    --success-text-invert: hsl(141, 100%, 95%);
+    --success-light: color-mix(var(--success), white 90%);
+    --success-dark: color-mix(var(--success), black 15%);
+    --success-text: color-mix(var(--success), black 35%);
+    --success-text-invert: black;
     --warning: hsl(48, 100%, 48%);
-    --warning-light: hsl(48, 100%, 95%);
-    --warning-dark: hsl(48, 100%, 40%);
-    --warning-text: hsl(48, 80%, 22%);
-    --warning-text-invert: hsl(48, 100%, 95%);
+    --warning-light: color-mix(var(--warning), white 90%);
+    --warning-dark: color-mix(var(--warning), black 15%);
+    --warning-text: color-mix(var(--warning), black 40%);
+    --warning-text-invert: black;
     --danger: hsl(348, 86%, 48%);
-    --danger-light: hsl(348, 90%, 97%);
-    --danger-dark: hsl(348, 86%, 33%);
-    --danger-text: hsl(348, 100%, 35%);
-    --danger-text-invert: hsl(348, 100%, 100%);
+    --danger-light: color-mix(var(--danger), white 90%);
+    --danger-dark: color-mix(var(--danger), black 15%);
+    --danger-text: color-mix(var(--danger), black 30%);
+    --danger-text-invert: white;
     /* additional greys */
     --black: hsl(0, 0%, 2%);
     --black-bis: hsl(0, 0%, 10%);
@@ -213,8 +213,9 @@
     --text-btn: var(--black);
     --text-btn-invert: var(--white);
     --text-bg: var(--white);
-    --text-code: var(--secondary-dark);
+    --text-code: var(--complement);
 }
+
 
 /*
 main dark theme color definitions
@@ -308,15 +309,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 /** other special items that need control **/
 
 
-/* Define layers organization for all sebsequent files */
+/* Pure css HTML base elements and reset */
+/** note that some HTML tags are set in other element files **/
+
+/* Define layers organization for all subsequent files */
 @layer base, layout, elements, extended, extras, custom;
 
-/* Pure css HTML base elements and reset */
-/** set global environment **/
-/** note that some HTML tags are set in other element files **/
 
 @layer base
 {
+    /** set global environment **/
     html
     {
         font-size: var(--base-html-factor);
@@ -474,7 +476,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     small
     {
         font-size: 80%;
-        font-weight: 400;
+        font-weight: 400; /* (added) */
     }
 
     details
@@ -504,7 +506,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         margin: 0;
         padding: 0;
 
-        border-left: .25rem solid var(--secondary);
+        border-left: .25rem solid var(--complement);
         background-color: var(--bg-main-code);
     }
 
@@ -541,9 +543,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: transparent;
     }
 }
+/* fix for prism code highlighter */
 @layer base
 {
-    /* fix for prism code highlighter */
     pre > code .tag
     {
         font-size: unset;
@@ -579,16 +581,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: 1rem 1.5rem;
     }
 
-    /*
-    pre {
-        padding: 0 !important;
+    pre
+    {
         margin: 0 !important;
+        padding: 0 !important;
     }
-
-     */
 }
-
-
 @layer layout
 {
     .box,
@@ -596,7 +594,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         display: block;
 
-        width: calc( 100% - 2 * var(--padding-normal) );
+        width: calc(100% - 2 * var(--padding-normal));
         height: auto;
         padding: var(--padding-normal);
 
@@ -604,12 +602,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-component);
     }
 
+
     .box-shadow
     {
         border-radius: var(--radius);
         box-shadow: var(--shadow);
     }
 }
+
 @layer layout
 {
     /* Sadly, grid needs some help for columns at mobile widths  */
@@ -1257,9 +1257,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
+/* spacing options */
+
 @layer layout
 {
-    /* spacing options */
     /** spacing between related HTML tags such as buttons, headings, etc.  **/
     .space-element
     {
@@ -1395,10 +1396,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
-/* backgrounds.css - Background Colour Helpers */
-
 @layer layout
 {
+    /* Background Colour Helpers */
     .has-bg-primary
     {
         background-color: var(--primary);
@@ -1484,10 +1484,756 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--white);
     }
 }
-/* element-colors.css - Element / Block Colours */
+
+
 
 @layer layout
 {
+    /* fixed heights for elements / components */
+    .has-height-5rem
+    {
+        height: 5rem;
+    }
+
+    .has-height-10rem
+    {
+        height: 10rem;
+    }
+
+    .has-height-12rem
+    {
+        height: 12rem;
+    }
+
+    .has-height-15rem
+    {
+        height: 15rem;
+    }
+
+    .has-height-20rem
+    {
+        height: 20rem;
+    }
+
+    .has-height-25rem
+    {
+        height: 25rem;
+    }
+
+    .has-height-30rem
+    {
+        height: 30rem;
+    }
+
+    .has-height-40rem
+    {
+        height: 40rem;
+    }
+
+    /* defines general purpose containers to create, for example, a hero section */
+    [class*='is-container']
+    {
+        width: 100%;
+    }
+
+    .is-container-5rem
+    {
+        height: 5rem;
+    }
+
+    .is-container-10rem
+    {
+        height: 10rem;
+    }
+
+    .is-container-12rem
+    {
+        height: 12rem;
+    }
+
+    .is-container-15rem
+    {
+        height: 15rem;
+    }
+
+    .is-container-20rem
+    {
+        height: 20rem;
+    }
+
+    .is-container-25rem
+    {
+        height: 25rem;
+    }
+
+    .is-container-30rem
+    {
+        height: 30rem;
+    }
+
+    .is-container-40rem
+    {
+        height: 40rem;
+    }
+}
+
+@layer layout
+{
+    /* positions.css */
+    .is-fixed-top
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+    }
+
+    .is-fixed-bottom
+    {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+    }
+
+    .is-fixed-left
+    {
+        position: fixed;
+        top: 25%;
+        left: 0;
+
+        height: 100%;
+    }
+
+    .is-fixed-right
+    {
+        position: fixed;
+        top: 25%;
+        right: 0;
+
+        height: 100%;
+    }
+
+    .add-cursor
+    {
+        cursor: pointer;
+    }
+
+
+    /* controls to hide content but allow screen readers to still see them */
+    /* from https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
+    .sr-only
+    {
+        position: absolute !important;
+
+        overflow: hidden !important;
+        clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+
+        width: 1px !important;
+        height: 1px !important;
+        margin: -1px !important;
+        padding: 0 !important;
+
+        white-space: nowrap !important; /* 3 */
+
+        color: #fff;
+        border: 0 !important;
+        background-color: #000;
+
+        -webkit-clip-path: inset(50%) !important;
+                clip-path: inset(50%) !important; /* 2 */
+    }
+
+    /*
+        Use in conjunction with .sr-only to only display content when it's focused.
+        @note Useful for skip links
+        @see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+        @note Based on a HTML5 Boilerplate technique, included in Bootstrap
+        @note Fixed a bug with position: static on iOS 10.0.2 + VoiceOver
+            @author Sylvain Pigeard
+            @see https://github.com/twbs/bootstrap/issues/20732
+    */
+    .sr-only-focusable:focus,
+    .sr-only-focusable:active
+    {
+        overflow: visible !important;
+        clip: auto !important;
+
+        width: auto !important;
+        height: auto !important;
+        margin: auto !important;
+
+        white-space: normal !important;
+
+        -webkit-clip-path: none !important;
+                clip-path: none !important;
+    }
+}
+
+
+@layer layout
+{
+    /* absolute widths */
+    .has-width-1rem
+    {
+        width: 1rem !important;
+    }
+
+    .has-width-2rem
+    {
+        width: 2rem !important;
+    }
+
+    .has-width-3rem
+    {
+        width: 3rem !important;
+    }
+
+    .has-width-4rem
+    {
+        width: 4rem !important;
+    }
+
+    .has-width-5rem
+    {
+        width: 5rem !important;
+    }
+
+    .has-width-6rem
+    {
+        width: 6rem !important;
+    }
+
+    .has-width-8rem
+    {
+        width: 8rem !important;
+    }
+
+    .has-width-10rem
+    {
+        width: 10rem !important;
+    }
+
+    .has-width-15rem
+    {
+        width: 15rem !important;
+    }
+
+    .has-width-20rem
+    {
+        width: 20rem !important;
+    }
+
+    .has-width-25rem
+    {
+        width: 25rem !important;
+    }
+
+    .has-width-30rem
+    {
+        width: 30rem !important;
+    }
+
+    .has-width-40rem
+    {
+        width: 40rem !important;
+    }
+
+
+    /* responsive widths */
+    .has-max-width-1rem
+    {
+        max-width: 1rem !important;
+    }
+
+    .has-max-width-2rem
+    {
+        max-width: 2rem !important;
+    }
+
+    .has-max-width-3rem
+    {
+        max-width: 3rem !important;
+    }
+
+    .has-max-width-4rem
+    {
+        max-width: 4rem !important;
+    }
+
+    .has-max-width-5rem
+    {
+        max-width: 5rem !important;
+    }
+
+    .has-max-width-6rem
+    {
+        max-width: 6rem !important;
+    }
+
+    .has-max-width-8rem
+    {
+        max-width: 8rem !important;
+    }
+
+    .has-max-width-10rem
+    {
+        max-width: 10rem !important;
+    }
+
+    .has-max-width-15rem
+    {
+        max-width: 15rem !important;
+    }
+
+    .has-max-width-20rem
+    {
+        max-width: 20rem !important;
+    }
+
+    .has-max-width-25rem
+    {
+        max-width: 25rem !important;
+    }
+
+    .has-max-width-30rem
+    {
+        max-width: 30rem !important;
+    }
+
+    .has-max-width-40rem
+    {
+        max-width: 40rem !important;
+    }
+
+
+    /* relative widths */
+    .width-75
+    {
+        width: 75% !important;
+    }
+
+    .width-50
+    {
+        width: 50% !important;
+    }
+
+    .width-33
+    {
+        width: 33% !important;
+    }
+
+    .width-25
+    {
+        width: 25% !important;
+    }
+
+    .width-full
+    {
+        width: 100% !important;
+    }
+}
+
+/* Buttons */
+
+@layer elements
+{
+    button,
+    .button
+    {
+        font-size: 1rem;
+        line-height: 1.5;
+
+        display: inline-flex;
+
+        height: 2.5em;
+        padding: var(--pad-vert) var(--pad-horz);
+
+        cursor: pointer;
+        text-align: center;
+        white-space: nowrap;
+
+        border-radius: var(--radius-elem);
+        box-shadow: none;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    button
+    {
+        color: var(--text-comp);
+        border: 1px solid var(--border-main-darker);
+        background-color: var(--bg-main);
+    }
+
+    button:focus,
+    .button:focus
+    {
+        outline: none;
+    }
+
+    button.has-hover:hover
+    {
+        color: var(--text-elem);
+        border: 1px solid var(--bg-element);
+        background-color: var(--bg-element);
+    }
+
+    a.button
+    {
+        height: auto;
+
+        text-decoration: none;
+    }
+
+    button > a
+    {
+        color: inherit;
+    }
+
+
+    button.is-default-inverted,
+    .button.is-default-inverted
+    {
+        color: var(--text-comp);
+        border: none;
+
+        text-decoration-color: var(--text-comp);
+        text-decoration-line: underline;
+        text-underline-offset: .25em;
+    }
+
+    button.is-default-inverted.has-hover:hover,
+    .button.is-default-inverted.has-hover:hover
+    {
+        text-decoration: underline var(--text-elem);
+
+        color: var(--text-elem);
+        border: none;
+        background-color: var(--bg-element);
+    }
+
+    button.is-rounded,
+    .button.is-rounded
+    {
+        border-radius: 9999px;
+    }
+
+    button.is-large,
+    .button.is-large,
+    .buttons.are-large > button
+    {
+        font-size: var(--size-4);
+    }
+
+    button.is-medium,
+    .button.is-medium,
+    .buttons.are-medium > button
+    {
+        font-size: var(--size-5);
+    }
+
+    button.is-normal,
+    .button.is-normal,
+    .buttons.are-normal > button
+    {
+        font-size: var(--size-6);
+    }
+
+    button.is-small,
+    .button.is-small,
+    .buttons.are-small > button
+    {
+        font-size: var(--size-7);
+        font-weight: var(--weight-medium);
+        line-height: 1.2;
+
+        height: 2rem;
+        padding: var(--pad-vert-small) var(--pad-horz-small);
+    }
+
+    button.is-small:not(.is-rounded),
+    .button.is-small:not(.is-rounded)
+    {
+        border-radius: calc(var(--radius-elem) / 2);
+    }
+
+    button[disabled],
+    .button[disabled]
+    {
+        cursor: not-allowed;
+
+        opacity: .6;
+    }
+
+    /* group buttons */
+    .buttons
+    {
+        display: flex;
+
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+
+    .buttons button:not(:last-child),
+    .buttons .button:not(:last-child)
+    {
+        margin-right: -1px;
+
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .buttons button:not(:first-child),
+    .buttons .button:not(:first-child)
+    {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    /** ensure that hover doesn't distort button size **/
+    .button[class*='outlined']:not(.is-small).has-hover:hover
+    {
+        padding-top: calc(var(--pad-vert) + 1px);
+        padding-bottom: calc(var(--pad-vert) + 1px);
+    }
+
+    .button[class*='outlined'].is-small.has-hover:hover
+    {
+        padding-top: calc(var(--pad-vert-small) + 1px);
+        padding-bottom: calc(var(--pad-vert-small) + 1px);
+    }
+
+    button .icon:first-child,
+    .button .icon:first-child
+    {
+        font-size: 1em;
+
+        margin-right: .25em;
+        margin-left: calc(-.25em - 1px);
+    }
+
+    button .icon:last-child,
+    .button .icon:last-child
+    {
+        font-size: 1em;
+
+        margin-right: calc(-.25em - 1px);
+        margin-left: .25em;
+    }
+
+    button .icon:only-child,
+    .button .icon:only-child
+    {
+        font-size: 1em;
+
+        margin-right: .25em;
+        margin-left: .25em;
+    }
+
+    /* set-up for waiting spinner */
+    button.is-loading,
+    button.is-loading-dark,
+    .button.is-loading,
+    .button.is-loading-dark
+    {
+        pointer-events: none;
+
+        color: transparent !important;
+    }
+
+
+    @keyframes spinAround
+    {
+        from
+        {
+            transform: rotate(0deg);
+        }
+
+        to
+        {
+            transform: rotate(359deg);
+        }
+    }
+
+    button.is-loading::after,
+    .button.is-loading::after
+    {
+        position: relative;
+        top: calc(50% - (1em / 2) - 2px);
+        right: calc(50% - (1em / 2) - 4px);
+
+        display: block;
+
+        width: 1em;
+        height: 1em;
+
+        content: '';
+        -webkit-animation: spinAround .5s infinite linear;
+                animation: spinAround .5s infinite linear;
+
+        border: 2px solid var(--bg-main);
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-radius: 9999px;
+    }
+
+    button.is-loading-dark::after,
+    .button.is-loading-dark::after
+    {
+        position: relative;
+        top: calc(50% - (1em / 2) - 2px);
+        right: calc(50% - (1em / 2) - 4px);
+
+        display: block;
+
+        width: 1em;
+        height: 1em;
+
+        content: '';
+        -webkit-animation: spinAround .5s infinite linear;
+                animation: spinAround .5s infinite linear;
+
+        border: 2px solid var(--bg-main-invert);
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-radius: 9999px;
+    }
+}
+
+
+@layer elements
+{
+    .delete
+    {
+        font-size: 0;
+
+        position: relative;
+
+        display: inline-block;
+
+        width: 20px;
+        min-width: 20px;
+        max-width: 20px;
+        height: 20px;
+        min-height: 20px;
+        max-height: 20px;
+        padding: 0;
+
+        cursor: pointer;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        vertical-align: top;
+        pointer-events: auto;
+
+        border: none;
+        border-radius: 9999px;
+        outline: 0;
+        background-color: rgba(10, 10, 10, .2);
+
+        -webkit-touch-callout: none;
+           -moz-appearance: none;
+        -webkit-appearance: none;
+        flex-grow: 0;
+        flex-shrink: 0;;
+    }
+
+
+    .delete.is-small
+    {
+        font-size: .5rem;
+
+        width: 16px;
+        min-width: 16px;
+        max-width: 16px;
+        height: 16px;
+        min-height: 16px;
+        max-height: 16px;
+        margin-top: .5rem;
+    }
+
+    button.delete.is-small
+    {
+        border-radius: 9999px;
+    }
+
+    .delete.is-medium
+    {
+        font-size: .75rem;
+
+        width: 24px;
+        min-width: 24px;
+        max-width: 24px;
+        height: 24px;
+        min-height: 24px;
+        max-height: 24px;
+        margin-top: .5rem;
+    }
+
+    .delete.is-large
+    {
+        font-size: 1rem;
+
+        width: 32px;
+        min-width: 32px;
+        max-width: 32px;
+        height: 32px;
+        min-height: 32px;
+        max-height: 32px;
+        margin-top: .5rem;
+    }
+
+
+    .delete::before,
+    .delete::after
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        display: block;
+
+        content: '';
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        transform-origin: center center;
+
+        background-color: var(--text-btn-invert);
+    }
+
+    .delete::before
+    {
+        width: 50%;
+        height: 2px;
+    }
+
+    .delete::after
+    {
+        width: 2px;
+        height: 50%;
+    }
+
+    .delete:hover,
+    .delete:focus
+    {
+        background-color: rgba(10, 10, 10, .3);
+    }
+
+    .delete:active
+    {
+        background-color: rgba(10, 10, 10, .4);
+    }
+}
+
+@layer elements
+{
+    /* Element / Block Colours */
     .is-primary,
     .is-primary-light.has-hover:hover,
     .is-primary-outlined.has-hover:hover,
@@ -1909,752 +2655,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
-/* heights.css - fixed heights for elements / components */
-
-@layer layout
-{
-    .has-height-5rem
-    {
-        height: 5rem;
-    }
-
-    .has-height-10rem
-    {
-        height: 10rem;
-    }
-
-    .has-height-12rem
-    {
-        height: 12rem;
-    }
-
-    .has-height-15rem
-    {
-        height: 15rem;
-    }
-
-    .has-height-20rem
-    {
-        height: 20rem;
-    }
-
-    .has-height-25rem
-    {
-        height: 25rem;
-    }
-
-    .has-height-30rem
-    {
-        height: 30rem;
-    }
-
-    .has-height-40rem
-    {
-        height: 40rem;
-    }
-
-    /* defines general purpose containers to create, for example, a hero section */
-    [class*='is-container']
-    {
-        width: 100%;
-    }
-
-    .is-container-5rem
-    {
-        height: 5rem;
-    }
-
-    .is-container-10rem
-    {
-        height: 10rem;
-    }
-
-    .is-container-12rem
-    {
-        height: 12rem;
-    }
-
-    .is-container-15rem
-    {
-        height: 15rem;
-    }
-
-    .is-container-20rem
-    {
-        height: 20rem;
-    }
-
-    .is-container-25rem
-    {
-        height: 25rem;
-    }
-
-    .is-container-30rem
-    {
-        height: 30rem;
-    }
-
-    .is-container-40rem
-    {
-        height: 40rem;
-    }
-}
-
-/* positions.css */
-
-@layer layout
-{
-    .is-fixed-top
-    {
-        position: fixed;
-        top: 0;
-        left: 0;
-
-        width: 100%;
-    }
-
-    .is-fixed-bottom
-    {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-
-        width: 100%;
-    }
-
-    .is-fixed-left
-    {
-        position: fixed;
-        top: 25%;
-        left: 0;
-
-        height: 100%;
-    }
-
-    .is-fixed-right
-    {
-        position: fixed;
-        top: 25%;
-        right: 0;
-
-        height: 100%;
-    }
-
-    .add-cursor
-    {
-        cursor: pointer;
-    }
-
-
-
-    /* controls to hide content but allow screen readers to still see them */
-    /* from https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
-
-    .sr-only
-    {
-        position: absolute !important;
-
-        overflow: hidden !important;
-        clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
-
-        width: 1px !important;
-        height: 1px !important;
-        margin: -1px !important;
-        padding: 0 !important;
-
-        white-space: nowrap !important;            /* 3 */
-
-        color: #fff;
-        border: 0 !important;
-        background-color: #000;
-
-        -webkit-clip-path: inset(50%) !important;
-                clip-path: inset(50%) !important;  /* 2 */
-    }
-
-    /*
-	Use in conjunction with .sr-only to only display content when it's focused.
-	@note Useful for skip links
-	@see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
-	@note Based on a HTML5 Boilerplate technique, included in Bootstrap
-	@note Fixed a bug with position: static on iOS 10.0.2 + VoiceOver
-		@author Sylvain Pigeard
-		@see https://github.com/twbs/bootstrap/issues/20732
-*/
-    .sr-only-focusable:focus,
-    .sr-only-focusable:active
-    {
-        overflow: visible !important;
-        clip: auto !important;
-
-        width: auto !important;
-        height: auto !important;
-        margin: auto !important;
-
-        white-space: normal !important;
-
-        -webkit-clip-path: none !important;
-                clip-path: none !important;
-    }
-}
-/* widths.css */
-
-@layer layout
-{
-    /* absolute widths */
-    .has-width-1rem
-    {
-        width: 1rem !important;
-    }
-
-    .has-width-2rem
-    {
-        width: 2rem !important;
-    }
-
-    .has-width-3rem
-    {
-        width: 3rem !important;
-    }
-
-    .has-width-4rem
-    {
-        width: 4rem !important;
-    }
-
-    .has-width-5rem
-    {
-        width: 5rem !important;
-    }
-
-    .has-width-6rem
-    {
-        width: 6rem !important;
-    }
-
-    .has-width-8rem
-    {
-        width: 8rem !important;
-    }
-
-    .has-width-10rem
-    {
-        width: 10rem !important;
-    }
-
-    .has-width-15rem
-    {
-        width: 15rem !important;
-    }
-
-    .has-width-20rem
-    {
-        width: 20rem !important;
-    }
-
-    .has-width-25rem
-    {
-        width: 25rem !important;
-    }
-
-    .has-width-30rem
-    {
-        width: 30rem !important;
-    }
-}
-
-.has-width-40rem
-{
-    width: 40rem !important;
-}
-
-
-/* responsive widths */
-.has-max-width-1rem
-{
-    max-width: 1rem !important;
-}
-
-.has-max-width-2rem
-{
-    max-width: 2rem !important;
-}
-
-.has-max-width-3rem
-{
-    max-width: 3rem !important;
-}
-
-.has-max-width-4rem
-{
-    max-width: 4rem !important;
-}
-
-.has-max-width-5rem
-{
-    max-width: 5rem !important;
-}
-
-.has-max-width-6rem
-{
-    max-width: 6rem !important;
-}
-
-.has-max-width-8rem
-{
-    max-width: 8rem !important;
-}
-
-.has-max-width-10rem
-{
-    max-width: 10rem !important;
-}
-
-.has-max-width-15rem
-{
-    max-width: 15rem !important;
-}
-
-.has-max-width-20rem
-{
-    max-width: 20rem !important;
-}
-
-.has-max-width-25rem
-{
-    max-width: 25rem !important;
-}
-
-.has-max-width-30rem
-{
-    max-width: 30rem !important;
-}
-
-.has-max-width-40rem
-{
-    max-width: 40rem !important;
-}
-
-
-/* relative widths */
-.width-75
-{
-    width: 75% !important;
-}
-
-.width-50
-{
-    width: 50% !important;
-}
-
-.width-33
-{
-    width: 33% !important;
-}
-
-.width-25
-{
-    width: 25% !important;
-}
-
-.width-full
-{
-    width: 100% !important;
-}
-
-/* buttons.css */
-
-@layer elements
-{
-    button,
-    .button
-    {
-        font-size: 1rem;
-        line-height: 1.5;
-
-        display: inline-flex;
-
-        height: 2.5em;
-        padding: var(--pad-vert) var(--pad-horz);
-
-        cursor: pointer;
-        text-align: center;
-        white-space: nowrap;
-
-        border-radius: var(--radius-elem);
-        box-shadow: none;
-
-        justify-content: center;
-        align-items: center;
-    }
-
-    button
-    {
-        color: var(--text-comp);
-        border: 1px solid var(--border-main-darker);
-        background-color: var(--bg-main);
-    }
-
-    button:focus,
-    .button:focus
-    {
-        outline: none;
-    }
-
-    button.has-hover:hover
-    {
-        color: var(--text-elem);
-        border: 1px solid var(--bg-element);
-        background-color: var(--bg-element);
-    }
-
-    a.button
-    {
-        height: auto;
-
-        text-decoration: none;
-    }
-
-    button > a
-    {
-        color: inherit;
-    }
-
-
-    button.is-default-inverted,
-    .button.is-default-inverted
-    {
-        color: var(--text-comp);
-        border: none;
-
-        text-decoration-color: var(--text-comp);
-        text-decoration-line: underline;
-        text-underline-offset: .25em;
-    }
-
-    button.is-default-inverted.has-hover:hover,
-    .button.is-default-inverted.has-hover:hover
-    {
-        text-decoration: underline var(--text-elem);
-
-        color: var(--text-elem);
-        border: none;
-        background-color: var(--bg-element);
-    }
-
-    button.is-rounded,
-    .button.is-rounded
-    {
-        border-radius: 9999px;
-    }
-
-    button.is-large,
-    .button.is-large,
-    .buttons.are-large > button
-    {
-        font-size: var(--size-4);
-    }
-
-    button.is-medium,
-    .button.is-medium,
-    .buttons.are-medium > button
-    {
-        font-size: var(--size-5);
-    }
-
-    button.is-normal,
-    .button.is-normal,
-    .buttons.are-normal > button
-    {
-        font-size: var(--size-6);
-    }
-
-    button.is-small,
-    .button.is-small,
-    .buttons.are-small > button
-    {
-        font-size: var(--size-7);
-        font-weight: var(--weight-semibold);
-        line-height: 1.2;
-
-        height: 2rem;
-        padding: var(--pad-vert-small) var(--pad-horz-small);
-    }
-
-    button.is-small:not(.is-rounded),
-    .button.is-small:not(.is-rounded)
-    {
-        border-radius: calc(var(--radius-elem) / 2);
-    }
-
-    button[disabled],
-    .button[disabled]
-    {
-        cursor: not-allowed;
-
-        opacity: .6;
-    }
-
-    /* group buttons */
-    .buttons
-    {
-        display: flex;
-
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-
-
-    .buttons button:not(:last-child),
-    .buttons .button:not(:last-child)
-    {
-        margin-right: -1px;
-
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .buttons button:not(:first-child),
-    .buttons .button:not(:first-child)
-    {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-
-    /** ensure that hover doesn't distort button size **/
-    .button[class*='outlined']:not(.is-small).has-hover:hover
-    {
-        padding-top: calc(var(--pad-vert) + 1px);
-        padding-bottom: calc(var(--pad-vert) + 1px);
-    }
-
-    .button[class*='outlined'].is-small.has-hover:hover
-    {
-        padding-top: calc(var(--pad-vert-small) + 1px);
-        padding-bottom: calc(var(--pad-vert-small) + 1px);
-    }
-
-    button .icon:first-child,
-    .button .icon:first-child
-    {
-        font-size: 1em;
-
-        margin-right: .25em;
-        margin-left: calc(-.25em - 1px);
-    }
-
-    button .icon:last-child,
-    .button .icon:last-child
-    {
-        font-size: 1em;
-
-        margin-right: calc(-.25em - 1px);
-        margin-left: .25em;
-    }
-
-    button .icon:only-child,
-    .button .icon:only-child
-    {
-        font-size: 1em;
-
-        margin-right: .25em;
-        margin-left: .25em;
-    }
-
-    /* set-up for waiting spinner */
-    button.is-loading,
-    button.is-loading-dark,
-    .button.is-loading,
-    .button.is-loading-dark
-    {
-        pointer-events: none;
-
-        color: transparent !important;
-    }
-
-
-    @keyframes spinAround
-    {
-        from
-        {
-            transform: rotate(0deg);
-        }
-
-        to
-        {
-            transform: rotate(359deg);
-        }
-    }
-
-    button.is-loading::after,
-    .button.is-loading::after
-    {
-        position: relative;
-        top: calc(50% - (1em / 2) - 2px);
-        right: calc(50% - (1em / 2) - 4px);
-
-        display: block;
-
-        width: 1em;
-        height: 1em;
-
-        content: '';
-        -webkit-animation: spinAround .5s infinite linear;
-                animation: spinAround .5s infinite linear;
-
-        border: 2px solid var(--bg-main);
-        border-top-color: transparent;
-        border-right-color: transparent;
-        border-radius: 9999px;
-    }
-
-    button.is-loading-dark::after,
-    .button.is-loading-dark::after
-    {
-        position: relative;
-        top: calc(50% - (1em / 2) - 2px);
-        right: calc(50% - (1em / 2) - 4px);
-
-        display: block;
-
-        width: 1em;
-        height: 1em;
-
-        content: '';
-        -webkit-animation: spinAround .5s infinite linear;
-                animation: spinAround .5s infinite linear;
-
-        border: 2px solid var(--bg-main-invert);
-        border-top-color: transparent;
-        border-right-color: transparent;
-        border-radius: 9999px;
-    }
-}
-@layer elements
-{
-    .delete
-    {
-        font-size: 0;
-
-        position: relative;
-
-        display: inline-block;
-
-        width: 20px;
-        min-width: 20px;
-        max-width: 20px;
-        height: 20px;
-        min-height: 20px;
-        max-height: 20px;
-        padding: 0;
-
-        cursor: pointer;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-        vertical-align: top;
-        pointer-events: auto;
-
-        border: none;
-        border-radius: 9999px;
-        outline: 0;
-        background-color: rgba(10, 10, 10, .2);
-
-        -webkit-touch-callout: none;
-           -moz-appearance: none;
-        -webkit-appearance: none;
-        flex-grow: 0;
-        flex-shrink: 0;;
-    }
-
-
-    .delete.is-small
-    {
-        font-size: .5rem;
-
-        width: 16px;
-        min-width: 16px;
-        max-width: 16px;
-        height: 16px;
-        min-height: 16px;
-        max-height: 16px;
-        margin-top: .5rem;
-    }
-
-    button.delete.is-small
-    {
-        border-radius: 9999px;
-    }
-
-    .delete.is-medium
-    {
-        font-size: .75rem;
-
-        width: 24px;
-        min-width: 24px;
-        max-width: 24px;
-        height: 24px;
-        min-height: 24px;
-        max-height: 24px;
-        margin-top: .5rem;
-    }
-
-    .delete.is-large
-    {
-        font-size: 1rem;
-
-        width: 32px;
-        min-width: 32px;
-        max-width: 32px;
-        height: 32px;
-        min-height: 32px;
-        max-height: 32px;
-        margin-top: .5rem;
-    }
-
-
-    .delete::before,
-    .delete::after
-    {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        display: block;
-
-        content: '';
-        transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        transform-origin: center center;
-
-        background-color: var(--text-btn-invert);
-    }
-
-    .delete::before
-    {
-        width: 50%;
-        height: 2px;
-    }
-
-    .delete::after
-    {
-        width: 2px;
-        height: 50%;
-    }
-
-    .delete:hover,
-    .delete:focus
-    {
-        background-color: rgba(10, 10, 10, .3);
-    }
-
-    .delete:active
-    {
-        background-color: rgba(10, 10, 10, .4);
-    }
-}
-
 @layer elements
 {
     .form
@@ -2759,11 +2759,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .form label > span:first-child
     {
         font-size: var(--size-7);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
 
         position: absolute;
         z-index: 10;
-        top: calc(-.75 * var(--margin));
+        top: calc(-.5 * var(--margin));
         left: var(--margin);
 
         overflow: hidden;
@@ -2888,7 +2888,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .form fieldset legend
     {
         font-size: var(--size-7);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
 
         padding: 0 calc(.5 * var(--pad-horz));
 
@@ -3060,9 +3060,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .form input
     {
-        line-height: 1.5;
-
-        height: 2.5em;
+        height: 3em;
+        /* line-height: 1.5; */
     }
 
     .form textarea
@@ -3398,7 +3397,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         font-family: var(--family-sans-serif), sans-serif;
         font-size: 1.125rem;
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
 
         margin-top: var(--mar-vert);
 
@@ -3542,7 +3541,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 @layer elements
 {
-    table
+    .table
     {
         overflow-x: auto;
 
@@ -3555,7 +3554,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: inherit;
     }
 
-    table > caption
+    .table > caption
     {
         font-size: var(--size-5);
         font-weight: var(--weight-semibold);
@@ -3563,37 +3562,37 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding-bottom: var(--pad-vert);
     }
 
-    table td,
-    table th
+    .table td,
+    .table th
     {
         padding: var(--pad-vert) var(--pad-horz);
 
         vertical-align: top;
     }
 
-    table td span,
-    table th span
+    .table td span,
+    .table th span
     {
         margin: var(--mar-vert) var(--mar-horz);
         padding: var(--pad-vert) var(--pad-horz);
     }
 
-    table thead th
+    .table thead th
     {
         border-bottom: 2px solid var(--border-main-darker);
     }
 
-    table tbody td
+    .table tbody td
     {
         border-bottom: 1px solid var(--border-main-darker);
     }
 
-    table tbody tr:last-child td
+    .table tbody tr:last-child td
     {
         border-bottom: none;
     }
 
-    table tfoot td
+    .table tfoot td
     {
         font-weight: var(--weight-semibold);
 
@@ -3602,31 +3601,31 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 
     /** add in other table styling */
-    table.is-fullwidth
+    .table.is-fullwidth
     {
         width: 100%;
     }
 
-    table.is-striped tbody tr:nth-of-type(odd)
+    .table.is-striped tbody tr:nth-of-type(odd)
     {
         color: var(--text);
         background-color: var(--bg-main-ter);
     }
 
-    table.has-hover tbody tr:hover
+    .table.has-hover tbody tr:hover
     {
         color: var(--text-elem);
         background-color: var(--bg-hover);
     }
 
-    table.is-bordered td,
-    table.is-bordered th
+    .table.is-bordered td,
+    .table.is-bordered th
     {
         border-width: 1px;
     }
 
-    table.is-bordered tr:last-child td,
-    table.is-bordered tr:last-child th
+    .table.is-bordered tr:last-child td,
+    .table.is-bordered tr:last-child th
     {
         border-bottom-width: 1px;
     }
@@ -3643,7 +3642,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         -webkit-overflow-scrolling: touch;
     }
 
-    .table-scroll table
+    .table-scroll .table
     {
         width: 100%;
 
@@ -3683,95 +3682,95 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 
     /** allows for right alignment of a column of values **/
-    table.numbers-col-1 td:nth-of-type(1),
-    table.numbers-col-1 th:nth-of-type(1),
-    table.numbers-col-2 td:nth-of-type(2),
-    table.numbers-col-2 th:nth-of-type(2),
-    table.numbers-col-3 td:nth-of-type(3),
-    table.numbers-col-3 th:nth-of-type(3),
-    table.numbers-col-4 td:nth-of-type(4),
-    table.numbers-col-4 th:nth-of-type(4),
-    table.numbers-col-5 td:nth-of-type(5),
-    table.numbers-col-5 th:nth-of-type(5),
-    table.numbers-col-6 td:nth-of-type(6),
-    table.numbers-col-6 th:nth-of-type(6),
-    table.numbers-col-7 td:nth-of-type(7),
-    table.numbers-col-7 th:nth-of-type(7),
-    table.numbers-col-8 td:nth-of-type(8),
-    table.numbers-col-8 th:nth-of-type(8),
-    table.numbers-col-9 td:nth-of-type(9),
-    table.numbers-col-9 th:nth-of-type(9)
+    .table.numbers-col-1 td:nth-of-type(1),
+    .table.numbers-col-1 th:nth-of-type(1),
+    .table.numbers-col-2 td:nth-of-type(2),
+    .table.numbers-col-2 th:nth-of-type(2),
+    .table.numbers-col-3 td:nth-of-type(3),
+    .table.numbers-col-3 th:nth-of-type(3),
+    .table.numbers-col-4 td:nth-of-type(4),
+    .table.numbers-col-4 th:nth-of-type(4),
+    .table.numbers-col-5 td:nth-of-type(5),
+    .table.numbers-col-5 th:nth-of-type(5),
+    .table.numbers-col-6 td:nth-of-type(6),
+    .table.numbers-col-6 th:nth-of-type(6),
+    .table.numbers-col-7 td:nth-of-type(7),
+    .table.numbers-col-7 th:nth-of-type(7),
+    .table.numbers-col-8 td:nth-of-type(8),
+    .table.numbers-col-8 th:nth-of-type(8),
+    .table.numbers-col-9 td:nth-of-type(9),
+    .table.numbers-col-9 th:nth-of-type(9)
     {
         text-align: end;
         white-space: nowrap;
     }
 
     /** allows for center alignment of a column of values **/
-    table.centered-col-1 td:nth-of-type(1),
-    table.centered-col-1 th:nth-of-type(1),
-    table.centered-col-2 td:nth-of-type(2),
-    table.centered-col-2 th:nth-of-type(2),
-    table.centered-col-3 td:nth-of-type(3),
-    table.centered-col-3 th:nth-of-type(3),
-    table.centered-col-4 td:nth-of-type(4),
-    table.centered-col-4 th:nth-of-type(4),
-    table.centered-col-5 td:nth-of-type(5),
-    table.centered-col-5 th:nth-of-type(5),
-    table.centered-col-6 td:nth-of-type(6),
-    table.centered-col-6 th:nth-of-type(6),
-    table.centered-col-7 td:nth-of-type(7),
-    table.centered-col-7 th:nth-of-type(7),
-    table.centered-col-8 td:nth-of-type(8),
-    table.centered-col-8 th:nth-of-type(8),
-    table.centered-col-9 td:nth-of-type(9),
-    table.centered-col-9 th:nth-of-type(9)
+    .table.centered-col-1 td:nth-of-type(1),
+    .table.centered-col-1 th:nth-of-type(1),
+    .table.centered-col-2 td:nth-of-type(2),
+    .table.centered-col-2 th:nth-of-type(2),
+    .table.centered-col-3 td:nth-of-type(3),
+    .table.centered-col-3 th:nth-of-type(3),
+    .table.centered-col-4 td:nth-of-type(4),
+    .table.centered-col-4 th:nth-of-type(4),
+    .table.centered-col-5 td:nth-of-type(5),
+    .table.centered-col-5 th:nth-of-type(5),
+    .table.centered-col-6 td:nth-of-type(6),
+    .table.centered-col-6 th:nth-of-type(6),
+    .table.centered-col-7 td:nth-of-type(7),
+    .table.centered-col-7 th:nth-of-type(7),
+    .table.centered-col-8 td:nth-of-type(8),
+    .table.centered-col-8 th:nth-of-type(8),
+    .table.centered-col-9 td:nth-of-type(9),
+    .table.centered-col-9 th:nth-of-type(9)
     {
         text-align: center;
     }
 
 
     /** disable word breaks on a per column basis **/
-    table.nobreak-col-1 td:nth-of-type(1),
-    table.nobreak-col-1 th:nth-of-type(1),
-    table.nobreak-col-2 td:nth-of-type(2),
-    table.nobreak-col-2 th:nth-of-type(2),
-    table.nobreak-col-3 td:nth-of-type(3),
-    table.nobreak-col-3 th:nth-of-type(3),
-    table.nobreak-col-4 td:nth-of-type(4),
-    table.nobreak-col-4 th:nth-of-type(4),
-    table.nobreak-col-5 td:nth-of-type(5),
-    table.nobreak-col-5 th:nth-of-type(5),
-    table.nobreak-col-6 td:nth-of-type(6),
-    table.nobreak-col-6 th:nth-of-type(6),
-    table.nobreak-col-7 td:nth-of-type(7),
-    table.nobreak-col-7 th:nth-of-type(7),
-    table.nobreak-col-8 td:nth-of-type(8),
-    table.nobreak-col-8 th:nth-of-type(8),
-    table.nobreak-col-9 td:nth-of-type(9),
-    table.nobreak-col-9 th:nth-of-type(9)
+    .table.nobreak-col-1 td:nth-of-type(1),
+    .table.nobreak-col-1 th:nth-of-type(1),
+    .table.nobreak-col-2 td:nth-of-type(2),
+    .table.nobreak-col-2 th:nth-of-type(2),
+    .table.nobreak-col-3 td:nth-of-type(3),
+    .table.nobreak-col-3 th:nth-of-type(3),
+    .table.nobreak-col-4 td:nth-of-type(4),
+    .table.nobreak-col-4 th:nth-of-type(4),
+    .table.nobreak-col-5 td:nth-of-type(5),
+    .table.nobreak-col-5 th:nth-of-type(5),
+    .table.nobreak-col-6 td:nth-of-type(6),
+    .table.nobreak-col-6 th:nth-of-type(6),
+    .table.nobreak-col-7 td:nth-of-type(7),
+    .table.nobreak-col-7 th:nth-of-type(7),
+    .table.nobreak-col-8 td:nth-of-type(8),
+    .table.nobreak-col-8 th:nth-of-type(8),
+    .table.nobreak-col-9 td:nth-of-type(9),
+    .table.nobreak-col-9 th:nth-of-type(9)
     {
         white-space: nowrap;
     }
 
     /** enable word breaks for scrolled table on a per column basis **/
-    table.scrollbreak-col-1 td:nth-of-type(1),
-    table.scrollbreak-col-1 th:nth-of-type(1),
-    table.scrollbreak-col-2 td:nth-of-type(2),
-    table.scrollbreak-col-2 th:nth-of-type(2),
-    table.scrollbreak-col-3 td:nth-of-type(3),
-    table.scrollbreak-col-3 th:nth-of-type(3),
-    table.scrollbreak-col-4 td:nth-of-type(4),
-    table.scrollbreak-col-4 th:nth-of-type(4),
-    table.scrollbreak-col-5 td:nth-of-type(5),
-    table.scrollbreak-col-5 th:nth-of-type(5),
-    table.scrollbreak-col-6 td:nth-of-type(6),
-    table.scrollbreak-col-6 th:nth-of-type(6),
-    table.scrollbreak-col-7 td:nth-of-type(7),
-    table.scrollbreak-col-7 th:nth-of-type(7),
-    table.scrollbreak-col-8 td:nth-of-type(8),
-    table.scrollbreak-col-8 th:nth-of-type(8),
-    table.scrollbreak-col-9 td:nth-of-type(9),
-    table.scrollbreak-col-9 th:nth-of-type(9)
+    .table.scrollbreak-col-1 td:nth-of-type(1),
+    .table.scrollbreak-col-1 th:nth-of-type(1),
+    .table.scrollbreak-col-2 td:nth-of-type(2),
+    .table.scrollbreak-col-2 th:nth-of-type(2),
+    .table.scrollbreak-col-3 td:nth-of-type(3),
+    .table.scrollbreak-col-3 th:nth-of-type(3),
+    .table.scrollbreak-col-4 td:nth-of-type(4),
+    .table.scrollbreak-col-4 th:nth-of-type(4),
+    .table.scrollbreak-col-5 td:nth-of-type(5),
+    .table.scrollbreak-col-5 th:nth-of-type(5),
+    .table.scrollbreak-col-6 td:nth-of-type(6),
+    .table.scrollbreak-col-6 th:nth-of-type(6),
+    .table.scrollbreak-col-7 td:nth-of-type(7),
+    .table.scrollbreak-col-7 th:nth-of-type(7),
+    .table.scrollbreak-col-8 td:nth-of-type(8),
+    .table.scrollbreak-col-8 th:nth-of-type(8),
+    .table.scrollbreak-col-9 td:nth-of-type(9),
+    .table.scrollbreak-col-9 th:nth-of-type(9)
     {
         min-width: 40ch;
         max-width: 60ch;
@@ -3781,7 +3780,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 
 
-    table td .code-max-width
+    .table td .code-max-width
     {
         display: block;
 
@@ -3855,7 +3854,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 
     /* sub-titles for headings for only three top headings */
-    h1 + .sub-title
+    h1 + .sub-title,
+    .is-title-1 + .sub-title
     {
         font-size: var(--size-3);
 
@@ -3863,7 +3863,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         margin-bottom: var(--size-1);
     }
 
-    h2 + .sub-title
+    h2 + .sub-title,
+    .is-title-2 + .sub-title
     {
         font-size: var(--size-4);
 
@@ -3871,7 +3872,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         margin-bottom: var(--size-2);
     }
 
-    h3 + .sub-title
+    h3 + .sub-title,
+    .is-title-3 + .sub-title
     {
         font-size: var(--size-5);
 
@@ -3879,7 +3881,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         margin-bottom: var(--size-3);
     }
 
-    h4 + .sub-title
+    h4 + .sub-title,
+    .is-title-4 + .sub-title
     {
         font-size: var(--size-6);
 
@@ -3904,36 +3907,57 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         font-family: var(--family-monospace), monospace;
     }
 
+    /* sets font-size is any element */
+    .is-title-1,
+    .is-title-2,
+    .is-title-3,
+    .is-title-4,
+    .is-title-5,
+    .is-title-6,
+    .is-title-7
+    {
+        font-weight: var(--weight-semibold);
+
+        margin: 0 0 1rem 0;
+    }
+
+    .is-title-1,
     .is-size-1
     {
         font-size: var(--size-1);
     }
 
+    .is-title-2,
     .is-size-2
     {
         font-size: var(--size-2);
     }
 
+    .is-title-3,
     .is-size-3
     {
         font-size: var(--size-3);
     }
 
+    .is-title-4,
     .is-size-4
     {
         font-size: var(--size-4);
     }
 
+    .is-title-5,
     .is-size-5
     {
         font-size: var(--size-5);
     }
 
+    .is-title-6,
     .is-size-6
     {
         font-size: var(--size-6);
     }
 
+    .is-title-7,
     .is-size-7
     {
         font-size: var(--size-7);
@@ -4003,6 +4027,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         font-weight: var(--weight-normal);
     }
 
+    .is-text-medium
+    {
+        font-weight: var(--weight-medium);
+    }
+
     .is-text-semibold
     {
         font-weight: var(--weight-semibold);
@@ -4053,10 +4082,5 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .has-text-dark
     {
         color: var(--grey-dark);
-    }
-
-    .has-text-light
-    {
-        color: var(--grey-light);
     }
 }

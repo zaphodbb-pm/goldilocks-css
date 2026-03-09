@@ -16,12 +16,12 @@ nav: Charts
 
             <p>The <strong>charts</strong> component has a variety of chart types that are used to show data series relationships.
                 This component is inspired by <a href="https://chartscss.org/">chart.css</a> an all CSS charts project.
-                <strong>Charts.css</strong> is a more comprehensive and heavy weight approach to pure HTML and CSS based charts.
+                <strong>Charts.css</strong> is a more comprehensive and heavyweight approach to pure HTML and CSS-based charts.
             </p>
 
             <p>The <strong>Goldilocks-CSS</strong> charts add-on is a lighter weight subset designed to be used in
                 administrative information presentation. Column, line graph, pie and donut charts are supported.
-                Basic support for axes, captions, labels and legends are provided.
+                Basic support for axes, captions, labels and legends is provided.
             </p>
 
             <p>The starting point is a semantically correct HTML and accessible <code>table</code> tag.  This means that a caption should
@@ -31,11 +31,11 @@ nav: Charts
                 Note also that table cell <code>td</code> should not be empty.</p>
 
             <p>The <strong>charts</strong> component then uses CSS to take the table data and create a visual chart.
-                When using pure CSS, data value extraction and computation capability is limited.  Consequently, we need to use
+                When using pure CSS, data value extraction and computation capability are limited.  Consequently, we need to use
                 the <code>style</code> attribute to build local scoped variables that can then be used in the CSS file to calculate
-                the required controls.  The variable <code>--chart-max</code> is used to normalize the data values to stay
+                the required controls.  The local variable <code>--chart-max</code> is used to normalize the data values to stay
                 within the range of [0,1]. The variable <code>--column-count</code> is used as divisor to adjust column width
-                for multi-column groups per category. Multi-columns groups in a category is achieved by adding rows of data
+                for multi-column groups per category. Multi-columns groups in a category are achieved by adding rows of data
                 values (including the row heading).
             </p>
 
@@ -126,7 +126,7 @@ nav: Charts
 
                 <tr>
                     <td><code>.unique-colors</code></td>
-                    <td>Optional chart modifier that provider a different color for each column in a basic chart.</td>
+                    <td>Optional chart modifier that provides a different color for each column in a basic chart.</td>
                 </tr>
 
                 <tr>

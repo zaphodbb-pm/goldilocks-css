@@ -1,15 +1,18 @@
+/* magazine.css */
 /** large volume text layouts **/
+
 @layer extras {
 
     .magazine {
+        font-family: var(--family-sans-serif), sans-serif;
+        line-height: 1.6em;
         padding: var(--padding);
+
+        word-spacing: 0.1em;
         column-width: var(--magazine-width);
         column-gap: calc(1.5 * var(--gutter));
         orphans: 2;
         widows: 3;
-        font-family: var(--family-sans-serif), sans-serif;
-        line-height: 1.6em;
-        word-spacing: 0.1em;
     }
 
     .magazine h2,

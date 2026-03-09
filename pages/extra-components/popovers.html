@@ -22,8 +22,9 @@ nav: Popovers
                 content is only indirectly related to the document's main content.
             </p>
 
-            <p>Note: Mobile / touch devices do not respond to a <code>:hover</code> user action. Mobile / touch devices do
-                respond to <code></code> event that can use javascript to emulate a hover user action.
+            <p>This component uses the new Popover API that provides developers with a standard, consistent, flexible mechanism for
+                displaying popover content. Popover content is controlled using HTML attributes.  JavaScript control is also possible with
+                <code>HTMLElement.showPopover()</code> or <code>HTMLElement.togglePopover()</code> methods.
             </p>
         </section>
 
@@ -85,8 +86,8 @@ nav: Popovers
             <div class="stack-centered stack-gap-large">
 
                 <aside class="popover">
-                    <button type="button" class="is-primary">popover (top default)</button>
-                    <div class="popover-container">
+                    <button type="button" class="is-primary" popovertarget="default-popover">popover (top default)</button>
+                    <div class="popover-container" popover="auto" id="default-popover">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                             tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
@@ -95,8 +96,8 @@ nav: Popovers
                 </aside>
 
                 <aside class="popover pop-right">
-                    <button   class="is-secondary">.popover .popover-right</button>
-                    <div class="popover-container">
+                    <button   class="is-secondary" popovertarget="right-popover">.popover .popover-right</button>
+                    <div class="popover-container" popover="auto" id="right-popover">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                             tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
@@ -105,8 +106,8 @@ nav: Popovers
                 </aside>
 
                 <aside class="popover pop-bottom">
-                    <button type="button" class="is-complement-outlined">.popover .popover-bottom</button>
-                    <div class="popover-container">
+                    <button type="button" class="is-complement-outlined" popovertarget="bottom-popover">.popover .popover-bottom</button>
+                    <div class="popover-container" popover="auto" id="bottom-popover">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                             tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
@@ -115,8 +116,8 @@ nav: Popovers
                 </aside>
 
                 <aside class="popover pop-left">
-                    <button type="button" class="is-link-inverted">.popover .popover-left</button>
-                    <div class="popover-container">
+                    <button type="button" class="is-link-inverted" popovertarget="left-popover">.popover .popover-left</button>
+                    <div class="popover-container" popover="auto" id="left-popover">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                             tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
@@ -131,8 +132,8 @@ nav: Popovers
         <div class="column">
             <pre><code class="language-html">
                 &lt;aside class="popover"&gt;
-                    &lt;button type="button" class="is-primary"&gt;popover (top default)&lt;/button&gt;
-                    &lt;div class="popover-container"&gt;
+                    &lt;button type="button" class="is-primary" popovertarget="default-popover"&gt;popover (top default)&lt;/button&gt;
+                    &lt;div class="popover-container" popover="auto" id="default-popover"&gt;
                         &lt;p&gt;
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                             tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
@@ -141,8 +142,8 @@ nav: Popovers
                 &lt;/aside&gt;
 
                 &lt;aside class="popover pop-right"&gt;
-                    &lt;button type="button" class="is-secondary"&gt;.popover .popover-right&lt;/button&gt;
-                    &lt;div class="popover-container"&gt;
+                    &lt;button type="button" class="is-secondary" popovertarget="right-popover"&gt;.popover .popover-right&lt;/button&gt;
+                    &lt;div class="popover-container" popover="auto" id="right-popover"&gt;
                         &lt;p&gt;
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                             tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
@@ -151,8 +152,8 @@ nav: Popovers
                 &lt;/aside&gt;
 
                 &lt;aside class="popover pop-bottom"&gt;
-                    &lt;button type="button" class="is-info"&gt;.popover .popover-bottom&lt;/button&gt;
-                    &lt;div class="popover-container"&gt;
+                    &lt;button type="button" class="is-info" popovertarget="bottom-popover"&gt;.popover .popover-bottom&lt;/button&gt;
+                    &lt;div class="popover-container" popover="auto" id="bottom-popover"&gt;
                         &lt;p&gt;
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                             tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
@@ -161,8 +162,8 @@ nav: Popovers
                 &lt;/aside&gt;
 
                 &lt;aside class="popover pop-left"&gt;
-                    &lt;button type="button" class="is-link"&gt;.popover .popover-left&lt;/button&gt;
-                    &lt;div class="popover-container"&gt;
+                    &lt;button type="button" class="is-link" popovertarget="left-popover"&gt;.popover .popover-left&lt;/button&gt;
+                    &lt;div class="popover-container" popover="auto" id="left-popover"&gt;
                         &lt;p&gt;
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
                             tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
@@ -179,8 +180,8 @@ nav: Popovers
     <div class="row is-centered">
         <div class="column">
             <aside class="popover pop-right">
-                <button type="button" class="is-primary">.popover with card</button>
-                <div class="popover-container">
+                <button type="button" class="is-primary" popovertarget="wrapped-popover">.popover with card</button>
+                <div class="popover-container" popover="auto" id="wrapped-popover">
                     <article class="card">
                         <figure class="card-image">
                             <img class="has-aspect-3x1" src="{{site.url}}/img/demo/main2.jpg" alt="Main2 scene">
@@ -212,8 +213,8 @@ nav: Popovers
         <div class="column">
             <pre><code class="language-html">
                 &lt;aside class="popover pop-right"&gt;
-                    &lt;button type="button" class="is-primary"&gt;.popover with card&lt;/button&gt;
-                    &lt;div class="popover-container"&gt;
+                    &lt;button type="button" class="is-primary" popovertarget="wrapped-popover"&gt;.popover with card&lt;/button&gt;
+                    &lt;div class="popover-container" popover="auto" id="wrapped-popover"&gt;
                         &lt;article class="card"&gt;
                             &lt;figure class="card-image"&gt;
                                 &lt;img class="has-aspect-3x1" src="{{site.url}}/img/demo/main2.jpg" alt="Main2 scene"&gt;
