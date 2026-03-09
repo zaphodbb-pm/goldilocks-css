@@ -1836,7 +1836,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
-/* Buttons */
+/* buttons.css */
 
 @layer elements
 {
@@ -1848,7 +1848,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         display: inline-flex;
 
-        height: 2.5em;
         padding: var(--pad-vert) var(--pad-horz);
 
         cursor: pointer;
@@ -4210,11 +4209,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     details.accordion.is-expander-complement summary
     {
         border-color: var(--complement);
-    }
-
-    details.accordion.is-expander-link summary
-    {
-        border-color: var(--link);
     }
 
     details.accordion.is-expander-success summary
