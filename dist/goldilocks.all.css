@@ -6240,6 +6240,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
+/* avatar.css */
+
 @layer extended
 {
     .avatar
@@ -6346,7 +6348,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         height: var(--base-font-size);
     }
 
-
     .avatar[data-initials]::before
     {
         position: absolute;
@@ -6403,7 +6404,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 {
     [class*='badge']
     {
-        font-size: .85rem;
+        font-size: .9rem;
         font-weight: var(--weight-medium);
         line-height: 1;
 
@@ -6413,7 +6414,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         min-width: .7rem;
         height: 1rem;
-        padding: .1rem .25rem;
+        padding: .2rem .3rem;
 
         transform: translate(-.05rem, -.75rem);
         white-space: nowrap;
@@ -6435,9 +6436,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     [class*='badge']:empty
     {
-        width: .5rem;
-        min-width: .5rem;
-        height: .5rem;
+        width: .75rem;
+        min-width: .75rem;
+        height: .75rem;
         padding: 0;
     }
 
@@ -6506,6 +6507,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
+/* icons0def.css */
 /* icon set based on lineawesome */
 /* Note that chrome and firefox recognize '-webkit-mask-image' and safari uses 'mask-image' declaration */
 
@@ -7591,7 +7593,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
-/* icon main controls */
+/* icons.css - icon main controls */
+
 @layer extended
 {
     .icon
@@ -7682,6 +7685,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         height: var(--size-6);
     }
 }
+/* notification.css */
+
 @layer extended
 {
     .notification
@@ -7717,6 +7722,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: 0;
     }
 }
+
+/* tags.css */
 
 @layer extended
 {
