@@ -7,12 +7,12 @@
         border-radius: var(--radius);
         display: inline-flex;
         font-size: var(--size-7);
-        font-weight: var(--weight-medium);
+        font-weight: var(--weight-semibold);
         height: 2em;
         justify-content: center;
         line-height: var(--line-height-150);
-        padding-left: 0.75em;
-        padding-right: 0.75em;
+        padding-left: 1em;
+        padding-right: 1em;
         white-space: nowrap;
     }
 
