@@ -11,10 +11,10 @@ nav: Tooltips
 
 <main class="main-content">
     <div class="row has-6x-minwidth">
-        <section class="column">
+        <section class="column" id="page-top">
             <h2>Commentary</h2>
 
-            <p>Tooltips provide context information for any element, which often are buttons.
+            <p>Tooltips provide context information for any element, which often are strongs.
                 The information appears on hover and focus and is appropriate for desktop computers.
                 See <a href="https://www.nngroup.com/articles/tooltip-guidelines/">tooltip guidelines</a> for a more detailed discussion
             </p>
@@ -77,52 +77,54 @@ nav: Tooltips
         <div class="column">
             <div class="stack-centered stack-gap-large">
 
-                <button type="button"  class="is-primary tooltip" data-tooltip="Top Tooltip Text">
+                <strong class="has-text-primary tooltip" data-tooltip="Top Tooltip Text">
                     .tooltip (default top)
-                </button>
+                </strong>
 
-                <button type="button"  class="is-secondary" >
-                    <span class="tooltip tooltip-right" data-tooltip="Right Tooltip Text">.tooltip .tooltip-right</span>
-                </button>
+                <strong class="has-text-secondary tooltip tooltip-right" data-tooltip="Right Tooltip Text">
+                    .tooltip .tooltip-right
+                </strong>
 
-                <button type="button"  class="is-complement tooltip tooltip-bottom" data-tooltip="Bottom Tooltip Text">
+                <strong class="has-text-complement tooltip tooltip-bottom" data-tooltip="Bottom Tooltip Text">
                     .tooltip .tooltip-bottom
-                </button>
+                </strong>
 
-                <button type="button"  class="is-link tooltip tooltip-left" data-tooltip="Left Tooltip Text">
+                <a href="#page-top">
                     .tooltip .tooltip-left
-                </button>
+                    <span class="tooltip tooltip-left" data-tooltip="Left Tooltip Text"></span>
+                </a>
 
-                <button type="button"  class="is-link tooltip tooltip-right"
+                <strong class="tooltip tooltip-right"
                         data-tooltip="This tooltip &#10; has multiline text &#10; that can be shown">
                     .tooltip multiline
-                </button>
+                </strong>
 
             </div>
         </div>
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;button type="button"  class="is-primary tooltip" data-tooltip="Top Tooltip Text"&gt;
+                &lt;strong   class="has-text-primary tooltip" data-tooltip="Top Tooltip Text"&gt;
                     .tooltip (default top)
-                &lt;/button&gt;
+                &lt;/strong&gt;
 
-                &lt;button type="button"  class="is-secondary" &gt;
-                    &lt;span class="tooltip tooltip-right" data-tooltip="Right Tooltip Text"&gt;.tooltip .tooltip-right&lt;/span&gt;
-                &lt;/button&gt;
+                &lt;strong class="has-text-secondary tooltip tooltip-right" data-tooltip="Right Tooltip Text" &gt;
+                    .tooltip .tooltip-right
+                &lt;/strong&gt;
 
-                &lt;button type="button"  class="is-complement tooltip tooltip-bottom" data-tooltip="Bottom Tooltip Text"&gt;
+                &lt;strong class="has-text-complement tooltip tooltip-bottom" data-tooltip="Bottom Tooltip Text"&gt;
                     .tooltip .tooltip-bottom
-                &lt;/button&gt;
+                &lt;/strong&gt;
 
-                &lt;button type="button"  class="is-link tooltip tooltip-left" data-tooltip="Left Tooltip Text"&gt;
+                &lt;a&gt;
                     .tooltip .tooltip-left
-                &lt;/button&gt;
+                 &lt;span class="tooltip tooltip-left" data-tooltip="Left Tooltip Text"&gt;&lt;/span&gt;
+                &lt;/a&gt;
 
-                &lt;button type="button"  class="is-link tooltip tooltip-right"
+                &lt;strong   class="is-link tooltip tooltip-right"
                         data-tooltip="This tooltip has  &#38;&#35;&#49;&#48;&#59;  multiline text &#38;&#35;&#49;&#48;&#59; that can be shown"&gt;
                     .tooltip multiline
-                &lt;/button&gt;
+                &lt;/strong&gt;
             </code></pre>
         </div>
     </div>
