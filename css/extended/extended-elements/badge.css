@@ -9,9 +9,9 @@
 
         min-width: .7rem;
         height: 1rem;
-        padding: .1rem .25rem;
+        padding: .2rem .3rem;
 
-        font-size: .85rem;
+        font-size: .9rem;
         font-weight: var(--weight-medium);
         line-height: 1;
         color: var(--text-invert);
@@ -28,9 +28,9 @@
     }
 
     [class*="badge"]:empty {
-        height: 0.5rem;
-        min-width: 0.5rem;
-        width: 0.5rem;
+        height: 0.75rem;
+        min-width: 0.75rem;
+        width: 0.75rem;
         padding: 0;
     }
 

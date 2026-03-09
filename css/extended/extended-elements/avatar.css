@@ -1,3 +1,5 @@
+/* avatar.css */
+
 @layer extended {
 
     .avatar {
@@ -82,7 +84,6 @@
         height: var(--base-font-size);
         width: var(--base-font-size);
     }
-
 
     .avatar[data-initials]::before {
         color: currentColor;
