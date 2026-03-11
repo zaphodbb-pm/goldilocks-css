@@ -146,10 +146,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --complement-text: hsl(22, 82%, 28%);
     --primary-text-invert: hsl(185, 55%, 96%);
     --secondary-text-invert: hsl(37, 28%, 97%);
-    --complement-text-invert: hsl(22, 80%, 97%);
+    --complement-text-invert: hsl(37,20%,28%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
     --primary-light: hsl(185,55%,96%);
-    --secondary-light: hsl(22, 85%, 93%);
+    --secondary-light: hsl(37, 24%, 92%);
     --complement-light: hsl(22,85%,93%);
     --primary-dark: hsl(185,65%,19%);
     --secondary-dark: hsl(37,20%,28%);
@@ -163,12 +163,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --success: hsl(152, 47%, 48%);
     --success-light: hsl(152, 50%, 92%);
     --success-dark: hsl(152, 55%, 30%);
-    --success-text: hsl(152, 58%, 22%);
+    --success-text: hsl(152, 70%, 14%);
     --success-text-invert: black;
     --warning: hsl(38, 92%, 54%);
     --warning-light: hsl(38, 88%, 93%);
     --warning-dark: hsl(38, 90%, 44%);
-    --warning-text: hsl(38, 85%, 34%);
+    --warning-text: hsl(38, 65%, 32%);
     --warning-text-invert: black;
     --danger: hsl(4, 70%, 50%);
     --danger-light: hsl(4, 74%, 93%);
