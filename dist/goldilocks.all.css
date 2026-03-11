@@ -145,8 +145,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --secondary-text: hsl(37,20%,28%);
     --complement-text: hsl(22, 82%, 28%);
     --primary-text-invert: hsl(185, 55%, 96%);
+    --primary-text-invert-dark: hsl(185, 55%, 96%);
     --secondary-text-invert: hsl(37, 28%, 97%);
-    --complement-text-invert: hsl(37,20%,28%);
+    --secondary-text-invert-dark: hsl(37, 28%, 97%);
+    --complement-text-invert: hsl(22, 82%, 28%);
+    --complement-text-invert-dark: hsl(22, 85%, 20%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
     --primary-light: hsl(185,55%,96%);
     --secondary-light: hsl(37, 24%, 92%);
@@ -160,21 +163,25 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --link-dark: hsl(240, 55%, 38%);
     --link-text: hsl(240, 55%, 38%);
     --link-text-invert: hsl(240, 52%, 97%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
     --success: hsl(152, 47%, 48%);
     --success-light: hsl(152, 50%, 92%);
     --success-dark: hsl(152, 55%, 30%);
     --success-text: hsl(152, 70%, 14%);
     --success-text-invert: black;
+    --success-text-invert-dark: white;
     --warning: hsl(38, 92%, 54%);
     --warning-light: hsl(38, 88%, 93%);
     --warning-dark: hsl(38, 90%, 44%);
     --warning-text: hsl(38, 65%, 32%);
     --warning-text-invert: black;
+    --warning-text-invert-dark: black;
     --danger: hsl(4, 70%, 50%);
     --danger-light: hsl(4, 74%, 93%);
     --danger-dark: hsl(4, 62%, 40%);
     --danger-text: hsl(4, 65%, 32%);
     --danger-text-invert: white;
+    --danger-text-invert-dark: white;
     /* additional greys */
     --black: hsl(0, 0%, 2%);
     --black-bis: hsl(0, 0%, 10%);
@@ -2260,7 +2267,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .is-primary.has-hover:hover
     {
         opacity: 1;
-        color: var(--primary-text-invert);
+        color: var(--primary-text-invert-dark);
         border: 0 solid var(--primary-dark);
         background-color: var(--primary-dark);
     }
@@ -2317,7 +2324,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .is-secondary.has-hover:hover
     {
         opacity: 1;
-        color: var(--secondary-text-invert);
+        color: var(--secondary-text-invert-dark);
         border: 0 solid var(--secondary-dark);
         background-color: var(--secondary-dark);
     }
@@ -2374,7 +2381,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .is-complement.has-hover:hover
     {
         opacity: 1;
-        color: var(--complement-text-invert);
+        color: var(--complement-text-invert-dark);
         border: 0 solid var(--complement-dark);
         background-color: var(--complement-dark);
     }
@@ -2431,7 +2438,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .is-link.has-hover:hover
     {
         opacity: 1;
-        color: var(--link-text-invert);
+        color: var(--link-text-invert-dark);
         border: 0 solid var(--link-dark);
         background-color: var(--link-dark);
     }
@@ -2488,7 +2495,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .is-success.has-hover:hover
     {
         opacity: 1;
-        color: var(--success-text-invert);
+        color: var(--success-text-invert-dark);
         border: 0 solid var(--success-dark);
         background-color: var(--success-dark);
     }
@@ -2545,7 +2552,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .is-warning.has-hover:hover
     {
         opacity: 1;
-        color: var(--warning-text-invert);
+        color: var(--warning-text-invert-dark);
         border: 0 solid var(--warning-dark);
         background-color: var(--warning-dark);
     }
@@ -2602,7 +2609,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .is-danger.has-hover:hover
     {
         opacity: 1;
-        color: var(--danger-text-invert);
+        color: var(--danger-text-invert-dark);
         border: 0 solid var(--danger-dark);
         background-color: var(--danger-dark);
     }
