@@ -14,18 +14,18 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --main-color: 225;                                  /** primary hue value **/
 
     /* build main theme colours */
-    --primary: hsl(225, 45%, 41%);
+    --primary: hsl(225, 43%, 50%);
     --secondary: hsl(23, 10%, 41%);
     --complement: hsl(38, 92%, 50%);
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: color-mix(var(--primary), black 20%);
-    --secondary-text: color-mix(var(--secondary), black 20%);
-    --complement-text: color-mix(var(--complement), black 20%);
+    --primary-text: color-mix(var(--primary), black 10%);
+    --secondary-text: color-mix(var(--secondary), black 10%);
+    --complement-text: color-mix(var(--complement), black 28%);
 
     --primary-text-invert: color-mix(var(--primary), white 95%);
     --secondary-text-invert: color-mix(var(--secondary), white 95%);
-    --complement-text-invert: color-mix(var(--complement), white 95%);
+    --complement-text-invert: color-mix(var(--complement), black 80%);
 
     /* optional light colors; use carefully as accessibility is hard to achieve */
     --primary-light:  color-mix(var(--primary), white 90%);
@@ -36,7 +36,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --secondary-dark:  color-mix(var(--secondary), black 10%);
     --complement-dark:  color-mix(var(--complement), black 10%);
 
-    --link: hsl(217, 71%, 48%);
+    --link: hsl(217, 80%, 60%);
+    --link-visited: hsl(280, 80%, 60%);
     --link-light:  color-mix(var(--link), white 90%);
     --link-dark: color-mix(var(--link), black 15%);
     --link-text: color-mix(var(--link), black 30%);

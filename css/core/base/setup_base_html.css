@@ -93,6 +93,10 @@
         color: var(--link);
     }
 
+    a:visited {
+        color: var(--link-visited);
+    }
+
     ul, ol, dl {
         padding: 0;
         margin: 0;
