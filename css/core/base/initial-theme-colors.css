@@ -27,8 +27,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --primary-text-invert-dark: hsl(185, 55%, 96%);
     --secondary-text-invert: hsl(37, 28%, 97%);
     --secondary-text-invert-dark: hsl(37, 28%, 97%);
-    --complement-text-invert: hsl(22, 82%, 28%);
-    --complement-text-invert-dark: hsl(22, 85%, 20%);
+    --complement-text-invert: hsl(22, 85%, 20%);
+    --complement-text-invert-dark: hsl(22, 80%, 97%);
 
     /* optional light colors; use carefully as accessibility is hard to achieve */
     --primary-light:  hsl(185,55%,96%);
