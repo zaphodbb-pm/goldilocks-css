@@ -12,8 +12,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
     /* main theme colour parameters - based on  complement color selection */
     --main-color: 225;                                  /** primary hue value **/
-    --main-saturation: 45%;                             /** primary saturation value **/
-    --main-lightness: 41%;                              /** primary lightness value **/
 
     /* build main theme colours */
     --primary: hsl(225, 45%, 41%);
@@ -22,8 +20,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: color-mix(var(--primary), black 20%);
-    --secondary-text: color-mix(var(--secondary), black 10%);
-    --complement-text: color-mix(var(--complement), black 10%);
+    --secondary-text: color-mix(var(--secondary), black 20%);
+    --complement-text: color-mix(var(--complement), black 20%);
 
     --primary-text-invert: color-mix(var(--primary), white 95%);
     --secondary-text-invert: color-mix(var(--secondary), white 95%);
@@ -44,19 +42,19 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --link-text: color-mix(var(--link), black 30%);
     --link-text-invert: white;
 
-    --success: hsl(150, 75%, 53%);
+    --success: hsl(152,47%,52%);
     --success-light:  color-mix(var(--success), white 90%);
     --success-dark: color-mix(var(--success), black 15%);
     --success-text: color-mix(var(--success), black 35%);
     --success-text-invert: black;
 
-    --warning: hsl(48, 100%, 48%);
+    --warning: hsl(36,92%,56%);
     --warning-light:  color-mix(var(--warning), white 90%);
     --warning-dark: color-mix(var(--warning), black 15%);
     --warning-text: color-mix(var(--warning), black 45%);
     --warning-text-invert: black;
 
-    --danger: hsl(348, 86%, 48%);
+    --danger: hsl(4,72%,52%);
     --danger-light:  color-mix(var(--danger), white 90%);
     --danger-dark: color-mix(var(--danger), black 15%);
     --danger-text: color-mix(var(--danger), black 30%);
