@@ -4139,7 +4139,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     details.accordion summary::after
     {
         position: absolute;
-        top: 1.5em;
         right: .5em;
 
         width: 1em;

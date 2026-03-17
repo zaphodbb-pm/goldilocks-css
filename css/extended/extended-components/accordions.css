@@ -40,7 +40,6 @@
         width: 1em;
         height: 1em;
         right: 0.5em;
-        top: 1.5em;
         transform: translate(0, -50%);
         transition: all 0.35s;
     }
