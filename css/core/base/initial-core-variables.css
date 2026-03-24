@@ -33,8 +33,13 @@
     /** Adjustable using a variable font size for all screen sizes
         - font-size is variable and tracks viewport to a width of 100rem (1600 px)
         - maximum font-size is set to 3 * base (nominal 48px)
+        - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
+        and https://web.dev/articles/baseline-in-action-fluid-type
      **/
-    --base-font-size:  clamp( var(--base-rem),  1vw , calc(3 * var(--base-rem ) ) );
+    --base-font-size:  1rem;
+    @media (width > 800px)  { --base-font-size: 1.125rem; }
+    @media (width > 1200px) { --base-font-size: 1.25rem; }
+    @media (width > 1600px) { --base-font-size: 1.5rem; }
 
     /** Text line heights to match size **/
     --line-height-125: 125%;
