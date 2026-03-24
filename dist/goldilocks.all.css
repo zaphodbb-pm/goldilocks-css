@@ -26,7 +26,7 @@
         - font-size is variable and tracks viewport to a width of 100rem (1600 px)
         - maximum font-size is set to 3 * base (nominal 48px)
      **/
-    --base-font-size: clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) );
+    --base-font-size: clamp( var(--base-rem),  1vw , calc(3 * var(--base-rem ) ) );
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
@@ -53,10 +53,10 @@
     --grid-min-width: calc(5 * var(--base-font-size));      /** minimum relative column width in a grid layout **/
     /* basic spacing values */
     /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
-    --space-element: var(--base-font-size);
-    --space-block: calc(2 * var(--base-font-size));
-    --space-collection: calc(4 * var(--base-font-size));
-    --space-container: calc(5 * var(--base-font-size));
+    --space-element: var(--base-rem);
+    --space-block: calc(2 * var(--base-rem));
+    --space-collection: calc(4 * var(--base-rem));
+    --space-container: calc(5 * var(--base-rem));
     /* Flexbox element spacing */
     --gap-row: calc( .75 * var(--base-font-size) );
     --gap-col: calc( .75 * var(--base-font-size) );
@@ -76,7 +76,7 @@
     --margin-medium: calc(3 * var(--base-font-size));
     --margin-large: calc(5 * var(--base-font-size));
     /* Component Controls */
-    --radius: calc(.5 * var(--base-font-size));
+    --radius: calc(.25 * var(--base-font-size));
     --radius-small: calc(.5 * var(--radius));
     --radius-comp: calc(1 * var(--radius));
     --radius-elem: calc(1.5 * var(--radius));
@@ -86,7 +86,7 @@
     --navbar-offset: 0;
     --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Widgetbar settings */
-    --widgetbar-height: calc( var(--base-font-size) + 1rem);
+    --widgetbar-height: calc(2 * var(--base-font-size) + 1rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Breadcrumb setting */
     /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
@@ -5033,27 +5033,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-grid);
     }
 
-
-    /*
-    .navbar .dropdown:hover .dropdown-trigger > button:first-child::after,
-    .navbar .dropdown:hover .dropdown-trigger > .button:first-child::after {
-        content: "";
-        height: 100%;
-        width: 1.5rem;
-        position: absolute;
-        transition: none;
-
-        / adds down chevron /
-        background-color: currentColor;
-        mask-image: var(--indicator-down);
-        mask-repeat: no-repeat;
-        mask-position: center center;
-        -webkit-mask-image: var(--indicator-down);
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-position: center center;
-    }
-
-     */
     .navbar .goto-top:before
     {
         width: 1em;

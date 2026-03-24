@@ -165,27 +165,6 @@
         opacity: 80%;
     }
 
-
-    /*
-    .navbar .dropdown:hover .dropdown-trigger > button:first-child::after,
-    .navbar .dropdown:hover .dropdown-trigger > .button:first-child::after {
-        content: "";
-        height: 100%;
-        width: 1.5rem;
-        position: absolute;
-        transition: none;
-
-        / adds down chevron /
-        background-color: currentColor;
-        mask-image: var(--indicator-down);
-        mask-repeat: no-repeat;
-        mask-position: center center;
-        -webkit-mask-image: var(--indicator-down);
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-position: center center;
-    }
-
-     */
     .navbar .goto-top:before {
         /* adds up chevron */
         content: "";

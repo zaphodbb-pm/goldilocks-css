@@ -34,7 +34,7 @@
         - font-size is variable and tracks viewport to a width of 100rem (1600 px)
         - maximum font-size is set to 3 * base (nominal 48px)
      **/
-    --base-font-size:  clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) );
+    --base-font-size:  clamp( var(--base-rem),  1vw , calc(3 * var(--base-rem ) ) );
 
     /** Text line heights to match size **/
     --line-height-125: 125%;
@@ -70,10 +70,10 @@
 
     /* basic spacing values */
     /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
-    --space-element: var(--base-font-size);
-    --space-block: calc(2 * var(--base-font-size));
-    --space-collection: calc(4 * var(--base-font-size));
-    --space-container: calc(5 * var(--base-font-size));
+    --space-element: var(--base-rem);
+    --space-block: calc(2 * var(--base-rem));
+    --space-collection: calc(4 * var(--base-rem));
+    --space-container: calc(5 * var(--base-rem));
 
 
     /* Flexbox element spacing */
@@ -103,7 +103,7 @@
 
 
     /* Component Controls */
-    --radius: calc(0.5 * var(--base-font-size));
+    --radius: calc(0.25 * var(--base-font-size));
     --radius-small: calc(0.5 * var(--radius));
     --radius-comp: calc(1 * var(--radius));
     --radius-elem: calc(1.5 * var(--radius));
@@ -118,7 +118,7 @@
 
 
     /* Widgetbar settings */
-    --widgetbar-height: calc( var(--base-font-size) + 1rem);
+    --widgetbar-height: calc(2 * var(--base-font-size) + 1rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
 
 
