@@ -22,13 +22,6 @@
     --weight-medium: 500;
     --weight-semibold: 600;
     --weight-bold: 700;
-    /** Adjustable using a variable font size for all screen sizes
-        - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-        - maximum font-size is set to 3 * base (nominal 48px)
-        - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
-        and https://web.dev/articles/baseline-in-action-fluid-type
-     **/
-    --base-font-size: var(--base-rem);
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
@@ -124,6 +117,18 @@
         <polyline points="9 18 15 12 9 6"/>\
     </svg>');
 
+    /** Adjustable using a variable font size for all screen sizes
+        - font-size is variable and tracks viewport to a width of 100rem (1600 px)
+        - maximum font-size is set to 3 * base (nominal 48px)
+        - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
+        and https://web.dev/articles/baseline-in-action-fluid-type
+     **/
+    /*--base-font-size:  var(--base-rem);*/
+
+    @media screen and (max-width: 799px)
+    {
+        --base-font-size: var(--base-rem);
+    }
     @media screen and (min-width: 800px)
     {
         --base-font-size: calc( 1.125 * var(--base-rem));
@@ -1054,8 +1059,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         position: fixed;
         top: 0;
-
-        height: auto;
     }
 
     .page-wrapper-widgets > .page-main-nav.is-fixed,
@@ -1065,7 +1068,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         top: var(--widgetbar-height);
 
         width: 100vw;
-        height: auto;
     }
 
     .page-wrapper-widgets > .page-main-nav.is-fixed + .page-sidenav

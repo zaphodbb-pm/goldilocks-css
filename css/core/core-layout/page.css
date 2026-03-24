@@ -93,7 +93,6 @@
     .page-wrapper-widgets-right-panel > .page-widgets.is-fixed {
         position: fixed;
         top: 0;
-        height: auto;
     }
 
     .page-wrapper-widgets > .page-main-nav.is-fixed,
@@ -101,7 +100,6 @@
         position: fixed;
         top: var(--widgetbar-height);
         width: 100vw;
-        height: auto;
     }
 
     .page-wrapper-widgets > .page-main-nav.is-fixed + .page-sidenav {
