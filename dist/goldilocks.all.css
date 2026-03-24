@@ -28,12 +28,7 @@
         - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
         and https://web.dev/articles/baseline-in-action-fluid-type
      **/
-    --base-font-size: 1rem;
-    /*
-    @media (width > 800px)  { --base-font-size: 1.125rem; }
-    @media (width > 1200px) { --base-font-size: 1.25rem; }
-    @media (width > 1600px) { --base-font-size: 1.5rem; }
-     */
+    --base-font-size: var(--base-rem);
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
@@ -128,6 +123,19 @@
         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
         <polyline points="9 18 15 12 9 6"/>\
     </svg>');
+
+    @media screen and (min-width: 800px)
+    {
+        --base-font-size: calc( 1.125 * var(--base-rem));
+    }
+    @media screen and (min-width: 1200px)
+    {
+        --base-font-size: calc( 1.25 * var(--base-rem));
+    }
+    @media screen and (min-width: 1600px)
+    {
+        --base-font-size: calc( 1.5 * var(--base-rem));
+    }
 }
 
 /*
