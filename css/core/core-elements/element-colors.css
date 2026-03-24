@@ -343,7 +343,7 @@
     }
 
     .is-grey {
-        color: var(--black-ter);
+        color: var(--black-800);
         background-color: var(--grey-light);
         border: 0 solid var(--grey-light);
     }

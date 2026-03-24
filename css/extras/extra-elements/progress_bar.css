@@ -136,7 +136,7 @@
         -webkit-animation-timing-function: linear;
         animation-timing-function: linear;
         background-color: var(--bg-element);
-        background-image: linear-gradient(to right, var(--black-ter) 30%, var(--bg-element) 30%);
+        background-image: linear-gradient(to right, var(--black-800) 30%, var(--bg-element) 30%);
         background-position: top left;
         background-repeat: no-repeat;
         background-size: 150% 150%;

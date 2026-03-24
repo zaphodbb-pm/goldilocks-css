@@ -50,7 +50,7 @@
     }
 
     .table.is-striped tbody tr:nth-of-type(odd) {
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-main-comp);
         color: var(--text);
     }
 

@@ -146,7 +146,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --primary-text-invert-dark: hsl(185, 55%, 96%);
     --secondary-text-invert: hsl(37, 28%, 97%);
     --secondary-text-invert-dark: hsl(37, 28%, 97%);
-    --complement-text-invert: hsl(22, 85%, 20%);
+    --complement-text-invert: hsl(22, 80%, 15%);
     --complement-text-invert-dark: hsl(22, 80%, 97%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
     --primary-light: hsl(185,55%,96%);
@@ -166,54 +166,52 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --success-light: hsl(152, 50%, 92%);
     --success-dark: hsl(152, 55%, 30%);
     --success-text: hsl(152, 70%, 14%);
-    --success-text-invert: black;
-    --success-text-invert-dark: white;
+    --success-text-invert: var(--black);
+    --success-text-invert-dark: var(--white);
     --warning: hsl(38, 92%, 54%);
     --warning-light: hsl(38, 88%, 93%);
     --warning-dark: hsl(38, 90%, 44%);
     --warning-text: hsl(38, 65%, 32%);
-    --warning-text-invert: black;
-    --warning-text-invert-dark: black;
+    --warning-text-invert: var(--black);
+    --warning-text-invert-dark: var(--black);
     --danger: hsl(4, 70%, 50%);
     --danger-light: hsl(4, 74%, 93%);
     --danger-dark: hsl(4, 62%, 40%);
     --danger-text: hsl(4, 65%, 32%);
-    --danger-text-invert: white;
-    --danger-text-invert-dark: white;
+    --danger-text-invert: var(--white);
+    --danger-text-invert-dark: var(--white);
     /* additional greys */
     --black: color-mix(in hsl, black, var(--secondary) 5% );
-    --black-bis: color-mix(in hsl, black, var(--secondary) 10% );
-    --black-ter: color-mix(in hsl, black, var(--secondary) 15% );
+    --black-850: color-mix(in hsl, black, var(--secondary) 10% );
+    --black-800: color-mix(in hsl, black, var(--secondary) 15% );
     --grey-darker: color-mix(in hsl, hsl(0, 0%, 25%), var(--secondary) 5% );
     --grey-dark: color-mix(in hsl, hsl(0, 0%, 40%), var(--secondary) 5% );
     --grey: color-mix(in hsl, hsl(0, 0%, 60%), var(--secondary) 5% );
     --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 5% );
     --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 5% );
-    --white-ter: color-mix(in hsl, white, var(--secondary) 12% );
-    --white-bis: color-mix(in hsl, white, var(--secondary) 10% );
+    --white-50: color-mix(in hsl, white, var(--secondary) 12% );
+    --white-25: color-mix(in hsl, white, var(--secondary) 10% );
     --white: color-mix(in hsl, white, var(--secondary) 6% );
     /* set the body level colours for light mode*/
     --border-main: var(--grey-light);
     --border-main-darker: var(--grey);
     --bg-main: var(--white);
-    --bg-main-elem: var(--white);
-    --bg-main-comp: var(--white);
-    --bg-main-bis: var(--white-bis);
-    --bg-main-ter: var(--white-ter);
-    --bg-main-invert: var(--black-bis);
-    --bg-main-code: var(--white-bis);
-    --bg-grid: var(--white-ter);
-    --bg-element: var(--white-ter);
-    --bg-component: var(--white-ter);
+    --bg-main-elem: var(--white-25);
+    --bg-main-comp: var(--white-50);
+    --bg-main-invert: var(--black-850);
+    --bg-main-code: var(--white-25);
+    --bg-grid: var(--white-50);
+    --bg-element: var(--white-50);
+    --bg-component: var(--white-50);
     --bg-highlight: var(--warning-light);
     --bg-hover: var(--grey-lighter);
-    --text: var(--black-ter);
+    --text: var(--black-800);
     --text-invert: var(--white);
     --text-light: var(--grey-dark);
     --text-darker: var(--black);
-    --text-elem: var(--black-ter);
-    --text-comp: var(--black-ter);
-    --text-invert-ter: var(--white-ter);
+    --text-elem: var(--black-800);
+    --text-comp: var(--black-800);
+    --text-invert-ter: var(--white-50);
     --text-btn: var(--black);
     --text-btn-invert: var(--white);
     --text-bg: var(--white);
@@ -288,28 +286,26 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --border-main-darker: var(--grey-light);
     --bg-main: var(--black);
     --bg-main-elem: var(--grey-darker);
-    --bg-main-comp: var(--black-ter);
-    --bg-main-bis: var(--black-bis);
-    --bg-main-ter: var(--black-ter) ;
+    --bg-main-comp: var(--black-800);
     --bg-main-invert: var(--white);
-    --bg-main-invert-ter: var(--white-ter);
+    --bg-main-invert-ter: var(--white-50);
     --bg-main-code: var(--grey-darker);
     --bg-grid: var(--grey-darker);
     --bg-element: var(--grey-darker);
-    --bg-component: var(--black-ter);
+    --bg-component: var(--black-800);
     --bg-highlight: hsl(48, 100%, 15%);
     --bg-hover: var(--grey-dark);
     /** invert or adjust colours for text **/
-    --text: var(--white-bis);
+    --text: var(--white-25);
     --text-invert: var(--black);
     --text-light: var(--grey);
-    --text-darker: var(--white-ter);
-    --text-elem: var(--white-bis);
-    --text-comp: var(--white-bis);
-    --text-invert-ter: var(--black-ter);
-    --text-btn: var(--black-bis);
-    --text-btn-invert: var(--white-ter);
-    --text-bg: var(--black-bis);
+    --text-darker: var(--white-50);
+    --text-elem: var(--white-25);
+    --text-comp: var(--white-25);
+    --text-invert-ter: var(--black-800);
+    --text-btn: var(--black-850);
+    --text-btn-invert: var(--white-50);
+    --text-bg: var(--black-850);
     --text-code: var(--secondary-light);;
 }
 
@@ -2660,7 +2656,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .is-grey
     {
-        color: var(--black-ter);
+        color: var(--black-800);
         border: 0 solid var(--grey-light);
         background-color: var(--grey-light);
     }
@@ -3325,7 +3321,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         color: var(--text-darker);
         border-bottom: 1px solid var(--border-main-darker);
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-main-comp);
     }
 
     .form .form-tabs > ul label span:last-child
@@ -3620,7 +3616,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .table.is-striped tbody tr:nth-of-type(odd)
     {
         color: var(--text);
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-main-comp);
     }
 
     .table.has-hover tbody tr:hover
@@ -4125,7 +4121,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--text-comp);
         border: none;
         border-radius: var(--radius-comp);
-        background: var(--bg-main-ter);
+        background: var(--bg-main-comp);
 
         align-items: center;
     }
@@ -4267,7 +4263,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         border: 1px solid var(--border-main);
         border-top: none;
-        background-color: var(--bg-main-bis);
+        background-color: var(--bg-main-comp);
     }
 
     .accordions .accordion summary
@@ -4771,7 +4767,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         padding: 20px;
 
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-main-comp);
 
         align-items: center;
         flex-shrink: 0;
@@ -5606,13 +5602,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding-right: calc(var(--pad-horz) - 2px);
 
         border-right: 2px solid var(--link);
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-main-comp);
     }
 
     .sidenav-block > label:hover
     {
         color: inherit;
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-main-comp);
     }
 
 
@@ -5638,7 +5634,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .sidenav-block input:checked + label:hover
     {
         color: inherit;
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-main-comp);
     }
 
     .sidenav-block input:checked ~ nav
@@ -5924,7 +5920,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         transition: transform 250ms ease-in-out;
         transform: translateX(30rem);
 
-        background: var(--bg-main-ter);
+        background: var(--bg-main-comp);
     }
 
     .main-slide-bar.is-right .sidebar-block
@@ -6117,7 +6113,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         color: var(--text-darker);
         border-bottom: 1px solid var(--border-main-darker);
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-main-comp);
     }
 
     .tabs > ul label span:last-child
@@ -10400,7 +10396,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
                 animation-iteration-count: infinite;
 
         background-color: var(--bg-element);
-        background-image: linear-gradient(to right, var(--black-ter) 30%, var(--bg-element) 30%);
+        background-image: linear-gradient(to right, var(--black-800) 30%, var(--bg-element) 30%);
         background-repeat: no-repeat;
         background-position: top left;
         background-size: 150% 150%;
@@ -10558,7 +10554,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         right: auto;
         left: 0;
 
-        border-right: .1rem solid var(--bg-main-ter);
+        border-right: .1rem solid var(--bg-main-comp);
         border-left: none;
         border-radius: 0 var(--radius-small) var(--radius-small) 0;
     }

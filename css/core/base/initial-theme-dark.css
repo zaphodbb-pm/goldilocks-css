@@ -83,32 +83,30 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     --bg-main: var(--black);
     --bg-main-elem: var(--grey-darker);
-    --bg-main-comp: var(--black-ter);
-    --bg-main-bis: var(--black-bis);
-    --bg-main-ter: var(--black-ter) ;
+    --bg-main-comp: var(--black-800);
     --bg-main-invert: var(--white);
-    --bg-main-invert-ter: var(--white-ter);
+    --bg-main-invert-ter: var(--white-50);
     --bg-main-code: var(--grey-darker);
 
     --bg-grid: var(--grey-darker);
     --bg-element: var(--grey-darker);
-    --bg-component: var(--black-ter);
+    --bg-component: var(--black-800);
     --bg-highlight: hsl(48, 100%, 15%);;
     --bg-hover: var(--grey-dark);
 
     /** invert or adjust colours for text **/
-    --text: var(--white-bis);
+    --text: var(--white-25);
     --text-invert: var(--black);
     --text-light: var(--grey);
-    --text-darker: var(--white-ter);
+    --text-darker: var(--white-50);
 
-    --text-elem: var(--white-bis);
-    --text-comp: var(--white-bis);
-    --text-invert-ter: var(--black-ter);
+    --text-elem: var(--white-25);
+    --text-comp: var(--white-25);
+    --text-invert-ter: var(--black-800);
 
-    --text-btn: var(--black-bis);
-    --text-btn-invert: var(--white-ter);
-    --text-bg: var(--black-bis);
+    --text-btn: var(--black-850);
+    --text-btn-invert: var(--white-50);
+    --text-bg: var(--black-850);
     --text-code: var(--secondary-light);
 }
 

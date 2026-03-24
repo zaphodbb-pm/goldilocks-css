@@ -519,7 +519,7 @@
     }
 
     .form .form-tabs > ul label:hover {
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-main-comp);
         border-bottom: 1px solid var(--border-main-darker);
         margin-bottom: 0;
         color: var(--text-darker);
