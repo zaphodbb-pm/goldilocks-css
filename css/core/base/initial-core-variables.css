@@ -172,6 +172,8 @@
 }
 
 /* respond to changes in screen size */
-@media screen and (min-width: 800px)   { --base-font-size: calc( 1.125 * var(--base-rem)); }
-@media screen and (min-width: 1200px)  { --base-font-size: calc( 1.25 * var(--base-rem)); }
-@media screen and (min-width: 1600px)  { --base-font-size: calc( 1.5 * var(--base-rem)); }
+html{
+    @media screen and (min-width: 800px)   { --base-font-size: calc( 1.125 * var(--base-rem)); }
+    @media screen and (min-width: 1200px)  { --base-font-size: calc( 1.25 * var(--base-rem)); }
+    @media screen and (min-width: 1600px)  { --base-font-size: calc( 1.5 * var(--base-rem)); }
+}
