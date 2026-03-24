@@ -16,7 +16,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /* build main theme colours */
     --primary: hsl(185,58%,32%);
     --secondary: hsl(37,14%,50%);
-    --complement: hsl(22, 92%, 64%);
+    --complement: hsl(22, 94%, 53%);
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: hsl(185,65%,19%);
@@ -69,19 +69,19 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --danger-text-invert-dark: white;
 
     /* additional greys */
-    --black: hsl(0, 0%, 2%);
-    --black-bis: hsl(0, 0%, 10%);
-    --black-ter: hsl(0, 0%, 16%);
+    --black: color-mix(in hsl, black, var(--secondary) 5% );
+    --black-bis: color-mix(in hsl, black, var(--secondary) 10% );
+    --black-ter: color-mix(in hsl, black, var(--secondary) 15% );
 
-    --grey-darker: hsl(0, 0%, 25%);
-    --grey-dark: hsl(0, 0%, 40%);
-    --grey: hsl(0, 0%, 60%);
-    --grey-light: hsl(0, 0%, 85%);
-    --grey-lighter: hsl(0, 0%, 93%);
+    --grey-darker: color-mix(in hsl, hsl(0, 0%, 25%), var(--secondary) 5% );
+    --grey-dark: color-mix(in hsl, hsl(0, 0%, 40%), var(--secondary) 5% );
+    --grey: color-mix(in hsl, hsl(0, 0%, 60%), var(--secondary) 5% );
+    --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 5% );
+    --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 5% );
 
-    --white-ter: hsl(0, 0%, 95%);
-    --white-bis: hsl(0, 0%, 98%);
-    --white: hsl(0, 0%, 100%);
+    --white-ter: color-mix(in hsl, hsl(0, 0%, 95%), var(--secondary) 5% );
+    --white-bis: color-mix(in hsl, hsl(0, 0%, 98%), var(--secondary) 5% );
+    --white: color-mix(in hsl, hsl(0, 0%, 100%), var(--secondary) 5% );
 
 
     /* set the body level colours for light mode*/
@@ -114,6 +114,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-btn: var(--black);
     --text-btn-invert: var(--white);
     --text-bg: var(--white);
-    --text-code: var(--complement);
+    --text-code: color-mix(in hsl, var(--complement), black 20%) ;
 }
 
