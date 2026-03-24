@@ -37,11 +37,7 @@
         and https://web.dev/articles/baseline-in-action-fluid-type
      **/
     /*--base-font-size:  var(--base-rem);*/
-
-    @media screen and (max-width: 799px)   { --base-font-size: var(--base-rem); }
-    @media screen and (min-width: 800px)   { --base-font-size: calc( 1.125 * var(--base-rem)); }
-    @media screen and (min-width: 1200px)  { --base-font-size: calc( 1.25 * var(--base-rem)); }
-    @media screen and (min-width: 1600px)  { --base-font-size: calc( 1.5 * var(--base-rem)); }
+    --base-font-size: var(--base-rem);
 
 
     /** Text line heights to match size **/
@@ -174,3 +170,8 @@
         <polyline points="9 18 15 12 9 6"/>\
     </svg>');
 }
+
+/* respond to changes in screen size */
+@media screen and (min-width: 800px)   { --base-font-size: calc( 1.125 * var(--base-rem)); }
+@media screen and (min-width: 1200px)  { --base-font-size: calc( 1.25 * var(--base-rem)); }
+@media screen and (min-width: 1600px)  { --base-font-size: calc( 1.5 * var(--base-rem)); }

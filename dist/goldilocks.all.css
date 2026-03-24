@@ -22,6 +22,14 @@
     --weight-medium: 500;
     --weight-semibold: 600;
     --weight-bold: 700;
+    /** Adjustable using a variable font size for all screen sizes
+        - font-size is variable and tracks viewport to a width of 100rem (1600 px)
+        - maximum font-size is set to 3 * base (nominal 48px)
+        - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
+        and https://web.dev/articles/baseline-in-action-fluid-type
+     **/
+    /*--base-font-size:  var(--base-rem);*/
+    --base-font-size: var(--base-rem);
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
@@ -116,31 +124,20 @@
         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
         <polyline points="9 18 15 12 9 6"/>\
     </svg>');
+}
 
-    /** Adjustable using a variable font size for all screen sizes
-        - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-        - maximum font-size is set to 3 * base (nominal 48px)
-        - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
-        and https://web.dev/articles/baseline-in-action-fluid-type
-     **/
-    /*--base-font-size:  var(--base-rem);*/
-
-    @media screen and (max-width: 799px)
-    {
-        --base-font-size: var(--base-rem);
-    }
-    @media screen and (min-width: 800px)
-    {
-        --base-font-size: calc( 1.125 * var(--base-rem));
-    }
-    @media screen and (min-width: 1200px)
-    {
-        --base-font-size: calc( 1.25 * var(--base-rem));
-    }
-    @media screen and (min-width: 1600px)
-    {
-        --base-font-size: calc( 1.5 * var(--base-rem));
-    }
+/* respond to changes in screen size */
+@media screen and (min-width: 800px)
+{
+    --base-font-size: calc( 1.125 * var(--base-rem));
+}
+@media screen and (min-width: 1200px)
+{
+    --base-font-size: calc( 1.25 * var(--base-rem));
+}
+@media screen and (min-width: 1600px)
+{
+    --base-font-size: calc( 1.5 * var(--base-rem));
 }
 
 /*
