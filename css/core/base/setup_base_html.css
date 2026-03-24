@@ -28,7 +28,7 @@
     body{
         margin: 0;
         padding: 0;
-        font-size: 1rem;
+        font-size: var(--base-font-size);
         font-family: var(--family-sans-serif), sans-serif;
         font-weight: var(--weight-normal);
         line-height: var(--line-height-150);
@@ -154,7 +154,7 @@
 
     pre {
         font-family: var(--family-monospace), monospace;
-        font-size: 1rem;
+        font-size: var(--base-font-size);
         background-color: var(--bg-main-code);
         border-left: 0.25rem solid var(--complement);
         overflow-y: hidden;
@@ -164,7 +164,7 @@
     }
 
     code {
-        font-size: 1rem;
+        font-size: var(--base-font-size);
         font-family: var(--family-monospace), monospace;
         font-weight: normal;
 
@@ -177,7 +177,7 @@
     }
 
     pre > code {
-        font-size: 1em;
+        font-size: var(--base-font-size);
         color: currentColor;
         background-color: transparent;
         padding: var(--padding);

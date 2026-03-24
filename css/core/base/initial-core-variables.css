@@ -52,20 +52,20 @@
 
     --size-factor: 1.125;
 
-    --size-7: calc( 1rem / var(--size-factor) );                /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
-    --size-6: var(--base-font-size);                            /* Example 1.125 scale factor:  --size-6 = 1 rem; */
-    --size-5: calc( var(--size-6) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
-    --size-4: calc( var(--size-5) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
-    --size-3: calc( var(--size-4) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
-    --size-2: calc( var(--size-3) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
-    --size-1: calc( var(--size-2) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
+    --size-7: calc( var(--base-font-size) / var(--size-factor) );   /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
+    --size-6: var(--base-font-size);                                /* Example 1.125 scale factor:  --size-6 = 1 rem; */
+    --size-5: calc( var(--size-6) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
+    --size-4: calc( var(--size-5) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
+    --size-3: calc( var(--size-4) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
+    --size-2: calc( var(--size-3) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
+    --size-1: calc( var(--size-2) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
 
 
 
     /* Grid Key Variables */
-    --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
-    --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
-    --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
+    --gutter: calc(3 * var(--base-rem));                    /** grid column gutter **/
+    --grid-min-px-width: 100px;                             /** minimum absolute column width in a grid layout **/
+    --grid-min-width: calc(5 * var(--base-font-size));      /** minimum relative column width in a grid layout **/
 
 
     /* basic spacing values */
@@ -77,8 +77,8 @@
 
 
     /* Flexbox element spacing */
-    --gap-row: calc( 1 * var(--base-font-size) );
-    --gap-col: calc( 1 * var(--base-font-size) );
+    --gap-row: calc( 0.75 * var(--base-font-size) );
+    --gap-col: calc( 0.75 * var(--base-font-size) );
 
 
 
@@ -111,14 +111,14 @@
 
 
     /* Navbar settings */
-    --navbar-height: 4rem;
+    --navbar-height: calc(4 * var(--base-font-size));
     --navbar-offset: 0;
     --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
 
 
 
     /* Widgetbar settings */
-    --widgetbar-height: calc( 2 * var(--base-font-size) + 0.25rem);
+    --widgetbar-height: calc( var(--base-font-size) + 1rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
 
 
@@ -132,8 +132,8 @@
 
 
     /* carousel image height */
-    --carousel-image-height: 8rem;
-    --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
+    --carousel-image-height: calc(8 * var(--base-font-size));
+    --carousel-image-width: calc( 4 / 3 * 8 * var(--base-font-size));            /* aspect ratio of image */
 
 
 
