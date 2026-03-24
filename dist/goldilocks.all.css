@@ -218,7 +218,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-bg: var(--white);
     --text-code: color-mix(in hsl, var(--complement), black 25%) ;
     /* Common shadow treatment for boxed elements */
-    --shadow: 0 .5em 1em -.125em color-mix(white var(--secondary), .2), 0 0 0 1px color-mix(white var(--secondary), .1);
+    --shadow: 0 .5em 1em -.125em color-mix(white, var(--secondary), .2), 0 0 0 1px color-mix(white, var(--secondary), .1);
     /*--shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);*/
 }
 
