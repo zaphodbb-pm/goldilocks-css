@@ -29,9 +29,105 @@
         and https://web.dev/articles/baseline-in-action-fluid-type
      **/
     --base-font-size: 1rem;
-    @media (width ) 800px
-    {
-    }
+    /*
+    @media (width > 800px)  { --base-font-size: 1.125rem; }
+    @media (width > 1200px) { --base-font-size: 1.25rem; }
+    @media (width > 1600px) { --base-font-size: 1.5rem; }
+     */
+    /** Text line heights to match size **/
+    --line-height-125: 125%;
+    --line-height-150: 150%;
+    --line-height-175: 175%;
+    --line-height-200: 200%;
+    /** Sizing pattern - typically for text **/
+    /*** typical factors: (see https://typescale.com)
+        1.125 (Major Second) - A balanced choice for most UI designs.
+        1.2 (Minor Third) - Suitable for more information-dense UI designs.
+        1.25 (Major Third) - A very popular choice that provides enough distinction between heading levels.
+        1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
+    ***/
+    --size-factor: 1.125;
+    --size-7: calc( var(--base-font-size) / var(--size-factor) );   /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
+    --size-6: var(--base-font-size);                                /* Example 1.125 scale factor:  --size-6 = 1 rem; */
+    --size-5: calc( var(--size-6) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
+    --size-4: calc( var(--size-5) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
+    --size-3: calc( var(--size-4) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
+    --size-2: calc( var(--size-3) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
+    --size-1: calc( var(--size-2) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
+    /* Grid Key Variables */
+    --gutter: calc(3 * var(--base-rem));                    /** grid column gutter **/
+    --grid-min-px-width: 100px;                             /** minimum absolute column width in a grid layout **/
+    --grid-min-width: calc(5 * var(--base-font-size));      /** minimum relative column width in a grid layout **/
+    /* basic spacing values */
+    /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
+    --space-element: var(--base-rem);
+    --space-block: calc(2 * var(--base-rem));
+    --space-collection: calc(4 * var(--base-rem));
+    --space-container: calc(5 * var(--base-rem));
+    /* Flexbox element spacing */
+    --gap-row: calc( .75 * var(--base-font-size) );
+    --gap-col: calc( .75 * var(--base-font-size) );
+    /* Elements Controls */
+    --pad-horz: var(--base-font-size);
+    --pad-vert: calc( .5 * var(--base-font-size) );
+    --pad-horz-small: calc( .5 * var(--base-font-size) );
+    --pad-vert-small: calc( .25 * var(--base-font-size) );
+    --padding: calc(.75 * var(--base-font-size));
+    --padding-normal: var(--base-font-size);
+    --padding-medium: calc( 1.5 * var(--base-font-size) );
+    --padding-large: calc( 3 * var(--base-font-size) );
+    --mar-horz: calc( .5 * var(--base-font-size) );
+    --mar-vert: calc( .5 * var(--base-font-size) );
+    --margin: var(--base-font-size);
+    --margin-form: calc(1.5 * var(--base-font-size));
+    --margin-medium: calc(3 * var(--base-font-size));
+    --margin-large: calc(5 * var(--base-font-size));
+    /* Component Controls */
+    --radius: calc(.25 * var(--base-font-size));
+    --radius-small: calc(.5 * var(--radius));
+    --radius-comp: calc(1 * var(--radius));
+    --radius-elem: calc(1.5 * var(--radius));
+    --radius-rounded: 10000px;
+    /* Navbar settings */
+    --navbar-height: calc(4 * var(--base-font-size));
+    --navbar-offset: 0;
+    --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
+    /* Widgetbar settings */
+    --widgetbar-height: calc(2 * var(--base-font-size) + 1rem);
+    --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
+    /* Breadcrumb setting */
+    /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
+    --breadcrumb-separator: '/';
+    /* magazine normal width */
+    --magazine-width: 40ch;
+    /* carousel image height */
+    --carousel-image-height: calc(8 * var(--base-font-size));
+    --carousel-image-width: calc( 4 / 3 * 8 * var(--base-font-size));            /* aspect ratio of image */
+    /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
+    --indicator: url('data:image/svg+xml;charset=utf8,\
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+    %20viewBox=\'0%200%2024%2024\'%20\
+    fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E\
+    %3Cpolyline%20points=\'6%209%2012%2015%2018%209\'/%3E\
+    %3C/svg%3E');
+    --indicator-down: url('data:image/svg+xml;charset=utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" \
+        width="24" height="24" viewBox="0 0 24 24" \
+        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
+        <polyline points="6 9 12 15 18 9"/>\
+    </svg>');
+    --indicator-up: url('data:image/svg+xml;charset=utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" \
+        width="24" height="24" viewBox="0 0 24 24" \
+        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
+        <polyline points="18 15 12 9 6 15"></polyline>\
+    </svg>');
+    --indicator-right: url('data:image/svg+xml;charset=utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" \
+        width="24" height="24" viewBox="0 0 24 24" \
+        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
+        <polyline points="9 18 15 12 9 6"/>\
+    </svg>');
 }
 
 /*
