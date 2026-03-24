@@ -28,7 +28,6 @@
         - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
         and https://web.dev/articles/baseline-in-action-fluid-type
      **/
-    /*--base-font-size:  var(--base-rem);*/
     --base-font-size: var(--base-rem);
     /** Text line heights to match size **/
     --line-height-125: 125%;
@@ -125,23 +124,6 @@
         <polyline points="9 18 15 12 9 6"/>\
     </svg>');
 }
-
-/* respond to changes in screen size */
-html
-{
-    @media screen and (min-width: 800px)
-    {
-        --base-font-size: calc( 1.125 * var(--base-rem));
-    }
-    @media screen and (min-width: 1200px)
-    {
-        --base-font-size: calc( 1.25 * var(--base-rem));
-    }
-    @media screen and (min-width: 1600px)
-    {
-        --base-font-size: calc( 1.5 * var(--base-rem));
-    }
-}
 /*
 main theme color definitions
 use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
@@ -236,7 +218,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-bg: var(--white);
     --text-code: color-mix(in hsl, var(--complement), black 25%) ;
     /* Common shadow treatment for boxed elements */
-    --shadow: 0 .5em 1em -.125em rgba(var(--secondary), .15), 0 0 0 1px rgba(var(--secondary), .05);
+    --shadow: 0 .5em 1em -.125em color-mix(white var(--secondary), .2), 0 0 0 1px color-mix(white var(--secondary), .1);
     /*--shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);*/
 }
 
