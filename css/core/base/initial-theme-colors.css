@@ -5,9 +5,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 
 :root {
-    /* Common shadow treatment for boxed elements */
-    --shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);
-
 
     /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
     /* main theme colour parameters - based on  complement color selection */
@@ -93,8 +90,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --bg-main-comp: var(--white);
     --bg-main-bis: var(--white-bis);
     --bg-main-ter: var(--white-ter);
-    --bg-main-invert: var(--black-ter);
-    --bg-main-code: var(--white-ter);
+    --bg-main-invert: var(--black-bis);
+    --bg-main-code: var(--white-bis);
 
     --bg-grid: var(--white-ter);
     --bg-element: var(--white-ter);
@@ -114,6 +111,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-btn: var(--black);
     --text-btn-invert: var(--white);
     --text-bg: var(--white);
-    --text-code: color-mix(in hsl, var(--complement), black 20%) ;
+    --text-code: color-mix(in hsl, var(--complement), black 25%) ;
+
+    /* Common shadow treatment for boxed elements */
+    --shadow: 0 0.5em 1em -0.125em rgba(var(--secondary), 0.15), 0 0 0 1px rgba(var(--secondary), 0.05);
+    /*--shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);*/
 }
 
