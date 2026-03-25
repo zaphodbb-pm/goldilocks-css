@@ -2,6 +2,30 @@
 
 @layer elements {
 
+    /** Adjustable using a variable font size for all screen sizes
+    - maximum font-size is set to 2 * base (nominal 32px)
+    - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
+    and https://web.dev/articles/baseline-in-action-fluid-type
+ **/
+
+    @media screen and (min-width: 60em) {
+        :root{
+            --base-font-size: calc(var(--base-rem) * 1.125) !important;
+        }
+    }
+
+    @media screen and (min-width: 90em ) {
+        :root{
+            --base-font-size: calc(var(--base-rem) * 1.5) !important;
+        }
+    }
+
+    @media screen and (min-width: 120em) {
+        :root{
+            --base-font-size: calc(var(--base-rem) * 2 ) !important;
+        }
+    }
+
     /** define characteristics of heading text **/
     h1, h2, h3, h4, h5, h6 {
         color: var(--text-darker);
@@ -227,24 +251,5 @@
 
     .has-text-dark {
         color: var(--grey-dark);
-    }
-
-
-    @media screen and (min-width: 60em) {
-        :root{
-            --base-font-size: calc(var(--base-rem) * 1.125) !important;
-        }
-    }
-
-    @media screen and (min-width: 90em ) {
-        :root{
-            --base-font-size: calc(var(--base-rem) * 1.25) !important;
-        }
-    }
-
-    @media screen and (min-width: 120em) {
-        :root{
-            --base-font-size: calc(var(--base-rem) * 1.5) !important;
-        }
     }
 }

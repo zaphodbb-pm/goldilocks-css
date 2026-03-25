@@ -30,13 +30,7 @@
     --weight-semibold: 600;
     --weight-bold: 700;
 
-    /** Adjustable using a variable font size for all screen sizes
-        - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-        - maximum font-size is set to 3 * base (nominal 48px)
-        - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
-        and https://web.dev/articles/baseline-in-action-fluid-type
-     **/
-
+    /** note: adjustable typography is set in the file: typography.css **/
     --base-font-size: var(--base-rem);
 
     /** Text line heights to match size **/
