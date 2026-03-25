@@ -124,6 +124,22 @@
         <polyline points="9 18 15 12 9 6"/>\
     </svg>');
 }
+
+
+@media screen and  (min-width: 50em)
+{
+    --base-font-size: 1.125rem;
+}
+
+@media screen and  (min-width: 75em)
+{
+    --base-font-size: 1.25rem;
+}
+
+@media screen and  (min-width: 100em)
+{
+    --base-font-size: 1.5rem;
+}
 /*
 main theme color definitions
 use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
@@ -4087,22 +4103,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .has-text-dark
     {
         color: var(--grey-dark);
-    }
-
-
-    @media screen and  (min-width: 50em)
-    {
-        --base-font-size: 1.125rem;
-    }
-
-    @media screen and  (min-width: 75em)
-    {
-        --base-font-size: 1.25rem;
-    }
-
-    @media screen and  (min-width: 100em)
-    {
-        --base-font-size: 1.5rem;
     }
 }
 
