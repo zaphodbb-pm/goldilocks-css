@@ -228,4 +228,25 @@
     .has-text-dark {
         color: var(--grey-dark);
     }
+
+
+
+
+    @media screen and  (min-width: 50em) {
+        :root{
+            --base-font-size: 1.125rem;
+        }
+    }
+
+    @media screen and  (min-width: 75em) {
+        :root{
+            --base-font-size: 1.25rem;
+        }
+    }
+
+    @media screen and  (min-width: 100em) {
+        :root{
+            --base-font-size: 1.5rem;
+        }
+    }
 }
