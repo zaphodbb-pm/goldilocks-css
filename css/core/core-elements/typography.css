@@ -230,19 +230,19 @@
     }
 
 
-    @media screen and (min-width: 50em) {
+    @media screen and (min-width: 60em) {
         :root{
             --base-font-size: calc(var(--base-rem) * 1.125) !important;
         }
     }
 
-    @media screen and (min-width: 80em ) {
+    @media screen and (min-width: 90em ) {
         :root{
             --base-font-size: calc(var(--base-rem) * 1.25) !important;
         }
     }
 
-    @media screen and (min-width: 160em) {
+    @media screen and (min-width: 120em) {
         :root{
             --base-font-size: calc(var(--base-rem) * 1.5) !important;
         }

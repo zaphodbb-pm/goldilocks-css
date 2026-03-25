@@ -4090,7 +4090,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 
 
-    @media screen and (min-width: 50em)
+    @media screen and (min-width: 60em)
     {
         :root
         {
@@ -4098,7 +4098,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         }
     }
 
-    @media screen and (min-width: 80em )
+    @media screen and (min-width: 90em )
     {
         :root
         {
@@ -4106,7 +4106,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         }
     }
 
-    @media screen and (min-width: 160em)
+    @media screen and (min-width: 120em)
     {
         :root
         {
