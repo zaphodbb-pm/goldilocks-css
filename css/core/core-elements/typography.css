@@ -232,20 +232,20 @@
 
     @media screen and (min-width: 100em) {
         :root{
-            --base-font-size: 1.5rem;
+            --base-font-size: 1.5rem !important;
         }
     }
 
     @media screen and (min-width: 75em ) {
         :root{
-            --base-font-size: 1.25rem;
+            --base-font-size: 1.25rem !important;
         }
     }
 
 
     @media screen and (min-width: 50em) {
         :root{
-            --base-font-size: 1.125rem;
+            --base-font-size: 1.125rem !important;
         }
     }
 

@@ -4094,7 +4094,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         :root
         {
-            --base-font-size: 1.5rem;
+            --base-font-size: 1.5rem !important;
         }
     }
 
@@ -4102,7 +4102,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         :root
         {
-            --base-font-size: 1.25rem;
+            --base-font-size: 1.25rem !important;
         }
     }
 
@@ -4111,7 +4111,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         :root
         {
-            --base-font-size: 1.125rem;
+            --base-font-size: 1.125rem !important;
         }
     }
 }
