@@ -4090,17 +4090,15 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 
 
-
-
-    @media screen and  (min-width: 50em)
+    @media screen and (min-width: 100em)
     {
         :root
         {
-            --base-font-size: 1.125rem;
+            --base-font-size: 1.5rem;
         }
     }
 
-    @media screen and  (min-width: 75em)
+    @media screen and (min-width: 75em )
     {
         :root
         {
@@ -4108,11 +4106,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         }
     }
 
-    @media screen and  (min-width: 100em)
+
+    @media screen and (min-width: 50em)
     {
         :root
         {
-            --base-font-size: 1.5rem;
+            --base-font-size: 1.125rem;
         }
     }
 }
