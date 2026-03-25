@@ -4094,23 +4094,23 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         :root
         {
-            --base-font-size: 1.125rem !important;
+            --base-font-size: calc(var(--base-rem) * 1.125) !important;
         }
     }
 
-    @media screen and (min-width: 75em )
+    @media screen and (min-width: 80em )
     {
         :root
         {
-            --base-font-size: 1.25rem !important;
+            --base-font-size: calc(var(--base-rem) * 1.25) !important;
         }
     }
 
-    @media screen and (min-width: 100em)
+    @media screen and (min-width: 160em)
     {
         :root
         {
-            --base-font-size: 1.5rem !important;
+            --base-font-size: calc(var(--base-rem) * 1.5) !important;
         }
     }
 }
