@@ -7753,7 +7753,7 @@ pre
     .tag.is-delete
     {
         color: var(--text);
-        background-color: var(--bg-element);
+        background-color: var(--bg-component);
     }
 
     .tag .delete

@@ -19,7 +19,7 @@
 
     .tag:not([class*=" is-"]),
     .tag.is-delete {
-        background-color: var(--bg-element);
+        background-color: var(--bg-component);
         color: var(--text);
     }
 
