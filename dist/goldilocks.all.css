@@ -167,7 +167,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --warning: hsl(38, 92%, 54%);
     --warning-light: hsl(38, 88%, 93%);
     --warning-dark: hsl(38, 90%, 44%);
-    --warning-text: hsl(38, 65%, 32%);
+    --warning-text: hsl(38, 65%, 22%);
     --warning-text-invert: var(--black);
     --warning-text-invert-dark: var(--black);
     --danger: hsl(4, 70%, 50%);
