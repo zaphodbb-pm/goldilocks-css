@@ -186,7 +186,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 5% );
     --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 5% );
     --white-50: color-mix(in hsl, white, var(--secondary) 16% );
-    --white-25: color-mix(in hsl, white, var(--secondary) 8% );
+    --white-25: color-mix(in hsl, white, var(--secondary) 10% );
     --white: color-mix(in hsl, white, var(--secondary) 4% );
     /* set the body level colours for light mode*/
     --border-main: var(--grey-light);
@@ -3555,7 +3555,7 @@ pre
     .table > caption
     {
         font-size: var(--size-5);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
 
         padding-bottom: var(--pad-vert);
     }
@@ -3592,7 +3592,7 @@ pre
 
     .table tfoot td
     {
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
 
         border-top: 2px solid var(--border-main-darker);
     }
@@ -3664,7 +3664,7 @@ pre
     .table-boxed > header
     {
         font-size: var(--size-5);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
 
         display: flex;
 
