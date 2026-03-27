@@ -551,7 +551,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 pre > code .tag
 {
-    font-size: unset;
+    font-size: var(--size-6);
+    font-weight: var(--weight-normal);
     line-height: normal;
 
     display: unset;
@@ -564,8 +565,8 @@ pre > code .tag
     border-radius: unset;
     background: transparent !important;
 
-    align-items: baseline;
     justify-content: unset;
+    align-items: baseline;
 }
 
 pre[class*=language-]
