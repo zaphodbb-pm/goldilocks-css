@@ -185,9 +185,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --grey: color-mix(in hsl, hsl(0, 0%, 60%), var(--secondary) 5% );
     --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 5% );
     --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 5% );
-    --white-50: color-mix(in hsl, white, var(--secondary) 12% );
-    --white-25: color-mix(in hsl, white, var(--secondary) 10% );
-    --white: color-mix(in hsl, white, var(--secondary) 6% );
+    --white-50: color-mix(in hsl, white, var(--secondary) 9% );
+    --white-25: color-mix(in hsl, white, var(--secondary) 6% );
+    --white: color-mix(in hsl, white, var(--secondary) 3% );
     /* set the body level colours for light mode*/
     --border-main: var(--grey-light);
     --border-main-darker: var(--grey);
@@ -548,48 +548,46 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 /* fix for prism code highlighter */
-@layer base
+
+pre > code .tag
 {
-    pre > code .tag
-    {
-        font-size: unset;
-        line-height: normal;
+    font-size: unset;
+    line-height: normal;
 
-        display: unset;
+    display: unset;
 
-        height: auto;
-        padding: 0;
+    height: auto;
+    padding: 0;
 
-        white-space: nowrap;
+    white-space: nowrap;
 
-        border-radius: unset;
-        background: transparent !important;
+    border-radius: unset;
+    background: transparent !important;
 
-        align-items: baseline;
-        justify-content: unset;
-    }
+    align-items: baseline;
+    justify-content: unset;
+}
 
-    pre[class*=language-]
-    {
-        border: none;
-    }
+pre[class*=language-]
+{
+    border: none;
+}
 
-    pre > code[class*=language-]
-    {
-        overflow: auto;
+pre > code[class*=language-]
+{
+    overflow: auto;
 
-        min-width: 10rem;
-        min-height: 10rem;
-        max-height: 30rem;
-        margin: 0 !important;
-        padding: 1rem 1.5rem;
-    }
+    min-width: 10rem;
+    min-height: 10rem;
+    max-height: 30rem;
+    margin: 0 !important;
+    padding: 1rem 1.5rem;
+}
 
-    pre
-    {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+pre
+{
+    margin: 0 !important;
+    padding: 0 !important;
 }
 @layer layout
 {

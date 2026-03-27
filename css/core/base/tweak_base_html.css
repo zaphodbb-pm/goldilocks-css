@@ -1,5 +1,4 @@
 /* fix for prism code highlighter */
-@layer base {
 
     pre > code .tag {
         background: transparent !important;
@@ -12,6 +11,8 @@
         line-height: normal;
         padding: 0;
         white-space: nowrap;
+
+
     }
 
     pre[class*=language-] {
@@ -31,5 +32,3 @@
         padding: 0 !important;
         margin: 0 !important;
     }
-
-}
