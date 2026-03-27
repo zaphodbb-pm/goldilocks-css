@@ -7731,7 +7731,7 @@ pre
     .tag
     {
         font-size: var(--size-7);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
         line-height: var(--line-height-150);
 
         display: inline-flex;
