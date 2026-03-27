@@ -14,9 +14,22 @@ nav: Typography
         <section class="column">
             <h2>Commentary</h2>
 
-            <p>Typography sets default styles for all text elements such as headings, paragraphs and semantic text elements.
-                Text sizing uses the base font size (typically 1rem).  Heading sizes are controlled by a scale factor that is nominally
-                in 0.25 steps. Alternative step sizes is 0.125 or 0.067.  The step size is set in the variable <code>--size-factor</code>.
+            <p>Typography sets default styles for all text elements, such as headings, paragraphs and semantic text elements.
+                Text sizing uses the base font size (typically 1rem).  The step size is set in the variable <code>--size-factor</code>
+                found in the file <em>initial-core-variables.css</em>.
+                Heading sizes are controlled by a scale factor that is nominally set to 1.125 times the base font size.
+                The scale factor can be adjusted to any value, but a common convention uses values between 1.125 and 1.333.
+                The following are the recommended values:
+            </p>
+
+            <ul>
+                <li>1.125 (Major Second) - A balanced choice for most UI designs.</li>
+                <li>1.2 (Minor Third) - Suitable for more information-dense UI designs.</li>
+                <li>1.25 (Major Third) - A very popular choice that provides enough distinction between heading levels.</li>
+                <li>1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.</li>
+            </ul>
+
+            <p>
                 Text content can also be controlled by setting alignment, color and size.  These can be used in combination as well.
                 See <a href="https://type-scale.com/" target=_blank>Typography Sandbox</a>.
             </p>
