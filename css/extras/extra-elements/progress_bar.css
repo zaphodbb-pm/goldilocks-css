@@ -1,6 +1,7 @@
 @layer extras {
 
     progress {
+        appearance: none;
         -moz-appearance: none;
         -webkit-appearance: none;
         border: none;

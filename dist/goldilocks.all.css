@@ -196,7 +196,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --bg-main-comp: var(--white-50);
     --bg-main-invert: var(--black-850);
     --bg-main-code: var(--white-25);
-    --bg-grid: var(--white-25);
+    --bg-grid: var(--white-50);
     --bg-element: var(--white-25);
     --bg-component: var(--white-50);
     --bg-highlight: var(--warning-light);
@@ -10238,6 +10238,7 @@ pre
         border: none;
         border-radius: 9999px;
 
+                appearance: none;
            -moz-appearance: none;
         -webkit-appearance: none;
     }
