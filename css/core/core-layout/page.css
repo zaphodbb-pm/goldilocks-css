@@ -174,7 +174,7 @@
     }
 
     .page-footer {
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
         margin-top: var(--margin);
         padding: var(--padding-medium) var(--padding-large);
         border-top: 1px solid var(--border-main-darker);

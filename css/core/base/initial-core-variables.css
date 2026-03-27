@@ -100,7 +100,7 @@
 
 
     /* Component Controls */
-    --radius: calc(0.25 * var(--base-font-size));
+    --radius: calc(0.5 * var(--base-font-size));
     --radius-small: calc(0.5 * var(--radius));
     --radius-comp: calc(1 * var(--radius));
     --radius-elem: calc(1.5 * var(--radius));

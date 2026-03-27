@@ -73,7 +73,7 @@
     --margin-medium: calc(3 * var(--base-font-size));
     --margin-large: calc(5 * var(--base-font-size));
     /* Component Controls */
-    --radius: calc(.25 * var(--base-font-size));
+    --radius: calc(.5 * var(--base-font-size));
     --radius-small: calc(.5 * var(--radius));
     --radius-comp: calc(1 * var(--radius));
     --radius-elem: calc(1.5 * var(--radius));
@@ -185,7 +185,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --grey: color-mix(in hsl, hsl(0, 0%, 60%), var(--secondary) 5% );
     --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 5% );
     --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 5% );
-    --white-50: color-mix(in hsl, white, var(--secondary) 12% );
+    --white-50: color-mix(in hsl, white, var(--secondary) 16% );
     --white-25: color-mix(in hsl, white, var(--secondary) 8% );
     --white: color-mix(in hsl, white, var(--secondary) 4% );
     /* set the body level colours for light mode*/
@@ -213,8 +213,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-bg: var(--white);
     --text-code: color-mix(in hsl, var(--complement), black 25%) ;
     /* Common shadow treatment for boxed elements */
-    --shadow: 0 .5em 1em -.125em color-mix(white, var(--secondary) 30%), 0 0 0 1px color-mix(white, var(--secondary) 10%);
-    /*--shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);*/
+    --shadow: 0 .25em .7em -.125em color-mix(in hsl, white, var(--secondary) 25%), 0 0 0 1px color-mix(in hsl, white, var(--secondary) 10%);
 }
 
 
@@ -602,7 +601,7 @@ pre
         padding: var(--padding-normal);
 
         color: var(--text);
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
     }
 
 
@@ -1138,7 +1137,7 @@ pre
         padding: var(--padding-medium) var(--padding-large);
 
         border-top: 1px solid var(--border-main-darker);
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
 
         justify-content: space-between;
         column-gap: calc(2 * var(--gap-col));
@@ -5552,6 +5551,7 @@ pre
     .sidenav-block > label::after
     {
         position: absolute;
+        top: .75rem;
         /* adds right chevron */
         right: 0;
 
@@ -5625,7 +5625,7 @@ pre
 
     .sidenav-block input:checked + label::after
     {
-        top: 1em;
+        top: .75em;
         right: 0;
 
         transform: rotate(90deg);

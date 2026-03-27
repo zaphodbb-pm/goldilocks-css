@@ -2,7 +2,7 @@
 
     .box,
     .box-shadow {
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
         color: var(--text);
         display: block;
         padding: var(--padding-normal);

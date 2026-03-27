@@ -76,7 +76,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 5% );
     --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 5% );
 
-    --white-50: color-mix(in hsl, white, var(--secondary) 12% );
+    --white-50: color-mix(in hsl, white, var(--secondary) 16% );
     --white-25: color-mix(in hsl, white, var(--secondary) 8% );
     --white: color-mix(in hsl, white, var(--secondary) 4% );
 
@@ -112,7 +112,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-code: color-mix(in hsl, var(--complement), black 25%) ;
 
     /* Common shadow treatment for boxed elements */
-    --shadow: 0 0.5em 1em -0.125em color-mix(white, var(--secondary) 30%), 0 0 0 1px color-mix(white, var(--secondary) 10%);
-    /*--shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(10, 10, 10, 0.02);*/
+    --shadow: 0 0.25em 0.7em -0.125em color-mix(in hsl, white, var(--secondary) 25%), 0 0 0 1px color-mix(in hsl, white, var(--secondary) 10%);
 }
 
