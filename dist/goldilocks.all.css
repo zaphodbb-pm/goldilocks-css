@@ -8112,6 +8112,11 @@ pre
         --color-10: hsla(calc(var(--color) + 9 * var(--color-offset)), var(--color-satlight));
     }
 
+    .charts-wrapper ul li
+    {
+        font-size: var(--size-7);
+    }
+
     .charts-column,
     .charts-line,
     .charts-pie,
@@ -8454,8 +8459,8 @@ pre
     .charts-pie.show-caption caption,
     .charts-donut.show-caption caption
     {
-        font-size: var(--size-4);
-        font-weight: bold;
+        font-size: var(--size-5);
+        font-weight: var(--weight-semibold);
 
         display: table-caption;
 

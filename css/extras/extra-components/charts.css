@@ -25,6 +25,10 @@
         --color-10: hsla(calc(var(--color) + 9 * var(--color-offset)), var(--color-satlight));
     }
 
+    .charts-wrapper ul li {
+        font-size: var(--size-7);
+    }
+
     .charts-column,
     .charts-line,
     .charts-pie,
@@ -308,8 +312,8 @@
     .charts-pie.show-caption caption,
     .charts-donut.show-caption caption {
         display: table-caption;
-        font-weight: bold;
-        font-size: var(--size-4);
+        font-weight: var(--weight-semibold);
+        font-size: var(--size-5);
         padding: 0 0 1.5rem 0;
         height: auto;
     }
