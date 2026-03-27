@@ -4,7 +4,7 @@
         padding: 0;
         box-shadow: none;
         border: none;
-        background-color: var(--bg-main-elem);
+        background-color: var(--bg-main);
         color: var(--text-elem);
     }
 
@@ -13,6 +13,7 @@
         padding: var(--padding-medium);
         border-radius: var(--radius-comp);
         box-shadow: var(--shadow);
+        background-color: var(--bg-main-elem);
     }
 
 
@@ -80,8 +81,8 @@
     .form label > span:first-child {
         position: absolute;
         left: var(--margin);
-        top: calc(-0.5 * var(--margin));
-        background-color: var(--bg-main-elem);
+        top: calc(-0.75 * var(--margin));
+        background-color: var(--bg-main);
         padding: 0 calc(0.5 * var(--pad-horz));
         font-weight: var(--weight-medium);
         font-size: var(--size-7);
@@ -104,7 +105,7 @@
     .form .field-group .has-help-text label input,
     .form .field-group .has-help-text label textarea,
     .form .field-group .has-help-text label select {
-        background-color: var(--bg-main-elem);
+        background-color: var(--bg-main);
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
 
@@ -450,11 +451,12 @@
         z-index: 1;
     }
 
-    .has-help-text > span > span:not(.icon-nav) {
+    .has-help-text > span > [class*=icon-bg-]:not(.icon-nav) {
         margin: 0;
         height: 1em;
         width: 1em;
         cursor: pointer;
+        background-color: var(--bg-element);
     }
 
     .has-help-text > p {

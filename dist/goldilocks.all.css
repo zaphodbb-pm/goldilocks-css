@@ -2661,7 +2661,7 @@ pre
 
         color: var(--text-elem);
         border: none;
-        background-color: var(--bg-main-elem);
+        background-color: var(--bg-main);
         box-shadow: none;
     }
 
@@ -2672,6 +2672,7 @@ pre
         padding: var(--padding-medium);
 
         border-radius: var(--radius-comp);
+        background-color: var(--bg-main-elem);
         box-shadow: var(--shadow);
     }
 
@@ -2761,7 +2762,7 @@ pre
 
         position: absolute;
         z-index: 10;
-        top: calc(-.5 * var(--margin));
+        top: calc(-.75 * var(--margin));
         left: var(--margin);
 
         overflow: hidden;
@@ -2771,7 +2772,7 @@ pre
         white-space: nowrap;
 
         color: var(--text-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--bg-main);
     }
 
 
@@ -2802,7 +2803,7 @@ pre
         color: var(--text-elem);
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--bg-main);
         box-shadow: none;
 
                 appearance: none;
@@ -3214,13 +3215,15 @@ pre
         background-color: var(--bg-element);
     }
 
-    .has-help-text > span > span:not(.icon-nav)
+    .has-help-text > span > [class*=icon-bg-]:not(.icon-nav)
     {
         width: 1em;
         height: 1em;
         margin: 0;
 
         cursor: pointer;
+
+        background-color: var(--bg-element);
     }
 
     .has-help-text > p
