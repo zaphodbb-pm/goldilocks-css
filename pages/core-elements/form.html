@@ -21,13 +21,13 @@ nav: Form
 
             <p>Although the <strong>form</strong> element is a common item, it is challenging to structure because of the wide
                 variety of input types.   Also, form validation and submission vary depending on the client side framework employed.
-                Included here is a simple javascript routine to collect and display the form's inputs.  Validation is typically handled through
+                Included here is a simple JavaScript routine to collect and display the form's inputs.  Validation is typically handled through
                 javascript before sending to the server.
             </p>
 
             <p>Long forms are often required for system administration or configuration purposes. An optional tabbed form
                 variant is provided that breaks a long form into tabs that have related inputs.  This is all CSS controlled -
-                no javascript required.  The form submit button sees all of the form fields and hence all these fields will be
+                no javascript required.  The form submit button sees all the form fields and hence all these fields will be
                 sent to the server. Note customers will usually not see these long forms!  ... should not see.  Just in case,
                 for screen readers, the tab controls are hidden and the full form is semantically structured to be readable by
                 assistive technologies.
@@ -92,7 +92,7 @@ nav: Form
                 <tr>
                     <td><code>.has-help-text</code></td>
                     <td>Optional form class to show a help icon in top right of the field.  Associated help text will
-                        appear below input field.</td>
+                        appear below the input field.</td>
                 </tr>
 
                 <tr>
@@ -168,10 +168,7 @@ nav: Form
                     <textarea rows="3" placeholder="Text area input" name="textarea_field"></textarea>
                 </label>
 
-                <div class="has-help-text">
-                    <span>
-                        <span class="icon-bg-help"></span>
-                    </span>
+                <div class="has-help-text" data-help-icon="?">
 
                     <label>
                         <span>Text Area</span>

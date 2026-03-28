@@ -133,7 +133,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /* build main theme colours */
     --primary: hsl(185,58%,32%);
     --secondary: hsl(37,14%,50%);
-    --complement: hsl(22, 94%, 53%);
+    --complement: hsl(22, 94%, 56%);
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: hsl(185,65%,19%);
     --secondary-text: hsl(37,20%,28%);
@@ -142,7 +142,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --primary-text-invert-dark: hsl(185, 55%, 96%);
     --secondary-text-invert: hsl(37, 28%, 97%);
     --secondary-text-invert-dark: hsl(37, 28%, 97%);
-    --complement-text-invert: hsl(22, 80%, 15%);
+    --complement-text-invert: hsl(22, 80%, 12%);
     --complement-text-invert-dark: hsl(22, 80%, 97%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
     --primary-light: hsl(185,55%,96%);
@@ -3198,7 +3198,7 @@ pre
         position: relative;
     }
 
-    .has-help-text > span
+    .has-help-text::after
     {
         line-height: 0;
 
@@ -3207,24 +3207,43 @@ pre
         top: -.5rem;
         right: -.5rem;
 
+        width: 1em;
+        height: 1em;
         margin: 0;
         padding: .25em;
 
-        color: var(--secondary);
+        content: attr(data-help-icon);
+        cursor: pointer;
+
+        color: var(--complement);
+        border-color: var(--complement);
         border-radius: 50%;
         background-color: var(--bg-element);
     }
 
-    .has-help-text > span > [class*=icon-bg-]:not(.icon-nav)
-    {
-        width: 1em;
-        height: 1em;
+    /*
+    .has-help-text > span {
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
         margin: 0;
+        line-height: 0;
+        padding: 0.25em;
+        background-color: var(--bg-element);
+        color: var(--secondary);
+        border-radius: 50%;
+        z-index: 1;
+    }
 
+    .has-help-text > span > [class*=icon-bg-]:not(.icon-nav) {
+        margin: 0;
+        height: 1em;
+        width: 1em;
         cursor: pointer;
-
         background-color: var(--bg-element);
     }
+*/
+
 
     .has-help-text > p
     {
