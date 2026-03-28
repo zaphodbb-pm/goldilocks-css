@@ -2933,6 +2933,13 @@ pre
         border-radius: var(--radius-elem);
     }
 
+    .field-error input,
+    .field-error textarea,
+    .field-error select
+    {
+        border: none;
+    }
+
     .form .has-field-addons
     {
         display: flex;
@@ -3198,10 +3205,8 @@ pre
         position: relative;
     }
 
-    .has-help-text::after
+    .has-help-text::before
     {
-        line-height: 0;
-
         position: absolute;
         z-index: 1;
         top: -.5rem;
@@ -3209,15 +3214,26 @@ pre
 
         width: 1em;
         height: 1em;
+
+        cursor: pointer;
+
+        border-color: var(--complement);
+        border-radius: 50%;
+        background-color: var(--bg-element);
+    }
+
+    .has-help-text::after
+    {
+        line-height: 0;
+
+        width: 1em;
+        height: 1em;
         margin: 0;
         padding: .25em;
 
         content: attr(data-help-icon);
-        cursor: pointer;
 
         color: var(--complement);
-        border-color: var(--complement);
-        border-radius: 50%;
         background-color: var(--bg-element);
     }
 

@@ -228,6 +228,12 @@
         border-radius: var(--radius-elem);
     }
 
+    .field-error input,
+    .field-error textarea,
+    .field-error select {
+        border: none
+    }
+
     .form .has-field-addons {
         display: flex;
         justify-content: flex-start;
@@ -438,13 +444,24 @@
         position: relative;
     }
 
-    .has-help-text::after {
-        content:attr(data-help-icon);
+    .has-help-text::before {
         position: absolute;
         height: 1em;
         width: 1em;
         top: -0.5rem;
         right: -0.5rem;
+
+        background-color: var(--bg-element);
+        border-radius: 50%;
+        border-color: var(--complement);
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .has-help-text::after {
+        content:attr(data-help-icon);
+        height: 1em;
+        width: 1em;
 
         margin: 0;
         padding: 0.25em;
@@ -452,10 +469,6 @@
 
         color: var(--complement);
         background-color: var(--bg-element);
-        border-radius: 50%;
-        border-color: var(--complement);
-        cursor: pointer;
-        z-index: 1;
     }
 
     /*
