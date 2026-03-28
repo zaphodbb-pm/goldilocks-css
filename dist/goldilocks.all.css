@@ -3007,8 +3007,7 @@ pre
         height: calc(2.5 * var(--base-font-size) + 2px);
 
         border: 1px solid var(--border-main-darker);
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: var(--radius-elem) 0 0 var(--radius-elem);
     }
 
     .form .has-field-addons > :last-child input
@@ -3016,8 +3015,7 @@ pre
         height: calc(2.5 * var(--base-font-size) + 2px);
 
         border: 1px solid var(--border-main-darker);
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        border-radius: 0 var(--radius-elem) var(--radius-elem) 0;
     }
 
 
@@ -3065,7 +3063,6 @@ pre
     .form .has-field-addons > label input
     {
         height: auto;
-        padding: 0;
 
         border: none;
         border-radius: 0;

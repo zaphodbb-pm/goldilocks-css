@@ -22,12 +22,12 @@ nav: Form
             <p>Although the <strong>form</strong> element is a common item, it is challenging to structure because of the wide
                 variety of input types.   Also, form validation and submission vary depending on the client side framework employed.
                 Included here is a simple JavaScript routine to collect and display the form's inputs.  Validation is typically handled through
-                javascript before sending to the server.
+                JavaScript before sending to the server.
             </p>
 
             <p>Long forms are often required for system administration or configuration purposes. An optional tabbed form
                 variant is provided that breaks a long form into tabs that have related inputs.  This is all CSS controlled -
-                no javascript required.  The form submit button sees all the form fields and hence all these fields will be
+                no JavaScript required.  The form submit button sees all the form fields and hence all these fields will be
                 sent to the server. Note customers will usually not see these long forms!  ... should not see.  Just in case,
                 for screen readers, the tab controls are hidden and the full form is semantically structured to be readable by
                 assistive technologies.
@@ -291,10 +291,7 @@ nav: Form
                             &lt;textarea rows="3" placeholder="Text area input" name="textarea_field"&gt;&lt;/textarea&gt;
                         &lt;/label&gt;
 
-                        &lt;div class="has-help-text"&gt;
-                            &lt;span&gt;
-                                &lt;span class="icon-bg-help"&gt;&lt;/span&gt;
-                            &lt;/span&gt;
+                        &lt;div class="has-help-text" data-help-icon="?" &gt;
 
                             &lt;label&gt;
                                 &lt;span&gt;Text Area&lt;/span&gt;
@@ -517,7 +514,7 @@ nav: Form
                 </fieldset>
 
                 <div class="form-footer">
-                    <button type="submit" class="is-primary has-hover">Submit!</button>
+                    <button type="submit" class="is-complement has-hover">Submit!</button>
                 </div>
             </form>
 
@@ -670,7 +667,7 @@ nav: Form
                     &lt;/fieldset&gt;
 
                     &lt;div class="form-footer"&gt;
-                        &lt;button type="submit" class="is-primary has-hover"&gt;Submit!&lt;/button&gt;
+                        &lt;button type="submit" class="is-complement has-hover"&gt;Submit!&lt;/button&gt;
                     &lt;/div&gt;
                 &lt;/form&gt;
 
@@ -858,7 +855,7 @@ nav: Form
                 </div>
 
                 <div class="form-footer">
-                    <button type="submit" class="is-primary has-hover">Submit!</button>
+                    <button type="submit" class="is-complement has-hover">Submit!</button>
                 </div>
             </form>
 
@@ -1032,7 +1029,7 @@ nav: Form
                     &lt;/div&gt;
 
                     &lt;div class="form-footer"&gt;
-                        &lt;button type="submit" class="is-primary has-hover"&gt;Submit!&lt;/button&gt;
+                        &lt;button type="submit" class="is-complement has-hover"&gt;Submit!&lt;/button&gt;
                     &lt;/div&gt;
                 &lt;/form&gt;
 
