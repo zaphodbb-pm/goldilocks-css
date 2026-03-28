@@ -228,9 +228,9 @@
         border-radius: var(--radius-elem);
     }
 
-    .field-error input,
-    .field-error textarea,
-    .field-error select {
+    .field-error > input,
+    .field-error > textarea,
+    .field-error > select {
         border: none
     }
 
@@ -444,31 +444,26 @@
         position: relative;
     }
 
-    .has-help-text::before {
+
+    .has-help-text::after {
+        content:attr(data-help-icon);
         position: absolute;
         height: 1em;
         width: 1em;
         top: -0.5rem;
         right: -0.5rem;
 
+        margin: 0;
+        padding: 0.25em;
+        line-height: 0;
+        text-align-all: center;
+
+        color: var(--complement);
         background-color: var(--bg-element);
         border-radius: 50%;
         border-color: var(--complement);
         cursor: pointer;
         z-index: 1;
-    }
-
-    .has-help-text::after {
-        content:attr(data-help-icon);
-        height: 1em;
-        width: 1em;
-
-        margin: 0;
-        padding: 0.25em;
-        line-height: 0;
-
-        color: var(--complement);
-        background-color: var(--bg-element);
     }
 
     /*
@@ -499,6 +494,7 @@
         margin-top: -1rem;
         margin-left: 1rem;
         margin-bottom: 1rem;
+        font-size: var(--size-7);
     }
 
 
