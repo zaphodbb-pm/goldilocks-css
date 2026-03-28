@@ -3205,6 +3205,25 @@ pre
         position: relative;
     }
 
+    .has-help-text::before
+    {
+        position: absolute;
+        z-index: 1;
+        top: -.5rem;
+        right: -.5rem;
+
+        width: 1em;
+        height: 1em;
+        margin: 0;
+        padding: .25em;
+
+        cursor: pointer;
+
+        border-color: var(--complement);
+        border-radius: 50%;
+        background-color: var(--bg-element);
+    }
+
 
     .has-help-text::after
     {
@@ -3221,12 +3240,8 @@ pre
         padding: .25em;
 
         content: attr(data-help-icon);
-        cursor: pointer;
 
         color: var(--complement);
-        border-color: var(--complement);
-        border-radius: 50%;
-        background-color: var(--bg-element);
 
         text-align-all: center;
     }
