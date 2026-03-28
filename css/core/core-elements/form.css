@@ -1,19 +1,23 @@
 @layer elements {
 
     .form {
+        --form-background-color: var(--bg-main);
+
         padding: 0;
         box-shadow: none;
         border: none;
-        background-color: var(--bg-main);
+        background-color: var(--form-background-color);
         color: var(--text-elem);
     }
 
     .form.has-form-shadow {
+        --form-background-color: var(--bg-main-elem);
+
         position: relative;
         padding: var(--padding-medium);
         border-radius: var(--radius-comp);
         box-shadow: var(--shadow);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
     }
 
 
@@ -82,7 +86,7 @@
         position: absolute;
         left: var(--margin);
         top: calc(-0.75 * var(--margin));
-        background-color: var(--bg-main);
+        background-color: var(--form-background-color);
         padding: 0 calc(0.5 * var(--pad-horz));
         font-weight: var(--weight-medium);
         font-size: var(--size-7);
@@ -105,7 +109,7 @@
     .form .field-group .has-help-text label input,
     .form .field-group .has-help-text label textarea,
     .form .field-group .has-help-text label select {
-        background-color: var(--bg-main);
+        background-color: var(--form-background-color);
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
 
@@ -150,7 +154,7 @@
         /* builds "chevron down" svg image for select box */
         background-image: var(--indicator);
         background-position: right 0.5em center;
-        background-size: 1.5em 1.5em;
+        background-size: 1.25em 1.25em;
         background-repeat: no-repeat;
         background-origin: padding-box;
         background-clip: border-box;
@@ -177,7 +181,7 @@
         padding: 0.75rem 0.75rem 0.5rem 0.75rem;
         margin: var(--margin-form) 0;
 
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
     }
@@ -190,7 +194,7 @@
     }
 
     .form fieldset legend {
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
         padding: 0 calc(0.5 * var(--pad-horz));
         font-weight: var(--weight-medium);
         font-size: var(--size-7);
@@ -255,7 +259,7 @@
         margin: 0;
         padding: 0 0.75rem;
         border-radius: 0;
-        height: calc(2.5rem + 2px);
+        height: calc(2.5 * var(--base-font-size) + 2px);
         width: auto;
         border: 1px solid var(--border-main-darker);
         cursor: pointer;
@@ -284,14 +288,14 @@
     .form .has-field-addons > :first-child input {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-        height: calc(2.5rem + 2px);
+        height: calc(2.5 * var(--base-font-size) + 2px);
         border: 1px solid var(--border-main-darker);
     }
 
     .form .has-field-addons > :last-child input {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        height: calc(2.5rem + 2px);
+        height: calc(2.5 * var(--base-font-size) + 2px);
         border: 1px solid var(--border-main-darker);
     }
 
@@ -326,10 +330,17 @@
 
         box-shadow: none;
         margin: 0;
-        padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+        padding: 0.5rem 0.75rem 0.5rem 0.75rem;
 
         width: 100%;
     }
+
+    .form .has-field-addons > label input {
+        height:auto;
+        padding: 0;
+        border-radius: 0;
+        border: none;
+        }
 
     .form .has-field-addons > label select {
         padding-right: 3.5rem;
@@ -386,7 +397,7 @@
         align-items: center;
         padding: 0.75rem 0.75rem 0.5rem 0.75rem;
 
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
     }
@@ -432,7 +443,7 @@
     }
 
     .form .switch input:checked + span::before {
-        background-color: var(--secondary);
+        background-color: var(--primary);
     }
 
     .form .switch input:checked + span::after {
@@ -461,7 +472,7 @@
         align-items: center;
 
         color: var(--complement-text);
-        background-color: var(--bg-main);
+        background-color: var(--form-background-color);
         border-radius: 50%;
         border: 1px solid var(--complement-text);
         cursor: pointer;
@@ -573,7 +584,7 @@
         border-left: 1px solid var(--border-main-darker) !important;
         border-top: 1px solid var(--border-main-darker) !important;
         border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 1px solid var(--bg-main) !important;
+        border-bottom: 1px solid var(--form-background-color) !important;
         color: var(--link);
         font-weight: var(--weight-semibold);
 

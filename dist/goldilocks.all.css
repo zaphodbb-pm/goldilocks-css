@@ -2661,8 +2661,10 @@ pre
 
         color: var(--text-elem);
         border: none;
-        background-color: var(--bg-main);
+        background-color: var(--form-background-color);
         box-shadow: none;
+
+        --form-background-color: var(--bg-main);
     }
 
     .form.has-form-shadow
@@ -2672,8 +2674,10 @@ pre
         padding: var(--padding-medium);
 
         border-radius: var(--radius-comp);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
         box-shadow: var(--shadow);
+
+        --form-background-color: var(--bg-main-elem);
     }
 
 
@@ -2772,7 +2776,7 @@ pre
         white-space: nowrap;
 
         color: var(--text-elem);
-        background-color: var(--bg-main);
+        background-color: var(--form-background-color);
     }
 
 
@@ -2803,7 +2807,7 @@ pre
         color: var(--text-elem);
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
-        background-color: var(--bg-main);
+        background-color: var(--form-background-color);
         box-shadow: none;
 
                 appearance: none;
@@ -2846,7 +2850,7 @@ pre
         background-position: right .5em center;
         background-clip: border-box;
         background-origin: padding-box;
-        background-size: 1.5em 1.5em;
+        background-size: 1.25em 1.25em;
     }
 
     .form label input::placeholder
@@ -2867,7 +2871,7 @@ pre
 
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
 
         flex-wrap: wrap;
         align-items: center;
@@ -2892,7 +2896,7 @@ pre
         padding: 0 calc(.5 * var(--pad-horz));
 
         color: var(--text-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
     }
 
     .form fieldset label
@@ -2961,7 +2965,7 @@ pre
 
         box-sizing: border-box;
         width: auto;
-        height: calc(2.5rem + 2px);
+        height: calc(2.5 * var(--base-font-size) + 2px);
         margin: 0;
         padding: 0 .75rem;
 
@@ -3000,7 +3004,7 @@ pre
 
     .form .has-field-addons > :first-child input
     {
-        height: calc(2.5rem + 2px);
+        height: calc(2.5 * var(--base-font-size) + 2px);
 
         border: 1px solid var(--border-main-darker);
         border-top-right-radius: 0;
@@ -3009,7 +3013,7 @@ pre
 
     .form .has-field-addons > :last-child input
     {
-        height: calc(2.5rem + 2px);
+        height: calc(2.5 * var(--base-font-size) + 2px);
 
         border: 1px solid var(--border-main-darker);
         border-top-left-radius: 0;
@@ -3048,7 +3052,7 @@ pre
         box-sizing: border-box;
         width: 100%;
         margin: 0;
-        padding: .75rem .75rem .5rem .75rem;
+        padding: .5rem .75rem .5rem .75rem;
 
         color: var(--text-elem);
         box-shadow: none;
@@ -3056,6 +3060,15 @@ pre
                 appearance: none;
            -moz-appearance: none;
         -webkit-appearance: none;
+    }
+
+    .form .has-field-addons > label input
+    {
+        height: auto;
+        padding: 0;
+
+        border: none;
+        border-radius: 0;
     }
 
     .form .has-field-addons > label select
@@ -3129,7 +3142,7 @@ pre
 
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
 
         align-items: center;
     }
@@ -3191,7 +3204,7 @@ pre
 
     .form .switch input:checked + span::before
     {
-        background-color: var(--secondary);
+        background-color: var(--primary);
     }
 
     .form .switch input:checked + span::after
@@ -3228,7 +3241,7 @@ pre
         color: var(--complement-text);
         border: 1px solid var(--complement-text);
         border-radius: 50%;
-        background-color: var(--bg-main);
+        background-color: var(--form-background-color);
 
         justify-content: center;
         align-items: center;
@@ -3375,7 +3388,7 @@ pre
         color: var(--link);
         border-top: 1px solid var(--border-main-darker) !important;
         border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 1px solid var(--bg-main) !important;
+        border-bottom: 1px solid var(--form-background-color) !important;
         border-left: 1px solid var(--border-main-darker) !important;
         border-radius: var(--radius) var(--radius) 0 0;
         background-color: inherit;
