@@ -224,14 +224,14 @@
 
 
     .field-error {
-        border: 2px solid var(--danger) !important;
+        border: 1px solid var(--danger) !important;
         border-radius: var(--radius-elem);
     }
 
     .field-error > input,
     .field-error > textarea,
     .field-error > select {
-        border: none
+        border: none !important;
     }
 
     .form .has-field-addons {
@@ -453,45 +453,24 @@
         top: -0.5rem;
         right: -0.5rem;
 
+        display: inline-flex;
         margin: 0;
         padding: 0.25em;
         line-height: 0;
-        text-align-all: center;
+        justify-content: center;
+        align-items: center;
 
-        color: var(--complement);
-        background-color: var(--bg-element);
+        color: var(--complement-text);
+        background-color: var(--bg-main);
         border-radius: 50%;
-        border-color: var(--complement);
+        border: 1px solid var(--complement-text);
         cursor: pointer;
         z-index: 1;
     }
-
-    /*
-    .has-help-text > span {
-        position: absolute;
-        top: -0.5rem;
-        right: -0.5rem;
-        margin: 0;
-        line-height: 0;
-        padding: 0.25em;
-        background-color: var(--bg-element);
-        color: var(--secondary);
-        border-radius: 50%;
-        z-index: 1;
-    }
-
-    .has-help-text > span > [class*=icon-bg-]:not(.icon-nav) {
-        margin: 0;
-        height: 1em;
-        width: 1em;
-        cursor: pointer;
-        background-color: var(--bg-element);
-    }
-*/
 
 
     .has-help-text > p {
-        margin-top: -1rem;
+        margin-top: -1.5rem;
         margin-left: 1rem;
         margin-bottom: 1rem;
         font-size: var(--size-7);
