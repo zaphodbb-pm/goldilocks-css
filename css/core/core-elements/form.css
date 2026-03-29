@@ -453,8 +453,8 @@
     }
 
 
-    .has-help-text::after {
-        content:attr(data-help-icon);
+    .has-help-text .form-help-icon {
+        /*content:attr(data-help-icon);*/
         position: absolute;
         height: 1em;
         width: 1em;
@@ -485,7 +485,7 @@
         display: none;
     }
 
-    .has-help-text:hover::after + p {
+    .has-help-text .form-help-icon:hover + p {
         display: block;
     }
 

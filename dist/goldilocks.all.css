@@ -3216,9 +3216,10 @@ pre
     }
 
 
-    .has-help-text::after
+    .has-help-text .form-help-icon
     {
         line-height: 0;
+        /*content:attr(data-help-icon);*/
 
         position: absolute;
         z-index: 1;
@@ -3232,7 +3233,6 @@ pre
         margin: 0;
         padding: .25em;
 
-        content: attr(data-help-icon);
         cursor: pointer;
 
         color: var(--complement-text);
@@ -3256,7 +3256,7 @@ pre
         margin-left: 1rem;
     }
 
-    .has-help-text:hover::after + p
+    .has-help-text .form-help-icon:hover + p
     {
         display: block;
     }
