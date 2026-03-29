@@ -3256,7 +3256,7 @@ pre
         margin-left: 1rem;
     }
 
-    .has-help-text:after:hover + p
+    .has-help-text:hover::after + p
     {
         display: block;
     }
