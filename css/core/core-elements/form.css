@@ -482,6 +482,11 @@
         margin-left: 1rem;
         margin-bottom: 1rem;
         font-size: var(--size-7);
+        display: none;
+    }
+
+    .has-help-text:after:hover + p {
+        display: block;
     }
 
 

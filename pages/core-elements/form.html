@@ -64,7 +64,7 @@ nav: Form
                 </tr>
 
                 <tr>
-                    <td><code>is-vertical</code></td>
+                    <td><code>.is-vertical</code></td>
                     <td>Optional <code>fieldset</code> modifier aligns children nodes vertically.</td>
                 </tr>
 
@@ -172,10 +172,10 @@ nav: Form
 
                     <label>
                         <span>Text Area</span>
-                        <textarea rows="3" placeholder="Text area input" name="textarea_field"></textarea>
+                        <textarea rows="3" placeholder="Text area input" name="textarea_field" aria-describedby="text-area-help"></textarea>
                     </label>
 
-                    <p>Help text for this field.</p>
+                    <p id="text-area-help">Help text for this field.</p>
                 </div>
 
                 <label>
@@ -291,14 +291,14 @@ nav: Form
                             &lt;textarea rows="3" placeholder="Text area input" name="textarea_field"&gt;&lt;/textarea&gt;
                         &lt;/label&gt;
 
-                        &lt;div class="has-help-text" data-help-icon="?" &gt;
+                        &lt;div class="has-help-text" data-help-icon="?"&gt;
 
                             &lt;label&gt;
                                 &lt;span&gt;Text Area&lt;/span&gt;
-                                &lt;textarea rows="3" placeholder="Text area input" name="textarea_field"&gt;&lt;/textarea&gt;
+                                &lt;textarea rows="3" placeholder="Text area input" name="textarea_field" aria-describedby="text-area-help"&gt;&lt;/textarea&gt;
                             &lt;/label&gt;
 
-                            &lt;p&gt;Help text for this field.&lt;/p&gt;
+                            &lt;p id="text-area-help"&gt;Help text for this field.&lt;/p&gt;
                         &lt;/div&gt;
 
                         &lt;label&gt;

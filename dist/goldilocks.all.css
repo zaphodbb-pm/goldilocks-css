@@ -3249,9 +3249,16 @@ pre
     {
         font-size: var(--size-7);
 
+        display: none;
+
         margin-top: -1.5rem;
         margin-bottom: 1rem;
         margin-left: 1rem;
+    }
+
+    .has-help-text:after:hover + p
+    {
+        display: block;
     }
 
 
@@ -10227,7 +10234,7 @@ pre
 
         text-decoration: none;
 
-        color: var(--secondary);
+        color: var(--complement);
 
         align-items: center;
     }
