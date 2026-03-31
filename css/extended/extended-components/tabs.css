@@ -1,4 +1,6 @@
-/* from https://levelup.gitconnected.com/tabbed-interfaces-without-javascript-661bab1eaec8   */
+/* tabs.css */
+/** from https://levelup.gitconnected.com/tabbed-interfaces-without-javascript-661bab1eaec8   **/
+
 @layer extended {
 
     .tabs {
@@ -47,6 +49,7 @@
         margin-bottom: -2px;
         border-bottom: 3px solid var(--bg-main-invert);
         color: var(--text-darker);
+        background-color: var(--bg-main-comp);
     }
 
     .tabs.is-boxed > ul label:hover {
@@ -123,8 +126,8 @@
     .tabs > input:nth-child(7):checked ~ ul li:nth-child(7) label,
     .tabs > input:nth-child(8):checked ~ ul li:nth-child(8) label,
     .tabs > input:nth-child(9):checked ~ ul li:nth-child(9) label {
-        border-bottom: 3px solid var(--link);
-        color: var(--link);
+        border-bottom: 3px solid var(--primary);
+        color: var(--primary);
         margin-bottom: -2px;
     }
 
@@ -142,7 +145,7 @@
         border-left: 1px solid var(--border-main-darker) !important;
         border-top: 1px solid var(--border-main-darker) !important;
         border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 1px solid var(--bg-main) !important;
+        border-bottom: 2px solid var(--bg-main) !important;
 
         margin-bottom: -1px;
         background-color: inherit;

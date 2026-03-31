@@ -6069,7 +6069,9 @@ pre
     }
 }
 
-/* from https://levelup.gitconnected.com/tabbed-interfaces-without-javascript-661bab1eaec8   */
+/* tabs.css */
+/** from https://levelup.gitconnected.com/tabbed-interfaces-without-javascript-661bab1eaec8   **/
+
 @layer extended
 {
     .tabs
@@ -6138,6 +6140,7 @@ pre
 
         color: var(--text-darker);
         border-bottom: 3px solid var(--bg-main-invert);
+        background-color: var(--bg-main-comp);
     }
 
     .tabs.is-boxed > ul label:hover
@@ -6234,8 +6237,8 @@ pre
     {
         margin-bottom: -2px;
 
-        color: var(--link);
-        border-bottom: 3px solid var(--link);
+        color: var(--primary);
+        border-bottom: 3px solid var(--primary);
     }
 
 
@@ -6253,7 +6256,7 @@ pre
 
         border-top: 1px solid var(--border-main-darker) !important;
         border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 1px solid var(--bg-main) !important;
+        border-bottom: 2px solid var(--bg-main) !important;
         border-left: 1px solid var(--border-main-darker) !important;
         border-radius: var(--radius) var(--radius) 0 0;
         background-color: inherit;
