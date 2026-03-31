@@ -46,8 +46,13 @@ nav: Buttons
                 </tr>
 
                 <tr>
-                    <td><code>.has-hover</code></td>
-                    <td>changes button color on hover</td>
+                    <td><code>.is-rectangle</code></td>
+                    <td>creates rounded corners instead of a modern pill shape</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-no-hover</code></td>
+                    <td>does not change a button colour on hover</td>
                 </tr>
 
                 <tr>
@@ -57,7 +62,7 @@ nav: Buttons
 
                 <tr>
                     <td>Button size options:</td>
-                    <td><code>.is-small</code>, <code>.is-normal</code>, <code>.is-medium</code>, <code>.is-large</code></td>
+                    <td><code>.is-small</code>, <code>.is-medium</code>, <code>.is-large</code></td>
                 </tr>
 
                 <tr>
@@ -67,12 +72,12 @@ nav: Buttons
 
                 <tr>
                     <td>Button group size options:</td>
-                    <td><code>.are-small</code>, <code>.are-normal</code>, <code>.are-medium</code>, <code>.are-large</code></td>
+                    <td><code>.are-small</code>, <code>.are-medium</code>, <code>.are-large</code></td>
                 </tr>
 
                 <tr>
                     <td>Colour options:</td>
-                    <td>Any of the <b>element</b> colour modifiers from the Colour Palette helpers.</td>
+                    <td><code>.is-primary</code><code>.is-secondary</code><code>.is-complement</code></td>
                 </tr>
                 </tbody>
             </table>
@@ -120,24 +125,24 @@ nav: Buttons
         </section>
 
         <section class="column">
-            <h4>Buttons with Hover</h4>
+            <h4>Buttons + No Hover</h4>
 
             <div class="stack">
-                <button type="button" class="has-hover" aria-label="Default">Default</button>
-                <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
-                <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-                <button type="button" class="is-complement has-hover" aria-label="complement">Complement</button>
+                <button type="button" class="has-no-hover" aria-label="Default">Default</button>
+                <button type="button" class="is-primary has-no-hover" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary has-no-hover" aria-label="Secondary">Secondary</button>
+                <button type="button" class="is-complement has-no-hover" aria-label="complement">Complement</button>
             </div>
         </section>
 
         <section class="column">
-            <h4>Outlined + Hover</h4>
+            <h4>Outlined</h4>
 
             <div class="stack">
-                <button type="button" class="has-hover" aria-label="Default">Default</button>
-                <button type="button" class="is-primary-outlined has-hover" aria-label="Primary">Primary</button>
-                <button type="button" class="is-secondary-outlined has-hover" aria-label="Secondary">Secondary</button>
-                <button type="button" class="is-complement-outlined has-hover" aria-label="complement">Complement</button>
+                <button type="button" aria-label="Default">Default</button>
+                <button type="button" class="is-primary-outlined" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary-outlined" aria-label="Secondary">Secondary</button>
+                <button type="button" class="is-complement-outlined" aria-label="complement">Complement</button>
             </div>
         </section>
 
@@ -148,11 +153,11 @@ nav: Buttons
                     Primary
                 &lt;/button&gt;
 
-                &lt;button type="button" class="is-primary has-hover" aria-label="Primary"&gt;
+                &lt;button type="button" class="is-primary" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
-                &lt;button type="button" class="is-primary-outlined has-hover" aria-label="Primary"&gt;
+                &lt;button type="button" class="is-primary-outlined" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
@@ -166,13 +171,13 @@ nav: Buttons
     <h3>Other Button Decorations</h3>
     <div class="row has-2x-minwidth">
         <section class="column">
-            <h4>Inverted + Hover</h4>
+            <h4>Inverted</h4>
 
             <div class="stack">
-                <button type="button" class="is-default-inverted has-hover" aria-label="Default">Default</button>
-                <button type="button" class="is-primary-inverted has-hover" aria-label="Primary">Primary</button>
-                <button type="button" class="is-secondary-inverted has-hover" aria-label="Secondary">Secondary</button>
-                <button type="button" class="is-complement-inverted has-hover" aria-label="Complement">complement</button>
+                <button type="button" class="is-default-inverted" aria-label="Default">Default</button>
+                <button type="button" class="is-primary-inverted" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary-inverted" aria-label="Secondary">Secondary</button>
+                <button type="button" class="is-complement-inverted" aria-label="Complement">complement</button>
             </div>
         </section>
 
@@ -180,7 +185,7 @@ nav: Buttons
             <h4>Loading Buttons</h4>
 
             <div class="stack">
-                <button type="button" class="btn-default is-loading-dark" aria-label="Default">Default</button>
+                <button type="button" class="is-loading-dark" aria-label="Default">Default</button>
                 <button type="button" class="is-primary is-loading" aria-label="Primary">Primary</button>
                 <button type="button" class="is-secondary is-loading" aria-label="Secondary">Secondary</button>
                 <button type="button" class="is-complement is-loading" aria-label="complement">Complement</button>
@@ -188,20 +193,20 @@ nav: Buttons
         </section>
 
         <section class="column">
-            <h4>Disabled + Rounded</h4>
+            <h4>Disabled + Rectangle + No Hover</h4>
 
             <div class="stack">
-                <button type="button" disabled class="is-rounded" aria-label="Default">Default</button>
-                <button type="button" disabled class="is-primary is-rounded" aria-label="Primary">Primary</button>
-                <button type="button" disabled class="is-secondary is-rounded" aria-label="Secondary">Secondary</button>
-                <button type="button" disabled class="is-complement is-rounded" aria-label="Complement">complement</button>
+                <button type="button" disabled class="is-rectangle has-no-hover" aria-label="Default">Default</button>
+                <button type="button" disabled class="is-primary is-rectangle has-no-hover" aria-label="Primary">Primary</button>
+                <button type="button" disabled class="is-secondary is-rectangle has-no-hover" aria-label="Secondary">Secondary</button>
+                <button type="button" disabled class="is-complement is-rectangle has-no-hover" aria-label="Complement">Complement</button>
             </div>
         </section>
 
         <section class="column is-span-2">
             <h4>Combined HTML Code Example</h4>
             <pre><code class="language-html">
-                &lt;button type="button" class="is-primary-inverted has-hover" aria-label="Primary"&gt;
+                &lt;button type="button" class="is-primary-inverted " aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
@@ -209,7 +214,7 @@ nav: Buttons
                     Primary
                 &lt;/button&gt;
 
-                &lt;button type="button" disabled class="is-primary is-rounded" aria-label="Primary"&gt;
+                &lt;button type="button" disabled class="is-primary is-rectangle" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
             </code></pre>
@@ -232,20 +237,19 @@ nav: Buttons
                     <span class="icon-bg-bell"></span>
                     <span>Complement Large</span>
                 </button>
-                <a class="button is-link has-hover" href="#page-top">Link as Button</a>
             </div>
         </section>
 
         <section class="column">
             <h4>Basic Button + Full Width</h4>
             <div class="stack">
-                <button type="button" class="width-full has-hover" aria-label="Default + normal">Default + normal</button>
-                <button type="button" class="is-primary width-full has-hover" aria-label="Primary">Primary</button>
-                <button type="button" class="is-secondary-outlined width-full has-hover" aria-label="Secondary">
+                <button type="button" class="width-full" aria-label="Default + normal">Default + normal</button>
+                <button type="button" class="is-primary width-full" aria-label="Primary">Primary</button>
+                <button type="button" class="is-secondary-outlined width-full" aria-label="Secondary">
                     <span class="icon-bg-clock"></span>
                     <span>Secondary</span>
                 </button>
-                <button type="button" class="is-complement-inverted width-full has-hover" aria-label="complement">
+                <button type="button" class="is-complement-inverted width-full" aria-label="complement">
                     <span>Complement</span>
                     <span class="icon-bg-link"></span>
                 </button>
@@ -268,18 +272,16 @@ nav: Buttons
                     &lt;span&gt;Complement Large&lt;/span&gt;
                 &lt;/button&gt;
 
-                &lt;a class="button is-danger has-hover" href="#core-element_buttons"&gt;Link as Button&lt;/a&gt;
-
-                &lt;button type="button" class="is-primary width-full has-hover" aria-label="Primary"&gt;
+                &lt;button type="button" class="is-primary width-full" aria-label="Primary"&gt;
                     Primary
                 &lt;/button&gt;
 
-                &lt;button type="button" class="is-secondary-outlined width-full has-hover" aria-label="Secondary"&gt;
+                &lt;button type="button" class="is-secondary-outlined width-full" aria-label="Secondary"&gt;
                     &lt;span class="icon-bg-clock"&gt;&lt;/span&gt;
                     &lt;span&gt;Secondary&lt;/span&gt;
                 &lt;/button&gt;
 
-                &lt;button type="button" class="is-complement-inverted width-full has-hover" aria-label="complement"&gt;
+                &lt;button type="button" class="is-complement-inverted width-full" aria-label="complement"&gt;
                     &lt;span&gt;Complement&lt;/span&gt;
                     &lt;span class="icon-bg-link"&gt;&lt;/span&gt;
                 &lt;/button&gt;
@@ -295,38 +297,38 @@ nav: Buttons
 
     <div class="stack">
         <div class="buttons are-small space-element-vert">
-            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
-            <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
-            <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-            <button type="button" class="is-complement has-hover" aria-label="Warning">Complement</button>
+            <button type="button" aria-label="Default">Default</button>
+            <button type="button" class="is-primary" aria-label="Primary">Primary</button>
+            <button type="button" class="is-secondary" aria-label="Secondary">Secondary</button>
+            <button type="button" class="is-complement" aria-label="Warning">Complement</button>
         </div>
 
         <div class="buttons space-element-vert">
-            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
-            <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
-            <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-            <button type="button" class="is-complement has-hover" aria-label="Warning">Complement</button>
+            <button type="button" aria-label="Default">Default</button>
+            <button type="button" class="is-primary" aria-label="Primary">Primary</button>
+            <button type="button" class="is-secondary" aria-label="Secondary">Secondary</button>
+            <button type="button" class="is-complement" aria-label="Warning">Complement</button>
         </div>
 
         <div class="buttons are-medium space-element-vert">
-            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
-            <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
-            <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-            <button type="button" class="is-complement has-hover" aria-label="Warning">Complement</button>
+            <button type="button" aria-label="Default">Default</button>
+            <button type="button" class="is-primary" aria-label="Primary">Primary</button>
+            <button type="button" class="is-secondary" aria-label="Secondary">Secondary</button>
+            <button type="button" class="is-complement" aria-label="Warning">Complement</button>
         </div>
 
         <div class="buttons are-large space-element-vert">
-            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
-            <button type="button" class="is-primary has-hover" aria-label="Primary">Primary</button>
-            <button type="button" class="is-secondary has-hover" aria-label="Secondary">Secondary</button>
-            <button type="button" class="is-complement has-hover" aria-label="Warning">Complement</button>
+            <button type="button" aria-label="Default">Default</button>
+            <button type="button" class="is-primary" aria-label="Primary">Primary</button>
+            <button type="button" class="is-secondary" aria-label="Secondary">Secondary</button>
+            <button type="button" class="is-complement" aria-label="Warning">Complement</button>
         </div>
 
         <div class="buttons are-small space-element-vert">
-            <button type="button" class="btn-default has-hover" aria-label="Default">Default</button>
-            <button type="button" class="is-primary-outlined has-hover" aria-label="Primary Outlined">Primary Outlined</button>
-            <button type="button" class="is-secondary-outlined has-hover" aria-label="Secondary Outlined">Secondary Outlined</button>
-            <button type="button" class="is-complement-outlined has-hover" aria-label="complement Outlined">Complement Outlined</button>
+            <button type="button" aria-label="Default">Default</button>
+            <button type="button" class="is-primary-outlined" aria-label="Primary Outlined">Primary Outlined</button>
+            <button type="button" class="is-secondary-outlined" aria-label="Secondary Outlined">Secondary Outlined</button>
+            <button type="button" class="is-complement-outlined" aria-label="complement Outlined">Complement Outlined</button>
         </div>
     </div>
 
@@ -334,24 +336,24 @@ nav: Buttons
     <h4>Button Group Code Example</h4>
     <pre><code class="language-html">
         &lt;div class="buttons"&gt;
-            &lt;button type="button" class="btn-default has-hover" aria-label="Default"&gt;Default&lt;/button&gt;
-            &lt;button type="button" class="is-primary has-hover" aria-label="Primary"&gt;Primary&lt;/button&gt;
-            &lt;button type="button" class="is-secondary has-hover" aria-label="Secondary"&gt;Secondary&lt;/button&gt;
-            &lt;button type="button" class="is-complement has-hover" aria-label="Complement"&gt;Complement&lt;/button&gt;
+            &lt;button type="button" aria-label="Default"&gt;Default&lt;/button&gt;
+            &lt;button type="button" class="is-primary" aria-label="Primary"&gt;Primary&lt;/button&gt;
+            &lt;button type="button" class="is-secondary" aria-label="Secondary"&gt;Secondary&lt;/button&gt;
+            &lt;button type="button" class="is-complement" aria-label="Complement"&gt;Complement&lt;/button&gt;
         &lt;/div&gt;
 
         &lt;div class="buttons [options: are-small are-medium are-large]"&gt;
-            &lt;button type="button" class="btn-default has-hover" aria-label="Default"&gt;Default&lt;/button&gt;
-            &lt;button type="button" class="is-primary has-hover" aria-label="Primary"&gt;Primary&lt;/button&gt;
-            &lt;button type="button" class="is-secondary has-hover" aria-label="Secondary"&gt;Secondary&lt;/button&gt;
-            &lt;button type="button" class="is-complement has-hover" aria-label="Complement"&gt;Complement&lt;/button&gt;
+            &lt;button type="button" aria-label="Default"&gt;Default&lt;/button&gt;
+            &lt;button type="button" class="is-primary" aria-label="Primary"&gt;Primary&lt;/button&gt;
+            &lt;button type="button" class="is-secondary" aria-label="Secondary"&gt;Secondary&lt;/button&gt;
+            &lt;button type="button" class="is-complement" aria-label="Complement"&gt;Complement&lt;/button&gt;
         &lt;/div&gt;
 
         &lt;div class="buttons"&gt;
-            &lt;button type="button" class="btn-default has-hover" aria-label="Default"&gt;Default&lt;/button&gt;
-            &lt;button type="button" class="is-primary-outlined has-hover" aria-label="Primary Outlined"&gt;Primary Outlined&lt;/button&gt;
-            &lt;button type="button" class="is-secondary-outlined has-hover" aria-label="Secondary Outlined"&gt;Secondary Outlined&lt;/button&gt;
-            &lt;button type="button" class="is-complement-outlined has-hover" aria-label="Complement Outlined"&gt;Complement Outlined&lt;/button&gt;
+            &lt;button type="button" aria-label="Default"&gt;Default&lt;/button&gt;
+            &lt;button type="button" class="is-primary-outlined" aria-label="Primary Outlined"&gt;Primary Outlined&lt;/button&gt;
+            &lt;button type="button" class="is-secondary-outlined" aria-label="Secondary Outlined"&gt;Secondary Outlined&lt;/button&gt;
+            &lt;button type="button" class="is-complement-outlined" aria-label="Complement Outlined"&gt;Complement Outlined&lt;/button&gt;
         &lt;/div&gt;
     </code></pre>
 </main>

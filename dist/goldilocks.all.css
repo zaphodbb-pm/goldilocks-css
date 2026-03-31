@@ -1843,21 +1843,23 @@ pre
     .button
     {
         font-size: 1rem;
+        font-weight: var(--weight-semibold);
         line-height: 1.5;
 
         display: inline-flex;
 
-        padding: var(--pad-vert) var(--pad-horz);
+        padding: var(--pad-vert) calc(2 * var(--pad-horz) );
 
         cursor: pointer;
-        text-align: center;
         white-space: nowrap;
 
-        border-radius: var(--radius-elem);
+        color: var(--text-comp);
+        border-radius: 10rem;
+        background-color: var(--bg-main-comp);
         box-shadow: none;
 
-        justify-content: center;
         align-items: center;
+        justify-content: center;
     }
 
     button
@@ -1873,12 +1875,13 @@ pre
         outline: none;
     }
 
-    button.has-hover:hover
+    button:not(.has-no-hover):hover
     {
         color: var(--text-elem);
         border: 1px solid var(--bg-element);
         background-color: var(--bg-element);
     }
+
 
     a.button
     {
@@ -1904,8 +1907,8 @@ pre
         text-underline-offset: .25em;
     }
 
-    button.is-default-inverted.has-hover:hover,
-    .button.is-default-inverted.has-hover:hover
+    button.is-default-inverted:not(.has-no-hover):hover,
+    .button.is-default-inverted:not(.has-no-hover):hover
     {
         text-decoration: underline var(--text-elem);
 
@@ -1914,10 +1917,10 @@ pre
         background-color: var(--bg-element);
     }
 
-    button.is-rounded,
-    .button.is-rounded
+    button.is-rectangle,
+    .button.is-rectangle
     {
-        border-radius: 9999px;
+        border-radius: var(--radius-elem);
     }
 
     button.is-large,
@@ -1950,11 +1953,11 @@ pre
         line-height: 1.2;
 
         height: 2rem;
-        padding: var(--pad-vert-small) var(--pad-horz-small);
+        padding: var(--pad-vert-small) var(--pad-horz);
     }
 
-    button.is-small:not(.is-rounded),
-    .button.is-small:not(.is-rounded)
+    button.is-small.is-rectangle,
+    .button.is-small.is-rectangle
     {
         border-radius: calc(var(--radius-elem) / 2);
     }
@@ -1995,13 +1998,13 @@ pre
     }
 
     /** ensure that hover doesn't distort button size **/
-    .button[class*='outlined']:not(.is-small).has-hover:hover
+    .button[class*='outlined']:not(.is-small):not(.has-no-hover):hover
     {
         padding-top: calc(var(--pad-vert) + 1px);
         padding-bottom: calc(var(--pad-vert) + 1px);
     }
 
-    .button[class*='outlined'].is-small.has-hover:hover
+    .button[class*='outlined'].is-small:not(.has-no-hover):hover
     {
         padding-top: calc(var(--pad-vert-small) + 1px);
         padding-bottom: calc(var(--pad-vert-small) + 1px);
@@ -2233,9 +2236,9 @@ pre
 {
     /* Element / Block Colours */
     .is-primary,
-    .is-primary-light.has-hover:hover,
-    .is-primary-outlined.has-hover:hover,
-    .is-primary-dark.has-hover:hover
+    .is-primary-light:not(.has-no-hover):hover,
+    .is-primary-outlined:not(.has-no-hover):hover,
+    .is-primary-dark:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--primary-text-invert);
@@ -2252,7 +2255,7 @@ pre
     }
 
     .is-primary-dark,
-    .is-primary.has-hover:hover
+    .is-primary:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--primary-text-invert-dark);
@@ -2278,7 +2281,7 @@ pre
         text-underline-offset: .25em;
     }
 
-    .is-primary-inverted.has-hover:hover
+    .is-primary-inverted:not(.has-no-hover):hover
     {
         text-decoration: underline var(--primary-dark);
 
@@ -2290,9 +2293,9 @@ pre
 
 
     .is-secondary,
-    .is-secondary-light.has-hover:hover,
-    .is-secondary-outlined.has-hover:hover,
-    .is-secondary-dark.has-hover:hover
+    .is-secondary-light:not(.has-no-hover):hover,
+    .is-secondary-outlined:not(.has-no-hover):hover,
+    .is-secondary-dark:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--secondary-text-invert);
@@ -2309,7 +2312,7 @@ pre
     }
 
     .is-secondary-dark,
-    .is-secondary.has-hover:hover
+    .is-secondary:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--secondary-text-invert-dark);
@@ -2335,7 +2338,7 @@ pre
         text-underline-offset: .25em;
     }
 
-    .is-secondary-inverted.has-hover:hover
+    .is-secondary-inverted:not(.has-no-hover):hover
     {
         text-decoration: underline var(--secondary-dark);
 
@@ -2347,9 +2350,9 @@ pre
 
 
     .is-complement,
-    .is-complement-light.has-hover:hover,
-    .is-complement-outlined.has-hover:hover,
-    .is-complement-dark.has-hover:hover
+    .is-complement-light:not(.has-no-hover):hover,
+    .is-complement-outlined:not(.has-no-hover):hover,
+    .is-complement-dark:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--complement-text-invert);
@@ -2366,7 +2369,7 @@ pre
     }
 
     .is-complement-dark,
-    .is-complement.has-hover:hover
+    .is-complement:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--complement-text-invert-dark);
@@ -2392,7 +2395,7 @@ pre
         text-underline-offset: .25em;
     }
 
-    .is-complement-inverted.has-hover:hover
+    .is-complement-inverted:not(.has-no-hover):hover
     {
         text-decoration: underline var(--complement-dark);
 
@@ -2404,9 +2407,9 @@ pre
 
 
     .is-link,
-    .is-link-light.has-hover:hover,
-    .is-link-outlined.has-hover:hover,
-    .is-link-dark.has-hover:hover
+    .is-link-light:not(.has-no-hover):hover,
+    .is-link-outlined:not(.has-no-hover):hover,
+    .is-link-dark:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--link-text-invert);
@@ -2423,7 +2426,7 @@ pre
     }
 
     .is-link-dark,
-    .is-link.has-hover:hover
+    .is-link:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--link-text-invert-dark);
@@ -2449,7 +2452,7 @@ pre
         text-underline-offset: .25em;
     }
 
-    .is-link-inverted.has-hover:hover
+    .is-link-inverted:not(.has-no-hover):hover
     {
         text-decoration: underline var(--link-dark);
 
@@ -2461,9 +2464,9 @@ pre
 
 
     .is-success,
-    .is-success-light.has-hover:hover,
-    .is-success-outlined.has-hover:hover,
-    .is-success-dark.has-hover:hover
+    .is-success-light:not(.has-no-hover):hover,
+    .is-success-outlined:not(.has-no-hover):hover,
+    .is-success-dark:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--success-text);
@@ -2480,7 +2483,7 @@ pre
     }
 
     .is-success-dark,
-    .is-success.has-hover:hover
+    .is-success:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--success-text-invert-dark);
@@ -2506,7 +2509,7 @@ pre
         text-underline-offset: .25em;
     }
 
-    .is-success-inverted.has-hover:hover
+    .is-success-inverted:not(.has-no-hover):hover
     {
         text-decoration: underline var(--success-dark);
 
@@ -2518,9 +2521,9 @@ pre
 
 
     .is-warning,
-    .is-warning-light.has-hover:hover,
-    .is-warning-outlined.has-hover:hover,
-    .is-warning-dark.has-hover:hover
+    .is-warning-light:not(.has-no-hover):hover,
+    .is-warning-outlined:not(.has-no-hover):hover,
+    .is-warning-dark:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--warning-text);
@@ -2537,7 +2540,7 @@ pre
     }
 
     .is-warning-dark,
-    .is-warning.has-hover:hover
+    .is-warning:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--warning-text-invert-dark);
@@ -2563,7 +2566,7 @@ pre
         text-underline-offset: .25em;
     }
 
-    .is-warning-inverted.has-hover:hover
+    .is-warning-inverted:not(.has-no-hover):hover
     {
         text-decoration: underline var(--warning-dark);
 
@@ -2575,9 +2578,9 @@ pre
 
 
     .is-danger,
-    .is-danger-light.has-hover:hover,
-    .is-danger-outlined.has-hover:hover,
-    .is-danger-dark.has-hover:hover
+    .is-danger-light:not(.has-no-hover):hover,
+    .is-danger-outlined:not(.has-no-hover):hover,
+    .is-danger-dark:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--danger-text-invert);
@@ -2594,7 +2597,7 @@ pre
     }
 
     .is-danger-dark,
-    .is-danger.has-hover:hover
+    .is-danger:not(.has-no-hover):hover
     {
         opacity: 1;
         color: var(--danger-text-invert-dark);
@@ -2620,7 +2623,7 @@ pre
         text-underline-offset: .25em;
     }
 
-    .is-danger-inverted.has-hover:hover
+    .is-danger-inverted:not(.has-no-hover):hover
     {
         text-decoration: underline var(--danger-dark);
 

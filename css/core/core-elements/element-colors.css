@@ -2,9 +2,9 @@
 
     /* Element / Block Colours */
     .is-primary,
-    .is-primary-light.has-hover:hover,
-    .is-primary-outlined.has-hover:hover,
-    .is-primary-dark.has-hover:hover {
+    .is-primary-light:not(.has-no-hover):hover,
+    .is-primary-outlined:not(.has-no-hover):hover,
+    .is-primary-dark:not(.has-no-hover):hover {
         color: var(--primary-text-invert);
         background-color: var(--primary);
         border: 0 solid var(--primary-dark);
@@ -18,7 +18,7 @@
         opacity: 1;
     }
 
-    .is-primary-dark, .is-primary.has-hover:hover {
+    .is-primary-dark, .is-primary:not(.has-no-hover):hover {
         color: var(--primary-text-invert-dark);
         background-color: var(--primary-dark);
         border: 0 solid var(--primary-dark);
@@ -39,7 +39,7 @@
         text-underline-offset: 0.25em;
     }
 
-    .is-primary-inverted.has-hover:hover {
+    .is-primary-inverted:not(.has-no-hover):hover {
         color: var(--primary-dark);
         background-color: var(--bg-element);
         text-decoration: underline var(--primary-dark);
@@ -49,9 +49,9 @@
 
 
     .is-secondary,
-    .is-secondary-light.has-hover:hover,
-    .is-secondary-outlined.has-hover:hover,
-    .is-secondary-dark.has-hover:hover {
+    .is-secondary-light:not(.has-no-hover):hover,
+    .is-secondary-outlined:not(.has-no-hover):hover,
+    .is-secondary-dark:not(.has-no-hover):hover {
         color: var(--secondary-text-invert);
         background-color: var(--secondary);
         border: 0 solid var(--secondary-dark);
@@ -65,7 +65,7 @@
         opacity: 1;
     }
 
-    .is-secondary-dark, .is-secondary.has-hover:hover {
+    .is-secondary-dark, .is-secondary:not(.has-no-hover):hover {
         color: var(--secondary-text-invert-dark);
         background-color: var(--secondary-dark);
         border: 0 solid var(--secondary-dark);
@@ -86,7 +86,7 @@
         text-underline-offset: 0.25em;
     }
 
-    .is-secondary-inverted.has-hover:hover {
+    .is-secondary-inverted:not(.has-no-hover):hover {
         color: var(--secondary-dark);
         background-color: var(--bg-element);
         text-decoration: underline var(--secondary-dark);
@@ -96,9 +96,9 @@
 
 
     .is-complement,
-    .is-complement-light.has-hover:hover,
-    .is-complement-outlined.has-hover:hover,
-    .is-complement-dark.has-hover:hover {
+    .is-complement-light:not(.has-no-hover):hover,
+    .is-complement-outlined:not(.has-no-hover):hover,
+    .is-complement-dark:not(.has-no-hover):hover {
         color: var(--complement-text-invert);
         background-color: var(--complement);
         border: 0 solid var(--complement-dark);
@@ -112,7 +112,7 @@
         opacity: 1;
     }
 
-    .is-complement-dark, .is-complement.has-hover:hover {
+    .is-complement-dark, .is-complement:not(.has-no-hover):hover {
         color: var(--complement-text-invert-dark);
         background-color: var(--complement-dark);
         border: 0 solid var(--complement-dark);
@@ -133,7 +133,7 @@
         text-underline-offset: 0.25em;
     }
 
-    .is-complement-inverted.has-hover:hover {
+    .is-complement-inverted:not(.has-no-hover):hover {
         color: var(--complement-dark);
         background-color: var(--bg-element);
         text-decoration: underline var(--complement-dark);
@@ -143,9 +143,9 @@
 
 
     .is-link,
-    .is-link-light.has-hover:hover,
-    .is-link-outlined.has-hover:hover,
-    .is-link-dark.has-hover:hover {
+    .is-link-light:not(.has-no-hover):hover,
+    .is-link-outlined:not(.has-no-hover):hover,
+    .is-link-dark:not(.has-no-hover):hover {
         color: var(--link-text-invert);
         background-color: var(--link);
         border: 0 solid var(--link-dark);
@@ -159,7 +159,7 @@
         opacity: 1;
     }
 
-    .is-link-dark, .is-link.has-hover:hover {
+    .is-link-dark, .is-link:not(.has-no-hover):hover {
         color: var(--link-text-invert-dark);
         background-color: var(--link-dark);
         border: 0 solid var(--link-dark);
@@ -180,7 +180,7 @@
         text-underline-offset: 0.25em;
     }
 
-    .is-link-inverted.has-hover:hover {
+    .is-link-inverted:not(.has-no-hover):hover {
         color: var(--link-dark);
         background-color: var(--bg-element);
         text-decoration: underline var(--link-dark);
@@ -190,9 +190,9 @@
 
 
     .is-success,
-    .is-success-light.has-hover:hover,
-    .is-success-outlined.has-hover:hover,
-    .is-success-dark.has-hover:hover {
+    .is-success-light:not(.has-no-hover):hover,
+    .is-success-outlined:not(.has-no-hover):hover,
+    .is-success-dark:not(.has-no-hover):hover {
         color: var(--success-text);
         background-color: var(--success);
         border: 0 solid var(--success-dark);
@@ -206,7 +206,7 @@
         opacity: 1;
     }
 
-    .is-success-dark, .is-success.has-hover:hover {
+    .is-success-dark, .is-success:not(.has-no-hover):hover {
         color: var(--success-text-invert-dark);
         background-color: var(--success-dark);
         border: 0 solid var(--success-dark);
@@ -227,7 +227,7 @@
         text-underline-offset: 0.25em;
     }
 
-    .is-success-inverted.has-hover:hover {
+    .is-success-inverted:not(.has-no-hover):hover {
         color: var(--success-dark);
         background-color: var(--bg-element);
         text-decoration: underline var(--success-dark);
@@ -237,9 +237,9 @@
 
 
     .is-warning,
-    .is-warning-light.has-hover:hover,
-    .is-warning-outlined.has-hover:hover,
-    .is-warning-dark.has-hover:hover {
+    .is-warning-light:not(.has-no-hover):hover,
+    .is-warning-outlined:not(.has-no-hover):hover,
+    .is-warning-dark:not(.has-no-hover):hover {
         color: var(--warning-text);
         background-color: var(--warning);
         border: 0 solid var(--warning-dark);
@@ -253,7 +253,7 @@
         opacity: 1;
     }
 
-    .is-warning-dark, .is-warning.has-hover:hover {
+    .is-warning-dark, .is-warning:not(.has-no-hover):hover {
         color: var(--warning-text-invert-dark);
         background-color: var(--warning-dark);
         border: 0 solid var(--warning-dark);
@@ -274,7 +274,7 @@
         text-underline-offset: 0.25em;
     }
 
-    .is-warning-inverted.has-hover:hover {
+    .is-warning-inverted:not(.has-no-hover):hover {
         color: var(--warning-dark);
         background-color: var(--bg-element);
         text-decoration: underline var(--warning-dark);
@@ -284,9 +284,9 @@
 
 
     .is-danger,
-    .is-danger-light.has-hover:hover,
-    .is-danger-outlined.has-hover:hover,
-    .is-danger-dark.has-hover:hover {
+    .is-danger-light:not(.has-no-hover):hover,
+    .is-danger-outlined:not(.has-no-hover):hover,
+    .is-danger-dark:not(.has-no-hover):hover {
         color: var(--danger-text-invert);
         background-color: var(--danger);
         border: 0 solid var(--danger-dark);
@@ -300,7 +300,7 @@
         opacity: 1;
     }
 
-    .is-danger-dark, .is-danger.has-hover:hover {
+    .is-danger-dark, .is-danger:not(.has-no-hover):hover {
         color: var(--danger-text-invert-dark);
         background-color: var(--danger-dark);
         border: 0 solid var(--danger-dark);
@@ -321,7 +321,7 @@
         text-underline-offset: 0.25em;
     }
 
-    .is-danger-inverted.has-hover:hover {
+    .is-danger-inverted:not(.has-no-hover):hover {
         color: var(--danger-dark);
         background-color: var(--bg-element);
         text-decoration: underline var(--danger-dark);
