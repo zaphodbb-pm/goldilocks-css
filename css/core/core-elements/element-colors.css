@@ -129,7 +129,7 @@
         color: var(--complement-text);
         background-color: var(--bg-main);
         border: none;
-        text-decoration: underline var(--complement);
+        text-decoration: underline var(--complement-dark);
         text-underline-offset: 0.25em;
     }
 

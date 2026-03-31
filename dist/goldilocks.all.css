@@ -2386,7 +2386,7 @@ pre
 
     .is-complement-inverted
     {
-        text-decoration: underline var(--complement);
+        text-decoration: underline var(--complement-dark);
 
         color: var(--complement-text);
         border: none;
