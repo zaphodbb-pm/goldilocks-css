@@ -47,7 +47,7 @@
 
     .tabs > ul label:hover {
         margin-bottom: -2px;
-        border-bottom: 3px solid var(--bg-main-invert);
+        border-bottom: 4px solid var(--bg-main-invert);
         color: var(--text-darker);
         background-color: var(--bg-main-comp);
     }
@@ -126,7 +126,7 @@
     .tabs > input:nth-child(7):checked ~ ul li:nth-child(7) label,
     .tabs > input:nth-child(8):checked ~ ul li:nth-child(8) label,
     .tabs > input:nth-child(9):checked ~ ul li:nth-child(9) label {
-        border-bottom: 3px solid var(--primary);
+        border-bottom: 4px solid var(--primary);
         color: var(--primary);
         margin-bottom: -2px;
     }
@@ -147,7 +147,6 @@
         border-right: 1px solid var(--border-main-darker) !important;
         border-bottom: 2px solid var(--bg-main) !important;
 
-        margin-bottom: -1px;
         background-color: inherit;
     }
 

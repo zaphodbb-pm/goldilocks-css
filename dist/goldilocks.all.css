@@ -6139,7 +6139,7 @@ pre
         margin-bottom: -2px;
 
         color: var(--text-darker);
-        border-bottom: 3px solid var(--bg-main-invert);
+        border-bottom: 4px solid var(--bg-main-invert);
         background-color: var(--bg-main-comp);
     }
 
@@ -6238,7 +6238,7 @@ pre
         margin-bottom: -2px;
 
         color: var(--primary);
-        border-bottom: 3px solid var(--primary);
+        border-bottom: 4px solid var(--primary);
     }
 
 
@@ -6252,8 +6252,6 @@ pre
     .tabs.is-boxed > input:nth-child(8):checked ~ ul li:nth-child(8) label,
     .tabs.is-boxed > input:nth-child(9):checked ~ ul li:nth-child(9) label
     {
-        margin-bottom: -1px;
-
         border-top: 1px solid var(--border-main-darker) !important;
         border-right: 1px solid var(--border-main-darker) !important;
         border-bottom: 2px solid var(--bg-main) !important;
