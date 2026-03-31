@@ -79,10 +79,10 @@
     }
 
     .is-secondary-inverted {
-        color: var(--secondary);
+        color: var(--secondary-dark);
         background-color: var(--bg-main);
         border: none;
-        text-decoration: underline var(--secondary);
+        text-decoration: underline var(--secondary-dark);
         text-underline-offset: 0.25em;
     }
 

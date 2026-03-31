@@ -2329,9 +2329,9 @@ pre
 
     .is-secondary-inverted
     {
-        text-decoration: underline var(--secondary);
+        text-decoration: underline var(--secondary-dark);
 
-        color: var(--secondary);
+        color: var(--secondary-dark);
         border: none;
         background-color: var(--bg-main);
 
