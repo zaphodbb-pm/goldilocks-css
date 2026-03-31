@@ -126,7 +126,7 @@
     }
 
     .is-complement-inverted {
-        color: var(--complement-text);
+        color: var(--complement-dark);
         background-color: var(--bg-main);
         border: none;
         text-decoration: underline var(--complement-dark);
