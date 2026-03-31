@@ -34,7 +34,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     --primary-dark:  hsl(185,65%,19%);
     --secondary-dark:  hsl(37,20%,28%);
-    --complement-dark:  hsl(22,88%,44%);
+    --complement-dark:  hsl(22,88%,40%);
 
     --link: hsl(240,52%,48%);
     --link-visited: hsl(280, 52%, 48%);
@@ -78,7 +78,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     --white-50: color-mix(in hsl, white, var(--secondary) 16% );
     --white-25: color-mix(in hsl, white, var(--secondary) 10% );
-    --white: color-mix(in hsl, white, var(--secondary) 4% );
+    --white: color-mix(in hsl, white, var(--secondary) 2% );
 
 
     /* set the body level colours for light mode*/
