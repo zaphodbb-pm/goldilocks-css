@@ -1853,20 +1853,14 @@ pre
         cursor: pointer;
         white-space: nowrap;
 
-        color: var(--text-comp);
+        color: var(--text-invert);
+        border: 1px solid var(--bg-main-invert);
         border-radius: 10rem;
-        background-color: var(--bg-main-comp);
+        background-color: var(--bg-main-invert);
         box-shadow: none;
 
         align-items: center;
         justify-content: center;
-    }
-
-    button
-    {
-        color: var(--text-comp);
-        border: 1px solid var(--border-main-darker);
-        background-color: var(--bg-main);
     }
 
     button:focus,
@@ -1875,13 +1869,13 @@ pre
         outline: none;
     }
 
-    button:not(.has-no-hover):hover
+    button:not(.has-no-hover):hover,
+    .button:not(.has-no-hover):hover
     {
         color: var(--text-elem);
         border: 1px solid var(--bg-element);
         background-color: var(--bg-element);
     }
-
 
     a.button
     {

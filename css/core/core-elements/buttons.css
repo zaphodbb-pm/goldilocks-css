@@ -6,35 +6,32 @@
         font-size: 1rem;
         font-weight: var(--weight-semibold);
         line-height: 1.5;
-        color: var(--text-comp);
+        color: var(--text-invert);
+
+        padding: var(--pad-vert) calc(2 * var(--pad-horz) );
+        border: 1px solid var(--bg-main-invert);
+        border-radius: 10rem;
+        background-color: var(--bg-main-invert);
+        box-shadow: none;
 
         display: inline-flex;
-        padding: var(--pad-vert) calc(2 * var(--pad-horz) );
-        border-radius: 10rem;
-        background-color: var(--bg-main-comp);
-        box-shadow: none;
         align-items: center;
         justify-content: center;
         white-space: nowrap;
         cursor: pointer;
     }
 
-    button {
-        color: var(--text-comp);
-        background-color: var(--bg-main);
-        border: 1px solid var(--border-main-darker);
-    }
-
     button:focus, .button:focus {
         outline: none;
     }
 
-    button:not(.has-no-hover):hover {
+    button:not(.has-no-hover):hover,
+    .button:not(.has-no-hover):hover
+    {
         color: var(--text-elem);
         background-color: var(--bg-element);
         border: 1px solid var(--bg-element);
     }
-
 
     a.button {
         height: auto;
