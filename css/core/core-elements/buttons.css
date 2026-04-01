@@ -230,6 +230,7 @@
     .button[disabled] {
         opacity: 0.6;
         cursor: not-allowed;
+        pointer-events: none;
     }
 
 
@@ -287,8 +288,8 @@
     }
 
     /* set-up for waiting spinner */
-    button.is-loading, button.is-loading-dark,
-    .button.is-loading, .button.is-loading-dark {
+    button.is-loading,
+    .button.is-loading {
         color: transparent !important;
         pointer-events: none;
     }
