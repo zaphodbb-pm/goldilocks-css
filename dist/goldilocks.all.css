@@ -1848,7 +1848,7 @@ pre
 
         display: inline-flex;
 
-        padding: var(--pad-vert) calc(2 * var(--pad-horz) );
+        padding: var(--pad-vert) calc(2 * var(--pad-horz));
 
         cursor: pointer;
         white-space: nowrap;
@@ -1898,17 +1898,20 @@ pre
         border: 1px solid var(--grey-dark);
         background-color: var(--bg-main);
     }
+
     .button-outlined:not(.has-no-hover):hover
     {
         color: var(--text-invert);
         border: 1px solid var(--grey-dark);
         background-color: var(--grey-dark);
     }
+
     button.button-default-inverted,
     .button.button-default-inverted
     {
         color: var(--text-comp);
         border: none;
+        background-color: var(--bg-main);
 
         text-decoration-color: var(--text-comp);
         text-decoration-line: underline;
@@ -2227,33 +2230,9 @@ pre
         border: 2px solid var(--bg-main);
         border-top-color: transparent;
         border-right-color: transparent;
-        border-radius: 9999px;
-    }
-
-    button.is-loading-dark::after,
-    .button.is-loading-dark::after
-    {
-        position: relative;
-        top: calc(50% - (1em / 2) - 2px);
-        right: calc(50% - (1em / 2) - 4px);
-
-        display: block;
-
-        width: 1em;
-        height: 1em;
-
-        content: '';
-        -webkit-animation: spinAround .5s infinite linear;
-                animation: spinAround .5s infinite linear;
-
-        border: 2px solid var(--bg-main-invert);
-        border-top-color: transparent;
-        border-right-color: transparent;
-        border-radius: 9999px;
+        border-radius: 200px;
     }
 }
-
-
 @layer elements
 {
     .delete

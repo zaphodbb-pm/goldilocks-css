@@ -8,7 +8,7 @@
         line-height: 1.5;
         color: var(--text-invert);
 
-        padding: var(--pad-vert) calc(2 * var(--pad-horz) );
+        padding: var(--pad-vert) calc(2 * var(--pad-horz));
         border: 1px solid var(--grey-dark);
         border-radius: 10rem;
         background-color: var(--grey-dark);
@@ -26,8 +26,7 @@
     }
 
     button:not(.has-no-hover):hover,
-    .button:not(.has-no-hover):hover
-    {
+    .button:not(.has-no-hover):hover {
         color: var(--text-elem);
         background-color: var(--bg-element);
         border: 1px solid var(--bg-element);
@@ -50,11 +49,13 @@
         background-color: var(--bg-main);
         border: 1px solid var(--grey-dark);
     }
+
     .button-outlined:not(.has-no-hover):hover {
         color: var(--text-invert);
         background-color: var(--grey-dark);
         border: 1px solid var(--grey-dark);
     }
+
     button.button-default-inverted,
     .button.button-default-inverted {
         color: var(--text-comp);
@@ -62,6 +63,7 @@
         text-decoration-color: var(--text-comp);
         text-decoration-line: underline;
         text-underline-offset: 0.25em;
+        background-color: var(--bg-main);
     }
 
     button.button-default-inverted:not(.has-no-hover):hover,
@@ -306,7 +308,7 @@
     .button.is-loading::after {
         -webkit-animation: spinAround .5s infinite linear;
         animation: spinAround .5s infinite linear;
-        border-radius: 9999px;
+        border-radius: 200px;
 
         border: 2px solid var(--bg-main);
         border-right-color: transparent;
@@ -321,25 +323,4 @@
         right: calc(50% - (1em / 2) - 4px);
         top: calc(50% - (1em / 2) - 2px);
     }
-
-    button.is-loading-dark::after,
-    .button.is-loading-dark::after {
-        -webkit-animation: spinAround .5s infinite linear;
-        animation: spinAround .5s infinite linear;
-        border-radius: 9999px;
-
-        border: 2px solid var(--bg-main-invert);
-        border-right-color: transparent;
-        border-top-color: transparent;
-
-        content: "";
-        display: block;
-        height: 1em;
-        width: 1em;
-
-        position: relative;
-        right: calc(50% - (1em / 2) - 4px);
-        top: calc(50% - (1em / 2) - 2px);
-    }
 }
-
