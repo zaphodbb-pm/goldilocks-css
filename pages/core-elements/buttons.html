@@ -14,7 +14,7 @@ nav: Buttons
         <section class="column">
             <h2>Commentary</h2>
 
-            <p>Standard <code>button</code> element with controls.  Colors are set from <em>element-colors.css</em> file.
+            <p>Standard <code>button</code> element with controls.
                 The button has four sizes that can be changed with a modifier.  Buttons can be grouped into a button bar.
                 Icons can be added to a button to show on the left.</p>
 
@@ -46,6 +46,20 @@ nav: Buttons
                 </tr>
 
                 <tr>
+                    <td><code>.button</code></td>
+                    <td>class to decorate link that need to look like a button</td>
+                </tr>
+
+                <tr>
+                    <td>Colour and decoration options:</td>
+                    <td><code>.button-primary</code>, <code>.button-secondary</code>, <code>.button-complement</code>,
+                        <code>.button-primary-outlined</code>, <code>.button-secondary-outlined</code>, <code>.button-complement-outlined</code>,
+                        <code>.button-primary-inverted</code>, <code>.button-secondary-inverted</code>, <code>.button-complement-inverted</code>,
+                        <code>.is-default-inverted</code>
+                    </td>
+                </tr>
+
+                <tr>
                     <td><code>.is-rectangle</code></td>
                     <td>creates rounded corners instead of a modern pill shape</td>
                 </tr>
@@ -66,18 +80,13 @@ nav: Buttons
                 </tr>
 
                 <tr>
-                    <td><code>.buttons</code></td>
-                    <td>forms a button group</td>
+                    <td><code>.buttons</code> (plural!)</td>
+                    <td>used with an enclosing <code>div</code> to form a button group</td>
                 </tr>
 
                 <tr>
                     <td>Button group size options:</td>
                     <td><code>.are-small</code>, <code>.are-medium</code>, <code>.are-large</code></td>
-                </tr>
-
-                <tr>
-                    <td>Colour options:</td>
-                    <td><code>.is-primary</code><code>.is-secondary</code><code>.is-complement</code></td>
                 </tr>
                 </tbody>
             </table>
@@ -95,7 +104,14 @@ nav: Buttons
 
                 <tr>
                     <td>Variables:</td>
-                    <td>--bg-main,--bg-element, --border-main-darker, --grey-dark,  --radius-elem, --size-4, --size-5, --size-6, --size-7, --text-comp, --white-50</td>
+                    <td>--bg-main,--bg-element, --border-main-darker, --grey-dark,
+                        --complement, --complement-dark, --complement-text-invert,
+                        --primary, --primary-dark, --primary-text-invert,
+                        --secondary, --secondary-dark, --secondary-text-invert,
+                        --pad-horz,  --pad-vert,
+                        --radius-elem, --size-4, --size-5, --size-6, --size-7,
+                        --text-comp, --text-elem, --text-invert,
+                         --weight-semibold</td>
                 </tr>
 
                 <tr>

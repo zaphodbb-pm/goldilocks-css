@@ -1854,9 +1854,9 @@ pre
         white-space: nowrap;
 
         color: var(--text-invert);
-        border: 1px solid var(--bg-main-invert);
+        border: 1px solid var(--grey-dark);
         border-radius: 10rem;
-        background-color: var(--bg-main-invert);
+        background-color: var(--grey-dark);
         box-shadow: none;
 
         align-items: center;
@@ -1877,6 +1877,7 @@ pre
         background-color: var(--bg-element);
     }
 
+
     a.button
     {
         height: auto;
@@ -1891,6 +1892,18 @@ pre
 
 
     /** colour schemes **/
+    .button-outlined
+    {
+        color: var(--grey-dark);
+        border: 1px solid var(--grey-dark);
+        background-color: var(--bg-main);
+    }
+    .button-outlined:not(.has-no-hover):hover
+    {
+        color: var(--text-invert);
+        border: 1px solid var(--grey-dark);
+        background-color: var(--grey-dark);
+    }
     button.button-default-inverted,
     .button.button-default-inverted
     {
