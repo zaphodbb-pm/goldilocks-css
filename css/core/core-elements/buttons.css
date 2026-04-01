@@ -46,8 +46,9 @@
     }
 
 
-    button.is-default-inverted,
-    .button.is-default-inverted {
+    /** colour schemes **/
+    button.button-default-inverted,
+    .button.button-default-inverted {
         color: var(--text-comp);
         border: none;
         text-decoration-color: var(--text-comp);
@@ -55,14 +56,128 @@
         text-underline-offset: 0.25em;
     }
 
-    button.is-default-inverted:not(.has-no-hover):hover,
-    .button.is-default-inverted:not(.has-no-hover):hover {
+    button.button-default-inverted:not(.has-no-hover):hover,
+    .button.button-default-inverted:not(.has-no-hover):hover {
         color: var(--text-elem);
         text-decoration: underline var(--text-elem);
         background-color: var(--bg-element);
         border: none;
     }
 
+
+    .button-primary,
+    .button-primary-outlined:not(.has-no-hover):hover {
+        color: var(--primary-text-invert);
+        background-color: var(--primary);
+        border: 1px solid var(--primary-dark);
+        opacity: 1;
+    }
+
+    .button-primary:not(.has-no-hover):hover {
+        color: var(--primary-text-invert-dark);
+        background-color: var(--primary-dark);
+        border: 1px solid var(--primary-dark);
+        opacity: 1;
+    }
+
+    .button-primary-outlined {
+        color: var(--primary-dark);
+        background-color: var(--bg-main);
+        border: 1px solid var(--primary-dark);
+    }
+
+    .button-primary-inverted {
+        color: var(--primary);
+        background-color: var(--bg-main);
+        border: none;
+        text-decoration: underline var(--primary);
+        text-underline-offset: 0.25em;
+    }
+
+    .button-primary-inverted:not(.has-no-hover):hover {
+        color: var(--primary-dark);
+        background-color: var(--bg-element);
+        text-decoration: underline var(--primary-dark);
+        opacity: 1;
+        border: none;
+    }
+
+    .button-secondary,
+    .button-secondary-outlined:not(.has-no-hover):hover {
+        color: var(--secondary-text-invert);
+        background-color: var(--secondary);
+        border: 1px solid var(--secondary-dark);
+        opacity: 1;
+    }
+
+    .button-secondary:not(.has-no-hover):hover {
+        color: var(--secondary-text-invert-dark);
+        background-color: var(--secondary-dark);
+        border: 1px solid var(--secondary-dark);
+        opacity: 1;
+    }
+
+    .button-secondary-outlined {
+        color: var(--secondary-dark);
+        background-color: var(--bg-main);
+        border: 1px solid var(--secondary-dark);
+    }
+
+    .button-secondary-inverted {
+        color: var(--secondary-dark);
+        background-color: var(--bg-main);
+        border: none;
+        text-decoration: underline var(--secondary-dark);
+        text-underline-offset: 0.25em;
+    }
+
+    .button-secondary-inverted:not(.has-no-hover):hover {
+        color: var(--secondary-dark);
+        background-color: var(--bg-element);
+        text-decoration: underline var(--secondary-dark);
+        opacity: 1;
+        border: none;
+    }
+
+    .button-complement,
+    .button-complement-outlined:not(.has-no-hover):hover {
+        color: var(--complement-text-invert);
+        background-color: var(--complement);
+        border: 1px solid var(--complement-dark);
+        opacity: 1;
+    }
+
+    .button-complement:not(.has-no-hover):hover {
+        color: var(--complement-text-invert-dark);
+        background-color: var(--complement-dark);
+        border: 1px solid var(--complement-dark);
+        opacity: 1;
+    }
+
+    .button-complement-outlined {
+        color: var(--complement-dark);
+        background-color: var(--bg-main);
+        border: 1px solid var(--complement-dark);
+    }
+
+    .button-complement-inverted {
+        color: var(--complement-dark);
+        background-color: var(--bg-main);
+        border: none;
+        text-decoration: underline var(--complement-dark);
+        text-underline-offset: 0.25em;
+    }
+
+    .button-complement-inverted:not(.has-no-hover):hover {
+        color: var(--complement-dark);
+        background-color: var(--bg-element);
+        text-decoration: underline var(--complement-dark);
+        opacity: 1;
+        border: none;
+    }
+
+
+    /** button shape and size **/
     button.is-rectangle,
     .button.is-rectangle {
         border-radius: var(--radius-elem);
@@ -107,6 +222,7 @@
         cursor: not-allowed;
     }
 
+
     /* group buttons */
     .buttons {
         align-items: center;
@@ -114,7 +230,6 @@
         flex-wrap: wrap;
         justify-content: flex-start;
     }
-
 
     .buttons button:not(:last-child),
     .buttons .button:not(:last-child) {

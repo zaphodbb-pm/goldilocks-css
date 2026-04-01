@@ -1,10 +1,7 @@
 @layer elements {
 
     /* Element / Block Colours */
-    .is-primary,
-    .is-primary-light:not(.has-no-hover):hover,
-    .is-primary-outlined:not(.has-no-hover):hover,
-    .is-primary-dark:not(.has-no-hover):hover {
+    .is-primary {
         color: var(--primary-text-invert);
         background-color: var(--primary);
         border: 1px solid var(--primary-dark);
@@ -18,7 +15,7 @@
         opacity: 1;
     }
 
-    .is-primary-dark, .is-primary:not(.has-no-hover):hover {
+    .is-primary-dark {
         color: var(--primary-text-invert-dark);
         background-color: var(--primary-dark);
         border: 1px solid var(--primary-dark);
@@ -31,27 +28,7 @@
         border: 1px solid var(--primary-dark);
     }
 
-    .is-primary-inverted {
-        color: var(--primary);
-        background-color: var(--bg-main);
-        border: none;
-        text-decoration: underline var(--primary);
-        text-underline-offset: 0.25em;
-    }
-
-    .is-primary-inverted:not(.has-no-hover):hover {
-        color: var(--primary-dark);
-        background-color: var(--bg-element);
-        text-decoration: underline var(--primary-dark);
-        opacity: 1;
-        border: none;
-    }
-
-
-    .is-secondary,
-    .is-secondary-light:not(.has-no-hover):hover,
-    .is-secondary-outlined:not(.has-no-hover):hover,
-    .is-secondary-dark:not(.has-no-hover):hover {
+    .is-secondary {
         color: var(--secondary-text-invert);
         background-color: var(--secondary);
         border: 1px solid var(--secondary-dark);
@@ -65,7 +42,7 @@
         opacity: 1;
     }
 
-    .is-secondary-dark, .is-secondary:not(.has-no-hover):hover {
+    .is-secondary-dark {
         color: var(--secondary-text-invert-dark);
         background-color: var(--secondary-dark);
         border: 1px solid var(--secondary-dark);
@@ -78,27 +55,8 @@
         border: 1px solid var(--secondary-dark);
     }
 
-    .is-secondary-inverted {
-        color: var(--secondary-dark);
-        background-color: var(--bg-main);
-        border: none;
-        text-decoration: underline var(--secondary-dark);
-        text-underline-offset: 0.25em;
-    }
 
-    .is-secondary-inverted:not(.has-no-hover):hover {
-        color: var(--secondary-dark);
-        background-color: var(--bg-element);
-        text-decoration: underline var(--secondary-dark);
-        opacity: 1;
-        border: none;
-    }
-
-
-    .is-complement,
-    .is-complement-light:not(.has-no-hover):hover,
-    .is-complement-outlined:not(.has-no-hover):hover,
-    .is-complement-dark:not(.has-no-hover):hover {
+    .is-complement {
         color: var(--complement-text-invert);
         background-color: var(--complement);
         border: 1px solid var(--complement-dark);
@@ -112,7 +70,7 @@
         opacity: 1;
     }
 
-    .is-complement-dark, .is-complement:not(.has-no-hover):hover {
+    .is-complement-dark {
         color: var(--complement-text-invert-dark);
         background-color: var(--complement-dark);
         border: 1px solid var(--complement-dark);
@@ -125,27 +83,8 @@
         border: 1px solid var(--complement-dark);
     }
 
-    .is-complement-inverted {
-        color: var(--complement-dark);
-        background-color: var(--bg-main);
-        border: none;
-        text-decoration: underline var(--complement-dark);
-        text-underline-offset: 0.25em;
-    }
 
-    .is-complement-inverted:not(.has-no-hover):hover {
-        color: var(--complement-dark);
-        background-color: var(--bg-element);
-        text-decoration: underline var(--complement-dark);
-        opacity: 1;
-        border: none;
-    }
-
-
-    .is-link,
-    .is-link-light:not(.has-no-hover):hover,
-    .is-link-outlined:not(.has-no-hover):hover,
-    .is-link-dark:not(.has-no-hover):hover {
+    .is-link {
         color: var(--link-text-invert);
         background-color: var(--link);
         border: 1px solid var(--link-dark);
@@ -159,40 +98,15 @@
         opacity: 1;
     }
 
-    .is-link-dark, .is-link:not(.has-no-hover):hover {
+    .is-link-dark {
         color: var(--link-text-invert-dark);
         background-color: var(--link-dark);
         border: 1px solid var(--link-dark);
         opacity: 1;
     }
 
-    .is-link-outlined {
-        color: var(--link);
-        background-color: var(--bg-main);
-        border: 1px solid var(--link);
-    }
 
-    .is-link-inverted {
-        color: var(--link);
-        background-color: var(--bg-main);
-        border: none;
-        text-decoration: underline var(--link);
-        text-underline-offset: 0.25em;
-    }
-
-    .is-link-inverted:not(.has-no-hover):hover {
-        color: var(--link-dark);
-        background-color: var(--bg-element);
-        text-decoration: underline var(--link-dark);
-        opacity: 1;
-        border: none;
-    }
-
-
-    .is-success,
-    .is-success-light:not(.has-no-hover):hover,
-    .is-success-outlined:not(.has-no-hover):hover,
-    .is-success-dark:not(.has-no-hover):hover {
+    .is-success {
         color: var(--success-text);
         background-color: var(--success);
         border: 1px solid var(--success-dark);
@@ -206,7 +120,7 @@
         opacity: 1;
     }
 
-    .is-success-dark, .is-success:not(.has-no-hover):hover {
+    .is-success-dark {
         color: var(--success-text-invert-dark);
         background-color: var(--success-dark);
         border: 0 solid var(--success-dark);
@@ -219,27 +133,8 @@
         border: 1px solid var(--success-dark);
     }
 
-    .is-success-inverted {
-        color: var(--success);
-        background-color: var(--bg-main);
-        border: none;
-        text-decoration: underline var(--success);
-        text-underline-offset: 0.25em;
-    }
 
-    .is-success-inverted:not(.has-no-hover):hover {
-        color: var(--success-dark);
-        background-color: var(--bg-element);
-        text-decoration: underline var(--success-dark);
-        opacity: 1;
-        border: none;
-    }
-
-
-    .is-warning,
-    .is-warning-light:not(.has-no-hover):hover,
-    .is-warning-outlined:not(.has-no-hover):hover,
-    .is-warning-dark:not(.has-no-hover):hover {
+    .is-warning {
         color: var(--warning-text);
         background-color: var(--warning);
         border: 1px solid var(--warning-dark);
@@ -253,7 +148,7 @@
         opacity: 1;
     }
 
-    .is-warning-dark, .is-warning:not(.has-no-hover):hover {
+    .is-warning-dark {
         color: var(--warning-text-invert-dark);
         background-color: var(--warning-dark);
         border: 0 solid var(--warning-dark);
@@ -266,27 +161,8 @@
         border: 1px solid var(--warning-dark);
     }
 
-    .is-warning-inverted {
-        color: var(--warning);
-        background-color: var(--bg-main);
-        border: none;
-        text-decoration: underline var(--warning);
-        text-underline-offset: 0.25em;
-    }
 
-    .is-warning-inverted:not(.has-no-hover):hover {
-        color: var(--warning-dark);
-        background-color: var(--bg-element);
-        text-decoration: underline var(--warning-dark);
-        opacity: 1;
-        border: none;
-    }
-
-
-    .is-danger,
-    .is-danger-light:not(.has-no-hover):hover,
-    .is-danger-outlined:not(.has-no-hover):hover,
-    .is-danger-dark:not(.has-no-hover):hover {
+    .is-danger {
         color: var(--danger-text-invert);
         background-color: var(--danger);
         border: 1px solid var(--danger-dark);
@@ -312,23 +188,6 @@
         background-color: var(--bg-main);
         border: 1px solid var(--danger);
     }
-
-    .is-danger-inverted {
-        color: var(--danger);
-        background-color: var(--bg-main);
-        border: none;
-        text-decoration: underline var(--danger);
-        text-underline-offset: 0.25em;
-    }
-
-    .is-danger-inverted:not(.has-no-hover):hover {
-        color: var(--danger-dark);
-        background-color: var(--bg-element);
-        text-decoration: underline var(--danger-dark);
-        opacity: 1;
-        border: none;
-    }
-
 
     .is-white {
         color: var(--text);
