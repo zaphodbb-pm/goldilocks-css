@@ -1892,14 +1892,14 @@ pre
 
 
     /** colour schemes **/
-    .button-outlined
+    .button-default-outlined
     {
         color: var(--grey-dark);
         border: 1px solid var(--grey-dark);
         background-color: var(--bg-main);
     }
 
-    .button-outlined:not(.has-no-hover):hover
+    .button-default-outlined:not(.has-no-hover):hover
     {
         color: var(--text-invert);
         border: 1px solid var(--grey-dark);
