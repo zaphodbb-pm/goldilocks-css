@@ -131,9 +131,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /* main theme colour parameters - based on  complement color selection */
     --main-color: 185;                                  /** primary hue value **/
     /* build main theme colours */
-    --primary: hsl(185, 58%, 32%);
-    --secondary: hsl(37, 14%, 50%);
-    --complement: hsl(22, 94%, 56%);
+    --primary-raw: 185 58% 32%;
+    --seconday-raw: 37 14% 50%;
+    --complement-raw: 22 94% 56%;
+    --shadow-raw: 37 14% 50%;
+    --primary: hsl(var(--primary-raw) / 100%);
+    --secondary: hsl(var(--seconday-raw) / 100%);
+    --complement: hsl(var(--complement-raw) / 100%);
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: hsl(185,65%,19%);
     --secondary-text: hsl(37,20%,28%);
@@ -214,19 +218,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-code: color-mix(in hsl, var(--complement), black 25%) ;
     /* Common shadow treatment for boxed elements */
     --shadow: 0 .25em .7em -.125em color-mix(in hsl, white, var(--secondary) 25%), 0 0 0 1px color-mix(in hsl, white, var(--secondary) 10%);
-    --shadow-1: 0 1px 2px hsla(158, 58%, 8%, .06), 0 1px 3px 1px hsla(158, 58%, 8%, .04);
-    --shadow-2: 0 1px 2px hsla(158, 58%, 8%, .05), 0 2px 6px 2px hsla(158, 58%, 8%, .09);
-    --shadow-3: 0 1px 3px hsla(158, 58%, 8%, .05), 0 4px 8px 3px hsla(158, 58%, 8%, .10);
-    --shadow-4: 0 2px 3px hsla(158, 58%, 8%, .05), 0 6px 10px 4px hsla(158, 58%, 8%, .11);
-    --shadow-5: 0 4px 4px hsla(158, 58%, 8%, .05), 0 8px 12px 6px hsla(158, 58%, 8%, .13);
-    --shadow-primary: 0 4px 16px 0 hsla(158, 52%, 22%, .38);
-    --shadow-cta: 0 4px 16px 0 hsla(20, 88%, 52%, .42);
-    --shadow-success: 0 4px 16px 0 hsla(142, 65%, 36%, .38);
-    --shadow-danger: 0 4px 16px 0 hsla(354, 68%, 40%, .38);
-    --shadow-inset: inset 0 2px 4px hsla(158, 58%, 8%, .10);
+    --shadow-1: 0 1px 2px hsl(var(--shadow-raw) / .06), 0 1px 3px 1px hsl(var(--shadow-raw) / .04);
+    --shadow-2: 0 1px 2px hsl(var(--shadow-raw) /  .05), 0 2px 6px 2px hsl(var(--shadow-raw) /  .09);
+    --shadow-3: 0 1px 3px hsl(var(--shadow-raw) /  .05), 0 4px 8px 3px hsl(var(--shadow-raw) /  .10);
+    --shadow-4: 0 2px 3px hsl(var(--shadow-raw) /  .05), 0 6px 10px 4px hsl(var(--shadow-raw) /  .11);
+    --shadow-5: 0 4px 4px hsl(var(--shadow-raw) /  .05), 0 8px 12px 6px hsl(var(--shadow-raw) /  .13);
+    --shadow-inset: inset 0 2px 4px hsl(var(--shadow-raw) / .10);
 }
-
-
 /*
 main dark theme color definitions
 use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
