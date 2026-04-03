@@ -2137,7 +2137,7 @@ pre
         opacity: .75;
         color: var(--secondary-dark);
         border: none;
-        background-color: var(--bg-main);
+        background-color: var(--bg-element);
     }
 
     button.button-secondary-inverted:not(.has-no-hover):active,
@@ -2226,7 +2226,7 @@ pre
         opacity: .75;
         color: var(--complement-dark);
         border: none;
-        background-color: var(--bg-main);
+        background-color: var(--bg-element);
     }
 
     button.button-complement-inverted:not(.has-no-hover):active,
