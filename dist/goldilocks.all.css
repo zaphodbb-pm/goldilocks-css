@@ -1981,7 +1981,7 @@ pre
         background-color: var(--primary);
     }
 
-    button.button-primary:not(.has-no-hover):hover
+    button.button-primary:not(.has-no-hover):hover,
     .button.button-primary:not(.has-no-hover):hover
     {
         opacity: .75;
