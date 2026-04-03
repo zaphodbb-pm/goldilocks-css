@@ -11,8 +11,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --main-color: 185;                                  /** primary hue value **/
 
     /* build main theme colours */
-    --primary: hsl(185,58%,32%);
-    --secondary: hsl(37,14%,50%);
+    --primary: hsl(185, 58%, 32%);
+    --secondary: hsl(37, 14%, 50%);
     --complement: hsl(22, 94%, 56%);
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
@@ -33,7 +33,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --complement-light:  hsl(22,85%,93%);
 
     --primary-dark:  hsl(185,65%,19%);
-    --secondary-dark:  hsl(37,20%,38%);
+    --secondary-dark:  hsl(37,20%,42%);
     --complement-dark:  hsl(22,88%,40%);
 
     --link: hsl(240,52%,48%);
@@ -113,5 +113,20 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     /* Common shadow treatment for boxed elements */
     --shadow: 0 0.25em 0.7em -0.125em color-mix(in hsl, white, var(--secondary) 25%), 0 0 0 1px color-mix(in hsl, white, var(--secondary) 10%);
+
+    --shadow-1: 0 1px 2px hsla(158, 58%, 8%, 0.06), 0 1px 3px 1px hsla(158, 58%, 8%, 0.04);
+    --shadow-2: 0 1px 2px hsla(158, 58%, 8%, 0.05), 0 2px 6px 2px hsla(158, 58%, 8%, 0.09);
+    --shadow-3: 0 1px 3px hsla(158, 58%, 8%, 0.05), 0 4px 8px 3px hsla(158, 58%, 8%, 0.10);
+    --shadow-4: 0 2px 3px hsla(158, 58%, 8%, 0.05), 0 6px 10px 4px hsla(158, 58%, 8%, 0.11);
+    --shadow-5: 0 4px 4px hsla(158, 58%, 8%, 0.05), 0 8px 12px 6px hsla(158, 58%, 8%, 0.13);
+
+    --shadow-primary: 0 4px 16px 0 hsla(158, 52%, 22%, 0.38);
+    --shadow-cta: 0 4px 16px 0 hsla(20, 88%, 52%, 0.42);
+    --shadow-success: 0 4px 16px 0 hsla(142, 65%, 36%, 0.38);
+    --shadow-danger: 0 4px 16px 0 hsla(354, 68%, 40%, 0.38);
+    --shadow-inset: inset 0 2px 4px hsla(158, 58%, 8%, 0.10);
+
+
+
 }
 
