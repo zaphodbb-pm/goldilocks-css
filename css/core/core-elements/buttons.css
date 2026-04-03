@@ -49,8 +49,8 @@
     button:not(.has-no-hover):hover,
     .button:not(.has-no-hover):hover {
         color: var(--text-elem);
-        background-color: var(--grey-darker);
-        border: 1px solid var(--grey-darker);
+        background-color: var(--grey-light);
+        border: 1px solid var(--grey-light);
     }
 
     button:not(.has-no-hover):active,
@@ -90,13 +90,13 @@
     .button-default-inverted:not(.has-no-hover):hover {
         color: var(--text-elem);
         text-decoration: underline var(--text-elem);
-        background-color: var(--bg-element);
+        background-color: var(--bg-component);
         border: none;
     }
 
     .button-default-inverted:not(.has-no-hover):active {
-        color: var(--text-elem);
-        text-decoration: underline var(--text-elem);
+        color: var(--text-invert-ter);
+        text-decoration: underline var(--text-invert-ter);
         background-color: var(--grey-dark);
         border: none;
     }
@@ -113,6 +113,9 @@
 
     button.button-primary:not(.has-no-hover):hover,
     .button.button-primary:not(.has-no-hover):hover {
+        color: var(--primary-text-invert);
+        background-color: var(--primary);
+        border: 1px solid var(--primary);
         opacity: 0.75;
     }
 
@@ -134,6 +137,9 @@
 
     button.button-primary-outlined:not(.has-no-hover):hover,
     .button.button-primary-outlined:not(.has-no-hover):hover{
+        color: var(--primary);
+        background-color: var(--bg-component);
+        border: 1px solid var(--primary);
         opacity: 0.75;
     }
 
@@ -157,7 +163,10 @@
 
     button.button-primary-inverted:not(.has-no-hover):hover,
     .button.button-primary-inverted:not(.has-no-hover):hover{
+        color: var(--primary);
         background-color: var(--bg-element);
+        border: none;
+        text-decoration: underline var(--primary);
         opacity: 0.75;
     }
 
@@ -165,7 +174,8 @@
     .button.button-primary-inverted:not(.has-no-hover):active{
         color: color-mix(in hsl, var(--primary), black 20%);
         background-color: var(--bg-component);
-        text-decoration: color-mix(in hsl, var(--primary), black 20%);
+        text-decoration: underline color-mix(in hsl, var(--primary), black 20%);
+        border: none;
         opacity: 1;
     }
 
@@ -180,12 +190,15 @@
 
     button.button-secondary:not(.has-no-hover):hover,
     .button.button-secondary:not(.has-no-hover):hover {
+        color: var(--secondary-text-invert);
+        background-color: var(--secondary-dark);
+        border: 1px solid var(--secondary-dark);
         opacity: 0.75;
     }
 
     button.button-secondary:not(.has-no-hover):active,
     button.button-secondary:not(.has-no-hover):active {
-        color: color-mix(in hsl, var(--secondary-text-invert), black 20%);
+        color: color-mix(in hsl, var(--secondary-text-invert), black 10%);
         background-color: color-mix(in hsl, var(--secondary-dark), black 20%);
         border: 1px solid color-mix(in hsl, var(--secondary-dark), black 20%);
         opacity: 1;
@@ -201,6 +214,9 @@
 
     button.button-secondary-outlined:not(.has-no-hover):hover,
     .button.button-secondary-outlined:not(.has-no-hover):hover{
+        color: var(--secondary-dark);
+        background-color: var(--bg-component);
+        border: 1px solid var(--secondary-dark);
         opacity: 0.75;
     }
 
@@ -231,7 +247,7 @@
     .button.button-secondary-inverted:not(.has-no-hover):active{
         color: color-mix(in hsl, var(--secondary-dark), black 20%);
         background-color: var(--bg-component);
-        text-decoration: color-mix(in hsl, var(--secondary-dark), black 20%);
+        text-decoration: underline color-mix(in hsl, var(--secondary-dark), black 20%);
         opacity: 1;
     }
 
@@ -247,6 +263,9 @@
 
     button.button-complement:not(.has-no-hover):hover,
     .button.button-complement:not(.has-no-hover):hover {
+        color: var(--complement-text-invert);
+        background-color: var(--complement);
+        border: 1px solid var(--complement);
         opacity: 0.75;
     }
 
@@ -267,6 +286,9 @@
 
     button.button-complement-outlined:not(.has-no-hover):hover,
     .button.button-complement-outlined:not(.has-no-hover):hover {
+        color: var(--complement-dark);
+        background-color: var(--bg-main);
+        border: 1px solid var(--complement-dark);
         opacity: 0.75;
     }
 
@@ -289,6 +311,10 @@
 
     button.button-complement-inverted:not(.has-no-hover):hover,
     .button.button-complement-inverted:not(.has-no-hover):hover{
+        color: var(--complement-dark);
+        background-color: var(--bg-main);
+        border: none;
+        text-decoration: underline var(--complement-dark);
         opacity: 0.75;
     }
 
@@ -296,7 +322,7 @@
     .button.button-complement-inverted:not(.has-no-hover):active{
         color: color-mix(in hsl, var(--complement-dark), black 20%);
         background-color: var(--bg-component);
-        text-decoration: color-mix(in hsl, var(--complement-dark), black 20%);
+        text-decoration: underline color-mix(in hsl, var(--complement-dark), black 20%);
         opacity: 1;
     }
 
