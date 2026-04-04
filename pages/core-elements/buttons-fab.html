@@ -1,0 +1,135 @@
+---
+layout: default
+parent-tab: core-elements
+title: Buttons-FAB
+nav: Buttons-FAB
+---
+
+<header class="page-header">
+    <h1>{{page.title}}</h1>
+</header>
+
+<main class="main-content">
+    <div class="row has-6x-minwidth" id="page-top">
+        <section class="column">
+            <h2>Commentary</h2>
+
+            <p> A FAB performs the primary, or most common, action on a screen and helps people take this action. This is also a
+                <code>button</code> element. The button has two sizes that can be changed with a modifier.
+                The FAB can be round or a rounded rectangle.
+                The content of the FAB is typically a single common icon.</p>
+
+            <p>For a more detailed usage commentary,
+                see <a href="https://m3.material.io/components/floating-action-button/overviewe">FAB overview</a>
+            </p>
+
+        </section>
+
+        <section class="column">
+            <h2>Usage</h2>
+
+            <table class="table is-fullwidth">
+                <thead>
+                <tr><th colspan="2">Classes:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td><code>button</code></td>
+                    <td>takes over <code>button</code> HTML tag</td>
+                </tr>
+
+                <tr>
+                    <td>Colour and decoration options:</td>
+                    <td><code>.fab</code>, <code>.fab-primary</code>, <code>.fab-secondary</code>, <code>.fab-complement</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><code>.is-rectangle</code></td>
+                    <td>creates rounded corners of a rectangle instead of a circle button.</td>
+                </tr>
+
+                <tr>
+                    <td>Button size options:</td>
+                    <td><code>.is-large</code></td>
+                </tr>
+
+                <tr>
+                    <td>Button positions:</td>
+                    <td><code>.is-top-left</code>, <code>.is-top-right</code>, <code>.is-bottom-left</code>, <code>.is-bottom-right</code></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <table class="table is-fullwidth space-block-vert">
+                <thead>
+                <tr><th colspan="2">Dependencies:</th></tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>File:</td>
+                    <td>buttons.css</td>
+                </tr>
+
+                <tr>
+                    <td>Variables:</td>
+                    <td>--bg-main,--bg-element, --border-main-darker, --grey-dark,
+                        --complement, --complement-dark, --complement-text-invert,
+                        --primary, --primary-dark, --primary-text-invert,
+                        --secondary, --secondary-dark, --secondary-text-invert,
+                        --radius-elem, --size-4, --size-5, --size-6, --size-7,
+                         --weight-semibold</td>
+                </tr>
+
+                <tr>
+                    <td>Layer: </td>
+                    <td><code>elements</code></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <h2 class="space-block-vert">Examples</h2>
+
+    <div class="row has-2x-minwidth">
+        <section class="column">
+            <h3>Floating Action Buttons</h3>
+
+            <div class="stack">
+                <button type="button" class="fab" aria-label="Default">Default</button>
+                <button type="button" class="fab-primary" aria-label="Primary">Primary</button>
+                <button type="button" class="fab-secondary" aria-label="Secondary">Secondary</button>
+                <button type="button" class="fab-complement" aria-label="Complement">Complement</button>
+            </div>
+        </section>
+
+
+        <section class="column is-span-2">
+            <h3>Combined HTML Code Example</h3>
+            <pre><code class="language-html">
+                &lt;button type="button" class="fab"  aria-label="Floating Action Button"&gt;
+                    Primary
+                &lt;/button&gt;
+
+                &lt;button type="button" class="fab-primary" aria-label="Primary FAB"&gt;
+                    Primary
+                &lt;/button&gt;
+
+                &lt;button type="button" class="fab-secondary" aria-label="Secondary FAB"&gt;
+                    Primary
+                &lt;/button&gt;
+
+                 &lt;button type="button" class="fab-complement" aria-label="Complement FAB"&gt;
+                    Primary
+                &lt;/button&gt;
+
+            </code></pre>
+        </section>
+
+    </div>
+</main>

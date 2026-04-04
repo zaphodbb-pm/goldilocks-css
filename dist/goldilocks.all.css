@@ -219,10 +219,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /* Common shadow treatment for boxed elements */
     --shadow: 0 .25em .7em -.125em color-mix(in hsl, white, var(--secondary) 25%), 0 0 0 1px color-mix(in hsl, white, var(--secondary) 10%);
     --shadow-1: 0 1px 2px hsl(var(--shadow-raw) / .06), 0 1px 3px 1px hsl(var(--shadow-raw) / .04);
-    --shadow-2: 0 1px 2px hsl(var(--shadow-raw) /  .05), 0 2px 6px 2px hsl(var(--shadow-raw) /  .09);
-    --shadow-3: 0 1px 3px hsl(var(--shadow-raw) /  .05), 0 4px 8px 3px hsl(var(--shadow-raw) /  .10);
-    --shadow-4: 0 2px 3px hsl(var(--shadow-raw) /  .05), 0 6px 10px 4px hsl(var(--shadow-raw) /  .11);
-    --shadow-5: 0 4px 4px hsl(var(--shadow-raw) /  .05), 0 8px 12px 6px hsl(var(--shadow-raw) /  .13);
+    --shadow-2: 0 1px 2px hsl(var(--shadow-raw) / .05), 0 2px 6px 2px hsl(var(--shadow-raw) / .09);
+    --shadow-3: 0 1px 3px hsl(var(--shadow-raw) / .05), 0 4px 8px 3px hsl(var(--shadow-raw) / .10);
+    --shadow-4: 0 2px 3px hsl(var(--shadow-raw) / .05), 0 6px 10px 4px hsl(var(--shadow-raw) / .11);
+    --shadow-5: 0 4px 4px hsl(var(--shadow-raw) / .05), 0 8px 12px 6px hsl(var(--shadow-raw) / .13);
     --shadow-inset: inset 0 2px 4px hsl(var(--shadow-raw) / .10);
 }
 /*
@@ -2404,6 +2404,135 @@ pre
         border-top-color: transparent;
         border-right-color: transparent;
         border-radius: 200px;
+    }
+
+    /*** floating action buttons ***/
+    button.fab,
+    .button.fab,
+    button.fab-primary,
+    .button.fab-primary,
+    button.fab-secondary,
+    .button.fab-secondary,
+    button.fab-complement,
+    .button.fab-complement
+    {
+        font-size: 2rem;
+
+        display: flex;
+
+        width: 3.5rem;
+        height: 3.5rem;
+
+        cursor: pointer;
+
+        color: var(--bg-main);
+        border: none;
+        background-color: var(--grey-dark);
+        box-shadow: 0 3px 5px -1px hsl(var(--shadow-raw) / .3),
+        0 6px 10px 0 hsl(var(--shadow-raw) / .2),
+        0 1px 18px 0 hsl(var(--shadow-raw) / .15); /* 6dp elevation */
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    button.fab:active,
+    .button.fab:active,
+    button.fab-primary:active,
+    .button.fab-primary:active,
+    button.fab-secondary:active,
+    .button.fab-secondary:active,
+    button.fab-complement:active,
+    .button.fab-complement:active
+    {
+        box-shadow: 0 7px 8px -4px hsl(var(--shadow-raw) / .3),
+        0 12px 17px 2px hsl(var(--shadow-raw) / .2),
+        0 5px 22px 4px hsl(var(--shadow-raw) / .15); /* 12dp elevation on press */
+    }
+
+    button.fab-primary,
+    .button.fab-primary
+    {
+        color: var(--primary-text-invert);
+        background-color: var(--primary);
+    }
+
+    button.fab-secondary,
+    .button.fab-secondary
+    {
+        color: var(--secondary-text-invert);
+        background-color: var(--secondary);
+    }
+
+    button.fab-complement,
+    .button.fab-complement
+    {
+        color: var(--complement-text-invert-dark);
+        background-color: var(--complement);
+    }
+
+    .fab.is-top-left,
+    .fab-primary.is-top-left,
+    .fab-secondary.is-top-left,
+    .fab-complement.is-top-left
+    {
+        position: fixed;
+        top: var(--base-rem);
+        left: var(--base-rem);
+    }
+
+    .fab.is-top-right,
+    .fab-primary.is-top-right,
+    .fab-secondary.is-top-right,
+    .fab-complement.is-top-right
+    {
+        position: fixed;
+        top: var(--base-rem);
+        right: var(--base-rem);
+    }
+
+    .fab.is-bottom-left,
+    .fab-primary.is-bottom-left,
+    .fab-secondary.is-bottom-left,
+    .fab-complement.is-bottom-left
+    {
+        position: fixed;
+        bottom: var(--base-rem);
+        left: var(--base-rem);
+    }
+
+    .fab.is-bottom-right,
+    .fab-primary.is-bottom-right,
+    .fab-secondary.is-bottom-right,
+    .fab-complement.is-bottom-right
+    {
+        position: fixed;
+        right: var(--base-rem);
+        bottom: var(--base-rem);
+    }
+
+    .fab-icon
+    {
+        font-size: 1.5rem;
+    }
+
+    .fab.is-large,
+    .fab-primary.is-large,
+    .fab-secondary.is-large,
+    .fab-complement.is-large
+    {
+        font-size: 2.5rem;
+
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .fab.is-rounded,
+    .fab-primary.is-rounded,
+    .fab-secondary.is-rounded,
+    .fab-complement.is-rounded
+    {
+        border-radius: 50%;
     }
 }
 @layer elements
