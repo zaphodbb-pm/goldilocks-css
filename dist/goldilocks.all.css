@@ -2422,11 +2422,14 @@ pre
 
         width: 3.5rem;
         height: 3.5rem;
+        margin: 0;
+        padding: 0;
 
         cursor: pointer;
 
         color: var(--bg-main);
         border: none;
+        border-radius: var(--radius-elem);
         background-color: var(--grey-dark);
         box-shadow: 0 3px 5px -1px hsl(var(--shadow-raw) / .3),
         0 6px 10px 0 hsl(var(--shadow-raw) / .2),
