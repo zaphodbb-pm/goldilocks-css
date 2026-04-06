@@ -51,7 +51,7 @@
     }
 
     .table.is-striped tbody tr:nth-of-type(odd) {
-        background-color: var(--bg-main-elem);
+        background-color: var(--bg-container);
         color: var(--text);
     }
 
@@ -92,7 +92,7 @@
         padding: var(--padding);
         border-radius: var(--radius-comp);
         box-shadow: var(--shadow);
-        background-color: var(--bg-main-elem);
+        background-color: var(--bg-container);
     }
 
     .table-boxed > header {

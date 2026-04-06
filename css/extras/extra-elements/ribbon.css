@@ -38,7 +38,7 @@
         right: auto;
         left: 0;
         border-left: none;
-        border-right: 0.1rem solid var(--bg-main-comp);
+        border-right: 0.1rem solid var(--bg-component);
         border-radius: 0 var(--radius-small) var(--radius-small) 0;
     }
 

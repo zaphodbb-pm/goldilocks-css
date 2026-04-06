@@ -4,7 +4,7 @@
 
     .divider-box,
     .divider-box-horz {
-        background-color: var(--bg-main-elem);
+        background-color: var(--bg-container);
         padding: var(--padding-normal);
     }
 

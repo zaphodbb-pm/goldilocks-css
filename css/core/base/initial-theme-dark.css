@@ -82,9 +82,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 
     --bg-main: var(--black);
-    --bg-main-elem: var(--grey-darker);
-    --bg-main-comp: var(--black-800);
-    --bg-main-invert: var(--white);
+    --bg-container: var(--grey-darker);
+    --bg-component: var(--black-800);
+    --bg-main-invert: var(--white-10);
     --bg-main-invert-ter: var(--white-50);
     --bg-main-code: var(--grey-darker);
 

@@ -54,7 +54,7 @@
     .modal-card > header,
     .modal-card > footer {
         align-items: center;
-        background-color: var(--bg-main-comp);
+        background-color: var(--bg-component);
         display: flex;
         flex-shrink: 0;
         padding: 20px;

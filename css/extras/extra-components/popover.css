@@ -19,7 +19,7 @@
         border: 0;
         border-radius: var(--radius);
         box-shadow: var(--shadow);
-        background-color: var(--bg-main-comp);
+        background-color: var(--bg-component);
         margin: var(--mar-vert) var(--mar-horz);
     }
 

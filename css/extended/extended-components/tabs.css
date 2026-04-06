@@ -49,11 +49,11 @@
         margin-bottom: -2px;
         border-bottom: 4px solid var(--bg-main-invert);
         color: var(--text-darker);
-        background-color: var(--bg-main-comp);
+        background-color: var(--bg-component);
     }
 
     .tabs.is-boxed > ul label:hover {
-        background-color: var(--bg-main-comp);
+        background-color: var(--bg-component);
         border-bottom: 1px solid var(--border-main-darker);
         margin-bottom: 0;
         color: var(--text-darker);

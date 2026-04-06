@@ -111,7 +111,7 @@
         transform: translate(50%, 50%);
 
         border-radius: 50%;
-        box-shadow: 0 0 0 0.1rem var(--bg-main-elem);
+        box-shadow: 0 0 0 0.1rem var(--bg-container);
         z-index: 2;
     }
 

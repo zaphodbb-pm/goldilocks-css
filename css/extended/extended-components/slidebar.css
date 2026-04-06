@@ -81,7 +81,7 @@
         width: 20rem;
         left: 4.5rem;
         top: calc(0.75 * var(--navbar-height));
-        background: var(--bg-main-comp);
+        background: var(--bg-component);
         max-height: calc(100vh - var(--navbar-height));
         overflow-y: scroll;
         transform: translateX(-30rem);
@@ -202,7 +202,7 @@
         width: 15rem;
         right: 4.5rem;
         top: calc(0.75 * var(--navbar-height));
-        background: var(--bg-main-comp);
+        background: var(--bg-component);
         max-height: calc(100vh - var(--navbar-height));
         overflow-y: scroll;
         transform: translateX(30rem);
