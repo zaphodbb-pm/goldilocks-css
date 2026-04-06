@@ -67,7 +67,7 @@
     }
 
     .has-bg-white {
-        background-color: var(--white);
+        background-color: var(--white-10);
     }
 }
 

@@ -93,7 +93,7 @@
         margin: 0;
         padding: var(--padding-medium) 0 var(--padding-medium) var(--padding-medium);
         border-top: 1px solid rgba(255, 255, 255, 0.10);
-        background: var(--bg-element);
+        background: var(--bg-container);
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
@@ -107,6 +107,7 @@
     }
 
     .sidebarMenuInner a {
+        font-size: var(--size-7);
         color: var(--link);
         padding: 0.25rem 0 0.25rem 0.5rem;
         margin: 0 0 0 calc(0.5 * var(--mar-horz));

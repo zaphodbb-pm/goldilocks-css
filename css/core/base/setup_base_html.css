@@ -12,9 +12,6 @@
         margin: 0;
         padding: 0;
 
-        font-size: var(--base-html-factor);
-        background-color: var(--bg-main);
-
         box-sizing: border-box;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -155,7 +152,7 @@
     pre {
         font-family: var(--family-monospace), monospace;
         font-size: var(--base-font-size);
-        background-color: var(--bg-main-code);
+        background-color: var(--bg-container);
         border-left: 0.25rem solid var(--complement);
         overflow-y: hidden;
         overflow-x: scroll;
@@ -169,7 +166,7 @@
         font-weight: normal;
 
         color: var(--text-code);
-        background-color: var(--bg-main-code);
+        background-color: var(--bg-container);
         border-radius: var(--radius);
         margin: 0;
         padding: 0.125em 0.5em;

@@ -174,16 +174,18 @@
     }
 
     .page-footer {
-        background-color: var(--bg-element);
         margin-top: var(--margin);
         padding: var(--padding-medium) var(--padding-large);
         border-top: 1px solid var(--border-main-darker);
 
         display: flex;
-        justify-content: space-between;
         column-gap: calc(2 * var(--gap-col));
         row-gap: var(--gap-row);
         flex-wrap: wrap;
+        background-color: var(--bg-container);
+
+        justify-content: space-between;
+        font-size: var(--size-7);
     }
 
     .page-footer > section,
@@ -211,14 +213,14 @@
 
     .page-footer > section p:first-child,
     .page-footer > div p:first-child {
-        font-size: var(--size-5);
+        font-size: var(--size-6);
         font-weight: var(--weight-semibold);
     }
 
     .page-footer .foot-heading {
-        font-size: var(--size-4);
+        font-size: var(--size-5);
         font-weight: var(--weight-semibold);
-        min-height: var(--size-4);
+        min-height: var(--size-5);
     }
 
     @media screen and (max-width: 576px) {

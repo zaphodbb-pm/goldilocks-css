@@ -16,6 +16,7 @@
     }
 
     .sidenavs a {
+        font-size: var(--size-7);
         color: var(--link);
         margin: 0;
         padding: var(--pad-vert) var(--pad-horz);

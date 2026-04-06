@@ -261,7 +261,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --bg-component: var(--white-50);
     --bg-element: var(--white-100);
     --bg-main-invert: var(--black-850);
-    --bg-main-code: var(--white-25);
     --bg-highlight: var(--warning-light);
     --bg-hover: var(--grey-lighter);
     --border-main: var(--grey-light);
@@ -353,9 +352,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --bg-main: var(--black);
     --bg-container: var(--grey-darker);
     --bg-component: var(--black-800);
-    --bg-main-invert: var(--white);
+    --bg-main-invert: var(--white-10);
     --bg-main-invert-ter: var(--white-50);
-    --bg-main-code: var(--grey-darker);
+    --bg-container: var(--grey-darker);
     --bg-grid: var(--grey-darker);
     --bg-element: var(--grey-darker);
     --bg-component: var(--black-800);
@@ -390,16 +389,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /** set global environment **/
     html
     {
-        font-size: var(--base-html-factor);
-
         overflow-x: hidden;
         overflow-y: scroll;
 
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-
-        background-color: var(--bg-main);
 
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
@@ -581,7 +576,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: 0;
 
         border-left: .25rem solid var(--complement);
-        background-color: var(--bg-main-code);
+        background-color: var(--bg-container);
     }
 
     code
@@ -597,7 +592,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         color: var(--text-code);
         border-radius: var(--radius);
-        background-color: var(--bg-main-code);
+        background-color: var(--bg-container);
     }
 
     pre > code
@@ -672,7 +667,7 @@ pre
         padding: var(--padding-normal);
 
         color: var(--text);
-        background-color: var(--bg-element);
+        background-color: var(--bg-container);
     }
 
 
@@ -1202,18 +1197,20 @@ pre
 
     .page-footer
     {
+        font-size: var(--size-7);
+
         display: flex;
 
         margin-top: var(--margin);
         padding: var(--padding-medium) var(--padding-large);
 
         border-top: 1px solid var(--border-main-darker);
-        background-color: var(--bg-element);
+        background-color: var(--bg-container);
 
-        justify-content: space-between;
         column-gap: calc(2 * var(--gap-col));
         row-gap: var(--gap-row);
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .page-footer > section,
@@ -1248,16 +1245,16 @@ pre
     .page-footer > section p:first-child,
     .page-footer > div p:first-child
     {
-        font-size: var(--size-5);
+        font-size: var(--size-6);
         font-weight: var(--weight-semibold);
     }
 
     .page-footer .foot-heading
     {
-        font-size: var(--size-4);
+        font-size: var(--size-5);
         font-weight: var(--weight-semibold);
 
-        min-height: var(--size-4);
+        min-height: var(--size-5);
     }
 
     @media screen and (max-width: 576px)
@@ -1551,7 +1548,7 @@ pre
 
     .has-bg-white
     {
-        background-color: var(--white);
+        background-color: var(--white-10);
     }
 }
 
@@ -2603,130 +2600,6 @@ pre
 }
 @layer elements
 {
-    .delete
-    {
-        font-size: 0;
-
-        position: relative;
-
-        display: inline-block;
-
-        width: 20px;
-        min-width: 20px;
-        max-width: 20px;
-        height: 20px;
-        min-height: 20px;
-        max-height: 20px;
-        padding: 0;
-
-        cursor: pointer;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-        vertical-align: top;
-        pointer-events: auto;
-
-        border: none;
-        border-radius: 9999px;
-        outline: 0;
-        background-color: rgba(10, 10, 10, .2);
-
-        -webkit-touch-callout: none;
-           -moz-appearance: none;
-        -webkit-appearance: none;
-        flex-grow: 0;
-        flex-shrink: 0;;
-    }
-
-
-    .delete.is-small
-    {
-        font-size: .5rem;
-
-        width: 16px;
-        min-width: 16px;
-        max-width: 16px;
-        height: 16px;
-        min-height: 16px;
-        max-height: 16px;
-        margin-top: .5rem;
-    }
-
-    button.delete.is-small
-    {
-        border-radius: 9999px;
-    }
-
-    .delete.is-medium
-    {
-        font-size: .75rem;
-
-        width: 24px;
-        min-width: 24px;
-        max-width: 24px;
-        height: 24px;
-        min-height: 24px;
-        max-height: 24px;
-        margin-top: .5rem;
-    }
-
-    .delete.is-large
-    {
-        font-size: 1rem;
-
-        width: 32px;
-        min-width: 32px;
-        max-width: 32px;
-        height: 32px;
-        min-height: 32px;
-        max-height: 32px;
-        margin-top: .5rem;
-    }
-
-
-    .delete::before,
-    .delete::after
-    {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        display: block;
-
-        content: '';
-        transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        transform-origin: center center;
-
-        background-color: var(--text-btn-invert);
-    }
-
-    .delete::before
-    {
-        width: 50%;
-        height: 2px;
-    }
-
-    .delete::after
-    {
-        width: 2px;
-        height: 50%;
-    }
-
-    .delete:hover,
-    .delete:focus
-    {
-        background-color: rgba(10, 10, 10, .3);
-    }
-
-    .delete:active
-    {
-        background-color: rgba(10, 10, 10, .4);
-    }
-}
-
-@layer elements
-{
     /* Element / Block Colours */
     .is-primary
     {
@@ -3509,7 +3382,7 @@ pre
         transform: translate(0, 0);
 
         border-radius: var(--radius-elem);
-        background: var(--white);
+        background: var(--white-10);
     }
 
     .form .switch input:checked + span::before
@@ -4144,7 +4017,7 @@ pre
     and https://web.dev/articles/baseline-in-action-fluid-type
  **/
 
-    @media screen and (min-width: 60em)
+    @media screen and (min-width: 75em)
     {
         :root
         {
@@ -4152,7 +4025,7 @@ pre
         }
     }
 
-    @media screen and (min-width: 90em )
+    @media screen and (min-width: 115em )
     {
         :root
         {
@@ -4160,7 +4033,7 @@ pre
         }
     }
 
-    @media screen and (min-width: 120em)
+    @media screen and (min-width: 150em)
     {
         :root
         {
@@ -4450,7 +4323,7 @@ pre
 
     .has-text-grey
     {
-        color: var(--grey);
+        color: var(--grey-light);
     }
 
     .has-text-dark
@@ -5837,6 +5710,8 @@ pre
 
     .sidenavs a
     {
+        font-size: var(--size-7);
+
         display: flex;
         overflow: hidden;
 
@@ -6122,7 +5997,7 @@ pre
         padding: var(--padding-medium) 0 var(--padding-medium) var(--padding-medium);
 
         border-top: 1px solid rgba(255, 255, 255, .10);
-        background: var(--bg-element);
+        background: var(--bg-container);
         background-color: var(--bg-element);
 
         row-gap: .5rem;
@@ -6136,6 +6011,8 @@ pre
 
     .sidebarMenuInner a
     {
+        font-size: var(--size-7);
+
         display: flex;
         overflow: hidden;
 
@@ -9900,8 +9777,8 @@ pre
     .magazine.has-serif
     {
         font-family: var(--family-serif), serif;
-        font-size: 1.1em;
-        line-height: 1.6em;
+        font-size: 1em;
+        line-height: 1.5em;
     }
 
     .magazine.is-wide
