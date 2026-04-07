@@ -10,7 +10,7 @@
         position: relative;
         min-width: 10rem;
         max-width: max-content;
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-container);
 
         border-radius: var(--radius-comp);
         background-color: var(--bg-component);

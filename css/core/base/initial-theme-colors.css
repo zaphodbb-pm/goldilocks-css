@@ -12,12 +12,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     /* build main theme colours */
     --primary-raw: 185 58% 32%;
-    --seconday-raw: 37 14% 50%;
+    --secondary-raw: 37 14% 50%;
     --complement-raw: 22 94% 56%;
-    --shadow-raw: 37 14% 50%;
 
     --primary: hsl(var(--primary-raw) / 100%);
-    --secondary: hsl(var(--seconday-raw) / 100%);
+    --secondary: hsl(var(--secondary-raw) / 100%);
     --complement: hsl(var(--complement-raw) / 100%);
 
 
@@ -80,10 +79,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --danger-200: hsl(4, 78%, 84%);
     --danger-100: hsl(4, 74%, 93%);
     --danger-50: hsl(4, 70%, 97%);
-
-    --shadow-sm: 0 2px 8px hsla(185, 60%, 14%, 0.09);
-    --shadow-md: 0 6px 24px hsla(185, 60%, 14%, 0.12);
-    --shadow-lg: 0 16px 48px hsla(185, 60%, 14%, 0.14);
 
 
 
@@ -150,8 +145,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 5% );
 
     --white-100: color-mix(in hsl, white, var(--secondary) 16% );
-    --white-50: color-mix(in hsl, white, var(--secondary) 13% );
-    --white-25: color-mix(in hsl, white, var(--secondary) 10% );
+    --white-50: color-mix(in hsl, white, var(--secondary) 12% );
+    --white-25: color-mix(in hsl, white, var(--secondary) 8% );
     --white-10: color-mix(in hsl, white, var(--secondary) 2% );
 
 
@@ -184,8 +179,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-bg: var(--white-10);
     --text-code: color-mix(in hsl, var(--complement), black 25%) ;
 
-    /* Common shadow treatment for boxed elements */
+    /** Common shadow treatment for boxed elements **/
+    /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
+
     /**--shadow: 0 0.25em 0.7em -0.125em color-mix(in hsl, white, var(--secondary) 25%), 0 0 0 1px color-mix(in hsl, white, var(--secondary) 10%);*/
+    --shadow-raw: var(--secondary-raw);
+
+
+    /*
 
     --shadow: 0 1px 3px hsl(var(--shadow-raw) / 0.05), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.10);
 
@@ -194,6 +195,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --shadow-3: 0 1px 3px hsl(var(--shadow-raw) / 0.05), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.10);
     --shadow-4: 0 2px 3px hsl(var(--shadow-raw) / 0.05), 0 6px 10px 4px hsl(var(--shadow-raw) / 0.11);
     --shadow-5: 0 4px 4px hsl(var(--shadow-raw) / 0.05), 0 8px 12px 6px hsl(var(--shadow-raw) / 0.13);
+
+     */
+
+
+    --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / 0.05), 0 2px 6px 2px hsl(var(--shadow-raw) / 0.09);
+    --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / 0.05), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.10);
+    --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / 0.05), 0 6px 10px 4px hsl(var(--shadow-raw) / 0.11);
+
+
+
 
     /*--shadow-inset: inset 0 2px 4px hsl(var(--shadow-raw) / 0.10);*/
 }

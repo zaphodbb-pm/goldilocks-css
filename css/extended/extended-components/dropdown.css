@@ -63,7 +63,7 @@
     .dropdown-menu {
         background-color: var(--bg-component);
         border-radius: var(--radius-comp);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-container);
 
         padding-bottom: var(--pad-vert);
         padding-top: var(--pad-vert);

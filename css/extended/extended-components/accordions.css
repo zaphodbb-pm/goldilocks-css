@@ -5,7 +5,7 @@
     details.accordion {
         background: transparent;
         border-radius: var(--radius-comp);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-component);
     }
 
     details.accordion summary {
@@ -120,7 +120,7 @@
         margin: var(--mar-vert) 0;
         padding: 0;
         border: none;
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-container);
         width: 100%;
         border-radius: var(--radius-comp);
     }

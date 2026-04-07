@@ -3,7 +3,7 @@
     .card {
         background-color: var(--bg-component);
         border-radius: var(--radius-comp);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-container);
         color: var(--text-comp);
         width: 100%;
         position: relative;

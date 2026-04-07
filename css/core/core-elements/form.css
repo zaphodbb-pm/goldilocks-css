@@ -16,7 +16,7 @@
         position: relative;
         padding: var(--padding-medium);
         border-radius: var(--radius-comp);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-container);
         background-color: var(--form-background-color);
     }
 
@@ -500,7 +500,7 @@
     .form.is-form-tabbed {
         position: relative;
         border-radius: var(--radius-comp);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-container);
         margin: 0;
         padding: 0;
     }
