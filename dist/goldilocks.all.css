@@ -1,6 +1,6 @@
 :root
 {
-    /* version 0.1.0 - April 29, 2022 - v3 */
+    /* version 1.0.0 - April 7, 2026 */
     /* awareness variables - for info only */
     /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
     /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
@@ -272,28 +272,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-btn-invert: var(--white-10);
     --text-bg: var(--white-10);
     --text-code: color-mix(in hsl, var(--complement), black 25%) ;
-    /** Common shadow treatment for boxed elements **/
+    /** Common shadow treatment for containers, components and elements **/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
-    /**--shadow: 0 0.25em 0.7em -0.125em color-mix(in hsl, white, var(--secondary) 25%), 0 0 0 1px color-mix(in hsl, white, var(--secondary) 10%);*/
     --shadow-raw: var(--secondary-raw);
-    /*
-    --shadow: 0 1px 3px hsl(var(--shadow-raw) / 0.05), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.10);
-
-    --shadow-1: 0 1px 2px hsl(var(--shadow-raw) / 0.06), 0 1px 3px 1px hsl(var(--shadow-raw) / 0.04);
-    --shadow-2: 0 1px 2px hsl(var(--shadow-raw) / 0.05), 0 2px 6px 2px hsl(var(--shadow-raw) / 0.09);
-    --shadow-3: 0 1px 3px hsl(var(--shadow-raw) / 0.05), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.10);
-    --shadow-4: 0 2px 3px hsl(var(--shadow-raw) / 0.05), 0 6px 10px 4px hsl(var(--shadow-raw) / 0.11);
-    --shadow-5: 0 4px 4px hsl(var(--shadow-raw) / 0.05), 0 8px 12px 6px hsl(var(--shadow-raw) / 0.13);
-   
-     */
-    --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / .05), 0 2px 6px 2px hsl(var(--shadow-raw) / .09);
-    --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / .05), 0 4px 8px 3px hsl(var(--shadow-raw) / .10);
-    --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / .05), 0 6px 10px 4px hsl(var(--shadow-raw) / .11);
-
-
-
-
-    /*--shadow-inset: inset 0 2px 4px hsl(var(--shadow-raw) / 0.10);*/
+    --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
+    --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
+    --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
 }
 /*
 main dark theme color definitions
@@ -8168,7 +8152,7 @@ pre
         padding: var(--pad-vert) var(--pad-horz);
 
         border-left: .3rem solid var(--primary);
-        background-color: var(--bg-component);
+        background-color: var(--bg-container);
 
         break-inside: avoid;
     }
@@ -9785,7 +9769,7 @@ pre
     .magazine.has-serif
     {
         font-family: var(--family-serif), serif;
-        font-size: 1em;
+        font-size: 1.1em;
         line-height: 1.5em;
     }
 

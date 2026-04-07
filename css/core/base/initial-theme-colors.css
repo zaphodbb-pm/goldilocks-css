@@ -179,32 +179,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-bg: var(--white-10);
     --text-code: color-mix(in hsl, var(--complement), black 25%) ;
 
-    /** Common shadow treatment for boxed elements **/
+    /** Common shadow treatment for containers, components and elements **/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
 
-    /**--shadow: 0 0.25em 0.7em -0.125em color-mix(in hsl, white, var(--secondary) 25%), 0 0 0 1px color-mix(in hsl, white, var(--secondary) 10%);*/
     --shadow-raw: var(--secondary-raw);
 
-
-    /*
-
-    --shadow: 0 1px 3px hsl(var(--shadow-raw) / 0.05), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.10);
-
-    --shadow-1: 0 1px 2px hsl(var(--shadow-raw) / 0.06), 0 1px 3px 1px hsl(var(--shadow-raw) / 0.04);
-    --shadow-2: 0 1px 2px hsl(var(--shadow-raw) / 0.05), 0 2px 6px 2px hsl(var(--shadow-raw) / 0.09);
-    --shadow-3: 0 1px 3px hsl(var(--shadow-raw) / 0.05), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.10);
-    --shadow-4: 0 2px 3px hsl(var(--shadow-raw) / 0.05), 0 6px 10px 4px hsl(var(--shadow-raw) / 0.11);
-    --shadow-5: 0 4px 4px hsl(var(--shadow-raw) / 0.05), 0 8px 12px 6px hsl(var(--shadow-raw) / 0.13);
-
-     */
-
-
-    --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / 0.05), 0 2px 6px 2px hsl(var(--shadow-raw) / 0.09);
-    --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / 0.05), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.10);
-    --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / 0.05), 0 6px 10px 4px hsl(var(--shadow-raw) / 0.11);
-
-
-
-
-    /*--shadow-inset: inset 0 2px 4px hsl(var(--shadow-raw) / 0.10);*/
+    --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / 0.12), 0 2px 6px 2px hsl(var(--shadow-raw) / 0.15);
+    --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / 0.12), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.18);
+    --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / 0.12), 0 6px 10px 4px hsl(var(--shadow-raw) / 0.21);
 }

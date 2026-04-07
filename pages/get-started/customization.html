@@ -13,17 +13,18 @@ nav: Customization
     <h2>Layers</h2>
     <p>
         <strong>Goldilocks-CSS</strong> is designed to allow customization of the theme through the use of layers.
-        Layers are used to set the initial theme settings and can be extended to use custome settings.
-        <strong>Goldilocks-CSS</strong> uses seven layers to control the page decoration:
+        Layers are used to set the initial theme settings and can be extended to use custom settings.
+        <strong>Goldilocks-CSS</strong> uses six layers to control the page decoration.   The layer order is
+        base, elements, extended, extras, layout and custom:
     </p>
 
-    <ul>
-        <li><b>Base</b>: sets up global values and core resets;</li>
-        <li><b>Layout</b>: defines page layout, grids, sections and other semantic tags;</li>
-        <li><b>Helpers</b>: defines helpers for positioning, spacing, etc.;</li>
+    <ul class="is-indented-1">
+        <li><b>Base</b>: sets up global variables, theme, core HTML resets and helpers (colours, positioning, spacing, etc.;</li>
         <li><b>Elements</b>: controls typography, buttons forms, tables, images and other common items;</li>
         <li><b>Extended</b>: defines elements such as badges and avatars as well as common components such as accordians, breadcrumbs, cards and navigation;</li>
         <li><b>Extras</b>: defines additional elements (progress bars, ribbons and tooltips) and components (modals, popovers, carousal and charts);</li>
+        <li><b>Layout</b>: defines page layout, grids, sections and other semantic tags (note that layout has a higher priority to stop
+            any interference from item control);</li>
         <li><b>Custom</b>: for the designer to override any settings or to add their own values.</li>
     </ul>
 
@@ -33,8 +34,8 @@ nav: Customization
     <p>File <b>initial-core-variables.css</b> contains the CSS variables that drive all the elements and components.</p>
 
     <pre><code class="language-css">
-        :root {
-    /* version 0.1.0 - April 29, 2022 - v3 */
+     :root {
+    /* version 1.0.0 - April 7, 2026 */
 
     /* awareness variables - for info only */
     /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
@@ -52,18 +53,9 @@ nav: Customization
     /* Typography */
     /** Note: text colors are set in file: initial-colors.css **/
 
-    /** basic is a fixed font size for all screen sizes **/
-    --base-font-size: var(--base-rem);
-
-    /** alternatively, you can use a variable font size for all screen sizes
-    - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-        - maximum font-size is set to 3 * base (48px)
-     **/
-    /** --base-font-size:  clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) ); **/
-
     /** Default is to use system fonts as much as possible **/
-    --family-sans-serif: "Tahoma", "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", "Roboto", sans-serif;
-    --family-serif: "Georgia", "Times New Roman", serif;
+    --family-sans-serif: "Tahoma", "Helvetica Neue", "Helvetica", "Arial", "Segoe UI", "Roboto";
+    --family-serif: "Georgia", "Times New Roman";
     --family-monospace: monospace;
     --render-mode: optimizeLegibility;
 
@@ -74,6 +66,9 @@ nav: Customization
     --weight-semibold: 600;
     --weight-bold: 700;
 
+    /** note: adjustable typography is set in the file: typography.css **/
+    --base-font-size: var(--base-rem);
+
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
@@ -81,45 +76,42 @@ nav: Customization
     --line-height-200: 200%;
 
     /** Sizing pattern - typically for text **/
+    /*** typical factors: (see https://typescale.com)
+        1.125 (Major Second) - A balanced choice for most UI designs.
+        1.2 (Minor Third) - Suitable for more information-dense UI designs.
+        1.25 (Major Third) - A very popular choice that provides enough distinction between heading levels.
+        1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
+    ***/
+
     --size-factor: 1.125;
 
-    --size-1: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-2: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-3: calc( 1rem * var(--size-factor) * var(--size-factor) * var(--size-factor) );
-    --size-4: calc( 1rem * var(--size-factor) * var(--size-factor) );
-    --size-5: calc( 1rem * var(--size-factor) );
-    --size-6: 1rem;
-    --size-7: calc( 1rem / var(--size-factor) );
-
-    /* Example 1.125 scale factor:
-    --size-1: 1.80rem;
-    --size-2: 1.60rem;
-    --size-3: 1.42rem;
-    --size-4: 1.27rem;
-    --size-5: 1.13rem;
-    --size-6: 1rem;
-    --size-7: 0.9rem;
-     */
+    --size-7: calc( var(--base-font-size) / var(--size-factor) );   /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
+    --size-6: var(--base-font-size);                                /* Example 1.125 scale factor:  --size-6 = 1 rem; */
+    --size-5: calc( var(--size-6) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
+    --size-4: calc( var(--size-5) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
+    --size-3: calc( var(--size-4) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
+    --size-2: calc( var(--size-3) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
+    --size-1: calc( var(--size-2) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
 
 
 
     /* Grid Key Variables */
-    --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
-    --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
-    --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
+    --gutter: calc(3 * var(--base-rem));                    /** grid column gutter **/
+    --grid-min-px-width: 100px;                             /** minimum absolute column width in a grid layout **/
+    --grid-min-width: calc(5 * var(--base-font-size));      /** minimum relative column width in a grid layout **/
 
 
     /* basic spacing values */
     /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
-    --space-element: var(--base-font-size);
-    --space-block: calc(2 * var(--base-font-size));
-    --space-collection: calc(4 * var(--base-font-size));
-    --space-container: calc(5 * var(--base-font-size));
+    --space-element: var(--base-rem);
+    --space-block: calc(2 * var(--base-rem));
+    --space-collection: calc(4 * var(--base-rem));
+    --space-container: calc(5 * var(--base-rem));
 
 
     /* Flexbox element spacing */
-    --gap-row: calc( 1 * var(--base-font-size) );
-    --gap-col: calc( 1 * var(--base-font-size) );
+    --gap-row: calc( 0.75 * var(--base-font-size) );
+    --gap-col: calc( 0.75 * var(--base-font-size) );
 
 
 
@@ -152,14 +144,14 @@ nav: Customization
 
 
     /* Navbar settings */
-    --navbar-height: 4rem;
+    --navbar-height: calc(4 * var(--base-font-size));
     --navbar-offset: 0;
     --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
 
 
 
     /* Widgetbar settings */
-    --widgetbar-height: calc( 2 * var(--base-font-size) + 0.25rem);
+    --widgetbar-height: calc(2 * var(--base-font-size) + 1rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
 
 
@@ -172,10 +164,9 @@ nav: Customization
     --magazine-width: 40ch;
 
 
-
     /* carousel image height */
-    --carousel-image-height: 8rem;
-    --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
+    --carousel-image-height: calc(8 * var(--base-font-size));
+    --carousel-image-width: calc( 4 / 3 * 8 * var(--base-font-size));            /* aspect ratio of image */
 
 
 
@@ -188,28 +179,26 @@ nav: Customization
     %3C/svg%3E");
 
     --indicator-down: url('data:image/svg+xml;charset=utf8,\
-    &lt;svg xmlns="http://www.w3.org/2000/svg" \
+    <svg xmlns="http://www.w3.org/2000/svg" \
          width="24" height="24" viewBox="0 0 24 24" \
-         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"&gt;\
-        &lt;polyline points="6 9 12 15 18 9"/&gt;\
-    &lt;/svg&gt;');
+         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
+        <polyline points="6 9 12 15 18 9"/>\
+    </svg>');
 
     --indicator-up: url('data:image/svg+xml;charset=utf8,\
-    &lt;svg xmlns="http://www.w3.org/2000/svg" \
+    <svg xmlns="http://www.w3.org/2000/svg" \
          width="24" height="24" viewBox="0 0 24 24" \
-         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"&gt;\
-        &lt;polyline points="18 15 12 9 6 15"&gt;&lt;/polyline&gt;\
-    &lt;/svg&gt;');
+         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
+        <polyline points="18 15 12 9 6 15"></polyline>\
+    </svg>');
 
     --indicator-right: url('data:image/svg+xml;charset=utf8,\
-    &lt;svg xmlns="http://www.w3.org/2000/svg" \
+    <svg xmlns="http://www.w3.org/2000/svg" \
          width="24" height="24" viewBox="0 0 24 24" \
-         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"&gt;\
-        &lt;polyline points="9 18 15 12 9 6"/&gt;\
-    &lt;/svg&gt;');
+         fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
+        <polyline points="9 18 15 12 9 6"/>\
+    </svg>');
 }
-
-
     </code></pre>
 
     <div class="space-items-medium "></div>
@@ -348,118 +337,195 @@ nav: Customization
 
     <pre><code class="language-css">
         /*
-        main dark theme color definitions
-        use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
-         */
+main theme color definitions
+use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
+ */
 
 
-        .main-theme-dark {
+:root {
 
-            --shadow: 0 0.1em 0.1em 0.1em rgba(240, 245, 245, 0.25), 0 0 0 1px rgba(245, 245, 245, 0.02);
+    /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
+    /* main theme colour parameters - based on  complement color selection */
+    --main-color: 185;                                  /** primary hue value **/
 
-            /* main theme colour parameters
-                - based on split complementary color selection
-                - for triadic color selection, set --main-color-offset to 120 degrees
-            */
-            --main-color: 140;                  /** primary hue value **/
-            --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
-            --main-color-sl: 53%, 35%;          /** saturation and lightness **/
-            --main-color-sl-light: 100%, 90%;   /** color lightening saturation and lightness **/
-            --main-color-sl-dark: 100%, 48%;    /** color lightening saturation and lightness **/
+    /* build main theme colours */
+    --primary-raw: 185 58% 32%;
+    --secondary-raw: 37 14% 50%;
+    --complement-raw: 22 94% 56%;
 
-            --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
-            --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
-
-
-
-            /* build main theme colours */
-            --primary: hsl( var(--main-color), 80%, 65% );
-            --secondary: hsl( var(--main-color-complement-low), 75%, 75% );
-            --complement: hsl( var(--main-color-complement-high), 85%, 65% );
-
-
-            /* define text colours for main theme, adjusted for expected theme colour luminosity */
-            --primary-text: hsl( var(--main-color), 100%, 5%);
-            --secondary-text: hsl( var(--main-color-complement-low), 100%, 5%);
-            --complement-text: hsl( var(--main-color-complement-high), 100%, 5%);
-            --primary-text-invert: hsl( var(--main-color), 100%, 5%);
-            --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
-            --complement-text-invert: hsl( var(--main-color-complement-high), 100%, 100%);
+    --primary: hsl(var(--primary-raw) / 100%);
+    --secondary: hsl(var(--secondary-raw) / 100%);
+    --complement: hsl(var(--complement-raw) / 100%);
 
 
 
-            /* optional light colors; use carefully as accessibility is hard to achieve */
-            --primary-light:  hsl( var(--main-color), var(--main-color-sl-light));
-            --secondary-light:  hsl( var(--main-color-complement-low), var(--main-color-sl-light));
-            --complement-light:  hsl( var(--main-color-complement-high), var(--main-color-sl-light));
+    /** AI theme colours **/
+    --primary-900: hsl(185, 70%, 14%);
+    --primary-800: hsl(185, 65%, 19%);
+    --primary-700: hsl(185, 62%, 25%);
+    --primary-600: hsl(185, 58%, 32%);  /*** primary ***/
+    --primary-500: hsl(185, 52%, 41%);
+    --primary-400: hsl(185, 46%, 52%);
+    --primary-300: hsl(185, 42%, 64%);
+    --primary-200: hsl(185, 44%, 78%);
+    --primary-100: hsl(185, 50%, 90%);
+    --primary-50: hsl(185, 55%, 96%);
+    --secondary-900: hsl(37, 28%, 14%);
+    --secondary-800: hsl(37, 24%, 20%);
+    --secondary-700: hsl(37, 20%, 28%);
+    --secondary-600: hsl(37, 18%, 38%);
+    --secondary-500: hsl(37, 14%, 50%); /*** secondary ***/
+    --secondary-400: hsl(37, 16%, 62%);
+    --secondary-300: hsl(37, 18%, 74%);
+    --secondary-200: hsl(37, 20%, 84%);
+    --secondary-100: hsl(37, 24%, 92%);
+    --secondary-50: hsl(37, 28%, 97%);
+    --cta-900: hsl(22, 85%, 20%);
+    --cta-800: hsl(22, 82%, 28%);
+    --cta-700: hsl(22, 78%, 36%);
+    --cta-600: hsl(22, 88%, 44%);
+    --cta-500: hsl(22, 94%, 53%);   /*** complement ***/
+    --cta-400: hsl(22, 92%, 64%);
+    --cta-300: hsl(22, 90%, 76%);
+    --cta-200: hsl(22, 88%, 86%);
+    --cta-100: hsl(22, 85%, 93%);
+    --cta-50: hsl(22, 80%, 97%);
+    --link-700: hsl(240, 55%, 38%);
+    --link-600: hsl(240, 52%, 48%);
+    --link-500: hsl(240, 50%, 58%);
+    --link-200: hsl(240, 48%, 84%);
+    --link-100: hsl(240, 50%, 93%);
+    --link-50: hsl(240, 52%, 97%);
+    --success-800: hsl(152, 58%, 22%);
+    --success-700: hsl(152, 55%, 30%);
+    --success-600: hsl(152, 52%, 38%);
+    --success-500: hsl(152, 47%, 48%);
+    --success-200: hsl(152, 44%, 82%);
+    --success-100: hsl(152, 50%, 92%);
+    --success-50: hsl(152, 54%, 97%);
+    --warning-800: hsl(38, 88%, 24%);
+    --warning-700: hsl(38, 85%, 34%);
+    --warning-600: hsl(38, 90%, 44%);
+    --warning-500: hsl(38, 92%, 54%);
+    --warning-200: hsl(38, 88%, 84%);
+    --warning-100: hsl(38, 88%, 93%);
+    --warning-50: hsl(38, 85%, 97%);
+    --danger-800: hsl(4, 68%, 24%);
+    --danger-700: hsl(4, 65%, 32%);
+    --danger-600: hsl(4, 62%, 40%);
+    --danger-500: hsl(4, 70%, 50%);
+    --danger-200: hsl(4, 78%, 84%);
+    --danger-100: hsl(4, 74%, 93%);
+    --danger-50: hsl(4, 70%, 97%);
 
-            --primary-dark:  hsl( var(--main-color), var(--main-color-sl-dark) );
-            --secondary-dark:  hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
-            --complement-dark:  hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
-
-            --link: hsl(217, 80%, 68%);
-            --link-light:  hsl(217, 70%, 90%);
-            --link-dark: hsl(217, 75%, 40%);
-            --link-text: hsl( 217, 100%, 5%);
-            --link-text-invert: hsl( 217, 100%, 98%);
-
-            --success: hsl(150, 85%, 75%);
-            --success-light:  hsl(141, 80%, 96%);
-            --success-dark: hsl(141, 70%, 31%);
-            --success-text: hsl( 141, 100%, 5%);
-            --success-text-invert: hsl( 141, 100%, 95%);
-
-            --warning: hsl(48, 900%, 55%);
-            --warning-light:  hsl(48, 100%, 95%);
-            --warning-dark: hsl(48, 100%, 40%);
-            --warning-text: hsl( 48, 100%, 5%);
-            --warning-text-invert: hsl( 48, 100%, 95%);
-
-            --danger: hsl(348, 80%, 70%);
-            --danger-light:  hsl(348, 90%, 97%);
-            --danger-dark: hsl(348, 86%, 33%);
-            --danger-text: hsl( 348, 100%, 5%);
-            --danger-text-invert: hsl( 348, 100%, 100%);
-
-            --grey-light: hsl(0, 0%, 75%);
-            --grey-lighter: hsl(0, 0%, 85%);
 
 
-            /** invert colours for elements and components **/
-            --border-main: var(--grey);
-            --border-main-darker: var(--grey-light);
+
+    /* define text colours for main theme, adjusted for expected theme colour luminosity */
+    --primary-text: hsl(185,65%,19%);
+    --secondary-text: hsl(37,20%,28%);
+    --complement-text: hsl(22, 82%, 28%);
+
+    --primary-text-invert: hsl(185, 55%, 96%);
+    --primary-text-invert-dark: hsl(185, 55%, 96%);
+    --secondary-text-invert: hsl(37, 28%, 97%);
+    --secondary-text-invert-dark: hsl(37, 28%, 97%);
+    --complement-text-invert: hsl(22, 80%, 12%);
+    --complement-text-invert-dark: hsl(22, 80%, 97%);
+
+    /* optional light colors; use carefully as accessibility is hard to achieve */
+    --primary-light:  hsl(185,55%,96%);
+    --secondary-light:  hsl(37, 24%, 92%);
+    --complement-light:  hsl(22,85%,93%);
+
+    --primary-dark:  hsl(185,65%,19%);
+    --secondary-dark:  hsl(37,20%,42%);
+    --complement-dark:  hsl(22,88%,40%);
+
+    --link: hsl(240,52%,48%);
+    --link-visited: hsl(280, 52%, 48%);
+    --link-light:  hsl(240, 50%, 93%);
+    --link-dark: hsl(240, 55%, 38%);
+    --link-text: hsl(240, 55%, 38%);
+    --link-text-invert: hsl(240, 52%, 97%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
+
+    --success: hsl(152, 47%, 48%);
+    --success-light:  hsl(152, 50%, 92%);
+    --success-dark: hsl(152, 55%, 30%);
+    --success-text: hsl(152, 70%, 14%);
+    --success-text-invert: var(--black);
+    --success-text-invert-dark: var(--white-10);
+
+    --warning: hsl(38, 92%, 54%);
+    --warning-light:  hsl(38, 88%, 93%);
+    --warning-dark: hsl(38, 90%, 44%);
+    --warning-text: hsl(38, 65%, 22%);
+    --warning-text-invert: var(--black);
+    --warning-text-invert-dark: var(--black);
+
+    --danger: hsl(4, 70%, 50%);
+    --danger-light:  hsl(4, 74%, 93%);
+    --danger-dark: hsl(4, 62%, 40%);
+    --danger-text: hsl(4, 65%, 32%);
+    --danger-text-invert: var(--white-10);
+    --danger-text-invert-dark: var(--white-10);
+
+    /* additional greys */
+    --black: color-mix(in hsl, black, var(--primary) 5% );
+    --black-850: color-mix(in hsl, black, var(--primary) 10% );
+    --black-800: color-mix(in hsl, black, var(--primary) 15% );
+
+    --grey-darker: color-mix(in hsl, hsl(0, 0%, 25%), var(--secondary) 5% );
+    --grey-dark: color-mix(in hsl, hsl(0, 0%, 40%), var(--secondary) 5% );
+    --grey: color-mix(in hsl, hsl(0, 0%, 60%), var(--secondary) 5% );
+    --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 5% );
+    --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 5% );
+
+    --white-100: color-mix(in hsl, white, var(--secondary) 16% );
+    --white-50: color-mix(in hsl, white, var(--secondary) 12% );
+    --white-25: color-mix(in hsl, white, var(--secondary) 8% );
+    --white-10: color-mix(in hsl, white, var(--secondary) 2% );
 
 
-            --bg-main: var(--black);
-            --bg-container: var(--grey-darker);
-            --bg-component: var(--black-800);
-            --bg-main-bis: var(--black-850);
-            --bg-component: var(--black-800) ;
-            --bg-main-invert: var(--white);
-            --bg-main-invert-ter: var(--white-50);
-            --bg-container: var(--grey-darker);
+    /* set the body level colours for light mode*/
+    --bg-main: var(--white-10);
 
-            --bg-grid: var(--grey-darker);
-            --bg-element: var(--grey-darker);
-            --bg-component: var(--black-800);
-            --bg-highlight: hsl(48, 100%, 15%);;
-            --bg-hover: var(--grey-dark);
+    --bg-grid: var(--white-25);
+    --bg-container: var(--white-25);
+    --bg-component: var(--white-50);
+    --bg-element: var(--white-100);
 
-            /** invert or adjust colours for text **/
-            --text: var(--white-25);
-            --text-invert: var(--black);
-            --text-light: var(--grey);
-            --text-darker: var(--white-50);
+    --bg-main-invert: var(--black-850);
+    --bg-highlight: var(--warning-light);
+    --bg-hover: var(--grey-lighter);
 
-            --text-elem: var(--white-25);
-            --text-comp: var(--white-25);
-            --text-invert-ter: var(--black-800);
+    --border-main: var(--grey-light);
+    --border-main-darker: var(--grey);
 
-            --text-btn: var(--black-850);
-            --text-btn-invert: var(--white-50);
-            --text-bg: var(--black-850);
-            --text-code: var(--secondary-light);
-        }
+    --text: var(--black-800);
+    --text-invert: var(--white-10);
+    --text-light: var(--grey-dark);
+    --text-darker: var(--black);
+
+    --text-elem: var(--black-800);
+    --text-comp: var(--black-800);
+    --text-invert-ter: var(--white-50);
+
+    --text-btn: var(--black);
+    --text-btn-invert: var(--white-10);
+    --text-bg: var(--white-10);
+    --text-code: color-mix(in hsl, var(--complement), black 25%) ;
+
+    /** Common shadow treatment for containers, components and elements **/
+    /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
+
+    --shadow-raw: var(--secondary-raw);
+
+    --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / 0.12), 0 2px 6px 2px hsl(var(--shadow-raw) / 0.15);
+    --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / 0.12), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.18);
+    --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / 0.12), 0 6px 10px 4px hsl(var(--shadow-raw) / 0.21);
+}
     </code></pre>
 
 </main>

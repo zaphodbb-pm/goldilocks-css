@@ -15,10 +15,9 @@ nav: Colour Control
             <h2>Overview</h2>
             <p><strong>Goldilocks-CSS</strong> is built to support a complementary colour scheme for the main web
                 page decoration.  By using HSL values, the hue can be rotated around 360° to select a primary colour by
-                using the variable <code>--main-color</code>.  The default is 140°.  Saturation and lightness can then be chosen
-                to finalize that primary colour.  A secondary clolour is created by darkening the primary colour to almost black,
-                but still maintaing som eof the primary colour.  A "call to action" colour is the complemet of the primary colour with th same
-                hue and saturation as the primary colour.
+                using the variable <code>--main-color</code>.  The default is 185° (teal).  Saturation and lightness can then be chosen
+                to finalize that primary colour.  A secondary colour (hue = 37°, warm sand) and supports the primary colour.
+                A "call to action" colour is the complement of the primary colour (at hue = 22°, tangerine).
                 All three of these decoration colours have light and dark variants to support backgrounds and hover states.
             </p>
         </div>
@@ -44,7 +43,7 @@ nav: Colour Control
         </div>
 
         <p>In general, these are <a href="https://dev.to/alvaromontoro/building-your-own-color-contrast-checker-4j7o" target=_blank>complex calculations</a>
-            that you can usually find an <a href="https://cliambrown.com/contrast/" target=_blank>on-line tool</a> or
+            that you can usually find in an <a href="https://cliambrown.com/contrast/" target=_blank>on-line tool</a> or
             <a href="https://contrast-ratio.com/#rgb%28255%2C%20255%2C%20255%29-on-hsl%28340%2C70%25%2C40%25%29" target=_blank>contrast ratio calculator</a>
             to help with colour contrast selection.  The WCAG recommendation is to ensure that the contrast between two colours is at
             least 4.5:1.
@@ -65,9 +64,9 @@ nav: Colour Control
             <h2>So What Does this Mean for Us?</h2>
 
             <p>With <strong>Goldilocks-CSS</strong> we try to help the designer to select a colour scheme and then to derive
-                supporting colours to ensure that a good contrast is maintained.  That means that a designer can select a primary
-                hue.  A secondary colour and a complementary colour will be calculated.  The designer can also choose the saturation
-                level and lightness for these colours.
+                supporting colours to ensure that a good contrast is maintained.  That means that a designer can select a primary,
+                secondary and complement hues. The designer can also choose the saturation level and lightness for these colours.
+                All other colour variants, shadows, text colours, etc are derived from these initial choices.
             </p>
         </div>
 
@@ -83,18 +82,15 @@ nav: Colour Control
             </p>
         </div>
 
-        <ul>
-            <li><code>--main-color</code> is the primary colour hue value (default 140°)</li>
-            <li><code>--main-color-sl-light</code> sets the colour lightening for saturation and lightness </li>
-            <li><code>--main-color-sl-dark</code> sets the colour darkening for saturation and lightness </li>
-            <li><code>--primary</code> is the resulting main theme colour</li>
-            <li><code>--secondary</code> is the resulting secondary theme colour</li>
-            <li><code>--action</code> is the resulting complemenary or action theme colour</li>
+        <ul class="is-indented-1">
+            <li><code>--primary-raw</code> is the primary colour hue value (default 185°) without an alpha channel</li>
+            <li><code>--secondary-raw</code>  is the secondary colour hue value (default 37°) without an alpha channel</li>
+            <li><code>--complement-raw</code> is the secondary colour hue value (default 22°) without an alpha channel</li>
         </ul>
 
         <p><b>Note</b> that you do not need to use this complementary theme method.  You can directly set
-            <code>--primary</code>, <code>--secondary</code> and / or <code>--action</code> colours with any custom values
-            that you wish to use.  Also, any variable can be overridden by a subsequent custom css file or by Javascript code
+            <code>--primary</code>, <code>--secondary</code> and / or <code>--complement</code> colours with any custom values
+            that you wish to use.  Also, any variable can be overridden by a subsequent custom css file or by JavaScript code
             running on the browser.
         </p>
     </article>

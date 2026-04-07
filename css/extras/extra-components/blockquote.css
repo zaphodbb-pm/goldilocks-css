@@ -10,7 +10,7 @@
 
         break-inside: avoid;
         border-left: 0.3rem solid var(--primary);
-        background-color: var(--bg-component);
+        background-color: var(--bg-container);
     }
 
     .blockquote > blockquote {

@@ -25,14 +25,14 @@ nav: Why YACS
             the class name terminology can also be non-intuitive sometimes.  Many have not been updated to the latest CSS3 capabilities.
         </p>
 
-        <p>Furthermore, the marketing of these frameworks is very noisy and make the developer believe that they are the only viable solution.
+        <p>Furthermore, the marketing of these frameworks is very noisy and makes the developer believe that they are the only viable solution.
             They also tend to overpromise and underdeliver, often leading to frustration and wasted time for developers.  A delayed project also gets
             scrutiny from the folks paying the bills.
         </p>
 
         <p>
-            But what is the realty?  The table below shows the usage statistics and market shares of CSS frameworks as of February 2026.  It is
-            interesting to note that Bootstrap is still the most popular framework. Despite the fact that Tailwind has gained a lot of traction,
+            But what is the reality?  The table below shows the usage statistics and market shares of CSS frameworks as of February 2026.  It is
+            interesting to note that Bootstrap is still the most popular framework. Although Tailwind has gained a lot of traction,
             it only represents a small fraction of the market at 0.3% overall and at 1.6% of the CSS market share.  Most interesting is that 4 out of 5
             websites do not use any CSS framework, implying that they have been built with custom or in-house CSS.
         </p>
@@ -46,13 +46,72 @@ nav: Why YACS
             </figcaption>
         </figure>
 
+        <p>
+            Many experienced designers and developers deliberately choose Vanilla CSS (writing styles from scratch). This shift is
+            especially prominent in 2026, as native browser capabilities have evolved to match or exceed what frameworks once provided.
+            Ultimately, a CSS framework is a knowledge polyfill. It bridges the gap while you learn how to do it yourself.
+            Once you master the underlying language, the 'walls' of the framework start to feel like a cage.  Common reasons for NOT using a
+            framework are:
+        </p>
+
+        <h3>Modern CSS is "Powerful Enough”</h3>
+
+        <p>In the past, frameworks were essential for handling complex layouts (like grids) and browser inconsistencies.
+            Today, native features have made much of that "boilerplate" code obsolete.
+        </p>
+
+        <ul class="is-indented-1">
+            <li><em>CSS Grid & Flexbox</em> - These provide layout control that is more flexible than any 12-column framework grid.</li>
+            <li><em>CSS Variables (Custom Properties)</em> - These allow for dynamic theming and "design tokens" without needing a framework's configuration file.</li>
+            <li><em>Modern Selectors</em> - New tools like :has(), Container Queries, and CSS Nesting (now natively supported in all major browsers)
+                allow designers to write clean, modular code that used to require a pre-processor or a framework.</li>
+        </ul>
+
+        <h3>Avoiding "The Framework Look”</h3>
+
+        <p>
+            Frameworks often come with "opinionated" defaults. If you use Bootstrap or Bulma without heavy customization, your site will look like every other "Bootstrap site.”
+        </p>
+
+        <ul class="is-indented-1">
+            <li><em>Creative Freedom</em> - Designing from scratch ensures the UI is unique to the brand rather than
+                restricted by a framework’s predefined components.
+            </li>
+            <li><em>The "Override" Tax</em> - Designers often find themselves "fighting the framework" by writing more code
+                just to undo the default styles they didn't want in the first place.
+            </li>
+        </ul>
+
+        <h3>Performance & Code Bloat</h3>
+
+        <p>
+            <em>Large bundles</em> - Frameworks can add a lot of code to your project.  This code is not only unnecessary, but can also slow down your project.
+            This is especially true for large projects. This bloat can be a problem for performance, especially on mobile devices.
+        </p>
+
+        <ul class="is-indented-1">
+            <li><em>Lighter Bundles</em> - Vanilla CSS allows for 100% "used code," leading to faster load times and better SEO.</li>
+            <li><em>Simpler Maintenance</em> - You don't have to worry about a framework update breaking your site or dealing with deprecated class names.</li>
+        </ul>
+
+        <h3>Semantic Integrity & Readability</h3>
+
+        <p>
+            Frameworks like Tailwind can lead to "class soup," where a single div has 20+ class names, making the structure hard to read.
+            <em>Separation of Concerns</em> helps maintennace by keeping the design logic in a .css file and the content in the .html
+            file and is a long-standing best practice that frameworks often ignore for the sake of speed of development.
+        </p>
+
+
+        <h3>The Business of Web Development</h3>
+
         <p>Web development techniques have matured in the last decade.  <a href="http://w3c.org" target=_blank>W3C</a> has
             updated both HTML and CSS standards to accommodate the changing needs of the business of website / application building.
-            These latest versions of the web standards have become powerful enough to reduce the reliance on Javascript
+            These latest versions of the web standards have become powerful enough to reduce the reliance on JavaScript
             to control the user experience.  This maturation of web standards has delivered very comprehensive capabilities.
             Modern evergreen browsers have become very sophisticated and efficient in handling HTML5 for structure and CSS3 for
-            presentation to the point that Javascript use can be minimized or, in some cases such as static web pages, can be eliminated.
-            Javascript can return to its roots to provide a way for the web page to communicate with the server to fetch user data and to
+            presentation to the point that JavaScript use can be minimized or, in some cases such as static web pages, can be eliminated.
+            JavaScript can return to its roots to provide a way for the web page to communicate with the server to fetch user data and to
             hydrate HTML scaffolding.
         </p>
 
@@ -90,6 +149,8 @@ nav: Why YACS
             and what to avoid.
             These experiences have been distilled into a set of best practices that can be applied to any web project.
             So, rather than focussing on new shiny bling, we can focus on the (mundane) best practices that have been proven to work.
+            <strong>Goldilocks-CSS</strong> is inspired by the work of many people devoted to improving all aspects of web
+            design and technology.
         </p>
 
         <figure class="blockquote">
@@ -104,10 +165,6 @@ nav: Why YACS
             </figcaption>
         </figure>
 
-        <p><strong>Goldilocks-CSS</strong> is inspired by the work of many people devoted to improving all aspects of web
-            design and technology.
-        </p>
-
         <p>
             <strong>Goldilocks-CSS</strong> is a project designed to improve the user experience and to meet the needs of the business
             rather than the developer alone.
@@ -118,12 +175,12 @@ nav: Why YACS
         </p>
 
         <ul class="is-indented-1">
-            <li>Being a comprehensive source of truth for consistent web page creation;</li>
-            <li>Using semantic HTML5 for content structure to meet accessibility requirements (and hence reduce litigation);</li>
             <li>Adhering to HTML and CSS standards to future-proof your project;</li>
-            <li>Leveraging modern CSS3 to create a “no Javascript” presentation layer;</li>
-            <li>Reducing javascript code complexity;</li>
+            <li>Leveraging modern CSS3 to create a “no JavaScript” presentation layer;</li>
+            <li>Reducing JavaScript code complexity;</li>
+            <li>Using semantic HTML5 for content structure to meet accessibility requirements (and hence reduce litigation);</li>
             <li>Increasing HTML code readability for maintenance work by minimizing presentation layer cruft.</li>
+            <li>Being a comprehensive source of truth for consistent web page creation;</li>
         </ul>
 
         <p>The objective is faster time to market at a much lower cost.
