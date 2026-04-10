@@ -23,7 +23,7 @@
     --weight-semibold: 600;
     --weight-bold: 700;
     /** note: adjustable typography is set in the file: typography.css **/
-    --base-font-size: calc( var(--base-rem) * var(--base-html-factor) );
+    --base-font-size: var(--base-rem);
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
