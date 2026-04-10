@@ -56,7 +56,7 @@
     }
 
     .table.has-hover tbody tr:hover {
-        background-color: var(--bg-hover);
+        background-color: var(--grey-lighter);
         color: var(--text-elem);
     }
 

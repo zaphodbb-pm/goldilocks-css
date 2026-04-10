@@ -99,7 +99,7 @@
     }
 
     .is-link-dark {
-        color: var(--link-text-invert-dark);
+        color: var(--link-text-invert);
         background-color: var(--link-dark);
         border: 1px solid var(--link-dark);
         opacity: 1;
@@ -121,7 +121,7 @@
     }
 
     .is-success-dark {
-        color: var(--success-text-invert-dark);
+        color: var(--success-text-invert);
         background-color: var(--success-dark);
         border: 0 solid var(--success-dark);
         opacity: 1;
@@ -149,7 +149,7 @@
     }
 
     .is-warning-dark {
-        color: var(--warning-text-invert-dark);
+        color: var(--warning-text-invert);
         background-color: var(--warning-dark);
         border: 0 solid var(--warning-dark);
         opacity: 1;
@@ -177,7 +177,7 @@
     }
 
     .is-danger-dark, .is-danger:not(.has-no-hover):hover {
-        color: var(--danger-text-invert-dark);
+        color: var(--danger-text-invert);
         background-color: var(--danger-dark);
         border: 0 solid var(--danger-dark);
         opacity: 1;
@@ -196,7 +196,7 @@
     }
 
     .is-dark {
-        color: var(--text-btn-invert);
+        color: var(--text-invert);
         background-color: var(--grey-dark);
         border: 1px solid var(--grey-dark);
     }

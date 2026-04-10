@@ -1,16 +1,14 @@
-/*
-main theme color definitions
-use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
- */
+/* initial-theme-colors.css */
 
-
+/** main theme color definitions **/
 :root {
 
-    /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
-    /* main theme colour parameters - based on  complement color selection */
-    --main-color: 185;                                  /** primary hue value **/
+    /** main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build colors **/
+    /** main theme colour parameters - based on  complement color selection **/
 
-    /* build main theme colours */
+    --main-color: 185; /** primary hue value used by charts **/
+
+    /** build main theme colours **/
     --primary-raw: 185 58% 32%;
     --secondary-raw: 37 14% 50%;
     --complement-raw: 22 94% 56%;
@@ -18,70 +16,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --primary: hsl(var(--primary-raw) / 100%);
     --secondary: hsl(var(--secondary-raw) / 100%);
     --complement: hsl(var(--complement-raw) / 100%);
-
-
-
-    /** AI theme colours **/
-    --primary-900: hsl(185, 70%, 14%);
-    --primary-800: hsl(185, 65%, 19%);
-    --primary-700: hsl(185, 62%, 25%);
-    --primary-600: hsl(185, 58%, 32%);  /*** primary ***/
-    --primary-500: hsl(185, 52%, 41%);
-    --primary-400: hsl(185, 46%, 52%);
-    --primary-300: hsl(185, 42%, 64%);
-    --primary-200: hsl(185, 44%, 78%);
-    --primary-100: hsl(185, 50%, 90%);
-    --primary-50: hsl(185, 55%, 96%);
-    --secondary-900: hsl(37, 28%, 14%);
-    --secondary-800: hsl(37, 24%, 20%);
-    --secondary-700: hsl(37, 20%, 28%);
-    --secondary-600: hsl(37, 18%, 38%);
-    --secondary-500: hsl(37, 14%, 50%); /*** secondary ***/
-    --secondary-400: hsl(37, 16%, 62%);
-    --secondary-300: hsl(37, 18%, 74%);
-    --secondary-200: hsl(37, 20%, 84%);
-    --secondary-100: hsl(37, 24%, 92%);
-    --secondary-50: hsl(37, 28%, 97%);
-    --cta-900: hsl(22, 85%, 20%);
-    --cta-800: hsl(22, 82%, 28%);
-    --cta-700: hsl(22, 78%, 36%);
-    --cta-600: hsl(22, 88%, 44%);
-    --cta-500: hsl(22, 94%, 53%);   /*** complement ***/
-    --cta-400: hsl(22, 92%, 64%);
-    --cta-300: hsl(22, 90%, 76%);
-    --cta-200: hsl(22, 88%, 86%);
-    --cta-100: hsl(22, 85%, 93%);
-    --cta-50: hsl(22, 80%, 97%);
-    --link-700: hsl(240, 55%, 38%);
-    --link-600: hsl(240, 52%, 48%);
-    --link-500: hsl(240, 50%, 58%);
-    --link-200: hsl(240, 48%, 84%);
-    --link-100: hsl(240, 50%, 93%);
-    --link-50: hsl(240, 52%, 97%);
-    --success-800: hsl(152, 58%, 22%);
-    --success-700: hsl(152, 55%, 30%);
-    --success-600: hsl(152, 52%, 38%);
-    --success-500: hsl(152, 47%, 48%);
-    --success-200: hsl(152, 44%, 82%);
-    --success-100: hsl(152, 50%, 92%);
-    --success-50: hsl(152, 54%, 97%);
-    --warning-800: hsl(38, 88%, 24%);
-    --warning-700: hsl(38, 85%, 34%);
-    --warning-600: hsl(38, 90%, 44%);
-    --warning-500: hsl(38, 92%, 54%);
-    --warning-200: hsl(38, 88%, 84%);
-    --warning-100: hsl(38, 88%, 93%);
-    --warning-50: hsl(38, 85%, 97%);
-    --danger-800: hsl(4, 68%, 24%);
-    --danger-700: hsl(4, 65%, 32%);
-    --danger-600: hsl(4, 62%, 40%);
-    --danger-500: hsl(4, 70%, 50%);
-    --danger-200: hsl(4, 78%, 84%);
-    --danger-100: hsl(4, 74%, 93%);
-    --danger-50: hsl(4, 70%, 97%);
-
-
-
 
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
     --primary-text: hsl(185,65%,19%);
@@ -110,33 +44,30 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --link-dark: hsl(240, 55%, 38%);
     --link-text: hsl(240, 55%, 38%);
     --link-text-invert: hsl(240, 52%, 97%);
-    --link-text-invert-dark: hsl(240, 52%, 97%);
 
     --success: hsl(152, 47%, 48%);
     --success-light:  hsl(152, 50%, 92%);
     --success-dark: hsl(152, 55%, 30%);
     --success-text: hsl(152, 70%, 14%);
     --success-text-invert: var(--black);
-    --success-text-invert-dark: var(--white-10);
 
     --warning: hsl(38, 92%, 54%);
     --warning-light:  hsl(38, 88%, 93%);
     --warning-dark: hsl(38, 90%, 44%);
     --warning-text: hsl(38, 65%, 22%);
     --warning-text-invert: var(--black);
-    --warning-text-invert-dark: var(--black);
 
     --danger: hsl(4, 70%, 50%);
     --danger-light:  hsl(4, 74%, 93%);
     --danger-dark: hsl(4, 62%, 40%);
     --danger-text: hsl(4, 65%, 32%);
     --danger-text-invert: var(--white-10);
-    --danger-text-invert-dark: var(--white-10);
 
     /* additional greys */
-    --black: color-mix(in hsl, black, var(--primary) 5% );
-    --black-850: color-mix(in hsl, black, var(--primary) 10% );
-    --black-800: color-mix(in hsl, black, var(--primary) 15% );
+    --black: color-mix(in hsl, black, var(--primary) 5%);
+    --black-850: color-mix(in hsl, black, var(--primary) 10%);
+    --black-800: color-mix(in hsl, black, var(--primary) 15%);
+    --black-700: color-mix(in hsl, black, var(--primary) 25%);
 
     --grey-darker: color-mix(in hsl, hsl(0, 0%, 25%), var(--secondary) 5% );
     --grey-dark: color-mix(in hsl, hsl(0, 0%, 40%), var(--secondary) 5% );
@@ -160,7 +91,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     --bg-main-invert: var(--black-850);
     --bg-highlight: var(--warning-light);
-    --bg-hover: var(--grey-lighter);
 
     --border-main: var(--grey-light);
     --border-main-darker: var(--grey);
@@ -173,11 +103,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     --text-elem: var(--black-800);
     --text-comp: var(--black-800);
     --text-invert-ter: var(--white-50);
-
-    --text-btn: var(--black);
-    --text-btn-invert: var(--white-10);
-    --text-bg: var(--white-10);
-    --text-code: color-mix(in hsl, var(--complement), black 25%) ;
+    --text-code: color-mix(in hsl, var(--complement), black 25%);
 
     /** Common shadow treatment for containers, components and elements **/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
