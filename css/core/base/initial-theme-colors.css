@@ -34,9 +34,9 @@
     --secondary-light:  hsl(37, 24%, 92%);
     --complement-light:  hsl(22,85%,93%);
 
-    --primary-dark:  hsl(185,65%,19%);
-    --secondary-dark:  hsl(37,20%,42%);
-    --complement-dark:  hsl(22,88%,40%);
+    --primary-dark:  hsl(185,65%,17%);
+    --secondary-dark:  hsl(37,20%,40%);
+    --complement-dark:  hsl(22,88%,38%);
 
     --link: hsl(240,52%,48%);
     --link-visited: hsl(280, 52%, 48%);

@@ -148,9 +148,9 @@
     --primary-light: hsl(185,55%,96%);
     --secondary-light: hsl(37, 24%, 92%);
     --complement-light: hsl(22,85%,93%);
-    --primary-dark: hsl(185,65%,19%);
-    --secondary-dark: hsl(37,20%,42%);
-    --complement-dark: hsl(22,88%,40%);
+    --primary-dark: hsl(185,65%,17%);
+    --secondary-dark: hsl(37,20%,40%);
+    --complement-dark: hsl(22,88%,38%);
     --link: hsl(240,52%,48%);
     --link-visited: hsl(280, 52%, 48%);
     --link-light: hsl(240, 50%, 93%);
@@ -236,14 +236,17 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --primary-text-invert-dark: hsl(185, 55%, 96%);
     --secondary-text-invert: hsl(37, 28%, 97%);
     --secondary-text-invert-dark: hsl(37, 28%, 97%);
-    --complement-text-invert: hsl(22, 80%, 27%);
+    --complement-text-invert: hsl(22, 80%, 18%);
     --complement-text-invert-dark: hsl(22, 80%, 97%);
+    --primary-light: hsl(185,55%,94%);
+    --secondary-light: hsl(37, 24%, 92%);
+    --complement-light: hsl(22,85%,93%);
     --primary-dark: hsl(185,65%,22%);
-    --secondary-dark: hsl(37,20%,45%);
-    --complement-dark: hsl(22,88%,43%);
+    --secondary-dark: hsl(37,20%,40%);
+    --complement-dark: hsl(22,88%,40%);
     /** define colours for links, success, warning, danger **/
-    --link: hsl(240,52%,63%);
-    --link-visited: hsl(280, 52%, 63%);
+    --link: hsl(240,62%,70%);
+    --link-visited: hsl(280, 52%, 78%);
     --link-light: hsl(240, 50%, 95%);
     --link-dark: hsl(240, 55%, 55%);
     --link-text: hsl(240, 55%, 65%);
@@ -251,13 +254,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --link-text-invert-dark: hsl(240, 52%, 97%);
     --success: hsl(152, 47%, 53%);
     --success-light: hsl(152, 50%, 95%);
-    --success-dark: hsl(152, 55%, 35%);
+    --success-dark: hsl(152, 55%, 32%);
     --success-text: hsl(152, 70%, 19%);
-    --success-text-invert: hsl( 152, 100%, 97%);
+    --success-text-invert: hsl( 152, 70%, 17%);
     --success-text-invert-dark: hsl(152, 47%, 97%);
     --warning: hsl(38, 92%, 58%);
     --warning-light: hsl(38, 88%, 95%);
-    --warning-dark: hsl(38, 90%, 48%);
+    --warning-dark: hsl(38, 90%, 32%);
     --warning-text: hsl(38, 65%, 27%);
     --warning-text-invert: var(--black-800);
     --warning-text-invert-dark: hsl(38, 92%, 97%);
@@ -281,8 +284,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --bg-highlight: var(--warning-text);
     --bg-hover: var(--grey-dark);
     /** invert or adjust colours for text **/
-    --text: var(--white-50);
-    --text-invert: var(--black);
+    --text: var(--white-100);
+    --text-invert: var(--black-800);
     --text-light: var(--grey);
     --text-darker: var(--white-50);
     --text-elem: var(--white-25);
@@ -2636,7 +2639,7 @@ pre
     .is-link-dark
     {
         opacity: 1;
-        color: var(--link-text-invert);
+        color: var(--link-text-invert-dark);
         border: 1px solid var(--link-dark);
         background-color: var(--link-dark);
     }

@@ -99,7 +99,7 @@
     }
 
     .is-link-dark {
-        color: var(--link-text-invert);
+        color: var(--link-text-invert-dark);
         background-color: var(--link-dark);
         border: 1px solid var(--link-dark);
         opacity: 1;
