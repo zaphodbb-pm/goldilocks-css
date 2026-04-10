@@ -381,6 +381,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     /** set global environment **/
     html
     {
+        font-size: var(--base-html-factor);
+
         overflow-x: hidden;
         overflow-y: scroll;
 
