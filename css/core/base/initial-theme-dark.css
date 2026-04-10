@@ -34,7 +34,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --complement-dark:  hsl(22,88%,40%);
 
     /** define colours for links, success, warning, danger **/
-    --link: hsl(240,62%,70%);
+    --link: hsl(240,62%,82%);
     --link-visited: hsl(280, 52%, 78%);
     --link-light:  hsl(240, 50%, 95%);
     --link-dark: hsl(240, 55%, 55%);
