@@ -1,22 +1,22 @@
 @layer extended {
 
     .navbar {
+        position: relative;
         margin: 0;
         padding: 0 var(--pad-horz);
-        position: relative;
+        height: var(--navbar-height);
+        max-width: 100%;
+        z-index: var(--navbar-z);
 
         display: flex;
         flex-wrap: wrap;
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
+
+        font-size: var(--size-7);
         align-items: center;
-        z-index: var(--navbar-z);
-
         justify-content: space-between;
-        max-width: 100%;
-
         border-bottom: solid 2px var(--grey-light);
-        height: var(--navbar-height);
     }
 
 

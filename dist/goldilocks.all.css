@@ -5065,6 +5065,8 @@ pre
 {
     .navbar
     {
+        font-size: var(--size-7);
+
         position: relative;
         z-index: var(--navbar-z);
 
@@ -10288,6 +10290,8 @@ pre
     .widgetbar,
     .widgetbar-bordered
     {
+        font-size: var(--size-7);
+
         z-index: var(--widget-z);
 
         display: flex;
@@ -10359,7 +10363,7 @@ pre
     }
 
 
-    /* text size selector */
+    /* text size selector widget */
     .widgetbar-radios > span
     {
         padding: 0 var(--pad-vert) 0 var(--pad-horz);
@@ -10401,8 +10405,6 @@ pre
     /* link widgets */
     .widgetbar-link
     {
-        font-size: .75em;
-
         border-radius: var(--radius-comp);
         background-color: transparent;
     }

@@ -7,14 +7,17 @@
         display: flex;
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
-        align-items: center;
-        justify-content: flex-end;
-        border: none;
-        padding: 0 var(--pad-horz);
+
+        width: calc(100% - 2 * var(--pad-horz));
         height: var(--widgetbar-height);
+        padding: 0 var(--pad-horz);
         z-index: var(--widget-z);
         background-color: var(--bg-component);
-        width: calc(100% - 2 * var(--pad-horz));
+        border: none;
+
+        font-size: var(--size-7);
+        align-items: center;
+        justify-content: flex-end;
     }
 
     .widgetbar-bordered {
@@ -57,7 +60,7 @@
     }
 
 
-    /* text size selector */
+    /* text size selector widget */
     .widgetbar-radios > span {
         padding: 0 var(--pad-vert) 0 var(--pad-horz);
     }
@@ -91,7 +94,6 @@
     .widgetbar-link {
         background-color: transparent;
         border-radius: var(--radius-comp);
-        font-size: 0.75em;
     }
 
     .widgetbar-link a {
