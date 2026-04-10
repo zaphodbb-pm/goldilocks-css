@@ -13,7 +13,6 @@
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
 
-        font-size: var(--size-7);
         align-items: center;
         justify-content: space-between;
         border-bottom: solid 2px var(--grey-light);
@@ -27,6 +26,9 @@
         flex-wrap: wrap;
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
+
+        font-size: var(--size-7);
+        font-weight: var(--weight-semibold);
         align-items: center;
 
         position: relative;

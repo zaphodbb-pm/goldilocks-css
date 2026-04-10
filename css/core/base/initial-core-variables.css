@@ -49,7 +49,7 @@
 
     --size-factor: 1.125;
 
-    --size-7: calc( var(--base-font-size) / var(--size-factor) );   /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
+    --size-7: calc( var(--base-font-size) * 0.875 );                /* Example 1.125 scale factor:  --size-7 = 0.875rem; */
     --size-6: var(--base-font-size);                                /* Example 1.125 scale factor:  --size-6 = 1 rem; */
     --size-5: calc( var(--size-6) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
     --size-4: calc( var(--size-5) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
