@@ -4243,12 +4243,12 @@ pre
 
     .has-text-grey
     {
-        color: var(--grey-light);
+        color: var(--grey-dark);
     }
 
     .has-text-dark
     {
-        color: var(--grey-dark);
+        color: var(--grey-darker);
     }
 }
 
