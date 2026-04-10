@@ -333,100 +333,105 @@ nav: Customization
         provide night / dark mode colour themes.</p>
 
     <pre><code class="language-css">
-       /* initial-theme-dark.css */
+        /* initial-theme-dark.css */
 
-    /**  main dark theme color definitions
-    use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
-     **/
-
-
-    .main-theme-dark {
-
-        /** build main theme colours **/
-        --primary: color-mix(in hsl, hsl(var(--primary-raw) / 100%), white 10% );
-        --secondary: color-mix(in hsl, hsl(var(--secondary-raw) / 100%), white 10% );
-        --complement: color-mix(in hsl, hsl(var(--complement-raw) / 100%), white 10% );
-
-        /** define text colours for main theme, adjusted for expected theme colour luminosity **/
-        --primary-text: hsl(185,65%,22%);
-        --secondary-text: hsl(37,20%,32%);
-        --complement-text: hsl(22, 82%, 32%);
-
-        --primary-text-invert: hsl(185, 55%, 96%);
-        --primary-text-invert-dark: hsl(185, 55%, 96%);
-        --secondary-text-invert: hsl(37, 28%, 97%);
-        --secondary-text-invert-dark: hsl(37, 28%, 97%);
-        --complement-text-invert: hsl(22, 80%, 17%);
-        --complement-text-invert-dark: hsl(22, 80%, 97%);
-
-        --primary-dark:  hsl(185,65%,22%);
-        --secondary-dark:  hsl(37,20%,45%);
-        --complement-dark:  hsl(22,88%,43%);
-
-        /** define colours for links, success, warning, danger **/
-        --link: hsl(240,52%,53%);
-        --link-visited: hsl(280, 52%, 53%);
-        --link-light:  hsl(240, 50%, 95%);
-        --link-dark: hsl(240, 55%, 43%);
-        --link-text: hsl(240, 55%, 43%);
-        --link-text-invert: hsl(240, 52%, 20%);
-
-        --success: hsl(152, 47%, 53%);
-        --success-light:  hsl(152, 50%, 95%);
-        --success-dark: hsl(152, 55%, 35%);
-        --success-text: hsl(152, 70%, 19%);
-        --success-text-invert: hsl( 152, 100%, 97%);
-
-        --warning: hsl(38, 92%, 58%);
-        --warning-light:  hsl(38, 88%, 95%);
-        --warning-dark: hsl(38, 90%, 48%);
-        --warning-text: hsl(38, 65%, 27%);
-        --warning-text-invert: var(--black-800);
-
-        --danger: hsl(4, 70%, 55%);
-        --danger-light:  hsl(4, 74%, 97%);
-        --danger-dark: hsl(4, 62%, 45%);
-        --danger-text: hsl(4, 65%, 37%);
-        --danger-text-invert: var(--white-10);
-
-        --grey-light: hsl(0, 0%, 75%);
-        --grey-lighter: hsl(0, 0%, 85%);
+        /**  main dark theme color definitions
+            use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
+        **/
 
 
-        /** invert colours for elements and components **/
-        --border-main: var(--grey);
-        --border-main-darker: var(--grey-light);
+        .main-theme-dark {
 
-        --bg-main: var(--black);
-        --bg-main-invert: var(--white-10);
-        --bg-grid: var(--grey-darker);
-        --bg-container: var(--grey-darker);
-        --bg-component: var(--black-800);
-        --bg-element: var(--black-700);
-        --bg-highlight: var(--warning-text);
-        --bg-hover: var(--grey-dark);
+            /** build main theme colours **/
+            --primary: color-mix(in hsl, hsl(var(--primary-raw) / 100%), white 10% );
+            --secondary: color-mix(in hsl, hsl(var(--secondary-raw) / 100%), white 10% );
+            --complement: color-mix(in hsl, hsl(var(--complement-raw) / 100%), white 10% );
+
+            /** define text colours for main theme, adjusted for expected theme colour luminosity **/
+            --primary-text: hsl(185,65%,22%);
+            --secondary-text: hsl(37,20%,32%);
+            --complement-text: hsl(22, 82%, 32%);
+
+            --primary-text-invert: hsl(185, 55%, 96%);
+            --primary-text-invert-dark: hsl(185, 55%, 96%);
+            --secondary-text-invert: hsl(37, 28%, 97%);
+            --secondary-text-invert-dark: hsl(37, 28%, 97%);
+            --complement-text-invert: hsl(22, 80%, 17%);
+            --complement-text-invert-dark: hsl(22, 80%, 97%);
+
+            --primary-dark:  hsl(185,65%,22%);
+            --secondary-dark:  hsl(37,20%,45%);
+            --complement-dark:  hsl(22,88%,43%);
+
+            /** define colours for links, success, warning, danger **/
+            --link: hsl(240,52%,53%);
+            --link-visited: hsl(280, 52%, 53%);
+            --link-light:  hsl(240, 50%, 95%);
+            --link-dark: hsl(240, 55%, 43%);
+            --link-text: hsl(240, 55%, 43%);
+            --link-text-invert: hsl(240, 52%, 20%);
+            --link-text-invert-dark: hsl(240, 52%, 97%);
 
 
-        /** invert or adjust colours for text **/
-        --text: var(--white-50);
-        --text-invert: var(--black);
-        --text-light: var(--grey);
-        --text-darker: var(--white-50);
+            --success: hsl(152, 47%, 53%);
+            --success-light:  hsl(152, 50%, 95%);
+            --success-dark: hsl(152, 55%, 35%);
+            --success-text: hsl(152, 70%, 19%);
+            --success-text-invert: hsl( 152, 100%, 97%);
+            --success-text-invert-dark: hsl(152, 47%, 97%);
 
-        --text-elem: var(--white-25);
-        --text-comp: var(--white-25);
-        --text-invert-ter: var(--black-800);
-        --text-code: var(--secondary-light);
+            --warning: hsl(38, 92%, 58%);
+            --warning-light:  hsl(38, 88%, 95%);
+            --warning-dark: hsl(38, 90%, 48%);
+            --warning-text: hsl(38, 65%, 27%);
+            --warning-text-invert: var(--black-800);
+            --warning-text-invert-dark: hsl(38, 92%, 97%);
+
+            --danger: hsl(4, 70%, 55%);
+            --danger-light:  hsl(4, 74%, 97%);
+            --danger-dark: hsl(4, 62%, 45%);
+            --danger-text: hsl(4, 65%, 37%);
+            --danger-text-invert: var(--white-10);
+            --danger-text-invert-dark: hsl(4, 70%, 97%);
+
+            --grey-light: hsl(0, 0%, 75%);
+            --grey-lighter: hsl(0, 0%, 85%);
 
 
-        /** Common shadow treatment for containers, components and elements **/
-        /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
-        --shadow-raw: var(--secondary-raw);
+            /** invert colours for elements and components **/
+            --border-main: var(--grey);
+            --border-main-darker: var(--grey-light);
 
-        --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / 0.12), 0 2px 6px 2px hsl(var(--shadow-raw) / 0.15);
-        --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / 0.12), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.18);
-        --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / 0.12), 0 6px 10px 4px hsl(var(--shadow-raw) / 0.21);
-    }
+            --bg-main: var(--black);
+            --bg-main-invert: var(--white-10);
+            --bg-grid: var(--grey-darker);
+            --bg-container: var(--grey-darker);
+            --bg-component: var(--black-800);
+            --bg-element: var(--black-700);
+            --bg-highlight: var(--warning-text);
+            --bg-hover: var(--grey-dark);
+
+
+            /** invert or adjust colours for text **/
+            --text: var(--white-50);
+            --text-invert: var(--black);
+            --text-light: var(--grey);
+            --text-darker: var(--white-50);
+
+            --text-elem: var(--white-25);
+            --text-comp: var(--white-25);
+            --text-invert-ter: var(--black-800);
+            --text-code: var(--secondary-light);
+
+
+            /** Common shadow treatment for containers, components and elements **/
+            /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
+            --shadow-raw: var(--secondary-raw);
+
+            --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / 0.12), 0 2px 6px 2px hsl(var(--shadow-raw) / 0.15);
+            --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / 0.12), 0 4px 8px 3px hsl(var(--shadow-raw) / 0.18);
+            --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / 0.12), 0 6px 10px 4px hsl(var(--shadow-raw) / 0.21);
+        }
     </code></pre>
 
 </main>

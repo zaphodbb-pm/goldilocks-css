@@ -121,7 +121,7 @@
     }
 
     .is-success-dark {
-        color: var(--success-text-invert);
+        color: var(--success-text-invert-dark);
         background-color: var(--success-dark);
         border: 0 solid var(--success-dark);
         opacity: 1;
@@ -149,7 +149,7 @@
     }
 
     .is-warning-dark {
-        color: var(--warning-text-invert);
+        color: var(--warning-text-invert-dark);
         background-color: var(--warning-dark);
         border: 0 solid var(--warning-dark);
         opacity: 1;
@@ -177,7 +177,7 @@
     }
 
     .is-danger-dark {
-        color: var(--danger-text-invert);
+        color: var(--danger-text-invert-dark);
         background-color: var(--danger-dark);
         border: 0 solid var(--danger-dark);
         opacity: 1;

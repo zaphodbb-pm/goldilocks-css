@@ -248,21 +248,25 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --link-dark: hsl(240, 55%, 43%);
     --link-text: hsl(240, 55%, 43%);
     --link-text-invert: hsl(240, 52%, 20%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
     --success: hsl(152, 47%, 53%);
     --success-light: hsl(152, 50%, 95%);
     --success-dark: hsl(152, 55%, 35%);
     --success-text: hsl(152, 70%, 19%);
     --success-text-invert: hsl( 152, 100%, 97%);
+    --success-text-invert-dark: hsl(152, 47%, 97%);
     --warning: hsl(38, 92%, 58%);
     --warning-light: hsl(38, 88%, 95%);
     --warning-dark: hsl(38, 90%, 48%);
     --warning-text: hsl(38, 65%, 27%);
     --warning-text-invert: var(--black-800);
+    --warning-text-invert-dark: hsl(38, 92%, 97%);
     --danger: hsl(4, 70%, 55%);
     --danger-light: hsl(4, 74%, 97%);
     --danger-dark: hsl(4, 62%, 45%);
     --danger-text: hsl(4, 65%, 37%);
     --danger-text-invert: var(--white-10);
+    --danger-text-invert-dark: hsl(4, 70%, 97%);
     --grey-light: hsl(0, 0%, 75%);
     --grey-lighter: hsl(0, 0%, 85%);
     /** invert colours for elements and components **/
@@ -2657,7 +2661,7 @@ pre
     .is-success-dark
     {
         opacity: 1;
-        color: var(--success-text-invert);
+        color: var(--success-text-invert-dark);
         border: 0 solid var(--success-dark);
         background-color: var(--success-dark);
     }
@@ -2689,7 +2693,7 @@ pre
     .is-warning-dark
     {
         opacity: 1;
-        color: var(--warning-text-invert);
+        color: var(--warning-text-invert-dark);
         border: 0 solid var(--warning-dark);
         background-color: var(--warning-dark);
     }
@@ -2721,7 +2725,7 @@ pre
     .is-danger-dark
     {
         opacity: 1;
-        color: var(--danger-text-invert);
+        color: var(--danger-text-invert-dark);
         border: 0 solid var(--danger-dark);
         background-color: var(--danger-dark);
     }
