@@ -23,7 +23,7 @@
     --weight-semibold: 600;
     --weight-bold: 700;
     /** note: adjustable typography is set in the file: typography.css **/
-    --base-font-size: var(--base-rem);
+    --base-font-size: calc( var(--base-rem) * var(--base-html-factor) );
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
@@ -10302,7 +10302,7 @@ pre
         padding: 0 var(--pad-horz);
 
         border: none;
-        background-color: var(--bg-component);
+        background-color: var(--bg-container);
 
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
@@ -10344,7 +10344,7 @@ pre
     .widgetbar-switch,
     .widgetbar-link
     {
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
 
         display: flex;
 
@@ -10353,6 +10353,7 @@ pre
 
         border-radius: var(--radius-comp);
         background-color: var(--bg-element);
+        box-shadow: var(--shadow-container);
 
         align-items: center;
     }

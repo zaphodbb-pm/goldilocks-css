@@ -12,7 +12,7 @@
         height: var(--widgetbar-height);
         padding: 0 var(--pad-horz);
         z-index: var(--widget-z);
-        background-color: var(--bg-component);
+        background-color: var(--bg-container);
         border: none;
 
         font-size: var(--size-7);
@@ -49,8 +49,9 @@
         margin: 0.25rem 0;
         padding: 0;
         align-items: center;
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
         background-color: var(--bg-element);
+        box-shadow: var(--shadow-container);
         border-radius: var(--radius-comp);
     }
 
