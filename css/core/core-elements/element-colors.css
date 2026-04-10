@@ -176,7 +176,7 @@
         opacity: 1;
     }
 
-    .is-danger-dark, .is-danger:not(.has-no-hover):hover {
+    .is-danger-dark {
         color: var(--danger-text-invert);
         background-color: var(--danger-dark);
         border: 0 solid var(--danger-dark);

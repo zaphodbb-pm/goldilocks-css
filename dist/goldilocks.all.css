@@ -157,21 +157,25 @@
     --link-dark: hsl(240, 55%, 38%);
     --link-text: hsl(240, 55%, 38%);
     --link-text-invert: hsl(240, 52%, 97%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
     --success: hsl(152, 47%, 48%);
     --success-light: hsl(152, 50%, 92%);
     --success-dark: hsl(152, 55%, 30%);
     --success-text: hsl(152, 70%, 14%);
     --success-text-invert: var(--black);
+    --success-text-invert-dark: hsl(152, 47%, 97%);
     --warning: hsl(38, 92%, 54%);
     --warning-light: hsl(38, 88%, 93%);
     --warning-dark: hsl(38, 90%, 44%);
     --warning-text: hsl(38, 65%, 22%);
     --warning-text-invert: var(--black);
+    --warning-text-invert-dark: hsl(38, 92%, 97%);
     --danger: hsl(4, 70%, 50%);
     --danger-light: hsl(4, 74%, 93%);
     --danger-dark: hsl(4, 62%, 40%);
     --danger-text: hsl(4, 65%, 32%);
     --danger-text-invert: var(--white-10);
+    --danger-text-invert-dark: hsl(4, 70%, 97%);
     /* additional greys */
     --black: color-mix(in hsl, black, var(--primary) 5%);
     --black-850: color-mix(in hsl, black, var(--primary) 10%);
@@ -2628,7 +2632,7 @@ pre
     .is-link-dark
     {
         opacity: 1;
-        color: var(--link-text-invert-dark);
+        color: var(--link-text-invert);
         border: 1px solid var(--link-dark);
         background-color: var(--link-dark);
     }
@@ -2653,7 +2657,7 @@ pre
     .is-success-dark
     {
         opacity: 1;
-        color: var(--success-text-invert-dark);
+        color: var(--success-text-invert);
         border: 0 solid var(--success-dark);
         background-color: var(--success-dark);
     }
@@ -2685,7 +2689,7 @@ pre
     .is-warning-dark
     {
         opacity: 1;
-        color: var(--warning-text-invert-dark);
+        color: var(--warning-text-invert);
         border: 0 solid var(--warning-dark);
         background-color: var(--warning-dark);
     }
@@ -2714,11 +2718,10 @@ pre
         background-color: var(--danger-light);
     }
 
-    .is-danger-dark,
-    .is-danger:not(.has-no-hover):hover
+    .is-danger-dark
     {
         opacity: 1;
-        color: var(--danger-text-invert-dark);
+        color: var(--danger-text-invert);
         border: 0 solid var(--danger-dark);
         background-color: var(--danger-dark);
     }
