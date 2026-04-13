@@ -50,18 +50,18 @@ nav: Table
 
                 <tr>
                     <td><code>.is-fullwidth</code></td>
-                    <td>Stretches table width to fit parent container</td>
+                    <td>Stretches table width to fit the parent container</td>
                 </tr>
 
                 <tr>
                     <td><code>.table-scroll</code></td>
-                    <td>This a container for <code>.table</code> that allows wide tables to overflow and be scrollable.
+                    <td>This is a container for <code>.table</code> that allows wide tables to overflow and be scrollable.
                         Note that you cannot use <code>.is-fullwidth</code> when using this class.</td>
                 </tr>
 
                 <tr>
                     <td><code>.table-boxed</code></td>
-                    <td>This a container for <code>.table</code> that wraps a shadow box around the table.
+                    <td>This is a container for <code>.table</code> that wraps a shadow box around the table.
                         An optional <code>header</code> element provides a title for the box.</td>
                 </tr>
 
@@ -73,6 +73,11 @@ nav: Table
                 <tr>
                     <td><code>.has-hover</code></td>
                     <td>Sets background and text color for hover on a row</td>
+                </tr>
+
+                <tr>
+                    <td><code>.has-text-small</code></td>
+                    <td>Reduces body text by one size</td>
                 </tr>
 
                 <tr>
@@ -111,7 +116,8 @@ nav: Table
 
                 <tr>
                     <td>Variables:</td>
-                    <td>--border-main-darker, --grey-lighter, -mar-horz, -mar-vert, --pad-horz, --pad-vert, --size-5, --text-elem, --weight-semibold</td>
+                    <td> --bg-container,  --border-main-darker, --grey-lighter, --mar-horz, --mar-vert, --padding, --pad-horz, --pad-vert,
+                        --radius-comp, --shadow-container, --size-5, --text-elem, --weight-semibold</td>
                 </tr>
 
                 <tr>
@@ -205,10 +211,10 @@ nav: Table
 
     <div class="space-items-medium "></div>
 
-    <h3>Table Full Width and Striped</h3>
+    <h3>Table Full Width, Striped & Small Text</h3>
     <div class="row">
         <div class="column">
-            <table class="table is-fullwidth is-striped centered-col-1 numbers-col-3">
+            <table class="table is-fullwidth is-striped has-text-small centered-col-1 numbers-col-3">
                 <caption>Caption: Has column with text right</caption>
 
                 <thead>
@@ -230,7 +236,7 @@ nav: Table
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;table class="table is-fullwidth is-striped centered-col-1 numbers-col-3"&gt;
+                &lt;table class="table is-fullwidth is-striped has-text-small centered-col-1 numbers-col-3"&gt;
                     &lt;caption&gt;Caption: Has column with text right&lt;/caption&gt;
 
                     &lt;thead&gt;
@@ -258,7 +264,7 @@ nav: Table
     <div class="row">
         <div class="column">
             <div class="table-scroll">
-                <table class="table  centered-col-1 numbers-col-3 scrollbreak-col-4">
+                <table class="table centered-col-1 numbers-col-3 scrollbreak-col-4 has-hover">
                     <caption>Caption: Table is scrollable and has a column with text right</caption>
 
                     <thead>
@@ -390,7 +396,7 @@ nav: Table
     <div class="row">
         <div class="column">
             <div class="table-boxed">
-                <header class="is-secondary">Optional Table Header & .is-secondary</header>
+                <header class="is-secondar-darky">Optional Table Header & .is-secondary</header>
 
                 <table class="table is-fullwidth centered-col-1 numbers-col-3">
                     <thead>
@@ -414,7 +420,7 @@ nav: Table
         <div class="column">
             <pre><code class="language-html">
                 &lt;div class="table-boxed"&gt;
-                    &lt;header class="is-secondary"&gt;Optional Table Header & .is-secondary&lt;/header&gt;
+                    &lt;header class="is-secondary-dark"&gt;Optional Table Header & .is-secondary&lt;/header&gt;
 
                     &lt;table class="table is-fullwidth centered-col-1 numbers-col-3"&gt;
                         &lt;thead&gt;

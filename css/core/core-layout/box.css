@@ -8,12 +8,11 @@
         padding: var(--padding-normal);
         height: auto;
         width: calc(100% - 2 * var(--padding-normal));
+        border: none;
     }
-
 
     .box-shadow {
         border-radius: var(--radius);
         box-shadow: var(--shadow-container);
     }
-
 }

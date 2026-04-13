@@ -50,6 +50,11 @@
         width: 100%;
     }
 
+    .table.has-text-small tbody {
+        font-size: var(--size-7);
+        padding: var(--pad-vert-small) var(--pad-horz-small);
+    }
+
     .table.is-striped tbody tr:nth-of-type(odd) {
         background-color: var(--bg-container);
         color: var(--text);
@@ -102,7 +107,7 @@
         padding: var(--pad-horz);
         margin: calc(-1 * var(--padding)) calc(-1 * var(--padding)) var(--padding) calc(-1 * var(--padding));
         font-size: var(--size-5);
-        font-weight: var(--weight-medium);
+        font-weight: var(--weight-semibold);
         border-top-left-radius: inherit;
         border-top-right-radius: inherit;
     }
