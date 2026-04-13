@@ -65,14 +65,8 @@
         color: var(--text-elem);
     }
 
-    .table.is-bordered td,
-    .table.is-bordered th {
-        border-width: 1px;
-    }
-
-    .table.is-bordered tr:last-child td,
-    .table.is-bordered tr:last-child th {
-        border-bottom-width: 1px;
+    .table.has-border {
+        border: 1px solid var(--border-main);
     }
 
     /* allow for table scrolling of wide tables */

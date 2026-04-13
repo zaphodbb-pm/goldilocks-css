@@ -71,6 +71,11 @@ nav: Table
                 </tr>
 
                 <tr>
+                    <td><code>.has-border</code></td>
+                    <td>Adds border around the full table</td>
+                </tr>
+
+                <tr>
                     <td><code>.has-hover</code></td>
                     <td>Sets background and text color for hover on a row</td>
                 </tr>
@@ -260,11 +265,11 @@ nav: Table
 
     <div class="space-items-medium "></div>
 
-    <h3>Table scroll and hover</h3>
+    <h3>Table scroll border & hover</h3>
     <div class="row">
         <div class="column">
             <div class="table-scroll">
-                <table class="table centered-col-1 numbers-col-3 scrollbreak-col-4 has-hover">
+                <table class="table has-hover has-border centered-col-1 numbers-col-3 scrollbreak-col-4">
                     <caption>Caption: Table is scrollable and has a column with text right</caption>
 
                     <thead>
@@ -327,7 +332,7 @@ nav: Table
         <div class="column">
             <pre><code class="language-html">
                 &lt;div class="table-scroll"&gt;
-                    &lt;table class="table  centered-col-1 numbers-col-3 scrollbreak-col-4"&gt;
+                    &lt;table class="table has-hover has-border centered-col-1 numbers-col-3 scrollbreak-col-4"&gt;
                         &lt;caption&gt;Caption: Table is scrollable and has a column with text right&lt;/caption&gt;
 
                         &lt;thead&gt;
@@ -396,7 +401,7 @@ nav: Table
     <div class="row">
         <div class="column">
             <div class="table-boxed">
-                <header class="is-secondar-darky">Optional Table Header & .is-secondary</header>
+                <header class="is-secondary-dark">Optional Table Header & .is-secondary</header>
 
                 <table class="table is-fullwidth centered-col-1 numbers-col-3">
                     <thead>
