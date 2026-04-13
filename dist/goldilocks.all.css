@@ -3745,11 +3745,16 @@ pre
         width: 100%;
     }
 
-    .table.has-text-small tbody
+    .table.has-text-small
     {
-        font-size: var(--size-7);
+        font-size: var(--size-6);
 
         padding: var(--pad-vert-small) var(--pad-horz-small);
+    }
+
+    .table.has-text-small > caption
+    {
+        font-size: var(--size-6);
     }
 
     .table.is-striped tbody tr:nth-of-type(odd)
