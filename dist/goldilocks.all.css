@@ -2528,7 +2528,7 @@ pre
     {
         opacity: 1;
         color: var(--primary-text-invert);
-        border: 1px solid var(--primary-dark);
+        border: none;
         background-color: var(--primary);
     }
 
@@ -2536,7 +2536,7 @@ pre
     {
         opacity: 1;
         color: var(--primary-text);
-        border: 1px solid var(--primary);
+        border: none;
         background-color: var(--primary-light);
     }
 
@@ -2544,7 +2544,7 @@ pre
     {
         opacity: 1;
         color: var(--primary-text-invert-dark);
-        border: 1px solid var(--primary-dark);
+        border: none;
         background-color: var(--primary-dark);
     }
 
@@ -2559,7 +2559,7 @@ pre
     {
         opacity: 1;
         color: var(--secondary-text-invert);
-        border: 1px solid var(--secondary-dark);
+        border: none;
         background-color: var(--secondary);
     }
 
@@ -2567,7 +2567,7 @@ pre
     {
         opacity: 1;
         color: var(--secondary-text);
-        border: 1px solid var(--secondary);
+        border: none;
         background-color: var(--secondary-light);
     }
 
@@ -2575,7 +2575,7 @@ pre
     {
         opacity: 1;
         color: var(--secondary-text-invert-dark);
-        border: 1px solid var(--secondary-dark);
+        border: none;
         background-color: var(--secondary-dark);
     }
 
@@ -2591,7 +2591,7 @@ pre
     {
         opacity: 1;
         color: var(--complement-text-invert);
-        border: 1px solid var(--complement-dark);
+        border: none;
         background-color: var(--complement);
     }
 
@@ -2599,7 +2599,7 @@ pre
     {
         opacity: 1;
         color: var(--complement-text);
-        border: 1px solid var(--complement);
+        border: none;
         background-color: var(--complement-light);
     }
 
@@ -2607,7 +2607,7 @@ pre
     {
         opacity: 1;
         color: var(--complement-text-invert-dark);
-        border: 1px solid var(--complement-dark);
+        border: none;
         background-color: var(--complement-dark);
     }
 
@@ -2623,7 +2623,7 @@ pre
     {
         opacity: 1;
         color: var(--link-text-invert);
-        border: 1px solid var(--link-dark);
+        border: none;
         background-color: var(--link);
     }
 
@@ -2631,7 +2631,7 @@ pre
     {
         opacity: 1;
         color: var(--link-text);
-        border: 1px solid var(--link);
+        border: none;
         background-color: var(--link-light);
     }
 
@@ -2639,7 +2639,7 @@ pre
     {
         opacity: 1;
         color: var(--link-text-invert-dark);
-        border: 1px solid var(--link-dark);
+        border: none;
         background-color: var(--link-dark);
     }
 
@@ -2648,7 +2648,7 @@ pre
     {
         opacity: 1;
         color: var(--success-text);
-        border: 1px solid var(--success-dark);
+        border: none;
         background-color: var(--success);
     }
 
@@ -2656,7 +2656,7 @@ pre
     {
         opacity: 1;
         color: var(--success-text);
-        border: 1px solid var(--success);
+        border: none;
         background-color: var(--success-light);
     }
 
@@ -2664,7 +2664,7 @@ pre
     {
         opacity: 1;
         color: var(--success-text-invert-dark);
-        border: 0 solid var(--success-dark);
+        border: none;
         background-color: var(--success-dark);
     }
 
@@ -2680,7 +2680,7 @@ pre
     {
         opacity: 1;
         color: var(--warning-text);
-        border: 1px solid var(--warning-dark);
+        border: none;
         background-color: var(--warning);
     }
 
@@ -2688,7 +2688,7 @@ pre
     {
         opacity: 1;
         color: var(--warning-text);
-        border: 1px solid var(--warning);
+        border: none;
         background-color: var(--warning-light);
     }
 
@@ -2696,12 +2696,13 @@ pre
     {
         opacity: 1;
         color: var(--warning-text-invert-dark);
-        border: 0 solid var(--warning-dark);
+        border: none;
         background-color: var(--warning-dark);
     }
 
     .is-warning-outlined
     {
+        opacity: 1;
         color: var(--warning-dark);
         border: 1px solid var(--warning-dark);
         background-color: var(--bg-main);
@@ -2712,7 +2713,7 @@ pre
     {
         opacity: 1;
         color: var(--danger-text-invert);
-        border: 1px solid var(--danger-dark);
+        border: none;
         background-color: var(--danger);
     }
 
@@ -2720,7 +2721,7 @@ pre
     {
         opacity: 1;
         color: var(--danger-text);
-        border: 1px solid var(--danger);
+        border: none;
         background-color: var(--danger-light);
     }
 
@@ -2728,7 +2729,7 @@ pre
     {
         opacity: 1;
         color: var(--danger-text-invert-dark);
-        border: 0 solid var(--danger-dark);
+        border: none;
         background-color: var(--danger-dark);
     }
 
