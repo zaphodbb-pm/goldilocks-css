@@ -83,12 +83,14 @@ nav: Level
 
                     <tr>
                         <td><code>.is-mobile</code></td>
-                        <td>Reverts to vertical block layout if viewport width is less then (nominally) 576px.</td>
+                        <td>Normally items will be a vertical block layout if viewport width is less then (nominally) 576px.
+                            This modifier maintains the horizontal orientation of the child items.</td>
                     </tr>
 
                     <tr>
                         <td><code>.icon-nav</code></td>
-                        <td>Controls a child if it is used as a navigation link.</td>
+                        <td>Positions icons for navigation links.  For mobile screens with <code>.is-mobile</code>,
+                            the icon will not display, only item text will show.</td>
                     </tr>
                     </tbody>
                 </table>
@@ -125,19 +127,19 @@ nav: Level
     <div class="row has-6x-minwidth">
         <div class="column">
             <div class="level is-grey">
-                <div class="is-secondary">
+                <div class="is-secondary-dark">
                     <div>Lorem Ipsum 1</div>
                     <div>item one</div>
                 </div>
-                <div class="is-secondary">
+                <div class="is-primary">
                     <div>Lorem Ipsum 2</div>
                     <div>item two</div>
                 </div>
-                <div class="is-secondary">
+                <div class="is-primary-light">
                     <div>Lorem Ipsum 3</div>
                     <div>item three</div>
                 </div>
-                <div class="is-secondary">
+                <div class="is-complement-dark">
                     <div>Lorem Ipsum 4</div>
                     <div>item four</div>
                 </div>
