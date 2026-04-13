@@ -211,9 +211,9 @@
     /** Common shadow treatment for containers, components and elements **/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
     --shadow-raw: var(--secondary-raw);
-    --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
-    --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
-    --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
+    --shadow-container: inset 0 0 1px var(--bg-component), 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
+    --shadow-component: inset 0 0 1px var(--bg-element), 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
+    --shadow-element: inset 0 0 1px var(--grey-lighter), 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
 }
 /* initial-theme-dark.css */
 
@@ -278,9 +278,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --bg-main: var(--black);
     --bg-main-invert: var(--white-10);
     --bg-grid: var(--grey-darker);
-    --bg-container: var(--grey-darker);
-    --bg-component: var(--black-800);
-    --bg-element: var(--black-700);
+    --bg-container: var(--black-800);
+    --bg-component: var(--black-700);
+    --bg-element: var(--grey-darker);
     --bg-highlight: var(--warning-text);
     --bg-hover: var(--grey-dark);
     /** invert or adjust colours for text **/
@@ -295,9 +295,9 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     /** Common shadow treatment for containers, components and elements **/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
     --shadow-raw: var(--secondary-raw);
-    --shadow-container: 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
-    --shadow-component: 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
-    --shadow-element: 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
+    --shadow-container: inset 0 0 1px var(--bg-container), 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
+    --shadow-component: inset 0 0 1px var(--bg-component), 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
+    --shadow-element: inset 0 0 1px var(--bg-element), 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
 }
 /* Pure css HTML base elements and reset */
 /** note that some HTML tags are set in other element files **/
@@ -591,9 +591,9 @@ pre
         padding: var(--padding-normal);
 
         color: var(--text);
+        border: none;
         background-color: var(--bg-container);
     }
-
 
     .box-shadow
     {
@@ -601,7 +601,6 @@ pre
         box-shadow: var(--shadow-container);
     }
 }
-
 @layer layout
 {
     /* Sadly, grid needs some help for columns at mobile widths  */
@@ -3746,6 +3745,13 @@ pre
         width: 100%;
     }
 
+    .table.has-text-small tbody
+    {
+        font-size: var(--size-7);
+
+        padding: var(--pad-vert-small) var(--pad-horz-small);
+    }
+
     .table.is-striped tbody tr:nth-of-type(odd)
     {
         color: var(--text);
@@ -3806,7 +3812,7 @@ pre
     .table-boxed > header
     {
         font-size: var(--size-5);
-        font-weight: var(--weight-medium);
+        font-weight: var(--weight-semibold);
 
         display: flex;
 
