@@ -51,7 +51,7 @@
     }
 
     .table.has-text-small {
-        font-size: var(--size-6);
+        font-size: var(--size-7);
         padding: var(--pad-vert-small) var(--pad-horz-small);
     }
 
