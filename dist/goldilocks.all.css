@@ -2365,13 +2365,9 @@ pre
 
     /*** floating action buttons ***/
     button.fab,
-    .button.fab,
     button.fab-primary,
-    .button.fab-primary,
     button.fab-secondary,
-    .button.fab-secondary,
-    button.fab-complement,
-    .button.fab-complement
+    button.fab-complement
     {
         font-size: 2rem;
 
@@ -2395,57 +2391,83 @@ pre
     }
 
     button.fab:active,
-    .button.fab:active,
     button.fab-primary:active,
-    .button.fab-primary:active,
     button.fab-secondary:active,
-    .button.fab-secondary:active,
-    button.fab-complement:active,
-    .button.fab-complement:active
+    button.fab-complement:active
     {
         box-shadow: 0 7px 8px -4px hsl(var(--shadow-raw) / .3),
         0 12px 17px 2px hsl(var(--shadow-raw) / .2),
         0 5px 22px 4px hsl(var(--shadow-raw) / .15); /* 12dp elevation on press */
     }
 
-    button.fab:hover,
-    .button.fab:hover,
-    button.fab-primary:hover,
-    .button.fab-primary:hover,
-    button.fab-secondary:hover,
-    .button.fab-secondary:hover,
-    button.fab-complement:hover,
-    .button.fab-complement:hover
-    {
-        opacity: .75;
-    }
-
-    button.fab,
-    .button.fab
+    button.fab
     {
         color: var(--bg-main);
         background-color: var(--grey-dark);
     }
 
-    button.fab-primary,
-    .button.fab-primary
+    button.fab:hover
+    {
+        background-color: color-mix( var(--grey-dark), white 30%);
+    }
+
+    button.fab:active
+    {
+        background-color: color-mix( var(--grey-dark), dark 20%);
+    }
+
+    button.fab-primary
     {
         color: var(--primary-text-invert);
         background-color: var(--primary);
     }
 
-    button.fab-secondary,
-    .button.fab-secondary
+    button.fab-primary:hover
+    {
+        color: var(--primary-text-invert);
+        background-color: color-mix( var(--primary), white 30%);
+    }
+
+    button.fab-primary:active
+    {
+        color: var(--primary-text-invert);
+        background-color: color-mix( var(--primary), dark 20%);
+    }
+
+    button.fab-secondary
     {
         color: var(--secondary-text-invert);
         background-color: var(--secondary);
     }
 
-    button.fab-complement,
-    .button.fab-complement
+    button.fab-secondary:hover
+    {
+        color: var(--secondary-text-invert);
+        background-color: color-mix( var(--secondary), white 30%);
+    }
+
+    button.fab-secondary:active
+    {
+        color: var(--secondary-text-invert);
+        background-color: color-mix( var(--secondary), dark 20%);
+    }
+
+    button.fab-complement
     {
         color: var(--complement-text-invert-dark);
         background-color: var(--complement);
+    }
+
+    button.fab-complement:hover
+    {
+        color: var(--complement-text-invert-dark);
+        background-color: color-mix( var(--complement), white 30%);
+    }
+
+    button.fab-complement:active
+    {
+        color: var(--complement-text-invert-dark);
+        background-color: color-mix( var(--complement), dark 20%);
     }
 
     /*** icon controls ***/
@@ -2453,6 +2475,8 @@ pre
     {
         width: 67%;
         height: 67%;
+        margin: 0;
+        padding: 0;
     }
 
     /*** position controls ***/

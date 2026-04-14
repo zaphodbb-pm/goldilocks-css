@@ -446,10 +446,10 @@
     }
 
     /*** floating action buttons ***/
-    button.fab, .button.fab,
-    button.fab-primary, .button.fab-primary,
-    button.fab-secondary, .button.fab-secondary,
-    button.fab-complement, .button.fab-complement {
+    button.fab,
+    button.fab-primary,
+    button.fab-secondary,
+    button.fab-complement {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -469,39 +469,70 @@
         0 1px 18px 0 hsl(var(--shadow-raw) / .15); /* 6dp elevation */
     }
 
-    button.fab:active, .button.fab:active,
-    button.fab-primary:active, .button.fab-primary:active,
-    button.fab-secondary:active, .button.fab-secondary:active,
-    button.fab-complement:active, .button.fab-complement:active {
+    button.fab:active,
+    button.fab-primary:active,
+    button.fab-secondary:active,
+    button.fab-complement:active {
         box-shadow: 0 7px 8px -4px hsl(var(--shadow-raw) / .3),
         0 12px 17px 2px hsl(var(--shadow-raw) / .2),
         0 5px 22px 4px hsl(var(--shadow-raw) / .15); /* 12dp elevation on press */
     }
 
-    button.fab:hover, .button.fab:hover,
-    button.fab-primary:hover, .button.fab-primary:hover,
-    button.fab-secondary:hover, .button.fab-secondary:hover,
-    button.fab-complement:hover, .button.fab-complement:hover {
-        opacity: 0.75;
-    }
-
-    button.fab, .button.fab {
+    button.fab {
         background-color: var(--grey-dark);
         color: var(--bg-main);
     }
 
-    button.fab-primary, .button.fab-primary {
+    button.fab:hover {
+        background-color: color-mix( var(--grey-dark), white 30%);
+    }
+
+    button.fab:active {
+        background-color: color-mix( var(--grey-dark), dark 20%);
+    }
+
+    button.fab-primary {
         background-color: var(--primary);
         color: var(--primary-text-invert);
     }
 
-    button.fab-secondary, .button.fab-secondary {
+    button.fab-primary:hover {
+        background-color: color-mix( var(--primary), white 30%);
+        color: var(--primary-text-invert);
+    }
+
+    button.fab-primary:active {
+        background-color: color-mix( var(--primary), dark 20%);
+        color: var(--primary-text-invert);
+    }
+
+    button.fab-secondary {
         background-color: var(--secondary);
         color: var(--secondary-text-invert);
     }
 
-    button.fab-complement, .button.fab-complement {
+    button.fab-secondary:hover {
+        background-color: color-mix( var(--secondary), white 30%);
+        color: var(--secondary-text-invert);
+    }
+
+    button.fab-secondary:active {
+        background-color: color-mix( var(--secondary), dark 20%);
+        color: var(--secondary-text-invert);
+    }
+
+    button.fab-complement {
         background-color: var(--complement);
+        color: var(--complement-text-invert-dark);
+    }
+
+   button.fab-complement:hover {
+       background-color: color-mix( var(--complement), white 30%);
+       color: var(--complement-text-invert-dark);
+   }
+
+    button.fab-complement:active {
+        background-color: color-mix( var(--complement), dark 20%);
         color: var(--complement-text-invert-dark);
     }
 
@@ -509,6 +540,8 @@
     button[class*="fab"] > [class*="icon-bg-"] {
         width: 67%;
         height: 67%;
+        margin:0;
+        padding:0;
     }
 
     /*** position controls ***/
