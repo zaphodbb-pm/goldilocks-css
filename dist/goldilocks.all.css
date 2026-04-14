@@ -186,9 +186,9 @@
     --grey: color-mix(in hsl, hsl(0, 0%, 60%), var(--secondary) 10% );
     --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 10% );
     --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 10% );
-    --white-100: color-mix(in hsl, white, var(--secondary) 16% );
-    --white-50: color-mix(in hsl, white, var(--secondary) 12% );
-    --white-25: color-mix(in hsl, white, var(--secondary) 8% );
+    --white-100: color-mix(in hsl, white, var(--secondary) 15% );
+    --white-50: color-mix(in hsl, white, var(--secondary) 10% );
+    --white-25: color-mix(in hsl, white, var(--secondary) 5% );
     --white-10: color-mix(in hsl, white, var(--secondary) 2% );
     /* set the body level colours for light mode*/
     --bg-main: var(--white-10);
@@ -516,7 +516,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
 
         color: var(--text-code);
         border-radius: var(--radius);
-        background-color: var(--bg-container);
+        background-color: var(--white-50);
     }
 
     pre > code
