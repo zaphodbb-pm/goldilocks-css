@@ -2,7 +2,7 @@
 /** note that some HTML tags are set in other element files **/
 
 /* Define layers organization for all subsequent files */
-@layer base, extras, extended, elements, layout, custom;
+@layer base, elements, extended, extras, layout, custom;
 
 
 @layer base {
