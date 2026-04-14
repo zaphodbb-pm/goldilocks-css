@@ -2008,6 +2008,7 @@ pre
     button.button-primary-inverted:not(.has-no-hover):hover,
     .button.button-primary-inverted:not(.has-no-hover):hover
     {
+        border: none;
         background-color: var(--bg-element);
     }
 
@@ -2017,7 +2018,8 @@ pre
         text-decoration: underline color-mix(in hsl, var(--primary), black 20%);
 
         color: color-mix(in hsl, var(--primary), black 20%);
-        background-color: color-mix(in hsl, var(--primary), white 70%);
+        border: none;
+        background-color: color-mix(in hsl, var(--primary), white 75%);
     }
 
     /*** secondary button ***/
@@ -2033,25 +2035,18 @@ pre
     button.button-secondary:not(.has-no-hover):hover,
     .button.button-secondary:not(.has-no-hover):hover
     {
-        opacity: .75;
-        color: var(--secondary-text-invert);
-        border: 1px solid var(--secondary-dark);
-        background-color: var(--secondary-dark);
+        background-color: color-mix(var(--secondary), white 20%);
     }
 
     button.button-secondary:not(.has-no-hover):active,
     button.button-secondary:not(.has-no-hover):active
     {
-        opacity: 1;
-        color: color-mix(in hsl, var(--secondary-text-invert), black 10%);
-        border: 1px solid color-mix(in hsl, var(--secondary-dark), black 20%);
-        background-color: color-mix(in hsl, var(--secondary-dark), black 20%);
+        background-color: color-mix(var(--secondary), black 20%);
     }
 
     button.button-secondary-outlined,
     .button.button-secondary-outlined
     {
-        opacity: 1;
         color: var(--secondary-dark);
         border: 1px solid var(--secondary-dark);
         background-color: var(--bg-main);
@@ -2060,18 +2055,12 @@ pre
     button.button-secondary-outlined:not(.has-no-hover):hover,
     .button.button-secondary-outlined:not(.has-no-hover):hover
     {
-        opacity: .75;
-        color: var(--secondary-dark);
-        border: 1px solid var(--secondary-dark);
-        background-color: color-mix(in hsl, white, var(--secondary) 30%);
+        background-color: color-mix(in hsl, white, var(--secondary-dark) 30%);
     }
 
     button.button-secondary-outlined:not(.has-no-hover):active,
     .button-secondary-outlined:not(.has-no-hover):active
     {
-        opacity: 1;
-        color: color-mix(in hsl, var(--secondary-text-invert), black 20%);
-        border: 1px solid color-mix(in hsl, var(--secondary-dark), black 20%);
         background-color: color-mix(in hsl, var(--secondary-dark), black 20%);
     }
 
@@ -2080,7 +2069,6 @@ pre
     {
         text-decoration: underline var(--secondary-dark);
 
-        opacity: 1;
         color: var(--secondary-dark);
         border: none;
         background-color: var(--bg-main);
@@ -2091,10 +2079,6 @@ pre
     button.button-secondary-inverted:not(.has-no-hover):hover,
     .button.button-secondary-inverted:not(.has-no-hover):hover
     {
-        text-decoration: underline var(--secondary-dark);
-
-        opacity: .75;
-        color: var(--secondary-dark);
         border: none;
         background-color: var(--bg-element);
     }
@@ -2104,10 +2088,9 @@ pre
     {
         text-decoration: underline color-mix(in hsl, var(--secondary-dark), black 20%);
 
-        opacity: 1;
         color: color-mix(in hsl, var(--secondary-dark), black 20%);
         border: none;
-        background-color: var(--bg-component);
+        background-color: color-mix(in hsl, var(--secondary-dark), white 75%);
     }
 
 
@@ -2115,7 +2098,6 @@ pre
     button.button-complement,
     .button.button-complement
     {
-        opacity: 1;
         color: var(--complement-text-invert);
         border: 1px solid var(--complement);
         background-color: var(--complement);
@@ -2124,19 +2106,13 @@ pre
     button.button-complement:not(.has-no-hover):hover,
     .button.button-complement:not(.has-no-hover):hover
     {
-        opacity: .75;
-        color: var(--complement-text-invert);
-        border: 1px solid var(--complement);
-        background-color: var(--complement);
+        background-color: color-mix(in hsl, white, var(--complement) 30%);
     }
 
     button.button-complement:not(.has-no-hover):active,
     .button.button-complement:not(.has-no-hover):active
     {
-        opacity: 1;
-        color: color-mix(in hsl, var(--complement-text-invert), black 20%);
-        border: 1px solid color-mix(in hsl, var(--complement), black 20%);
-        background-color: color-mix(in hsl, var(--complement), black 20%);
+        background-color: color-mix(var(--complement), black 20%);
     }
 
     button.button-complement-outlined,
@@ -2150,18 +2126,12 @@ pre
     button.button-complement-outlined:not(.has-no-hover):hover,
     .button.button-complement-outlined:not(.has-no-hover):hover
     {
-        opacity: .75;
-        color: var(--complement-dark);
-        border: 1px solid var(--complement-dark);
-        background-color: color-mix(in hsl, white, var(--complement) 30%);
+        background-color: color-mix(in hsl, white, var(--complement-dark) 30%);
     }
 
     button.button-complement-outlined:not(.has-no-hover):active,
     .button.button-complement-outlined:not(.has-no-hover):active
     {
-        opacity: 1;
-        color: color-mix(in hsl, var(--complement-text-invert), black 20%);
-        border: 1px solid color-mix(in hsl, var(--complement-dark), black 20%);
         background-color: color-mix(in hsl, var(--complement-dark), black 20%);
     }
 
@@ -2180,10 +2150,6 @@ pre
     button.button-complement-inverted:not(.has-no-hover):hover,
     .button.button-complement-inverted:not(.has-no-hover):hover
     {
-        text-decoration: underline var(--complement-dark);
-
-        opacity: .75;
-        color: var(--complement-dark);
         border: none;
         background-color: var(--bg-element);
     }
@@ -2193,10 +2159,9 @@ pre
     {
         text-decoration: underline color-mix(in hsl, var(--complement-dark), black 20%);
 
-        opacity: 1;
         color: color-mix(in hsl, var(--complement-dark), black 20%);
         border: none;
-        background-color: var(--bg-component);
+        background-color: color-mix(in hsl, var(--complement-dark), white 75%);
     }
 
 
