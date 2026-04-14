@@ -1956,7 +1956,6 @@ pre
     button.button-primary,
     .button.button-primary
     {
-        opacity: 1;
         color: var(--primary-text-invert);
         border: 1px solid var(--primary);
         background-color: var(--primary);
@@ -1965,25 +1964,18 @@ pre
     button.button-primary:not(.has-no-hover):hover,
     .button.button-primary:not(.has-no-hover):hover
     {
-        opacity: .75;
-        color: var(--primary-text-invert);
-        border: 1px solid var(--primary);
-        background-color: var(--primary);
+        background-color: color-mix(var(--primary), white 20%);
     }
 
     button.button-primary:not(.has-no-hover):active,
     .button.button-primary:not(.has-no-hover):active
     {
-        opacity: 1;
-        color: color-mix(in hsl, var(--primary-text-invert), black 20%);
-        border: 1px solid color-mix(in hsl, var(--primary), black 20%);
         background-color: color-mix(in hsl, var(--primary), black 20%);
     }
 
     button.button-primary-outlined,
     .button.button-primary-outlined
     {
-        opacity: 1;
         color: var(--primary);
         border: 1px solid var(--primary);
         background-color: var(--bg-main);
@@ -1992,18 +1984,12 @@ pre
     button.button-primary-outlined:not(.has-no-hover):hover,
     .button.button-primary-outlined:not(.has-no-hover):hover
     {
-        opacity: .75;
-        color: var(--primary);
-        border: 1px solid var(--primary);
         background-color: color-mix(in hsl, white, var(--primary) 30%);
     }
 
     button.button-primary-outlined:not(.has-no-hover):active,
     .button.button-primary-outlined:not(.has-no-hover):active
     {
-        opacity: 1;
-        color: color-mix(in hsl, var(--primary-text-invert), black 20%);
-        border: 1px solid color-mix(in hsl, var(--primary), black 20%);
         background-color: color-mix(in hsl, var(--primary), black 20%);
     }
 
@@ -2012,7 +1998,6 @@ pre
     {
         text-decoration: underline var(--primary);
 
-        opacity: 1;
         color: var(--primary);
         border: none;
         background-color: var(--bg-main);
@@ -2023,11 +2008,6 @@ pre
     button.button-primary-inverted:not(.has-no-hover):hover,
     .button.button-primary-inverted:not(.has-no-hover):hover
     {
-        text-decoration: underline var(--primary);
-
-        opacity: .75;
-        color: var(--primary);
-        border: none;
         background-color: var(--bg-element);
     }
 
@@ -2036,10 +2016,8 @@ pre
     {
         text-decoration: underline color-mix(in hsl, var(--primary), black 20%);
 
-        opacity: 1;
         color: color-mix(in hsl, var(--primary), black 20%);
-        border: none;
-        background-color: var(--bg-component);
+        background-color: color-mix(in hsl, var(--primary), white 70%);
     }
 
     /*** secondary button ***/
