@@ -2408,66 +2408,77 @@ pre
 
     button.fab:hover
     {
+        border: none;
         background-color: color-mix( var(--grey-dark), white 30%);
     }
 
     button.fab:active
     {
-        background-color: color-mix( var(--grey-dark), dark 20%);
+        border: none;
+        background-color: color-mix( var(--grey-dark), black 20%);
     }
 
     button.fab-primary
     {
         color: var(--primary-text-invert);
+        border: none;
         background-color: var(--primary);
     }
 
     button.fab-primary:hover
     {
         color: var(--primary-text-invert);
+        border: none;
         background-color: color-mix( var(--primary), white 30%);
     }
 
     button.fab-primary:active
     {
         color: var(--primary-text-invert);
-        background-color: color-mix( var(--primary), dark 20%);
+        border: none;
+        background-color: color-mix( var(--primary), black 20%);
     }
 
     button.fab-secondary
     {
         color: var(--secondary-text-invert);
+        border: none;
         background-color: var(--secondary);
     }
 
     button.fab-secondary:hover
     {
         color: var(--secondary-text-invert);
+        border: none;
         background-color: color-mix( var(--secondary), white 30%);
     }
 
     button.fab-secondary:active
     {
         color: var(--secondary-text-invert);
-        background-color: color-mix( var(--secondary), dark 20%);
+        border: none;
+        background-color: color-mix( var(--secondary), black 20%);
     }
 
     button.fab-complement
     {
         color: var(--complement-text-invert-dark);
+        border: none;
         background-color: var(--complement);
     }
 
     button.fab-complement:hover
     {
         color: var(--complement-text-invert-dark);
+        border: none;
         background-color: color-mix( var(--complement), white 30%);
     }
 
     button.fab-complement:active
     {
         color: var(--complement-text-invert-dark);
-        background-color: color-mix( var(--complement), dark 20%);
+        border: none;
+        background-color: color-mix( var(--complement), black 20%);
     }
 
     /*** icon controls ***/
@@ -2477,6 +2488,8 @@ pre
         height: 67%;
         margin: 0;
         padding: 0;
+
+        background-color: currentColor;
     }
 
     /*** position controls ***/

@@ -481,59 +481,71 @@
     button.fab {
         background-color: var(--grey-dark);
         color: var(--bg-main);
+
     }
 
     button.fab:hover {
         background-color: color-mix( var(--grey-dark), white 30%);
+        border: none;
     }
 
     button.fab:active {
-        background-color: color-mix( var(--grey-dark), dark 20%);
+        background-color: color-mix( var(--grey-dark), black 20%);
+        border: none;
     }
 
     button.fab-primary {
         background-color: var(--primary);
         color: var(--primary-text-invert);
+        border: none;
     }
 
     button.fab-primary:hover {
         background-color: color-mix( var(--primary), white 30%);
         color: var(--primary-text-invert);
+        border: none;
     }
 
     button.fab-primary:active {
-        background-color: color-mix( var(--primary), dark 20%);
+        background-color: color-mix( var(--primary), black 20%);
         color: var(--primary-text-invert);
+        border: none;
     }
 
     button.fab-secondary {
         background-color: var(--secondary);
         color: var(--secondary-text-invert);
+        border: none;
     }
 
     button.fab-secondary:hover {
         background-color: color-mix( var(--secondary), white 30%);
         color: var(--secondary-text-invert);
+        border: none;
     }
 
     button.fab-secondary:active {
-        background-color: color-mix( var(--secondary), dark 20%);
+        background-color: color-mix( var(--secondary), black 20%);
         color: var(--secondary-text-invert);
+        border: none;
     }
 
     button.fab-complement {
         background-color: var(--complement);
         color: var(--complement-text-invert-dark);
+        border: none;
     }
 
    button.fab-complement:hover {
        background-color: color-mix( var(--complement), white 30%);
        color: var(--complement-text-invert-dark);
+       border: none;
    }
 
     button.fab-complement:active {
-        background-color: color-mix( var(--complement), dark 20%);
+        background-color: color-mix( var(--complement), black 20%);
         color: var(--complement-text-invert-dark);
+        border: none;
     }
 
     /*** icon controls ***/
@@ -542,6 +554,7 @@
         height: 67%;
         margin:0;
         padding:0;
+        background-color: currentColor;
     }
 
     /*** position controls ***/
