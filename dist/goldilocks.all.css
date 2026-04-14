@@ -3340,7 +3340,7 @@ pre
         transform: translate(0, 0);
 
         border-radius: var(--radius-elem);
-        background: var(--white-10);
+        background: var(--bg-main);
     }
 
     .form .switch input:checked + span::before
