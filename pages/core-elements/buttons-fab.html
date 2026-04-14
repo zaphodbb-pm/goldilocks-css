@@ -16,7 +16,7 @@ nav: Buttons-FAB
 
             <p> A FAB performs the primary, or most common, action on a screen and helps people take this action. This is also a
                 <code>button</code> element. The button has two sizes that can be changed with a modifier.
-                The FAB can be round or a rounded rectangle.
+                The FAB can be a rounded rectangle (default) or round (with modifier <code>.is-rounded</code>).
                 The content of the FAB is typically a single common icon.</p>
 
             <p>For a more detailed usage commentary,
@@ -40,7 +40,7 @@ nav: Buttons-FAB
                 </tr>
 
                 <tr>
-                    <td>Colour and decoration options:</td>
+                    <td>Colour options:</td>
                     <td><code>.fab</code>, <code>.fab-primary</code>, <code>.fab-secondary</code>, <code>.fab-complement</code>
                     </td>
                 </tr>
@@ -76,12 +76,10 @@ nav: Buttons-FAB
 
                 <tr>
                     <td>Variables:</td>
-                    <td>--bg-main,--bg-element, --border-main-darker, --grey-dark,
-                        --complement, --complement-dark, --complement-text-invert,
-                        --primary, --primary-dark, --primary-text-invert,
-                        --secondary, --secondary-dark, --secondary-text-invert,
-                        --radius-elem, --size-4, --size-5, --size-6, --size-7,
-                         --weight-semibold</td>
+                    <td>--base-rem, --complement-dark, --complement-text-invert-dark, --grey-dark,
+                        --primary-dark, --primary-text-invert, --radius-elem, --secondary, --secondary-text-invert,
+                        --shadow-raw
+                    </td>
                 </tr>
 
                 <tr>
@@ -101,10 +99,16 @@ nav: Buttons-FAB
             <h3>Floating Action Buttons</h3>
 
             <div class="stack">
-                <button type="button" class="fab" aria-label="Default">D</button>
-                <button type="button" class="fab-primary  is-large " aria-label="Primary">P</button>
-                <button type="button" class="fab-secondary is-rounded" aria-label="Secondary">S</button>
-                <button type="button" class="fab-complement is-large is-rounded" aria-label="Complement">C</button>
+                <button type="button" class="fab" aria-label="Default">✓</button>
+                <button type="button" class="fab-primary  is-large " aria-label="Primary">
+                    <span class="icon-bg-plus"></span>
+                </button>
+                <button type="button" class="fab-secondary is-rounded" aria-label="Secondary">
+                    <span class="icon-bg-link"></span>
+                </button>
+                <button type="button" class="fab-complement is-large is-rounded" aria-label="Complement">
+                    <span class="icon-bg-bell"></span>
+                </button>
             </div>
         </section>
 
@@ -112,20 +116,15 @@ nav: Buttons-FAB
         <section class="column is-span-2">
             <h3>Combined HTML Code Example</h3>
             <pre><code class="language-html">
-                &lt;button type="button" class="fab"  aria-label="Floating Action Button"&gt;
-                    Primary
+                &lt;button type="button" class="fab" aria-label="Default"&gt;✓&lt;/button&gt;
+                &lt;button type="button" class="fab-primary  is-large " aria-label="Primary"&gt;
+                    &lt;span class="icon-bg-plus"&gt;&lt;/span&gt;
                 &lt;/button&gt;
-
-                &lt;button type="button" class="fab-primary" aria-label="Primary FAB"&gt;
-                    Primary
+                &lt;button type="button" class="fab-secondary is-rounded" aria-label="Secondary"&gt;
+                    &lt;span class="icon-bg-link"&gt;&lt;/span&gt;
                 &lt;/button&gt;
-
-                &lt;button type="button" class="fab-secondary" aria-label="Secondary FAB"&gt;
-                    Primary
-                &lt;/button&gt;
-
-                 &lt;button type="button" class="fab-complement" aria-label="Complement FAB"&gt;
-                    Primary
+                &lt;button type="button" class="fab-complement is-large is-rounded" aria-label="Complement"&gt;
+                    &lt;span class="icon-bg-bell"&gt;&lt;/span&gt;
                 &lt;/button&gt;
 
             </code></pre>
