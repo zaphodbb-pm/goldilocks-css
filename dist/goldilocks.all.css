@@ -1964,12 +1964,14 @@ pre
     button.button-primary:not(.has-no-hover):hover,
     .button.button-primary:not(.has-no-hover):hover
     {
+        border: 1px solid color-mix(in hsl, var(--primary), white 20%);
         background-color: color-mix(var(--primary), white 20%);
     }
 
     button.button-primary:not(.has-no-hover):active,
     .button.button-primary:not(.has-no-hover):active
     {
+        border: 1px solid color-mix(in hsl, var(--primary), black 20%);
         background-color: color-mix(in hsl, var(--primary), black 20%);
     }
 
@@ -1984,12 +1986,14 @@ pre
     button.button-primary-outlined:not(.has-no-hover):hover,
     .button.button-primary-outlined:not(.has-no-hover):hover
     {
+        border: 1px solid color-mix(in hsl, white, var(--primary) 30%);
         background-color: color-mix(in hsl, white, var(--primary) 30%);
     }
 
     button.button-primary-outlined:not(.has-no-hover):active,
     .button.button-primary-outlined:not(.has-no-hover):active
     {
+        border: 1px solid color-mix(in hsl, var(--primary), black 20%);
         background-color: color-mix(in hsl, var(--primary), black 20%);
     }
 
@@ -2008,8 +2012,13 @@ pre
     button.button-primary-inverted:not(.has-no-hover):hover,
     .button.button-primary-inverted:not(.has-no-hover):hover
     {
+        text-decoration: underline var(--primary);
+
+        color: var(--primary);
         border: none;
         background-color: var(--bg-element);
+
+        text-underline-offset: .25em;
     }
 
     button.button-primary-inverted:not(.has-no-hover):active,
@@ -2026,7 +2035,6 @@ pre
     button.button-secondary,
     .button.button-secondary
     {
-        opacity: 1;
         color: var(--secondary-text-invert);
         border: 1px solid var(--secondary);
         background-color: var(--secondary);
@@ -2035,12 +2043,14 @@ pre
     button.button-secondary:not(.has-no-hover):hover,
     .button.button-secondary:not(.has-no-hover):hover
     {
-        background-color: color-mix(var(--secondary), white 20%);
+        border: 1px solid color-mix(in hsl, var(--secondary), white 30%);
+        background-color: color-mix(var(--secondary), white 30%);
     }
 
     button.button-secondary:not(.has-no-hover):active,
     button.button-secondary:not(.has-no-hover):active
     {
+        border: 1px solid color-mix(in hsl, var(--secondary), black 20%);
         background-color: color-mix(var(--secondary), black 20%);
     }
 
@@ -2055,12 +2065,14 @@ pre
     button.button-secondary-outlined:not(.has-no-hover):hover,
     .button.button-secondary-outlined:not(.has-no-hover):hover
     {
+        border: 1px solid color-mix(in hsl, white, var(--secondary-dark) 30%);
         background-color: color-mix(in hsl, white, var(--secondary-dark) 30%);
     }
 
     button.button-secondary-outlined:not(.has-no-hover):active,
     .button-secondary-outlined:not(.has-no-hover):active
     {
+        border: 1px solid color-mix(in hsl, var(--secondary-dark), black 20%);
         background-color: color-mix(in hsl, var(--secondary-dark), black 20%);
     }
 
@@ -2079,8 +2091,13 @@ pre
     button.button-secondary-inverted:not(.has-no-hover):hover,
     .button.button-secondary-inverted:not(.has-no-hover):hover
     {
+        text-decoration: underline var(--secondary-dark);
+
+        color: var(--secondary-dark);
         border: none;
         background-color: var(--bg-element);
+
+        text-underline-offset: .25em;
     }
 
     button.button-secondary-inverted:not(.has-no-hover):active,
@@ -2091,6 +2108,8 @@ pre
         color: color-mix(in hsl, var(--secondary-dark), black 20%);
         border: none;
         background-color: color-mix(in hsl, var(--secondary-dark), white 75%);
+
+        text-underline-offset: .25em;
     }
 
 
@@ -2106,12 +2125,14 @@ pre
     button.button-complement:not(.has-no-hover):hover,
     .button.button-complement:not(.has-no-hover):hover
     {
-        background-color: color-mix(in hsl, white, var(--complement) 30%);
+        border: 1px solid color-mix(in hsl, var(--complement), white 30%);
+        background-color: color-mix(var(--complement), white 30%);
     }
 
     button.button-complement:not(.has-no-hover):active,
     .button.button-complement:not(.has-no-hover):active
     {
+        border: 1px solid color-mix(var(--complement), black 30%);
         background-color: color-mix(var(--complement), black 20%);
     }
 
@@ -2126,12 +2147,14 @@ pre
     button.button-complement-outlined:not(.has-no-hover):hover,
     .button.button-complement-outlined:not(.has-no-hover):hover
     {
+        border: 1px solid color-mix(in hsl, white, var(--complement-dark) 30%);
         background-color: color-mix(in hsl, white, var(--complement-dark) 30%);
     }
 
     button.button-complement-outlined:not(.has-no-hover):active,
     .button.button-complement-outlined:not(.has-no-hover):active
     {
+        border: 1px solid color-mix(in hsl, var(--complement-dark), black 20%);
         background-color: color-mix(in hsl, var(--complement-dark), black 20%);
     }
 
@@ -2150,8 +2173,13 @@ pre
     button.button-complement-inverted:not(.has-no-hover):hover,
     .button.button-complement-inverted:not(.has-no-hover):hover
     {
+        text-decoration: underline var(--complement-dark);
+
+        color: var(--complement-dark);
         border: none;
         background-color: var(--bg-element);
+
+        text-underline-offset: .25em;
     }
 
     button.button-complement-inverted:not(.has-no-hover):active,
@@ -2162,7 +2190,10 @@ pre
         color: color-mix(in hsl, var(--complement-dark), black 20%);
         border: none;
         background-color: color-mix(in hsl, var(--complement-dark), white 75%);
+
+        text-underline-offset: .25em;
     }
+
 
 
     /** button shape and size **/
