@@ -507,8 +507,8 @@
 
     /*** icon controls ***/
     button[class*="fab"] > [class*="icon-bg-"] {
-        width: 50%;
-        height: 50%;
+        width: 67%;
+        height: 67%;
     }
 
     /*** position controls ***/
@@ -519,6 +519,7 @@
         position: fixed;
         top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
         left: var(--base-rem);
+        z-index: var(--navbar-z);
     }
 
     .fab.is-top-right,
@@ -528,6 +529,7 @@
         position: fixed;
         top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
         right: var(--base-rem);
+        z-index: var(--navbar-z);
     }
 
     .fab.is-bottom-left,
@@ -537,6 +539,7 @@
         position: fixed;
         bottom: var(--base-rem);
         left: var(--base-rem);
+        z-index: var(--navbar-z);
     }
 
     .fab.is-bottom-right,
@@ -546,6 +549,7 @@
         position: fixed;
         bottom: var(--base-rem);
         right: var(--base-rem);
+        z-index: var(--navbar-z);
     }
 
     .fab.is-large,

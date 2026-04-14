@@ -2451,8 +2451,8 @@ pre
     /*** icon controls ***/
     button[class*='fab'] > [class*='icon-bg-']
     {
-        width: 50%;
-        height: 50%;
+        width: 67%;
+        height: 67%;
     }
 
     /*** position controls ***/
@@ -2462,6 +2462,7 @@ pre
     .fab-complement.is-top-left
     {
         position: fixed;
+        z-index: var(--navbar-z);
         top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
         left: var(--base-rem);
     }
@@ -2472,6 +2473,7 @@ pre
     .fab-complement.is-top-right
     {
         position: fixed;
+        z-index: var(--navbar-z);
         top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
         right: var(--base-rem);
     }
@@ -2482,6 +2484,7 @@ pre
     .fab-complement.is-bottom-left
     {
         position: fixed;
+        z-index: var(--navbar-z);
         bottom: var(--base-rem);
         left: var(--base-rem);
     }
@@ -2492,6 +2495,7 @@ pre
     .fab-complement.is-bottom-right
     {
         position: fixed;
+        z-index: var(--navbar-z);
         right: var(--base-rem);
         bottom: var(--base-rem);
     }
