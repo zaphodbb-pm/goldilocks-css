@@ -34,8 +34,8 @@
         padding: 0;
     }
 
-    button:has(span),
-    figure:has(span) {
+    button:has([class*="badge"]),
+    figure:has([class*="badge"]) {
         position: relative;
     }
 

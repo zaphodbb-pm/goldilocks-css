@@ -453,8 +453,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 3rem;
+        height: 3rem;
 
         font-size: 2rem;
         padding: 0;
@@ -464,8 +464,6 @@
         border-radius: var(--radius-elem);
         cursor: pointer;
 
-        background-color: var(--grey-dark);
-        color: var(--bg-main);
         box-shadow: 0 3px 5px -1px hsl(var(--shadow-raw) / .3),
         0 6px 10px 0 hsl(var(--shadow-raw) / .2),
         0 1px 18px 0 hsl(var(--shadow-raw) / .15); /* 6dp elevation */
@@ -478,6 +476,18 @@
         box-shadow: 0 7px 8px -4px hsl(var(--shadow-raw) / .3),
         0 12px 17px 2px hsl(var(--shadow-raw) / .2),
         0 5px 22px 4px hsl(var(--shadow-raw) / .15); /* 12dp elevation on press */
+    }
+
+    button.fab:hover, .button.fab:hover,
+    button.fab-primary:hover, .button.fab-primary:hover,
+    button.fab-secondary:hover, .button.fab-secondary:hover,
+    button.fab-complement:hover, .button.fab-complement:hover {
+        opacity: 0.75;
+    }
+
+    button.fab, .button.fab {
+        background-color: var(--grey-dark);
+        color: var(--bg-main);
     }
 
     button.fab-primary, .button.fab-primary {
@@ -495,12 +505,19 @@
         color: var(--complement-text-invert-dark);
     }
 
+    /*** icon controls ***/
+    button[class*="fab"] > [class*="icon-bg-"] {
+        width: 50%;
+        height: 50%;
+    }
+
+    /*** position controls ***/
     .fab.is-top-left,
     .fab-primary.is-top-left,
     .fab-secondary.is-top-left,
     .fab-complement.is-top-left {
         position: fixed;
-        top: var(--base-rem);
+        top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
         left: var(--base-rem);
     }
 
@@ -509,7 +526,7 @@
     .fab-secondary.is-top-right,
     .fab-complement.is-top-right {
         position: fixed;
-        top: var(--base-rem);
+        top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
         right: var(--base-rem);
     }
 
@@ -529,10 +546,6 @@
         position: fixed;
         bottom: var(--base-rem);
         right: var(--base-rem);
-    }
-
-    .fab-icon {
-        font-size: 1.5rem;
     }
 
     .fab.is-large,
