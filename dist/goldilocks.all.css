@@ -129,7 +129,7 @@
     --main-color: 185; /** primary hue value used by charts **/
     /** build main theme colours **/
     --primary-raw: 185 58% 32%;
-    --secondary-raw: 37 14% 50%;
+    --secondary-raw: 37 20% 50%;
     --complement-raw: 22 94% 56%;
     --primary: hsl(var(--primary-raw) / 100%);
     --secondary: hsl(var(--secondary-raw) / 100%);
@@ -1839,7 +1839,7 @@ pre
 
         display: inline-flex;
 
-        padding: var(--pad-vert) calc(2 * var(--pad-horz));
+        padding: var(--pad-vert) calc(1.5 * var(--pad-horz));
 
         cursor: pointer;
         white-space: nowrap;
@@ -1995,7 +1995,7 @@ pre
         opacity: .75;
         color: var(--primary);
         border: 1px solid var(--primary);
-        background-color: var(--bg-component);
+        background-color: color-mix(in hsl, white, var(--primary) 30%);
     }
 
     button.button-primary-outlined:not(.has-no-hover):active,
@@ -2048,8 +2048,8 @@ pre
     {
         opacity: 1;
         color: var(--secondary-text-invert);
-        border: 1px solid var(--secondary-dark);
-        background-color: var(--secondary-dark);
+        border: 1px solid var(--secondary);
+        background-color: var(--secondary);
     }
 
     button.button-secondary:not(.has-no-hover):hover,
@@ -2085,7 +2085,7 @@ pre
         opacity: .75;
         color: var(--secondary-dark);
         border: 1px solid var(--secondary-dark);
-        background-color: var(--bg-component);
+        background-color: color-mix(in hsl, white, var(--secondary) 30%);
     }
 
     button.button-secondary-outlined:not(.has-no-hover):active,
@@ -2175,7 +2175,7 @@ pre
         opacity: .75;
         color: var(--complement-dark);
         border: 1px solid var(--complement-dark);
-        background-color: var(--bg-component);
+        background-color: color-mix(in hsl, white, var(--complement) 30%);
     }
 
     button.button-complement-outlined:not(.has-no-hover):active,

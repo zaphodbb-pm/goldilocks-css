@@ -8,7 +8,7 @@
         line-height: 1.5;
         color: var(--text-invert);
 
-        padding: var(--pad-vert) calc(2 * var(--pad-horz));
+        padding: var(--pad-vert) calc(1.5 * var(--pad-horz));
         border: 1px solid var(--grey-dark);
         border-radius: 10rem;
         background-color: var(--grey-dark);
@@ -138,7 +138,7 @@
     button.button-primary-outlined:not(.has-no-hover):hover,
     .button.button-primary-outlined:not(.has-no-hover):hover{
         color: var(--primary);
-        background-color: var(--bg-component);
+        background-color: color-mix(in hsl, white, var(--primary) 30%);
         border: 1px solid var(--primary);
         opacity: 0.75;
     }
@@ -183,8 +183,8 @@
     button.button-secondary,
     .button.button-secondary {
         color: var(--secondary-text-invert);
-        background-color: var(--secondary-dark);
-        border: 1px solid var(--secondary-dark);
+        background-color: var(--secondary);
+        border: 1px solid var(--secondary);
         opacity: 1;
     }
 
@@ -215,7 +215,7 @@
     button.button-secondary-outlined:not(.has-no-hover):hover,
     .button.button-secondary-outlined:not(.has-no-hover):hover{
         color: var(--secondary-dark);
-        background-color: var(--bg-component);
+        background-color: color-mix(in hsl, white, var(--secondary) 30%);
         border: 1px solid var(--secondary-dark);
         opacity: 0.75;
     }
@@ -292,7 +292,7 @@
     button.button-complement-outlined:not(.has-no-hover):hover,
     .button.button-complement-outlined:not(.has-no-hover):hover {
         color: var(--complement-dark);
-        background-color: var(--bg-component);
+        background-color: color-mix(in hsl, white, var(--complement) 30%);
         border: 1px solid var(--complement-dark);
         opacity: 0.75;
     }

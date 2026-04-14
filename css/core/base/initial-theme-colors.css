@@ -10,7 +10,7 @@
 
     /** build main theme colours **/
     --primary-raw: 185 58% 32%;
-    --secondary-raw: 37 14% 50%;
+    --secondary-raw: 37 20% 50%;
     --complement-raw: 22 94% 56%;
 
     --primary: hsl(var(--primary-raw) / 100%);
