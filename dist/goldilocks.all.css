@@ -2487,12 +2487,11 @@ pre
     button.fab-secondary > [class*='icon-bg-'],
     button.fab-complement > [class*='icon-bg-']
     {
-        width: 67%;
-        height: 67%;
-        margin: 0;
-        padding: 0;
+        width: 67% !important;
+        height: 67% !important;
+        margin: 0 !important;
 
-        background-color: currentColor;
+        background-color: currentColor !important;
     }
 
     /*** position controls ***/
