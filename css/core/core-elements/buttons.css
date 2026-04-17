@@ -549,7 +549,7 @@
     }
 
     /*** icon controls ***/
-    button[class*="fab"] > [class*="icon-bg-"] {
+    button[class*="fab"] [class*="icon-bg-"] {
         width: 67%;
         height: 67%;
         margin:0;
