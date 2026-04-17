@@ -549,7 +549,10 @@
     }
 
     /*** icon controls ***/
-    button[class*="fab"] [class*="icon-bg-"] {
+    button.fab > [class*="icon-bg-"],
+    button.fab-primary > [class*="icon-bg-"],
+    button.fab-secondary > [class*="icon-bg-"],
+    button.fab-complement > [class*="icon-bg-"] {
         width: 67%;
         height: 67%;
         margin:0;
