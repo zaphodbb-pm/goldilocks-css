@@ -7987,8 +7987,8 @@ pre
 
         position: relative;
 
-        width: 1.4em;
-        height: 1.4em;
+        width: 1.5em;
+        height: 1.5em;
         margin: 0 -.375rem 0 .5rem;
         padding: 0;
 
@@ -7997,7 +7997,7 @@ pre
 
         color: var(--white-50);
         border: none;
-        border-radius: 9999px;
+        border-radius: 999px;
         outline: 0;
         background-color: var(--black-700);
     }
@@ -8054,7 +8054,12 @@ pre
 
     .tag.is-rounded
     {
-        border-radius: 9999px;
+        border-radius: 999px;
+    }
+
+    .tag.is-rounded .delete
+    {
+        margin-right: -.75em;
     }
 
     a.tag:hover
@@ -8063,6 +8068,7 @@ pre
     }
 
 
+    /** tag groups **/
     .tags
     {
         display: flex;
@@ -8080,7 +8086,7 @@ pre
 
     .tags.is-rounded .tag
     {
-        border-radius: 9999px;
+        border-radius: 999px;
     }
 
     .tags.are-medium .tag:not(.is-normal):not(.is-large)

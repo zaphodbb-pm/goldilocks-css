@@ -59,8 +59,8 @@
         padding: 0;
 
         outline: 0;
-        height: 1.4em;
-        width: 1.4em;
+        height: 1.5em;
+        width: 1.5em;
         font-size: inherit;
         pointer-events: auto;
 
@@ -68,7 +68,7 @@
         color: var(--white-50);
 
         border: none;
-        border-radius: 9999px;
+        border-radius: 999px;
         cursor: pointer;
     }
 
@@ -115,7 +115,11 @@
     }
 
     .tag.is-rounded {
-        border-radius: 9999px;
+        border-radius: 999px;
+    }
+
+    .tag.is-rounded .delete{
+        margin-right: -0.75em;
     }
 
     a.tag:hover {
@@ -123,6 +127,7 @@
     }
 
 
+    /** tag groups **/
     .tags {
         align-items: center;
         display: flex;
@@ -136,7 +141,7 @@
     }
 
     .tags.is-rounded .tag {
-        border-radius: 9999px;
+        border-radius: 999px;
     }
 
     .tags.are-medium .tag:not(.is-normal):not(.is-large) {
