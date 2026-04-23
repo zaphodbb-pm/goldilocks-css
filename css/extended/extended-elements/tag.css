@@ -27,14 +27,19 @@
         position: relative;
         margin: 0 -0.375rem 0 0.5rem;
         padding: 0;
-        min-width: unset;
-        min-height: unset;
-        max-width: unset;
-        max-height: unset;
+
+        outline: 0;
         height: 1.4em;
         width: 1.4em;
         font-size: inherit;
         pointer-events: auto;
+
+        background-color: var(--black-700);
+        color: currentColor;
+
+        border: none;
+        border-radius: 9999px;
+        cursor: pointer;
     }
 
     /* text sizes */
