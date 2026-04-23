@@ -2563,8 +2563,6 @@ pre
 {
     font-size: 0;
 
-    position: relative;
-
     display: inline-block;
 
     width: 20px;
@@ -2581,7 +2579,6 @@ pre
         -ms-user-select: none;
             user-select: none;
     vertical-align: top;
-    pointer-events: auto;
 
     border: none;
     border-radius: 9999px;
@@ -8076,6 +8073,8 @@ button.delete.is-small
     {
         font-size: inherit;
 
+        position: relative;
+
         width: 1.4em;
         min-width: unset;
         max-width: unset;
@@ -8084,6 +8083,8 @@ button.delete.is-small
         max-height: unset;
         margin: 0 -.375rem 0 .5rem;
         padding: 0;
+
+        pointer-events: auto;
     }
 
     /* text sizes */

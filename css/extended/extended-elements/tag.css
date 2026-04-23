@@ -24,6 +24,7 @@
     }
 
     .tag .delete {
+        position: relative;
         margin: 0 -0.375rem 0 0.5rem;
         padding: 0;
         min-width: unset;
@@ -33,6 +34,7 @@
         height: 1.4em;
         width: 1.4em;
         font-size: inherit;
+        pointer-events: auto;
     }
 
     /* text sizes */

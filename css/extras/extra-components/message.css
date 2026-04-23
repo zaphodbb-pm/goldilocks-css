@@ -20,8 +20,8 @@
     }
 
     .message > .delete {
-        right: .5rem;
         position: absolute;
+        right: .5rem;
         top: .5rem;
         pointer-events: bounding-box;
     }
