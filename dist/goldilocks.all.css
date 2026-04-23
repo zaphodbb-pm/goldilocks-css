@@ -7944,27 +7944,6 @@ pre
         background-color: var(--bg-component);
     }
 
-    .tag .delete
-    {
-        font-size: inherit;
-
-        position: relative;
-
-        width: 1.4em;
-        height: 1.4em;
-        margin: 0 -.375rem 0 .5rem;
-        padding: 0;
-
-        cursor: pointer;
-        pointer-events: auto;
-
-        color: currentColor;
-        border: none;
-        border-radius: 9999px;
-        outline: 0;
-        background-color: var(--black-700);
-    }
-
     /* text sizes */
     .tag.tag-normal
     {
@@ -7994,14 +7973,33 @@ pre
     }
 
     /* control delete tag layout */
-    .tag.is-delete,
-    .tag .delete
+    .tag.is-delete
     {
         position: relative;
 
         width: 2em;
-        margin-left: 1px;
         padding: 0;
+    }
+
+    .tag .delete
+    {
+        font-size: inherit;
+
+        position: relative;
+
+        width: 1.4em;
+        height: 1.4em;
+        margin: 0 -.375rem 0 .5rem;
+        padding: 0;
+
+        cursor: pointer;
+        pointer-events: auto;
+
+        color: var(--white-50);
+        border: none;
+        border-radius: 9999px;
+        outline: 0;
+        background-color: var(--black-700);
     }
 
     .tag.is-delete::before,
