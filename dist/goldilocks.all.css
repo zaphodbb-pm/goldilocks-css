@@ -2564,26 +2564,23 @@ pre
     /* Element / Block Colours */
     .is-primary
     {
-        opacity: 1;
         color: var(--primary-text-invert);
-        border: none;
+        border: 1px solid var(--primary);
         background-color: var(--primary);
     }
 
     .is-primary-light
     {
-        opacity: 1;
         color: var(--primary-text);
-        border: none;
+        border: 1px solid var(--primary-light);
         background-color: var(--primary-light);
     }
 
     .is-primary-dark
     {
-        opacity: 1;
         color: var(--primary-text-invert-dark);
-        border: none;
-        background-color: var(--primary-dark);
+        border: 1px solid var(--primary-dark);
+        background-color: var(--primary-dark);;
     }
 
     .is-primary-outlined
@@ -2595,25 +2592,22 @@ pre
 
     .is-secondary
     {
-        opacity: 1;
         color: var(--secondary-text-invert);
-        border: none;
+        border: 1px solid var(--secondary);
         background-color: var(--secondary);
     }
 
     .is-secondary-light
     {
-        opacity: 1;
         color: var(--secondary-text);
-        border: none;
+        border: 1px solid var(--secondary-light);
         background-color: var(--secondary-light);
     }
 
     .is-secondary-dark
     {
-        opacity: 1;
         color: var(--secondary-text-invert-dark);
-        border: none;
+        border: 1px solid var(--secondary-dark);
         background-color: var(--secondary-dark);
     }
 
@@ -2627,25 +2621,22 @@ pre
 
     .is-complement
     {
-        opacity: 1;
         color: var(--complement-text-invert);
-        border: none;
+        border: 1px solid var(--complement);
         background-color: var(--complement);
     }
 
     .is-complement-light
     {
-        opacity: 1;
         color: var(--complement-text);
-        border: none;
+        border: 1px solid var(--complement-light);
         background-color: var(--complement-light);
     }
 
     .is-complement-dark
     {
-        opacity: 1;
         color: var(--complement-text-invert-dark);
-        border: none;
+        border: 1px solid var(--complement-dark);
         background-color: var(--complement-dark);
     }
 
@@ -2659,50 +2650,44 @@ pre
 
     .is-link
     {
-        opacity: 1;
         color: var(--link-text-invert);
-        border: none;
+        border: 1px solid var(--link);
         background-color: var(--link);
     }
 
     .is-link-light
     {
-        opacity: 1;
         color: var(--link-text);
-        border: none;
+        border: 1px solid var(--link-light);
         background-color: var(--link-light);
     }
 
     .is-link-dark
     {
-        opacity: 1;
         color: var(--link-text-invert-dark);
-        border: none;
+        border: 1px solid var(--link-dark);
         background-color: var(--link-dark);
     }
 
 
     .is-success
     {
-        opacity: 1;
         color: var(--success-text);
-        border: none;
+        border: 1px solid var(--success);
         background-color: var(--success);
     }
 
     .is-success-light
     {
-        opacity: 1;
         color: var(--success-text);
-        border: none;
+        border: 1px solid var(--success-light);
         background-color: var(--success-light);
     }
 
     .is-success-dark
     {
-        opacity: 1;
         color: var(--success-text-invert-dark);
-        border: none;
+        border: 1px solid var(--success-dark);
         background-color: var(--success-dark);
     }
 
@@ -2716,31 +2701,27 @@ pre
 
     .is-warning
     {
-        opacity: 1;
         color: var(--warning-text);
-        border: none;
+        border: 1px solid var(--warning);
         background-color: var(--warning);
     }
 
     .is-warning-light
     {
-        opacity: 1;
         color: var(--warning-text);
-        border: none;
+        border: 1px solid var(--warning-light);
         background-color: var(--warning-light);
     }
 
     .is-warning-dark
     {
-        opacity: 1;
         color: var(--warning-text-invert-dark);
-        border: none;
+        border: 1px solid var(--warning-dark);
         background-color: var(--warning-dark);
     }
 
     .is-warning-outlined
     {
-        opacity: 1;
         color: var(--warning-dark);
         border: 1px solid var(--warning-dark);
         background-color: var(--bg-main);
@@ -2749,25 +2730,22 @@ pre
 
     .is-danger
     {
-        opacity: 1;
         color: var(--danger-text-invert);
-        border: none;
+        border: 1px solid var(--danger);
         background-color: var(--danger);
     }
 
     .is-danger-light
     {
-        opacity: 1;
         color: var(--danger-text);
-        border: none;
+        border: 1px solid var(--danger-light);
         background-color: var(--danger-light);
     }
 
     .is-danger-dark
     {
-        opacity: 1;
         color: var(--danger-text-invert-dark);
-        border: none;
+        border: 1px solid var(--danger-dark);
         background-color: var(--danger-dark);
     }
 
