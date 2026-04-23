@@ -8024,13 +8024,13 @@ pre
     .tag .delete::before
     {
         width: 50%;
-        height: 1px;
+        height: 1.5px;
     }
 
     .tag.is-delete::after,
     .tag .delete::after
     {
-        width: 1px;
+        width: 1.5px;
         height: 50%;
     }
 

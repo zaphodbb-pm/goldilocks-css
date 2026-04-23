@@ -88,14 +88,14 @@
 
     .tag.is-delete::before,
     .tag .delete::before {
-        height: 1px;
+        height: 1.5px;
         width: 50%;
     }
 
     .tag.is-delete::after,
     .tag .delete::after {
+        width: 1.5px;
         height: 50%;
-        width: 1px;
     }
 
     .tag.is-delete:hover,
