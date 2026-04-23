@@ -107,7 +107,9 @@
     --text-elem: var(--black-800);
     --text-comp: var(--black-800);
     --text-invert-ter: var(--white-50);
+    --text-btn-invert: var(--white-50);
     --text-code: color-mix(in hsl, var(--complement), black 25%);
+
 
     /** Common shadow treatment for containers, components and elements **/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
