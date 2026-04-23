@@ -21,6 +21,7 @@
     .tag.is-delete {
         background-color: var(--bg-component);
         color: var(--text);
+        border: 1px solid var(--bg-component);
     }
 
     .tag .delete {
@@ -95,10 +96,12 @@
 
     .tag.is-delete:hover, .tag.is-delete:focus {
         background-color: var(--grey-light);
+        border: 1px solid var(--grey-light);
     }
 
     .tag.is-delete:active {
         background-color: var(--grey-lighter);
+        border: 1px solid var(--grey-lighter);
     }
 
     .tag.is-rounded {
