@@ -104,12 +104,14 @@
     .tag .delete:focus {
         background-color: var(--grey-light);
         border: 1px solid var(--grey-light);
+        color: var(--black-700);
     }
 
     .tag.is-delete:active,
     .tag .delete:active {
         background-color: var(--grey-lighter);
         border: 1px solid var(--grey-lighter);
+        color: var(--black-700);
     }
 
     .tag.is-rounded {

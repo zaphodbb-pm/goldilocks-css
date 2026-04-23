@@ -8039,6 +8039,7 @@ pre
     .tag .delete:hover,
     .tag .delete:focus
     {
+        color: var(--black-700);
         border: 1px solid var(--grey-light);
         background-color: var(--grey-light);
     }
@@ -8046,6 +8047,7 @@ pre
     .tag.is-delete:active,
     .tag .delete:active
     {
+        color: var(--black-700);
         border: 1px solid var(--grey-lighter);
         background-color: var(--grey-lighter);
     }
