@@ -66,14 +66,17 @@
     }
 
     /* control delete tag layout */
-    .tag.is-delete {
+    .tag.is-delete, .tag .delete {
         margin-left: 1px;
         padding: 0;
         position: relative;
         width: 2em;
     }
 
-    .tag.is-delete::before, .tag.is-delete::after {
+    .tag.is-delete::before,
+    .tag.is-delete::after,
+    .tag .delete::before,
+    .tag .delete::after {
         background-color: currentColor;
         content: "";
         display: block;
@@ -84,22 +87,28 @@
         transform-origin: center center;
     }
 
-    .tag.is-delete::before {
+    .tag.is-delete::before,
+    .tag .delete::before {
         height: 1px;
         width: 50%;
     }
 
-    .tag.is-delete::after {
+    .tag.is-delete::after,
+    .tag .delete::after {
         height: 50%;
         width: 1px;
     }
 
-    .tag.is-delete:hover, .tag.is-delete:focus {
+    .tag.is-delete:hover,
+    .tag.is-delete:focus,
+    .tag .delete:hover,
+    .tag .delete:focus {
         background-color: var(--grey-light);
         border: 1px solid var(--grey-light);
     }
 
-    .tag.is-delete:active {
+    .tag.is-delete:active,
+    .tag .delete:active {
         background-color: var(--grey-lighter);
         border: 1px solid var(--grey-lighter);
     }
