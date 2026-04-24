@@ -9,35 +9,59 @@
         pointer-events: none;
     }
 
-    .notification:not([class*=" is-"]), .notification.is-delete {
+    .notification > p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .notification:not([class*=" is-"]) {
         background-color: var(--bg-element);
         color: var(--text);
     }
 
     .notification > .delete {
         position: absolute;
-        right: .5rem;
-        top: .5rem;
+        right: .5em;
+        top: .5em;
 
-        margin: 0 -0.375rem 0 0.5rem;
+        height: 1.5em;
+        width: 1.5em;
+        margin-left: .5em;
         padding: 0;
-        outline: 0;
 
-        height: 1.4em;
-        width: 1.4em;
-        font-size: inherit;
-
+        color: var(--white-50);
         background-color: var(--black-700);
-        color: currentColor;
 
         border: none;
-        border-radius: 9999px;
-        cursor: pointer;
-        pointer-events: bounding-box;
+        border-radius: 20rem;
+        opacity: 75%;
     }
 
-    .notification > p {
-        padding: 0;
-        margin: 0;
+
+    .notification > .delete::before,
+    .notification > .delete::after {
+        content: "";
+        background-color: currentColor;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1.5px;
+        width: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        transform-origin: center center;
+    }
+
+    .notification > .delete:hover,
+    .notification > .delete:focus {
+        background-color: var(--grey-light);
+        border: 1px solid var(--grey-light);
+        color: var(--black-700);
+    }
+
+    .notification > .delete:active {
+        background-color: var(--grey-lighter);
+        border: 1px solid var(--grey-lighter);
+        color: var(--black-700);
     }
 }
