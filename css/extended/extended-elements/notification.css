@@ -35,6 +35,9 @@
         border: none;
         border-radius: 20rem;
         opacity: 75%;
+
+        pointer-events: auto;
+        cursor: pointer;
     }
 
 

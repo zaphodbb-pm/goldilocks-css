@@ -7897,6 +7897,9 @@ pre
         margin: 0;
         padding: 0;
 
+        cursor: pointer;
+        pointer-events: auto;
+
         opacity: 75%;
         color: var(--white-50);
         border: none;
