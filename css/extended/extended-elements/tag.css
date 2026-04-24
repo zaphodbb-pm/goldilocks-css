@@ -58,30 +58,26 @@
         margin: 0 -0.75em 0 1em;
         padding: 0;
 
-        outline: 0;
         height: 1.5em;
         width: 1.5em;
-        font-size: inherit;
-        pointer-events: auto;
-
-        background-color: var(--black-700);
         color: var(--white-50);
+        background-color: var(--black-700);
 
         border: none;
-        border-radius: 999px;
-        cursor: pointer;
+        border-radius: 20rem;
+        opacity: 75%;
     }
 
     .tag.is-delete::before,
     .tag.is-delete::after,
     .tag .delete::before,
     .tag .delete::after {
-        background-color: currentColor;
         content: "";
-        display: block;
-        left: 50%;
+        background-color: currentColor;
+
         position: absolute;
         top: 50%;
+        left: 50%;
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
         transform-origin: center center;
     }
@@ -115,7 +111,7 @@
     }
 
     .tag.is-rounded {
-        border-radius: 999px;
+        border-radius: 20rem;
     }
 
     .tag.is-rounded .delete{

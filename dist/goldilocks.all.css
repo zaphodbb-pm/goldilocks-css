@@ -7983,8 +7983,6 @@ pre
 
     .tag .delete
     {
-        font-size: inherit;
-
         position: relative;
 
         width: 1.5em;
@@ -7992,13 +7990,10 @@ pre
         margin: 0 -.75em 0 1em;
         padding: 0;
 
-        cursor: pointer;
-        pointer-events: auto;
-
+        opacity: 75%;
         color: var(--white-50);
         border: none;
-        border-radius: 999px;
-        outline: 0;
+        border-radius: 20rem;
         background-color: var(--black-700);
     }
 
@@ -8010,8 +8005,6 @@ pre
         position: absolute;
         top: 50%;
         left: 50%;
-
-        display: block;
 
         content: '';
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
@@ -8054,7 +8047,7 @@ pre
 
     .tag.is-rounded
     {
-        border-radius: 999px;
+        border-radius: 20rem;
     }
 
     .tag.is-rounded .delete
