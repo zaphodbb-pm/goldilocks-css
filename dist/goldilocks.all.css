@@ -7877,17 +7877,12 @@ pre
 
         align-items: center;
         justify-content: space-between;
+        gap: 1em;
     }
 
     .notification > p
     {
         margin: 0;
-        padding: 0;
-    }
-
-    .notification span[class*=icon-bg-]
-    {
-        margin: 0 1em 0 0;
         padding: 0;
     }
 
