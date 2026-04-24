@@ -552,6 +552,7 @@ pre > code .tag
 
     white-space: nowrap;
 
+    border: none;
     border-radius: unset;
     background: transparent !important;
 
@@ -9890,7 +9891,7 @@ pre
     }
 
     /** delete button **/
-    .message > .delete
+    .message button.delete
     {
         position: absolute;
         top: .5em;
@@ -9911,8 +9912,8 @@ pre
         background-color: var(--black-700);
     }
 
-    .message > .delete::before,
-    .message > .delete::after
+    .message  button.delete::before,
+    .message  button.delete::after
     {
         position: absolute;
         top: 50%;
@@ -9926,27 +9927,27 @@ pre
     }
 
 
-    .message > .delete::before
+    .message button.delete::before
     {
         width: 50%;
         height: 1.5px;
     }
 
-    .message > .delete::after
+    .message button.delete::after
     {
         width: 1.5px;
         height: 50%;
     }
 
-    .message > .delete:hover,
-    .message > .delete:focus
+    .message button.delete:hover,
+    .message button.delete:focus
     {
         color: var(--black-700);
         border: 1px solid var(--grey-light);
         background-color: var(--grey-light);
     }
 
-    .message > .delete:active
+    .message button.delete:active
     {
         color: var(--black-700);
         border: 1px solid var(--grey-lighter);

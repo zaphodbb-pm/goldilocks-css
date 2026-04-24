@@ -27,7 +27,7 @@
     }
 
     /** delete button **/
-    .message > .delete {
+    .message button.delete {
         position: absolute;
         right: .5em;
         top: .5em;
@@ -48,8 +48,8 @@
         cursor: pointer;
     }
 
-    .message > .delete::before,
-    .message > .delete::after {
+    .message  button.delete::before,
+    .message  button.delete::after {
         content: "";
         background-color: currentColor;
 
@@ -61,24 +61,24 @@
     }
 
 
-    .message > .delete::before {
+    .message button.delete::before {
         width: 50%;
         height: 1.5px;
     }
 
-    .message > .delete::after {
+    .message button.delete::after {
         width: 1.5px;
         height: 50%;
     }
 
-    .message > .delete:hover,
-    .message > .delete:focus {
+    .message button.delete:hover,
+    .message button.delete:focus {
         background-color: var(--grey-light);
         border: 1px solid var(--grey-light);
         color: var(--black-700);
     }
 
-    .message > .delete:active {
+    .message button.delete:active {
         background-color: var(--grey-lighter);
         border: 1px solid var(--grey-lighter);
         color: var(--black-700);
