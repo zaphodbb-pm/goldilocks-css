@@ -7886,6 +7886,12 @@ pre
         padding: 0;
     }
 
+    .notification span[class*=icon-bg-]
+    {
+        margin: 0;
+        padding: 0;
+    }
+
     .notification:not([class*=' is-'])
     {
         color: var(--text);

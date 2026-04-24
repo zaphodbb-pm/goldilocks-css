@@ -18,6 +18,11 @@
         margin: 0;
     }
 
+    .notification span[class*=icon-bg-] {
+        padding: 0;
+        margin: 0;
+    }
+
     .notification:not([class*=" is-"]) {
         background-color: var(--bg-element);
         color: var(--text);
