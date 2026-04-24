@@ -7888,6 +7888,8 @@ pre
 
     .notification span[class*=icon-bg-]
     {
+        width: 3em;
+        height: 2em;
         margin: 0;
         padding: 0;
     }

@@ -21,6 +21,8 @@
     .notification span[class*=icon-bg-] {
         padding: 0;
         margin: 0;
+        height: 2em;
+        width: 3em;
     }
 
     .notification:not([class*=" is-"]) {
