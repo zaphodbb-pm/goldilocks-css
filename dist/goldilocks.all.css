@@ -7894,7 +7894,7 @@ pre
 
         width: 1.5em;
         height: 1.5em;
-        margin-left: .5em;
+        margin: 0;
         padding: 0;
 
         opacity: 75%;
@@ -7912,14 +7912,24 @@ pre
         top: 50%;
         left: 50%;
 
-        width: 50%;
-        height: 1.5px;
-
         content: '';
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
         transform-origin: center center;
 
         background-color: currentColor;
+    }
+
+
+    .notification > .delete::before
+    {
+        width: 50%;
+        height: 1.5px;
+    }
+
+    .notification > .delete::after
+    {
+        width: 1.5px;
+        height: 50%;
     }
 
     .notification > .delete:hover,

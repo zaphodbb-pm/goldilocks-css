@@ -26,7 +26,7 @@
 
         height: 1.5em;
         width: 1.5em;
-        margin-left: .5em;
+        margin: 0;
         padding: 0;
 
         color: var(--white-50);
@@ -46,10 +46,19 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        height: 1.5px;
-        width: 50%;
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
         transform-origin: center center;
+    }
+
+
+    .notification > .delete::before {
+        width: 50%;
+        height: 1.5px;
+    }
+
+    .notification > .delete::after {
+        width: 1.5px;
+        height: 50%;
     }
 
     .notification > .delete:hover,
