@@ -28,6 +28,7 @@ nav: Notifications
 
             <p><strong>Notification</strong> block backgrounds can be colourized with the element colour helpers that set the text and
                 background colour.  The <strong>notification</strong> block also supports icons in the body of the block.
+                Fixed width can be set by one of the width helpers.
             </p>
 
             <p>The <strong>notification</strong> block also supports an optional delete button to allow the user to dismiss the notification.
@@ -146,7 +147,9 @@ nav: Notifications
 
                 <aside class="notification is-warning-light">
                     <button class="delete" type="button" aria-label="delete"></button>
-                    <p>Lorem Ipsum is-warning-light</p>
+                    <p>
+                        <span class="icon-bg-alert-warning"></span>
+                        Lorem Ipsum is-warning-light</p>
                 </aside>
 
                 <aside class="notification is-danger-light">
@@ -216,7 +219,10 @@ nav: Notifications
 
                 &lt;aside class="notification is-warning-light"&gt;
                     &lt;button class="delete" type="button" aria-label="delete"&gt;&lt;/button&gt;
-                    &lt;p&gt;Lorem Ipsum is-warning-light&lt;/p&gt;
+                    &lt;p&gt;
+                        &lt;span&gt; class="icon-bg-alert-warning"&lt;span&gt;
+                        Lorem Ipsum is-warning-light
+                    &lt;/p&gt;
                 &lt;/aside&gt;
 
                 &lt;aside class="notification is-danger-light"&gt;
