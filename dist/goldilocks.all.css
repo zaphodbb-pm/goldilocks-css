@@ -9871,7 +9871,7 @@ pre
     {
         color: var(--text-comp);
         border-color: var(--grey-dark);
-        background-color: var(--bg-element);
+        background-color: var(--bg-component);
     }
 
     .message:not([class*=' is-']) > header
@@ -9880,29 +9880,80 @@ pre
         background-color: var(--grey-dark);
     }
 
+    .message span[class*=icon-bg-]
+    {
+        height: 1.5em;
+        margin: 0;
+        padding: 0;
+
+        flex-basis: 2.5em;
+    }
+
+    /** delete button **/
     .message > .delete
     {
-        font-size: inherit;
-
         position: absolute;
-        top: .5rem;
-        right: .5rem;
+        top: .5em;
+        right: .5em;
 
-        width: 1.4em;
-        height: 1.4em;
-        margin: 0 -.375rem 0 .5rem;
+        width: 1.25em;
+        height: 1.25em;
+        margin: 0;
         padding: 0;
 
         cursor: pointer;
-        pointer-events: bounding-box;
+        pointer-events: auto;
 
-        color: currentColor;
+        opacity: 75%;
+        color: var(--white-50);
         border: none;
-        border-radius: 9999px;
-        outline: 0;
+        border-radius: 20rem;
         background-color: var(--black-700);
     }
 
+    .message > .delete::before,
+    .message > .delete::after
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        content: '';
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        transform-origin: center center;
+
+        background-color: currentColor;
+    }
+
+
+    .message > .delete::before
+    {
+        width: 50%;
+        height: 1.5px;
+    }
+
+    .message > .delete::after
+    {
+        width: 1.5px;
+        height: 50%;
+    }
+
+    .message > .delete:hover,
+    .message > .delete:focus
+    {
+        color: var(--black-700);
+        border: 1px solid var(--grey-light);
+        background-color: var(--grey-light);
+    }
+
+    .message > .delete:active
+    {
+        color: var(--black-700);
+        border: 1px solid var(--grey-lighter);
+        background-color: var(--grey-lighter);
+    }
+
+    /** header **/
     .message > header
     {
         position: relative;
@@ -9938,6 +9989,7 @@ pre
         color: inherit;
     }
 
+    /** body **/
     .message > .message-body
     {
         padding: 1.25em 1.5em;
