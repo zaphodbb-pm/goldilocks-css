@@ -6,6 +6,7 @@
         position: relative;
         border-radius: var(--radius);
         font-size: var(--size-6);
+        box-shadow: var(--shadow-container);
     }
 
     .message:not([class*=" is-"]) {
@@ -120,10 +121,8 @@
 
     .message > :first-child:not(header) + .message-body,
     .message .message-body:first-child {
-        border-color: inherit;
         border-style: solid;
         border-width: 0 0 0 var(--radius);
-        color: inherit;
         border-radius: inherit;
     }
 }

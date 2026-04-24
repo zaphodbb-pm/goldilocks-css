@@ -9866,6 +9866,7 @@ pre
         position: relative;
 
         border-radius: var(--radius);
+        box-shadow: var(--shadow-container);
     }
 
     .message:not([class*=' is-'])
@@ -10002,10 +10003,8 @@ pre
     .message > :first-child:not(header) + .message-body,
     .message .message-body:first-child
     {
-        color: inherit;
         border-width: 0 0 0 var(--radius);
         border-style: solid;
-        border-color: inherit;
         border-radius: inherit;
     }
 }
