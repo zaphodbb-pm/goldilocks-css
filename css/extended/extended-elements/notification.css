@@ -14,7 +14,7 @@
         margin: 0;
     }
 
-    .notification > p[class*="bg-icon-"] {
+    .notification > p [class*=bg-icon-] {
         padding: 0;
         margin: 0 1em 0 0;
     }

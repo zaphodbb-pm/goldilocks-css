@@ -7880,7 +7880,7 @@ pre
         padding: 0;
     }
 
-    .notification > p[class*='bg-icon-']
+    .notification > p [class*=bg-icon-]
     {
         margin: 0 1em 0 0;
         padding: 0;
