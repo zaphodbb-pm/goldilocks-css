@@ -7875,9 +7875,10 @@ pre
 
         border-radius: var(--radius);
 
+        flex: 1 1 auto;
+        gap: 1em;
         align-items: center;
         justify-content: space-between;
-        gap: 1em;
     }
 
     .notification > p
@@ -7888,10 +7889,11 @@ pre
 
     .notification span[class*=icon-bg-]
     {
-        width: 3em;
-        height: 2em;
+        height: 1.5em;
         margin: 0;
         padding: 0;
+
+        flex-basis: 2.5em;
     }
 
     .notification:not([class*=' is-'])
