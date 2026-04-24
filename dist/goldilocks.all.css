@@ -7940,16 +7940,11 @@ pre
     .tag.is-delete
     {
         color: var(--text);
-        border: 1px solid var(--bg-component);
-        background-color: var(--bg-component);
+        border: 1px solid var(--bg-element);
+        background-color: var(--bg-element);
     }
 
     /* text sizes */
-    .tag.tag-normal
-    {
-        font-size: var(--size-7);
-    }
-
     .tag.tag-medium
     {
         font-size: var(--size-6);
