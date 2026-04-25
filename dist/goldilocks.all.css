@@ -5996,6 +5996,8 @@ pre
 
     .sidebarMenuInner
     {
+        font-weight: var(--weight-medium);
+
         display: flex;
         overflow: hidden;
         flex-direction: column;
@@ -6076,7 +6078,7 @@ pre
 
     .sidebar-block > label
     {
-        font-weight: var(--weight-medium);
+        font-weight: var(--weight-semibold);
 
         position: relative;
 

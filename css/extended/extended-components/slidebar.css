@@ -100,6 +100,7 @@
         justify-content: flex-start;
         overflow: hidden;
         background-color: var(--bg-element);
+        font-weight: var(--weight-medium);
     }
 
     .sidebarMenuInner li {
@@ -151,7 +152,7 @@
 
     .sidebar-block > label {
         margin: 0;
-        font-weight: var(--weight-medium);
+        font-weight: var(--weight-semibold);
         cursor: pointer;
 
         position: relative;
