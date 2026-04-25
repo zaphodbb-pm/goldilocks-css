@@ -5986,7 +5986,7 @@ pre
 
         width: 20rem;
         height: auto;
-        max-height: calc(100vh - var(--navbar-height));
+        max-height: calc(100vh - var(--navbar-height) - var(--widgetbar-height));
 
         transition: transform 250ms ease-in-out;
         transform: translateX(-30rem);

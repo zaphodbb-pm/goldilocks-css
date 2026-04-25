@@ -82,7 +82,7 @@
         left: 4.5rem;
         top: calc(0.75 * var(--navbar-height));
         background: var(--bg-component);
-        max-height: calc(100vh - var(--navbar-height));
+        max-height: calc(100vh - var(--navbar-height) - var(--widgetbar-height));
         overflow-y: scroll;
         transform: translateX(-30rem);
         transition: transform 250ms ease-in-out;
