@@ -88,7 +88,7 @@
     /* set the body level colours for light mode*/
     --bg-main: var(--white-10);
 
-    --bg-grid: var(--white-25);
+    --bg-grid: var(--white-50);
     --bg-container: var(--white-25);
     --bg-component: var(--white-50);
     --bg-element: var(--white-100);

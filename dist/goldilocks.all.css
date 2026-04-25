@@ -192,7 +192,7 @@
     --white-10: color-mix(in hsl, white, var(--secondary) 2% );
     /* set the body level colours for light mode*/
     --bg-main: var(--white-10);
-    --bg-grid: var(--white-25);
+    --bg-grid: var(--white-50);
     --bg-container: var(--white-25);
     --bg-component: var(--white-50);
     --bg-element: var(--white-100);
@@ -4639,7 +4639,6 @@ pre
     .card > header > :is(h2, h3, h4, h5, h6)
     {
         font-size: var(--size-5);
-        font-weight: var(--weight-bold);
 
         margin: 0;
 

@@ -56,7 +56,10 @@ nav: Card
 
                 <tr>
                     <td><code>.card > header > hx</code> </td>
-                    <td>Is the title of the card inside the <code>header</code> HTML tag.  Any <code>h2, h3, h4, h5, h6</code> HTML tags are used here.</td>
+                    <td>Is the title of the card inside the <code>header</code> HTML tag.
+                        Any <code>h2, h3, h4, h5, h6</code> HTML tags are used here.
+                        Note that only <code>h1</code> should be used per page and is at the top level.
+                    </td>
                 </tr>
 
                 <tr>
@@ -95,7 +98,8 @@ nav: Card
 
                 <tr>
                     <td>Variables:</td>
-                    <td> --border-main, --radius-comp, --mar-vert, --shadow, --size-5, --text-comp, --text-darker, --text-light, --weight-bold, --weight-semibold</td>
+                    <td> --bg-component, --border-main, --radius-comp, --mar-vert, --shadow-container, --size-5,
+                        --text-comp, --text-darker, --text-light, --weight-medium</td>
                 </tr>
 
                 <tr>
@@ -185,6 +189,8 @@ nav: Card
                         Phasellus nec iaculis mauris.
                         <a href="#">@goldilocks</a>.
                     </p>
+
+                    <time datetime="2026-04-25T19:00">April 25, 2026</time>
                 </div>
 
                 <footer>
@@ -197,13 +203,13 @@ nav: Card
         <div class="column">
             <pre><code class="language-html">
                 &lt;article class="card"&gt;
-                    &lt;header&gt;
-                        &lt;h4&gt;Component Name&lt;/h4&gt;
-                    &lt;/header&gt;
-
                     &lt;figure&gt;
                         &lt;img class="has-aspect-3x1" src="{{site.url}}/img/demo/gl-main1.png" alt="Row of houses"&gt;
                     &lt;/figure&gt;
+
+                    &lt;header&gt;
+                        &lt;h4&gt;Component Name&lt;/h4&gt;
+                    &lt;/header&gt;
 
                     &lt;div&gt;
                         &lt;p&gt;
