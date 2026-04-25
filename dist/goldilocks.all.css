@@ -4973,6 +4973,72 @@ pre
         flex-shrink: 0;
     }
 
+
+    /** close button **/
+    .modal-card > header > .delete
+    {
+        position: absolute;
+        top: .5em;
+        right: .5em;
+
+        width: 1.25em;
+        height: 1.25em;
+        margin: 0;
+        padding: 0;
+
+        cursor: pointer;
+        pointer-events: auto;
+
+        opacity: 75%;
+        color: var(--white-50);
+        border: none;
+        border-radius: 20rem;
+        background-color: var(--black-700);
+    }
+
+
+    .modal-card > header > .delete::before,
+    .modal-card > header > .delete::after
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        content: '';
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        transform-origin: center center;
+
+        background-color: currentColor;
+    }
+
+    .modal-card > header > .delete::before
+    {
+        width: 50%;
+        height: 1.5px;
+    }
+
+    .modal-card > header > .delete::after
+    {
+        width: 1.5px;
+        height: 50%;
+    }
+
+    .modal-card > header > .delete:hover,
+    .modal-card > header > .delete:focus
+    {
+        color: var(--black-700);
+        border: 1px solid var(--grey-light);
+        background-color: var(--grey-light);
+    }
+
+    .modal-card > header > .delete:active
+    {
+        color: var(--black-700);
+        border: 1px solid var(--grey-lighter);
+        background-color: var(--grey-lighter);
+    }
+
+    /** footer **/
     .modal-card > footer
     {
         border-top: 1px solid var(--border-main-darker);

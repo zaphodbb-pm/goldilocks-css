@@ -77,6 +77,66 @@
         margin: 0;
     }
 
+
+    /** close button **/
+    .modal-card > header > .delete {
+        position: absolute;
+        right: .5em;
+        top: .5em;
+
+        height: 1.25em;
+        width: 1.25em;
+        margin: 0;
+        padding: 0;
+
+        color: var(--white-50);
+        background-color: var(--black-700);
+
+        border: none;
+        border-radius: 20rem;
+        opacity: 75%;
+
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+
+    .modal-card > header > .delete::before,
+    .modal-card > header > .delete::after {
+        content: "";
+        background-color: currentColor;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        transform-origin: center center;
+    }
+
+    .modal-card > header > .delete::before {
+        width: 50%;
+        height: 1.5px;
+    }
+
+    .modal-card > header > .delete::after {
+        width: 1.5px;
+        height: 50%;
+    }
+
+    .modal-card > header > .delete:hover,
+    .modal-card > header > .delete:focus {
+        background-color: var(--grey-light);
+        border: 1px solid var(--grey-light);
+        color: var(--black-700);
+    }
+
+    .modal-card > header > .delete:active {
+        background-color: var(--grey-lighter);
+        border: 1px solid var(--grey-lighter);
+        color: var(--black-700);
+    }
+
+    /** footer **/
     .modal-card > footer {
         justify-content: space-between;
         border-bottom-left-radius: var(--radius-comp);
