@@ -2281,12 +2281,6 @@ pre
     }
 
     /** ensure that hover doesn't distort button size **/
-    .button[class*='outlined']:not(.is-small):not(.has-no-hover):hover
-    {
-        padding-top: calc(var(--pad-vert) + 1px);
-        padding-bottom: calc(var(--pad-vert) + 1px);
-    }
-
     .button[class*='outlined'].is-small:not(.has-no-hover):hover
     {
         padding-top: calc(var(--pad-vert-small) + 1px);
