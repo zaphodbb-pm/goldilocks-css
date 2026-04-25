@@ -146,7 +146,7 @@
         border-top: 1px solid var(--border-main-darker) !important;
         border-right: 1px solid var(--border-main-darker) !important;
         border-bottom: 2px solid var(--bg-main) !important;
-
+        margin-bottom: -1px;
         background-color: inherit;
     }
 
