@@ -6455,10 +6455,10 @@ pre
     {
         margin-bottom: -1px;
 
-        border-top: 1px solid var(--border-main-darker) !important;
-        border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 2px solid var(--bg-main) !important;
-        border-left: 1px solid var(--border-main-darker) !important;
+        border-top: 1px solid var(--border-main-darker);
+        border-right: 1px solid var(--border-main-darker);
+        border-bottom: 2px solid var(--bg-main);
+        border-left: 1px solid var(--border-main-darker);
         border-radius: var(--radius) var(--radius) 0 0;
         background-color: inherit;
     }

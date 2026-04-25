@@ -142,10 +142,10 @@
     .tabs.is-boxed > input:nth-child(8):checked ~ ul li:nth-child(8) label,
     .tabs.is-boxed > input:nth-child(9):checked ~ ul li:nth-child(9) label {
         border-radius: var(--radius) var(--radius) 0 0;
-        border-left: 1px solid var(--border-main-darker) !important;
-        border-top: 1px solid var(--border-main-darker) !important;
-        border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 2px solid var(--bg-main) !important;
+        border-left: 1px solid var(--border-main-darker);
+        border-top: 1px solid var(--border-main-darker);
+        border-right: 1px solid var(--border-main-darker);
+        border-bottom: 2px solid var(--bg-main);
         margin-bottom: -1px;
         background-color: inherit;
     }
