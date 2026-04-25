@@ -5582,7 +5582,7 @@ pre
         color: var(--text);
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius);
-        box-shadow: none;
+        box-shadow: var(--shadow-container);
 
         -webkit-appearance: none;
         justify-content: center;
@@ -5598,6 +5598,7 @@ pre
     {
         color: var(--text-darker);
         border-color: var(--link);
+        background-color: var(--bg-component);
     }
 
     .pagination > ul a:focus

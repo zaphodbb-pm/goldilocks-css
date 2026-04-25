@@ -56,7 +56,7 @@
         min-width: 2.5em;
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius);
-        box-shadow: none;
+        box-shadow: var(--shadow-container);
         text-decoration: none;
     }
 
@@ -67,6 +67,7 @@
     .pagination > ul a:hover {
         border-color: var(--link);
         color: var(--text-darker);
+        background-color: var(--bg-component);
     }
 
     .pagination > ul a:focus {
