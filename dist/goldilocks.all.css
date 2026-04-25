@@ -6037,7 +6037,8 @@ pre
         background: transparent;
     }
 
-    .sidebarMenuInner a.icon-nav-horz
+    .sidebarMenuInner a.icon-nav-horz,
+    .sidebarMenuInner .sidebar-block a.icon-nav-horz [class*=icon-bg-]
     {
         margin-left: 0;
     }
