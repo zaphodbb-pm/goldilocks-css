@@ -10114,8 +10114,8 @@ pre
         opacity: 0;
         border: 0;
         border-radius: var(--radius);
-        background-color: var(--bg-component);
-        box-shadow: var(--shadow-component);
+        background-color: var(--bg-container);
+        box-shadow: var(--shadow-container);
     }
 
 

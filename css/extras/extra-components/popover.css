@@ -18,8 +18,8 @@
 
         border: 0;
         border-radius: var(--radius);
-        box-shadow: var(--shadow-component);
-        background-color: var(--bg-component);
+        box-shadow: var(--shadow-container);
+        background-color: var(--bg-container);
         margin: var(--mar-vert) var(--mar-horz);
     }
 
