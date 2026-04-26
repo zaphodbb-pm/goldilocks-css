@@ -61,6 +61,19 @@
 
 
     /* position icon */
+    .infobox > div [class*=icon-bg-] {
+        border-radius: var(--radius-rounded);
+        color: var(--grey-dark);
+        line-height: 0;
+
+        margin: 0;
+        height: 4rem;
+        width: 4rem;
+        padding: 0;
+    }
+
+
+    /*
     .infobox > div > div {
         border-radius: var(--radius-rounded);
         color: var(--grey-dark);
@@ -75,6 +88,8 @@
         line-height: 0;
         padding: 0;
     }
+
+     */
 
 
     /* builds box footer with link */
@@ -170,15 +185,15 @@
 
 
     /** icon **/
-    .infobox-primary > div > div {
+    .infobox-primary > div > span {
         color: var(--primary);
     }
 
-    .infobox-secondary > div > div {
+    .infobox-secondary > div > span {
         color: var(--secondary);
     }
 
-    .infobox-complement > div > div {
+    .infobox-complement > div > span {
         color: var(--complement);
     }
 
