@@ -10187,7 +10187,7 @@ pre
 
         border: solid 1px var(--border-main);
         border-radius: var(--radius-comp);
-        background-color: var(--bg-component);
+        background-color: var(--bg-container);
 
         justify-content: space-between;
         align-items: center;

@@ -15,7 +15,7 @@
 
         border: solid 1px var(--border-main);
         border-radius: var(--radius-comp);
-        background-color: var(--bg-component);
+        background-color: var(--bg-container);
         overflow-x: scroll;
     }
 
