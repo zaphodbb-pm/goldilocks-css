@@ -115,7 +115,7 @@
 
 
     /* Widgetbar settings */
-    --widgetbar-height: calc(2 * var(--base-font-size) + 1rem);
+    --widgetbar-height: calc(2 * var(--base-font-size) + 0.75rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
 
 

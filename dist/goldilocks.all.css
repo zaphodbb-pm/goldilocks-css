@@ -83,7 +83,7 @@
     --navbar-offset: 0;
     --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Widgetbar settings */
-    --widgetbar-height: calc(2 * var(--base-font-size) + 1rem);
+    --widgetbar-height: calc(2 * var(--base-font-size) + .75rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Breadcrumb setting */
     /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
@@ -10553,11 +10553,11 @@ pre
 
     .widgetbar-radios input + span
     {
-        font-size: 1em !important;
-        line-height: 1;
+        font-size: 1em;
+        line-height: 1.5;
 
-        margin: 0 !important;
-        padding: .25em .5em !important;
+        margin: 0;
+        padding: .25em .5em;
 
         cursor: pointer;
 
@@ -11138,7 +11138,7 @@ pre
     .tooltip.tooltip-left:focus::before,
     .tooltip.tooltip-left:hover::before
     {
-        transform: translate(.25rem, calc(50% + .25rem));
+        transform: translate(.25rem, calc(50% + -.25rem));
     }
 
 

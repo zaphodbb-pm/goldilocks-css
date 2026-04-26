@@ -113,7 +113,7 @@
 
     .tooltip.tooltip-left:focus::before,
     .tooltip.tooltip-left:hover::before {
-        transform: translate(0.25rem, calc(50% + 0.25rem));
+        transform: translate(0.25rem, calc(50% + -0.25rem));
     }
 
 
