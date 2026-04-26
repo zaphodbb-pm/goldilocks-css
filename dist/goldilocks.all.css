@@ -10203,13 +10203,11 @@ pre
     }
 
     /* icon setup */
-    .reportbox span[class*=icon-bg-]
+    .reportbox > div
     {
         line-height: 0;
 
-        width: 3rem;
-        height: 3rem;
-        margin: 1rem;
+        margin: 0;
         padding: 0;
 
         color: var(--text-invert);
@@ -10217,27 +10215,16 @@ pre
         background-color: var(--grey-dark);
     }
 
-    /*
-
-    .infobox > div [class*=icon-bg-] {
-        border-radius: var(--radius-rounded);
-        color: var(--grey-dark);
+    .reportbox > div > span:not(.icon-nav)
+    {
+        font-size: 3rem;
         line-height: 0;
 
-        margin: 0;
-        height: 4rem;
-        width: 4rem;
-        padding: 0;
-    }
-
-    .reportbox > div > span:not(.icon-nav) {
         width: 3rem;
         height: 3rem;
         margin: 1rem;
-        line-height: 0;
-        font-size: 3rem;
     }
-*/
+
 
     /* image setup */
     .reportbox > img
