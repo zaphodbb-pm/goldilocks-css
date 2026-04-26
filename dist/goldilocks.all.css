@@ -6346,10 +6346,11 @@ pre
 
     .tabs.is-boxed > ul label:hover
     {
-        /*border-bottom: 1px solid var(--border-main-darker);*/
         margin-bottom: 0;
 
         color: var(--text-darker);
+        /*border-bottom: 1px solid var(--border-main-darker);*/
+        border-bottom: 0;
         background-color: var(--bg-component);
     }
 
