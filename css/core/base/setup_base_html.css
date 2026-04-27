@@ -100,7 +100,7 @@
         margin: 0;
     }
 
-    P + ul, p + ol, p + dl {
+    p + ul, p + ol, p + dl {
         margin-bottom: 1.5rem;
     }
 

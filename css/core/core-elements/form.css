@@ -143,7 +143,7 @@
     .form label input[type="radio"],
     .form .field-group label input[type="radio"] {
         appearance: auto;
-        --webkit-appearance: auto;
+        -webkit-appearance: auto;
         width: auto;
         height: auto;
     }

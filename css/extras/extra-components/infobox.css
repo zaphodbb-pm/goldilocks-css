@@ -80,7 +80,7 @@
         position: relative;
 
         background-color: var(--grey-dark);
-        color: white;
+        color: var(--white-25);
         font-weight: var(--weight-medium);
         text-decoration: none;
     }

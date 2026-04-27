@@ -70,7 +70,6 @@
 
     details.accordion[open] summary::after {
         transform: translate(0, -50%) rotate(90deg);
-        position: absolute;
         transition: all 0.35s;
         top: 2em;
     }

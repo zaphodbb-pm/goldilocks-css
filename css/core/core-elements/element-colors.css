@@ -16,7 +16,7 @@
     .is-primary-dark {
         color: var(--primary-text-invert-dark);
         background-color: var(--primary-dark);
-        border: 1px solid var(--primary-dark);;
+        border: 1px solid var(--primary-dark);
     }
 
     .is-primary-outlined {

@@ -2,42 +2,90 @@
 ![GitHub](https://img.shields.io/github/license/zaphodbb-pm/goldilocks-css)
 
 # Goldilocks-CSS
-A customer first CSS design library.
+A customer-first CSS design library.
 
-## Introduction
-**Goldilocks-CSS** is a lightweight, responsive, standards compliant and up-to-date HTML5 / CSS3 solution to meet the needs of product / business managers who need to pay for and manage scarce resources.
+## Overview
+**Goldilocks-CSS** is a lightweight, responsive, standards-compliant, and up-to-date HTML5 / CSS3 solution. It is designed to meet the needs of product and business managers who require efficient, small-footprint resources.
 
-This project is in its alpha phase and changes may occur often.  
-It is fully functional, but use at your own risk
+This project is currently in its **alpha phase**. It is fully functional, but changes may occur frequently. Use at your own risk.
 
-## Get More Help
-
-Please see the [main demonstration](https://zaphodbb-pm.github.io/goldilocks-css/pages/home.html) to get more detailed information
+## Requirements
+- **Browser**: Modern HTML5/CSS3 compliant browser.
+- **Development** (optional): 
+  - [Node.js](https://nodejs.org/) (tested with v18+)
+  - [npm](https://www.npmjs.com/)
 
 ## Installation
 
-**Goldilocks-CSS** works without a package manager or dependencies! For this alpha phase, there are currently 2 ways to get started with Goldilocks-CSS: download from Github or use a CDN.
+### 1. Manual Installation
+Download the files from this repository and link the desired CSS file in the `<head>` of your HTML:
 
-### Install manually
-Download **Goldilocks-CSS** files from Github (use link in navbar) and link one of the following files into the head of your website:
+- **Core** (Layouts, Common Elements, and Helpers):
+  ```html
+  <link rel="stylesheet" href="./dist/goldilocks.core.min.css">
+  ```
 
-**Core includes Layouts, Common Elements and Helpers**
+- **Core Extended** (Core + Popular Add-on Elements and Components):
+  ```html
+  <link rel="stylesheet" href="./dist/goldilocks.core-extended.min.css">
+  ```
 
-`<link rel="stylesheet" href="./dist/goldilocks.core.min.css">`
+- **All** (Core, Extended, and Secondary Add-on Elements/Components):
+  ```html
+  <link rel="stylesheet" href="./dist/goldilocks.all.min.css">
+  ```
 
-**Core Plus Popular Add-on Elements and Components**
+### 2. CDN (jsDelivr)
+Link directly to the files using the jsDelivr CDN:
 
-`<link rel="stylesheet" href="./dist/goldilocks.core-extended.min.css">`
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.core.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.core-extended.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.all.min.css">
+```
 
-**Core and Extended Items Plus Secondary Add-on Elements and Components**
+### 3. NPM
+```bash
+npm install @zaphodbb-pm/goldilocks-css
+```
 
-`<link rel="stylesheet" href="./dist/goldilocks.all.min.css">`
+## Development & Build Scripts
 
-### Install from CDN
-Alternatively, you can use jsdelivr CDN to link to Goldilocks-CSS. Use only one link for the package that you need.
+### Setup
+1. Clone the repository: `git clone https://github.com/zaphodbb-pm/goldilocks-css.git`
+2. Install dependencies: `npm install`
 
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.core.min.css">`
+### NPM Scripts
+- `npm run dev`: Starts a local development server using Parcel and opens `index.html`.
+- `npm run build`: Builds the project using Parcel (targets `index.html`).
+- `npm run start`: Combines `build` and `dev` commands.
+- `npm test`: Currently placeholder (TODO: Implement CSS regression tests).
 
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.core-extended.min.css">`
+### Gulp Tasks
+Gulp is used to bundle and minify the CSS files. You can run individual tasks using `npx gulp <task-name>`:
+- `buildCore`: Bundles base, layout, and helpers.
+- `buildCoreElements`: Bundles core + core elements.
+- `buildExtended`: Bundles extended components.
+- `buildExtras`: Bundles extra components.
+- `buildCoreExtended`: Bundles core + elements + extended.
+- `buildAll` (Default): Bundles everything.
 
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.all.min.css">`
+## Project Structure
+- `css/`: Source CSS files organized by category (core, extended, extras).
+- `dist/`: Compiled and minified CSS bundles.
+- `pages/`: Documentation and demonstration pages.
+- `img/`: Images and assets used in the demo.
+- `gulpfile.js`: Gulp build configuration.
+- `package.json`: Project metadata and dependencies.
+
+## Environment Variables
+- TODO: List any environment variables if applicable (currently none detected).
+
+## Tests
+- TODO: Implement automated CSS testing/linting.
+
+## Get More Help
+Please see the [main demonstration](https://zaphodbb-pm.github.io/goldilocks-css/pages/home.html) for detailed information and component examples.
+
+## License
+This project is licensed under the [MIT License](LICENSE.txt).

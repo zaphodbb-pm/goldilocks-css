@@ -101,23 +101,23 @@
     %3Cpolyline%20points=\'6%209%2012%2015%2018%209\'/%3E\
     %3C/svg%3E');
     --indicator-down: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" \
-        width="24" height="24" viewBox="0 0 24 24" \
-        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline points="6 9 12 15 18 9"/>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+        %20width=\'24\'%20height=\'24\'%20viewBox=\'0%200%2024%2024\'%20\
+        fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E%20\
+        %3Cpolyline%20points=\'6%209%2012%2015%2018%209\'/%3E\
+    %3C/svg%3E');
     --indicator-up: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" \
-        width="24" height="24" viewBox="0 0 24 24" \
-        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline points="18 15 12 9 6 15"></polyline>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+        %20width=\'24\'%20height=\'24\'%20viewBox=\'0%200%2024%2024\'%20\
+        fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E%20\
+        %3Cpolyline%20points=\'18%2015%2012%209%206%2015\''/%3E\
+    %3C/svg%3E');
     --indicator-right: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" \
-        width="24" height="24" viewBox="0 0 24 24" \
-        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline points="9 18 15 12 9 6"/>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+        %20width=\'24\'%20height=\'24\'%20viewBox=\'0%200%2024%2024\'%20\
+        fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E%20\
+        %3Cpolyline%20points=\'9%2018%2015%2012%209%206\'/%3E\
+    %3C/svg%3E');
 }
 /* initial-theme-colors.css */
 
@@ -1630,9 +1630,7 @@ pre
 
         white-space: nowrap !important; /* 3 */
 
-        color: #fff;
         border: 0 !important;
-        background-color: #000;
 
         -webkit-clip-path: inset(50%) !important;
                 clip-path: inset(50%) !important; /* 2 */
@@ -1967,7 +1965,7 @@ pre
     .button.button-primary:not(.has-no-hover):hover
     {
         border: 1px solid color-mix(in hsl, var(--primary), white 20%);
-        background-color: color-mix(var(--primary), white 20%);
+        background-color: color-mix(in hsl, var(--primary), white 20%);
     }
 
     button.button-primary:not(.has-no-hover):active,
@@ -2046,14 +2044,14 @@ pre
     .button.button-secondary:not(.has-no-hover):hover
     {
         border: 1px solid color-mix(in hsl, var(--secondary), white 30%);
-        background-color: color-mix(var(--secondary), white 30%);
+        background-color: color-mix(in hsl, var(--secondary), white 30%);
     }
 
     button.button-secondary:not(.has-no-hover):active,
-    button.button-secondary:not(.has-no-hover):active
+    .button.button-secondary:not(.has-no-hover):active
     {
         border: 1px solid color-mix(in hsl, var(--secondary), black 20%);
-        background-color: color-mix(var(--secondary), black 20%);
+        background-color: color-mix(in hsl, var(--secondary), black 20%);
     }
 
     button.button-secondary-outlined,
@@ -2128,14 +2126,14 @@ pre
     .button.button-complement:not(.has-no-hover):hover
     {
         border: 1px solid color-mix(in hsl, var(--complement), white 30%);
-        background-color: color-mix(var(--complement), white 30%);
+        background-color: color-mix(in hsl, var(--complement), white 30%);
     }
 
     button.button-complement:not(.has-no-hover):active,
     .button.button-complement:not(.has-no-hover):active
     {
-        border: 1px solid color-mix(var(--complement), black 30%);
-        background-color: color-mix(var(--complement), black 20%);
+        border: 1px solid color-mix(in hsl, var(--complement), black 30%);
+        background-color: color-mix(in hsl, var(--complement), black 20%);
     }
 
     button.button-complement-outlined,
@@ -2405,13 +2403,13 @@ pre
     button.fab:hover
     {
         border: none;
-        background-color: color-mix( var(--grey-dark), white 30%);
+        background-color: color-mix(in hsl,  var(--grey-dark), white 30%);
     }
 
     button.fab:active
     {
         border: none;
-        background-color: color-mix( var(--grey-dark), black 20%);
+        background-color: color-mix(in hsl,  var(--grey-dark), black 20%);
     }
 
     button.fab-primary
@@ -2425,14 +2423,14 @@ pre
     {
         color: var(--primary-text-invert);
         border: none;
-        background-color: color-mix( var(--primary), white 30%);
+        background-color: color-mix(in hsl,  var(--primary), white 30%);
     }
 
     button.fab-primary:active
     {
         color: var(--primary-text-invert);
         border: none;
-        background-color: color-mix( var(--primary), black 20%);
+        background-color: color-mix(in hsl,  var(--primary), black 20%);
     }
 
     button.fab-secondary
@@ -2446,14 +2444,14 @@ pre
     {
         color: var(--secondary-text-invert);
         border: none;
-        background-color: color-mix( var(--secondary), white 30%);
+        background-color: color-mix(in hsl,  var(--secondary), white 30%);
     }
 
     button.fab-secondary:active
     {
         color: var(--secondary-text-invert);
         border: none;
-        background-color: color-mix( var(--secondary), black 20%);
+        background-color: color-mix(in hsl,  var(--secondary), black 20%);
     }
 
     button.fab-complement
@@ -2467,14 +2465,14 @@ pre
     {
         color: var(--complement-text-invert-dark);
         border: none;
-        background-color: color-mix( var(--complement), white 30%);
+        background-color: color-mix(in hsl,  var(--complement), white 30%);
     }
 
     button.fab-complement:active
     {
         color: var(--complement-text-invert-dark);
         border: none;
-        background-color: color-mix( var(--complement), black 20%);
+        background-color: color-mix(in hsl,  var(--complement), black 20%);
     }
 
     /*** icon controls ***/
@@ -2575,7 +2573,7 @@ pre
     {
         color: var(--primary-text-invert-dark);
         border: 1px solid var(--primary-dark);
-        background-color: var(--primary-dark);;
+        background-color: var(--primary-dark);
     }
 
     .is-primary-outlined
@@ -2952,8 +2950,8 @@ pre
         width: auto;
         height: auto;
 
-        appearance: auto;
-        --webkit-appearance: auto;
+                appearance: auto;
+        -webkit-appearance: auto;
     }
 
 
@@ -4357,7 +4355,6 @@ pre
 
     details.accordion[open] summary::after
     {
-        position: absolute;
         top: 2em;
 
         transition: all .35s;
@@ -4871,7 +4868,7 @@ pre
 {
     .modal-overlay
     {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
@@ -9697,7 +9694,7 @@ pre
 
         text-decoration: none;
 
-        color: white;
+        color: var(--white-25);
         background-color: var(--grey-dark);
 
         justify-content: center;
