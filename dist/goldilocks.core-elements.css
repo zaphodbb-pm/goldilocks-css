@@ -1,6 +1,6 @@
 :root
 {
-    /* version 0.1.0 - April 29, 2022 - v3 */
+    /* version 1.0.0 - April 7, 2026 */
     /* awareness variables - for info only */
     /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
     /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
@@ -22,11 +22,8 @@
     --weight-medium: 500;
     --weight-semibold: 600;
     --weight-bold: 700;
-    /** Adjustable using a variable font size for all screen sizes
-        - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-        - maximum font-size is set to 3 * base (nominal 48px)
-     **/
-    --base-font-size: clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) );
+    /** note: adjustable typography is set in the file: typography.css **/
+    --base-font-size: var(--base-rem);
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
@@ -40,26 +37,26 @@
         1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
     ***/
     --size-factor: 1.125;
-    --size-7: calc( 1rem / var(--size-factor) );                /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
-    --size-6: 1rem;                                             /* Example 1.125 scale factor:  --size-6 = 1 rem; */
-    --size-5: calc( var(--size-6) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
-    --size-4: calc( var(--size-5) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
-    --size-3: calc( var(--size-4) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
-    --size-2: calc( var(--size-3) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
-    --size-1: calc( var(--size-2) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
+    --size-7: calc( var(--base-font-size) * .875 );                /* Example 1.125 scale factor:  --size-7 = 0.875rem; */
+    --size-6: var(--base-font-size);                                /* Example 1.125 scale factor:  --size-6 = 1 rem; */
+    --size-5: calc( var(--size-6) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
+    --size-4: calc( var(--size-5) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
+    --size-3: calc( var(--size-4) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
+    --size-2: calc( var(--size-3) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
+    --size-1: calc( var(--size-2) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
     /* Grid Key Variables */
-    --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
-    --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
-    --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
+    --gutter: calc(3 * var(--base-rem));                    /** grid column gutter **/
+    --grid-min-px-width: 100px;                             /** minimum absolute column width in a grid layout **/
+    --grid-min-width: calc(5 * var(--base-font-size));      /** minimum relative column width in a grid layout **/
     /* basic spacing values */
     /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
-    --space-element: var(--base-font-size);
-    --space-block: calc(2 * var(--base-font-size));
-    --space-collection: calc(4 * var(--base-font-size));
-    --space-container: calc(5 * var(--base-font-size));
+    --space-element: var(--base-rem);
+    --space-block: calc(2 * var(--base-rem));
+    --space-collection: calc(4 * var(--base-rem));
+    --space-container: calc(5 * var(--base-rem));
     /* Flexbox element spacing */
-    --gap-row: calc( 1 * var(--base-font-size) );
-    --gap-col: calc( 1 * var(--base-font-size) );
+    --gap-row: calc( .75 * var(--base-font-size) );
+    --gap-col: calc( .75 * var(--base-font-size) );
     /* Elements Controls */
     --pad-horz: var(--base-font-size);
     --pad-vert: calc( .5 * var(--base-font-size) );
@@ -82,11 +79,11 @@
     --radius-elem: calc(1.5 * var(--radius));
     --radius-rounded: 10000px;
     /* Navbar settings */
-    --navbar-height: 4rem;
+    --navbar-height: calc(4 * var(--base-font-size));
     --navbar-offset: 0;
     --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Widgetbar settings */
-    --widgetbar-height: calc( 2 * var(--base-font-size) + .25rem);
+    --widgetbar-height: calc(2 * var(--base-font-size) + .75rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Breadcrumb setting */
     /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
@@ -94,8 +91,8 @@
     /* magazine normal width */
     --magazine-width: 40ch;
     /* carousel image height */
-    --carousel-image-height: 8rem;
-    --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
+    --carousel-image-height: calc(8 * var(--base-font-size));
+    --carousel-image-width: calc( 4 / 3 * 8 * var(--base-font-size));            /* aspect ratio of image */
     /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
     --indicator: url('data:image/svg+xml;charset=utf8,\
     %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
@@ -104,216 +101,213 @@
     %3Cpolyline%20points=\'6%209%2012%2015%2018%209\'/%3E\
     %3C/svg%3E');
     --indicator-down: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" \
-        width="24" height="24" viewBox="0 0 24 24" \
-        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline points="6 9 12 15 18 9"/>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+    %20viewBox=\'0%200%2024%2024\'%20\
+    %20width=\'24\'%20height=\'24\'%20\
+    fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E%20\
+    %3Cpolyline%20points=\'6%209%2012%2015%2018%209\'/%3E\
+    %3C/svg%3E');
     --indicator-up: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" \
-        width="24" height="24" viewBox="0 0 24 24" \
-        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline points="18 15 12 9 6 15"></polyline>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+    %20viewBox=\'0%200%2024%2024\'%20\
+    %20width=\'24\'%20height=\'24\'%20\
+    fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E%20\
+    %3Cpolyline%20points=\'18%2015%2012%209%206%2015\'/%3E\
+    %3C/svg%3E');
     --indicator-right: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" \
-        width="24" height="24" viewBox="0 0 24 24" \
-        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline points="9 18 15 12 9 6"/>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+    %20viewBox=\'0%200%2024%2024\'%20\
+    %20width=\'24\'%20height=\'24\'%20\
+    fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E%20\
+    %3Cpolyline%20points=\'9%2018%2015%2012%209%206\'/%3E\
+    %3C/svg%3E');
 }
+/* initial-theme-colors.css */
 
-/*
-main theme color definitions
-use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
- */
-
-
+/** main theme color definitions **/
 :root
 {
-    /* Common shadow treatment for boxed elements */
-    --shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .15), 0 0 0 1px rgba(10, 10, 10, .02);
-    /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
-    /* main theme colour parameters - based on  complement color selection */
-    --main-color: 140;                                  /** primary hue value **/
-    --main-saturation: 70%;                             /** primary saturation value **/
-    --main-lightness: 40%;                              /** primary lightness value **/
-    /* build main theme colours */
-    --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
-    --secondary: color-mix(var(--primary), black 40%);
-    --complement: hsl(calc(var(--main-color) + 180), var(--main-saturation), var(--main-lightness));
+    /** main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build colors **/
+    /** main theme colour parameters - based on  complement color selection **/
+    --main-color: 185; /** primary hue value used by charts **/
+    /** build main theme colours **/
+    --primary-raw: 185 58% 32%;
+    --secondary-raw: 37 20% 50%;
+    --complement-raw: 22 94% 56%;
+    --primary: hsl(var(--primary-raw) / 100%);
+    --secondary: hsl(var(--secondary-raw) / 100%);
+    --complement: hsl(var(--complement-raw) / 100%);
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: color-mix(var(--primary), black 20%);
-    --secondary-text: color-mix(var(--secondary), black 10%);
-    --complement-text: color-mix(var(--complement), black 10%);
-    --primary-text-invert: color-mix(var(--primary-text), black 95%);
-    --secondary-text-invert: color-mix(var(--secondary-text), white 95%);
-    --complement-text-invert: color-mix(var(--complement-text), white 95%);
+    --primary-text: hsl(185,65%,19%);
+    --secondary-text: hsl(37,20%,28%);
+    --complement-text: hsl(22, 82%, 28%);
+    --primary-text-invert: hsl(185, 55%, 96%);
+    --primary-text-invert-dark: hsl(185, 55%, 96%);
+    --secondary-text-invert: hsl(37, 28%, 12%);
+    --secondary-text-invert-dark: hsl(37, 28%, 97%);
+    --complement-text-invert: hsl(22, 80%, 12%);
+    --complement-text-invert-dark: hsl(22, 80%, 97%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
-    --primary-light: color-mix(var(--primary), white 90%);
-    --secondary-light: color-mix(var(--secondary), white 90%);
-    --complement-light: color-mix(var(--complement), white 90%);
-    --primary-dark: color-mix(var(--primary), black 10%);
-    --secondary-dark: color-mix(var(--secondary), black 10%);
-    --complement-dark: color-mix(var(--complement), black 10%);
-    --link: hsl(217, 71%, 48%);
-    --link-light: color-mix(var(--link), white 90%);
-    --link-dark: color-mix(var(--link), black 15%);
-    --link-text: color-mix(var(--link), black 30%);
-    --link-text-invert: white;
-    --success: hsl(150, 75%, 53%);
-    --success-light: color-mix(var(--success), white 90%);
-    --success-dark: color-mix(var(--success), black 15%);
-    --success-text: color-mix(var(--success), black 35%);
-    --success-text-invert: black;
-    --warning: hsl(48, 100%, 48%);
-    --warning-light: color-mix(var(--warning), white 90%);
-    --warning-dark: color-mix(var(--warning), black 15%);
-    --warning-text: color-mix(var(--warning), black 40%);
-    --warning-text-invert: black;
-    --danger: hsl(348, 86%, 48%);
-    --danger-light: color-mix(var(--danger), white 90%);
-    --danger-dark: color-mix(var(--danger), black 15%);
-    --danger-text: color-mix(var(--danger), black 30%);
-    --danger-text-invert: white;
+    --primary-light: hsl(185,55%,96%);
+    --secondary-light: hsl(37, 24%, 92%);
+    --complement-light: hsl(22,85%,93%);
+    --primary-dark: hsl(185,65%,17%);
+    --secondary-dark: hsl(37,20%,40%);
+    --complement-dark: hsl(22,88%,38%);
+    --link: hsl(240,52%,48%);
+    --link-visited: hsl(280, 52%, 48%);
+    --link-light: hsl(240, 50%, 93%);
+    --link-dark: hsl(240, 55%, 38%);
+    --link-text: hsl(240, 55%, 38%);
+    --link-text-invert: hsl(240, 52%, 97%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
+    --success: hsl(152, 47%, 48%);
+    --success-light: hsl(152, 50%, 92%);
+    --success-dark: hsl(152, 55%, 30%);
+    --success-text: hsl(152, 70%, 14%);
+    --success-text-invert: var(--black);
+    --success-text-invert-dark: hsl(152, 47%, 97%);
+    --warning: hsl(38, 92%, 54%);
+    --warning-light: hsl(38, 88%, 93%);
+    --warning-dark: hsl(38, 90%, 44%);
+    --warning-text: hsl(38, 65%, 22%);
+    --warning-text-invert: var(--black);
+    --warning-text-invert-dark: hsl(38, 80%, 15%);
+    --danger: hsl(4, 70%, 50%);
+    --danger-light: hsl(4, 74%, 93%);
+    --danger-dark: hsl(4, 62%, 40%);
+    --danger-text: hsl(4, 65%, 32%);
+    --danger-text-invert: var(--white-10);
+    --danger-text-invert-dark: hsl(4, 70%, 97%);
     /* additional greys */
-    --black: hsl(0, 0%, 2%);
-    --black-bis: hsl(0, 0%, 10%);
-    --black-ter: hsl(0, 0%, 16%);
-    --grey-darker: hsl(0, 0%, 25%);
-    --grey-dark: hsl(0, 0%, 40%);
-    --grey: hsl(0, 0%, 60%);
-    --grey-light: hsl(0, 0%, 85%);
-    --grey-lighter: hsl(0, 0%, 93%);
-    --white-ter: hsl(0, 0%, 95%);
-    --white-bis: hsl(0, 0%, 98%);
-    --white: hsl(0, 0%, 100%);
+    --black: color-mix(in hsl, black, var(--primary) 25%);
+    --black-850: color-mix(in hsl, black, var(--primary) 30%);
+    --black-800: color-mix(in hsl, black, var(--primary) 35%);
+    --black-700: color-mix(in hsl, black, var(--primary) 40%);
+    --grey-darker: color-mix(in hsl, hsl(0, 0%, 25%), var(--secondary) 10% );
+    --grey-dark: color-mix(in hsl, hsl(0, 0%, 40%), var(--secondary) 10% );
+    --grey: color-mix(in hsl, hsl(0, 0%, 60%), var(--secondary) 10% );
+    --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 10% );
+    --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 10% );
+    --white-100: color-mix(in hsl, white, var(--secondary) 15% );
+    --white-50: color-mix(in hsl, white, var(--secondary) 10% );
+    --white-25: color-mix(in hsl, white, var(--secondary) 5% );
+    --white-10: color-mix(in hsl, white, var(--secondary) 2% );
     /* set the body level colours for light mode*/
+    --bg-main: var(--white-10);
+    --bg-grid: var(--white-50);
+    --bg-container: var(--white-25);
+    --bg-component: var(--white-50);
+    --bg-element: var(--white-100);
+    --bg-main-invert: var(--black-850);
+    --bg-highlight: var(--warning-light);
     --border-main: var(--grey-light);
     --border-main-darker: var(--grey);
-    --bg-main: var(--white);
-    --bg-main-elem: var(--white);
-    --bg-main-comp: var(--white);
-    --bg-main-bis: var(--white-bis);
-    --bg-main-ter: var(--white-ter);
-    --bg-main-invert: var(--black-ter);
-    --bg-main-code: var(--white-ter);
-    --bg-grid: var(--white-ter);
-    --bg-element: var(--white-ter);
-    --bg-component: var(--white-bis);
-    --bg-highlight: var(--warning-light);
-    --bg-hover: var(--grey-lighter);
-    --text: var(--black-ter);
-    --text-invert: var(--white);
+    --text: var(--black-800);
+    --text-invert: var(--white-10);
     --text-light: var(--grey-dark);
     --text-darker: var(--black);
-    --text-elem: var(--black-ter);
-    --text-comp: var(--black-ter);
-    --text-invert-ter: var(--white-ter);
-    --text-btn: var(--black);
-    --text-btn-invert: var(--white);
-    --text-bg: var(--white);
-    --text-code: var(--complement);
+    --text-elem: var(--black-800);
+    --text-comp: var(--black-800);
+    --text-invert-ter: var(--white-50);
+    --text-btn-invert: var(--white-50);
+    --text-code: color-mix(in hsl, var(--complement), black 25%);
+    /** Common shadow treatment for containers, components and elements **/
+    /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
+    --shadow-raw: var(--secondary-raw);
+    --shadow-container: inset 0 0 1px var(--bg-component), 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
+    --shadow-component: inset 0 0 1px var(--bg-element), 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
+    --shadow-element: inset 0 0 1px var(--grey-lighter), 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
 }
+/* initial-theme-dark.css */
 
-
-/*
-main dark theme color definitions
-use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
- */
+/**  main dark theme color definitions
+use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
+ **/
 
 
 .main-theme-dark
 {
-    --shadow: 0 .1em .1em .1em rgba(240, 245, 245, .25), 0 0 0 1px rgba(245, 245, 245, .02);
-    /* main theme colour parameters
-        - based on split complementary color selection
-        - for triadic color selection, set --main-color-offset to 120 degrees
-    */
-    --main-color: 140;                  /** primary hue value **/
-    --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
-    --main-color-sl-light: 100%, 92%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 90%, 57%;     /** color lightening saturation and lightness **/
-    --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
-    --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
-    /* build main theme colours */
-    --primary: hsl( var(--main-color), 75%, 31% );
-    --secondary: hsl( var(--main-color-complement-low), 70%, 50% );
-    --complement: hsl( var(--main-color-complement-high), 60%, 50% );
-    /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl( var(--main-color), 100%, 28%);
-    --secondary-text: hsl( var(--main-color-complement-low), 100%, 47%);
-    --complement-text: hsl( var(--main-color-complement-high), 100%, 47%);
-    --primary-text-invert: hsl( var(--main-color), 100%, 98%);
-    --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
-    --complement-text-invert: hsl( var(--main-color-complement-high), 100%, 100%);
-    /* optional light colors; use carefully as accessibility is hard to achieve */
-    --primary-light: hsl( var(--main-color), var(--main-color-sl-light));
-    --secondary-light: hsl( var(--main-color-complement-low), var(--main-color-sl-light));
-    --complement-light: hsl( var(--main-color-complement-high), var(--main-color-sl-light));
-    --primary-dark: hsl( var(--main-color), var(--main-color-sl-dark) );
-    --secondary-dark: hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
-    --complement-dark: hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
-    --link: hsl(217, 75%, 75%);
-    --link-light: hsl(217, 70%, 90%);
-    --link-dark: hsl(217, 75%, 40%);
-    --link-text: hsl( 217, 100%, 55%);
-    --link-text-invert: hsl( 217, 100%, 28%);
-    --success: hsl(150, 80%, 60%);
-    --success-light: hsl(141, 80%, 96%);
-    --success-dark: hsl(141, 70%, 33%);
-    --success-text: hsl( 141, 100%, 18%);
-    --success-text-invert: hsl( 141, 100%, 95%);
-    --warning: hsl(48, 90%, 55%);
-    --warning-light: hsl(48, 100%, 95%);
-    --warning-dark: hsl(48, 100%, 45%);
-    --warning-text: hsl( 48, 100%, 20%);
-    --warning-text-invert: hsl( 48, 100%, 95%);
-    --danger: hsl(348, 80%, 51%);
-    --danger-light: hsl(348, 90%, 97%);
-    --danger-dark: hsl(348, 86%, 36%);
-    --danger-text: hsl( 348, 100%, 50%);
-    --danger-text-invert: hsl( 348, 100%, 100%);
+    /** build main theme colours **/
+    --primary: color-mix(in hsl, hsl(var(--primary-raw) / 100%), white 3% );
+    --secondary: color-mix(in hsl, hsl(var(--secondary-raw) / 100%), white 3% );
+    --complement: color-mix(in hsl, hsl(var(--complement-raw) / 100%), white 3% );
+    /** define text colours for main theme, adjusted for expected theme colour luminosity **/
+    --primary-text: hsl(185,65%,36%);
+    --secondary-text: hsl(37,20%,47%);
+    --complement-text: hsl(22, 82%, 47%);
+    --primary-text-invert: hsl(185, 55%, 96%);
+    --primary-text-invert-dark: hsl(185, 55%, 96%);
+    --secondary-text-invert: hsl(37, 28%, 97%);
+    --secondary-text-invert-dark: hsl(37, 28%, 97%);
+    --complement-text-invert: hsl(22, 80%, 18%);
+    --complement-text-invert-dark: hsl(22, 80%, 97%);
+    --primary-light: hsl(185,55%,94%);
+    --secondary-light: hsl(37, 24%, 92%);
+    --complement-light: hsl(22,85%,93%);
+    --primary-dark: hsl(185,65%,22%);
+    --secondary-dark: hsl(37,20%,40%);
+    --complement-dark: hsl(22,88%,40%);
+    /** define colours for links, success, warning, danger **/
+    --link: hsl(240,62%,82%);
+    --link-visited: hsl(280, 52%, 78%);
+    --link-light: hsl(240, 50%, 95%);
+    --link-dark: hsl(240, 55%, 55%);
+    --link-text: hsl(240, 55%, 65%);
+    --link-text-invert: hsl(240, 52%, 20%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
+    --success: hsl(152, 47%, 53%);
+    --success-light: hsl(152, 50%, 95%);
+    --success-dark: hsl(152, 55%, 32%);
+    --success-text: hsl(152, 70%, 19%);
+    --success-text-invert: hsl( 152, 70%, 17%);
+    --success-text-invert-dark: hsl(152, 47%, 97%);
+    --warning: hsl(38, 92%, 58%);
+    --warning-light: hsl(38, 88%, 95%);
+    --warning-dark: hsl(38, 90%, 32%);
+    --warning-text: hsl(38, 65%, 27%);
+    --warning-text-invert: var(--black-800);
+    --warning-text-invert-dark: hsl(38, 92%, 97%);
+    --danger: hsl(4, 70%, 55%);
+    --danger-light: hsl(4, 74%, 97%);
+    --danger-dark: hsl(4, 62%, 45%);
+    --danger-text: hsl(4, 65%, 37%);
+    --danger-text-invert: var(--white-10);
+    --danger-text-invert-dark: hsl(4, 70%, 97%);
     --grey-light: hsl(0, 0%, 75%);
     --grey-lighter: hsl(0, 0%, 85%);
     /** invert colours for elements and components **/
     --border-main: var(--grey);
     --border-main-darker: var(--grey-light);
     --bg-main: var(--black);
-    --bg-main-elem: var(--grey-darker);
-    --bg-main-comp: var(--black-ter);
-    --bg-main-bis: var(--black-bis);
-    --bg-main-ter: var(--black-ter) ;
-    --bg-main-invert: var(--white);
-    --bg-main-invert-ter: var(--white-ter);
-    --bg-main-code: var(--grey-darker);
+    --bg-main-invert: var(--white-10);
     --bg-grid: var(--grey-darker);
+    --bg-container: var(--black-800);
+    --bg-component: var(--black-700);
     --bg-element: var(--grey-darker);
-    --bg-component: var(--black-ter);
-    --bg-highlight: hsl(48, 100%, 15%);
+    --bg-highlight: var(--warning-text);
     --bg-hover: var(--grey-dark);
     /** invert or adjust colours for text **/
-    --text: var(--white-bis);
-    --text-invert: var(--black);
+    --text: var(--white-100);
+    --text-invert: var(--black-800);
     --text-light: var(--grey);
-    --text-darker: var(--white-ter);
-    --text-elem: var(--white-bis);
-    --text-comp: var(--white-bis);
-    --text-invert-ter: var(--black-ter);
-    --text-btn: var(--black-bis);
-    --text-btn-invert: var(--white-ter);
-    --text-bg: var(--black-bis);
-    --text-code: var(--secondary-light);;
+    --text-darker: var(--white-50);
+    --text-elem: var(--white-25);
+    --text-comp: var(--white-25);
+    --text-invert-ter: var(--black-800);
+    --text-code: var(--secondary-light);
+    /** Common shadow treatment for containers, components and elements **/
+    /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
+    --shadow-raw: var(--secondary-raw);
+    --shadow-container: inset 0 0 1px var(--bg-container), 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
+    --shadow-component: inset 0 0 1px var(--bg-component), 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
+    --shadow-element: inset 0 0 1px var(--bg-element), 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
 }
-
-/** other special items that need control **/
-
-
 /* Pure css HTML base elements and reset */
 /** note that some HTML tags are set in other element files **/
 
 /* Define layers organization for all subsequent files */
-@layer base, layout, elements, extended, extras, custom;
+@layer base, elements, extended, extras, layout, custom;
 
 
 @layer base
@@ -330,8 +324,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         margin: 0;
         padding: 0;
 
-        background-color: var(--bg-main);
-
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
@@ -341,7 +333,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     body
     {
         font-family: var(--family-sans-serif), sans-serif;
-        font-size: 1rem;
+        font-size: var(--base-font-size);
         font-weight: var(--weight-normal);
         line-height: var(--line-height-150);
 
@@ -418,6 +410,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     a
     {
         color: var(--link);
+    }
+
+    a:visited
+    {
+        color: var(--link-visited);
     }
 
     ul,
@@ -498,7 +495,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     pre
     {
         font-family: var(--family-monospace), monospace;
-        font-size: 1rem;
+        font-size: var(--base-font-size);
 
         overflow-x: scroll;
         overflow-y: hidden;
@@ -507,13 +504,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: 0;
 
         border-left: .25rem solid var(--complement);
-        background-color: var(--bg-main-code);
+        background-color: var(--bg-container);
     }
 
     code
     {
         font-family: var(--family-monospace), monospace;
-        font-size: 1rem;
+        font-size: var(--base-font-size);
         font-weight: normal;
 
         margin: 0;
@@ -523,12 +520,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         color: var(--text-code);
         border-radius: var(--radius);
-        background-color: var(--bg-main-code);
+        background-color: var(--white-50);
     }
 
     pre > code
     {
-        font-size: 1em;
+        font-size: var(--base-font-size);
 
         display: block;
         overflow-x: scroll;
@@ -544,48 +541,48 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 /* fix for prism code highlighter */
-@layer base
+
+pre > code .tag
 {
-    pre > code .tag
-    {
-        font-size: unset;
-        line-height: normal;
+    font-size: var(--size-6);
+    font-weight: var(--weight-normal);
+    line-height: normal;
 
-        display: unset;
+    display: unset;
 
-        height: auto;
-        padding: 0;
+    height: auto;
+    padding: 0;
 
-        white-space: nowrap;
+    white-space: nowrap;
 
-        border-radius: unset;
-        background: transparent !important;
+    border: none;
+    border-radius: unset;
+    background: transparent !important;
 
-        align-items: baseline;
-        justify-content: unset;
-    }
+    justify-content: unset;
+    align-items: baseline;
+}
 
-    pre[class*=language-]
-    {
-        border: none;
-    }
+pre[class*=language-]
+{
+    border: none;
+}
 
-    pre > code[class*=language-]
-    {
-        overflow: auto;
+pre > code[class*=language-]
+{
+    overflow: auto;
 
-        min-width: 10rem;
-        min-height: 10rem;
-        max-height: 30rem;
-        margin: 0 !important;
-        padding: 1rem 1.5rem;
-    }
+    min-width: 10rem;
+    min-height: 10rem;
+    max-height: 30rem;
+    margin: 0 !important;
+    padding: 1rem 1.5rem;
+}
 
-    pre
-    {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+pre
+{
+    margin: 0 !important;
+    padding: 0 !important;
 }
 @layer layout
 {
@@ -599,17 +596,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: var(--padding-normal);
 
         color: var(--text);
-        background-color: var(--bg-component);
+        border: none;
+        background-color: var(--bg-container);
     }
-
 
     .box-shadow
     {
         border-radius: var(--radius);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-container);
     }
 }
-
 @layer layout
 {
     /* Sadly, grid needs some help for columns at mobile widths  */
@@ -1031,8 +1027,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         position: fixed;
         top: 0;
-
-        height: auto;
     }
 
     .page-wrapper-widgets > .page-main-nav.is-fixed,
@@ -1042,7 +1036,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         top: var(--widgetbar-height);
 
         width: 100vw;
-        height: auto;
     }
 
     .page-wrapper-widgets > .page-main-nav.is-fixed + .page-sidenav
@@ -1132,18 +1125,20 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .page-footer
     {
+        font-size: var(--size-7);
+
         display: flex;
 
         margin-top: var(--margin);
         padding: var(--padding-medium) var(--padding-large);
 
         border-top: 1px solid var(--border-main-darker);
-        background-color: var(--bg-component);
+        background-color: var(--bg-container);
 
-        justify-content: space-between;
         column-gap: calc(2 * var(--gap-col));
         row-gap: var(--gap-row);
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .page-footer > section,
@@ -1178,16 +1173,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .page-footer > section p:first-child,
     .page-footer > div p:first-child
     {
-        font-size: var(--size-5);
+        font-size: var(--size-6);
         font-weight: var(--weight-semibold);
     }
 
     .page-footer .foot-heading
     {
-        font-size: var(--size-4);
+        font-size: var(--size-5);
         font-weight: var(--weight-semibold);
 
-        min-height: var(--size-4);
+        min-height: var(--size-5);
     }
 
     @media screen and (max-width: 576px)
@@ -1259,7 +1254,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 /* spacing options */
 
-@layer layout
+@layer elements
 {
     /** spacing between related HTML tags such as buttons, headings, etc.  **/
     .space-element
@@ -1481,7 +1476,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .has-bg-white
     {
-        background-color: var(--white);
+        background-color: var(--white-10);
     }
 }
 
@@ -1638,9 +1633,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         white-space: nowrap !important; /* 3 */
 
-        color: #fff;
         border: 0 !important;
-        background-color: #000;
 
         -webkit-clip-path: inset(50%) !important;
                 clip-path: inset(50%) !important; /* 2 */
@@ -1836,7 +1829,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 
-/* Buttons */
+/* buttons.css */
 
 @layer elements
 {
@@ -1844,29 +1837,24 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .button
     {
         font-size: 1rem;
+        font-weight: var(--weight-semibold);
         line-height: 1.5;
 
         display: inline-flex;
 
-        height: 2.5em;
-        padding: var(--pad-vert) var(--pad-horz);
+        padding: var(--pad-vert) calc(1.5 * var(--pad-horz));
 
         cursor: pointer;
-        text-align: center;
         white-space: nowrap;
 
-        border-radius: var(--radius-elem);
+        color: var(--text-invert);
+        border: 1px solid var(--grey-dark);
+        border-radius: 10rem;
+        background-color: var(--grey-dark);
         box-shadow: none;
 
-        justify-content: center;
         align-items: center;
-    }
-
-    button
-    {
-        color: var(--text-comp);
-        border: 1px solid var(--border-main-darker);
-        background-color: var(--bg-main);
+        justify-content: center;
     }
 
     button:focus,
@@ -1875,12 +1863,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         outline: none;
     }
 
-    button.has-hover:hover
-    {
-        color: var(--text-elem);
-        border: 1px solid var(--bg-element);
-        background-color: var(--bg-element);
-    }
 
     a.button
     {
@@ -1895,31 +1877,333 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 
 
-    button.is-default-inverted,
-    .button.is-default-inverted
+    /** colour schemes **/
+
+    /*** default button ***/
+    .button-default,
+    .button-default-outlined,
+    .button-default-inverted
+    {
+        color: var(--text-invert);
+        border: 1px solid var(--grey-dark);
+        background-color: var(--bg-main);
+    }
+    button:not(.has-no-hover):hover,
+    .button:not(.has-no-hover):hover
+    {
+        color: var(--text-elem);
+        border: 1px solid var(--grey-light);
+        background-color: var(--grey-light);
+    }
+
+    button:not(.has-no-hover):active,
+    .button:not(.has-no-hover):hover
+    {
+        color: var(--text-invert-ter);
+        border: 1px solid var(--bg-main-invert);
+        background-color: var(--bg-main-invert);
+    }
+
+    .button-default-outlined
+    {
+        color: var(--grey-darker);
+        border: 1px solid var(--grey-darker);
+        background-color: var(--bg-main);
+    }
+
+    .button-default-outlined:not(.has-no-hover):hover
+    {
+        color: var(--text-invert);
+        border: 1px solid var(--grey-dark);
+        background-color: var(--grey-dark);
+    }
+
+    .button-default-outlined:not(.has-no-hover):active
+    {
+        color: var(--text-invert);
+        border: 1px solid var(--bg-main-invert);
+        background-color: var(--bg-main-invert);
+    }
+
+    .button-default-inverted
     {
         color: var(--text-comp);
         border: none;
+        background-color: var(--bg-main);
 
         text-decoration-color: var(--text-comp);
         text-decoration-line: underline;
         text-underline-offset: .25em;
     }
 
-    button.is-default-inverted.has-hover:hover,
-    .button.is-default-inverted.has-hover:hover
+    .button-default-inverted:not(.has-no-hover):hover
     {
         text-decoration: underline var(--text-elem);
 
         color: var(--text-elem);
         border: none;
-        background-color: var(--bg-element);
+        background-color: var(--bg-component);
     }
 
-    button.is-rounded,
-    .button.is-rounded
+    .button-default-inverted:not(.has-no-hover):active
     {
-        border-radius: 9999px;
+        text-decoration: underline var(--text-invert-ter);
+
+        color: var(--text-invert-ter);
+        border: none;
+        background-color: var(--grey-dark);
+    }
+
+
+    /*** primary button ***/
+    button.button-primary,
+    .button.button-primary
+    {
+        color: var(--primary-text-invert);
+        border: 1px solid var(--primary);
+        background-color: var(--primary);
+    }
+
+    button.button-primary:not(.has-no-hover):hover,
+    .button.button-primary:not(.has-no-hover):hover
+    {
+        border: 1px solid color-mix(in hsl, var(--primary), white 20%);
+        background-color: color-mix(in hsl, var(--primary), white 20%);
+    }
+
+    button.button-primary:not(.has-no-hover):active,
+    .button.button-primary:not(.has-no-hover):active
+    {
+        border: 1px solid color-mix(in hsl, var(--primary), black 20%);
+        background-color: color-mix(in hsl, var(--primary), black 20%);
+    }
+
+    button.button-primary-outlined,
+    .button.button-primary-outlined
+    {
+        color: var(--primary);
+        border: 1px solid var(--primary);
+        background-color: var(--bg-main);
+    }
+
+    button.button-primary-outlined:not(.has-no-hover):hover,
+    .button.button-primary-outlined:not(.has-no-hover):hover
+    {
+        border: 1px solid color-mix(in hsl, white, var(--primary) 30%);
+        background-color: color-mix(in hsl, white, var(--primary) 30%);
+    }
+
+    button.button-primary-outlined:not(.has-no-hover):active,
+    .button.button-primary-outlined:not(.has-no-hover):active
+    {
+        border: 1px solid color-mix(in hsl, var(--primary), black 20%);
+        background-color: color-mix(in hsl, var(--primary), black 20%);
+    }
+
+    button.button-primary-inverted,
+    .button.button-primary-inverted
+    {
+        text-decoration: underline var(--primary);
+
+        color: var(--primary);
+        border: none;
+        background-color: var(--bg-main);
+
+        text-underline-offset: .25em;
+    }
+
+    button.button-primary-inverted:not(.has-no-hover):hover,
+    .button.button-primary-inverted:not(.has-no-hover):hover
+    {
+        text-decoration: underline var(--primary);
+
+        color: var(--primary);
+        border: none;
+        background-color: var(--bg-element);
+
+        text-underline-offset: .25em;
+    }
+
+    button.button-primary-inverted:not(.has-no-hover):active,
+    .button.button-primary-inverted:not(.has-no-hover):active
+    {
+        text-decoration: underline color-mix(in hsl, var(--primary), black 20%);
+
+        color: color-mix(in hsl, var(--primary), black 20%);
+        border: none;
+        background-color: color-mix(in hsl, var(--primary), white 75%);
+    }
+
+    /*** secondary button ***/
+    button.button-secondary,
+    .button.button-secondary
+    {
+        color: var(--secondary-text-invert);
+        border: 1px solid var(--secondary);
+        background-color: var(--secondary);
+    }
+
+    button.button-secondary:not(.has-no-hover):hover,
+    .button.button-secondary:not(.has-no-hover):hover
+    {
+        border: 1px solid color-mix(in hsl, var(--secondary), white 30%);
+        background-color: color-mix(in hsl, var(--secondary), white 30%);
+    }
+
+    button.button-secondary:not(.has-no-hover):active,
+    .button.button-secondary:not(.has-no-hover):active
+    {
+        border: 1px solid color-mix(in hsl, var(--secondary), black 20%);
+        background-color: color-mix(in hsl, var(--secondary), black 20%);
+    }
+
+    button.button-secondary-outlined,
+    .button.button-secondary-outlined
+    {
+        color: var(--secondary-dark);
+        border: 1px solid var(--secondary-dark);
+        background-color: var(--bg-main);
+    }
+
+    button.button-secondary-outlined:not(.has-no-hover):hover,
+    .button.button-secondary-outlined:not(.has-no-hover):hover
+    {
+        border: 1px solid color-mix(in hsl, white, var(--secondary-dark) 30%);
+        background-color: color-mix(in hsl, white, var(--secondary-dark) 30%);
+    }
+
+    button.button-secondary-outlined:not(.has-no-hover):active,
+    .button-secondary-outlined:not(.has-no-hover):active
+    {
+        border: 1px solid color-mix(in hsl, var(--secondary-dark), black 20%);
+        background-color: color-mix(in hsl, var(--secondary-dark), black 20%);
+    }
+
+    button.button-secondary-inverted,
+    .button.button-secondary-inverted
+    {
+        text-decoration: underline var(--secondary-dark);
+
+        color: var(--secondary-dark);
+        border: none;
+        background-color: var(--bg-main);
+
+        text-underline-offset: .25em;
+    }
+
+    button.button-secondary-inverted:not(.has-no-hover):hover,
+    .button.button-secondary-inverted:not(.has-no-hover):hover
+    {
+        text-decoration: underline var(--secondary-dark);
+
+        color: var(--secondary-dark);
+        border: none;
+        background-color: var(--bg-element);
+
+        text-underline-offset: .25em;
+    }
+
+    button.button-secondary-inverted:not(.has-no-hover):active,
+    .button.button-secondary-inverted:not(.has-no-hover):active
+    {
+        text-decoration: underline color-mix(in hsl, var(--secondary-dark), black 20%);
+
+        color: color-mix(in hsl, var(--secondary-dark), black 20%);
+        border: none;
+        background-color: color-mix(in hsl, var(--secondary-dark), white 75%);
+
+        text-underline-offset: .25em;
+    }
+
+
+    /*** complement buttons ***/
+    button.button-complement,
+    .button.button-complement
+    {
+        color: var(--complement-text-invert);
+        border: 1px solid var(--complement);
+        background-color: var(--complement);
+    }
+
+    button.button-complement:not(.has-no-hover):hover,
+    .button.button-complement:not(.has-no-hover):hover
+    {
+        border: 1px solid color-mix(in hsl, var(--complement), white 30%);
+        background-color: color-mix(in hsl, var(--complement), white 30%);
+    }
+
+    button.button-complement:not(.has-no-hover):active,
+    .button.button-complement:not(.has-no-hover):active
+    {
+        border: 1px solid color-mix(in hsl, var(--complement), black 30%);
+        background-color: color-mix(in hsl, var(--complement), black 20%);
+    }
+
+    button.button-complement-outlined,
+    .button.button-complement-outlined
+    {
+        color: var(--complement-dark);
+        border: 1px solid var(--complement-dark);
+        background-color: var(--bg-main);
+    }
+
+    button.button-complement-outlined:not(.has-no-hover):hover,
+    .button.button-complement-outlined:not(.has-no-hover):hover
+    {
+        border: 1px solid color-mix(in hsl, white, var(--complement-dark) 30%);
+        background-color: color-mix(in hsl, white, var(--complement-dark) 30%);
+    }
+
+    button.button-complement-outlined:not(.has-no-hover):active,
+    .button.button-complement-outlined:not(.has-no-hover):active
+    {
+        border: 1px solid color-mix(in hsl, var(--complement-dark), black 20%);
+        background-color: color-mix(in hsl, var(--complement-dark), black 20%);
+    }
+
+    button.button-complement-inverted,
+    .button.button-complement-inverted
+    {
+        text-decoration: underline var(--complement-dark);
+
+        color: var(--complement-dark);
+        border: none;
+        background-color: var(--bg-main);
+
+        text-underline-offset: .25em;
+    }
+
+    button.button-complement-inverted:not(.has-no-hover):hover,
+    .button.button-complement-inverted:not(.has-no-hover):hover
+    {
+        text-decoration: underline var(--complement-dark);
+
+        color: var(--complement-dark);
+        border: none;
+        background-color: var(--bg-element);
+
+        text-underline-offset: .25em;
+    }
+
+    button.button-complement-inverted:not(.has-no-hover):active,
+    .button.button-complement-inverted:not(.has-no-hover):active
+    {
+        text-decoration: underline color-mix(in hsl, var(--complement-dark), black 20%);
+
+        color: color-mix(in hsl, var(--complement-dark), black 20%);
+        border: none;
+        background-color: color-mix(in hsl, var(--complement-dark), white 75%);
+
+        text-underline-offset: .25em;
+    }
+
+
+
+    /** button shape and size **/
+    button.is-rectangle,
+    .button.is-rectangle
+    {
+        border-radius: var(--radius-elem);
     }
 
     button.is-large,
@@ -1952,11 +2236,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         line-height: 1.2;
 
         height: 2rem;
-        padding: var(--pad-vert-small) var(--pad-horz-small);
+        padding: var(--pad-vert-small) var(--pad-horz);
     }
 
-    button.is-small:not(.is-rounded),
-    .button.is-small:not(.is-rounded)
+    button.is-small.is-rectangle,
+    .button.is-small.is-rectangle
     {
         border-radius: calc(var(--radius-elem) / 2);
     }
@@ -1965,9 +2249,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .button[disabled]
     {
         cursor: not-allowed;
+        pointer-events: none;
 
         opacity: .6;
     }
+
 
     /* group buttons */
     .buttons
@@ -1978,7 +2264,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         flex-wrap: wrap;
         justify-content: flex-start;
     }
-
 
     .buttons button:not(:last-child),
     .buttons .button:not(:last-child)
@@ -1997,13 +2282,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 
     /** ensure that hover doesn't distort button size **/
-    .button[class*='outlined']:not(.is-small).has-hover:hover
-    {
-        padding-top: calc(var(--pad-vert) + 1px);
-        padding-bottom: calc(var(--pad-vert) + 1px);
-    }
-
-    .button[class*='outlined'].is-small.has-hover:hover
+    .button[class*='outlined'].is-small:not(.has-no-hover):hover
     {
         padding-top: calc(var(--pad-vert-small) + 1px);
         padding-bottom: calc(var(--pad-vert-small) + 1px);
@@ -2038,9 +2317,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     /* set-up for waiting spinner */
     button.is-loading,
-    button.is-loading-dark,
-    .button.is-loading,
-    .button.is-loading-dark
+    .button.is-loading
     {
         pointer-events: none;
 
@@ -2080,185 +2357,225 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         border: 2px solid var(--bg-main);
         border-top-color: transparent;
         border-right-color: transparent;
-        border-radius: 9999px;
+        border-radius: 200px;
     }
 
-    button.is-loading-dark::after,
-    .button.is-loading-dark::after
+    /*** floating action buttons ***/
+    button.fab,
+    button.fab-primary,
+    button.fab-secondary,
+    button.fab-complement
     {
-        position: relative;
-        top: calc(50% - (1em / 2) - 2px);
-        right: calc(50% - (1em / 2) - 4px);
+        font-size: 2rem;
 
-        display: block;
+        display: flex;
 
-        width: 1em;
-        height: 1em;
-
-        content: '';
-        -webkit-animation: spinAround .5s infinite linear;
-                animation: spinAround .5s infinite linear;
-
-        border: 2px solid var(--bg-main-invert);
-        border-top-color: transparent;
-        border-right-color: transparent;
-        border-radius: 9999px;
-    }
-}
-
-
-@layer elements
-{
-    .delete
-    {
-        font-size: 0;
-
-        position: relative;
-
-        display: inline-block;
-
-        width: 20px;
-        min-width: 20px;
-        max-width: 20px;
-        height: 20px;
-        min-height: 20px;
-        max-height: 20px;
+        width: 3rem;
+        height: 3rem;
+        margin: 0;
         padding: 0;
 
         cursor: pointer;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-        vertical-align: top;
-        pointer-events: auto;
 
         border: none;
-        border-radius: 9999px;
-        outline: 0;
-        background-color: rgba(10, 10, 10, .2);
+        border-radius: var(--radius-elem);
+        box-shadow: 0 3px 5px -1px hsl(var(--shadow-raw) / .3),
+        0 6px 10px 0 hsl(var(--shadow-raw) / .2),
+        0 1px 18px 0 hsl(var(--shadow-raw) / .15); /* 6dp elevation */
 
-        -webkit-touch-callout: none;
-           -moz-appearance: none;
-        -webkit-appearance: none;
-        flex-grow: 0;
-        flex-shrink: 0;;
+        align-items: center;
+        justify-content: center;
     }
 
-
-    .delete.is-small
+    button.fab:active,
+    button.fab-primary:active,
+    button.fab-secondary:active,
+    button.fab-complement:active
     {
-        font-size: .5rem;
-
-        width: 16px;
-        min-width: 16px;
-        max-width: 16px;
-        height: 16px;
-        min-height: 16px;
-        max-height: 16px;
-        margin-top: .5rem;
+        box-shadow: 0 7px 8px -4px hsl(var(--shadow-raw) / .3),
+        0 12px 17px 2px hsl(var(--shadow-raw) / .2),
+        0 5px 22px 4px hsl(var(--shadow-raw) / .15); /* 12dp elevation on press */
     }
 
-    button.delete.is-small
+    button.fab
     {
-        border-radius: 9999px;
+        color: var(--bg-main);
+        background-color: var(--grey-dark);
     }
 
-    .delete.is-medium
+    button.fab:hover
     {
-        font-size: .75rem;
-
-        width: 24px;
-        min-width: 24px;
-        max-width: 24px;
-        height: 24px;
-        min-height: 24px;
-        max-height: 24px;
-        margin-top: .5rem;
+        border: none;
+        background-color: color-mix(in hsl,  var(--grey-dark), white 30%);
     }
 
-    .delete.is-large
+    button.fab:active
     {
-        font-size: 1rem;
-
-        width: 32px;
-        min-width: 32px;
-        max-width: 32px;
-        height: 32px;
-        min-height: 32px;
-        max-height: 32px;
-        margin-top: .5rem;
+        border: none;
+        background-color: color-mix(in hsl,  var(--grey-dark), black 20%);
     }
 
-
-    .delete::before,
-    .delete::after
+    button.fab-primary
     {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        display: block;
-
-        content: '';
-        transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        transform-origin: center center;
-
-        background-color: var(--text-btn-invert);
+        color: var(--primary-text-invert);
+        border: none;
+        background-color: var(--primary);
     }
 
-    .delete::before
+    button.fab-primary:hover
     {
-        width: 50%;
-        height: 2px;
+        color: var(--primary-text-invert);
+        border: none;
+        background-color: color-mix(in hsl,  var(--primary), white 30%);
     }
 
-    .delete::after
+    button.fab-primary:active
     {
-        width: 2px;
-        height: 50%;
+        color: var(--primary-text-invert);
+        border: none;
+        background-color: color-mix(in hsl,  var(--primary), black 20%);
     }
 
-    .delete:hover,
-    .delete:focus
+    button.fab-secondary
     {
-        background-color: rgba(10, 10, 10, .3);
+        color: var(--secondary-text-invert);
+        border: none;
+        background-color: var(--secondary);
     }
 
-    .delete:active
+    button.fab-secondary:hover
     {
-        background-color: rgba(10, 10, 10, .4);
+        color: var(--secondary-text-invert);
+        border: none;
+        background-color: color-mix(in hsl,  var(--secondary), white 30%);
+    }
+
+    button.fab-secondary:active
+    {
+        color: var(--secondary-text-invert);
+        border: none;
+        background-color: color-mix(in hsl,  var(--secondary), black 20%);
+    }
+
+    button.fab-complement
+    {
+        color: var(--complement-text-invert-dark);
+        border: none;
+        background-color: var(--complement);
+    }
+
+    button.fab-complement:hover
+    {
+        color: var(--complement-text-invert-dark);
+        border: none;
+        background-color: color-mix(in hsl,  var(--complement), white 30%);
+    }
+
+    button.fab-complement:active
+    {
+        color: var(--complement-text-invert-dark);
+        border: none;
+        background-color: color-mix(in hsl,  var(--complement), black 20%);
+    }
+
+    /*** icon controls ***/
+    button.fab > [class*='icon-bg-'],
+    button.fab-primary > [class*='icon-bg-'],
+    button.fab-secondary > [class*='icon-bg-'],
+    button.fab-complement > [class*='icon-bg-']
+    {
+        width: 67% !important;
+        height: 67% !important;
+        margin: 0 !important;
+
+        background-color: currentColor !important;
+    }
+
+    /*** position controls ***/
+    .fab.is-top-left,
+    .fab-primary.is-top-left,
+    .fab-secondary.is-top-left,
+    .fab-complement.is-top-left
+    {
+        position: fixed;
+        z-index: var(--navbar-z);
+        top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
+        left: var(--base-rem);
+    }
+
+    .fab.is-top-right,
+    .fab-primary.is-top-right,
+    .fab-secondary.is-top-right,
+    .fab-complement.is-top-right
+    {
+        position: fixed;
+        z-index: var(--navbar-z);
+        top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
+        right: var(--base-rem);
+    }
+
+    .fab.is-bottom-left,
+    .fab-primary.is-bottom-left,
+    .fab-secondary.is-bottom-left,
+    .fab-complement.is-bottom-left
+    {
+        position: fixed;
+        z-index: var(--navbar-z);
+        bottom: var(--base-rem);
+        left: var(--base-rem);
+    }
+
+    .fab.is-bottom-right,
+    .fab-primary.is-bottom-right,
+    .fab-secondary.is-bottom-right,
+    .fab-complement.is-bottom-right
+    {
+        position: fixed;
+        z-index: var(--navbar-z);
+        right: var(--base-rem);
+        bottom: var(--base-rem);
+    }
+
+    .fab.is-large,
+    .fab-primary.is-large,
+    .fab-secondary.is-large,
+    .fab-complement.is-large
+    {
+        font-size: 2.5rem;
+
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .fab.is-rounded,
+    .fab-primary.is-rounded,
+    .fab-secondary.is-rounded,
+    .fab-complement.is-rounded
+    {
+        border-radius: 50%;
     }
 }
-
 @layer elements
 {
     /* Element / Block Colours */
-    .is-primary,
-    .is-primary-light.has-hover:hover,
-    .is-primary-outlined.has-hover:hover,
-    .is-primary-dark.has-hover:hover
+    .is-primary
     {
-        opacity: 1;
         color: var(--primary-text-invert);
-        border: 0 solid var(--primary-dark);
+        border: 1px solid var(--primary);
         background-color: var(--primary);
     }
 
     .is-primary-light
     {
-        opacity: 1;
         color: var(--primary-text);
-        border: 0 solid var(--primary);
+        border: 1px solid var(--primary-light);
         background-color: var(--primary-light);
     }
 
-    .is-primary-dark,
-    .is-primary.has-hover:hover
+    .is-primary-dark
     {
-        opacity: 1;
-        color: var(--primary-text-invert);
-        border: 0 solid var(--primary-dark);
+        color: var(--primary-text-invert-dark);
+        border: 1px solid var(--primary-dark);
         background-color: var(--primary-dark);
     }
 
@@ -2269,53 +2586,24 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-main);
     }
 
-    .is-primary-inverted
+    .is-secondary
     {
-        text-decoration: underline var(--primary);
-
-        color: var(--primary);
-        border: none;
-        background-color: var(--bg-main);
-
-        text-underline-offset: .25em;
-    }
-
-    .is-primary-inverted.has-hover:hover
-    {
-        text-decoration: underline var(--primary-dark);
-
-        opacity: 1;
-        color: var(--primary-dark);
-        border: none;
-        background-color: var(--bg-element);
-    }
-
-
-    .is-secondary,
-    .is-secondary-light.has-hover:hover,
-    .is-secondary-outlined.has-hover:hover,
-    .is-secondary-dark.has-hover:hover
-    {
-        opacity: 1;
         color: var(--secondary-text-invert);
-        border: 0 solid var(--secondary-dark);
+        border: 1px solid var(--secondary);
         background-color: var(--secondary);
     }
 
     .is-secondary-light
     {
-        opacity: 1;
         color: var(--secondary-text);
-        border: 0 solid var(--secondary);
+        border: 1px solid var(--secondary-light);
         background-color: var(--secondary-light);
     }
 
-    .is-secondary-dark,
-    .is-secondary.has-hover:hover
+    .is-secondary-dark
     {
-        opacity: 1;
-        color: var(--secondary-text-invert);
-        border: 0 solid var(--secondary-dark);
+        color: var(--secondary-text-invert-dark);
+        border: 1px solid var(--secondary-dark);
         background-color: var(--secondary-dark);
     }
 
@@ -2326,53 +2614,25 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-main);
     }
 
-    .is-secondary-inverted
+
+    .is-complement
     {
-        text-decoration: underline var(--secondary);
-
-        color: var(--secondary);
-        border: none;
-        background-color: var(--bg-main);
-
-        text-underline-offset: .25em;
-    }
-
-    .is-secondary-inverted.has-hover:hover
-    {
-        text-decoration: underline var(--secondary-dark);
-
-        opacity: 1;
-        color: var(--secondary-dark);
-        border: none;
-        background-color: var(--bg-element);
-    }
-
-
-    .is-complement,
-    .is-complement-light.has-hover:hover,
-    .is-complement-outlined.has-hover:hover,
-    .is-complement-dark.has-hover:hover
-    {
-        opacity: 1;
         color: var(--complement-text-invert);
-        border: 0 solid var(--complement-dark);
+        border: 1px solid var(--complement);
         background-color: var(--complement);
     }
 
     .is-complement-light
     {
-        opacity: 1;
         color: var(--complement-text);
-        border: 0 solid var(--complement);
+        border: 1px solid var(--complement-light);
         background-color: var(--complement-light);
     }
 
-    .is-complement-dark,
-    .is-complement.has-hover:hover
+    .is-complement-dark
     {
-        opacity: 1;
-        color: var(--complement-text-invert);
-        border: 0 solid var(--complement-dark);
+        color: var(--complement-text-invert-dark);
+        border: 1px solid var(--complement-dark);
         background-color: var(--complement-dark);
     }
 
@@ -2383,110 +2643,47 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-main);
     }
 
-    .is-complement-inverted
+
+    .is-link
     {
-        text-decoration: underline var(--complement);
-
-        color: var(--complement);
-        border: none;
-        background-color: var(--bg-main);
-
-        text-underline-offset: .25em;
-    }
-
-    .is-complement-inverted.has-hover:hover
-    {
-        text-decoration: underline var(--complement-dark);
-
-        opacity: 1;
-        color: var(--complement-dark);
-        border: none;
-        background-color: var(--bg-element);
-    }
-
-
-    .is-link,
-    .is-link-light.has-hover:hover,
-    .is-link-outlined.has-hover:hover,
-    .is-link-dark.has-hover:hover
-    {
-        opacity: 1;
         color: var(--link-text-invert);
-        border: 0 solid var(--link-dark);
+        border: 1px solid var(--link);
         background-color: var(--link);
     }
 
     .is-link-light
     {
-        opacity: 1;
         color: var(--link-text);
-        border: 0 solid var(--link);
+        border: 1px solid var(--link-light);
         background-color: var(--link-light);
     }
 
-    .is-link-dark,
-    .is-link.has-hover:hover
+    .is-link-dark
     {
-        opacity: 1;
-        color: var(--link-text-invert);
-        border: 0 solid var(--link-dark);
+        color: var(--link-text-invert-dark);
+        border: 1px solid var(--link-dark);
         background-color: var(--link-dark);
     }
 
-    .is-link-outlined
+
+    .is-success
     {
-        color: var(--link);
-        border: 1px solid var(--link);
-        background-color: var(--bg-main);
-    }
-
-    .is-link-inverted
-    {
-        text-decoration: underline var(--link);
-
-        color: var(--link);
-        border: none;
-        background-color: var(--bg-main);
-
-        text-underline-offset: .25em;
-    }
-
-    .is-link-inverted.has-hover:hover
-    {
-        text-decoration: underline var(--link-dark);
-
-        opacity: 1;
-        color: var(--link-dark);
-        border: none;
-        background-color: var(--bg-element);
-    }
-
-
-    .is-success,
-    .is-success-light.has-hover:hover,
-    .is-success-outlined.has-hover:hover,
-    .is-success-dark.has-hover:hover
-    {
-        opacity: 1;
         color: var(--success-text);
-        border: 0 solid var(--success-dark);
+        border: 1px solid var(--success);
         background-color: var(--success);
     }
 
     .is-success-light
     {
-        opacity: 1;
         color: var(--success-text);
-        border: 0 solid var(--success);
+        border: 1px solid var(--success-light);
         background-color: var(--success-light);
     }
 
-    .is-success-dark,
-    .is-success.has-hover:hover
+    .is-success-dark
     {
-        opacity: 1;
-        color: var(--success-text-invert);
-        border: 0 solid var(--success-dark);
+        color: var(--success-text-invert-dark);
+        border: 1px solid var(--success-dark);
         background-color: var(--success-dark);
     }
 
@@ -2497,53 +2694,25 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-main);
     }
 
-    .is-success-inverted
+
+    .is-warning
     {
-        text-decoration: underline var(--success);
-
-        color: var(--success);
-        border: none;
-        background-color: var(--bg-main);
-
-        text-underline-offset: .25em;
-    }
-
-    .is-success-inverted.has-hover:hover
-    {
-        text-decoration: underline var(--success-dark);
-
-        opacity: 1;
-        color: var(--success-dark);
-        border: none;
-        background-color: var(--bg-element);
-    }
-
-
-    .is-warning,
-    .is-warning-light.has-hover:hover,
-    .is-warning-outlined.has-hover:hover,
-    .is-warning-dark.has-hover:hover
-    {
-        opacity: 1;
         color: var(--warning-text);
-        border: 0 solid var(--warning-dark);
+        border: 1px solid var(--warning);
         background-color: var(--warning);
     }
 
     .is-warning-light
     {
-        opacity: 1;
         color: var(--warning-text);
-        border: 0 solid var(--warning);
+        border: 1px solid var(--warning-light);
         background-color: var(--warning-light);
     }
 
-    .is-warning-dark,
-    .is-warning.has-hover:hover
+    .is-warning-dark
     {
-        opacity: 1;
-        color: var(--warning-text-invert);
-        border: 0 solid var(--warning-dark);
+        color: var(--warning-text-invert-dark);
+        border: 1px solid var(--warning-dark);
         background-color: var(--warning-dark);
     }
 
@@ -2554,53 +2723,25 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-main);
     }
 
-    .is-warning-inverted
+
+    .is-danger
     {
-        text-decoration: underline var(--warning);
-
-        color: var(--warning);
-        border: none;
-        background-color: var(--bg-main);
-
-        text-underline-offset: .25em;
-    }
-
-    .is-warning-inverted.has-hover:hover
-    {
-        text-decoration: underline var(--warning-dark);
-
-        opacity: 1;
-        color: var(--warning-dark);
-        border: none;
-        background-color: var(--bg-element);
-    }
-
-
-    .is-danger,
-    .is-danger-light.has-hover:hover,
-    .is-danger-outlined.has-hover:hover,
-    .is-danger-dark.has-hover:hover
-    {
-        opacity: 1;
         color: var(--danger-text-invert);
-        border: 0 solid var(--danger-dark);
+        border: 1px solid var(--danger);
         background-color: var(--danger);
     }
 
     .is-danger-light
     {
-        opacity: 1;
         color: var(--danger-text);
-        border: 0 solid var(--danger);
+        border: 1px solid var(--danger-light);
         background-color: var(--danger-light);
     }
 
-    .is-danger-dark,
-    .is-danger.has-hover:hover
+    .is-danger-dark
     {
-        opacity: 1;
-        color: var(--danger-text-invert);
-        border: 0 solid var(--danger-dark);
+        color: var(--danger-text-invert-dark);
+        border: 1px solid var(--danger-dark);
         background-color: var(--danger-dark);
     }
 
@@ -2611,28 +2752,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-color: var(--bg-main);
     }
 
-    .is-danger-inverted
-    {
-        text-decoration: underline var(--danger);
-
-        color: var(--danger);
-        border: none;
-        background-color: var(--bg-main);
-
-        text-underline-offset: .25em;
-    }
-
-    .is-danger-inverted.has-hover:hover
-    {
-        text-decoration: underline var(--danger-dark);
-
-        opacity: 1;
-        color: var(--danger-dark);
-        border: none;
-        background-color: var(--bg-element);
-    }
-
-
     .is-white
     {
         color: var(--text);
@@ -2642,15 +2761,15 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .is-dark
     {
-        color: var(--text-btn-invert);
-        border: 0 solid var(--grey-dark);
+        color: var(--text-invert);
+        border: 1px solid var(--grey-dark);
         background-color: var(--grey-dark);
     }
 
     .is-grey
     {
-        color: var(--black-ter);
-        border: 0 solid var(--grey-light);
+        color: var(--black-800);
+        border: 1px solid var(--grey-light);
         background-color: var(--grey-light);
     }
 }
@@ -2663,8 +2782,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         color: var(--text-elem);
         border: none;
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
         box-shadow: none;
+
+        --form-background-color: var(--bg-main);
     }
 
     .form.has-form-shadow
@@ -2674,7 +2795,10 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: var(--padding-medium);
 
         border-radius: var(--radius-comp);
-        box-shadow: var(--shadow);
+        background-color: var(--form-background-color);
+        box-shadow: var(--shadow-container);
+
+        --form-background-color: var(--bg-container);
     }
 
 
@@ -2763,7 +2887,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         position: absolute;
         z-index: 10;
-        top: calc(-.5 * var(--margin));
+        top: calc(-.75 * var(--margin));
         left: var(--margin);
 
         overflow: hidden;
@@ -2773,7 +2897,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         white-space: nowrap;
 
         color: var(--text-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
     }
 
 
@@ -2804,7 +2928,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--text-elem);
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
         box-shadow: none;
 
                 appearance: none;
@@ -2829,8 +2953,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         width: auto;
         height: auto;
 
-        appearance: auto;
-        --webkit-appearance: auto;
+                appearance: auto;
+        -webkit-appearance: auto;
     }
 
 
@@ -2847,7 +2971,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         background-position: right .5em center;
         background-clip: border-box;
         background-origin: padding-box;
-        background-size: 1.5em 1.5em;
+        background-size: 1.25em 1.25em;
     }
 
     .form label input::placeholder
@@ -2868,7 +2992,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
 
         flex-wrap: wrap;
         align-items: center;
@@ -2893,7 +3017,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: 0 calc(.5 * var(--pad-horz));
 
         color: var(--text-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
     }
 
     .form fieldset label
@@ -2930,8 +3054,15 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .field-error
     {
-        border: 2px solid var(--danger) !important;
+        border: 1px solid var(--danger) !important;
         border-radius: var(--radius-elem);
+    }
+
+    .field-error > input,
+    .field-error > textarea,
+    .field-error > select
+    {
+        border: none !important;
     }
 
     .form .has-field-addons
@@ -2955,7 +3086,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         box-sizing: border-box;
         width: auto;
-        height: calc(2.5rem + 2px);
+        height: calc(2.5 * var(--base-font-size) + 2px);
         margin: 0;
         padding: 0 .75rem;
 
@@ -2994,20 +3125,18 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .form .has-field-addons > :first-child input
     {
-        height: calc(2.5rem + 2px);
+        height: calc(2.5 * var(--base-font-size) + 2px);
 
         border: 1px solid var(--border-main-darker);
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: var(--radius-elem) 0 0 var(--radius-elem);
     }
 
     .form .has-field-addons > :last-child input
     {
-        height: calc(2.5rem + 2px);
+        height: calc(2.5 * var(--base-font-size) + 2px);
 
         border: 1px solid var(--border-main-darker);
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        border-radius: 0 var(--radius-elem) var(--radius-elem) 0;
     }
 
 
@@ -3042,7 +3171,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         box-sizing: border-box;
         width: 100%;
         margin: 0;
-        padding: .75rem .75rem .5rem .75rem;
+        padding: .5rem .75rem .5rem .75rem;
 
         color: var(--text-elem);
         box-shadow: none;
@@ -3050,6 +3179,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
                 appearance: none;
            -moz-appearance: none;
         -webkit-appearance: none;
+    }
+
+    .form .has-field-addons > label input
+    {
+        height: auto;
+
+        border: none;
+        border-radius: 0;
     }
 
     .form .has-field-addons > label select
@@ -3123,7 +3260,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius-elem);
-        background-color: var(--bg-main-elem);
+        background-color: var(--form-background-color);
 
         align-items: center;
     }
@@ -3180,12 +3317,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         transform: translate(0, 0);
 
         border-radius: var(--radius-elem);
-        background: var(--white);
+        background: var(--bg-main);
     }
 
     .form .switch input:checked + span::before
     {
-        background-color: var(--secondary);
+        background-color: var(--primary);
     }
 
     .form .switch input:checked + span::after
@@ -3199,37 +3336,50 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         position: relative;
     }
 
-    .has-help-text > span
+
+    .has-help-text .form-help-icon
     {
         line-height: 0;
+        /*content:attr(data-help-icon);*/
 
         position: absolute;
         z-index: 1;
         top: -.5rem;
         right: -.5rem;
 
-        margin: 0;
-        padding: .25em;
+        display: inline-flex;
 
-        color: var(--secondary);
-        border-radius: 50%;
-        background-color: var(--bg-element);
-    }
-
-    .has-help-text > span > span:not(.icon-nav)
-    {
         width: 1em;
         height: 1em;
         margin: 0;
+        padding: .25em;
 
         cursor: pointer;
+
+        color: var(--complement-text);
+        border: 1px solid var(--complement-text);
+        border-radius: 50%;
+        background-color: var(--form-background-color);
+
+        justify-content: center;
+        align-items: center;
     }
+
 
     .has-help-text > p
     {
-        margin-top: -1rem;
+        font-size: var(--size-7);
+
+        display: none;
+
+        margin-top: -1.5rem;
         margin-bottom: 1rem;
         margin-left: 1rem;
+    }
+
+    .has-help-text .form-help-icon:hover + p
+    {
+        display: block;
     }
 
 
@@ -3249,7 +3399,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: 0;
 
         border-radius: var(--radius-comp);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-container);
     }
 
     .form .form-tabs > input
@@ -3314,7 +3464,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         color: var(--text-darker);
         border-bottom: 1px solid var(--border-main-darker);
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-component);
     }
 
     .form .form-tabs > ul label span:last-child
@@ -3363,7 +3513,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         color: var(--link);
         border-top: 1px solid var(--border-main-darker) !important;
         border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 1px solid var(--bg-main) !important;
+        border-bottom: 1px solid var(--form-background-color) !important;
         border-left: 1px solid var(--border-main-darker) !important;
         border-radius: var(--radius) var(--radius) 0 0;
         background-color: inherit;
@@ -3579,6 +3729,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .table thead th
     {
+        font-weight: var(--weight-semibold);
+
         border-bottom: 2px solid var(--border-main-darker);
     }
 
@@ -3606,28 +3758,33 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         width: 100%;
     }
 
+    .table.has-text-small
+    {
+        font-size: var(--size-7);
+
+        padding: var(--pad-vert-small) var(--pad-horz-small);
+    }
+
+    .table.has-text-small > caption
+    {
+        font-size: var(--size-6);
+    }
+
     .table.is-striped tbody tr:nth-of-type(odd)
     {
         color: var(--text);
-        background-color: var(--bg-main-ter);
+        background-color: var(--bg-container);
     }
 
     .table.has-hover tbody tr:hover
     {
         color: var(--text-elem);
-        background-color: var(--bg-hover);
+        background-color: var(--grey-lighter);
     }
 
-    .table.is-bordered td,
-    .table.is-bordered th
+    .table.has-border
     {
-        border-width: 1px;
-    }
-
-    .table.is-bordered tr:last-child td,
-    .table.is-bordered tr:last-child th
-    {
-        border-bottom-width: 1px;
+        border: 1px solid var(--border-main);
     }
 
     /* allow for table scrolling of wide tables */
@@ -3659,8 +3816,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: var(--padding);
 
         border-radius: var(--radius-comp);
-        background-color: var(--bg-main-elem);
-        box-shadow: var(--shadow);
+        background-color: var(--bg-container);
+        box-shadow: var(--shadow-container);
     }
 
     .table-boxed > header
@@ -3794,6 +3951,36 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 @layer elements
 {
+    /** Adjustable using a variable font size for all screen sizes
+    - maximum font-size is set to 2 * base (nominal 32px)
+    - based on https://robertcelt95.medium.com/responsive-typography-that-actually-works-beyond-font-size-clamp-acf592b79774
+    and https://web.dev/articles/baseline-in-action-fluid-type
+ **/
+
+    @media screen and (min-width: 75em)
+    {
+        :root
+        {
+            --base-font-size: calc(var(--base-rem) * 1.125) !important;
+        }
+    }
+
+    @media screen and (min-width: 115em )
+    {
+        :root
+        {
+            --base-font-size: calc(var(--base-rem) * 1.5) !important;
+        }
+    }
+
+    @media screen and (min-width: 150em)
+    {
+        :root
+        {
+            --base-font-size: calc(var(--base-rem) * 2 ) !important;
+        }
+    }
+
     /** define characteristics of heading text **/
     h1,
     h2,
@@ -4076,11 +4263,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .has-text-grey
     {
-        color: var(--grey);
+        color: var(--grey-dark);
     }
 
     .has-text-dark
     {
-        color: var(--grey-dark);
+        color: var(--grey-darker);
     }
 }

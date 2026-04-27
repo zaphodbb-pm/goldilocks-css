@@ -7,7 +7,7 @@ A customer-first CSS design library.
 ## Overview
 **Goldilocks-CSS** is a lightweight, responsive, standards-compliant, and up-to-date HTML5 / CSS3 solution. It is designed to meet the needs of product and business managers who require efficient, small-footprint resources.
 
-This project is currently in its **alpha phase**. It is fully functional, but changes may occur frequently. Use at your own risk.
+This project has been updated to Version 1 status and is currently in its **beta phase**. It is fully functional, but some changes may occur.
 
 ## Requirements
 - **Browser**: Modern HTML5/CSS3 compliant browser.
@@ -20,19 +20,23 @@ This project is currently in its **alpha phase**. It is fully functional, but ch
 ### 1. Manual Installation
 Download the files from this repository and link the desired CSS file in the `<head>` of your HTML:
 
-- **Core** (Layouts, Common Elements, and Helpers):
+- **Core** (Layouts and Helpers):
   ```html
-  <link rel="stylesheet" href="./dist/goldilocks.core.min.css">
+  <link rel="stylesheet" media="screen" href="./dist/goldilocks.core.min.css">
+  ```
+- **Core** (Core Plus Common Elements):
+  ```html
+  <link rel="stylesheet" media="screen" href="./dist/goldilocks.core-elements.min.css">
+  ```
+  
+- **Core Extended** (Core and Common Elements+ Popular Add-on Elements and Components):
+  ```html
+  <link rel="stylesheet" media="screen" href="./dist/goldilocks.core-extended.min.css">
   ```
 
-- **Core Extended** (Core + Popular Add-on Elements and Components):
+- **All** (Core, Common Elements, Extended, and Secondary Add-on Elements/Components):
   ```html
-  <link rel="stylesheet" href="./dist/goldilocks.core-extended.min.css">
-  ```
-
-- **All** (Core, Extended, and Secondary Add-on Elements/Components):
-  ```html
-  <link rel="stylesheet" href="./dist/goldilocks.all.min.css">
+  <link rel="stylesheet" media="screen" href="./dist/goldilocks.all.min.css">
   ```
 
 ### 2. CDN (jsDelivr)
@@ -40,6 +44,7 @@ Link directly to the files using the jsDelivr CDN:
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.core.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.core-elements.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.core-extended.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zaphodbb-pm/goldilocks-css/dist/goldilocks.all.min.css">
 ```

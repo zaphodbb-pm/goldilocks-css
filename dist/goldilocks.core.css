@@ -1,6 +1,6 @@
 :root
 {
-    /* version 0.1.0 - April 29, 2022 - v3 */
+    /* version 1.0.0 - April 7, 2026 */
     /* awareness variables - for info only */
     /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
     /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
@@ -22,11 +22,8 @@
     --weight-medium: 500;
     --weight-semibold: 600;
     --weight-bold: 700;
-    /** Adjustable using a variable font size for all screen sizes
-        - font-size is variable and tracks viewport to a width of 100rem (1600 px)
-        - maximum font-size is set to 3 * base (nominal 48px)
-     **/
-    --base-font-size: clamp( var(--base-rem),  2vw , calc(3 * var(--base-rem ) ) );
+    /** note: adjustable typography is set in the file: typography.css **/
+    --base-font-size: var(--base-rem);
     /** Text line heights to match size **/
     --line-height-125: 125%;
     --line-height-150: 150%;
@@ -40,26 +37,26 @@
         1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
     ***/
     --size-factor: 1.125;
-    --size-7: calc( 1rem / var(--size-factor) );                /* Example 1.125 scale factor:  --size-7 = 0.9rem; */
-    --size-6: 1rem;                                             /* Example 1.125 scale factor:  --size-6 = 1 rem; */
-    --size-5: calc( var(--size-6) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
-    --size-4: calc( var(--size-5) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
-    --size-3: calc( var(--size-4) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
-    --size-2: calc( var(--size-3) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
-    --size-1: calc( var(--size-2) * var(--size-factor) );       /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
+    --size-7: calc( var(--base-font-size) * .875 );                /* Example 1.125 scale factor:  --size-7 = 0.875rem; */
+    --size-6: var(--base-font-size);                                /* Example 1.125 scale factor:  --size-6 = 1 rem; */
+    --size-5: calc( var(--size-6) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
+    --size-4: calc( var(--size-5) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
+    --size-3: calc( var(--size-4) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
+    --size-2: calc( var(--size-3) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
+    --size-1: calc( var(--size-2) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
     /* Grid Key Variables */
-    --gutter: calc(3 * var(--base-rem));        /** grid column gutter **/
-    --grid-min-px-width: 100px;                 /** minimum absolute column width in a grid layout **/
-    --grid-min-width: 5rem;                     /** minimum relative column width in a grid layout **/
+    --gutter: calc(3 * var(--base-rem));                    /** grid column gutter **/
+    --grid-min-px-width: 100px;                             /** minimum absolute column width in a grid layout **/
+    --grid-min-width: calc(5 * var(--base-font-size));      /** minimum relative column width in a grid layout **/
     /* basic spacing values */
     /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
-    --space-element: var(--base-font-size);
-    --space-block: calc(2 * var(--base-font-size));
-    --space-collection: calc(4 * var(--base-font-size));
-    --space-container: calc(5 * var(--base-font-size));
+    --space-element: var(--base-rem);
+    --space-block: calc(2 * var(--base-rem));
+    --space-collection: calc(4 * var(--base-rem));
+    --space-container: calc(5 * var(--base-rem));
     /* Flexbox element spacing */
-    --gap-row: calc( 1 * var(--base-font-size) );
-    --gap-col: calc( 1 * var(--base-font-size) );
+    --gap-row: calc( .75 * var(--base-font-size) );
+    --gap-col: calc( .75 * var(--base-font-size) );
     /* Elements Controls */
     --pad-horz: var(--base-font-size);
     --pad-vert: calc( .5 * var(--base-font-size) );
@@ -82,11 +79,11 @@
     --radius-elem: calc(1.5 * var(--radius));
     --radius-rounded: 10000px;
     /* Navbar settings */
-    --navbar-height: 4rem;
+    --navbar-height: calc(4 * var(--base-font-size));
     --navbar-offset: 0;
     --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Widgetbar settings */
-    --widgetbar-height: calc( 2 * var(--base-font-size) + .25rem);
+    --widgetbar-height: calc(2 * var(--base-font-size) + .75rem);
     --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
     /* Breadcrumb setting */
     /* other options are: arrow-separator = ">", bullet-separator = "\02022" or quote-separator = "\BB" */
@@ -94,8 +91,8 @@
     /* magazine normal width */
     --magazine-width: 40ch;
     /* carousel image height */
-    --carousel-image-height: 8rem;
-    --carousel-image-width: calc( 4 / 3 * 8rem);            /* aspect ratio of image */
+    --carousel-image-height: calc(8 * var(--base-font-size));
+    --carousel-image-width: calc( 4 / 3 * 8 * var(--base-font-size));            /* aspect ratio of image */
     /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
     --indicator: url('data:image/svg+xml;charset=utf8,\
     %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
@@ -104,216 +101,213 @@
     %3Cpolyline%20points=\'6%209%2012%2015%2018%209\'/%3E\
     %3C/svg%3E');
     --indicator-down: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" \
-        width="24" height="24" viewBox="0 0 24 24" \
-        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline points="6 9 12 15 18 9"/>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+    %20viewBox=\'0%200%2024%2024\'%20\
+    %20width=\'24\'%20height=\'24\'%20\
+    fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E%20\
+    %3Cpolyline%20points=\'6%209%2012%2015%2018%209\'/%3E\
+    %3C/svg%3E');
     --indicator-up: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" \
-        width="24" height="24" viewBox="0 0 24 24" \
-        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline points="18 15 12 9 6 15"></polyline>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+    %20viewBox=\'0%200%2024%2024\'%20\
+    %20width=\'24\'%20height=\'24\'%20\
+    fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E%20\
+    %3Cpolyline%20points=\'18%2015%2012%209%206%2015\'/%3E\
+    %3C/svg%3E');
     --indicator-right: url('data:image/svg+xml;charset=utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" \
-        width="24" height="24" viewBox="0 0 24 24" \
-        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">\
-        <polyline points="9 18 15 12 9 6"/>\
-    </svg>');
+    %3Csvg%20xmlns=\'http://www.w3.org/2000/svg\'\
+    %20viewBox=\'0%200%2024%2024\'%20\
+    %20width=\'24\'%20height=\'24\'%20\
+    fill=\'none\'%20stroke=\'currentColor\'%20stroke-width=\'3\'%20stroke-linecap=\'round\'%20stroke-linejoin=\'round\'%3E%20\
+    %3Cpolyline%20points=\'9%2018%2015%2012%209%206\'/%3E\
+    %3C/svg%3E');
 }
+/* initial-theme-colors.css */
 
-/*
-main theme color definitions
-use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
- */
-
-
+/** main theme color definitions **/
 :root
 {
-    /* Common shadow treatment for boxed elements */
-    --shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .15), 0 0 0 1px rgba(10, 10, 10, .02);
-    /* main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors */
-    /* main theme colour parameters - based on  complement color selection */
-    --main-color: 140;                                  /** primary hue value **/
-    --main-saturation: 70%;                             /** primary saturation value **/
-    --main-lightness: 40%;                              /** primary lightness value **/
-    /* build main theme colours */
-    --primary: hsl(var(--main-color), var(--main-saturation), var(--main-lightness));
-    --secondary: color-mix(var(--primary), black 40%);
-    --complement: hsl(calc(var(--main-color) + 180), var(--main-saturation), var(--main-lightness));
+    /** main theme color definitions  use https://www.colorhexa.com/ or https://paletton.com/ to build colors **/
+    /** main theme colour parameters - based on  complement color selection **/
+    --main-color: 185; /** primary hue value used by charts **/
+    /** build main theme colours **/
+    --primary-raw: 185 58% 32%;
+    --secondary-raw: 37 20% 50%;
+    --complement-raw: 22 94% 56%;
+    --primary: hsl(var(--primary-raw) / 100%);
+    --secondary: hsl(var(--secondary-raw) / 100%);
+    --complement: hsl(var(--complement-raw) / 100%);
     /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: color-mix(var(--primary), black 20%);
-    --secondary-text: color-mix(var(--secondary), black 10%);
-    --complement-text: color-mix(var(--complement), black 10%);
-    --primary-text-invert: color-mix(var(--primary-text), black 95%);
-    --secondary-text-invert: color-mix(var(--secondary-text), white 95%);
-    --complement-text-invert: color-mix(var(--complement-text), white 95%);
+    --primary-text: hsl(185,65%,19%);
+    --secondary-text: hsl(37,20%,28%);
+    --complement-text: hsl(22, 82%, 28%);
+    --primary-text-invert: hsl(185, 55%, 96%);
+    --primary-text-invert-dark: hsl(185, 55%, 96%);
+    --secondary-text-invert: hsl(37, 28%, 12%);
+    --secondary-text-invert-dark: hsl(37, 28%, 97%);
+    --complement-text-invert: hsl(22, 80%, 12%);
+    --complement-text-invert-dark: hsl(22, 80%, 97%);
     /* optional light colors; use carefully as accessibility is hard to achieve */
-    --primary-light: color-mix(var(--primary), white 90%);
-    --secondary-light: color-mix(var(--secondary), white 90%);
-    --complement-light: color-mix(var(--complement), white 90%);
-    --primary-dark: color-mix(var(--primary), black 10%);
-    --secondary-dark: color-mix(var(--secondary), black 10%);
-    --complement-dark: color-mix(var(--complement), black 10%);
-    --link: hsl(217, 71%, 48%);
-    --link-light: color-mix(var(--link), white 90%);
-    --link-dark: color-mix(var(--link), black 15%);
-    --link-text: color-mix(var(--link), black 30%);
-    --link-text-invert: white;
-    --success: hsl(150, 75%, 53%);
-    --success-light: color-mix(var(--success), white 90%);
-    --success-dark: color-mix(var(--success), black 15%);
-    --success-text: color-mix(var(--success), black 35%);
-    --success-text-invert: black;
-    --warning: hsl(48, 100%, 48%);
-    --warning-light: color-mix(var(--warning), white 90%);
-    --warning-dark: color-mix(var(--warning), black 15%);
-    --warning-text: color-mix(var(--warning), black 40%);
-    --warning-text-invert: black;
-    --danger: hsl(348, 86%, 48%);
-    --danger-light: color-mix(var(--danger), white 90%);
-    --danger-dark: color-mix(var(--danger), black 15%);
-    --danger-text: color-mix(var(--danger), black 30%);
-    --danger-text-invert: white;
+    --primary-light: hsl(185,55%,96%);
+    --secondary-light: hsl(37, 24%, 92%);
+    --complement-light: hsl(22,85%,93%);
+    --primary-dark: hsl(185,65%,17%);
+    --secondary-dark: hsl(37,20%,40%);
+    --complement-dark: hsl(22,88%,38%);
+    --link: hsl(240,52%,48%);
+    --link-visited: hsl(280, 52%, 48%);
+    --link-light: hsl(240, 50%, 93%);
+    --link-dark: hsl(240, 55%, 38%);
+    --link-text: hsl(240, 55%, 38%);
+    --link-text-invert: hsl(240, 52%, 97%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
+    --success: hsl(152, 47%, 48%);
+    --success-light: hsl(152, 50%, 92%);
+    --success-dark: hsl(152, 55%, 30%);
+    --success-text: hsl(152, 70%, 14%);
+    --success-text-invert: var(--black);
+    --success-text-invert-dark: hsl(152, 47%, 97%);
+    --warning: hsl(38, 92%, 54%);
+    --warning-light: hsl(38, 88%, 93%);
+    --warning-dark: hsl(38, 90%, 44%);
+    --warning-text: hsl(38, 65%, 22%);
+    --warning-text-invert: var(--black);
+    --warning-text-invert-dark: hsl(38, 80%, 15%);
+    --danger: hsl(4, 70%, 50%);
+    --danger-light: hsl(4, 74%, 93%);
+    --danger-dark: hsl(4, 62%, 40%);
+    --danger-text: hsl(4, 65%, 32%);
+    --danger-text-invert: var(--white-10);
+    --danger-text-invert-dark: hsl(4, 70%, 97%);
     /* additional greys */
-    --black: hsl(0, 0%, 2%);
-    --black-bis: hsl(0, 0%, 10%);
-    --black-ter: hsl(0, 0%, 16%);
-    --grey-darker: hsl(0, 0%, 25%);
-    --grey-dark: hsl(0, 0%, 40%);
-    --grey: hsl(0, 0%, 60%);
-    --grey-light: hsl(0, 0%, 85%);
-    --grey-lighter: hsl(0, 0%, 93%);
-    --white-ter: hsl(0, 0%, 95%);
-    --white-bis: hsl(0, 0%, 98%);
-    --white: hsl(0, 0%, 100%);
+    --black: color-mix(in hsl, black, var(--primary) 25%);
+    --black-850: color-mix(in hsl, black, var(--primary) 30%);
+    --black-800: color-mix(in hsl, black, var(--primary) 35%);
+    --black-700: color-mix(in hsl, black, var(--primary) 40%);
+    --grey-darker: color-mix(in hsl, hsl(0, 0%, 25%), var(--secondary) 10% );
+    --grey-dark: color-mix(in hsl, hsl(0, 0%, 40%), var(--secondary) 10% );
+    --grey: color-mix(in hsl, hsl(0, 0%, 60%), var(--secondary) 10% );
+    --grey-light: color-mix(in hsl, hsl(0, 0%, 85%), var(--secondary) 10% );
+    --grey-lighter: color-mix(in hsl, hsl(0, 0%,95%), var(--secondary) 10% );
+    --white-100: color-mix(in hsl, white, var(--secondary) 15% );
+    --white-50: color-mix(in hsl, white, var(--secondary) 10% );
+    --white-25: color-mix(in hsl, white, var(--secondary) 5% );
+    --white-10: color-mix(in hsl, white, var(--secondary) 2% );
     /* set the body level colours for light mode*/
+    --bg-main: var(--white-10);
+    --bg-grid: var(--white-50);
+    --bg-container: var(--white-25);
+    --bg-component: var(--white-50);
+    --bg-element: var(--white-100);
+    --bg-main-invert: var(--black-850);
+    --bg-highlight: var(--warning-light);
     --border-main: var(--grey-light);
     --border-main-darker: var(--grey);
-    --bg-main: var(--white);
-    --bg-main-elem: var(--white);
-    --bg-main-comp: var(--white);
-    --bg-main-bis: var(--white-bis);
-    --bg-main-ter: var(--white-ter);
-    --bg-main-invert: var(--black-ter);
-    --bg-main-code: var(--white-ter);
-    --bg-grid: var(--white-ter);
-    --bg-element: var(--white-ter);
-    --bg-component: var(--white-bis);
-    --bg-highlight: var(--warning-light);
-    --bg-hover: var(--grey-lighter);
-    --text: var(--black-ter);
-    --text-invert: var(--white);
+    --text: var(--black-800);
+    --text-invert: var(--white-10);
     --text-light: var(--grey-dark);
     --text-darker: var(--black);
-    --text-elem: var(--black-ter);
-    --text-comp: var(--black-ter);
-    --text-invert-ter: var(--white-ter);
-    --text-btn: var(--black);
-    --text-btn-invert: var(--white);
-    --text-bg: var(--white);
-    --text-code: var(--complement);
+    --text-elem: var(--black-800);
+    --text-comp: var(--black-800);
+    --text-invert-ter: var(--white-50);
+    --text-btn-invert: var(--white-50);
+    --text-code: color-mix(in hsl, var(--complement), black 25%);
+    /** Common shadow treatment for containers, components and elements **/
+    /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
+    --shadow-raw: var(--secondary-raw);
+    --shadow-container: inset 0 0 1px var(--bg-component), 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
+    --shadow-component: inset 0 0 1px var(--bg-element), 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
+    --shadow-element: inset 0 0 1px var(--grey-lighter), 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
 }
+/* initial-theme-dark.css */
 
-
-/*
-main dark theme color definitions
-use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary colors
- */
+/**  main dark theme color definitions
+use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
+ **/
 
 
 .main-theme-dark
 {
-    --shadow: 0 .1em .1em .1em rgba(240, 245, 245, .25), 0 0 0 1px rgba(245, 245, 245, .02);
-    /* main theme colour parameters
-        - based on split complementary color selection
-        - for triadic color selection, set --main-color-offset to 120 degrees
-    */
-    --main-color: 140;                  /** primary hue value **/
-    --main-color-offset: 30;            /** +,- degree offset from main + 180° **/
-    --main-color-sl-light: 100%, 92%;   /** color lightening saturation and lightness **/
-    --main-color-sl-dark: 90%, 57%;     /** color lightening saturation and lightness **/
-    --main-color-complement-low: calc( var(--main-color) + 180 - var(--main-color-offset) );
-    --main-color-complement-high: calc( var(--main-color) + 180 + var(--main-color-offset) );
-    /* build main theme colours */
-    --primary: hsl( var(--main-color), 75%, 31% );
-    --secondary: hsl( var(--main-color-complement-low), 70%, 50% );
-    --complement: hsl( var(--main-color-complement-high), 60%, 50% );
-    /* define text colours for main theme, adjusted for expected theme colour luminosity */
-    --primary-text: hsl( var(--main-color), 100%, 28%);
-    --secondary-text: hsl( var(--main-color-complement-low), 100%, 47%);
-    --complement-text: hsl( var(--main-color-complement-high), 100%, 47%);
-    --primary-text-invert: hsl( var(--main-color), 100%, 98%);
-    --secondary-text-invert: hsl( var(--main-color-complement-low), 100%, 99%);
-    --complement-text-invert: hsl( var(--main-color-complement-high), 100%, 100%);
-    /* optional light colors; use carefully as accessibility is hard to achieve */
-    --primary-light: hsl( var(--main-color), var(--main-color-sl-light));
-    --secondary-light: hsl( var(--main-color-complement-low), var(--main-color-sl-light));
-    --complement-light: hsl( var(--main-color-complement-high), var(--main-color-sl-light));
-    --primary-dark: hsl( var(--main-color), var(--main-color-sl-dark) );
-    --secondary-dark: hsl( var(--main-color-complement-low), var(--main-color-sl-dark) );
-    --complement-dark: hsl( var(--main-color-complement-high), var(--main-color-sl-dark) );
-    --link: hsl(217, 75%, 75%);
-    --link-light: hsl(217, 70%, 90%);
-    --link-dark: hsl(217, 75%, 40%);
-    --link-text: hsl( 217, 100%, 55%);
-    --link-text-invert: hsl( 217, 100%, 28%);
-    --success: hsl(150, 80%, 60%);
-    --success-light: hsl(141, 80%, 96%);
-    --success-dark: hsl(141, 70%, 33%);
-    --success-text: hsl( 141, 100%, 18%);
-    --success-text-invert: hsl( 141, 100%, 95%);
-    --warning: hsl(48, 90%, 55%);
-    --warning-light: hsl(48, 100%, 95%);
-    --warning-dark: hsl(48, 100%, 45%);
-    --warning-text: hsl( 48, 100%, 20%);
-    --warning-text-invert: hsl( 48, 100%, 95%);
-    --danger: hsl(348, 80%, 51%);
-    --danger-light: hsl(348, 90%, 97%);
-    --danger-dark: hsl(348, 86%, 36%);
-    --danger-text: hsl( 348, 100%, 50%);
-    --danger-text-invert: hsl( 348, 100%, 100%);
+    /** build main theme colours **/
+    --primary: color-mix(in hsl, hsl(var(--primary-raw) / 100%), white 3% );
+    --secondary: color-mix(in hsl, hsl(var(--secondary-raw) / 100%), white 3% );
+    --complement: color-mix(in hsl, hsl(var(--complement-raw) / 100%), white 3% );
+    /** define text colours for main theme, adjusted for expected theme colour luminosity **/
+    --primary-text: hsl(185,65%,36%);
+    --secondary-text: hsl(37,20%,47%);
+    --complement-text: hsl(22, 82%, 47%);
+    --primary-text-invert: hsl(185, 55%, 96%);
+    --primary-text-invert-dark: hsl(185, 55%, 96%);
+    --secondary-text-invert: hsl(37, 28%, 97%);
+    --secondary-text-invert-dark: hsl(37, 28%, 97%);
+    --complement-text-invert: hsl(22, 80%, 18%);
+    --complement-text-invert-dark: hsl(22, 80%, 97%);
+    --primary-light: hsl(185,55%,94%);
+    --secondary-light: hsl(37, 24%, 92%);
+    --complement-light: hsl(22,85%,93%);
+    --primary-dark: hsl(185,65%,22%);
+    --secondary-dark: hsl(37,20%,40%);
+    --complement-dark: hsl(22,88%,40%);
+    /** define colours for links, success, warning, danger **/
+    --link: hsl(240,62%,82%);
+    --link-visited: hsl(280, 52%, 78%);
+    --link-light: hsl(240, 50%, 95%);
+    --link-dark: hsl(240, 55%, 55%);
+    --link-text: hsl(240, 55%, 65%);
+    --link-text-invert: hsl(240, 52%, 20%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
+    --success: hsl(152, 47%, 53%);
+    --success-light: hsl(152, 50%, 95%);
+    --success-dark: hsl(152, 55%, 32%);
+    --success-text: hsl(152, 70%, 19%);
+    --success-text-invert: hsl( 152, 70%, 17%);
+    --success-text-invert-dark: hsl(152, 47%, 97%);
+    --warning: hsl(38, 92%, 58%);
+    --warning-light: hsl(38, 88%, 95%);
+    --warning-dark: hsl(38, 90%, 32%);
+    --warning-text: hsl(38, 65%, 27%);
+    --warning-text-invert: var(--black-800);
+    --warning-text-invert-dark: hsl(38, 92%, 97%);
+    --danger: hsl(4, 70%, 55%);
+    --danger-light: hsl(4, 74%, 97%);
+    --danger-dark: hsl(4, 62%, 45%);
+    --danger-text: hsl(4, 65%, 37%);
+    --danger-text-invert: var(--white-10);
+    --danger-text-invert-dark: hsl(4, 70%, 97%);
     --grey-light: hsl(0, 0%, 75%);
     --grey-lighter: hsl(0, 0%, 85%);
     /** invert colours for elements and components **/
     --border-main: var(--grey);
     --border-main-darker: var(--grey-light);
     --bg-main: var(--black);
-    --bg-main-elem: var(--grey-darker);
-    --bg-main-comp: var(--black-ter);
-    --bg-main-bis: var(--black-bis);
-    --bg-main-ter: var(--black-ter) ;
-    --bg-main-invert: var(--white);
-    --bg-main-invert-ter: var(--white-ter);
-    --bg-main-code: var(--grey-darker);
+    --bg-main-invert: var(--white-10);
     --bg-grid: var(--grey-darker);
+    --bg-container: var(--black-800);
+    --bg-component: var(--black-700);
     --bg-element: var(--grey-darker);
-    --bg-component: var(--black-ter);
-    --bg-highlight: hsl(48, 100%, 15%);
+    --bg-highlight: var(--warning-text);
     --bg-hover: var(--grey-dark);
     /** invert or adjust colours for text **/
-    --text: var(--white-bis);
-    --text-invert: var(--black);
+    --text: var(--white-100);
+    --text-invert: var(--black-800);
     --text-light: var(--grey);
-    --text-darker: var(--white-ter);
-    --text-elem: var(--white-bis);
-    --text-comp: var(--white-bis);
-    --text-invert-ter: var(--black-ter);
-    --text-btn: var(--black-bis);
-    --text-btn-invert: var(--white-ter);
-    --text-bg: var(--black-bis);
-    --text-code: var(--secondary-light);;
+    --text-darker: var(--white-50);
+    --text-elem: var(--white-25);
+    --text-comp: var(--white-25);
+    --text-invert-ter: var(--black-800);
+    --text-code: var(--secondary-light);
+    /** Common shadow treatment for containers, components and elements **/
+    /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
+    --shadow-raw: var(--secondary-raw);
+    --shadow-container: inset 0 0 1px var(--bg-container), 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
+    --shadow-component: inset 0 0 1px var(--bg-component), 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
+    --shadow-element: inset 0 0 1px var(--bg-element), 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
 }
-
-/** other special items that need control **/
-
-
 /* Pure css HTML base elements and reset */
 /** note that some HTML tags are set in other element files **/
 
 /* Define layers organization for all subsequent files */
-@layer base, layout, elements, extended, extras, custom;
+@layer base, elements, extended, extras, layout, custom;
 
 
 @layer base
@@ -330,8 +324,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         margin: 0;
         padding: 0;
 
-        background-color: var(--bg-main);
-
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
@@ -341,7 +333,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     body
     {
         font-family: var(--family-sans-serif), sans-serif;
-        font-size: 1rem;
+        font-size: var(--base-font-size);
         font-weight: var(--weight-normal);
         line-height: var(--line-height-150);
 
@@ -418,6 +410,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     a
     {
         color: var(--link);
+    }
+
+    a:visited
+    {
+        color: var(--link-visited);
     }
 
     ul,
@@ -498,7 +495,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     pre
     {
         font-family: var(--family-monospace), monospace;
-        font-size: 1rem;
+        font-size: var(--base-font-size);
 
         overflow-x: scroll;
         overflow-y: hidden;
@@ -507,13 +504,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: 0;
 
         border-left: .25rem solid var(--complement);
-        background-color: var(--bg-main-code);
+        background-color: var(--bg-container);
     }
 
     code
     {
         font-family: var(--family-monospace), monospace;
-        font-size: 1rem;
+        font-size: var(--base-font-size);
         font-weight: normal;
 
         margin: 0;
@@ -523,12 +520,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         color: var(--text-code);
         border-radius: var(--radius);
-        background-color: var(--bg-main-code);
+        background-color: var(--white-50);
     }
 
     pre > code
     {
-        font-size: 1em;
+        font-size: var(--base-font-size);
 
         display: block;
         overflow-x: scroll;
@@ -544,48 +541,48 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     }
 }
 /* fix for prism code highlighter */
-@layer base
+
+pre > code .tag
 {
-    pre > code .tag
-    {
-        font-size: unset;
-        line-height: normal;
+    font-size: var(--size-6);
+    font-weight: var(--weight-normal);
+    line-height: normal;
 
-        display: unset;
+    display: unset;
 
-        height: auto;
-        padding: 0;
+    height: auto;
+    padding: 0;
 
-        white-space: nowrap;
+    white-space: nowrap;
 
-        border-radius: unset;
-        background: transparent !important;
+    border: none;
+    border-radius: unset;
+    background: transparent !important;
 
-        align-items: baseline;
-        justify-content: unset;
-    }
+    justify-content: unset;
+    align-items: baseline;
+}
 
-    pre[class*=language-]
-    {
-        border: none;
-    }
+pre[class*=language-]
+{
+    border: none;
+}
 
-    pre > code[class*=language-]
-    {
-        overflow: auto;
+pre > code[class*=language-]
+{
+    overflow: auto;
 
-        min-width: 10rem;
-        min-height: 10rem;
-        max-height: 30rem;
-        margin: 0 !important;
-        padding: 1rem 1.5rem;
-    }
+    min-width: 10rem;
+    min-height: 10rem;
+    max-height: 30rem;
+    margin: 0 !important;
+    padding: 1rem 1.5rem;
+}
 
-    pre
-    {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+pre
+{
+    margin: 0 !important;
+    padding: 0 !important;
 }
 @layer layout
 {
@@ -599,17 +596,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         padding: var(--padding-normal);
 
         color: var(--text);
-        background-color: var(--bg-component);
+        border: none;
+        background-color: var(--bg-container);
     }
-
 
     .box-shadow
     {
         border-radius: var(--radius);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-container);
     }
 }
-
 @layer layout
 {
     /* Sadly, grid needs some help for columns at mobile widths  */
@@ -1031,8 +1027,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     {
         position: fixed;
         top: 0;
-
-        height: auto;
     }
 
     .page-wrapper-widgets > .page-main-nav.is-fixed,
@@ -1042,7 +1036,6 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
         top: var(--widgetbar-height);
 
         width: 100vw;
-        height: auto;
     }
 
     .page-wrapper-widgets > .page-main-nav.is-fixed + .page-sidenav
@@ -1132,18 +1125,20 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .page-footer
     {
+        font-size: var(--size-7);
+
         display: flex;
 
         margin-top: var(--margin);
         padding: var(--padding-medium) var(--padding-large);
 
         border-top: 1px solid var(--border-main-darker);
-        background-color: var(--bg-component);
+        background-color: var(--bg-container);
 
-        justify-content: space-between;
         column-gap: calc(2 * var(--gap-col));
         row-gap: var(--gap-row);
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .page-footer > section,
@@ -1178,16 +1173,16 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
     .page-footer > section p:first-child,
     .page-footer > div p:first-child
     {
-        font-size: var(--size-5);
+        font-size: var(--size-6);
         font-weight: var(--weight-semibold);
     }
 
     .page-footer .foot-heading
     {
-        font-size: var(--size-4);
+        font-size: var(--size-5);
         font-weight: var(--weight-semibold);
 
-        min-height: var(--size-4);
+        min-height: var(--size-5);
     }
 
     @media screen and (max-width: 576px)
@@ -1259,7 +1254,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
 /* spacing options */
 
-@layer layout
+@layer elements
 {
     /** spacing between related HTML tags such as buttons, headings, etc.  **/
     .space-element
@@ -1481,7 +1476,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
     .has-bg-white
     {
-        background-color: var(--white);
+        background-color: var(--white-10);
     }
 }
 
@@ -1638,9 +1633,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build complimentary c
 
         white-space: nowrap !important; /* 3 */
 
-        color: #fff;
         border: 0 !important;
-        background-color: #000;
 
         -webkit-clip-path: inset(50%) !important;
                 clip-path: inset(50%) !important; /* 2 */
