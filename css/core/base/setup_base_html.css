@@ -91,6 +91,10 @@
         color: var(--link);
     }
 
+    a:hover {
+        color: var(--link-hover);
+    }
+
     a:visited {
         color: var(--link-visited);
     }
