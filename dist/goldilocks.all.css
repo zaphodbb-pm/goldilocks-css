@@ -226,6 +226,7 @@
     --sh-inset: inset 0 2px 4px oklch(41.8% .210 272 / .12);
     /** main theme colour parameters - based on AI generated theme colours **/
     --main-color: 272; /*** primary hue value used by charts ***/
+    --action-offset: .075;  /*** controls for hover / active state of buttons and other elements ***/
     /** define key primary colours **/
     --primary: var(--p-500);
     --primary-light: var(--p-100);
@@ -233,8 +234,8 @@
     --primary-text: var(--p-700);
     --primary-text-invert: var(--p-50);
     --primary-text-invert-dark: var(--p-50);
-    --primary-hover: oklch(from var(--primary) calc(l + .05) c h);
-    --primary-active: oklch(from var(--primary) calc(l - .05) c h);
+    --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
+    --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
     /** define key secondary colours **/
     --secondary: var(--s-500);
     --secondary-light: var(--s-100);
@@ -242,8 +243,8 @@
     --secondary-text: var(--s-700);
     --secondary-text-invert: var(--s-50);
     --secondary-text-invert-dark: var(--s-50);
-    --secondary-hover: oklch(from var(--secondary) calc(l + .05) c h);
-    --secondary-active: oklch(from var(--secondary) calc(l - .05) c h);
+    --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
+    --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
     /** define key complement colours **/
     --complement: var(--c-500);
     --complement-light: var(--c-100);
@@ -251,8 +252,8 @@
     --complement-text: var(--c-700);
     --complement-text-invert: var(--white-25);
     --complement-text-invert-dark: var(--c-50);
-    --complement-hover: oklch(from var(--complement) calc(l + .05) c h);
-    --complement-active: oklch(from var(--complement) calc(l - .05) c h);
+    --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
+    --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
     /** define key link colours **/
     --link: var(--link-gen);
     --link-visited: var(--link-visited-gen);
@@ -2290,7 +2291,7 @@ pre
     button.button-complement-inverted:not(.has-no-hover):active,
     .button.button-complement-inverted:not(.has-no-hover):active
     {
-        text-decoration: var(--complement-active);
+        text-decoration: underline var(--complement-active);
 
         color: var(--complement-active);
         border: none;

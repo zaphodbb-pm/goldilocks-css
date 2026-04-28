@@ -296,12 +296,10 @@
     button.button-complement-inverted:not(.has-no-hover):active,
     .button.button-complement-inverted:not(.has-no-hover):active {
         color: var(--complement-active);
-        text-decoration: var(--complement-active);
+        text-decoration: underline var(--complement-active);
         text-underline-offset: 0.25em;
-
         background-color: var(--bg-element);
         border: none;
-
     }
 
 
