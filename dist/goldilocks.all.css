@@ -263,8 +263,8 @@
     --warning-light: var(--warn-100);
     --warning-dark: var(--warn-600);
     --warning-text: var(--warn-700);
-    --warning-text-invert: var(--warn-50);
-    --warning-text-invert-dark: var(--warn-50);
+    --warning-text-invert: color-mix(in oklch var(--warn-400), black 80%);
+    --warning-text-invert-dark: color-mix(in oklch var(--warn-400), white 80%);
     --danger: var(--err-500);
     --danger-light: var(--err-100);
     --danger-dark: var(--err-600);
