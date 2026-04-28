@@ -127,9 +127,9 @@
 
     --primary-text-invert: var(--p-50);
     --primary-text-invert-dark: var(--p-50);
-    --secondary-text-invert: var(--s-800);
+    --secondary-text-invert: var(--s-50);
     --secondary-text-invert-dark: var(--s-50);
-    --complement-text-invert: var(--c-700);
+    --complement-text-invert: var(--white-25);
     --complement-text-invert-dark: var(--c-50);
 
     /** optional light colors; use carefully as accessibility is hard to achieve **/
