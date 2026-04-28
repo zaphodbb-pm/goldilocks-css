@@ -146,7 +146,6 @@
         color: var(--primary);
         text-decoration: underline var(--primary);
         text-underline-offset: 0.25em;
-
         background-color: var(--bg-main);
         border: none;
     }
@@ -156,7 +155,7 @@
         color: var(--primary);
         text-decoration: underline var(--primary);
         text-underline-offset: 0.25em;
-        background-color: var(--bg-container);
+        background-color: var(--bg-component);
         border: none;
     }
 
@@ -222,7 +221,7 @@
         color: var(--secondary);
         text-decoration: underline var(--secondary);
         text-underline-offset: 0.25em;
-        background-color: var(--bg-container);
+        background-color: var(--bg-component);
         border: none;
     }
 
@@ -290,7 +289,7 @@
         color: var(--complement);
         text-decoration: underline var(--complement);
         text-underline-offset: 0.25em;
-        background-color: var(--bg-container);
+        background-color: var(--bg-component);
         border: none;
     }
 
