@@ -197,15 +197,15 @@
     --ok-600: oklch(43.0% .220 135);
     --ok-700: oklch(34.5% .192 135);
     --ok-800: oklch(25.2% .148 135);
-    /*** warning - yellow ***/
-    --warn-50: oklch(98.2% .012 92);
-    --warn-100: oklch(94.5% .034 92);
-    --warn-200: oklch(88.8% .076 92);
-    --warn-400: oklch(67.8% .178 92);
-    --warn-500: oklch(65.5% .188 92);
-    --warn-600: oklch(56.0% .185 92);
-    --warn-700: oklch(47.0% .170 92);
-    --warn-800: oklch(35.0% .132 92);
+    /*** warning - yellow  oklch(0.81 0.1522 88)  ***/
+    --warn-50: oklch(98.2% .012 88);
+    --warn-100: oklch(94.5% .034 88);
+    --warn-200: oklch(88.8% .076 88);
+    --warn-400: oklch(85% .138 88);
+    --warn-500: oklch(81% .152 88);
+    --warn-600: oklch(71.0% .175 88);
+    --warn-700: oklch(51.0% .160 88);
+    --warn-800: oklch(31.0% .130 88);
     /*** danger - cool crimson ***/
     --err-50: oklch(97.5% .012 5);
     --err-100: oklch(92.5% .038 5);
@@ -226,26 +226,34 @@
     --sh-inset: inset 0 2px 4px oklch(41.8% .210 272 / .12);
     /** main theme colour parameters - based on AI generated theme colours **/
     --main-color: 272; /*** primary hue value used by charts ***/
+    /** define key primary colours **/
     --primary: var(--p-500);
-    --secondary: var(--s-500);
-    --complement: var(--c-500);
-    /** define text colours for main theme, adjusted for expected theme colour luminosity **/
+    --primary-light: var(--p-100);
+    --primary-dark: var(--p-600);
     --primary-text: var(--p-700);
-    --secondary-text: var(--s-700);
-    --complement-text: var(--c-700);
     --primary-text-invert: var(--p-50);
     --primary-text-invert-dark: var(--p-50);
+    --primary-hover: oklch(from var(--primary) calc(l + .05) c h);
+    --primary-active: oklch(from var(--primary) calc(l - .05) c h);
+    /** define key secondary colours **/
+    --secondary: var(--s-500);
+    --secondary-light: var(--s-100);
+    --secondary-dark: var(--s-600);
+    --secondary-text: var(--s-700);
     --secondary-text-invert: var(--s-50);
     --secondary-text-invert-dark: var(--s-50);
+    --secondary-hover: oklch(from var(--secondary) calc(l + .05) c h);
+    --secondary-active: oklch(from var(--secondary) calc(l - .05) c h);
+    /** define key complement colours **/
+    --complement: var(--c-500);
+    --complement-light: var(--c-100);
+    --complement-dark: var(--c-600);
+    --complement-text: var(--c-700);
     --complement-text-invert: var(--white-25);
     --complement-text-invert-dark: var(--c-50);
-    /** optional light colors; use carefully as accessibility is hard to achieve **/
-    --primary-light: var(--p-100);
-    --secondary-light: var(--s-100);
-    --complement-light: var(--c-100);
-    --primary-dark: var(--p-600);
-    --secondary-dark: var(--s-600);
-    --complement-dark: var(--c-600);
+    --complement-hover: oklch(from var(--complement) calc(l + .05) c h);
+    --complement-active: oklch(from var(--complement) calc(l - .05) c h);
+    /** define key link colours **/
     --link: var(--link-gen);
     --link-visited: var(--link-visited-gen);
     --link-light: var(--lnk-100);
@@ -253,18 +261,21 @@
     --link-text: var(--lnk-800);
     --link-text-invert: var(--lnk-50);
     --link-text-invert-dark: var(--lnk-50);
+    /** define key success colours **/
     --success: var(--ok-500);
     --success-light: var(--ok-100);
     --success-dark: var(--ok-600);
     --success-text: var(--ok-700);
     --success-text-invert: var(--ok-50);
     --success-text-invert-dark: var(--ok-50);
+    /** define key warning colours **/
     --warning: var(--warn-400);
     --warning-light: var(--warn-100);
     --warning-dark: var(--warn-600);
     --warning-text: var(--warn-700);
-    --warning-text-invert: color-mix(in oklch var(--warn-400), black 80%);
-    --warning-text-invert-dark: color-mix(in oklch var(--warn-400), white 80%);
+    --warning-text-invert: color-mix(in oklch, var(--warn-500), black 80%);
+    --warning-text-invert-dark: color-mix(in oklch, var(--warn-500), white 80%);
+    /** define key danger colours **/
     --danger: var(--err-500);
     --danger-light: var(--err-100);
     --danger-dark: var(--err-600);
@@ -2058,15 +2069,15 @@ pre
     button.button-primary:not(.has-no-hover):hover,
     .button.button-primary:not(.has-no-hover):hover
     {
-        border: 1px solid color-mix(in hsl, var(--primary), white 20%);
-        background-color: color-mix(in hsl, var(--primary), white 20%);
+        border: 1px solid var(--primary-hover);
+        background-color: var(--primary-hover);
     }
 
     button.button-primary:not(.has-no-hover):active,
     .button.button-primary:not(.has-no-hover):active
     {
-        border: 1px solid color-mix(in hsl, var(--primary), black 20%);
-        background-color: color-mix(in hsl, var(--primary), black 20%);
+        border: 1px solid var(--primary-active);
+        background-color: var(--primary-active);
     }
 
     button.button-primary-outlined,
@@ -2080,15 +2091,15 @@ pre
     button.button-primary-outlined:not(.has-no-hover):hover,
     .button.button-primary-outlined:not(.has-no-hover):hover
     {
-        border: 1px solid color-mix(in hsl, white, var(--primary) 30%);
-        background-color: color-mix(in hsl, white, var(--primary) 30%);
+        border: 1px solid var(--primary-hover);
+        background-color: var(--primary-hover);
     }
 
     button.button-primary-outlined:not(.has-no-hover):active,
     .button.button-primary-outlined:not(.has-no-hover):active
     {
-        border: 1px solid color-mix(in hsl, var(--primary), black 20%);
-        background-color: color-mix(in hsl, var(--primary), black 20%);
+        border: 1px solid var(--primary-active);
+        background-color: var(--primary-active);
     }
 
     button.button-primary-inverted,
@@ -2110,7 +2121,7 @@ pre
 
         color: var(--primary);
         border: none;
-        background-color: var(--bg-element);
+        background-color: var(--bg-container);
 
         text-underline-offset: .25em;
     }
@@ -2118,11 +2129,11 @@ pre
     button.button-primary-inverted:not(.has-no-hover):active,
     .button.button-primary-inverted:not(.has-no-hover):active
     {
-        text-decoration: underline color-mix(in hsl, var(--primary), black 20%);
+        text-decoration: underline var(--primary-active);
 
-        color: color-mix(in hsl, var(--primary), black 20%);
+        color: var(--primary-active);
         border: none;
-        background-color: color-mix(in hsl, var(--primary), white 75%);
+        background-color: var(--bg-element);
     }
 
     /*** secondary button ***/
@@ -2137,45 +2148,45 @@ pre
     button.button-secondary:not(.has-no-hover):hover,
     .button.button-secondary:not(.has-no-hover):hover
     {
-        border: 1px solid color-mix(in hsl, var(--secondary), white 30%);
-        background-color: color-mix(in hsl, var(--secondary), white 30%);
+        border: 1px solid var(--secondary-hover);
+        background-color: var(--secondary-hover);
     }
 
     button.button-secondary:not(.has-no-hover):active,
     .button.button-secondary:not(.has-no-hover):active
     {
-        border: 1px solid color-mix(in hsl, var(--secondary), black 20%);
-        background-color: color-mix(in hsl, var(--secondary), black 20%);
+        border: 1px solid var(--secondary-active);
+        background-color: var(--secondary-active);
     }
 
     button.button-secondary-outlined,
     .button.button-secondary-outlined
     {
-        color: var(--secondary-dark);
-        border: 1px solid var(--secondary-dark);
+        color: var(--secondary);
+        border: 1px solid var(--secondary);
         background-color: var(--bg-main);
     }
 
     button.button-secondary-outlined:not(.has-no-hover):hover,
     .button.button-secondary-outlined:not(.has-no-hover):hover
     {
-        border: 1px solid color-mix(in hsl, white, var(--secondary-dark) 30%);
-        background-color: color-mix(in hsl, white, var(--secondary-dark) 30%);
+        border: 1px solid var(--secondary-hover);
+        background-color: var(--secondary-hover);
     }
 
     button.button-secondary-outlined:not(.has-no-hover):active,
     .button-secondary-outlined:not(.has-no-hover):active
     {
-        border: 1px solid color-mix(in hsl, var(--secondary-dark), black 20%);
-        background-color: color-mix(in hsl, var(--secondary-dark), black 20%);
+        border: 1px solid var(--secondary-active);
+        background-color: var(--secondary-active);
     }
 
     button.button-secondary-inverted,
     .button.button-secondary-inverted
     {
-        text-decoration: underline var(--secondary-dark);
+        text-decoration: underline var(--secondary);
 
-        color: var(--secondary-dark);
+        color: var(--secondary);
         border: none;
         background-color: var(--bg-main);
 
@@ -2185,11 +2196,11 @@ pre
     button.button-secondary-inverted:not(.has-no-hover):hover,
     .button.button-secondary-inverted:not(.has-no-hover):hover
     {
-        text-decoration: underline var(--secondary-dark);
+        text-decoration: underline var(--secondary);
 
-        color: var(--secondary-dark);
+        color: var(--secondary);
         border: none;
-        background-color: var(--bg-element);
+        background-color: var(--bg-container);
 
         text-underline-offset: .25em;
     }
@@ -2197,11 +2208,11 @@ pre
     button.button-secondary-inverted:not(.has-no-hover):active,
     .button.button-secondary-inverted:not(.has-no-hover):active
     {
-        text-decoration: underline color-mix(in hsl, var(--secondary-dark), black 20%);
+        text-decoration: underline var(--secondary-active);
 
-        color: color-mix(in hsl, var(--secondary-dark), black 20%);
+        color: var(--secondary-active);
         border: none;
-        background-color: color-mix(in hsl, var(--secondary-dark), white 75%);
+        background-color: var(--bg-element);
 
         text-underline-offset: .25em;
     }
@@ -2219,45 +2230,45 @@ pre
     button.button-complement:not(.has-no-hover):hover,
     .button.button-complement:not(.has-no-hover):hover
     {
-        border: 1px solid color-mix(in hsl, var(--complement), white 30%);
-        background-color: color-mix(in hsl, var(--complement), white 30%);
+        border: 1px solid var(--complement-hover);
+        background-color: var(--complement-hover);
     }
 
     button.button-complement:not(.has-no-hover):active,
     .button.button-complement:not(.has-no-hover):active
     {
-        border: 1px solid color-mix(in hsl, var(--complement), black 30%);
-        background-color: color-mix(in hsl, var(--complement), black 20%);
+        border: 1px solid var(--complement-active);
+        background-color: var(--complement-active);
     }
 
     button.button-complement-outlined,
     .button.button-complement-outlined
     {
-        color: var(--complement-dark);
-        border: 1px solid var(--complement-dark);
+        color: var(--complement);
+        border: 1px solid var(--complement);
         background-color: var(--bg-main);
     }
 
     button.button-complement-outlined:not(.has-no-hover):hover,
     .button.button-complement-outlined:not(.has-no-hover):hover
     {
-        border: 1px solid color-mix(in hsl, white, var(--complement-dark) 30%);
-        background-color: color-mix(in hsl, white, var(--complement-dark) 30%);
+        border: 1px solid var(--complement-hover);
+        background-color: var(--complement-hover);
     }
 
     button.button-complement-outlined:not(.has-no-hover):active,
     .button.button-complement-outlined:not(.has-no-hover):active
     {
-        border: 1px solid color-mix(in hsl, var(--complement-dark), black 20%);
-        background-color: color-mix(in hsl, var(--complement-dark), black 20%);
+        border: 1px solid var(--complement-active);
+        background-color: var(--complement-active);
     }
 
     button.button-complement-inverted,
     .button.button-complement-inverted
     {
-        text-decoration: underline var(--complement-dark);
+        text-decoration: underline var(--complement);
 
-        color: var(--complement-dark);
+        color: var(--complement);
         border: none;
         background-color: var(--bg-main);
 
@@ -2267,11 +2278,11 @@ pre
     button.button-complement-inverted:not(.has-no-hover):hover,
     .button.button-complement-inverted:not(.has-no-hover):hover
     {
-        text-decoration: underline var(--complement-dark);
+        text-decoration: underline var(--complement);
 
-        color: var(--complement-dark);
+        color: var(--complement);
         border: none;
-        background-color: var(--bg-element);
+        background-color: var(--bg-container);
 
         text-underline-offset: .25em;
     }
@@ -2279,11 +2290,11 @@ pre
     button.button-complement-inverted:not(.has-no-hover):active,
     .button.button-complement-inverted:not(.has-no-hover):active
     {
-        text-decoration: underline color-mix(in hsl, var(--complement-dark), black 20%);
+        text-decoration: var(--complement-active);
 
-        color: color-mix(in hsl, var(--complement-dark), black 20%);
+        color: var(--complement-active);
         border: none;
-        background-color: color-mix(in hsl, var(--complement-dark), white 75%);
+        background-color: var(--bg-element);
 
         text-underline-offset: .25em;
     }
@@ -2470,9 +2481,7 @@ pre
 
         border: none;
         border-radius: var(--radius-elem);
-        box-shadow: 0 3px 5px -1px hsl(var(--shadow-raw) / .3),
-        0 6px 10px 0 hsl(var(--shadow-raw) / .2),
-        0 1px 18px 0 hsl(var(--shadow-raw) / .15); /* 6dp elevation */
+        box-shadow: var(--sh-md);
 
         align-items: center;
         justify-content: center;
@@ -2483,9 +2492,7 @@ pre
     button.fab-secondary:active,
     button.fab-complement:active
     {
-        box-shadow: 0 7px 8px -4px hsl(var(--shadow-raw) / .3),
-        0 12px 17px 2px hsl(var(--shadow-raw) / .2),
-        0 5px 22px 4px hsl(var(--shadow-raw) / .15); /* 12dp elevation on press */
+        box-shadow: var(--sh-lg);
     }
 
     button.fab
@@ -2497,13 +2504,13 @@ pre
     button.fab:hover
     {
         border: none;
-        background-color: color-mix(in hsl,  var(--grey-dark), white 30%);
+        background-color: var(--grey);
     }
 
     button.fab:active
     {
         border: none;
-        background-color: color-mix(in hsl,  var(--grey-dark), black 20%);
+        background-color: var(--grey-darker);
     }
 
     button.fab-primary
@@ -2517,14 +2524,14 @@ pre
     {
         color: var(--primary-text-invert);
         border: none;
-        background-color: color-mix(in hsl,  var(--primary), white 30%);
+        background-color: var(--primary-hover);
     }
 
     button.fab-primary:active
     {
         color: var(--primary-text-invert);
         border: none;
-        background-color: color-mix(in hsl,  var(--primary), black 20%);
+        background-color: var(--primary-active);
     }
 
     button.fab-secondary
@@ -2538,35 +2545,35 @@ pre
     {
         color: var(--secondary-text-invert);
         border: none;
-        background-color: color-mix(in hsl,  var(--secondary), white 30%);
+        background-color: var(--secondary-hover);
     }
 
     button.fab-secondary:active
     {
         color: var(--secondary-text-invert);
         border: none;
-        background-color: color-mix(in hsl,  var(--secondary), black 20%);
+        background-color: var(--secondary-active);
     }
 
     button.fab-complement
     {
-        color: var(--complement-text-invert-dark);
+        color: var(--complement-text-invert);
         border: none;
         background-color: var(--complement);
     }
 
     button.fab-complement:hover
     {
-        color: var(--complement-text-invert-dark);
+        color: var(--complement-text-invert);
         border: none;
-        background-color: color-mix(in hsl,  var(--complement), white 30%);
+        background-color: var(--complement-hover);
     }
 
     button.fab-complement:active
     {
-        color: var(--complement-text-invert-dark);
+        color: var(--complement-text-invert);
         border: none;
-        background-color: color-mix(in hsl,  var(--complement), black 20%);
+        background-color: var(--complement-active);
     }
 
     /*** icon controls ***/

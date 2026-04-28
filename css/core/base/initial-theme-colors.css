@@ -81,15 +81,15 @@
     --ok-700: oklch(34.5% 0.192 135);
     --ok-800: oklch(25.2% 0.148 135);
 
-    /*** warning - yellow ***/
-    --warn-50: oklch(98.2% 0.012 92);
-    --warn-100: oklch(94.5% 0.034 92);
-    --warn-200: oklch(88.8% 0.076 92);
-    --warn-400: oklch(67.8% 0.178 92);
-    --warn-500: oklch(65.5% 0.188 92);
-    --warn-600: oklch(56.0% 0.185 92);
-    --warn-700: oklch(47.0% 0.170 92);
-    --warn-800: oklch(35.0% 0.132 92);
+    /*** warning - yellow  oklch(0.81 0.1522 88)  ***/
+    --warn-50: oklch(98.2% 0.012 88);
+    --warn-100: oklch(94.5% 0.034 88);
+    --warn-200: oklch(88.8% 0.076 88);
+    --warn-400: oklch(85% 0.138 88);
+    --warn-500: oklch(81% 0.152 88);
+    --warn-600: oklch(71.0% 0.175 88);
+    --warn-700: oklch(51.0% 0.160 88);
+    --warn-800: oklch(31.0% 0.130 88);
 
     /*** danger - cool crimson ***/
     --err-50: oklch(97.5% 0.012 5);
@@ -113,34 +113,48 @@
     --sh-inset: inset 0 2px 4px oklch(41.8% 0.210 272 / 0.12);
 
     /** main theme colour parameters - based on AI generated theme colours **/
-
     --main-color: 272; /*** primary hue value used by charts ***/
 
+    /** define key primary colours **/
     --primary: var(--p-500);
-    --secondary: var(--s-500);
-    --complement: var(--c-500);
+    --primary-light:  var(--p-100);
+    --primary-dark:  var(--p-600);
 
-    /** define text colours for main theme, adjusted for expected theme colour luminosity **/
     --primary-text: var(--p-700);
-    --secondary-text: var(--s-700);
-    --complement-text: var(--c-700);
-
     --primary-text-invert: var(--p-50);
     --primary-text-invert-dark: var(--p-50);
+
+    --primary-hover: oklch(from var(--primary) calc(l + 0.05) c h);
+    --primary-active: oklch(from var(--primary) calc(l - 0.05) c h);
+
+
+    /** define key secondary colours **/
+    --secondary: var(--s-500);
+    --secondary-light:  var(--s-100);
+    --secondary-dark:  var(--s-600);
+
+    --secondary-text: var(--s-700);
     --secondary-text-invert: var(--s-50);
     --secondary-text-invert-dark: var(--s-50);
+
+    --secondary-hover: oklch(from var(--secondary) calc(l + 0.05) c h);
+    --secondary-active: oklch(from var(--secondary) calc(l - 0.05) c h);
+
+
+    /** define key complement colours **/
+    --complement: var(--c-500);
+    --complement-light:  var(--c-100);
+    --complement-dark:  var(--c-600);
+
+    --complement-text: var(--c-700);
     --complement-text-invert: var(--white-25);
     --complement-text-invert-dark: var(--c-50);
 
-    /** optional light colors; use carefully as accessibility is hard to achieve **/
-    --primary-light:  var(--p-100);
-    --secondary-light:  var(--s-100);
-    --complement-light:  var(--c-100);
+    --complement-hover: oklch(from var(--complement) calc(l + 0.05) c h);
+    --complement-active: oklch(from var(--complement) calc(l - 0.05) c h);
 
-    --primary-dark:  var(--p-600);
-    --secondary-dark:  var(--s-600);
-    --complement-dark:  var(--c-600);
 
+    /** define key link colours **/
     --link: var(--link-gen);
     --link-visited: var(--link-visited-gen);
     --link-light: var(--lnk-100);
@@ -149,6 +163,7 @@
     --link-text-invert: var(--lnk-50);
     --link-text-invert-dark: var(--lnk-50);
 
+    /** define key success colours **/
     --success: var(--ok-500);
     --success-light: var(--ok-100);
     --success-dark: var(--ok-600);
@@ -156,13 +171,15 @@
     --success-text-invert: var(--ok-50);
     --success-text-invert-dark: var(--ok-50);
 
+    /** define key warning colours **/
     --warning: var(--warn-400);
     --warning-light:  var(--warn-100);
     --warning-dark: var(--warn-600);
     --warning-text: var(--warn-700);
-    --warning-text-invert: color-mix(in oklch var(--warn-400), black 80%);
-    --warning-text-invert-dark: color-mix(in oklch var(--warn-400), white 80%);
+    --warning-text-invert: color-mix(in oklch, var(--warn-500), black 80%);
+    --warning-text-invert-dark: color-mix(in oklch, var(--warn-500), white 80%);
 
+    /** define key danger colours **/
     --danger: var(--err-500);
     --danger-light:  var(--err-100);
     --danger-dark: var(--err-600);
