@@ -2759,14 +2759,14 @@ pre
 
     .is-success
     {
-        color: var(--success-text);
+        color: var(--success-text-invert);
         border: 1px solid var(--success);
         background-color: var(--success);
     }
 
     .is-success-light
     {
-        color: var(--success-text-invert);
+        color: var(--success-text);
         border: 1px solid var(--success-light);
         background-color: var(--success-light);
     }

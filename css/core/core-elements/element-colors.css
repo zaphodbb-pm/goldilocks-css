@@ -95,13 +95,13 @@
 
 
     .is-success {
-        color: var(--success-text);
+        color: var(--success-text-invert);
         background-color: var(--success);
         border: 1px solid var(--success);
     }
 
     .is-success-light {
-        color: var(--success-text-invert);
+        color: var(--success-text);
         background-color: var(--success-light);
         border: 1px solid var(--success-light);
     }
