@@ -101,7 +101,7 @@
     }
 
     .is-success-light {
-        color: var(--success-text);
+        color: var(--success-text-invert);
         background-color: var(--success-light);
         border: 1px solid var(--success-light);
     }
@@ -120,7 +120,7 @@
 
 
     .is-warning {
-        color: var(--warning-text);
+        color: var(--warning-text-invert);
         background-color: var(--warning);
         border: 1px solid var(--warning);
     }

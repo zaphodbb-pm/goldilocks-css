@@ -153,21 +153,21 @@
     --success-light: var(--ok-100);
     --success-dark: var(--ok-600);
     --success-text: var(--ok-700);
-    --success-text-invert: var(--ok-800);
+    --success-text-invert: var(--ok-50);
     --success-text-invert-dark: var(--ok-50);
 
     --warning: var(--warn-400);
     --warning-light:  var(--warn-100);
-    --warning-dark: hsl(38, 90%, 44%);
-    --warning-text: hsl(38, 65%, 22%);
-    --warning-text-invert: var(--warn-800);
-    --warning-text-invert-dark: var(--warn-700);
+    --warning-dark: var(--warn-600);
+    --warning-text: var(--warn-700);
+    --warning-text-invert: var(--warn-50);
+    --warning-text-invert-dark: var(--warn-50);
 
     --danger: var(--err-500);
     --danger-light:  var(--err-100);
     --danger-dark: var(--err-600);
     --danger-text: var(--err-700);
-    --danger-text-invert: var(--g-50);
+    --danger-text-invert: var(--err-50);
     --danger-text-invert-dark: var(--err-50);
 
     /* additional greys */
@@ -182,9 +182,9 @@
     --grey-light: var(--g-300);
     --grey-lighter: var(--g-200);
 
-    --white-100: color-mix(in oklch, white, var(--secondary) 15% );
-    --white-50: color-mix(in oklch, white, var(--secondary) 10% );
-    --white-25: color-mix(in oklch, white, var(--secondary) 5% );
+    --white-100: color-mix(in oklch, white, var(--secondary) 12% );
+    --white-50: color-mix(in oklch, white, var(--secondary) 8% );
+    --white-25: color-mix(in oklch, white, var(--secondary) 4% );
     --white-10: color-mix(in oklch, white, var(--secondary) 2% );
 
     /* set the body level colours for light mode*/
