@@ -235,9 +235,9 @@
     --main-color: 195; /*** primary hue value used by charts ***/
     --action-offset: .075;  /*** controls for hover / active state of buttons and other elements ***/
     /** define key primary colours **/
-    --primary: var(--p-500);
+    --primary: var(--p-600);
     --primary-light: var(--p-100);
-    --primary-dark: var(--p-600);
+    --primary-dark: var(--p-700);
     --primary-text: var(--p-700);
     --primary-text-invert: var(--p-50);
     --primary-text-invert-dark: var(--p-50);
@@ -278,12 +278,12 @@
     --success-text-invert: var(--success-50);
     --success-text-invert-dark: var(--success-50);
     /** define key warning colours **/
-    --warninging: var(--warning-400);
-    --warninging-light: var(--warning-100);
-    --warninging-dark: var(--warning-600);
-    --warninging-text: var(--warning-700);
-    --warninging-text-invert: color-mix(in oklch, var(--warning-500), black 80%);
-    --warninging-text-invert-dark: color-mix(in oklch, var(--warning-500), white 80%);
+    --warning: var(--warning-400);
+    --warning-light: var(--warning-100);
+    --warning-dark: var(--warning-700);
+    --warning-text: var(--warning-700);
+    --warning-text-invert: var(--warning-800);
+    --warning-text-invert-dark: var(--warning-50);
     /** define key danger colours **/
     --danger: var(--danger-500);
     --danger-light: var(--danger-100);
