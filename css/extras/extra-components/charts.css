@@ -9,20 +9,18 @@
         padding: var(--padding-normal);
         border-radius: var(--radius-comp);
 
-        --color: var(--main-color, 0);
         --color-offset: 75;
-        --color-satlight: 90%, 45%, 0.80;
-
-        --color-1: hsla(var(--color), var(--color-satlight));
-        --color-2: hsla(calc(var(--color) + var(--color-offset)), var(--color-satlight));
-        --color-3: hsla(calc(var(--color) + 2 * var(--color-offset)), var(--color-satlight));
-        --color-4: hsla(calc(var(--color) + 3 * var(--color-offset)), var(--color-satlight));
-        --color-5: hsla(calc(var(--color) + 4 * var(--color-offset)), var(--color-satlight));
-        --color-6: hsla(calc(var(--color) + 5 * var(--color-offset)), var(--color-satlight));
-        --color-7: hsla(calc(var(--color) + 6 * var(--color-offset)), var(--color-satlight));
-        --color-8: hsla(calc(var(--color) + 7 * var(--color-offset)), var(--color-satlight));
-        --color-9: hsla(calc(var(--color) + 8 * var(--color-offset)), var(--color-satlight));
-        --color-10: hsla(calc(var(--color) + 9 * var(--color-offset)), var(--color-satlight));
+        --color-alpha: 0.8;
+        --color-1:  oklch(from var(--primary) l c h / var(--color-alpha));
+        --color-2:  oklch(from var(--primary) l c calc(h + var(--color-offset)) / var(--color-alpha));
+        --color-3:  oklch(from var(--primary) l c calc(h + 2 * var(--color-offset)) / var(--color-alpha));
+        --color-4:  oklch(from var(--primary) l c calc(h + 3 * var(--color-offset)) / var(--color-alpha));
+        --color-5:  oklch(from var(--primary) l c calc(h + 4 * var(--color-offset)) / var(--color-alpha));
+        --color-6:  oklch(from var(--primary) l c calc(h + 5 * var(--color-offset)) / var(--color-alpha));
+        --color-7:  oklch(from var(--primary) l c calc(h + 6 * var(--color-offset)) / var(--color-alpha));
+        --color-8:  oklch(from var(--primary) l c calc(h + 7 * var(--color-offset)) / var(--color-alpha));
+        --color-9:  oklch(from var(--primary) l c calc(h + 8 * var(--color-offset)) / var(--color-alpha));
+        --color-10: oklch(from var(--primary) l c calc(h + 9 * var(--color-offset)) / var(--color-alpha));
     }
 
     .charts-wrapper ul li {

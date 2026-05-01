@@ -86,7 +86,7 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --text: var(--white-100);
     --text-invert: var(--black-800);
     --text-light: var(--grey);
-    --text-darker: var(--white-50);
+    --text-darker: var(--grey-white);
 
     --text-elem: var(--white-25);
     --text-comp: var(--white-25);
