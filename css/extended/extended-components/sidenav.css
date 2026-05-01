@@ -40,6 +40,10 @@
         width: auto;
     }
 
+    .sidenavs > nav a.icon-nav-horz [class*=icon-bg-] {
+        margin-left: 0;
+    }
+
     .sidenav-block {
         color: var(--text-elem);
         padding: 0;

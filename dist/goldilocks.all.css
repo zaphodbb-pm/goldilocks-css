@@ -231,9 +231,9 @@
     --sh-md: 0 3px 5px oklch(var(--sh-tint) / .06), 0 4px 8px 3px oklch(var(--sh-tint) / .10);
     --sh-lg: 0 5px 7px oklch(var(--sh-tint) / .07), 0 6px 10px 4px oklch(var(--sh-tint) / .14);
     --bg-page: oklch(99.5% .002 70);
-    --bg-elevated-1: oklch(99% .005 70);
-    --bg-elevated-2: oklch(98% .007 70);
-    --bg-elevated-3: oklch(97% .009 70);
+    --bg-elevated-1: oklch(98% .005 70);
+    --bg-elevated-2: oklch(97% .007 70);
+    --bg-elevated-3: oklch(96% .009 70);
     /** end of imported theme colours **/
     /** map theme colours into working variables **/
     /** adjust for WCAG compliance **/
@@ -311,7 +311,7 @@
     --white: var(--g-0);
     /*** set the body level colours for light mode ***/
     --bg-main: var(--bg-page);
-    --bg-grid: var(--g-50);
+    --bg-grid: var(--g-100);
     --bg-container: var(--bg-elevated-1);
     --bg-component: var(--bg-elevated-2);
     --bg-element: var(--bg-elevated-3);
@@ -320,12 +320,12 @@
     --border-main: var(--grey-light);
     --border-main-darker: var(--grey);
     --text: var(--black-800);
-    --ghost: var(--bg-page);
+    --text-ghost: var(--bg-page);
     --text-light: var(--grey-dark);
     --text-darker: var(--black);
     --text-elem: var(--black-800);
     --text-comp: var(--black-800);
-    --ghost-ter: var(--g-50);
+    --text-ghost-ter: var(--g-50);
     --text-btn-invert: var(--g-50);
     --text-code: var(--c-700);
     /*** Common shadow treatment for containers, components and elements ***/
@@ -5863,6 +5863,11 @@ pre
     .sidenavs > nav a
     {
         width: auto;
+    }
+
+    .sidenavs > nav a.icon-nav-horz [class*=icon-bg-]
+    {
+        margin-left: 0;
     }
 
     .sidenav-block
