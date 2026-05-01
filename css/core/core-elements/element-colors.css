@@ -2,7 +2,7 @@
 
     /* Element / Block Colours */
     .is-primary {
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
         background-color: var(--primary);
         border: 1px solid var(--primary);
     }
@@ -14,7 +14,7 @@
     }
 
     .is-primary-dark {
-        color: var(--primary-text-invert-dark);
+        color: var(--primary-ghost-dark);
         background-color: var(--primary-dark);
         border: 1px solid var(--primary-dark);
     }
@@ -26,7 +26,7 @@
     }
 
     .is-secondary {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         background-color: var(--secondary);
         border: 1px solid var(--secondary);
     }
@@ -38,7 +38,7 @@
     }
 
     .is-secondary-dark {
-        color: var(--secondary-text-invert-dark);
+        color: var(--secondary-ghost-dark);
         background-color: var(--secondary-dark);
         border: 1px solid var(--secondary-dark);
     }
@@ -51,7 +51,7 @@
 
 
     .is-complement {
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
         background-color: var(--complement);
         border: 1px solid var(--complement);
     }
@@ -63,7 +63,7 @@
     }
 
     .is-complement-dark {
-        color: var(--complement-text-invert-dark);
+        color: var(--complement-ghost-dark);
         background-color: var(--complement-dark);
         border: 1px solid var(--complement-dark);
     }
@@ -76,7 +76,7 @@
 
 
     .is-link {
-        color: var(--link-text-invert);
+        color: var(--link-ghost);
         background-color: var(--link);
         border: 1px solid var(--link);
     }
@@ -88,14 +88,14 @@
     }
 
     .is-link-dark {
-        color: var(--link-text-invert-dark);
+        color: var(--link-ghost-dark);
         background-color: var(--link-dark);
         border: 1px solid var(--link-dark);
     }
 
 
     .is-success {
-        color: var(--success-text-invert);
+        color: var(--success-ghost);
         background-color: var(--success);
         border: 1px solid var(--success);
     }
@@ -107,7 +107,7 @@
     }
 
     .is-success-dark {
-        color: var(--success-text-invert-dark);
+        color: var(--success-ghost-dark);
         background-color: var(--success-dark);
         border: 1px solid var(--success-dark);
     }
@@ -120,7 +120,7 @@
 
 
     .is-warning {
-        color: var(--warning-text-invert);
+        color: var(--warning-ghost);
         background-color: var(--warning);
         border: 1px solid var(--warning);
     }
@@ -132,7 +132,7 @@
     }
 
     .is-warning-dark {
-        color: var(--warning-text-invert-dark);
+        color: var(--warning-ghost-dark);
         background-color: var(--warning-dark);
         border: 1px solid var(--warning-dark);
     }
@@ -145,7 +145,7 @@
 
 
     .is-danger {
-        color: var(--danger-text-invert);
+        color: var(--danger-ghost);
         background-color: var(--danger);
         border: 1px solid var(--danger);
     }
@@ -157,7 +157,7 @@
     }
 
     .is-danger-dark {
-        color: var(--danger-text-invert-dark);
+        color: var(--danger-ghost-dark);
         background-color: var(--danger-dark);
         border: 1px solid var(--danger-dark);
     }
@@ -175,7 +175,7 @@
     }
 
     .is-dark {
-        color: var(--text-invert);
+        color: var(--ghost);
         background-color: var(--grey-dark);
         border: 1px solid var(--grey-dark);
     }

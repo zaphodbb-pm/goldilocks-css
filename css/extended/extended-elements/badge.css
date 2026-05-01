@@ -14,7 +14,7 @@
         font-size: .9rem;
         font-weight: var(--weight-medium);
         line-height: 1;
-        color: var(--text-invert);
+        color: var(--ghost);
         white-space: nowrap;
 
         background: var(--grey-dark);
@@ -59,32 +59,32 @@
 
     /* colour controls */
     .badge-primary {
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
         background-color: var(--primary);
     }
 
     .badge-secondary {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         background-color: var(--secondary);
     }
 
     .badge-complement {
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
         background-color: var(--complement);
     }
 
     .badge-success {
-        color: var(--success-text-invert);
+        color: var(--success-ghost);
         background-color: var(--success);
     }
 
     .badge-warning {
-        color: var(--warning-text-invert);
+        color: var(--warning-ghost);
         background-color: var(--warning);
     }
 
     .badge-danger {
-        color: var(--danger-text-invert);
+        color: var(--danger-ghost);
         background-color: var(--danger);
     }
 }

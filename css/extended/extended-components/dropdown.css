@@ -114,6 +114,6 @@
 
     .dropdown-menu > nav > ul > li a.is-active {
         background-color: var(--link);
-        color: var(--text-invert);
+        color: var(--ghost);
     }
 }

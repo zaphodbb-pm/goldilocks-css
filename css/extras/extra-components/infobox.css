@@ -150,17 +150,17 @@
     /** footer **/
     .infobox-primary > a {
         background-color: var(--primary);
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
     }
 
     .infobox-secondary > a {
         background-color: var(--secondary);
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
     }
 
     .infobox-complement > a {
         background-color: var(--complement);
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
     }
 
 

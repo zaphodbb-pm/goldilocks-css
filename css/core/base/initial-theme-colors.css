@@ -140,8 +140,8 @@
     --primary-light:  var(--p-100);
     --primary-dark:  var(--p-700);
     --primary-text: var(--p-700);
-    --primary-text-invert: var(--p-50);
-    --primary-text-invert-dark: var(--p-50);
+    --primary-ghost: var(--p-50);
+    --primary-ghost-dark: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
 
@@ -151,8 +151,8 @@
     --secondary-light:  var(--s-100);
     --secondary-dark:  var(--s-700);
     --secondary-text: var(--s-700);
-    --secondary-text-invert: var(--s-50);
-    --secondary-text-invert-dark: var(--s-50);
+    --secondary-ghost: var(--s-50);
+    --secondary-ghost-dark: var(--s-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
 
@@ -162,8 +162,8 @@
     --complement-light:  var(--c-100);
     --complement-dark:  var(--c-700);
     --complement-text: var(--c-800);
-    --complement-text-invert: var(--bg-page);
-    --complement-text-invert-dark: var(--c-50);
+    --complement-ghost: var(--bg-page);
+    --complement-ghost-dark: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
 
@@ -175,32 +175,32 @@
     --link-light: var(--lnk-100);
     --link-dark: var(--lnk-700);
     --link-text: var(--lnk-800);
-    --link-text-invert: var(--lnk-50);
-    --link-text-invert-dark: var(--lnk-50);
+    --link-ghost: var(--lnk-50);
+    --link-ghost-dark: var(--lnk-50);
 
     /*** define key success colours ***/
     --success: var(--ok-500);
     --success-light: var(--ok-100);
     --success-dark: var(--ok-600);
     --success-text: var(--ok-700);
-    --success-text-invert: var(--ok-50);
-    --success-text-invert-dark: var(--ok-50);
+    --success-ghost: var(--ok-50);
+    --success-ghost-dark: var(--ok-50);
 
     /*** define key warning colours ***/
     --warning: var(--warn-400);
     --warning-light:  var(--warn-100);
     --warning-dark: var(--warn-700);
     --warning-text: var(--warn-700);
-    --warning-text-invert: var(--warn-800);
-    --warning-text-invert-dark: var(--warn-50);
+    --warning-ghost: var(--warn-800);
+    --warning-ghost-dark: var(--warn-50);
 
     /*** define key danger colours ***/
     --danger: var(--err-500);
     --danger-light:  var(--err-100);
     --danger-dark: var(--err-600);
     --danger-text: var(--err-700);
-    --danger-text-invert: var(--err-50);
-    --danger-text-invert-dark: var(--err-50);
+    --danger-ghost: var(--err-50);
+    --danger-ghost-dark: var(--err-50);
 
     /*** additional greys ***/
     --black: var(--g-950);
@@ -230,13 +230,13 @@
     --border-main-darker: var(--grey);
 
     --text: var(--black-800);
-    --text-invert: var(--bg-page);
+    --ghost: var(--bg-page);
     --text-light: var(--grey-dark);
     --text-darker: var(--black);
 
     --text-elem: var(--black-800);
     --text-comp: var(--black-800);
-    --text-invert-ter: var(--g-50);
+    --ghost-ter: var(--g-50);
     --text-btn-invert: var(--g-50);
     --text-code: var(--c-700);
 

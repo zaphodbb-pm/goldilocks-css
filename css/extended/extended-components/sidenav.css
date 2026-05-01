@@ -100,12 +100,12 @@
     .sidenavs a:hover,
     .sidenav-block a:hover {
         border-right: 2px solid var(--link);
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
         padding-right: calc(var(--pad-horz) - 2px);
     }
 
     .sidenav-block > label:hover {
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
         color: inherit;
     }
 
@@ -126,7 +126,7 @@
     }
 
     .sidenav-block input:checked + label:hover {
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
         color: inherit;
     }
 

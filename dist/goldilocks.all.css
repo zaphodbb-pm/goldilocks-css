@@ -245,8 +245,8 @@
     --primary-light: var(--p-100);
     --primary-dark: var(--p-700);
     --primary-text: var(--p-700);
-    --primary-text-invert: var(--p-50);
-    --primary-text-invert-dark: var(--p-50);
+    --primary-ghost: var(--p-50);
+    --primary-ghost-dark: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
     /*** define secondary usage variables ***/
@@ -254,8 +254,8 @@
     --secondary-light: var(--s-100);
     --secondary-dark: var(--s-700);
     --secondary-text: var(--s-700);
-    --secondary-text-invert: var(--s-50);
-    --secondary-text-invert-dark: var(--s-50);
+    --secondary-ghost: var(--s-50);
+    --secondary-ghost-dark: var(--s-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
     /*** define complement / cta usage variables ***/
@@ -263,8 +263,8 @@
     --complement-light: var(--c-100);
     --complement-dark: var(--c-700);
     --complement-text: var(--c-800);
-    --complement-text-invert: var(--bg-page);
-    --complement-text-invert-dark: var(--c-50);
+    --complement-ghost: var(--bg-page);
+    --complement-ghost-dark: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
     /*** define key link colours ***/
@@ -274,29 +274,29 @@
     --link-light: var(--lnk-100);
     --link-dark: var(--lnk-700);
     --link-text: var(--lnk-800);
-    --link-text-invert: var(--lnk-50);
-    --link-text-invert-dark: var(--lnk-50);
+    --link-ghost: var(--lnk-50);
+    --link-ghost-dark: var(--lnk-50);
     /*** define key success colours ***/
     --success: var(--ok-500);
     --success-light: var(--ok-100);
     --success-dark: var(--ok-600);
     --success-text: var(--ok-700);
-    --success-text-invert: var(--ok-50);
-    --success-text-invert-dark: var(--ok-50);
+    --success-ghost: var(--ok-50);
+    --success-ghost-dark: var(--ok-50);
     /*** define key warning colours ***/
     --warning: var(--warn-400);
     --warning-light: var(--warn-100);
     --warning-dark: var(--warn-700);
     --warning-text: var(--warn-700);
-    --warning-text-invert: var(--warn-800);
-    --warning-text-invert-dark: var(--warn-50);
+    --warning-ghost: var(--warn-800);
+    --warning-ghost-dark: var(--warn-50);
     /*** define key danger colours ***/
     --danger: var(--err-500);
     --danger-light: var(--err-100);
     --danger-dark: var(--err-600);
     --danger-text: var(--err-700);
-    --danger-text-invert: var(--err-50);
-    --danger-text-invert-dark: var(--err-50);
+    --danger-ghost: var(--err-50);
+    --danger-ghost-dark: var(--err-50);
     /*** additional greys ***/
     --black: var(--g-950);
     --black-850: var(--g-900);
@@ -320,12 +320,12 @@
     --border-main: var(--grey-light);
     --border-main-darker: var(--grey);
     --text: var(--black-800);
-    --text-invert: var(--bg-page);
+    --ghost: var(--bg-page);
     --text-light: var(--grey-dark);
     --text-darker: var(--black);
     --text-elem: var(--black-800);
     --text-comp: var(--black-800);
-    --text-invert-ter: var(--g-50);
+    --ghost-ter: var(--g-50);
     --text-btn-invert: var(--g-50);
     --text-code: var(--c-700);
     /*** Common shadow treatment for containers, components and elements ***/
@@ -351,12 +351,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --primary-text: hsl(185,65%,36%);
     --secondary-text: hsl(37,20%,47%);
     --complement-text: hsl(22, 82%, 47%);
-    --primary-text-invert: hsl(185, 55%, 96%);
-    --primary-text-invert-dark: hsl(185, 55%, 96%);
-    --secondary-text-invert: hsl(37, 28%, 97%);
-    --secondary-text-invert-dark: hsl(37, 28%, 97%);
-    --complement-text-invert: hsl(22, 80%, 18%);
-    --complement-text-invert-dark: hsl(22, 80%, 97%);
+    --primary-ghost: hsl(185, 55%, 96%);
+    --primary-ghost-dark: hsl(185, 55%, 96%);
+    --secondary-ghost: hsl(37, 28%, 97%);
+    --secondary-ghost-dark: hsl(37, 28%, 97%);
+    --complement-ghost: hsl(22, 80%, 18%);
+    --complement-ghost-dark: hsl(22, 80%, 97%);
     --primary-light: hsl(185,55%,94%);
     --secondary-light: hsl(37, 24%, 92%);
     --complement-light: hsl(22,85%,93%);
@@ -369,26 +369,26 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --link-light: hsl(240, 50%, 95%);
     --link-dark: hsl(240, 55%, 55%);
     --link-text: hsl(240, 55%, 65%);
-    --link-text-invert: hsl(240, 52%, 20%);
-    --link-text-invert-dark: hsl(240, 52%, 97%);
+    --link-ghost: hsl(240, 52%, 20%);
+    --link-ghost-dark: hsl(240, 52%, 97%);
     --success: hsl(152, 47%, 53%);
     --success-light: hsl(152, 50%, 95%);
     --success-dark: hsl(152, 55%, 32%);
     --success-text: hsl(152, 70%, 19%);
-    --success-text-invert: hsl( 152, 70%, 17%);
-    --success-text-invert-dark: hsl(152, 47%, 97%);
+    --success-ghost: hsl( 152, 70%, 17%);
+    --success-ghost-dark: hsl(152, 47%, 97%);
     --warning: hsl(38, 92%, 58%);
     --warning-light: hsl(38, 88%, 95%);
     --warning-dark: hsl(38, 90%, 32%);
     --warning-text: hsl(38, 65%, 27%);
-    --warning-text-invert: var(--black-800);
-    --warning-text-invert-dark: hsl(38, 92%, 97%);
+    --warning-ghost: var(--black-800);
+    --warning-ghost-dark: hsl(38, 92%, 97%);
     --danger: hsl(4, 70%, 55%);
     --danger-light: hsl(4, 74%, 97%);
     --danger-dark: hsl(4, 62%, 45%);
     --danger-text: hsl(4, 65%, 37%);
-    --danger-text-invert: var(--white-10);
-    --danger-text-invert-dark: hsl(4, 70%, 97%);
+    --danger-ghost: var(--white-10);
+    --danger-ghost-dark: hsl(4, 70%, 97%);
     --grey-light: hsl(0, 0%, 75%);
     --grey-lighter: hsl(0, 0%, 85%);
     /** invert colours for elements and components **/
@@ -404,12 +404,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --bg-hover: var(--grey-dark);
     /** invert or adjust colours for text **/
     --text: var(--white-100);
-    --text-invert: var(--black-800);
+    --ghost: var(--black-800);
     --text-light: var(--grey);
     --text-darker: var(--grey-white);
     --text-elem: var(--white-25);
     --text-comp: var(--white-25);
-    --text-invert-ter: var(--black-800);
+    --ghost-ter: var(--black-800);
     --text-code: var(--secondary-light);
     /** Common shadow treatment for containers, components and elements **/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
@@ -1967,7 +1967,7 @@ pre
         cursor: pointer;
         white-space: nowrap;
 
-        color: var(--text-invert);
+        color: var(--ghost);
         border: 1px solid var(--grey-dark);
         border-radius: 10rem;
         background-color: var(--grey-dark);
@@ -2002,9 +2002,9 @@ pre
     /*** default button ***/
     .button-default,
     .button-default-outlined,
-    .button-default-inverted
+    .button-default-ghost
     {
-        color: var(--text-invert);
+        color: var(--ghost);
         border: 1px solid var(--grey-dark);
         background-color: var(--bg-main);
     }
@@ -2019,7 +2019,7 @@ pre
     button:not(.has-no-hover):active,
     .button:not(.has-no-hover):hover
     {
-        color: var(--text-invert-ter);
+        color: var(--ghost-ter);
         border: 1px solid var(--bg-main-invert);
         background-color: var(--bg-main-invert);
     }
@@ -2033,19 +2033,19 @@ pre
 
     .button-default-outlined:not(.has-no-hover):hover
     {
-        color: var(--text-invert);
+        color: var(--ghost);
         border: 1px solid var(--grey-dark);
         background-color: var(--grey-dark);
     }
 
     .button-default-outlined:not(.has-no-hover):active
     {
-        color: var(--text-invert);
+        color: var(--ghost);
         border: 1px solid var(--bg-main-invert);
         background-color: var(--bg-main-invert);
     }
 
-    .button-default-inverted
+    .button-default-ghost
     {
         color: var(--text-comp);
         border: none;
@@ -2056,7 +2056,7 @@ pre
         text-underline-offset: .25em;
     }
 
-    .button-default-inverted:not(.has-no-hover):hover
+    .button-default-ghost:not(.has-no-hover):hover
     {
         text-decoration: underline var(--text-elem);
 
@@ -2065,11 +2065,11 @@ pre
         background-color: var(--bg-component);
     }
 
-    .button-default-inverted:not(.has-no-hover):active
+    .button-default-ghost:not(.has-no-hover):active
     {
-        text-decoration: underline var(--text-invert-ter);
+        text-decoration: underline var(--ghost-ter);
 
-        color: var(--text-invert-ter);
+        color: var(--ghost-ter);
         border: none;
         background-color: var(--grey-dark);
     }
@@ -2079,7 +2079,7 @@ pre
     button.button-primary,
     .button.button-primary
     {
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
         border: 1px solid var(--primary);
         background-color: var(--primary);
     }
@@ -2120,8 +2120,8 @@ pre
         background-color: var(--primary-active);
     }
 
-    button.button-primary-inverted,
-    .button.button-primary-inverted
+    button.button-primary-ghost,
+    .button.button-primary-ghost
     {
         text-decoration: underline var(--primary);
 
@@ -2132,8 +2132,8 @@ pre
         text-underline-offset: .25em;
     }
 
-    button.button-primary-inverted:not(.has-no-hover):hover,
-    .button.button-primary-inverted:not(.has-no-hover):hover
+    button.button-primary-ghost:not(.has-no-hover):hover,
+    .button.button-primary-ghost:not(.has-no-hover):hover
     {
         text-decoration: underline var(--primary);
 
@@ -2144,8 +2144,8 @@ pre
         text-underline-offset: .25em;
     }
 
-    button.button-primary-inverted:not(.has-no-hover):active,
-    .button.button-primary-inverted:not(.has-no-hover):active
+    button.button-primary-ghost:not(.has-no-hover):active,
+    .button.button-primary-ghost:not(.has-no-hover):active
     {
         text-decoration: underline var(--primary-active);
 
@@ -2158,7 +2158,7 @@ pre
     button.button-secondary,
     .button.button-secondary
     {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         border: 1px solid var(--secondary);
         background-color: var(--secondary);
     }
@@ -2199,8 +2199,8 @@ pre
         background-color: var(--secondary-active);
     }
 
-    button.button-secondary-inverted,
-    .button.button-secondary-inverted
+    button.button-secondary-ghost,
+    .button.button-secondary-ghost
     {
         text-decoration: underline var(--secondary);
 
@@ -2211,8 +2211,8 @@ pre
         text-underline-offset: .25em;
     }
 
-    button.button-secondary-inverted:not(.has-no-hover):hover,
-    .button.button-secondary-inverted:not(.has-no-hover):hover
+    button.button-secondary-ghost:not(.has-no-hover):hover,
+    .button.button-secondary-ghost:not(.has-no-hover):hover
     {
         text-decoration: underline var(--secondary);
 
@@ -2223,8 +2223,8 @@ pre
         text-underline-offset: .25em;
     }
 
-    button.button-secondary-inverted:not(.has-no-hover):active,
-    .button.button-secondary-inverted:not(.has-no-hover):active
+    button.button-secondary-ghost:not(.has-no-hover):active,
+    .button.button-secondary-ghost:not(.has-no-hover):active
     {
         text-decoration: underline var(--secondary-active);
 
@@ -2240,7 +2240,7 @@ pre
     button.button-complement,
     .button.button-complement
     {
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
         border: 1px solid var(--complement);
         background-color: var(--complement);
     }
@@ -2281,8 +2281,8 @@ pre
         background-color: var(--complement-active);
     }
 
-    button.button-complement-inverted,
-    .button.button-complement-inverted
+    button.button-complement-ghost,
+    .button.button-complement-ghost
     {
         text-decoration: underline var(--complement);
 
@@ -2293,8 +2293,8 @@ pre
         text-underline-offset: .25em;
     }
 
-    button.button-complement-inverted:not(.has-no-hover):hover,
-    .button.button-complement-inverted:not(.has-no-hover):hover
+    button.button-complement-ghost:not(.has-no-hover):hover,
+    .button.button-complement-ghost:not(.has-no-hover):hover
     {
         text-decoration: underline var(--complement);
 
@@ -2305,8 +2305,8 @@ pre
         text-underline-offset: .25em;
     }
 
-    button.button-complement-inverted:not(.has-no-hover):active,
-    .button.button-complement-inverted:not(.has-no-hover):active
+    button.button-complement-ghost:not(.has-no-hover):active,
+    .button.button-complement-ghost:not(.has-no-hover):active
     {
         text-decoration: underline var(--complement-active);
 
@@ -2533,63 +2533,63 @@ pre
 
     button.fab-primary
     {
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
         border: none;
         background-color: var(--primary);
     }
 
     button.fab-primary:hover
     {
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
         border: none;
         background-color: var(--primary-hover);
     }
 
     button.fab-primary:active
     {
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
         border: none;
         background-color: var(--primary-active);
     }
 
     button.fab-secondary
     {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         border: none;
         background-color: var(--secondary);
     }
 
     button.fab-secondary:hover
     {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         border: none;
         background-color: var(--secondary-hover);
     }
 
     button.fab-secondary:active
     {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         border: none;
         background-color: var(--secondary-active);
     }
 
     button.fab-complement
     {
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
         border: none;
         background-color: var(--complement);
     }
 
     button.fab-complement:hover
     {
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
         border: none;
         background-color: var(--complement-hover);
     }
 
     button.fab-complement:active
     {
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
         border: none;
         background-color: var(--complement-active);
     }
@@ -2676,7 +2676,7 @@ pre
     /* Element / Block Colours */
     .is-primary
     {
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
         border: 1px solid var(--primary);
         background-color: var(--primary);
     }
@@ -2690,7 +2690,7 @@ pre
 
     .is-primary-dark
     {
-        color: var(--primary-text-invert-dark);
+        color: var(--primary-ghost-dark);
         border: 1px solid var(--primary-dark);
         background-color: var(--primary-dark);
     }
@@ -2704,7 +2704,7 @@ pre
 
     .is-secondary
     {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         border: 1px solid var(--secondary);
         background-color: var(--secondary);
     }
@@ -2718,7 +2718,7 @@ pre
 
     .is-secondary-dark
     {
-        color: var(--secondary-text-invert-dark);
+        color: var(--secondary-ghost-dark);
         border: 1px solid var(--secondary-dark);
         background-color: var(--secondary-dark);
     }
@@ -2733,7 +2733,7 @@ pre
 
     .is-complement
     {
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
         border: 1px solid var(--complement);
         background-color: var(--complement);
     }
@@ -2747,7 +2747,7 @@ pre
 
     .is-complement-dark
     {
-        color: var(--complement-text-invert-dark);
+        color: var(--complement-ghost-dark);
         border: 1px solid var(--complement-dark);
         background-color: var(--complement-dark);
     }
@@ -2762,7 +2762,7 @@ pre
 
     .is-link
     {
-        color: var(--link-text-invert);
+        color: var(--link-ghost);
         border: 1px solid var(--link);
         background-color: var(--link);
     }
@@ -2776,7 +2776,7 @@ pre
 
     .is-link-dark
     {
-        color: var(--link-text-invert-dark);
+        color: var(--link-ghost-dark);
         border: 1px solid var(--link-dark);
         background-color: var(--link-dark);
     }
@@ -2784,7 +2784,7 @@ pre
 
     .is-success
     {
-        color: var(--success-text-invert);
+        color: var(--success-ghost);
         border: 1px solid var(--success);
         background-color: var(--success);
     }
@@ -2798,7 +2798,7 @@ pre
 
     .is-success-dark
     {
-        color: var(--success-text-invert-dark);
+        color: var(--success-ghost-dark);
         border: 1px solid var(--success-dark);
         background-color: var(--success-dark);
     }
@@ -2813,7 +2813,7 @@ pre
 
     .is-warning
     {
-        color: var(--warning-text-invert);
+        color: var(--warning-ghost);
         border: 1px solid var(--warning);
         background-color: var(--warning);
     }
@@ -2827,7 +2827,7 @@ pre
 
     .is-warning-dark
     {
-        color: var(--warning-text-invert-dark);
+        color: var(--warning-ghost-dark);
         border: 1px solid var(--warning-dark);
         background-color: var(--warning-dark);
     }
@@ -2842,7 +2842,7 @@ pre
 
     .is-danger
     {
-        color: var(--danger-text-invert);
+        color: var(--danger-ghost);
         border: 1px solid var(--danger);
         background-color: var(--danger);
     }
@@ -2856,7 +2856,7 @@ pre
 
     .is-danger-dark
     {
-        color: var(--danger-text-invert-dark);
+        color: var(--danger-ghost-dark);
         border: 1px solid var(--danger-dark);
         background-color: var(--danger-dark);
     }
@@ -2877,7 +2877,7 @@ pre
 
     .is-dark
     {
-        color: var(--text-invert);
+        color: var(--ghost);
         border: 1px solid var(--grey-dark);
         background-color: var(--grey-dark);
     }
@@ -4978,7 +4978,7 @@ pre
 
     .dropdown-menu > nav > ul > li a.is-active
     {
-        color: var(--text-invert);
+        color: var(--ghost);
         background-color: var(--link);
     }
 }
@@ -5739,7 +5739,7 @@ pre
 
     .pagination > ul a.is-current
     {
-        color: var(--text-invert);
+        color: var(--ghost);
         border-color: var(--link);
         background-color: var(--link);
     }
@@ -5947,13 +5947,13 @@ pre
         padding-right: calc(var(--pad-horz) - 2px);
 
         border-right: 2px solid var(--link);
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
     }
 
     .sidenav-block > label:hover
     {
         color: inherit;
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
     }
 
 
@@ -5979,7 +5979,7 @@ pre
     .sidenav-block input:checked + label:hover
     {
         color: inherit;
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
     }
 
     .sidenav-block input:checked ~ nav
@@ -6774,7 +6774,7 @@ pre
         transform: translate(-.05rem, -.75rem);
         white-space: nowrap;
 
-        color: var(--text-invert);
+        color: var(--ghost);
         border-radius: 1rem;
         background: var(--grey-dark);
         background-clip: padding-box;
@@ -6827,37 +6827,37 @@ pre
     /* colour controls */
     .badge-primary
     {
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
         background-color: var(--primary);
     }
 
     .badge-secondary
     {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         background-color: var(--secondary);
     }
 
     .badge-complement
     {
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
         background-color: var(--complement);
     }
 
     .badge-success
     {
-        color: var(--success-text-invert);
+        color: var(--success-ghost);
         background-color: var(--success);
     }
 
     .badge-warning
     {
-        color: var(--warning-text-invert);
+        color: var(--warning-ghost);
         background-color: var(--warning);
     }
 
     .badge-danger
     {
-        color: var(--danger-text-invert);
+        color: var(--danger-ghost);
         background-color: var(--danger);
     }
 }
@@ -8535,18 +8535,19 @@ pre
         column-gap: calc(2 * var(--gap-col));
         align-items: center;
         justify-content: space-around;
-        --color-offset: 75;
-        --color-alpha: .8;
-        --color-1: oklch(from var(--primary) l c h / var(--color-alpha));
-        --color-2: oklch(from var(--primary) l c calc(h + var(--color-offset)) / var(--color-alpha));
-        --color-3: oklch(from var(--primary) l c calc(h + 2 * var(--color-offset)) / var(--color-alpha));
-        --color-4: oklch(from var(--primary) l c calc(h + 3 * var(--color-offset)) / var(--color-alpha));
-        --color-5: oklch(from var(--primary) l c calc(h + 4 * var(--color-offset)) / var(--color-alpha));
-        --color-6: oklch(from var(--primary) l c calc(h + 5 * var(--color-offset)) / var(--color-alpha));
-        --color-7: oklch(from var(--primary) l c calc(h + 6 * var(--color-offset)) / var(--color-alpha));
-        --color-8: oklch(from var(--primary) l c calc(h + 7 * var(--color-offset)) / var(--color-alpha));
-        --color-9: oklch(from var(--primary) l c calc(h + 8 * var(--color-offset)) / var(--color-alpha));
-        --color-10: oklch(from var(--primary) l c calc(h + 9 * var(--color-offset)) / var(--color-alpha));
+        --color-offset: 95;
+        --color-alpha: .7;
+        --color-brighten: oklch(from var(--primary) l calc(c + .1) h);
+        --color-1: oklch(from var(--color-brighten) l c h / var(--color-alpha));
+        --color-2: oklch(from var(--color-brighten) l c calc(h + var(--color-offset)) / var(--color-alpha));
+        --color-3: oklch(from var(--color-brighten) l c calc(h + 2 * var(--color-offset)) / var(--color-alpha));
+        --color-4: oklch(from var(--color-brighten) l c calc(h + 3 * var(--color-offset)) / var(--color-alpha));
+        --color-5: oklch(from var(--color-brighten) l c calc(h + 4 * var(--color-offset)) / var(--color-alpha));
+        --color-6: oklch(from var(--color-brighten) l c calc(h + 5 * var(--color-offset)) / var(--color-alpha));
+        --color-7: oklch(from var(--color-brighten) l c calc(h + 6 * var(--color-offset)) / var(--color-alpha));
+        --color-8: oklch(from var(--color-brighten) l c calc(h + 7 * var(--color-offset)) / var(--color-alpha));
+        --color-9: oklch(from var(--color-brighten) l c calc(h + 8 * var(--color-offset)) / var(--color-alpha));
+        --color-10: oklch(from var(--color-brighten) l c calc(h + 9 * var(--color-offset)) / var(--color-alpha));
     }
 
     .charts-wrapper ul li
@@ -9623,7 +9624,7 @@ pre
 
     .gauge-ring data span
     {
-        color: var(--text-invert);
+        color: var(--ghost);
         background-color: var(--bg-main-invert);
     }
 
@@ -9898,19 +9899,19 @@ pre
     /** footer **/
     .infobox-primary > a
     {
-        color: var(--primary-text-invert);
+        color: var(--primary-ghost);
         background-color: var(--primary);
     }
 
     .infobox-secondary > a
     {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         background-color: var(--secondary);
     }
 
     .infobox-complement > a
     {
-        color: var(--complement-text-invert);
+        color: var(--complement-ghost);
         background-color: var(--complement);
     }
 
@@ -10325,7 +10326,7 @@ pre
         margin: 0;
         padding: 0;
 
-        color: var(--text-invert);
+        color: var(--ghost);
         border-radius: var(--radius-rounded);
         background-color: var(--grey-dark);
     }
@@ -10458,7 +10459,7 @@ pre
     /* icon colours */
     .report-success > div
     {
-        color: var(--text-invert);
+        color: var(--ghost);
         background-color: var(--success-dark);
     }
 
@@ -10470,7 +10471,7 @@ pre
 
     .report-danger > div
     {
-        color: var(--text-invert);
+        color: var(--ghost);
         background-color: var(--danger);
     }
 
@@ -10674,7 +10675,7 @@ pre
 
     .widgetbar-radios input:checked + span
     {
-        color: var(--secondary-text-invert);
+        color: var(--secondary-ghost);
         border-radius: var(--radius-comp);
         background-color: var(--secondary);
     }
@@ -11136,7 +11137,7 @@ pre
         pointer-events: none;
 
         opacity: 0;
-        color: var(--text-invert);
+        color: var(--ghost);
         border-radius: calc(.5 * var(--radius));
         background-color: var(--bg-main-invert);
     }
