@@ -120,9 +120,9 @@
     --sh-lg: 0 5px 7px oklch(var(--sh-tint) / 0.07), 0 6px 10px 4px oklch(var(--sh-tint) / 0.14);
 
     --bg-page: oklch(99.5% 0.002 70);
-    --bg-elevated-1: oklch(99% 0.003 70);
-    --bg-elevated-2: oklch(98% 0.005 70);
-    --bg-elevated-3: oklch(97% 0.007 70);
+    --bg-elevated-1: oklch(99% 0.005 70);
+    --bg-elevated-2: oklch(98% 0.007 70);
+    --bg-elevated-3: oklch(97% 0.009 70);
 
     /** end of imported theme colours **/
 
@@ -168,9 +168,9 @@
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
 
 
-    /** define key link colours **/
-    --link: var(--lnk-500);
-    --link-hover: var(--lnk-600);
+    /*** define key link colours ***/
+    --link: var(--lnk-600);
+    --link-hover: var(--lnk-700);
     --link-visited: oklch(45% 0.15 290);
     --link-light: var(--lnk-100);
     --link-dark: var(--lnk-700);
@@ -178,7 +178,7 @@
     --link-text-invert: var(--lnk-50);
     --link-text-invert-dark: var(--lnk-50);
 
-    /** define key success colours **/
+    /*** define key success colours ***/
     --success: var(--ok-500);
     --success-light: var(--ok-100);
     --success-dark: var(--ok-600);
@@ -186,7 +186,7 @@
     --success-text-invert: var(--ok-50);
     --success-text-invert-dark: var(--ok-50);
 
-    /** define key warning colours **/
+    /*** define key warning colours ***/
     --warning: var(--warn-400);
     --warning-light:  var(--warn-100);
     --warning-dark: var(--warn-700);
@@ -194,7 +194,7 @@
     --warning-text-invert: var(--warn-800);
     --warning-text-invert-dark: var(--warn-50);
 
-    /** define key danger colours **/
+    /*** define key danger colours ***/
     --danger: var(--err-500);
     --danger-light:  var(--err-100);
     --danger-dark: var(--err-600);
@@ -202,7 +202,7 @@
     --danger-text-invert: var(--err-50);
     --danger-text-invert-dark: var(--err-50);
 
-    /* additional greys */
+    /*** additional greys ***/
     --black: var(--g-950);
     --black-850: var(--g-900);
     --black-800: var(--g-800);
@@ -216,7 +216,7 @@
     --grey-white: var(--g-50);
     --white: var(--g-0);
 
-    /** set the body level colours for light mode**/
+    /*** set the body level colours for light mode ***/
     --bg-main: var(--bg-page);
     --bg-grid: var(--g-50);
     --bg-container: var(--bg-elevated-1);
@@ -238,10 +238,10 @@
     --text-comp: var(--black-800);
     --text-invert-ter: var(--g-50);
     --text-btn-invert: var(--g-50);
-    --text-code: color-mix(in oklch, var(--complement), black 25%);
+    --text-code: var(--c-700);
 
 
-    /** Common shadow treatment for containers, components and elements **/
+    /*** Common shadow treatment for containers, components and elements ***/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
 
     --shadow-container: inset 0 0 1px var(--bg-component), var(--sh-sm);
