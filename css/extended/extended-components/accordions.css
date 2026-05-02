@@ -118,10 +118,10 @@
         overflow: hidden;
         margin: var(--mar-vert) 0;
         padding: 0;
-        border: none;
-        box-shadow: var(--shadow-container);
         width: 100%;
         border-radius: var(--radius-comp);
+        border: 1px solid var(--border-main-light);
+        box-shadow: var(--shadow-container);
     }
 
     .accordions .accordion[open]:not(:last-child) > p,

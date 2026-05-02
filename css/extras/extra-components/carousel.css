@@ -5,7 +5,7 @@
     .carousel-wrapper {
         display: grid;
         place-items: center;
-        background: var(--bg-element);
+        background: var(--bg-component);
         margin: var(--margin) 0;
         padding: 0 var(--pad-horz);
     }

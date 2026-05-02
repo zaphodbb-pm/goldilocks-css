@@ -90,7 +90,7 @@
     .pagination > ul a.is-current {
         background-color: var(--link);
         border-color: var(--link);
-        color: var(--ghost);
+        color: var(--link-text-invert);
     }
 
     .pagination > ul > li > span {

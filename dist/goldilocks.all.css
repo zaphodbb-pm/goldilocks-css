@@ -227,6 +227,9 @@
     --bg-elevated-1: oklch(98.9% .007 182);
     --bg-elevated-2: oklch(97.4% .012 182);
     --bg-elevated-3: oklch(96.6% .015 182);
+    --bg-e1: oklch(98.9% .007 182);
+    --bg-e2: oklch(97.4% .010 182);
+    --bg-e3: oklch(96.6% .015 182);
     /** end of imported theme colours **/
     /** map theme colours into working variables **/
     /** adjust for WCAG compliance **/
@@ -3908,7 +3911,7 @@ pre
     .table.is-striped tbody tr:nth-of-type(odd)
     {
         color: var(--text);
-        background-color: var(--bg-container);
+        background-color: var(--grey-lightest);
     }
 
     .table.has-hover tbody tr:hover
@@ -4558,7 +4561,7 @@ pre
         margin: var(--mar-vert) 0;
         padding: 0;
 
-        border: none;
+        border: 1px solid var(--border-main-light);
         border-radius: var(--radius-comp);
         box-shadow: var(--shadow-container);
     }
@@ -4756,6 +4759,7 @@ pre
         width: 100%;
 
         color: var(--text-comp);
+        border: 1px solid var(--border-main-light);
         border-radius: var(--radius-comp);
         background-color: var(--bg-component);
         box-shadow: var(--shadow-container);
@@ -4998,7 +5002,7 @@ pre
 
     .dropdown-menu > nav > ul > li a.is-active
     {
-        color: var(--ghost);
+        color: var(--link-text-invert);
         background-color: var(--link);
     }
 }
@@ -5759,7 +5763,7 @@ pre
 
     .pagination > ul a.is-current
     {
-        color: var(--ghost);
+        color: var(--link-text-invert);
         border-color: var(--link);
         background-color: var(--link);
     }
@@ -8397,7 +8401,7 @@ pre
         margin: var(--margin-medium) auto;
         padding: var(--pad-vert) var(--pad-horz);
 
-        border-left: .3rem solid var(--primary);
+        border-left: .3rem solid var(--complement-dark);
         background-color: var(--bg-container);
 
         break-inside: avoid;
@@ -8466,7 +8470,7 @@ pre
         margin: var(--margin) 0;
         padding: 0 var(--pad-horz);
 
-        background: var(--bg-element);
+        background: var(--bg-component);
 
         place-items: center;
     }
@@ -10650,6 +10654,7 @@ pre
         margin: .25rem 0;
         padding: 0;
 
+        border: 1px solid var(--border-main-light);
         border-radius: var(--radius-comp);
         background-color: var(--bg-element);
         box-shadow: var(--shadow-container);
@@ -11159,7 +11164,7 @@ pre
         pointer-events: none;
 
         opacity: 0;
-        color: var(--ghost);
+        color: var(--bg-main);
         border-radius: calc(.5 * var(--radius));
         background-color: var(--bg-main-invert);
     }

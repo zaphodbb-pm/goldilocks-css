@@ -60,7 +60,7 @@
     }
 
     .table.is-striped tbody tr:nth-of-type(odd) {
-        background-color: var(--bg-container);
+        background-color: var(--grey-lightest);
         color: var(--text);
     }
 

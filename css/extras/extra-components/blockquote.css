@@ -9,7 +9,7 @@
         padding: var(--pad-vert) var(--pad-horz);
 
         break-inside: avoid;
-        border-left: 0.3rem solid var(--primary);
+        border-left: 0.3rem solid var(--complement-dark);
         background-color: var(--bg-container);
     }
 

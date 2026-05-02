@@ -53,6 +53,7 @@
         background-color: var(--bg-element);
         box-shadow: var(--shadow-container);
         border-radius: var(--radius-comp);
+        border: 1px solid var(--border-main-light);
     }
 
     .widgetbar-item-border {
