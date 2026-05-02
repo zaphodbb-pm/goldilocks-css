@@ -14,6 +14,6 @@
     .box-shadow {
         border-radius: var(--radius);
         box-shadow: var(--shadow-container);
-        border: 1px solid var(--grey-lighter);
+        border: 1px solid var(--border-main-light);
     }
 }

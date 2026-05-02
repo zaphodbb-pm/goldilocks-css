@@ -63,7 +63,7 @@
     }
 
     .is-complement-dark {
-        color: var(--complement-dark);
+        color: var(--complement-light);
         background-color: var(--complement-dark);
         border: 1px solid var(--complement-dark);
     }

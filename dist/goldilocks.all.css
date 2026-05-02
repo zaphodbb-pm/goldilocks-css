@@ -251,7 +251,7 @@
     --secondary-dark: var(--s-600);
     --secondary-darkest: var(--s-800);
     --secondary-text: var(--s-600);
-    --secondary-text-invert: var(--s-50);
+    --secondary-text-invert: var(--g-50);
     --secondary-ghost: var(--s-50);
     --secondary-ghost-dark: var(--s-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
@@ -296,7 +296,7 @@
     --warning-dark: var(--warn-700);
     --warning-darkest: var(--warn-900);
     --warning-text: var(--warn-700);
-    --warning-text-invert: var(--warn-50);
+    --warning-text-invert: var(--warn-800);
     --warning-ghost: var(--warn-800);
     --warning-ghost-dark: var(--warn-50);
     /*** define key danger colours ***/
@@ -331,6 +331,7 @@
     --bg-element: var(--bg-elevated-3);
     --bg-highlight: var(--warning-light);
     --border-main: var(--grey-light);
+    --border-main-light: var(--g-100);
     --border-main-darker: var(--grey);
     --text: var(--black-800);
     --text-ghost: var(--bg-main);
@@ -338,9 +339,8 @@
     --text-darker: var(--black);
     --text-elem: var(--black-800);
     --text-comp: var(--black-800);
-    --text-ghost-ter: var(--g-50);
     --text-btn-invert: var(--g-50);
-    --text-code: var(--s-600);
+    --text-code: var(--c-700);
     /*** Common shadow treatment for containers, components and elements ***/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
     --shadow-container: inset 0 0 1px var(--bg-component), var(--sh-sm);
@@ -738,7 +738,7 @@ pre
 
     .box-shadow
     {
-        border: 1px solid var(--grey-lighter);
+        border: 1px solid var(--border-main-light);
         border-radius: var(--radius);
         box-shadow: var(--shadow-container);
     }
@@ -1984,7 +1984,7 @@ pre
         cursor: pointer;
         white-space: nowrap;
 
-        color: var(--ghost);
+        color: var(--text-btn-invert);
         border: 1px solid var(--grey-dark);
         border-radius: 10rem;
         background-color: var(--grey-dark);
@@ -2152,9 +2152,9 @@ pre
     button.button-primary-ghost:not(.has-no-hover):hover,
     .button.button-primary-ghost:not(.has-no-hover):hover
     {
-        text-decoration: underline var(--primary);
+        text-decoration: underline var(--primary-hover);
 
-        color: var(--primary);
+        color: var(--primary-hover);
         border: none;
         background-color: var(--bg-component);
 
@@ -2231,9 +2231,9 @@ pre
     button.button-secondary-ghost:not(.has-no-hover):hover,
     .button.button-secondary-ghost:not(.has-no-hover):hover
     {
-        text-decoration: underline var(--secondary);
+        text-decoration: underline var(--secondary-hover);
 
-        color: var(--secondary);
+        color: var(--secondary-hover);
         border: none;
         background-color: var(--bg-component);
 
@@ -2313,9 +2313,9 @@ pre
     button.button-complement-ghost:not(.has-no-hover):hover,
     .button.button-complement-ghost:not(.has-no-hover):hover
     {
-        text-decoration: underline var(--complement);
+        text-decoration: underline var(--complement-hover);
 
-        color: var(--complement);
+        color: var(--complement-hover);
         border: none;
         background-color: var(--bg-component);
 
@@ -2764,7 +2764,7 @@ pre
 
     .is-complement-dark
     {
-        color: var(--complement-dark);
+        color: var(--complement-light);
         border: 1px solid var(--complement-dark);
         background-color: var(--complement-dark);
     }
@@ -2927,6 +2927,7 @@ pre
 
         padding: var(--padding-medium);
 
+        border: 1px solid var(--border-main-light);
         border-radius: var(--radius-comp);
         background-color: var(--form-background-color);
         box-shadow: var(--shadow-container);
@@ -2934,40 +2935,16 @@ pre
         --form-background-color: var(--bg-container);
     }
 
-
-    /** optional form header **/
-    .form.has-form-shadow > header,
-    .form.is-form-tabbed > header
+    .form.is-form-tabbed
     {
-        font-size: var(--size-5);
-        font-weight: var(--weight-semibold);
+        position: relative;
 
-        display: flex;
+        margin: 0;
+        padding: 0;
 
-        margin-bottom: 0;
-        padding: var(--pad-horz);
-
-        border-top-left-radius: inherit;
-        border-top-right-radius: inherit;
-
-        align-items: center;
-        justify-content: space-between;
-    }
-
-
-    .form.has-form-shadow > header
-    {
-        margin: calc(-1 * var(--padding-medium)) calc(-1 * var(--padding-medium)) var(--padding-large);
-    }
-
-    .form.is-form-tabbed > header
-    {
-        margin: 0 0 var(--padding-large) 0;
-    }
-
-    .form.has-form-shadow > header:not([class*='is-'])
-    {
-        background-color: var(--bg-element);
+        border: 1px solid var(--border-main-light);
+        border-radius: var(--radius-comp);
+        box-shadow: var(--shadow-container);
     }
 
 
@@ -3524,16 +3501,7 @@ pre
 
 
     /* optional tabbed form controls */
-    .form.is-form-tabbed
-    {
-        position: relative;
 
-        margin: 0;
-        padding: 0;
-
-        border-radius: var(--radius-comp);
-        box-shadow: var(--shadow-container);
-    }
 
     .form .form-tabs > input
     {
@@ -3596,7 +3564,6 @@ pre
         margin-bottom: 0;
 
         color: var(--text-darker);
-        border-bottom: 1px solid var(--border-main-darker);
         background-color: var(--bg-component);
     }
 
@@ -3643,10 +3610,10 @@ pre
 
         margin-bottom: -1px;
 
-        color: var(--link);
+        color: var(--secondary);
         border-top: 1px solid var(--border-main-darker) !important;
         border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 1px solid var(--form-background-color) !important;
+        border-bottom: 2px solid var(--form-background-color) !important;
         border-left: 1px solid var(--border-main-darker) !important;
         border-radius: var(--radius) var(--radius) 0 0;
         background-color: inherit;
@@ -3664,6 +3631,41 @@ pre
     .form.is-form-tabbed > .form-tabs input:nth-child(9):checked ~ div.form-group-container > div.form-group:nth-child(9)
     {
         position: static;
+    }
+
+
+    /** optional form header **/
+    .form.has-form-shadow > header,
+    .form.is-form-tabbed > header
+    {
+        font-size: var(--size-5);
+        font-weight: var(--weight-semibold);
+
+        display: flex;
+
+        margin-bottom: 0;
+        padding: var(--pad-horz);
+
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .form.has-form-shadow > header
+    {
+        margin: calc(-1 * var(--padding-medium)) calc(-1 * var(--padding-medium)) var(--padding-large);
+    }
+
+    .form.is-form-tabbed > header
+    {
+        margin: 0 0 var(--padding-large) 0;
+    }
+
+    .form.has-form-shadow > header:not([class*='is-'])
+    {
+        background-color: var(--bg-element);
     }
 }
 
@@ -3948,6 +3950,7 @@ pre
         margin: 0;
         padding: var(--padding);
 
+        border: 1px solid var(--border-main-light);
         border-radius: var(--radius-comp);
         background-color: var(--bg-container);
         box-shadow: var(--shadow-container);
@@ -6487,7 +6490,6 @@ pre
         margin-bottom: 0;
 
         color: var(--text-darker);
-        /*border-bottom: 1px solid var(--border-main-darker);*/
         border-bottom: 0;
         background-color: var(--bg-component);
     }

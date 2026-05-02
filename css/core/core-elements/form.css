@@ -18,34 +18,16 @@
         border-radius: var(--radius-comp);
         box-shadow: var(--shadow-container);
         background-color: var(--form-background-color);
+        border: 1px solid var(--border-main-light);
     }
 
-
-    /** optional form header **/
-    .form.has-form-shadow > header,
-    .form.is-form-tabbed > header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: var(--pad-horz);
-        font-size: var(--size-5);
-        font-weight: var(--weight-semibold);
-        border-top-left-radius: inherit;
-        border-top-right-radius: inherit;
-        margin-bottom: 0;
-    }
-
-
-    .form.has-form-shadow > header {
-        margin: calc(-1 * var(--padding-medium)) calc(-1 * var(--padding-medium)) var(--padding-large);
-    }
-
-    .form.is-form-tabbed > header {
-        margin: 0 0 var(--padding-large) 0;
-    }
-
-    .form.has-form-shadow > header:not([class*='is-']) {
-        background-color: var(--bg-element);
+    .form.is-form-tabbed {
+        position: relative;
+        border-radius: var(--radius-comp);
+        box-shadow: var(--shadow-container);
+        margin: 0;
+        padding: 0;
+        border: 1px solid var(--border-main-light);
     }
 
 
@@ -497,13 +479,7 @@
 
 
     /* optional tabbed form controls */
-    .form.is-form-tabbed {
-        position: relative;
-        border-radius: var(--radius-comp);
-        box-shadow: var(--shadow-container);
-        margin: 0;
-        padding: 0;
-    }
+
 
     .form .form-tabs > input {
         display: block; /* "enable" hidden elements in IE/edge */
@@ -546,7 +522,6 @@
 
     .form .form-tabs > ul label:hover {
         background-color: var(--bg-component);
-        border-bottom: 1px solid var(--border-main-darker);
         margin-bottom: 0;
         color: var(--text-darker);
     }
@@ -586,10 +561,9 @@
         border-left: 1px solid var(--border-main-darker) !important;
         border-top: 1px solid var(--border-main-darker) !important;
         border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 1px solid var(--form-background-color) !important;
-        color: var(--link);
+        border-bottom: 2px solid var(--form-background-color) !important;
+        color: var(--secondary);
         font-weight: var(--weight-semibold);
-
         margin-bottom: -1px;
         background-color: inherit;
     }
@@ -605,5 +579,32 @@
     .form.is-form-tabbed > .form-tabs input:nth-child(8):checked ~ div.form-group-container > div.form-group:nth-child(8),
     .form.is-form-tabbed > .form-tabs input:nth-child(9):checked ~ div.form-group-container > div.form-group:nth-child(9) {
         position: static;
+    }
+
+
+    /** optional form header **/
+    .form.has-form-shadow > header,
+    .form.is-form-tabbed > header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--pad-horz);
+        font-size: var(--size-5);
+        font-weight: var(--weight-semibold);
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        margin-bottom: 0;
+    }
+
+    .form.has-form-shadow > header {
+        margin: calc(-1 * var(--padding-medium)) calc(-1 * var(--padding-medium)) var(--padding-large);
+    }
+
+    .form.is-form-tabbed > header {
+        margin: 0 0 var(--padding-large) 0;
+    }
+
+    .form.has-form-shadow > header:not([class*='is-']) {
+        background-color: var(--bg-element);
     }
 }

@@ -6,7 +6,7 @@
         font-size: 1rem;
         font-weight: var(--weight-semibold);
         line-height: 1.5;
-        color: var(--ghost);
+        color: var(--text-btn-invert);
 
         padding: var(--pad-vert) calc(1.5 * var(--pad-horz));
         border: 1px solid var(--grey-dark);
@@ -152,8 +152,8 @@
 
     button.button-primary-ghost:not(.has-no-hover):hover,
     .button.button-primary-ghost:not(.has-no-hover):hover{
-        color: var(--primary);
-        text-decoration: underline var(--primary);
+        color: var(--primary-hover);
+        text-decoration: underline var(--primary-hover);
         text-underline-offset: 0.25em;
         background-color: var(--bg-component);
         border: none;
@@ -211,15 +211,14 @@
         color: var(--secondary);
         text-decoration: underline var(--secondary);
         text-underline-offset: 0.25em;
-
         background-color: var(--bg-main);
         border: none;
     }
 
     button.button-secondary-ghost:not(.has-no-hover):hover,
     .button.button-secondary-ghost:not(.has-no-hover):hover{
-        color: var(--secondary);
-        text-decoration: underline var(--secondary);
+        color: var(--secondary-hover);
+        text-decoration: underline var(--secondary-hover);
         text-underline-offset: 0.25em;
         background-color: var(--bg-component);
         border: none;
@@ -286,8 +285,8 @@
 
     button.button-complement-ghost:not(.has-no-hover):hover,
     .button.button-complement-ghost:not(.has-no-hover):hover{
-        color: var(--complement);
-        text-decoration: underline var(--complement);
+        color: var(--complement-hover);
+        text-decoration: underline var(--complement-hover);
         text-underline-offset: 0.25em;
         background-color: var(--bg-component);
         border: none;

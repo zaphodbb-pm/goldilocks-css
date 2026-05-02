@@ -96,6 +96,7 @@
         border-radius: var(--radius-comp);
         box-shadow: var(--shadow-container);
         background-color: var(--bg-container);
+        border: 1px solid var(--border-main-light);
     }
 
     .table-boxed > header {

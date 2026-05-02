@@ -148,7 +148,7 @@
     --secondary-dark:  var(--s-600);
     --secondary-darkest: var(--s-800);
     --secondary-text: var(--s-600);
-    --secondary-text-invert: var(--s-50);
+    --secondary-text-invert: var(--g-50);
     --secondary-ghost: var(--s-50);
     --secondary-ghost-dark: var(--s-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
@@ -199,7 +199,7 @@
     --warning-dark: var(--warn-700);
     --warning-darkest: var(--warn-900);
     --warning-text: var(--warn-700);
-    --warning-text-invert: var(--warn-50);
+    --warning-text-invert: var(--warn-800);
     --warning-ghost: var(--warn-800);
     --warning-ghost-dark: var(--warn-50);
 
@@ -239,6 +239,7 @@
     --bg-highlight: var(--warning-light);
 
     --border-main: var(--grey-light);
+    --border-main-light: var(--g-100);
     --border-main-darker: var(--grey);
 
     --text: var(--black-800);
@@ -248,9 +249,8 @@
 
     --text-elem: var(--black-800);
     --text-comp: var(--black-800);
-    --text-ghost-ter: var(--g-50);
     --text-btn-invert: var(--g-50);
-    --text-code: var(--s-600);
+    --text-code: var(--c-700);
 
 
     /*** Common shadow treatment for containers, components and elements ***/
