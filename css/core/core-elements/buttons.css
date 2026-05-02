@@ -42,7 +42,7 @@
     .button-default,
     .button-default-outlined,
     .button-default-ghost {
-        color: var(--ghost);
+        color: var(--grey-dark);
         background-color: var(--bg-main);
         border: 1px solid var(--grey-dark);
     }
@@ -54,8 +54,8 @@
     }
 
     button:not(.has-no-hover):active,
-    .button:not(.has-no-hover):hover {
-        color: var(--ghost-ter);
+    .button:not(.has-no-hover):active {
+        color: var(--bg-main);
         background-color: var(--bg-main-invert);
         border: 1px solid var(--bg-main-invert);
     }
@@ -67,13 +67,13 @@
     }
 
     .button-default-outlined:not(.has-no-hover):hover {
-        color: var(--ghost);
+        color: var(--bg-main);
         background-color: var(--grey-dark);
         border: 1px solid var(--grey-dark);
     }
 
     .button-default-outlined:not(.has-no-hover):active {
-        color: var(--ghost);
+        color: var(--bg-main);
         background-color: var(--bg-main-invert);
         border: 1px solid var(--bg-main-invert);
     }
@@ -95,8 +95,8 @@
     }
 
     .button-default-ghost:not(.has-no-hover):active {
-        color: var(--ghost-ter);
-        text-decoration: underline var(--ghost-ter);
+        color: var(--bg-main);
+        text-decoration: underline var(--bg-main);
         background-color: var(--grey-dark);
         border: none;
     }

@@ -132,7 +132,9 @@
     --primary: var(--p-600);
     --primary-light:  var(--p-100);
     --primary-dark:  var(--p-700);
+    --primary-darkest: var(--p-800);
     --primary-text: var(--p-700);
+    --primary-text-invert: var(--p-50);
     --primary-ghost: var(--p-50);
     --primary-ghost-dark: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
@@ -140,10 +142,13 @@
 
 
     /*** define secondary usage variables ***/
-    --secondary: var(--s-600);
+    --secondary: var(--s-500);
     --secondary-light:  var(--s-100);
-    --secondary-dark:  var(--s-700);
-    --secondary-text: var(--s-700);
+    --secondary-lightest:  var(--s-50);
+    --secondary-dark:  var(--s-600);
+    --secondary-darkest: var(--s-800);
+    --secondary-text: var(--s-600);
+    --secondary-text-invert: var(--s-50);
     --secondary-ghost: var(--s-50);
     --secondary-ghost-dark: var(--s-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
@@ -151,11 +156,14 @@
 
 
     /*** define complement / cta usage variables ***/
-    --complement: var(--c-600);
+    --complement: var(--c-500);
     --complement-light:  var(--c-100);
-    --complement-dark:  var(--c-700);
-    --complement-text: var(--c-800);
-    --complement-ghost: var(--bg-page);
+    --complement-lightest:  var(--c-50);
+    --complement-dark:  var(--c-600);
+    --complement-darkest: var(--c-800);
+    --complement-text: var(--c-700);
+    --complement-text-invert: var(--c-50);
+    --complement-ghost: var(--c-50);
     --complement-ghost-dark: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
@@ -166,32 +174,43 @@
     --link-hover: var(--lnk-700);
     --link-visited: oklch(47.5% 0.265 278);
     --link-light: var(--lnk-100);
+    --link-lightest: var(--lnk-50);
     --link-dark: var(--lnk-700);
     --link-text: var(--lnk-800);
+    --link-text-invert: var(--lnk-50);
     --link-ghost: var(--lnk-50);
     --link-ghost-dark: var(--lnk-50);
 
     /*** define key success colours ***/
     --success: var(--ok-500);
     --success-light: var(--ok-100);
+    --success-lightest: var(--ok-50);
     --success-dark: var(--ok-600);
+    --success-darkest: var(--ok-800);
     --success-text: var(--ok-700);
+    --success-text-invert: var(--ok-800);
     --success-ghost: var(--ok-50);
     --success-ghost-dark: var(--ok-50);
 
     /*** define key warning colours ***/
     --warning: var(--warn-400);
     --warning-light:  var(--warn-100);
+    --warning-lightest:  var(--warn-50);
     --warning-dark: var(--warn-700);
+    --warning-darkest: var(--warn-900);
     --warning-text: var(--warn-700);
+    --warning-text-invert: var(--warn-50);
     --warning-ghost: var(--warn-800);
     --warning-ghost-dark: var(--warn-50);
 
     /*** define key danger colours ***/
     --danger: var(--err-500);
     --danger-light:  var(--err-100);
+    --danger-lightest:  var(--err-50);
     --danger-dark: var(--err-600);
+    --danger-darkest: var(--err-800);
     --danger-text: var(--err-700);
+    --danger-text-invert: var(--err-50);
     --danger-ghost: var(--err-50);
     --danger-ghost-dark: var(--err-50);
 
@@ -206,24 +225,24 @@
     --grey: var(--g-400);
     --grey-light: var(--g-300);
     --grey-lighter: var(--g-200);
+    --grey-lightest: var(--g-100);
     --grey-white: var(--g-50);
     --white: var(--g-0);
 
     /*** set the body level colours for light mode ***/
     --bg-main: var(--bg-page);
+    --bg-main-invert: var(--black-850);
     --bg-grid: var(--g-100);
     --bg-container: var(--bg-elevated-1);
     --bg-component: var(--bg-elevated-2);
     --bg-element: var(--bg-elevated-3);
-
-    --bg-main-invert: var(--black-850);
     --bg-highlight: var(--warning-light);
 
     --border-main: var(--grey-light);
     --border-main-darker: var(--grey);
 
     --text: var(--black-800);
-    --text-ghost: var(--bg-page);
+    --text-ghost: var(--bg-main);
     --text-light: var(--grey-dark);
     --text-darker: var(--black);
 
@@ -231,7 +250,7 @@
     --text-comp: var(--black-800);
     --text-ghost-ter: var(--g-50);
     --text-btn-invert: var(--g-50);
-    --text-code: var(--c-700);
+    --text-code: var(--s-600);
 
 
     /*** Common shadow treatment for containers, components and elements ***/

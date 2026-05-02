@@ -13,23 +13,49 @@ nav: Colour Control
     <article class="magazine has-serif">
         <div class="mag-block">
             <h2>Overview</h2>
-            <p><strong>Goldilocks-CSS</strong> is built to support a complementary colour scheme for the main web
-                page decoration.  By using HSL values, the hue can be rotated around 360° to select a primary colour by
-                using the variable <code>--main-color</code>.  The default is 185° (teal).  Saturation and lightness can then be chosen
-                to finalize that primary colour.  A secondary colour (hue = 37°, warm sand) and supports the primary colour.
-                A "call to action" colour is the complement of the primary colour (at hue = 22°, tangerine).
-                All three of these decoration colours have light and dark variants to support backgrounds and hover states.
+
+            <p><strong>Goldilocks-CSS</strong> is built using OKLCH because it is <em>perceptually uniform</em>. Unlike traditional formats
+                like HEX, RGB, or HSL, OKLCH aligns with how the human eye actually perceives color, which is critical for
+                building accessible and professional interfaces.  Key benefits of OKLCH include:
+            </p>
+
+            <ul>
+                <li><strong>Consistent Perceived Brightness</strong> - In older formats like HSL, a "lightness" of 50% looks very
+                    different depending on the hue. For example, HSL yellow looks much brighter than HSL blue at the same 50% value.
+                    <em>OKLCH Benefit:</em> If you set two colors to `L: 55%`, they will appear to have the exact same brightness
+                    to the human eye. This makes creating accessible compliant scales much easier.</li>
+                <li>
+                    <strong>Predictable Color Scales</strong> - UI creates 9-shade scales by simply adjusting the Lightness and Chroma values.
+                    Because the space is uniform, a 10-point jump in lightness feels the same whether you are working with primary or secondary
+                    colours. This prevents "muddy" or unexpectedly neon transitions in your UI palette.
+                </li>
+
+                <li>
+                    <strong>Wide-gamut color support</strong> - Modern displays (like those on MacBooks, iPhones, and high-end monitors)
+                    can show more colors than the standard sRGB web palette.  OKLCH allows developers to access the
+                    <em>Display P3</em> color space safely. It enables the "vivid expression" mentioned in the CTA-400 shade
+                    without clipping or distorting the color on older screens.
+                </li>
+
+                <li>
+                    <strong>Better Tinting and Mixing</strong> - UI uses a technique called Secondary-Tinted Surfaces,
+                    where backgrounds and shadows inherit a tiny amount of the 182° Teal hue. In OKLCH, you can add a precise amount
+                    of Chroma to a grey without shifting its perceived brightness. This creates the "cool and calibrated"
+                    feel of surfaces an the Elevation System.
+                </li>
+
+                <li>
+                    <strong>Intuitive Math for Designers</strong> - The system defines colors by three clear coordinates:
+                    L (Lightness): How bright is it? (0%–100%); C (Chroma): How intense/saturated is it?; H (Hue): What color is it? (0–360°).
+                    This makes it easy to calculate relationships, such as the 217° separation between the Primary and CTA hues,
+                    ensuring they remain visually distinct and balanced.
+                </li>
+            </ul>
+
+            <p>There is a dark mode over-ride file that adjusts these colours to meet the needs of contrast in this mode.
+                Typically, the decoration and notification colours are lightened to provide better contrast on a dark background.
             </p>
         </div>
-
-        <p>Note that notification colours (info, success, warning, danger) have fixed HSL variables as they are more standard
-            and have specific meaning.  Also, the link colour and shades of grey are also provided and have fixed HSL fixed
-            variables.  You can, of course, adjust these variables to suit your needs.
-        </p>
-
-        <p>There is a dark mode over-ride file that adjusts these colours to meet the needs of contrast in this mode.
-            Typically, the decoration and notification colours are lightened to provide better contrast on a dark background.
-        </p>
 
 
         <div class="mag-block">
@@ -60,38 +86,9 @@ nav: Colour Control
             these backgrounds often fails accessibility unless these backgrounds are very light.
         </p>
 
-        <div class="mag-block">
-            <h2>So What Does this Mean for Us?</h2>
-
-            <p>With <strong>Goldilocks-CSS</strong> we try to help the designer to select a colour scheme and then to derive
-                supporting colours to ensure that a good contrast is maintained.  That means that a designer can select a primary,
-                secondary and complement hues. The designer can also choose the saturation level and lightness for these colours.
-                All other colour variants, shadows, text colours, etc are derived from these initial choices.
-            </p>
-        </div>
-
         <p>The aforementioned calculator tools are highly recommended to try and test various hue, saturation and lightness settings to
             ensure that the website has the colours it needs as well as meeting accessibility requirements.
         </p>
 
-        <div class="mag-block">
-            <h2>Key Variables</h2>
-
-            <p>The file <b>initial-theme-colors.css</b> has all of the colour definitions.  The following variables define the
-                theme’s three colours:
-            </p>
-        </div>
-
-        <ul class="is-indented-1">
-            <li><code>--primary-raw</code> is the primary colour hue value (default 185°) without an alpha channel</li>
-            <li><code>--secondary-raw</code>  is the secondary colour hue value (default 37°) without an alpha channel</li>
-            <li><code>--complement-raw</code> is the secondary colour hue value (default 22°) without an alpha channel</li>
-        </ul>
-
-        <p><b>Note</b> that you do not need to use this complementary theme method.  You can directly set
-            <code>--primary</code>, <code>--secondary</code> and / or <code>--complement</code> colours with any custom values
-            that you wish to use.  Also, any variable can be overridden by a subsequent custom css file or by JavaScript code
-            running on the browser.
-        </p>
     </article>
 </main>

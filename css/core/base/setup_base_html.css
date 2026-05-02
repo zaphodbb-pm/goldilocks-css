@@ -171,7 +171,7 @@
         font-weight: normal;
 
         color: var(--text-code);
-        background-color: var(--grey-white);
+        background-color: var(--grey-lightest);
         border-radius: var(--radius);
         margin: 0;
         padding: 0.125em 0.5em;
