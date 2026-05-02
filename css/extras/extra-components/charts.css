@@ -9,20 +9,17 @@
         padding: var(--padding-normal);
         border-radius: var(--radius-comp);
 
-        --color-offset: 95;
         --color-alpha: 0.7;
-        --color-brighten: oklch(from var(--primary) l calc(c + .1) h);
-
-        --color-1:  oklch(from var(--color-brighten) l c h / var(--color-alpha));
-        --color-2:  oklch(from var(--color-brighten) l c calc(h + var(--color-offset)) / var(--color-alpha));
-        --color-3:  oklch(from var(--color-brighten) l c calc(h + 2 * var(--color-offset)) / var(--color-alpha));
-        --color-4:  oklch(from var(--color-brighten) l c calc(h + 3 * var(--color-offset)) / var(--color-alpha));
-        --color-5:  oklch(from var(--color-brighten) l c calc(h + 4 * var(--color-offset)) / var(--color-alpha));
-        --color-6:  oklch(from var(--color-brighten) l c calc(h + 5 * var(--color-offset)) / var(--color-alpha));
-        --color-7:  oklch(from var(--color-brighten) l c calc(h + 6 * var(--color-offset)) / var(--color-alpha));
-        --color-8:  oklch(from var(--color-brighten) l c calc(h + 7 * var(--color-offset)) / var(--color-alpha));
-        --color-9:  oklch(from var(--color-brighten) l c calc(h + 8 * var(--color-offset)) / var(--color-alpha));
-        --color-10: oklch(from var(--color-brighten) l c calc(h + 9 * var(--color-offset)) / var(--color-alpha));
+        --color-1:  oklch(from var(--chart-color-start) l c h / var(--color-alpha));
+        --color-2:  oklch(from var(--chart-color-start) l c calc(h + var(--chart-color-offset)) / var(--color-alpha));
+        --color-3:  oklch(from var(--chart-color-start) l c calc(h + 2 * var(--chart-color-offset)) / var(--color-alpha));
+        --color-4:  oklch(from var(--chart-color-start) l c calc(h + 3 * var(--chart-color-offset)) / var(--color-alpha));
+        --color-5:  oklch(from var(--chart-color-start) l c calc(h + 4 * var(--chart-color-offset)) / var(--color-alpha));
+        --color-6:  oklch(from var(--chart-color-start) l c calc(h + 5 * var(--chart-color-offset)) / var(--color-alpha));
+        --color-7:  oklch(from var(--chart-color-start) l c calc(h + 6 * var(--chart-color-offset)) / var(--color-alpha));
+        --color-8:  oklch(from var(--chart-color-start) l c calc(h + 7 * var(--chart-color-offset)) / var(--color-alpha));
+        --color-9:  oklch(from var(--chart-color-start) l c calc(h + 8 * var(--chart-color-offset)) / var(--color-alpha));
+        --color-10: oklch(from var(--chart-color-start) l c calc(h + 9 * var(--chart-color-offset)) / var(--color-alpha));
     }
 
     .charts-wrapper ul li {
