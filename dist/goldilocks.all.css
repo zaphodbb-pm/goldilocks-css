@@ -6851,37 +6851,37 @@ pre
     /* colour controls */
     .badge-primary
     {
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         background-color: var(--primary);
     }
 
     .badge-secondary
     {
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         background-color: var(--secondary);
     }
 
     .badge-complement
     {
-        color: var(--complement-ghost);
+        color: var(--complement-text-invert);
         background-color: var(--complement);
     }
 
     .badge-success
     {
-        color: var(--success-ghost);
+        color: var(--success-text-invert);
         background-color: var(--success);
     }
 
     .badge-warning
     {
-        color: var(--warning-ghost);
+        color: var(--warning-text-invert);
         background-color: var(--warning);
     }
 
     .badge-danger
     {
-        color: var(--danger-ghost);
+        color: var(--danger-text-invert);
         background-color: var(--danger);
     }
 }
