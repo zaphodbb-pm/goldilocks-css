@@ -357,6 +357,7 @@
     --g-100: oklch(11.5% .006 182);
     --g-50: oklch(6.6% .004 182);
     --g-0: oklch(.0% .000 0);
+    --bg-main: oklch(11.8% .022 262);
     --bg-container: oklch(21.5% .028 182);
     --bg-component: oklch(25.5% .030 182);
     --bg-element: oklch(29.5% .032 182);
