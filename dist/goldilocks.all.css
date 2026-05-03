@@ -369,6 +369,7 @@
     --secondary-text: var(--s-400);
     --complement-text: var(--c-400);
     --link-text: var(--lnk-400);
+    --link-text-invert: var(--lnk-900);
     --text: var(--g-100);
     --text-light: var(--g-400);
     --text-darker: var(--g-50);
@@ -382,6 +383,7 @@
     --sh-sm: 0 1px 2px oklch(0% 0 0 / .30), 0 2px 4px oklch(0% 0 0 / .20), inset 0 1px 0 oklch(100% 0 0 / .06);
     --sh-md: 0 2px 3px oklch(0% 0 0 / .28), 0 4px 10px oklch(0% 0 0 / .28), inset 0 1px 0 oklch(100% 0 0 / .05);
     --sh-lg: 0 4px 6px oklch(0% 0 0 / .28), 0 10px 24px oklch(0% 0 0 / .36), inset 0 1px 0 oklch(100% 0 0 / .04);
+    --chart-color-start: oklch(from var(--primary) calc(l + 10%) calc(c + .1) h);
 }
 /* Pure css HTML base elements and reset */
 /** note that some HTML tags are set in other element files **/
