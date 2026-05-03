@@ -10,7 +10,7 @@
 
     --bg-main: oklch(11.8% 0.022 262);
     --bg-main-invert: var(--g-200);
-    --bg-grid: var(--g-300);
+    --bg-grid: var(--g-600);
     --bg-container: oklch(23.5% 0.028 182);
     --bg-component: oklch(27.5% 0.030 182);
     --bg-element: oklch(31.5% 0.032 182);
@@ -27,9 +27,9 @@
     --text-btn-invert: var(--g-950);
     --text-code: var(--c-600);
 
-    --border-main: var(--g-700);
-    --border-main-light: var(--g-600);
-    --border-main-darker: var(--g-800);
+    --border-main: var(--g-400);
+    --border-main-light: var(--g-300);
+    --border-main-darker: var(--g-500);
 
     --sh-sm: 0 1px 2px oklch(0% 0 0 / .30), 0 2px 4px oklch(0% 0 0 / .20), inset 0 1px 0 oklch(100% 0 0 / .06);
     --sh-md: 0 2px 3px oklch(0% 0 0 / .28), 0 4px 10px oklch(0% 0 0 / .28), inset 0 1px 0 oklch(100% 0 0 / .05);
