@@ -14,13 +14,13 @@
         font-size: .9rem;
         font-weight: var(--weight-medium);
         line-height: 1;
-        color: var(--ghost);
+        color: var(--grey-lightest);
         white-space: nowrap;
 
         background: var(--grey-dark);
         background-clip: padding-box;
         border-radius: 1rem;
-        box-shadow: 0 0 0 0.1rem var(--bg-main);
+        box-shadow: var(--shadow-container);
     }
 
     [class*="badge"].no-border {

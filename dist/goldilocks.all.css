@@ -6787,11 +6787,11 @@ pre
         transform: translate(-.05rem, -.75rem);
         white-space: nowrap;
 
-        color: var(--ghost);
+        color: var(--grey-lightest);
         border-radius: 1rem;
         background: var(--grey-dark);
         background-clip: padding-box;
-        box-shadow: 0 0 0 .1rem var(--bg-main);
+        box-shadow: var(--shadow-container);
 
         align-items: center;
         justify-content: center;
