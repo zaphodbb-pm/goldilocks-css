@@ -344,9 +344,14 @@
 
 .main-theme-dark
 {
-    --surf-1: oklch(21.5% .028 262);
-    --surf-2: oklch(25.5% .030 262);
-    --surf-3: oklch(29.5% .032 262);
+    --grey-darker: var(--g-300);
+    --grey-dark: var(--g-400);
+    --grey: var(--g-500);
+    --grey-light: var(--g-600);
+    --grey-lighter: var(--g-700);
+    --grey-lightest: var(--g-800);
+    --grey-white: var(--g-950);
+    --white: var(--g-1k);
     --bg-main: oklch(11.8% .022 262);
     --bg-main-invert: var(--g-200);
     --bg-grid: var(--g-600);
