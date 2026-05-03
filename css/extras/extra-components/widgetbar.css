@@ -94,7 +94,6 @@
 
     /* link widgets */
     .widgetbar-link {
-        background-color: transparent;
         border-radius: var(--radius-comp);
     }
 

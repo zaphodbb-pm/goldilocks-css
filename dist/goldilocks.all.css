@@ -2832,7 +2832,7 @@ pre
 
     .is-warning-dark
     {
-        color: var(--warning-ghost-dark);
+        color: var(--warning-text-invert-dark);
         border: 1px solid var(--warning-dark);
         background-color: var(--warning-dark);
     }
@@ -10700,7 +10700,6 @@ pre
     .widgetbar-link
     {
         border-radius: var(--radius-comp);
-        background-color: transparent;
     }
 
     .widgetbar-link a
