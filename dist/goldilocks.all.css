@@ -344,13 +344,25 @@
 
 .main-theme-dark
 {
-    --bg-main: var(--g-900);
-    --bg-main-invert: var(--g-50);
-    --bg-container: oklch(21.5% .028 262);
-    --bg-component: oklch(25.5% .030 262);
-    --bg-element: oklch(29.5% .032 262);
+    --g-1k: oklch(100.0% .000 0);
+    --g-950: oklch(98.5% .005 182);
+    --g-900: oklch(95.8% .008 182);
+    --g-800: oklch(91.2% .012 182);
+    --g-700: oklch(82.0% .013 182);
+    --g-600: oklch(66.8% .014 182);
+    --g-500: oklch(52.8% .014 182);
+    --g-400: oklch(40.2% .013 182);
+    --g-300: oklch(29.5% .011 182);
+    --g-200: oklch(19.2% .009 182);
+    --g-100: oklch(11.5% .006 182);
+    --g-50: oklch(6.6% .004 182);
+    --g-0: oklch(.0% .000 0);
+    --bg-container: oklch(21.5% .028 182);
+    --bg-component: oklch(25.5% .030 182);
+    --bg-element: oklch(29.5% .032 182);
     --bg-highlight: var(--warning-light);
     --link: oklch(64.0% .200 225);
+    --link-visited: oklch(67.5% .165 278);
     --text: var(--grey-white);
     --text-light: var(--grey-lightest);
     --text-darker: var(--white);
@@ -358,9 +370,9 @@
     --text-comp: var(--grey-lightest);
     --text-btn-invert: var(--g-50);
     --text-code: var(--c-600);
-    --border-main: var(--grey);
-    --border-main-light: var(--g-200);
-    --border-main-darker: var(--grey-dark);
+    --border-main: var(--g-700);
+    --border-main-light: var(--g-600);
+    --border-main-darker: var(--g-800);
     --sh-sm: 0 1px 2px oklch(0% 0 0 / .30), 0 2px 4px oklch(0% 0 0 / .20), inset 0 1px 0 oklch(100% 0 0 / .06);
     --sh-md: 0 2px 3px oklch(0% 0 0 / .28), 0 4px 10px oklch(0% 0 0 / .28), inset 0 1px 0 oklch(100% 0 0 / .05);
     --sh-lg: 0 4px 6px oklch(0% 0 0 / .28), 0 10px 24px oklch(0% 0 0 / .36), inset 0 1px 0 oklch(100% 0 0 / .04);
