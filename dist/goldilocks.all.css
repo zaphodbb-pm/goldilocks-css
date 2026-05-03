@@ -344,13 +344,13 @@
 
 .main-theme-dark
 {
-    --grey-darker: var(--g-300);
-    --grey-dark: var(--g-400);
-    --grey: var(--g-500);
-    --grey-light: var(--g-600);
-    --grey-lighter: var(--g-700);
-    --grey-lightest: var(--g-800);
-    --grey-white: var(--g-950);
+    --grey-darker: var(--g-200);
+    --grey-dark: var(--g-300);
+    --grey: var(--g-400);
+    --grey-light: var(--g-500);
+    --grey-lighter: var(--g-600);
+    --grey-lightest: var(--g-700);
+    --grey-white: var(--g-900);
     --white: var(--g-1k);
     --bg-main: oklch(11.8% .022 262);
     --bg-main-invert: var(--g-200);
@@ -367,7 +367,7 @@
     --text-elem: var(--g-100);
     --text-comp: var(--g-100);
     --text-btn-invert: var(--g-950);
-    --text-code: var(--c-600);
+    --text-code: var(--c-400);
     --border-main: var(--g-400);
     --border-main-light: var(--g-300);
     --border-main-darker: var(--g-500);
