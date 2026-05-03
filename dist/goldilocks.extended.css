@@ -148,7 +148,7 @@
         margin: var(--mar-vert) 0;
         padding: 0;
 
-        border: none;
+        border: 1px solid var(--border-main-light);
         border-radius: var(--radius-comp);
         box-shadow: var(--shadow-container);
     }
@@ -346,6 +346,7 @@
         width: 100%;
 
         color: var(--text-comp);
+        border: 1px solid var(--border-main-light);
         border-radius: var(--radius-comp);
         background-color: var(--bg-component);
         box-shadow: var(--shadow-container);
@@ -588,7 +589,7 @@
 
     .dropdown-menu > nav > ul > li a.is-active
     {
-        color: var(--text-invert);
+        color: var(--link-text-invert);
         background-color: var(--link);
     }
 }
@@ -716,7 +717,7 @@
         pointer-events: auto;
 
         opacity: 75%;
-        color: var(--white-50);
+        color: var(--grey-white);
         border: none;
         border-radius: 20rem;
         background-color: var(--black-700);
@@ -1349,7 +1350,7 @@
 
     .pagination > ul a.is-current
     {
-        color: var(--text-invert);
+        color: var(--link-text-invert);
         border-color: var(--link);
         background-color: var(--link);
     }
@@ -1475,6 +1476,12 @@
         width: auto;
     }
 
+    .sidenavs > nav a.icon-nav-horz [class*=icon-bg-],
+    .sidenav-block nav a.icon-nav-horz [class*=icon-bg-]
+    {
+        margin-left: 0;
+    }
+
     .sidenav-block
     {
         display: flex;
@@ -1557,13 +1564,13 @@
         padding-right: calc(var(--pad-horz) - 2px);
 
         border-right: 2px solid var(--link);
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
     }
 
     .sidenav-block > label:hover
     {
         color: inherit;
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
     }
 
 
@@ -1589,7 +1596,7 @@
     .sidenav-block input:checked + label:hover
     {
         color: inherit;
-        background-color: var(--bg-component);
+        background-color: var(--bg-element);
     }
 
     .sidenav-block input:checked ~ nav
@@ -2075,7 +2082,6 @@
         margin-bottom: 0;
 
         color: var(--text-darker);
-        /*border-bottom: 1px solid var(--border-main-darker);*/
         border-bottom: 0;
         background-color: var(--bg-component);
     }
@@ -2384,11 +2390,11 @@
         transform: translate(-.05rem, -.75rem);
         white-space: nowrap;
 
-        color: var(--text-invert);
+        color: var(--grey-lightest);
         border-radius: 1rem;
         background: var(--grey-dark);
         background-clip: padding-box;
-        box-shadow: 0 0 0 .1rem var(--bg-main);
+        box-shadow: var(--shadow-container);
 
         align-items: center;
         justify-content: center;
@@ -3710,7 +3716,7 @@
         pointer-events: auto;
 
         opacity: 75%;
-        color: var(--white-50);
+        color: var(--grey-white);
         border: none;
         border-radius: 20rem;
         background-color: var(--black-700);
@@ -3835,7 +3841,7 @@
         padding: 0;
 
         opacity: 75%;
-        color: var(--white-50);
+        color: var(--grey-white);
         border: none;
         border-radius: 20rem;
         background-color: var(--black-700);
