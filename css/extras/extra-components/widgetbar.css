@@ -99,7 +99,7 @@
     }
 
     .widgetbar-link a {
-        color: var(--complement);
+        color: var(--secondary);
         position: relative;
         display: flex;
         align-items: center;

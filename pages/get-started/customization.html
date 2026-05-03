@@ -344,8 +344,8 @@ nav: Customization
     --primary-light:  var(--p-100);
     --primary-dark:  var(--p-700);
     --primary-text: var(--p-700);
-    --primary-ghost: var(--p-50);
-    --primary-ghost-dark: var(--p-50);
+    --primary-text-invert: var(--p-50);
+    --primary-text-invert-dark: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
 
@@ -355,8 +355,8 @@ nav: Customization
     --secondary-light:  var(--s-100);
     --secondary-dark:  var(--s-700);
     --secondary-text: var(--s-700);
-    --secondary-ghost: var(--s-50);
-    --secondary-ghost-dark: var(--s-50);
+    --secondary-text-invert: var(--s-50);
+    --secondary-text-invert-dark: var(--s-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
 
@@ -366,8 +366,8 @@ nav: Customization
     --complement-light:  var(--c-100);
     --complement-dark:  var(--c-700);
     --complement-text: var(--c-800);
-    --complement-ghost: var(--bg-page);
-    --complement-ghost-dark: var(--c-50);
+    --complement-text-invert: var(--bg-page);
+    --complement-text-invert-dark: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
 
@@ -379,8 +379,8 @@ nav: Customization
     --link-light: var(--lnk-100);
     --link-dark: var(--lnk-700);
     --link-text: var(--lnk-800);
-    --link-ghost: var(--lnk-50);
-    --link-ghost-dark: var(--lnk-50);
+    --link-text-invert: var(--lnk-50);
+    --link-text-invert-dark: var(--lnk-50);
 
     /*** define key success colours ***/
     --success: var(--ok-500);
@@ -396,7 +396,7 @@ nav: Customization
     --warning-dark: var(--warn-700);
     --warning-text: var(--warn-700);
     --warning-ghost: var(--warn-800);
-    --warning-ghost-dark: var(--warn-50);
+    --warning-text-invert-dark: var(--warn-50);
 
     /*** define key danger colours ***/
     --danger: var(--err-500);
@@ -404,7 +404,7 @@ nav: Customization
     --danger-dark: var(--err-600);
     --danger-text: var(--err-700);
     --danger-ghost: var(--err-50);
-    --danger-ghost-dark: var(--err-50);
+     --danger-text-invert-dark: var(--err-50);
 
     /*** additional greys ***/
     --black: var(--g-950);
@@ -485,12 +485,12 @@ nav: Customization
             --secondary-text: hsl(37,20%,32%);
             --complement-text: hsl(22, 82%, 32%);
 
-            --primary-ghost: hsl(185, 55%, 96%);
-            --primary-ghost-dark: hsl(185, 55%, 96%);
-            --secondary-ghost: hsl(37, 28%, 97%);
-            --secondary-ghost-dark: hsl(37, 28%, 97%);
-            --complement-ghost: hsl(22, 80%, 17%);
-            --complement-ghost-dark: hsl(22, 80%, 97%);
+            --primary-text-invert: hsl(185, 55%, 96%);
+            --primary-text-invert-dark: hsl(185, 55%, 96%);
+            --secondary-text-invert: hsl(37, 28%, 97%);
+            --secondary-text-invert-dark: hsl(37, 28%, 97%);
+            --complement-text-invert: hsl(22, 80%, 17%);
+            --complement-text-invert-dark: hsl(22, 80%, 97%);
 
             --primary-dark:  hsl(185,65%,22%);
             --secondary-dark:  hsl(37,20%,45%);
@@ -502,8 +502,8 @@ nav: Customization
             --link-light:  hsl(240, 50%, 95%);
             --link-dark: hsl(240, 55%, 43%);
             --link-text: hsl(240, 55%, 43%);
-            --link-ghost: hsl(240, 52%, 20%);
-            --link-ghost-dark: hsl(240, 52%, 97%);
+            --link-text-invert: hsl(240, 52%, 20%);
+            --link-text-invert-dark: hsl(240, 52%, 97%);
 
 
             --success: hsl(152, 47%, 53%);
@@ -518,14 +518,14 @@ nav: Customization
             --warning-dark: hsl(38, 90%, 48%);
             --warning-text: hsl(38, 65%, 27%);
             --warning-ghost: var(--black-800);
-            --warning-ghost-dark: hsl(38, 92%, 97%);
+            --warning-text-invert-dark: hsl(38, 92%, 97%);
 
             --danger: hsl(4, 70%, 55%);
             --danger-light:  hsl(4, 74%, 97%);
             --danger-dark: hsl(4, 62%, 45%);
             --danger-text: hsl(4, 65%, 37%);
             --danger-ghost: var(--white-10);
-            --danger-ghost-dark: hsl(4, 70%, 97%);
+             --danger-text-invert-dark: hsl(4, 70%, 97%);
 
             --grey-light: hsl(0, 0%, 75%);
             --grey-lighter: hsl(0, 0%, 85%);

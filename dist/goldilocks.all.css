@@ -240,8 +240,6 @@
     --primary-darkest: var(--p-800);
     --primary-text: var(--p-700);
     --primary-text-invert: var(--p-50);
-    --primary-ghost: var(--p-50);
-    --primary-ghost-dark: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
     /*** define secondary usage variables ***/
@@ -252,8 +250,6 @@
     --secondary-darkest: var(--s-800);
     --secondary-text: var(--s-600);
     --secondary-text-invert: var(--g-50);
-    --secondary-ghost: var(--s-50);
-    --secondary-ghost-dark: var(--s-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
     /*** define complement / cta usage variables ***/
@@ -264,8 +260,6 @@
     --complement-darkest: var(--c-800);
     --complement-text: var(--c-700);
     --complement-text-invert: var(--c-50);
-    --complement-ghost: var(--c-50);
-    --complement-ghost-dark: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
     /*** define key link colours ***/
@@ -277,8 +271,6 @@
     --link-dark: var(--lnk-700);
     --link-text: var(--lnk-800);
     --link-text-invert: var(--lnk-50);
-    --link-ghost: var(--lnk-50);
-    --link-ghost-dark: var(--lnk-50);
     /*** define key success colours ***/
     --success: var(--ok-500);
     --success-light: var(--ok-100);
@@ -287,8 +279,6 @@
     --success-darkest: var(--ok-800);
     --success-text: var(--ok-700);
     --success-text-invert: var(--ok-800);
-    --success-ghost: var(--ok-50);
-    --success-ghost-dark: var(--ok-50);
     /*** define key warning colours ***/
     --warning: var(--warn-400);
     --warning-light: var(--warn-100);
@@ -297,8 +287,7 @@
     --warning-darkest: var(--warn-900);
     --warning-text: var(--warn-700);
     --warning-text-invert: var(--warn-800);
-    --warning-ghost: var(--warn-800);
-    --warning-ghost-dark: var(--warn-50);
+    --warning-text-invert-dark: var(--warn-50);
     /*** define key danger colours ***/
     --danger: var(--err-500);
     --danger-light: var(--err-100);
@@ -307,8 +296,7 @@
     --danger-darkest: var(--err-800);
     --danger-text: var(--err-700);
     --danger-text-invert: var(--err-50);
-    --danger-ghost: var(--err-50);
-    --danger-ghost-dark: var(--err-50);
+    --danger-text-invert-dark: var(--err-50);
     /*** additional greys ***/
     --black: var(--g-950);
     --black-850: var(--g-900);
@@ -334,7 +322,6 @@
     --border-main-light: var(--g-100);
     --border-main-darker: var(--grey);
     --text: var(--black-800);
-    --text-ghost: var(--bg-main);
     --text-light: var(--grey-dark);
     --text-darker: var(--black);
     --text-elem: var(--black-800);
@@ -368,12 +355,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --primary-text: hsl(185,65%,36%);
     --secondary-text: hsl(37,20%,47%);
     --complement-text: hsl(22, 82%, 47%);
-    --primary-ghost: hsl(185, 55%, 96%);
-    --primary-ghost-dark: hsl(185, 55%, 96%);
-    --secondary-ghost: hsl(37, 28%, 97%);
-    --secondary-ghost-dark: hsl(37, 28%, 97%);
-    --complement-ghost: hsl(22, 80%, 18%);
-    --complement-ghost-dark: hsl(22, 80%, 97%);
+    --primary-text-invert: hsl(185, 55%, 96%);
+    --primary-text-invert-dark: hsl(185, 55%, 96%);
+    --secondary-text-invert: hsl(37, 28%, 97%);
+    --secondary-text-invert-dark: hsl(37, 28%, 97%);
+    --complement-text-invert: hsl(22, 80%, 18%);
+    --complement-text-invert-dark: hsl(22, 80%, 97%);
     --primary-light: hsl(185,55%,94%);
     --secondary-light: hsl(37, 24%, 92%);
     --complement-light: hsl(22,85%,93%);
@@ -386,8 +373,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --link-light: hsl(240, 50%, 95%);
     --link-dark: hsl(240, 55%, 55%);
     --link-text: hsl(240, 55%, 65%);
-    --link-ghost: hsl(240, 52%, 20%);
-    --link-ghost-dark: hsl(240, 52%, 97%);
+    --link-text-invert: hsl(240, 52%, 20%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
     --success: hsl(152, 47%, 53%);
     --success-light: hsl(152, 50%, 95%);
     --success-dark: hsl(152, 55%, 32%);
@@ -399,13 +386,13 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --warning-dark: hsl(38, 90%, 32%);
     --warning-text: hsl(38, 65%, 27%);
     --warning-ghost: var(--black-800);
-    --warning-ghost-dark: hsl(38, 92%, 97%);
+    --warning-text-invert-dark: hsl(38, 92%, 97%);
     --danger: hsl(4, 70%, 55%);
     --danger-light: hsl(4, 74%, 97%);
     --danger-dark: hsl(4, 62%, 45%);
     --danger-text: hsl(4, 65%, 37%);
     --danger-ghost: var(--white-10);
-    --danger-ghost-dark: hsl(4, 70%, 97%);
+    --danger-text-invert-dark: hsl(4, 70%, 97%);
     --grey-light: hsl(0, 0%, 75%);
     --grey-lighter: hsl(0, 0%, 85%);
     /** invert colours for elements and components **/
@@ -2097,7 +2084,7 @@ pre
     button.button-primary,
     .button.button-primary
     {
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         border: 1px solid var(--primary);
         background-color: var(--primary);
     }
@@ -2176,7 +2163,7 @@ pre
     button.button-secondary,
     .button.button-secondary
     {
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         border: 1px solid var(--secondary);
         background-color: var(--secondary);
     }
@@ -2258,7 +2245,7 @@ pre
     button.button-complement,
     .button.button-complement
     {
-        color: var(--complement-ghost);
+        color: var(--complement-text-invert);
         border: 1px solid var(--complement);
         background-color: var(--complement);
     }
@@ -2551,63 +2538,63 @@ pre
 
     button.fab-primary
     {
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         border: none;
         background-color: var(--primary);
     }
 
     button.fab-primary:hover
     {
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         border: none;
         background-color: var(--primary-hover);
     }
 
     button.fab-primary:active
     {
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         border: none;
         background-color: var(--primary-active);
     }
 
     button.fab-secondary
     {
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         border: none;
         background-color: var(--secondary);
     }
 
     button.fab-secondary:hover
     {
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         border: none;
         background-color: var(--secondary-hover);
     }
 
     button.fab-secondary:active
     {
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         border: none;
         background-color: var(--secondary-active);
     }
 
     button.fab-complement
     {
-        color: var(--complement-ghost);
+        color: var(--complement-text-invert);
         border: none;
         background-color: var(--complement);
     }
 
     button.fab-complement:hover
     {
-        color: var(--complement-ghost);
+        color: var(--complement-text-invert);
         border: none;
         background-color: var(--complement-hover);
     }
 
     button.fab-complement:active
     {
-        color: var(--complement-ghost);
+        color: var(--complement-text-invert);
         border: none;
         background-color: var(--complement-active);
     }
@@ -2874,7 +2861,7 @@ pre
 
     .is-danger-dark
     {
-        color: var(--danger-ghost-dark);
+        color: var( --danger-text-invert-dark);
         border: 1px solid var(--danger-dark);
         background-color: var(--danger-dark);
     }
@@ -9926,19 +9913,19 @@ pre
     /** footer **/
     .infobox-primary > a
     {
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         background-color: var(--primary);
     }
 
     .infobox-secondary > a
     {
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         background-color: var(--secondary);
     }
 
     .infobox-complement > a
     {
-        color: var(--complement-ghost);
+        color: var(--complement-text-invert);
         background-color: var(--complement);
     }
 
@@ -10726,7 +10713,7 @@ pre
 
         text-decoration: none;
 
-        color: var(--complement);
+        color: var(--secondary);
 
         align-items: center;
     }

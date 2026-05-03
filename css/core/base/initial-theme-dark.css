@@ -17,12 +17,12 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --secondary-text: hsl(37,20%,47%);
     --complement-text: hsl(22, 82%, 47%);
 
-    --primary-ghost: hsl(185, 55%, 96%);
-    --primary-ghost-dark: hsl(185, 55%, 96%);
-    --secondary-ghost: hsl(37, 28%, 97%);
-    --secondary-ghost-dark: hsl(37, 28%, 97%);
-    --complement-ghost: hsl(22, 80%, 18%);
-    --complement-ghost-dark: hsl(22, 80%, 97%);
+    --primary-text-invert: hsl(185, 55%, 96%);
+    --primary-text-invert-dark: hsl(185, 55%, 96%);
+    --secondary-text-invert: hsl(37, 28%, 97%);
+    --secondary-text-invert-dark: hsl(37, 28%, 97%);
+    --complement-text-invert: hsl(22, 80%, 18%);
+    --complement-text-invert-dark: hsl(22, 80%, 97%);
 
 
     --primary-light:  hsl(185,55%,94%);
@@ -39,8 +39,8 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --link-light:  hsl(240, 50%, 95%);
     --link-dark: hsl(240, 55%, 55%);
     --link-text: hsl(240, 55%, 65%);
-    --link-ghost: hsl(240, 52%, 20%);
-    --link-ghost-dark: hsl(240, 52%, 97%);
+    --link-text-invert: hsl(240, 52%, 20%);
+    --link-text-invert-dark: hsl(240, 52%, 97%);
 
 
     --success: hsl(152, 47%, 53%);
@@ -55,14 +55,14 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
     --warning-dark: hsl(38, 90%, 32%);
     --warning-text: hsl(38, 65%, 27%);
     --warning-ghost: var(--black-800);
-    --warning-ghost-dark: hsl(38, 92%, 97%);
+    --warning-text-invert-dark: hsl(38, 92%, 97%);
 
     --danger: hsl(4, 70%, 55%);
     --danger-light:  hsl(4, 74%, 97%);
     --danger-dark: hsl(4, 62%, 45%);
     --danger-text: hsl(4, 65%, 37%);
     --danger-ghost: var(--white-10);
-    --danger-ghost-dark: hsl(4, 70%, 97%);
+     --danger-text-invert-dark: hsl(4, 70%, 97%);
 
     --grey-light: hsl(0, 0%, 75%);
     --grey-lighter: hsl(0, 0%, 85%);

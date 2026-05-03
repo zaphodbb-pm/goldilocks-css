@@ -105,7 +105,7 @@
     /*** primary button ***/
     button.button-primary,
     .button.button-primary{
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         background-color: var(--primary);
         border: 1px solid var(--primary);
     }
@@ -170,7 +170,7 @@
     /*** secondary button ***/
     button.button-secondary,
     .button.button-secondary {
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         background-color: var(--secondary);
         border: 1px solid var(--secondary);
     }
@@ -237,7 +237,7 @@
     /*** complement buttons ***/
     button.button-complement,
     .button.button-complement {
-        color: var(--complement-ghost);
+        color: var(--complement-text-invert);
         background-color: var(--complement);
         border: 1px solid var(--complement);
     }
@@ -483,55 +483,55 @@
 
     button.fab-primary {
         background-color: var(--primary);
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         border: none;
     }
 
     button.fab-primary:hover {
         background-color: var(--primary-hover);
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         border: none;
     }
 
     button.fab-primary:active {
         background-color: var(--primary-active);
-        color: var(--primary-ghost);
+        color: var(--primary-text-invert);
         border: none;
     }
 
     button.fab-secondary {
         background-color: var(--secondary);
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         border: none;
     }
 
     button.fab-secondary:hover {
         background-color: var(--secondary-hover);
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         border: none;
     }
 
     button.fab-secondary:active {
         background-color: var(--secondary-active);
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         border: none;
     }
 
     button.fab-complement {
         background-color: var(--complement);
-        color: var(--complement-ghost);
+        color: var(--complement-text-invert);
         border: none;
     }
 
    button.fab-complement:hover {
        background-color: var(--complement-hover);
-       color: var(--complement-ghost);
+       color: var(--complement-text-invert);
        border: none;
    }
 
     button.fab-complement:active {
         background-color: var(--complement-active);
-        color: var(--complement-ghost);
+        color: var(--complement-text-invert);
         border: none;
     }
 

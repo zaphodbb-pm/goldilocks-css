@@ -135,8 +135,6 @@
     --primary-darkest: var(--p-800);
     --primary-text: var(--p-700);
     --primary-text-invert: var(--p-50);
-    --primary-ghost: var(--p-50);
-    --primary-ghost-dark: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
 
@@ -149,8 +147,6 @@
     --secondary-darkest: var(--s-800);
     --secondary-text: var(--s-600);
     --secondary-text-invert: var(--g-50);
-    --secondary-ghost: var(--s-50);
-    --secondary-ghost-dark: var(--s-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
 
@@ -163,8 +159,6 @@
     --complement-darkest: var(--c-800);
     --complement-text: var(--c-700);
     --complement-text-invert: var(--c-50);
-    --complement-ghost: var(--c-50);
-    --complement-ghost-dark: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
 
@@ -178,8 +172,6 @@
     --link-dark: var(--lnk-700);
     --link-text: var(--lnk-800);
     --link-text-invert: var(--lnk-50);
-    --link-ghost: var(--lnk-50);
-    --link-ghost-dark: var(--lnk-50);
 
     /*** define key success colours ***/
     --success: var(--ok-500);
@@ -189,8 +181,6 @@
     --success-darkest: var(--ok-800);
     --success-text: var(--ok-700);
     --success-text-invert: var(--ok-800);
-    --success-ghost: var(--ok-50);
-    --success-ghost-dark: var(--ok-50);
 
     /*** define key warning colours ***/
     --warning: var(--warn-400);
@@ -200,8 +190,7 @@
     --warning-darkest: var(--warn-900);
     --warning-text: var(--warn-700);
     --warning-text-invert: var(--warn-800);
-    --warning-ghost: var(--warn-800);
-    --warning-ghost-dark: var(--warn-50);
+    --warning-text-invert-dark: var(--warn-50);
 
     /*** define key danger colours ***/
     --danger: var(--err-500);
@@ -211,8 +200,7 @@
     --danger-darkest: var(--err-800);
     --danger-text: var(--err-700);
     --danger-text-invert: var(--err-50);
-    --danger-ghost: var(--err-50);
-    --danger-ghost-dark: var(--err-50);
+    --danger-text-invert-dark: var(--err-50);
 
     /*** additional greys ***/
     --black: var(--g-950);
@@ -243,7 +231,6 @@
     --border-main-darker: var(--grey);
 
     --text: var(--black-800);
-    --text-ghost: var(--bg-main);
     --text-light: var(--grey-dark);
     --text-darker: var(--black);
 

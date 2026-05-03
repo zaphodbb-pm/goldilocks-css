@@ -132,7 +132,7 @@
     }
 
     .is-warning-dark {
-        color: var(--warning-ghost-dark);
+        color: var(--warning-text-invert-dark);
         background-color: var(--warning-dark);
         border: 1px solid var(--warning-dark);
     }
@@ -157,7 +157,7 @@
     }
 
     .is-danger-dark {
-        color: var(--danger-ghost-dark);
+        color: var( --danger-text-invert-dark);
         background-color: var(--danger-dark);
         border: 1px solid var(--danger-dark);
     }
