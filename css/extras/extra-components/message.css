@@ -10,7 +10,7 @@
     }
 
     .message:not([class*=" is-"]) {
-        background-color: var(--bg-component);
+        background-color: var(--grey-lightest);
         color: var(--text-comp);
         border-color: var(--grey-dark);
     }

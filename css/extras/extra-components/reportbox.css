@@ -27,7 +27,7 @@
 
     /* icon setup */
     .reportbox > div {
-        color: var(--ghost);
+        color: var(--grey-lightest);
         padding: 0;
         margin: 0;
         line-height: 0;
@@ -138,18 +138,18 @@
 
     /* icon colours */
     .report-success > div {
-        background-color: var(--success-dark);
-        color: var(--ghost);
+        background-color: var(--success);
+        color: var(--success-text-invert);
     }
 
     .report-warning > div {
         background-color: var(--warning);
-        color: var(--text);
+        color: var(--warning-text-invert);
     }
 
     .report-danger > div {
         background-color: var(--danger);
-        color: var(--ghost);
+        color: var(--danger-text-invert);
     }
 
 

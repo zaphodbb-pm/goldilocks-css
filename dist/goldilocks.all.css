@@ -219,17 +219,14 @@
     --err-700: oklch(35.0% .200 8);
     --err-800: oklch(25.5% .158 8);
     /*** shadows - whisper of secondary ***/
-    --sh-sm: 0 1px 2px oklch(40.8% .210 182 / .08), 0 2px 4px oklch(40.8% .210 182 / .05);
-    --sh-md: 0 2px 3px oklch(40.8% .210 182 / .10), 0 4px 10px oklch(40.8% .210 182 / .08);
-    --sh-lg: 0 4px 6px oklch(40.8% .210 182 / .10), 0 10px 24px oklch(40.8% .210 182 / .12);
+    --sh-sm: 0 1px 2px oklch(40.8% .210 182 / .08), 0 2px 4px oklch(40.8% .210 182 / .05), inset 0 1px 0 oklch(100% 0 0 / .55);
+    --sh-md: 0 2px 3px oklch(40.8% .210 182 / .10), 0 4px 10px oklch(40.8% .210 182 / .08), inset 0 1px 0 oklch(100% 0 0 / .48);
+    --sh-lg: 0 4px 6px oklch(40.8% .210 182 / .10), 0 10px 24px oklch(40.8% .210 182 / .12), inset 0 1px 0 oklch(100% 0 0 / .40);
     /*** backgrounds - whisper of secondary ***/
     --bg-page: oklch(98.8% .002 182);
     --bg-elevated-1: oklch(98.9% .007 182);
     --bg-elevated-2: oklch(97.4% .012 182);
     --bg-elevated-3: oklch(96.6% .015 182);
-    --bg-e1: oklch(98.9% .007 182);
-    --bg-e2: oklch(97.4% .010 182);
-    --bg-e3: oklch(96.6% .015 182);
     /** end of imported theme colours **/
     /** map theme colours into working variables **/
     /** adjust for WCAG compliance **/
@@ -274,7 +271,7 @@
     /*** define key link colours ***/
     --link: var(--lnk-600);
     --link-hover: var(--lnk-700);
-    --link-visited: oklch(47.5% .265 278);
+    --link-visited: oklch(37.5% .165 278);
     --link-light: var(--lnk-100);
     --link-lightest: var(--lnk-50);
     --link-dark: var(--lnk-700);
@@ -332,7 +329,7 @@
     --bg-container: var(--bg-elevated-1);
     --bg-component: var(--bg-elevated-2);
     --bg-element: var(--bg-elevated-3);
-    --bg-highlight: var(--warning-light);
+    --bg-highlight: var(--warning-lightest);
     --border-main: var(--grey-light);
     --border-main-light: var(--g-100);
     --border-main-darker: var(--grey);
@@ -346,12 +343,13 @@
     --text-code: var(--c-700);
     /*** Common shadow treatment for containers, components and elements ***/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
-    --shadow-container: inset 0 0 1px var(--bg-component), var(--sh-sm);
-    --shadow-component: inset 0 0 1px var(--bg-element), var(--sh-md);
-    --shadow-element: inset 0 0 1px var(--grey-lighter), var(--sh-lg);
+    --shadow-container: var(--sh-sm);
+    --shadow-component: var(--sh-md);
+    --shadow-element: var(--sh-lg);
     /*** other common variables for use in components ***/
     --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);   /**** brighten primary ****/
     --chart-color-offset: 95;                                           /**** helps build 9 other colours ****/
+    --bq-border: var(--complement-dark);                                /**** defines blockquote left border ****/
 }
 /* initial-theme-dark.css */
 
@@ -8401,8 +8399,10 @@ pre
         margin: var(--margin-medium) auto;
         padding: var(--pad-vert) var(--pad-horz);
 
-        border-left: .3rem solid var(--complement-dark);
+        border-left: .3rem solid var(--bq-border);
+        border-radius: 0 var(--radius) var(--radius) 0;
         background-color: var(--bg-container);
+        box-shadow: var(--shadow-container);
 
         break-inside: avoid;
     }
@@ -8558,7 +8558,8 @@ pre
         padding: var(--padding-normal);
 
         border-radius: var(--radius-comp);
-        background-color: var(--bg-component);
+        background-color: var(--bg-container);
+        box-shadow: var(--shadow-container);
 
         column-gap: calc(2 * var(--gap-col));
         align-items: center;
@@ -9650,7 +9651,7 @@ pre
 
     .gauge-ring data span
     {
-        color: var(--ghost);
+        color: var(--bg-main);
         background-color: var(--bg-main-invert);
     }
 
@@ -9747,7 +9748,7 @@ pre
 
         border-radius: var(--radius-comp);
         background-color: var(--bg-component);
-        box-shadow: var(--shadow-container);
+        box-shadow: var(--shadow-component);
 
         justify-content: center;
         align-items: center;
@@ -10074,7 +10075,7 @@ pre
     {
         color: var(--text-comp);
         border-color: var(--grey-dark);
-        background-color: var(--bg-component);
+        background-color: var(--grey-lightest);
     }
 
     .message:not([class*=' is-']) > header
@@ -10352,7 +10353,7 @@ pre
         margin: 0;
         padding: 0;
 
-        color: var(--ghost);
+        color: var(--grey-lightest);
         border-radius: var(--radius-rounded);
         background-color: var(--grey-dark);
     }
@@ -10485,19 +10486,19 @@ pre
     /* icon colours */
     .report-success > div
     {
-        color: var(--ghost);
-        background-color: var(--success-dark);
+        color: var(--success-text-invert);
+        background-color: var(--success);
     }
 
     .report-warning > div
     {
-        color: var(--text);
+        color: var(--warning-text-invert);
         background-color: var(--warning);
     }
 
     .report-danger > div
     {
-        color: var(--ghost);
+        color: var(--danger-text-invert);
         background-color: var(--danger);
     }
 
@@ -10702,7 +10703,7 @@ pre
 
     .widgetbar-radios input:checked + span
     {
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         border-radius: var(--radius-comp);
         background-color: var(--secondary);
     }
@@ -10742,7 +10743,7 @@ pre
 
     .widgetbar-link a:hover
     {
-        color: var(--bg-main);
+        color: var(--secondary-text-invert);
         border-radius: var(--radius-comp);
         background-color: var(--secondary);
     }

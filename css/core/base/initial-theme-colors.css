@@ -107,21 +107,15 @@
 
 
     /*** shadows - whisper of secondary ***/
-    --sh-sm: 0 1px 2px oklch(40.8% 0.210 182 / 0.08), 0 2px 4px oklch(40.8% 0.210 182 / 0.05);
-    --sh-md: 0 2px 3px oklch(40.8% 0.210 182 / 0.10), 0 4px 10px oklch(40.8% 0.210 182 / 0.08);
-    --sh-lg: 0 4px 6px oklch(40.8% 0.210 182 / 0.10), 0 10px 24px oklch(40.8% 0.210 182 / 0.12);
+    --sh-sm: 0 1px 2px oklch(40.8% 0.210 182 / 0.08), 0 2px 4px oklch(40.8% 0.210 182 / 0.05), inset 0 1px 0 oklch(100% 0 0 / 0.55);
+    --sh-md: 0 2px 3px oklch(40.8% 0.210 182 / 0.10), 0 4px 10px oklch(40.8% 0.210 182 / 0.08), inset 0 1px 0 oklch(100% 0 0 / 0.48);
+    --sh-lg: 0 4px 6px oklch(40.8% 0.210 182 / 0.10), 0 10px 24px oklch(40.8% 0.210 182 / 0.12), inset 0 1px 0 oklch(100% 0 0 / 0.40);
 
     /*** backgrounds - whisper of secondary ***/
     --bg-page: oklch(98.8% 0.002 182);
     --bg-elevated-1: oklch(98.9% 0.007 182);
     --bg-elevated-2: oklch(97.4% 0.012 182);
     --bg-elevated-3: oklch(96.6% 0.015 182);
-
-
-
-    --bg-e1: oklch(98.9% 0.007 182);
-    --bg-e2: oklch(97.4% 0.010 182);
-    --bg-e3: oklch(96.6% 0.015 182);
 
     /** end of imported theme colours **/
 
@@ -178,7 +172,7 @@
     /*** define key link colours ***/
     --link: var(--lnk-600);
     --link-hover: var(--lnk-700);
-    --link-visited: oklch(47.5% 0.265 278);
+    --link-visited: oklch(37.5% 0.165 278);
     --link-light: var(--lnk-100);
     --link-lightest: var(--lnk-50);
     --link-dark: var(--lnk-700);
@@ -242,7 +236,7 @@
     --bg-container: var(--bg-elevated-1);
     --bg-component: var(--bg-elevated-2);
     --bg-element: var(--bg-elevated-3);
-    --bg-highlight: var(--warning-light);
+    --bg-highlight: var(--warning-lightest);
 
     --border-main: var(--grey-light);
     --border-main-light: var(--g-100);
@@ -262,11 +256,13 @@
     /*** Common shadow treatment for containers, components and elements ***/
     /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
 
-    --shadow-container: inset 0 0 1px var(--bg-component), var(--sh-sm);
-    --shadow-component: inset 0 0 1px var(--bg-element), var(--sh-md);
-    --shadow-element: inset 0 0 1px var(--grey-lighter), var(--sh-lg);
+    --shadow-container: var(--sh-sm);
+    --shadow-component: var(--sh-md);
+    --shadow-element:  var(--sh-lg);
 
     /*** other common variables for use in components ***/
     --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);   /**** brighten primary ****/
     --chart-color-offset: 95;                                           /**** helps build 9 other colours ****/
+
+    --bq-border: var(--complement-dark);                                /**** defines blockquote left border ****/
 }

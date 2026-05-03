@@ -87,7 +87,7 @@
 
     .widgetbar-radios input:checked + span {
         background-color: var(--secondary);
-        color: var(--secondary-ghost);
+        color: var(--secondary-text-invert);
         border-radius: var(--radius-comp);
     }
 
@@ -116,7 +116,7 @@
     }
 
     .widgetbar-link a:hover {
-        color: var(--bg-main);
+        color: var(--secondary-text-invert);
         background-color: var(--secondary);
         border-radius: var(--radius-comp);
     }
