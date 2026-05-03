@@ -40,7 +40,8 @@
         width: auto;
     }
 
-    .sidenavs > nav a.icon-nav-horz [class*=icon-bg-] {
+    .sidenavs > nav a.icon-nav-horz [class*=icon-bg-],
+    .sidenav-block nav a.icon-nav-horz [class*=icon-bg-] {
         margin-left: 0;
     }
 
