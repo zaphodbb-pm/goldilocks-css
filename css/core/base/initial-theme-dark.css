@@ -24,6 +24,11 @@
     --link: oklch(64.0% 0.200 225);
     --link-visited: oklch(67.5% 0.165 278);
 
+    --primary-text-element: var(--p-400);
+    --secondary-text-element: var(--s-400);
+    --complement-text-element: var(--c-400);
+    --link-text-element: var(--lnk-400);
+
     --text: var(--g-100);
     --text-light: var(--g-400);
     --text-darker: var(--g-50);

@@ -8,7 +8,7 @@
     }
 
     .is-primary-light {
-        color: var(--primary-text);
+        color: var(--primary-text-element);
         background-color: var(--primary-light);
         border: 1px solid var(--primary-light);
     }
@@ -32,7 +32,7 @@
     }
 
     .is-secondary-light {
-        color: var(--secondary-text);
+        color: var(--secondary-text-element);
         background-color: var(--secondary-light);
         border: 1px solid var(--secondary-light);
     }
@@ -57,7 +57,7 @@
     }
 
     .is-complement-light {
-        color: var(--complement-text);
+        color: var(--complement-text-element);
         background-color: var(--complement-light);
         border: 1px solid var(--complement-light);
     }
@@ -76,13 +76,13 @@
 
 
     .is-link {
-        color: var(--link-text-invert, var(--link-text-invert));
+        color: var(--link-text-invert);
         background-color: var(--link);
         border: 1px solid var(--link);
     }
 
     .is-link-light {
-        color: var(--link-text);
+        color: var(--link-text-element);
         background-color: var(--link-light);
         border: 1px solid var(--link-light);
     }

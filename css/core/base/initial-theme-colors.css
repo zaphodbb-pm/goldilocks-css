@@ -134,6 +134,7 @@
     --primary-dark:  var(--p-700);
     --primary-darkest: var(--p-800);
     --primary-text: var(--p-700);
+    --primary-text-element: var(--p-700);
     --primary-text-invert: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
@@ -146,6 +147,7 @@
     --secondary-dark:  var(--s-600);
     --secondary-darkest: var(--s-800);
     --secondary-text: var(--s-600);
+    --secondary-text-element: var(--s-600);
     --secondary-text-invert: var(--g-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
@@ -158,6 +160,7 @@
     --complement-dark:  var(--c-600);
     --complement-darkest: var(--c-800);
     --complement-text: var(--c-700);
+    --complement-text-element: var(--c-700);
     --complement-text-invert: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
@@ -171,6 +174,7 @@
     --link-lightest: var(--lnk-50);
     --link-dark: var(--lnk-700);
     --link-text: var(--lnk-800);
+    --link-text-element: var(--lnk-800);
     --link-text-invert: var(--lnk-50);
 
     /*** define key success colours ***/
