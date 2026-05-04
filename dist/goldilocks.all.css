@@ -5186,9 +5186,6 @@ pre
         margin: 0;
         padding: 0 var(--pad-horz);
 
-        border-bottom: solid 2px var(--primary);
-        background-color: var(--bg-container);
-
         flex-wrap: wrap;
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
@@ -5221,9 +5218,13 @@ pre
 
     [class*='navbar is-']
     {
-        height: var(--navbar-height);
-
         border-bottom: none;
+    }
+
+    :not([class*='navbar is-'])
+    {
+        border-bottom: solid 2px var(--primary);
+        background-color: var(--bg-container);
     }
 
     .navbar-left > nav > ul,

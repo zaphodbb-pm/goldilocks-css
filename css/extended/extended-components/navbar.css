@@ -15,8 +15,6 @@
 
         align-items: center;
         justify-content: space-between;
-        border-bottom: solid 2px var(--primary);
-        background-color: var(--bg-container);
     }
 
 
@@ -41,7 +39,11 @@
 
     [class*="navbar is-"] {
         border-bottom: none;
-        height: var(--navbar-height);
+    }
+
+    :not([class*="navbar is-"]){
+        border-bottom: solid 2px var(--primary);
+        background-color: var(--bg-container);
     }
 
     .navbar-left > nav > ul,
