@@ -348,6 +348,10 @@
 
 .main-theme-dark
 {
+    --black: var(--g-50);
+    --black-850: var(--g-100);
+    --black-800: var(--g-200);
+    --black-700: var(--g-300);
     --grey-darker: var(--g-200);
     --grey-dark: var(--g-300);
     --grey: var(--g-400);
