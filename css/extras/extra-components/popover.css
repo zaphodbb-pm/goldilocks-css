@@ -11,6 +11,7 @@
         top: 0;
         opacity: 0;
         padding: var(--pad-horz);
+        margin: var(--mar-vert) var(--mar-horz);
         transform: translate(-50%, -50%) scale(0);
         transition: transform .2s;
         width: 20rem;
@@ -20,7 +21,7 @@
         border-radius: var(--radius);
         box-shadow: var(--shadow-container);
         background-color: var(--bg-container);
-        margin: var(--mar-vert) var(--mar-horz);
+        color: var(--text-comp);
     }
 
 
