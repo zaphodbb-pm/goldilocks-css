@@ -367,10 +367,13 @@
     --link-visited: oklch(67.5% .165 278);
     --primary: var(--p-400);
     --primary-text: var(--p-400);
+    --primary-text-invert: var(--p-900);
     --secondary: var(--s-400);
     --secondary-text: var(--s-400);
+    --secondary-text-invert: var(--s-900);
     --complement: var(--c-400);
     --complement-text: var(--c-400);
+    --complement-text-invert: var(--c-900);
     --link-text: var(--lnk-400);
     --link-text-invert: var(--lnk-900);
     --text: var(--g-100);
