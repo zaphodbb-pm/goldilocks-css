@@ -340,7 +340,7 @@
     /*** other common variables for use in components ***/
     --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);   /**** brighten primary ****/
     --chart-color-offset: 95;                                           /**** helps build 9 other colours ****/
-    --bq-border: var(--complement-dark);                                /**** defines blockquote left border ****/
+    --bq-border: var(--primary);                                        /**** defines blockquote left border ****/
 }
 /* initial-theme-dark.css */
 
@@ -380,6 +380,7 @@
     --complement-text-invert: var(--c-900);
     --link-text: var(--lnk-400);
     --link-text-invert: var(--lnk-900);
+    --success-dark: var(--ok-500);
     --text: var(--g-100);
     --text-light: var(--g-400);
     --text-darker: var(--g-50);
@@ -5185,7 +5186,8 @@ pre
         margin: 0;
         padding: 0 var(--pad-horz);
 
-        border-bottom: solid 2px var(--grey-light);
+        border-bottom: solid 2px var(--primary);
+        background-color: var(--bg-container);
 
         flex-wrap: wrap;
         column-gap: var(--gap-col);
