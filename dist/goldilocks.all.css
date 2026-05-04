@@ -5216,12 +5216,12 @@ pre
     }
 
 
-    [class*='navbar is-']
+    .navbar[class*=is-]
     {
         border-bottom: none;
     }
 
-    :not([class*='navbar is-'])
+    .navbar:not([class*=is-])
     {
         border-bottom: solid 2px var(--primary);
         background-color: var(--bg-container);
