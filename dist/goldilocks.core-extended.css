@@ -239,6 +239,7 @@
     --primary-dark: var(--p-700);
     --primary-darkest: var(--p-800);
     --primary-text: var(--p-700);
+    --primary-text-element: var(--p-700);
     --primary-text-invert: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
@@ -249,6 +250,7 @@
     --secondary-dark: var(--s-600);
     --secondary-darkest: var(--s-800);
     --secondary-text: var(--s-600);
+    --secondary-text-element: var(--s-600);
     --secondary-text-invert: var(--g-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
@@ -259,6 +261,7 @@
     --complement-dark: var(--c-600);
     --complement-darkest: var(--c-800);
     --complement-text: var(--c-700);
+    --complement-text-element: var(--c-700);
     --complement-text-invert: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
@@ -270,6 +273,7 @@
     --link-lightest: var(--lnk-50);
     --link-dark: var(--lnk-700);
     --link-text: var(--lnk-800);
+    --link-text-element: var(--lnk-800);
     --link-text-invert: var(--lnk-50);
     /*** define key success colours ***/
     --success: var(--ok-500);
@@ -336,7 +340,7 @@
     /*** other common variables for use in components ***/
     --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);   /**** brighten primary ****/
     --chart-color-offset: 95;                                           /**** helps build 9 other colours ****/
-    --bq-border: var(--complement-dark);                                /**** defines blockquote left border ****/
+    --bq-border: var(--primary);                                        /**** defines blockquote left border ****/
 }
 /* initial-theme-dark.css */
 
@@ -344,26 +348,53 @@
 
 .main-theme-dark
 {
-    --bg-main: var(--g-900);
-    --bg-main-invert: var(--g-50);
-    --bg-container: oklch(21.5% .028 262);
-    --bg-component: oklch(25.5% .030 262);
-    --bg-element: oklch(29.5% .032 262);
-    --bg-highlight: var(--warning-light);
+    --black: var(--g-50);
+    --black-850: var(--g-100);
+    --black-800: var(--g-200);
+    --black-700: var(--g-300);
+    --grey-darker: var(--g-200);
+    --grey-dark: var(--g-300);
+    --grey: var(--g-400);
+    --grey-light: var(--g-500);
+    --grey-lighter: var(--g-600);
+    --grey-lightest: var(--g-700);
+    --grey-white: var(--g-900);
+    --white: var(--g-1k);
+    --bg-main: oklch(11.8% .022 262);
+    --bg-main-invert: var(--g-200);
+    --bg-grid: var(--g-600);
+    --bg-container: oklch(23.5% .028 182);
+    --bg-component: oklch(27.5% .030 182);
+    --bg-element: oklch(31.5% .032 182);
+    --bg-highlight: var(--warning-darkest);
     --link: oklch(64.0% .200 225);
-    --text: var(--grey-white);
-    --text-light: var(--grey-lightest);
-    --text-darker: var(--white);
-    --text-elem: var(--grey-lightest);
-    --text-comp: var(--grey-lightest);
-    --text-btn-invert: var(--g-50);
-    --text-code: var(--c-600);
-    --border-main: var(--grey);
-    --border-main-light: var(--g-200);
-    --border-main-darker: var(--grey-dark);
+    --link-visited: oklch(67.5% .165 278);
+    --primary: var(--p-400);
+    --primary-text: var(--p-400);
+    --primary-text-invert: var(--p-900);
+    --secondary: var(--s-400);
+    --secondary-text: var(--s-400);
+    --secondary-text-invert: var(--s-900);
+    --complement: var(--c-400);
+    --complement-text: var(--c-400);
+    --complement-text-invert: var(--c-900);
+    --link-text: var(--lnk-400);
+    --link-text-invert: var(--lnk-900);
+    --success-dark: var(--ok-500);
+    --text: var(--g-100);
+    --text-light: var(--g-400);
+    --text-darker: var(--g-50);
+    --text-elem: var(--g-100);
+    --text-comp: var(--g-100);
+    --text-btn-invert: var(--g-950);
+    --text-code: var(--c-400);
+    --border-main: var(--g-400);
+    --border-main-light: var(--g-300);
+    --border-main-darker: var(--g-500);
     --sh-sm: 0 1px 2px oklch(0% 0 0 / .30), 0 2px 4px oklch(0% 0 0 / .20), inset 0 1px 0 oklch(100% 0 0 / .06);
     --sh-md: 0 2px 3px oklch(0% 0 0 / .28), 0 4px 10px oklch(0% 0 0 / .28), inset 0 1px 0 oklch(100% 0 0 / .05);
     --sh-lg: 0 4px 6px oklch(0% 0 0 / .28), 0 10px 24px oklch(0% 0 0 / .36), inset 0 1px 0 oklch(100% 0 0 / .04);
+    --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);
 }
 /* Pure css HTML base elements and reset */
 /** note that some HTML tags are set in other element files **/
@@ -504,6 +535,11 @@
         margin: 0 0 .75rem 1rem;
 
         list-style: disc;
+    }
+
+    ul > li li
+    {
+        list-style: circle;
     }
 
     ol > li
@@ -2631,7 +2667,7 @@ pre
 
     .is-primary-light
     {
-        color: var(--primary-text);
+        color: var(--primary-text-element);
         border: 1px solid var(--primary-light);
         background-color: var(--primary-light);
     }
@@ -2659,7 +2695,7 @@ pre
 
     .is-secondary-light
     {
-        color: var(--secondary-text);
+        color: var(--secondary-text-element);
         border: 1px solid var(--secondary-light);
         background-color: var(--secondary-light);
     }
@@ -2688,7 +2724,7 @@ pre
 
     .is-complement-light
     {
-        color: var(--complement-text);
+        color: var(--complement-text-element);
         border: 1px solid var(--complement-light);
         background-color: var(--complement-light);
     }
@@ -2710,14 +2746,14 @@ pre
 
     .is-link
     {
-        color: var(--link-text-invert, var(--link-text-invert));
+        color: var(--link-text-invert);
         border: 1px solid var(--link);
         background-color: var(--link);
     }
 
     .is-link-light
     {
-        color: var(--link-text);
+        color: var(--link-text-element);
         border: 1px solid var(--link-light);
         background-color: var(--link-light);
     }
@@ -4832,9 +4868,12 @@ pre
         width: max-content;
         min-width: 12rem;
         max-width: 18rem;
-        padding-top: 4px;
+        padding-top: var(--pad-vert);
+        padding-bottom: var(--pad-vert);
 
-        background-color: var(--bg-main);
+        border-radius: var(--radius-comp);
+        background-color: var(--bg-component);
+        box-shadow: var(--shadow-container);
     }
 
     .dropdown:not(.is-click-open):hover .dropdown-menu,
@@ -4856,16 +4895,6 @@ pre
 
         padding-top: initial;
         padding-bottom: var(--pad-vert);
-    }
-
-    .dropdown-menu
-    {
-        padding-top: var(--pad-vert);
-        padding-bottom: var(--pad-vert);
-
-        border-radius: var(--radius-comp);
-        background-color: var(--bg-component);
-        box-shadow: var(--shadow-container);
     }
 
     .dropdown-menu p
@@ -4977,7 +5006,10 @@ pre
     {
         position: relative;
 
-        overflow: auto;
+        display: flex;
+        overflow: hidden;
+        -ms-overflow-y: visible;
+        flex-direction: column;
 
         width: 100%;
         max-height: calc(100vh - 160px);
@@ -4992,16 +5024,6 @@ pre
             max-height: calc(100vh - 40px);
             margin: 0 auto;
         }
-    }
-
-    .modal-card
-    {
-        display: flex;
-        overflow: hidden;
-        -ms-overflow-y: visible;
-        flex-direction: column;
-
-        max-height: calc(100vh - 40px);
     }
 
     .modal-card > header,
@@ -5155,8 +5177,6 @@ pre
         margin: 0;
         padding: 0 var(--pad-horz);
 
-        border-bottom: solid 2px var(--grey-light);
-
         flex-wrap: wrap;
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
@@ -5187,11 +5207,15 @@ pre
     }
 
 
-    [class*='navbar is-']
+    .navbar[class*=is-]
     {
-        height: var(--navbar-height);
-
         border-bottom: none;
+    }
+
+    .navbar:not([class*=is-])
+    {
+        border-bottom: solid 2px var(--primary);
+        background-color: var(--bg-container);
     }
 
     .navbar-left > nav > ul,
@@ -5601,7 +5625,11 @@ pre
 
     .pagination > ul > li
     {
+        margin: 0;
+
         list-style: none;
+
+        order: 3;
     }
 
     .pagination.is-centered > ul
@@ -5627,13 +5655,6 @@ pre
     .pagination.is-large
     {
         font-size: var(--size-4);
-    }
-
-    .pagination > ul > li
-    {
-        margin: 0;
-
-        order: 3;
     }
 
     .pagination > ul a
@@ -6401,12 +6422,17 @@ pre
         padding: .5em 1em;
 
         cursor: pointer;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
         text-decoration: none;
 
         color: var(--text-comp);
         border-right-width: 0;
 
         align-items: center;
+        -webkit-touch-callout: none;
     }
 
     .tabs > ul label:hover
@@ -6455,18 +6481,6 @@ pre
         top: -999em;
         left: -999em;
     }
-
-
-    .tabs > ul label
-    {
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-
-        -webkit-touch-callout: none;
-    }
-
 
     .tabs.tabs-centered > ul
     {

@@ -188,11 +188,6 @@
         --color-10: oklch(from var(--chart-color-start) l c calc(h + 9 * var(--chart-color-offset)) / var(--color-alpha));
     }
 
-    .charts-wrapper ul li
-    {
-        font-size: var(--size-7);
-    }
-
     .charts-column,
     .charts-line,
     .charts-pie,
@@ -631,6 +626,8 @@
     /* chart legend */
     .charts-wrapper ul li
     {
+        font-size: var(--size-7);
+
         display: flex;
 
         list-style: none;
@@ -1285,7 +1282,7 @@
     .gauge-ring data span:has(sup),
     .gauge-donut data span:has(sub),
     .gauge-ring data span:has(sub),
-    .gauge-meter data span:has(sub),
+    .gauge-meter data span:has(sup),
     .gauge-meter data span:has(sub)
     {
         margin-left: .5ch;
@@ -1846,6 +1843,7 @@
         transform: translate(-50%, -50%) scale(0);
 
         opacity: 0;
+        color: var(--text-comp);
         border: 0;
         border-radius: var(--radius);
         background-color: var(--bg-container);

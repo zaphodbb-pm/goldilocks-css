@@ -239,6 +239,7 @@
     --primary-dark: var(--p-700);
     --primary-darkest: var(--p-800);
     --primary-text: var(--p-700);
+    --primary-text-element: var(--p-700);
     --primary-text-invert: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
@@ -249,6 +250,7 @@
     --secondary-dark: var(--s-600);
     --secondary-darkest: var(--s-800);
     --secondary-text: var(--s-600);
+    --secondary-text-element: var(--s-600);
     --secondary-text-invert: var(--g-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
@@ -259,6 +261,7 @@
     --complement-dark: var(--c-600);
     --complement-darkest: var(--c-800);
     --complement-text: var(--c-700);
+    --complement-text-element: var(--c-700);
     --complement-text-invert: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
@@ -270,6 +273,7 @@
     --link-lightest: var(--lnk-50);
     --link-dark: var(--lnk-700);
     --link-text: var(--lnk-800);
+    --link-text-element: var(--lnk-800);
     --link-text-invert: var(--lnk-50);
     /*** define key success colours ***/
     --success: var(--ok-500);
@@ -336,91 +340,61 @@
     /*** other common variables for use in components ***/
     --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);   /**** brighten primary ****/
     --chart-color-offset: 95;                                           /**** helps build 9 other colours ****/
-    --bq-border: var(--complement-dark);                                /**** defines blockquote left border ****/
+    --bq-border: var(--primary);                                        /**** defines blockquote left border ****/
 }
 /* initial-theme-dark.css */
 
-/**  main dark theme color definitions
-use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
- **/
-
+/**  main dark theme color definitions / overrides **/
 
 .main-theme-dark
 {
-    /** build main theme colours **/
-    --primary: color-mix(in hsl, hsl(var(--primary-raw) / 100%), white 3% );
-    --secondary: color-mix(in hsl, hsl(var(--secondary-raw) / 100%), white 3% );
-    --complement: color-mix(in hsl, hsl(var(--complement-raw) / 100%), white 3% );
-    /** define text colours for main theme, adjusted for expected theme colour luminosity **/
-    --primary-text: hsl(185,65%,36%);
-    --secondary-text: hsl(37,20%,47%);
-    --complement-text: hsl(22, 82%, 47%);
-    --primary-text-invert: hsl(185, 55%, 96%);
-    --primary-text-invert-dark: hsl(185, 55%, 96%);
-    --secondary-text-invert: hsl(37, 28%, 97%);
-    --secondary-text-invert-dark: hsl(37, 28%, 97%);
-    --complement-text-invert: hsl(22, 80%, 18%);
-    --complement-text-invert-dark: hsl(22, 80%, 97%);
-    --primary-light: hsl(185,55%,94%);
-    --secondary-light: hsl(37, 24%, 92%);
-    --complement-light: hsl(22,85%,93%);
-    --primary-dark: hsl(185,65%,22%);
-    --secondary-dark: hsl(37,20%,40%);
-    --complement-dark: hsl(22,88%,40%);
-    /** define colours for links, success, warning, danger **/
-    --link: hsl(240,62%,82%);
-    --link-visited: hsl(280, 52%, 78%);
-    --link-light: hsl(240, 50%, 95%);
-    --link-dark: hsl(240, 55%, 55%);
-    --link-text: hsl(240, 55%, 65%);
-    --link-text-invert: hsl(240, 52%, 20%);
-    --link-text-invert-dark: hsl(240, 52%, 97%);
-    --success: hsl(152, 47%, 53%);
-    --success-light: hsl(152, 50%, 95%);
-    --success-dark: hsl(152, 55%, 32%);
-    --success-text: hsl(152, 70%, 19%);
-    --success-ghost: hsl( 152, 70%, 17%);
-    --success-ghost-dark: hsl(152, 47%, 97%);
-    --warning: hsl(38, 92%, 58%);
-    --warning-light: hsl(38, 88%, 95%);
-    --warning-dark: hsl(38, 90%, 32%);
-    --warning-text: hsl(38, 65%, 27%);
-    --warning-ghost: var(--black-800);
-    --warning-text-invert-dark: hsl(38, 92%, 97%);
-    --danger: hsl(4, 70%, 55%);
-    --danger-light: hsl(4, 74%, 97%);
-    --danger-dark: hsl(4, 62%, 45%);
-    --danger-text: hsl(4, 65%, 37%);
-    --danger-ghost: var(--white-10);
-    --danger-text-invert-dark: hsl(4, 70%, 97%);
-    --grey-light: hsl(0, 0%, 75%);
-    --grey-lighter: hsl(0, 0%, 85%);
-    /** invert colours for elements and components **/
-    --border-main: var(--grey);
-    --border-main-darker: var(--grey-light);
-    --bg-main: var(--black);
-    --bg-main-invert: var(--white-10);
-    --bg-grid: var(--grey-darker);
-    --bg-container: var(--black-800);
-    --bg-component: var(--black-700);
-    --bg-element: var(--grey-darker);
-    --bg-highlight: var(--warning-text);
-    --bg-hover: var(--grey-dark);
-    /** invert or adjust colours for text **/
-    --text: var(--white-100);
-    --ghost: var(--black-800);
-    --text-light: var(--grey);
-    --text-darker: var(--grey-white);
-    --text-elem: var(--white-25);
-    --text-comp: var(--white-25);
-    --ghost-ter: var(--black-800);
-    --text-code: var(--secondary-light);
-    /** Common shadow treatment for containers, components and elements **/
-    /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
-    --shadow-raw: var(--secondary-raw);
-    --shadow-container: inset 0 0 1px var(--bg-container), 0 1px 2px hsl(var(--shadow-raw) / .12), 0 2px 6px 2px hsl(var(--shadow-raw) / .15);
-    --shadow-component: inset 0 0 1px var(--bg-component), 0 1px 3px hsl(var(--shadow-raw) / .12), 0 4px 8px 3px hsl(var(--shadow-raw) / .18);
-    --shadow-element: inset 0 0 1px var(--bg-element), 0 2px 3px hsl(var(--shadow-raw) / .12), 0 6px 10px 4px hsl(var(--shadow-raw) / .21);
+    --black: var(--g-50);
+    --black-850: var(--g-100);
+    --black-800: var(--g-200);
+    --black-700: var(--g-300);
+    --grey-darker: var(--g-200);
+    --grey-dark: var(--g-300);
+    --grey: var(--g-400);
+    --grey-light: var(--g-500);
+    --grey-lighter: var(--g-600);
+    --grey-lightest: var(--g-700);
+    --grey-white: var(--g-900);
+    --white: var(--g-1k);
+    --bg-main: oklch(11.8% .022 262);
+    --bg-main-invert: var(--g-200);
+    --bg-grid: var(--g-600);
+    --bg-container: oklch(23.5% .028 182);
+    --bg-component: oklch(27.5% .030 182);
+    --bg-element: oklch(31.5% .032 182);
+    --bg-highlight: var(--warning-darkest);
+    --link: oklch(64.0% .200 225);
+    --link-visited: oklch(67.5% .165 278);
+    --primary: var(--p-400);
+    --primary-text: var(--p-400);
+    --primary-text-invert: var(--p-900);
+    --secondary: var(--s-400);
+    --secondary-text: var(--s-400);
+    --secondary-text-invert: var(--s-900);
+    --complement: var(--c-400);
+    --complement-text: var(--c-400);
+    --complement-text-invert: var(--c-900);
+    --link-text: var(--lnk-400);
+    --link-text-invert: var(--lnk-900);
+    --success-dark: var(--ok-500);
+    --text: var(--g-100);
+    --text-light: var(--g-400);
+    --text-darker: var(--g-50);
+    --text-elem: var(--g-100);
+    --text-comp: var(--g-100);
+    --text-btn-invert: var(--g-950);
+    --text-code: var(--c-400);
+    --border-main: var(--g-400);
+    --border-main-light: var(--g-300);
+    --border-main-darker: var(--g-500);
+    --sh-sm: 0 1px 2px oklch(0% 0 0 / .30), 0 2px 4px oklch(0% 0 0 / .20), inset 0 1px 0 oklch(100% 0 0 / .06);
+    --sh-md: 0 2px 3px oklch(0% 0 0 / .28), 0 4px 10px oklch(0% 0 0 / .28), inset 0 1px 0 oklch(100% 0 0 / .05);
+    --sh-lg: 0 4px 6px oklch(0% 0 0 / .28), 0 10px 24px oklch(0% 0 0 / .36), inset 0 1px 0 oklch(100% 0 0 / .04);
+    --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);
 }
 /* Pure css HTML base elements and reset */
 /** note that some HTML tags are set in other element files **/
@@ -561,6 +535,11 @@ use https://www.colorhexa.com/ or https://paletton.com/ to build  colors
         margin: 0 0 .75rem 1rem;
 
         list-style: disc;
+    }
+
+    ul > li li
+    {
+        list-style: circle;
     }
 
     ol > li
@@ -2688,7 +2667,7 @@ pre
 
     .is-primary-light
     {
-        color: var(--primary-text);
+        color: var(--primary-text-element);
         border: 1px solid var(--primary-light);
         background-color: var(--primary-light);
     }
@@ -2716,7 +2695,7 @@ pre
 
     .is-secondary-light
     {
-        color: var(--secondary-text);
+        color: var(--secondary-text-element);
         border: 1px solid var(--secondary-light);
         background-color: var(--secondary-light);
     }
@@ -2745,7 +2724,7 @@ pre
 
     .is-complement-light
     {
-        color: var(--complement-text);
+        color: var(--complement-text-element);
         border: 1px solid var(--complement-light);
         background-color: var(--complement-light);
     }
@@ -2767,14 +2746,14 @@ pre
 
     .is-link
     {
-        color: var(--link-text-invert, var(--link-text-invert));
+        color: var(--link-text-invert);
         border: 1px solid var(--link);
         background-color: var(--link);
     }
 
     .is-link-light
     {
-        color: var(--link-text);
+        color: var(--link-text-element);
         border: 1px solid var(--link-light);
         background-color: var(--link-light);
     }

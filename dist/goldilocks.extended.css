@@ -491,9 +491,12 @@
         width: max-content;
         min-width: 12rem;
         max-width: 18rem;
-        padding-top: 4px;
+        padding-top: var(--pad-vert);
+        padding-bottom: var(--pad-vert);
 
-        background-color: var(--bg-main);
+        border-radius: var(--radius-comp);
+        background-color: var(--bg-component);
+        box-shadow: var(--shadow-container);
     }
 
     .dropdown:not(.is-click-open):hover .dropdown-menu,
@@ -515,16 +518,6 @@
 
         padding-top: initial;
         padding-bottom: var(--pad-vert);
-    }
-
-    .dropdown-menu
-    {
-        padding-top: var(--pad-vert);
-        padding-bottom: var(--pad-vert);
-
-        border-radius: var(--radius-comp);
-        background-color: var(--bg-component);
-        box-shadow: var(--shadow-container);
     }
 
     .dropdown-menu p
@@ -636,7 +629,10 @@
     {
         position: relative;
 
-        overflow: auto;
+        display: flex;
+        overflow: hidden;
+        -ms-overflow-y: visible;
+        flex-direction: column;
 
         width: 100%;
         max-height: calc(100vh - 160px);
@@ -651,16 +647,6 @@
             max-height: calc(100vh - 40px);
             margin: 0 auto;
         }
-    }
-
-    .modal-card
-    {
-        display: flex;
-        overflow: hidden;
-        -ms-overflow-y: visible;
-        flex-direction: column;
-
-        max-height: calc(100vh - 40px);
     }
 
     .modal-card > header,
@@ -814,8 +800,6 @@
         margin: 0;
         padding: 0 var(--pad-horz);
 
-        border-bottom: solid 2px var(--grey-light);
-
         flex-wrap: wrap;
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
@@ -846,11 +830,15 @@
     }
 
 
-    [class*='navbar is-']
+    .navbar[class*=is-]
     {
-        height: var(--navbar-height);
-
         border-bottom: none;
+    }
+
+    .navbar:not([class*=is-])
+    {
+        border-bottom: solid 2px var(--primary);
+        background-color: var(--bg-container);
     }
 
     .navbar-left > nav > ul,
@@ -1260,7 +1248,11 @@
 
     .pagination > ul > li
     {
+        margin: 0;
+
         list-style: none;
+
+        order: 3;
     }
 
     .pagination.is-centered > ul
@@ -1286,13 +1278,6 @@
     .pagination.is-large
     {
         font-size: var(--size-4);
-    }
-
-    .pagination > ul > li
-    {
-        margin: 0;
-
-        order: 3;
     }
 
     .pagination > ul a
@@ -2060,12 +2045,17 @@
         padding: .5em 1em;
 
         cursor: pointer;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
         text-decoration: none;
 
         color: var(--text-comp);
         border-right-width: 0;
 
         align-items: center;
+        -webkit-touch-callout: none;
     }
 
     .tabs > ul label:hover
@@ -2114,18 +2104,6 @@
         top: -999em;
         left: -999em;
     }
-
-
-    .tabs > ul label
-    {
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-
-        -webkit-touch-callout: none;
-    }
-
 
     .tabs.tabs-centered > ul
     {
