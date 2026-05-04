@@ -25,7 +25,7 @@ nav: Theme Control
                     <em>OKLCH Benefit:</em> If you set two colors to `L: 55%`, they will appear to have the exact same brightness
                     to the human eye. This makes creating accessible compliant scales much easier.</li>
                 <li>
-                    <strong>Predictable Color Scales</strong> - UI creates 9-shade scales by simply adjusting the Lightness and Chroma values.
+                    <strong>Predictable Color Scales</strong> - This OKLCH-based UI creates 9-shade scales by simply adjusting the Lightness and Chroma values.
                     Because the space is uniform, a 10-point jump in lightness feels the same whether you are working with primary or secondary
                     colours. This prevents "muddy" or unexpectedly neon transitions in your UI palette.
                 </li>
@@ -33,19 +33,19 @@ nav: Theme Control
                 <li>
                     <strong>Wide-gamut color support</strong> - Modern displays (like those on MacBooks, iPhones, and high-end monitors)
                     can show more colors than the standard sRGB web palette.  OKLCH allows developers to access the
-                    <em>Display P3</em> color space safely. It enables the "vivid expression" mentioned in the CTA-400 shade
+                    <em>Display P3</em> color space safely. It enables the "vivid expression" shade
                     without clipping or distorting the color on older screens.
                 </li>
 
                 <li>
-                    <strong>Better Tinting and Mixing</strong> - UI uses a technique called Secondary-Tinted Surfaces,
-                    where backgrounds and shadows inherit a tiny amount of the 182° Teal hue. In OKLCH, you can add a precise amount
+                    <strong>Better Tinting and Mixing</strong> - This OKLCH-based UI uses a technique called Secondary-Tinted Surfaces,
+                    where backgrounds and shadows inherit a tiny amount of the secondary hue. In OKLCH, you can add a precise amount
                     of Chroma to a grey without shifting its perceived brightness. This creates the "cool and calibrated"
-                    feel of surfaces an the Elevation System.
+                    feel of elevated surfaces.
                 </li>
 
                 <li>
-                    <strong>Intuitive Math for Designers</strong> - The system defines colors by three clear coordinates:
+                    <strong>Intuitive Math for Designers</strong> - This OKLCH-based system defines colors by three clear coordinates:
                     L (Lightness): How bright is it? (0%–100%); C (Chroma): How intense/saturated is it?; H (Hue): What color is it? (0–360°).
                     This makes it easy to calculate relationships, such as the 217° separation between the Primary and CTA hues,
                     ensuring they remain visually distinct and balanced.
@@ -90,7 +90,15 @@ nav: Theme Control
             ensure that the website has the colours it needs as well as meeting accessibility requirements.
         </p>
 
+        <h3>Theme Creation</h3>
+
+        <p>Given the complexity of the work and the number of details that need to be addressed, it is often easier to use an
+            appropriate AI to help with the selection of the main psychologically based theme colours.  Below is the way that the
+            <strong>Goldilocks-CSS</strong> theme was created.  The various CSS variables can be seen at
+            <a href="{{site.url}}/pages/get-started/customization.html">Customization</a>.</p>
+
     </article>
+
 
     <div class="accordions">
 
@@ -216,15 +224,14 @@ nav: Theme Control
                 <h3>Dark Mode Strategy</h3>
 
                 <ul>
-                    <li>Surfaces shift to near-black with the same warm buff undertone as light mode, preserving brand cohesion.</li>
+                    <li>Surfaces shift to near-black with the same secondary undertone as light mode, preserving brand cohesion.</li>
                     <li>Shadows become more opaque to maintain depth against dark backgrounds.</li>
                     <li>Semantic colors shift to lighter tints to preserve vibrancy and readability.</li>
-                    <li>Supports both prefers-color-scheme and a manual toggle with localStorage persistence.</li>
                 </ul>
 
                 <h3>Grey Scale</h3>
 
-                <p>Chroma 0.005–0.014. Every grey subtly inherits secondary teal. Body text (g-800) on g-50: 17.61:1 AAA.
+                <p>Chroma 0.005–0.014. Every grey subtly inherits secondary hue. Body text (g-800) on g-50: 17.61:1 AAA.
                     Apple's macOS surface technique.</p>
 
             </div>
