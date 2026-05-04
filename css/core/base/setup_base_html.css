@@ -113,6 +113,10 @@
         margin: 0 0 0.75rem 1rem;
     }
 
+    ul > li li {
+        list-style: circle;
+    }
+
     ol > li {
         list-style: decimal;
         margin: 0 0 0.75rem 1.5rem;

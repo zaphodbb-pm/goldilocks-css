@@ -537,6 +537,11 @@
         list-style: disc;
     }
 
+    ul > li li
+    {
+        list-style: circle;
+    }
+
     ol > li
     {
         margin: 0 0 .75rem 1.5rem;
