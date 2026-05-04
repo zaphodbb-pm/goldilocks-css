@@ -28,9 +28,13 @@
     }
 
     .modal-card {
+        display: flex;
+        flex-direction: column;
+
         margin: 0 20px;
         max-height: calc(100vh - 160px);
-        overflow: auto;
+        overflow: hidden;
+        -ms-overflow-y: visible;
         position: relative;
         width: 100%;
     }
@@ -41,14 +45,6 @@
             max-height: calc(100vh - 40px);
             width: 640px;
         }
-    }
-
-    .modal-card {
-        display: flex;
-        flex-direction: column;
-        max-height: calc(100vh - 40px);
-        overflow: hidden;
-        -ms-overflow-y: visible;
     }
 
     .modal-card > header,

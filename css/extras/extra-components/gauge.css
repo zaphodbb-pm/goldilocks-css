@@ -164,7 +164,7 @@
     .gauge-ring data span:has(sup),
     .gauge-donut data span:has(sub),
     .gauge-ring data span:has(sub),
-    .gauge-meter data span:has(sub),
+    .gauge-meter data span:has(sup),
     .gauge-meter data span:has(sub) {
         margin-left: 0.5ch;
     }

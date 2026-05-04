@@ -32,7 +32,8 @@
 
     .dropdown-menu {
         display: none;
-        padding-top: 4px;
+        padding-top: var(--pad-vert);
+        padding-bottom: var(--pad-vert);
         width: max-content;
         min-width: 12rem;
         max-width: 18rem;
@@ -40,7 +41,10 @@
         left: 0;
         top: 100%;
         z-index: 40;
-        background-color: var(--bg-main);
+
+        background-color: var(--bg-component);
+        border-radius: var(--radius-comp);
+        box-shadow: var(--shadow-container);
     }
 
     .dropdown:not(.is-click-open):hover .dropdown-menu,
@@ -58,15 +62,6 @@
         padding-bottom: var(--pad-vert);
         padding-top: initial;
         top: auto;
-    }
-
-    .dropdown-menu {
-        background-color: var(--bg-component);
-        border-radius: var(--radius-comp);
-        box-shadow: var(--shadow-container);
-
-        padding-bottom: var(--pad-vert);
-        padding-top: var(--pad-vert);
     }
 
     .dropdown-menu p {

@@ -4868,9 +4868,12 @@ pre
         width: max-content;
         min-width: 12rem;
         max-width: 18rem;
-        padding-top: 4px;
+        padding-top: var(--pad-vert);
+        padding-bottom: var(--pad-vert);
 
-        background-color: var(--bg-main);
+        border-radius: var(--radius-comp);
+        background-color: var(--bg-component);
+        box-shadow: var(--shadow-container);
     }
 
     .dropdown:not(.is-click-open):hover .dropdown-menu,
@@ -4892,16 +4895,6 @@ pre
 
         padding-top: initial;
         padding-bottom: var(--pad-vert);
-    }
-
-    .dropdown-menu
-    {
-        padding-top: var(--pad-vert);
-        padding-bottom: var(--pad-vert);
-
-        border-radius: var(--radius-comp);
-        background-color: var(--bg-component);
-        box-shadow: var(--shadow-container);
     }
 
     .dropdown-menu p
@@ -5013,7 +5006,10 @@ pre
     {
         position: relative;
 
-        overflow: auto;
+        display: flex;
+        overflow: hidden;
+        -ms-overflow-y: visible;
+        flex-direction: column;
 
         width: 100%;
         max-height: calc(100vh - 160px);
@@ -5028,16 +5024,6 @@ pre
             max-height: calc(100vh - 40px);
             margin: 0 auto;
         }
-    }
-
-    .modal-card
-    {
-        display: flex;
-        overflow: hidden;
-        -ms-overflow-y: visible;
-        flex-direction: column;
-
-        max-height: calc(100vh - 40px);
     }
 
     .modal-card > header,
@@ -5639,7 +5625,11 @@ pre
 
     .pagination > ul > li
     {
+        margin: 0;
+
         list-style: none;
+
+        order: 3;
     }
 
     .pagination.is-centered > ul
@@ -5665,13 +5655,6 @@ pre
     .pagination.is-large
     {
         font-size: var(--size-4);
-    }
-
-    .pagination > ul > li
-    {
-        margin: 0;
-
-        order: 3;
     }
 
     .pagination > ul a
@@ -6439,12 +6422,17 @@ pre
         padding: .5em 1em;
 
         cursor: pointer;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
         text-decoration: none;
 
         color: var(--text-comp);
         border-right-width: 0;
 
         align-items: center;
+        -webkit-touch-callout: none;
     }
 
     .tabs > ul label:hover
@@ -6493,18 +6481,6 @@ pre
         top: -999em;
         left: -999em;
     }
-
-
-    .tabs > ul label
-    {
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-
-        -webkit-touch-callout: none;
-    }
-
 
     .tabs.tabs-centered > ul
     {
@@ -8546,11 +8522,6 @@ pre
         --color-10: oklch(from var(--chart-color-start) l c calc(h + 9 * var(--chart-color-offset)) / var(--color-alpha));
     }
 
-    .charts-wrapper ul li
-    {
-        font-size: var(--size-7);
-    }
-
     .charts-column,
     .charts-line,
     .charts-pie,
@@ -8989,6 +8960,8 @@ pre
     /* chart legend */
     .charts-wrapper ul li
     {
+        font-size: var(--size-7);
+
         display: flex;
 
         list-style: none;
@@ -9643,7 +9616,7 @@ pre
     .gauge-ring data span:has(sup),
     .gauge-donut data span:has(sub),
     .gauge-ring data span:has(sub),
-    .gauge-meter data span:has(sub),
+    .gauge-meter data span:has(sup),
     .gauge-meter data span:has(sub)
     {
         margin-left: .5ch;
