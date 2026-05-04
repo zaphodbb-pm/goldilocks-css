@@ -15,7 +15,8 @@
 
         align-items: center;
         justify-content: space-between;
-        border-bottom: solid 2px var(--grey-light);
+        border-bottom: solid 2px var(--primary);
+        background-color: var(--bg-container);
     }
 
 

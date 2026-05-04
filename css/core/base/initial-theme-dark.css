@@ -40,6 +40,7 @@
     --complement-text-invert: var(--c-900);
     --link-text: var(--lnk-400);
     --link-text-invert: var(--lnk-900);
+    --success-dark: var(--ok-500);
 
     --text: var(--g-100);
     --text-light: var(--g-400);

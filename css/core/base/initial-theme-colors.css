@@ -255,5 +255,5 @@
     --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);   /**** brighten primary ****/
     --chart-color-offset: 95;                                           /**** helps build 9 other colours ****/
 
-    --bq-border: var(--complement-dark);                                /**** defines blockquote left border ****/
+    --bq-border: var(--primary);                                        /**** defines blockquote left border ****/
 }
