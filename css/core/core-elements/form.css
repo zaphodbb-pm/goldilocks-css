@@ -430,22 +430,22 @@
     }
 
     /* adds a help icon to top right part of field */
-    .has-help-text {
+    .has-help-text, .has-help-tooltip {
         position: relative;
     }
 
-
-    .has-help-text .form-help-icon {
+    .has-help-text .form-help-icon,
+    .has-help-tooltip .form-help-icon {
         /*content:attr(data-help-icon);*/
         position: absolute;
-        height: 1em;
-        width: 1em;
-        top: -0.5rem;
-        right: -0.5rem;
+        height: 0.75em;
+        width: 0.75em;
+        top: -0.25rem;
+        right: -0.25rem;
 
         display: inline-flex;
         margin: 0;
-        padding: 0.25em;
+        padding: 0.125em;
         line-height: 0;
         justify-content: center;
         align-items: center;
@@ -478,9 +478,61 @@
     }
 
 
+    .has-help-tooltip::after {
+        background-color: var(--bg-main-invert);
+        border-radius: calc(0.5 * var(--radius));
+        bottom: 100%;
+        color: var(--bg-main);
+        content: attr(data-tooltip);
+        display: block;
+        font-size: var(--size-7);
+        font-weight: var(--weight-normal);
+        left: 50%;
+
+        opacity: 0;
+        overflow: hidden;
+        padding: .2rem .4rem;
+        pointer-events: none;
+        position: absolute;
+        text-overflow: ellipsis;
+        transform: translate(-50%, 0.5rem);
+        transition: opacity .2s, transform .2s;
+        white-space: pre;
+        max-width: 20rem;
+        z-index: 300;
+    }
+
+
+    /** default - controls tooltip going up plus arrow **/
+    .has-help-tooltip::before {
+        content: "";
+        opacity: 0;
+        position: absolute;
+        transform: translate(-50%, 0);
+        transition: opacity .2s, transform .2s;
+        top: 0;
+        left: 50%;
+
+        height: 0;
+        width: 0;
+        border-width: 0.5rem;
+        border-style: solid;
+        border-color: var(--bg-main-invert) transparent transparent transparent;
+        z-index: 300;
+    }
+
+    .has-help-tooltip:focus::after,
+    .has-help-tooltip:active::after,
+    .has-help-tooltip:hover::after,
+    .has-help-tooltip:focus::before,
+    .has-help-tooltip:active::before,
+    .has-help-tooltip:hover::before {
+        opacity: 1;
+        transform: translate(-50%, -.75rem);
+    }
+
+
     /* optional tabbed form controls */
-
-
     .form .form-tabs > input {
         display: block; /* "enable" hidden elements in IE/edge */
         position: absolute; /* then hide them off-screen */
