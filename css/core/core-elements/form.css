@@ -454,7 +454,7 @@
         border-radius: 50%;
         border: 1px solid var(--complement-text);
         cursor: pointer;
-        z-index: 1;
+        z-index: 11;
     }
 
 
@@ -501,10 +501,9 @@
         bottom: 100%;
         color: var(--secondary-dark);
         content: attr(data-tooltip);
-        display: block;
+        display: inline-block;
         font-size: var(--size-7);
         font-weight: var(--weight-normal);
-        left: 50%;
 
         opacity: 0;
         overflow: hidden;
@@ -512,10 +511,13 @@
         pointer-events: none;
         position: absolute;
         text-overflow: ellipsis;
+        overflow-wrap: break-word;
         transform: translate(-50%, 0.5rem);
         transition: opacity .2s, transform .2s;
-        white-space: pre;
-        max-width: 20rem;
+        white-space: normal;
+        max-width: 30rem;
+        line-height: 1.4;
+        width: max-content;
         z-index: 300;
     }
 
