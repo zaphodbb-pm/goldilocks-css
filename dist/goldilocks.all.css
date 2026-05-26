@@ -3429,7 +3429,7 @@ pre
         width: .75em;
         height: .75em;
         margin: 0;
-        padding: .125em;
+        padding: .25em;
 
         cursor: pointer;
 
@@ -3467,7 +3467,7 @@ pre
     }
 
 
-    .has-help-tooltip::after
+    .has-help-tooltip .form-help-icon::after
     {
         font-size: var(--size-7);
         font-weight: var(--weight-normal);
@@ -3498,7 +3498,7 @@ pre
 
 
     /** default - controls tooltip going up plus arrow **/
-    .has-help-tooltip::before
+    .has-help-tooltip .form-help-icon::before
     {
         position: absolute;
         z-index: 300;
@@ -3518,12 +3518,12 @@ pre
         border-color: var(--bg-main-invert) transparent transparent transparent;
     }
 
-    .has-help-tooltip:focus::after,
-    .has-help-tooltip:active::after,
-    .has-help-tooltip:hover::after,
-    .has-help-tooltip:focus::before,
-    .has-help-tooltip:active::before,
-    .has-help-tooltip:hover::before
+    .has-help-tooltip .form-help-icon:focus::after,
+    .has-help-tooltip .form-help-icon:active::after,
+    .has-help-tooltip .form-help-icon:hover::after,
+    .has-help-tooltip .form-help-icon:focus::before,
+    .has-help-tooltip .form-help-icon:active::before,
+    .has-help-tooltip .form-help-icon:hover::before
     {
         transform: translate(-50%, -.75rem);
 
