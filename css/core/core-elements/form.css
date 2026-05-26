@@ -477,31 +477,6 @@
     }
 
 
-    .has-help-tooltip .form-help-icon::after {
-        background-color: var(--bg-main-invert);
-        border-radius: calc(0.5 * var(--radius));
-        bottom: 100%;
-        color: var(--bg-main);
-        content: attr(data-tooltip);
-        display: block;
-        font-size: var(--size-7);
-        font-weight: var(--weight-normal);
-        left: 50%;
-
-        opacity: 0;
-        overflow: hidden;
-        padding: .2rem .4rem;
-        pointer-events: none;
-        position: absolute;
-        text-overflow: ellipsis;
-        transform: translate(-50%, 0.5rem);
-        transition: opacity .2s, transform .2s;
-        white-space: pre;
-        max-width: 20rem;
-        z-index: 300;
-    }
-
-
     /** default - controls tooltip going up plus arrow **/
     .has-help-tooltip .form-help-icon::before {
         content: "";
@@ -516,9 +491,36 @@
         width: 0;
         border-width: 0.5rem;
         border-style: solid;
-        border-color: var(--bg-main-invert) transparent transparent transparent;
+        border-color: var(--secondary-light) transparent transparent transparent;
         z-index: 300;
     }
+
+    .has-help-tooltip .form-help-icon::after {
+        background-color: var(--secondary-light);
+        border-radius: calc(0.5 * var(--radius));
+        bottom: 100%;
+        color: var(--secondary-dark);
+        content: attr(data-tooltip);
+        display: block;
+        font-size: var(--size-7);
+        font-weight: var(--weight-normal);
+        left: 50%;
+
+        opacity: 0;
+        overflow: hidden;
+        padding: 1rem 1rem;
+        pointer-events: none;
+        position: absolute;
+        text-overflow: ellipsis;
+        transform: translate(-50%, 0.5rem);
+        transition: opacity .2s, transform .2s;
+        white-space: pre;
+        max-width: 20rem;
+        z-index: 300;
+    }
+
+
+
 
     .has-help-tooltip .form-help-icon:focus::after,
     .has-help-tooltip .form-help-icon:active::after,
@@ -527,7 +529,7 @@
     .has-help-tooltip .form-help-icon:active::before,
     .has-help-tooltip .form-help-icon:hover::before {
         opacity: 1;
-        transform: translate(-50%, -.75rem);
+        transform: translate(-50%, -.5rem);
     }
 
 
