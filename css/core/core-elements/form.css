@@ -436,7 +436,6 @@
 
     .has-help-text .form-help-icon,
     .has-help-tooltip .form-help-icon {
-        /*content:attr(data-help-icon);*/
         position: absolute;
         height: 0.75em;
         width: 0.75em;

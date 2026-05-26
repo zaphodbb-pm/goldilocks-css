@@ -3418,7 +3418,6 @@ pre
     .has-help-tooltip .form-help-icon
     {
         line-height: 0;
-        /*content:attr(data-help-icon);*/
 
         position: absolute;
         z-index: 1;
