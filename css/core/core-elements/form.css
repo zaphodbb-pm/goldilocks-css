@@ -485,7 +485,7 @@
         transform: translate(-50%, 0);
         transition: opacity .2s, transform .2s;
         top: 0;
-        left: 50%;
+        right: 1em;
 
         height: 0;
         width: 0;
@@ -496,32 +496,32 @@
     }
 
     .has-help-tooltip .form-help-icon::after {
-        background-color: var(--secondary-light);
-        border-radius: calc(0.5 * var(--radius));
-        bottom: 100%;
-        color: var(--secondary-dark);
         content: attr(data-tooltip);
-        display: inline-block;
+
+        display: block;
+        border-radius: calc(0.5 * var(--radius));
+        background-color: var(--secondary-light);
+        padding: 0.5rem 1rem;
+        position: absolute;
+        bottom: 100%;
+
+        color: var(--secondary-dark);
         font-size: var(--size-7);
         font-weight: var(--weight-normal);
-
-        opacity: 0;
-        overflow: hidden;
-        padding: 1rem 1rem;
-        pointer-events: none;
-        position: absolute;
+        line-height: 1;
+        white-space: normal;
+        width: max-content;
+        max-width: 30rem;
         text-overflow: ellipsis;
         overflow-wrap: break-word;
+        overflow: hidden;
+
+        pointer-events: none;
         transform: translate(-50%, 0.5rem);
         transition: opacity .2s, transform .2s;
-        white-space: normal;
-        max-width: 30rem;
-        line-height: 1.4;
-        width: max-content;
+        opacity: 0;
         z-index: 300;
     }
-
-
 
 
     .has-help-tooltip .form-help-icon:focus::after,

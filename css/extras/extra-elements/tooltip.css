@@ -5,26 +5,30 @@
     }
 
     .tooltip::after {
+        content: attr(data-tooltip);
+
+        position: absolute;
+        display: block;
+        bottom: 100%;
+        left: 50%;
         background-color: var(--bg-main-invert);
         border-radius: calc(0.5 * var(--radius));
-        bottom: 100%;
+        padding: .2rem .4rem;
+
         color: var(--bg-main);
-        content: attr(data-tooltip);
-        display: block;
         font-size: var(--size-7);
         font-weight: var(--weight-normal);
-        left: 50%;
-
-        opacity: 0;
         overflow: hidden;
-        padding: .2rem .4rem;
-        pointer-events: none;
-        position: absolute;
         text-overflow: ellipsis;
+        white-space: normal;
+        max-width: 30ch;
+        width: max-content;
+        line-height: 1.4;
+
+        pointer-events: none;
         transform: translate(-50%, 0.5rem);
         transition: opacity .2s, transform .2s;
-        white-space: pre;
-        max-width: 20rem;
+        opacity: 0;
         z-index: 300;
     }
 

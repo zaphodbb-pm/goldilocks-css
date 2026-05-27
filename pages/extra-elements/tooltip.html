@@ -19,9 +19,8 @@ nav: Tooltips
                 See <a href="https://www.nngroup.com/articles/tooltip-guidelines/">tooltip guidelines</a> for a more detailed discussion
             </p>
 
-            <p>Multiline text can be used with <code>& #10;</code> as the HTML code for newline or \n.
-                Note that the css <code>attr()</code> function will not reparse a string value and hence the string will need
-                valid HTML codes for control characters.
+            <p>The <code>max-width</code> for the tooltip is 30 characters.
+                Multiline text will wrap to the next line. Try to keep the text short and to the point.
             </p>
 
             <p>Note: Mobile / touch devices do not respond to a <code>:hover</code> user action.
@@ -100,7 +99,7 @@ nav: Tooltips
                 </span>
 
                 <p class="tooltip"
-                      data-tooltip="This tooltip &#10; has multiline text &#10; that can be shown" role="tooltip">
+                      data-tooltip="This tooltip has multiline text that can be shown" role="tooltip">
                     .tooltip multiline
                 </p>
 
@@ -127,7 +126,7 @@ nav: Tooltips
                 &lt;/span&gt;
 
                 &lt;p class="tooltip"
-                    data-tooltip="This tooltip &#38;&#35;&#49;&#48;&#59; has multiline text &#38;&#35;&#49;&#48;&#59; that can be shown" role="tooltip" &gt;
+                    data-tooltip="This tooltip has multiline text that can be shown" role="tooltip" &gt;
                     .tooltip multiline
                 &lt;/p&gt;
 
