@@ -511,7 +511,7 @@
         line-height: 1;
         white-space: normal;
         width: max-content;
-        max-width: 30rem;
+        max-width: 20rem;
         text-overflow: ellipsis;
         overflow-wrap: break-word;
         overflow: hidden;

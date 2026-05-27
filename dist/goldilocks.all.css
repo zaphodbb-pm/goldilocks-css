@@ -3502,7 +3502,7 @@ pre
         overflow: hidden;
 
         width: max-content;
-        max-width: 30rem;
+        max-width: 20rem;
         padding: .5rem 1rem;
 
         content: attr(data-tooltip);

@@ -3408,26 +3408,26 @@ pre
     }
 
     /* adds a help icon to top right part of field */
-    .has-help-text
+    .has-help-text,
+    .has-help-tooltip
     {
         position: relative;
     }
 
-
-    .has-help-text .form-help-icon
+    .has-help-text .form-help-icon,
+    .has-help-tooltip .form-help-icon
     {
         line-height: 0;
-        /*content:attr(data-help-icon);*/
 
         position: absolute;
-        z-index: 1;
-        top: -.5rem;
-        right: -.5rem;
+        z-index: 11;
+        top: -.25rem;
+        right: -.25rem;
 
         display: inline-flex;
 
-        width: 1em;
-        height: 1em;
+        width: .75em;
+        height: .75em;
         margin: 0;
         padding: .25em;
 
@@ -3467,9 +3467,74 @@ pre
     }
 
 
+    /** default - controls tooltip going up plus arrow **/
+    .has-help-tooltip .form-help-icon::before
+    {
+        position: absolute;
+        z-index: 300;
+        top: 0;
+        right: 1em;
+
+        width: 0;
+        height: 0;
+
+        content: '';
+        transition: opacity .2s, transform .2s;
+        transform: translate(-50%, 0);
+
+        opacity: 0;
+        border-width: .5rem;
+        border-style: solid;
+        border-color: var(--secondary-light) transparent transparent transparent;
+    }
+
+    .has-help-tooltip .form-help-icon::after
+    {
+        font-size: var(--size-7);
+        font-weight: var(--weight-normal);
+        line-height: 1;
+
+        position: absolute;
+        z-index: 300;
+        bottom: 100%;
+
+        display: block;
+        overflow: hidden;
+
+        width: max-content;
+        max-width: 20rem;
+        padding: .5rem 1rem;
+
+        content: attr(data-tooltip);
+        transition: opacity .2s, transform .2s;
+        transform: translate(-50%, .5rem);
+        white-space: normal;
+        text-overflow: ellipsis;
+        pointer-events: none;
+
+        opacity: 0;
+        color: var(--secondary-dark);
+        border-radius: calc(.5 * var(--radius));
+        background-color: var(--secondary-light);
+
+        overflow-wrap: break-word;
+    }
+
+
+    .has-help-tooltip .form-help-icon:focus::after,
+    .has-help-tooltip .form-help-icon:active::after,
+    .has-help-tooltip .form-help-icon:hover::after,
+    .has-help-tooltip .form-help-icon:focus::before,
+    .has-help-tooltip .form-help-icon:active::before,
+    .has-help-tooltip .form-help-icon:hover::before
+    {
+        transform: translate(-50%, -.5rem);
+
+        opacity: 1;
+    }
+
+
     /* optional tabbed form controls */
-
-
     .form .form-tabs > input
     {
         position: absolute; /* then hide them off-screen */
