@@ -508,7 +508,7 @@
         color: var(--secondary-dark);
         font-size: var(--size-7);
         font-weight: var(--weight-normal);
-        line-height: 1;
+        line-height: 1.4;
         white-space: normal;
         width: max-content;
         max-width: 20rem;

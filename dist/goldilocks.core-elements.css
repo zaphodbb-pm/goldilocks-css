@@ -3492,7 +3492,7 @@ pre
     {
         font-size: var(--size-7);
         font-weight: var(--weight-normal);
-        line-height: 1;
+        line-height: 1.4;
 
         position: absolute;
         z-index: 300;
