@@ -430,12 +430,7 @@
     }
 
     /* adds a help icon to top right part of field */
-    .has-help-text, .has-help-tooltip {
-        position: relative;
-    }
-
-    .has-help-text .form-help-icon,
-    .has-help-tooltip .form-help-icon {
+    .form .form-help-icon {
         position: absolute;
         height: 0.75em;
         width: 0.75em;
@@ -458,27 +453,8 @@
     }
 
 
-    .has-help-text > p {
-        margin-top: -1.5rem;
-        margin-left: 1rem;
-        margin-bottom: 1rem;
-        font-size: var(--size-7);
-        display: none;
-    }
-
-    .has-help-text .form-help-icon:hover + p {
-        display: block;
-    }
-
-
-    .field-group .has-help-text > p {
-        margin-top: 0;
-        margin-left: 1rem;
-    }
-
-
     /** default - controls tooltip going up plus arrow **/
-    .has-help-tooltip .form-help-icon::before {
+    .form .form-help-icon::before {
         content: "";
         opacity: 0;
         position: absolute;
@@ -495,7 +471,7 @@
         z-index: 300;
     }
 
-    .has-help-tooltip .form-help-icon::after {
+    .form .form-help-icon::after {
         content: attr(data-tooltip);
 
         display: block;
@@ -523,13 +499,12 @@
         z-index: 300;
     }
 
-
-    .has-help-tooltip .form-help-icon:focus::after,
-    .has-help-tooltip .form-help-icon:active::after,
-    .has-help-tooltip .form-help-icon:hover::after,
-    .has-help-tooltip .form-help-icon:focus::before,
-    .has-help-tooltip .form-help-icon:active::before,
-    .has-help-tooltip .form-help-icon:hover::before {
+    .form .form-help-icon:focus::after,
+    .form .form-help-icon:active::after,
+    .form .form-help-icon:hover::after,
+    .form .form-help-icon:focus::before,
+    .form .form-help-icon:active::before,
+    .form .form-help-icon:hover::before {
         opacity: 1;
         transform: translate(-50%, -.5rem);
     }

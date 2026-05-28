@@ -181,35 +181,21 @@ nav: Form
                     <textarea rows="3" placeholder="Text area input" name="textarea_field"></textarea>
                 </label>
 
-                <div class="has-help-text">
-                    <label>
-                        <span>Text Area</span>
-                        <textarea rows="3" placeholder="Text area input" name="textarea_field"></textarea>
-                    </label>
-
-                    <span class="form-help-icon" aria-describedby="text-area-help">?</span>
-                    <p id="text-area-help">Help text for this field.</p>
-                </div>
+                <label>
+                    <span>Text Area</span>
+                    <textarea rows="3" placeholder="Text area input" name="textarea_field"></textarea>
+                    <span class="form-help-icon" data-tooltip="Help text for this field." role="tooltip">?</span>
+                </label>
 
                 <label>
-                    <span>Switch</span>
+                    <span>Switch with Tooltip Help</span>
                     <span class="switch">
                         <input type="checkbox">
                         <span>Toggle Switch Value</span>
                     </span>
+
+                    <span class="form-help-icon" data-tooltip="Field help text and what to expect. Plus some more longer text." role="tooltip">?</span>
                 </label>
-
-                <div class="has-help-tooltip">
-                    <label>
-                        <span>Switch with Tooltip Help</span>
-                        <span class="switch">
-                            <input type="checkbox">
-                            <span>Toggle Switch Value</span>
-                        </span>
-                    </label>
-
-                    <span class="form-help-icon" data-tooltip="Field help text and what to expect. &#10; Plus some more longer text." role="tooltip">?</span>
-                </div>
 
                 <label>
                     <span>Select</span>
@@ -316,35 +302,20 @@ nav: Form
                             &lt;textarea rows="3" placeholder="Text area input" name="textarea_field"&gt;&lt;/textarea&gt;
                         &lt;/label&gt;
 
-                        &lt;div class="has-help-text"&gt;
-                            &lt;label&gt;
-                                &lt;span&gt;Text Area&lt;/span&gt;
-                                &lt;textarea rows="3" placeholder="Text area input" name="textarea_field" &gt;&lt;/textarea&gt;
-                            &lt;/label&gt;
-
-                             &lt;span class="form-help-icon" aria-describedby="text-area-help"&gt;?&lt;/span&gt;
-                            &lt;p id="text-area-help"&gt;Help text for this field.&lt;/p&gt;
-                        &lt;/div&gt;
-
                         &lt;label&gt;
-                            &lt;span&gt;Switch&lt;/span&gt;
-                            &lt;span class="switch"&gt;
-                                &lt;input type="checkbox"&gt;
-                                &lt;span&gt;Toggle Switch Value&lt;/span&gt;
-                            &lt;/span&gt;
+                            &lt;span&gt;Text Area&lt;/span&gt;
+                            &lt;textarea rows="3" placeholder="Text area input" name="textarea_field" &gt;&lt;/textarea&gt;
+                            &lt;span class="form-help-icon" data-tooltip="Help text for this field." role="tooltip"&gt;?&lt;/span&gt;
                         &lt;/label&gt;
-                
-                    &lt;div class="has-help-tooltip"&gt;
+
                         &lt;label&gt;
                             &lt;span&gt;Switch with Tooltip Help&lt;/span&gt;
                             &lt;span class="switch"&gt;
                                 &lt;input type="checkbox"&gt;
                                 &lt;span&gt;Toggle Switch Value&lt;/span&gt;
                             &lt;/span&gt;
+                            &lt;span class="form-help-icon" data-tooltip="Field help text and what to expect. Plus some more longer text." role="tooltip"&gt;?&lt;/span&gt;
                         &lt;/label&gt;
-
-                        &lt;span class="form-help-icon" data-tooltip="Field help text and what to expect. &#10; Plus some more longer text." role="tooltip"&gt;?&lt;/span&gt;
-                    &lt;/div&gt;
 
                         &lt;label&gt;
                             &lt;span&gt;Select&lt;/span&gt;
