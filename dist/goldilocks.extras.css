@@ -1047,7 +1047,7 @@
         padding: 0 .4rem;
 
         content: attr(data-content);
-        transform: translateY(-.85rem);
+        transform: translateY(-1rem);
 
         color: var(--text-light);
         background-color: inherit;
@@ -2753,6 +2753,7 @@
     {
         font-size: var(--size-7);
         font-weight: var(--weight-normal);
+        line-height: 1.4;
 
         position: absolute;
         z-index: 300;
@@ -2762,13 +2763,14 @@
         display: block;
         overflow: hidden;
 
-        max-width: 20rem;
+        width: max-content;
+        max-width: 30ch;
         padding: .2rem .4rem;
 
         content: attr(data-tooltip);
         transition: opacity .2s, transform .2s;
         transform: translate(-50%, .5rem);
-        white-space: pre;
+        white-space: normal;
         text-overflow: ellipsis;
         pointer-events: none;
 

@@ -9424,7 +9424,7 @@ pre
         padding: 0 .4rem;
 
         content: attr(data-content);
-        transform: translateY(-.85rem);
+        transform: translateY(-1rem);
 
         color: var(--text-light);
         background-color: inherit;

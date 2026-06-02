@@ -46,7 +46,7 @@
         display: inline-block;
         font-size: 0.9rem;
         padding: 0 .4rem;
-        transform: translateY(-.85rem);
+        transform: translateY(-1rem);
     }
 
     .divider-vert::before {
