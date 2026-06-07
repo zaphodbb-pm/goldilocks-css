@@ -264,10 +264,6 @@
         flex-basis: auto;
     }
 
-    .form .has-field-addons > button {
-        border: 1px solid transparent;
-    }
-
 
     .form .has-field-addons > :first-child {
         border-top-left-radius: var(--radius-elem);
