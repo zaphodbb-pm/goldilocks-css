@@ -226,11 +226,11 @@
     }
 
     .form input:invalid {
-        border: 2px solid red;
+        border: 2px solid var(--danger) !important;
     }
 
     .form input:valid {
-        border: 2px solid green;
+        border: 2px solid var(--success) !important;
     }
 
     .form .has-field-addons {
