@@ -265,7 +265,7 @@
     }
 
     .form .has-field-addons > button {
-        border: 1px solid currentColor;
+        border: 1px solid transparent;
     }
 
     .form .has-field-addons > :first-child {
