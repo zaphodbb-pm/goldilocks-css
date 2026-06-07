@@ -189,6 +189,11 @@
         align-items: center;
     }
 
+    .form fieldset .form-help-icon {
+        top:-1.5rem;
+        right: -.5rem;
+    }
+
 
     .form label input:focus-visible,
     .form label textarea:focus-visible,
@@ -257,6 +262,10 @@
         display: flex;
         align-items: center;
         flex-basis: auto;
+    }
+
+    .form .has-field-addons > button {
+        border: 1px solid currentColor;
     }
 
     .form .has-field-addons > :first-child {
