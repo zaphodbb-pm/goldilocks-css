@@ -422,6 +422,13 @@
         text-rendering: optimizeLegibility;
     }
 
+    *,
+    *::before,
+    *::after
+    {
+        box-sizing: border-box;
+    }
+
     /** set display environment */
     body
     {
