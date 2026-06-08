@@ -461,7 +461,7 @@
         color: var(--complement-text);
         background-color: var(--form-background-color);
         border-radius: 50%;
-        border: 1px solid var(--complement-text);
+        border: 1px solid var(--complement-text) !important;
         cursor: pointer;
         z-index: 11;
     }

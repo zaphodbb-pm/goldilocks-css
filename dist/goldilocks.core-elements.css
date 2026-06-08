@@ -3444,7 +3444,7 @@ pre
         cursor: pointer;
 
         color: var(--complement-text);
-        border: 1px solid var(--complement-text);
+        border: 1px solid var(--complement-text) !important;
         border-radius: 50%;
         background-color: var(--form-background-color);
 
