@@ -120,10 +120,11 @@
 
     .navbar .dropdown .dropdown-trigger > button:first-child,
     .navbar .dropdown .dropdown-trigger > .button:first-child {
-        height: 100%;
+        height: calc(100% - 1px);
         border-radius: unset;
         padding-left: 0.25rem;
         padding-right: 2.25rem;
+        border-bottom: none;
     }
 
     .navbar .dropdown .dropdown-trigger > button:not(.no-chevron):first-child::after,

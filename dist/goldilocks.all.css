@@ -4452,7 +4452,7 @@ pre
         display: flex;
         overflow: hidden;
 
-        width: calc(100% - var(--padding-normal) - 3em);
+        width: 100%;
         margin: 0;
         padding: var(--padding-normal) 3em var(--padding-normal) var(--padding-normal);
 
@@ -5370,10 +5370,11 @@ pre
     .navbar .dropdown .dropdown-trigger > button:first-child,
     .navbar .dropdown .dropdown-trigger > .button:first-child
     {
-        height: 100%;
+        height: calc(100% - 1px);
         padding-right: 2.25rem;
         padding-left: .25rem;
 
+        border-bottom: none;
         border-radius: unset;
     }
 

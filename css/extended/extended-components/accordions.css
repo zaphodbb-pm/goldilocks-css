@@ -20,7 +20,7 @@
         color: var(--text-comp);
         font-weight: var(--weight-medium);
 
-        width: calc(100% - var(--padding-normal) - 3em);
+        width: 100%;
         border-radius: var(--radius-comp);
         border: none;
         list-style: none;
