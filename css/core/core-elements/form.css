@@ -446,8 +446,8 @@
     /* adds a help icon to top right part of field */
     .form .form-help-icon {
         position: absolute;
-        height: 0.75em;
-        width: 0.75em;
+        height: 1.5em;
+        width: 1.5em;
         top: -0.75rem;
         right: -0.25rem;
 
