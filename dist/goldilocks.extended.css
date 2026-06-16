@@ -1281,7 +1281,8 @@
         font-size: var(--size-4);
     }
 
-    .pagination > ul a
+    .pagination > ul a,
+    .pagination > ul button
     {
         display: inline-flex;
 
@@ -1302,29 +1303,34 @@
         align-items: center;
     }
 
-    .pagination.is-rounded > ul a
+    .pagination.is-rounded > ul a,
+    .pagination.is-rounded > ul button
     {
         border-radius: 9999px;
     }
 
-    .pagination > ul a:hover
+    .pagination > ul a:hover,
+    .pagination > ul button:hover
     {
         color: var(--text-darker);
         border-color: var(--link);
         background-color: var(--bg-component);
     }
 
-    .pagination > ul a:focus
+    .pagination > ul a:focus,
+    .pagination > ul button:focus
     {
         border-color: var(--link-dark);
     }
 
-    .pagination > ul a:active
+    .pagination > ul a:active,
+    .pagination > ul button:active
     {
         box-shadow: inset 0 1px 2px rgba(10, 10, 10, .2);
     }
 
-    .pagination > ul a[disabled]
+    .pagination > ul a[disabled],
+    .pagination > ul button[disabled]
     {
         opacity: .5;
         color: var(--text-light);
@@ -1334,7 +1340,8 @@
     }
 
 
-    .pagination > ul a.is-current
+    .pagination > ul a.is-current,
+    .pagination > ul button.is-current
     {
         color: var(--link-text-invert);
         border-color: var(--link);
@@ -1385,7 +1392,9 @@
         }
 
         .pagination > ul li.next a,
-        .pagination > ul li.prev a
+        .pagination > ul li.next button,
+        .pagination > ul li.prev a,
+        .pagination > ul li.prev button
         {
             width: 100%;
             margin: 0;
