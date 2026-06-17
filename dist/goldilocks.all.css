@@ -5718,11 +5718,16 @@ pre
     .pagination > ul a,
     .pagination > ul button
     {
+        font-size: inherit;
+        font-weight: var(--weight-normal);
+        line-height: 1;
+
         display: inline-flex;
 
         min-width: 2.5em;
         height: 2.5em;
         margin: 0 var(--mar-horz);
+        padding: .5rem;
 
         cursor: pointer;
         text-decoration: none;
@@ -5730,7 +5735,7 @@ pre
         color: var(--text);
         border: 1px solid var(--border-main-darker);
         border-radius: var(--radius);
-        background-color: var(--bg-elevated-2);
+        background-color: var(--bg-main);
         box-shadow: var(--shadow-container);
 
         -webkit-appearance: none;

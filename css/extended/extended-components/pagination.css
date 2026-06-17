@@ -46,10 +46,15 @@
         justify-content: center;
         align-items: center;
 
+
         color: var(--text);
+        font-weight: var(--weight-normal);
+        font-size: inherit;
+        line-height: 1;
         cursor: pointer;
-        background-color: var(--bg-elevated-2);
+        background-color: var(--bg-main);
         margin: 0 var(--mar-horz);
+        padding: 0.5rem;
 
         height: 2.5em;
         min-width: 2.5em;
