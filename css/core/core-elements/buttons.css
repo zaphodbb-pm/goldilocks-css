@@ -35,10 +35,6 @@
         color: inherit;
     }
 
-    .button:disabled, button:disabled {
-        cursor: not-allowed;
-    }
-
 
     /** colour schemes **/
 
@@ -350,7 +346,6 @@
     .button[disabled] {
         opacity: 0.6;
         cursor: not-allowed;
-        pointer-events: none;
     }
 
 

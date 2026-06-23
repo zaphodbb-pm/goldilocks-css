@@ -1987,12 +1987,6 @@ pre
         color: inherit;
     }
 
-    .button:disabled,
-    button:disabled
-    {
-        cursor: not-allowed;
-    }
-
 
     /** colour schemes **/
 
@@ -2366,7 +2360,6 @@ pre
     .button[disabled]
     {
         cursor: not-allowed;
-        pointer-events: none;
 
         opacity: .6;
     }
