@@ -242,7 +242,7 @@
     --primary-text-element: var(--p-700);
     --primary-text-invert: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
-    --primary-hover-text: var(--p-50);
+    --primary-hover-text: var(--p-100);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
     /*** define secondary usage variables ***/
     --secondary: var(--s-500);
@@ -254,7 +254,7 @@
     --secondary-text-element: var(--s-600);
     --secondary-text-invert: var(--g-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
-    --secondary-hover-text: var(--g-600);
+    --secondary-hover-text: var(--g-900);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
     /*** define complement / cta usage variables ***/
     --complement: var(--c-500);
@@ -266,7 +266,7 @@
     --complement-text-element: var(--c-700);
     --complement-text-invert: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
-    --complement-hover-text: var(--c-600);
+    --complement-hover-text: var(--c-900);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
     /*** define key link colours ***/
     --link: var(--lnk-600);
