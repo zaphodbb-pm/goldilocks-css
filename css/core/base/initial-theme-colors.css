@@ -137,7 +137,7 @@
     --primary-text-element: var(--p-700);
     --primary-text-invert: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
-    --primary-hover-text: var(--p-100);
+    --primary-hover-text: var(--p-200);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
 
 
