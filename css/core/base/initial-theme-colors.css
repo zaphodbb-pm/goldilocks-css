@@ -137,6 +137,7 @@
     --primary-text-element: var(--p-700);
     --primary-text-invert: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
+    --primary-hover-text: var(--p-50);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
 
 
@@ -150,6 +151,7 @@
     --secondary-text-element: var(--s-600);
     --secondary-text-invert: var(--g-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
+    --secondary-hover-text: var(--g-600);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
 
 
@@ -163,6 +165,7 @@
     --complement-text-element: var(--c-700);
     --complement-text-invert: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
+    --complement-hover-text: var(--c-600);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
 
 

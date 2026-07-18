@@ -114,6 +114,7 @@
     .button.button-primary:not(.has-no-hover):hover {
         background-color: var(--primary-hover);
         border: 1px solid var(--primary-hover);
+        color: var(--primary-hover-text);
     }
 
     button.button-primary:not(.has-no-hover):active,
@@ -179,6 +180,7 @@
     .button.button-secondary:not(.has-no-hover):hover {
         background-color: var(--secondary-hover);
         border: 1px solid var(--secondary-hover);
+        color: var(--secondary-hover-text);
     }
 
     button.button-secondary:not(.has-no-hover):active,
@@ -246,6 +248,7 @@
     .button.button-complement:not(.has-no-hover):hover {
         background-color: var(--complement-hover);
         border: 1px solid var(--complement-hover);
+        color: var(--complement-hover-text);
     }
 
     button.button-complement:not(.has-no-hover):active,
