@@ -39,6 +39,29 @@
         width: 100%;
     }
 
+    dialog.modal-card:not([open]) {
+        display: none;
+    }
+
+    dialog.modal-card {
+        border: none;
+        padding: 0;
+        background: transparent;
+        color: inherit;
+        margin: auto;
+        width: calc(100vw - 40px);
+    }
+
+    @media screen and (min-width: 640px) {
+        dialog.modal-card {
+            width: 640px;
+        }
+    }
+
+    dialog.modal-card::backdrop {
+        background-color: rgba(10, 10, 10, 0.6);
+    }
+
     @media screen and (min-width: 640px) {
         .modal-card {
             margin: 0 auto;

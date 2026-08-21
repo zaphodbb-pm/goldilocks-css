@@ -5081,6 +5081,35 @@ pre
         margin: 0 20px;
     }
 
+    dialog.modal-card:not([open])
+    {
+        display: none;
+    }
+
+    dialog.modal-card
+    {
+        width: calc(100vw - 40px);
+        margin: auto;
+        padding: 0;
+
+        color: inherit;
+        border: none;
+        background: transparent;
+    }
+
+    @media screen and (min-width: 640px)
+    {
+        dialog.modal-card
+        {
+            width: 640px;
+        }
+    }
+
+    dialog.modal-card::backdrop
+    {
+        background-color: rgba(10, 10, 10, .6);
+    }
+
     @media screen and (min-width: 640px)
     {
         .modal-card
