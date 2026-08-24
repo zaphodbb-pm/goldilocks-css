@@ -8779,13 +8779,9 @@ pre
         height: 100%;
         margin: var(--bar-buffer-td) 0;
 
-        border-spacing: 0;
-
         text-align: end;
 
         color: transparent;
-        border-top-right-radius: var(--radius-elem);
-        border-bottom-right-radius: var(--radius-elem);
     }
 
     .charts-bar tbody tr td::after

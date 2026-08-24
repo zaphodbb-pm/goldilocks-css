@@ -143,11 +143,6 @@
         width: calc(100% * var(--td-value, 1) / var(--chart-max));
         height: 100%;
         text-align: end;
-
-        border-top-right-radius: var(--radius-elem);
-        border-bottom-right-radius: var(--radius-elem);
-        border-spacing: 0;
-
         color: transparent;
     }
 
