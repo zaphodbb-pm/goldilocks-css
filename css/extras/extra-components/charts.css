@@ -166,16 +166,16 @@
         --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
         --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
 
-        display: inline-block;
         position: relative;
         margin: 0 0;
         width: 100%;
         height: 100%;
-
-        text-align: center;
         color: transparent;
-
         background-color: transparent;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
     }
 
 
@@ -317,7 +317,7 @@
 
     .charts-bar.show-values tbody tr td span {
         position: absolute;
-        margin-left: 0.5rem;
+        right: -2rem;
 
         font-size: 0.8rem;
         font-weight: bold;
