@@ -8998,8 +8998,6 @@ pre
 
         margin-left: .5rem;
 
-        text-align: end;
-
         color: var(--text);
     }
 
@@ -9134,7 +9132,6 @@ pre
     }
 
     .charts-column.show-grid tbody,
-    .charts-bar.show-grid tbody,
     .charts-line.show-grid tbody
     {
         border-right: solid 1px var(--border-main);
@@ -9142,6 +9139,15 @@ pre
         border-left: solid 1px var(--border-main);
         background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
         background-size: 100% 20%;
+    }
+
+    .charts-bar.show-grid tbody
+    {
+        border-top: solid 1px var(--border-main);
+        border-bottom: solid 1px var(--border-main);
+        border-left: solid 1px var(--border-main);
+        background-image: linear-gradient(to right, var(--border-main) 1px, transparent 1px);
+        background-size: 20% 100%;
     }
 
     .charts-column.show-grid tbody tr td,

@@ -317,7 +317,6 @@
 
     .charts-bar.show-values tbody tr td span {
         position: absolute;
-        text-align: end;
         margin-left: 0.5rem;
 
         font-size: 0.8rem;
@@ -432,7 +431,6 @@
     }
 
     .charts-column.show-grid tbody,
-    .charts-bar.show-grid tbody,
     .charts-line.show-grid tbody {
         border-left: solid 1px var(--border-main);
         border-right: solid 1px var(--border-main);
@@ -440,6 +438,15 @@
 
         background-size: 100% 20%;
         background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
+    }
+
+    .charts-bar.show-grid tbody{
+        border-top: solid 1px var(--border-main);
+        border-left: solid 1px var(--border-main);
+        border-bottom: solid 1px var(--border-main);
+
+        background-size: 20% 100%;
+        background-image: linear-gradient(to right, var(--border-main) 1px, transparent 1px);
     }
 
     .charts-column.show-grid tbody tr td,
