@@ -9118,7 +9118,9 @@ pre
     {
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: -.5ch;
+
+        height: calc(100% - var(--caption-size));
     }
 
     .charts-bar.show-labels thead tr

@@ -421,8 +421,9 @@
 
     .charts-bar.show-labels thead {
         position: absolute;
-        left: 0;
+        left: -0.5ch;
         bottom: 0;
+        height: calc(100% - var(--caption-size));
     }
 
     .charts-bar.show-labels thead tr {
