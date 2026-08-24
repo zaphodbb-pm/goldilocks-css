@@ -9144,8 +9144,8 @@ pre
     .charts-bar.show-grid tbody
     {
         border-top: solid 1px var(--border-main);
+        border-right: solid 1px var(--border-main);
         border-bottom: solid 1px var(--border-main);
-        border-left: solid 1px var(--border-main);
         background-image: linear-gradient(to right, var(--border-main) 1px, transparent 1px);
         background-size: 20% 100%;
     }
@@ -9154,11 +9154,6 @@ pre
     .charts-line.show-grid tbody tr td
     {
         bottom: 1px;
-    }
-
-    .charts-bar.show-grid tbody tr td
-    {
-        right: 1px;
     }
 
 
