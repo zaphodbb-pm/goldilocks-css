@@ -51,7 +51,6 @@
 
     /* main graph */
     .charts-column tbody,
-    .charts-bar tbody,
     .charts-line tbody,
     .charts-pie tbody,
     .charts-donut tbody {
@@ -59,6 +58,12 @@
         height: calc(100% - var(--labels-size) - var(--caption-size));
         width: 100%;
         bottom: var(--labels-size);
+    }
+
+    .charts-bar tbody {
+        position: absolute;
+        height: calc(100% - var(--caption-size));
+        width: 100%;
     }
 
     .charts-column tbody tr,
