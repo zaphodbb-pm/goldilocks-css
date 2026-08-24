@@ -562,6 +562,14 @@
 
 
     /* support multiple bars per category */
+    .charts-bar.show-grid.multiple tbody {
+        width:100%;
+    }
+
+    .charts-bar.show-grid.multiple tbody tr td{
+        width: calc(100% * var(--td-value, 1) / var(--chart-max));
+    }
+
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 1) td:after {
         top: 0;
