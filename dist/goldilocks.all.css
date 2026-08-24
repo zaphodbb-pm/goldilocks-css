@@ -8779,13 +8779,13 @@ pre
 
         display: inline-block;
 
-        width: calc(100% * var(--td-value, 1) / var(--chart-max) - var(--grid-offset));
+        width: calc(100% * var(--td-value, 1) / var(--chart-max));
         height: 100%;
         margin: var(--bar-buffer-td) 0;
 
         border-spacing: 0;
 
-        text-align: center;
+        text-align: end;
 
         color: transparent;
         border-top-right-radius: var(--radius-elem);
@@ -9003,12 +9003,10 @@ pre
         font-weight: bold;
 
         position: absolute;
-        top: -1.5rem;
-        right: 0;
 
-        width: 100%;
+        margin-left: .5rem;
 
-        text-align: center;
+        text-align: end;
 
         color: var(--text);
     }
