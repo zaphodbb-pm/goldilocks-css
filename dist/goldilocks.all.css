@@ -9073,7 +9073,6 @@ pre
     }
 
     .charts-column.show-labels,
-    .charts-bar.show-labels,
     .charts-line.show-labels
     {
         --labels-size: 3rem;
@@ -9114,7 +9113,23 @@ pre
         margin-inline-end: .25rem;
     }
 
+    .charts-bar.show-labels thead
+    {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .charts-bar.show-labels thead tr th
+    {
+        margin: 0;
+    }
+
     .charts-column.show-labels thead tr th:first-child,
+    .charts-bar.show-labels thead tr th:first-child,
     .charts-line.show-labels thead tr th:first-child
     {
         position: absolute;
