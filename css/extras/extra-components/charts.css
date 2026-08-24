@@ -31,12 +31,14 @@
         --labels-size: 0rem;
         --caption-size: 0rem;
         --grid-offset: 1px;
-        --column-buffer-td: 0.5rem;
-        --bar-buffer-td: 0.5rem;
-        --column-buffer: 0.25rem;
-        --bar-buffer: 0.25rem;
+
         --column-count: 1;
+        --column-buffer-td: 0.5rem;
+        --column-buffer: 0.25rem;
+
         --bar-count: 1;
+        --bar-buffer: 0.25rem;
+        --bar-buffer-td: 0.5rem;
 
         width: 100%;
         height: calc(100% - var(--caption-size));
@@ -63,8 +65,9 @@
 
     .charts-bar tbody {
         position: absolute;
+        left: var(--bar-label-width, 0);
         height: calc(100% - var(--caption-size));
-        width: 100%;
+        width: calc(100% - var(--bar-label-width, 0));
     }
 
     .charts-column tbody tr,
@@ -417,11 +420,14 @@
     }
 
     .charts-bar.show-labels thead {
-        display: flex;
-        flex-direction: column;
         position: absolute;
         left: 0;
         bottom: 0;
+    }
+
+    .charts-bar.show-labels thead tr {
+        display: flex;
+        flex-direction: column;
     }
 
     .charts-bar.show-labels thead tr th {

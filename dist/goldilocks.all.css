@@ -8654,12 +8654,12 @@ pre
         --labels-size: 0rem;
         --caption-size: 0rem;
         --grid-offset: 1px;
-        --column-buffer-td: .5rem;
-        --bar-buffer-td: .5rem;
-        --column-buffer: .25rem;
-        --bar-buffer: .25rem;
         --column-count: 1;
+        --column-buffer-td: .5rem;
+        --column-buffer: .25rem;
         --bar-count: 1;
+        --bar-buffer: .25rem;
+        --bar-buffer-td: .5rem;
     }
 
 
@@ -8679,8 +8679,9 @@ pre
     .charts-bar tbody
     {
         position: absolute;
+        left: var(--bar-label-width, 0);
 
-        width: 100%;
+        width: calc(100% - var(--bar-label-width, 0));
         height: calc(100% - var(--caption-size));
     }
 
@@ -9118,7 +9119,10 @@ pre
         position: absolute;
         bottom: 0;
         left: 0;
+    }
 
+    .charts-bar.show-labels thead tr
+    {
         display: flex;
         flex-direction: column;
     }
