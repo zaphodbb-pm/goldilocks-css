@@ -428,10 +428,12 @@
     .charts-bar.show-labels thead tr {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
     }
 
     .charts-bar.show-labels thead tr th {
-        margin: 0;
+        margin: var(--bar-buffer-td) 0;
     }
 
     .charts-column.show-labels thead tr th:first-child,
