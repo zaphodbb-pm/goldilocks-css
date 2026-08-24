@@ -8697,9 +8697,10 @@ pre
     .charts-bar tbody tr
     {
         position: absolute;
-        bottom: 0;
+        left: 0;
 
         display: flex;
+        flex-direction: column;
 
         width: 100%;
         height: 100%;
@@ -8707,7 +8708,7 @@ pre
         flex-basis: 0;
         flex-grow: 1;
         flex-shrink: 1;
-        align-items: flex-end;
+        align-items: flex-start;
         justify-content: space-evenly;
     }
 
