@@ -32,6 +32,7 @@
         --caption-size: 0rem;
         --grid-offset: 1px;
         --column-buffer-td: 0.5rem;
+        --bar-buffer-td: 0.5rem;
         --column-buffer: 0.25rem;
         --bar-buffer: 0.25rem;
         --column-count: 1;
@@ -142,7 +143,7 @@
     .charts-bar tbody tr td {
         display: inline-block;
         position: relative;
-        margin: 0 var(--column-buffer-td);
+        margin: var(--bar-buffer-td) 0;
         width: calc(100% * var(--td-value, 1) / var(--chart-max) - var(--grid-offset));
         height: 100%;
         text-align: center;
@@ -436,11 +437,13 @@
 
     /* graph grid lines */
     .charts-column.show-grid,
+    .charts-bar.show-grid,
     .charts-line.show-grid {
         --grid-offset: 2px;
     }
 
     .charts-column.show-grid tbody,
+    .charts-bar.show-grid tbody,
     .charts-line.show-grid tbody {
         border-left: solid 1px var(--border-main);
         border-right: solid 1px var(--border-main);
@@ -453,6 +456,10 @@
     .charts-column.show-grid tbody tr td,
     .charts-line.show-grid tbody tr td {
         bottom: 1px;
+    }
+
+    .charts-bar.show-grid tbody tr td {
+        right: 1px;
     }
 
 
