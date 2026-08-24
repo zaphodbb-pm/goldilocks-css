@@ -137,12 +137,13 @@
 
     /** row specific layout **/
     .charts-bar tbody tr td {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
         position: relative;
         margin: var(--bar-buffer-td) 0;
         width: calc(100% * var(--td-value, 1) / var(--chart-max));
         height: 100%;
-        text-align: end;
+
         color: transparent;
     }
 
