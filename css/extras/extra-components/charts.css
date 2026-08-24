@@ -33,7 +33,9 @@
         --grid-offset: 1px;
         --column-buffer-td: 0.5rem;
         --column-buffer: 0.25rem;
+        --bar-buffer: 0.25rem;
         --column-count: 1;
+        --bar-count: 1;
 
         width: 100%;
         height: calc(100% - var(--caption-size));
@@ -528,6 +530,68 @@
     .charts-column.multiple tbody tr:nth-child(10n + 10) td:after {
         left: calc(9 * 100% / var(--column-count));
         width: calc(100% / var(--column-count) - var(--column-buffer));
+    }
+
+
+    /* support multiple bars per category */
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 1) td:after {
+        top: 0;
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 2) td:after {
+        top: calc(100% / var(--bar-count));
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 3) td:after {
+        top: calc(2 * 100% / var(--bar-count));
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 4) td:after {
+        top: calc(3 * 100% / var(--bar-count));
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 5) td:after {
+        top: calc(4 * 100% / var(--bar-count));
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 6) td:after {
+        top: calc(5 * 100% / var(--bar-count));
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 7) td:after {
+        top: calc(6 * 100% / var(--bar-count));
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 8) td:after {
+        top: calc(7 * 100% / var(--bar-count));
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 9) td:after {
+        top: calc(8 * 100% / var(--bar-count));
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 10) td:after {
+        top: calc(9 * 100% / var(--bar-count));
+        height: calc(100% / var(--bar-count) - var(--bar-buffer));
     }
 
 
