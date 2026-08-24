@@ -24,6 +24,7 @@
     }
 
     .charts-column,
+    .charts-bar,
     .charts-line,
     .charts-pie,
     .charts-donut {
@@ -48,6 +49,7 @@
 
     /* main graph */
     .charts-column tbody,
+    .charts-bar tbody,
     .charts-line tbody,
     .charts-pie tbody,
     .charts-donut tbody {
@@ -72,10 +74,29 @@
         height: 100%;
     }
 
+    .charts-bar tbody tr {
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
     .charts-column tbody tr th,
     .charts-line tbody tr th,
     .charts-pie tbody tr th,
     .charts-donut tbody tr th {
+        position: absolute;
+        left: -200vh;
+    }
+
+    .charts-bar tbody tr th {
         position: absolute;
         left: -200vh;
     }
@@ -108,6 +129,33 @@
         border-top-right-radius: var(--radius-comp);
     }
 
+
+    /** row specific layout **/
+    .charts-bar tbody tr td {
+        display: inline-block;
+        position: relative;
+        margin: 0 var(--column-buffer-td);
+        width: calc(100% * var(--td-value, 1) / var(--chart-max) - var(--grid-offset));
+        height: 100%;
+        text-align: center;
+
+        border-top-right-radius: var(--radius-elem);
+        border-bottom-right-radius: var(--radius-elem);
+        border-spacing: 0;
+
+        color: transparent;
+    }
+
+    .charts-bar tbody tr td::after {
+        content: "";
+        background-color: var(--color-1);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        border-top-right-radius: var(--radius-comp);
+        border-bottom-right-radius: var(--radius-comp);
+    }
 
     /** line chart specific layout **/
     .charts-line tbody {
@@ -267,6 +315,18 @@
         color: var(--text)
     }
 
+    .charts-bar.show-values tbody tr td span {
+        position: absolute;
+        right: 0;
+        top: -1.5rem;
+        text-align: center;
+        width: 100%;
+
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: var(--text)
+    }
+
     .charts-line.show-values tbody tr td span {
         left: unset;
         right: calc(50% - 1ch);
@@ -288,6 +348,7 @@
 
     /* table caption */
     .charts-column caption,
+    .charts-bar caption,
     .charts-line caption,
     .charts-pie caption,
     .charts-donut caption {
@@ -295,6 +356,7 @@
     }
 
     .charts-column.show-caption,
+    .charts-bar.show-caption,
     .charts-line.show-caption,
     .charts-pie.show-caption,
     .charts-donut.show-caption {
@@ -302,6 +364,7 @@
     }
 
     .charts-column.show-caption caption,
+    .charts-bar.show-caption caption,
     .charts-line.show-caption caption,
     .charts-pie.show-caption caption,
     .charts-donut.show-caption caption {
@@ -315,6 +378,7 @@
 
     /* x-axis labels */
     .charts-column thead,
+    .charts-bar thead,
     .charts-line thead,
     .charts-pie thead,
     .charts-donut thead {
@@ -323,6 +387,7 @@
     }
 
     .charts-column.show-labels,
+    .charts-bar.show-labels,
     .charts-line.show-labels {
         --labels-size: 3rem;
     }
@@ -468,7 +533,9 @@
 
     /* colours for multi-column work */
     .charts-column.multiple tbody tr:nth-child(10n + 1) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 1) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:after,
     .charts-wrapper ul li:nth-child(10n + 1):before {
@@ -482,7 +549,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 2) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 2) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:after,
     .charts-wrapper ul li:nth-child(10n + 2):before {
@@ -496,7 +565,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 3) td:after,
-    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 3):after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 3) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 3)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 3)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:after,
     .charts-wrapper ul li:nth-child(10n + 3):before {
@@ -510,7 +581,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 4) td:after,
-    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 4):after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 4) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 4)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 4)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:after,
     .charts-wrapper ul li:nth-child(10n + 4):before {
@@ -524,7 +597,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 5) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 5) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:after,
     .charts-wrapper ul li:nth-child(10n + 5):before {
@@ -538,7 +613,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 6) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 6) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:after,
     .charts-wrapper ul li:nth-child(10n + 6):before {
@@ -552,7 +629,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 7) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 7) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:after,
     .charts-wrapper ul li:nth-child(10n + 7):before {
@@ -566,6 +645,8 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 8) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 8) td:after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:after,
@@ -580,6 +661,8 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 9) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 9) td:after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:after,
@@ -594,6 +677,8 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 10) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 10) td:after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:after,
