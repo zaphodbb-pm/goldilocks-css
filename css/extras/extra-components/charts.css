@@ -85,11 +85,7 @@
     .charts-bar tbody tr {
         display: flex;
         flex-direction: column;
-        flex-basis: 0;
-        flex-grow: 1;
-        flex-shrink: 1;
         align-items: flex-start;
-        justify-content: space-evenly;
         position: absolute;
         left: 0;
 
