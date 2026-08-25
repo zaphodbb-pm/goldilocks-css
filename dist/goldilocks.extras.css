@@ -189,6 +189,7 @@
     }
 
     .charts-column,
+    .charts-bar,
     .charts-line,
     .charts-pie,
     .charts-donut
@@ -209,9 +210,11 @@
         --labels-size: 0rem;
         --caption-size: 0rem;
         --grid-offset: 1px;
+        --item-count: 1;
         --column-buffer-td: .5rem;
         --column-buffer: .25rem;
-        --column-count: 1;
+        --bar-buffer: .25rem;
+        --bar-buffer-td: .5rem;
     }
 
 
@@ -226,6 +229,15 @@
 
         width: 100%;
         height: calc(100% - var(--labels-size) - var(--caption-size));
+    }
+
+    .charts-bar tbody
+    {
+        position: absolute;
+        left: calc(var(--bar-label-width, 0) + .75rem);
+
+        width: calc(100% - var(--bar-label-width, 0));
+        height: calc(100% - var(--caption-size));
     }
 
     .charts-column tbody tr,
@@ -246,10 +258,30 @@
         justify-content: space-evenly;
     }
 
+    .charts-bar tbody tr
+    {
+        position: absolute;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100%;
+
+        align-items: flex-start;
+    }
+
     .charts-column tbody tr th,
     .charts-line tbody tr th,
     .charts-pie tbody tr th,
     .charts-donut tbody tr th
+    {
+        position: absolute;
+        left: -200vh;
+    }
+
+    .charts-bar tbody tr th
     {
         position: absolute;
         left: -200vh;
@@ -292,6 +324,37 @@
     }
 
 
+    /** row specific layout **/
+    .charts-bar tbody tr td
+    {
+        position: relative;
+
+        display: inline-flex;
+
+        width: calc(100% * var(--td-value, 1) / var(--chart-max));
+        height: 100%;
+        margin: var(--bar-buffer-td) 0;
+
+        color: transparent;
+
+        align-items: center;
+    }
+
+    .charts-bar tbody tr td::after
+    {
+        position: absolute;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        content: '';
+
+        border-top-right-radius: var(--radius-comp);
+        border-bottom-right-radius: var(--radius-comp);
+        background-color: var(--color-1);
+    }
+
     /** line chart specific layout **/
     .charts-line tbody
     {
@@ -302,19 +365,19 @@
     {
         position: relative;
 
-        display: inline-block;
+        display: inline-flex;
 
         width: 100%;
         height: 100%;
         margin: 0 0;
-
-        text-align: center;
 
         color: transparent;
         background-color: transparent;
 
         --start: calc(var(--td-start) / var(--chart-max)); /* normalize starting point */
         --size: calc(var(--td-value) / var(--chart-max)); /* normalize value point */
+        align-items: center;
+        justify-content: flex-end;
     }
 
 
@@ -482,6 +545,17 @@
         color: var(--text);
     }
 
+    .charts-bar.show-values tbody tr td span
+    {
+        font-size: .8rem;
+        font-weight: bold;
+
+        position: absolute;
+        right: -2rem;
+
+        color: var(--text);
+    }
+
     .charts-line.show-values tbody tr td span
     {
         z-index: 3;
@@ -510,6 +584,7 @@
 
     /* table caption */
     .charts-column caption,
+    .charts-bar caption,
     .charts-line caption,
     .charts-pie caption,
     .charts-donut caption
@@ -518,6 +593,7 @@
     }
 
     .charts-column.show-caption,
+    .charts-bar.show-caption,
     .charts-line.show-caption,
     .charts-pie.show-caption,
     .charts-donut.show-caption
@@ -526,6 +602,7 @@
     }
 
     .charts-column.show-caption caption,
+    .charts-bar.show-caption caption,
     .charts-line.show-caption caption,
     .charts-pie.show-caption caption,
     .charts-donut.show-caption caption
@@ -542,6 +619,7 @@
 
     /* x-axis labels */
     .charts-column thead,
+    .charts-bar thead,
     .charts-line thead,
     .charts-pie thead,
     .charts-donut thead
@@ -591,7 +669,39 @@
         margin-inline-end: .25rem;
     }
 
+    .charts-bar.show-labels thead
+    {
+        position: absolute;
+        bottom: 0;
+        left: -.5ch;
+
+        height: calc(100% - var(--caption-size) - var(--bar-buffer-td));
+    }
+
+    .charts-bar.show-labels.multiple thead
+    {
+        height: calc(100% - var(--caption-size));
+        padding: var(--bar-buffer-td) 0;
+    }
+
+    .charts-bar.show-labels thead tr
+    {
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .charts-bar.show-labels thead tr th
+    {
+        margin: var(--bar-buffer-td) 0;
+    }
+
     .charts-column.show-labels thead tr th:first-child,
+    .charts-bar.show-labels thead tr th:first-child,
     .charts-line.show-labels thead tr th:first-child
     {
         position: absolute;
@@ -601,6 +711,7 @@
 
     /* graph grid lines */
     .charts-column.show-grid,
+    .charts-bar.show-grid,
     .charts-line.show-grid
     {
         --grid-offset: 2px;
@@ -614,6 +725,15 @@
         border-left: solid 1px var(--border-main);
         background-image: linear-gradient(var(--border-main) 1px, transparent 1px);
         background-size: 100% 20%;
+    }
+
+    .charts-bar.show-grid tbody
+    {
+        border-top: solid 1px var(--border-main);
+        border-right: solid 1px var(--border-main);
+        border-bottom: solid 1px var(--border-main);
+        background-image: linear-gradient(to right, var(--border-main) 1px, transparent 1px);
+        background-size: 10% 100%;
     }
 
     .charts-column.show-grid tbody tr td,
@@ -658,85 +778,183 @@
     {
         left: 0;
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 2) td:after
     {
-        left: calc(100% / var(--column-count));
+        left: calc(100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 3) td:after
     {
-        left: calc(2 * 100% / var(--column-count));
+        left: calc(2 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 4) td:after
     {
-        left: calc(3 * 100% / var(--column-count));
+        left: calc(3 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 5) td:after
     {
-        left: calc(4 * 100% / var(--column-count));
+        left: calc(4 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 6) td:after
     {
-        left: calc(5 * 100% / var(--column-count));
+        left: calc(5 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 7) td:after
     {
-        left: calc(6 * 100% / var(--column-count));
+        left: calc(6 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 8) td:after
     {
-        left: calc(7 * 100% / var(--column-count));
+        left: calc(7 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 9) td:after
     {
-        left: calc(8 * 100% / var(--column-count));
+        left: calc(8 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 10) td:after
     {
-        left: calc(9 * 100% / var(--column-count));
+        left: calc(9 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
+    }
+
+
+    /* support multiple bars per category */
+    .charts-bar.multiple thead
+    {
+        justify-content: space-evenly;
+    }
+    .charts-bar.multiple tbody
+    {
+        width: stretch;
+    }
+
+    .charts-bar.multiple tbody tr td
+    {
+        width: calc(100% * var(--td-value, 1) / var(--chart-max));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 1) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 1) td:after
+    {
+        top: 0;
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 2) td:after
+    {
+        top: calc(100% / var(--item-count));
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 3) td:after
+    {
+        top: calc(2 * 100% / var(--item-count));
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 4) td:after
+    {
+        top: calc(3 * 100% / var(--item-count));
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 5) td:after
+    {
+        top: calc(4 * 100% / var(--item-count));
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 6) td:after
+    {
+        top: calc(5 * 100% / var(--item-count));
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 7) td:after
+    {
+        top: calc(6 * 100% / var(--item-count));
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 8) td:after
+    {
+        top: calc(7 * 100% / var(--item-count));
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 9) td:after
+    {
+        top: calc(8 * 100% / var(--item-count));
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
+    }
+
+    .charts-bar.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
+    .charts-bar.multiple tbody tr:nth-child(10n + 10) td:after
+    {
+        top: calc(9 * 100% / var(--item-count));
+
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
 
     /* colours for multi-column work */
     .charts-column.multiple tbody tr:nth-child(10n + 1) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 1) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 1)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 1) td:after,
     .charts-wrapper ul li:nth-child(10n + 1):before
@@ -752,7 +970,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 2) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 2) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 2)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 2) td:after,
     .charts-wrapper ul li:nth-child(10n + 2):before
@@ -768,7 +988,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 3) td:after,
-    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 3):after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 3) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 3)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 3)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 3) td:after,
     .charts-wrapper ul li:nth-child(10n + 3):before
@@ -784,7 +1006,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 4) td:after,
-    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 4):after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 4) td:after,
+    .charts-column.unique-colors tbody tr td:nth-of-type(10n + 4)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 4)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 4) td:after,
     .charts-wrapper ul li:nth-child(10n + 4):before
@@ -800,7 +1024,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 5) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 5) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 5)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 5) td:after,
     .charts-wrapper ul li:nth-child(10n + 5):before
@@ -816,7 +1042,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 6) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 6) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 6)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 6) td:after,
     .charts-wrapper ul li:nth-child(10n + 6):before
@@ -832,7 +1060,9 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 7) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 7) td:after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 7)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 7) td:after,
     .charts-wrapper ul li:nth-child(10n + 7):before
@@ -848,6 +1078,8 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 8) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 8) td:after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 8)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 8) td:after,
@@ -864,6 +1096,8 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 9) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 9) td:after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 9)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 9) td:after,
@@ -880,6 +1114,8 @@
 
 
     .charts-column.multiple tbody tr:nth-child(10n + 10) td:after,
+    .charts-bar.multiple tbody tr:nth-child(10n + 10) td:after,
+    .charts-bar.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
     .charts-column.unique-colors tbody tr td:nth-of-type(10n + 10)::after,
     .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:before,
     .charts-line.multiple tbody tr:nth-of-type(10n + 10) td:after,
