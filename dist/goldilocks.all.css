@@ -9293,12 +9293,16 @@ pre
 
 
     /* support multiple bars per category */
-    .charts-bar.show-grid.multiple tbody
+    .charts-bar.multiple thead
     {
-        width: 100%;
+        justify-content: space-evenly;
+    }
+    .charts-bar.multiple tbody
+    {
+        width: stretch;
     }
 
-    .charts-bar.show-grid.multiple tbody tr td
+    .charts-bar.multiple tbody tr td
     {
         width: calc(100% * var(--td-value, 1) / var(--chart-max));
     }
