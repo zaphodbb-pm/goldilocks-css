@@ -34,8 +34,8 @@ nav: Charts
                 When using pure CSS, data value extraction and computation capability are limited.  Consequently, we need to use
                 the <code>style</code> attribute to build local scoped variables that can then be used in the CSS file to calculate
                 the required controls.  The local variable <code>--chart-max</code> is used to normalize the data values to stay
-                within the range of [0,1]. The variable <code>--column-count</code> is used as divisor to adjust column width
-                for multi-column groups per category. The variable <code>--bar-count</code> is used as divisor to adjust row width
+                within the range of [0,1]. The variable <code>--item-count</code> is used as divisor to adjust column width
+                for multi-column groups per category. The variable <code>--item-count</code> is used as divisor to adjust row width
                 for multi-bar groups per category. Multi-columns / multi-bar groups in a category are achieved by adding rows of data
                 values (including the row heading).
             </p>
@@ -191,13 +191,13 @@ nav: Charts
                 </tr>
 
                 <tr>
-                    <td><code>--column-count</code></td>
+                    <td><code>--item-count</code></td>
                     <td>When using <code>.multiple</code> columns per category, set this variable to the number of rows.
                         This adjusts the width and spacing of the columns in a label category.</td>
                 </tr>
 
                 <tr>
-                    <td><code>--bar-count</code></td>
+                    <td><code>--item-count</code></td>
                     <td>When using <code>.multiple</code> bars per category, set this variable to the number of rows.
                         This adjusts the height and spacing of the bars in a label category.</td>
                 </tr>
@@ -225,7 +225,7 @@ nav: Charts
 
                 <tr>
                     <td>Variables From HTML:</td>
-                    <td>--bar-count, --bar-label-width, --chart-max, --column-count, --td-start, --td-value</td>
+                    <td> --bar-label-width, --chart-max, --item-count, --td-start, --td-value</td>
                 </tr>
 
                 <tr>
@@ -622,7 +622,7 @@ nav: Charts
 
             <div class="charts-wrapper has-height-20rem">
                 <table class="charts-column  show-caption show-labels show-grid multiple"
-                       style="--chart-max: 100; --column-count: 4">
+                       style="--chart-max: 100; --item-count: 4">
                     <caption>Item Comparison in a Category</caption>
                     <thead>
                     <tr>
@@ -682,7 +682,7 @@ nav: Charts
             <pre><code class="language-html">
                 &lt;div class="charts-wrapper has-height-20rem"&gt;
                     &lt;table class="charts-column  show-caption show-labels show-grid multiple"
-                           style="--chart-max: 100; --column-count: 4"&gt;
+                           style="--chart-max: 100; --item-count: 4"&gt;
                         &lt;caption&gt;Item Comparison in a Category&lt;/caption&gt;
 
                         &lt;thead&gt;
@@ -756,9 +756,9 @@ nav: Charts
     <div class="row">
         <div class="column">
 
-            <div class="charts-wrapper has-height-20rem">
+            <div class="charts-wrapper has-height-25rem">
                 <table class="charts-bar  show-caption show-labels show-grid multiple"
-                       style="--chart-max: 100; --bar-count: 4; --bar-label-width:5ch">
+                       style="--chart-max: 100; --item-count: 4; --bar-label-width:5ch">
                     <caption>Item Comparison in a Category</caption>
                     <thead>
                     <tr>
@@ -818,7 +818,7 @@ nav: Charts
             <pre><code class="language-html">
                 &lt;div class="charts-wrapper has-height-20rem"&gt;
                     &lt;table class="charts-bar  show-caption show-labels show-grid multiple"
-                           style="--chart-max: 100; --column-count: 4"&gt;
+                           style="--chart-max: 100; --item-count: 4"&gt;
                         &lt;caption&gt;Item Comparison in a Category&lt;/caption&gt;
 
                         &lt;thead&gt;
@@ -891,7 +891,7 @@ nav: Charts
 
             <div class="charts-wrapper has-height-20rem">
                 <table class="charts-line show-caption show-labels show-grid multiple"
-                       style="--chart-max: 100; --column-count: 1">
+                       style="--chart-max: 100; --item-count: 1">
                     <caption>Multiple Lines example</caption>
 
                     <thead>
@@ -952,7 +952,7 @@ nav: Charts
             <pre><code class="language-html">
                 &lt;div class="charts-wrapper has-height-20rem"&gt;
                     &lt;table class="charts-line show-caption show-labels show-grid multiple"
-                           style="--chart-max: 100; --column-count: 1"&gt;
+                           style="--chart-max: 100; --item-count: 1"&gt;
                         &lt;caption&gt;Multiple Lines example&lt;/caption&gt;
 
                         &lt;thead&gt;

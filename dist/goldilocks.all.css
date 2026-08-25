@@ -8654,10 +8654,9 @@ pre
         --labels-size: 0rem;
         --caption-size: 0rem;
         --grid-offset: 1px;
-        --column-count: 1;
+        --item-count: 1;
         --column-buffer-td: .5rem;
         --column-buffer: .25rem;
-        --bar-count: 1;
         --bar-buffer: .25rem;
         --bar-buffer-td: .5rem;
     }
@@ -8679,7 +8678,7 @@ pre
     .charts-bar tbody
     {
         position: absolute;
-        left: var(--bar-label-width, 0);
+        left: calc(var(--bar-label-width, 0) + .75rem);
 
         width: calc(100% - var(--bar-label-width, 0));
         height: calc(100% - var(--caption-size));
@@ -9172,7 +9171,7 @@ pre
         border-right: solid 1px var(--border-main);
         border-bottom: solid 1px var(--border-main);
         background-image: linear-gradient(to right, var(--border-main) 1px, transparent 1px);
-        background-size: 20% 100%;
+        background-size: 10% 100%;
     }
 
     .charts-column.show-grid tbody tr td,
@@ -9217,79 +9216,79 @@ pre
     {
         left: 0;
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 2) td:after
     {
-        left: calc(100% / var(--column-count));
+        left: calc(100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 3) td:after
     {
-        left: calc(2 * 100% / var(--column-count));
+        left: calc(2 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 4) td:after
     {
-        left: calc(3 * 100% / var(--column-count));
+        left: calc(3 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 5) td:after
     {
-        left: calc(4 * 100% / var(--column-count));
+        left: calc(4 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 6) td:after
     {
-        left: calc(5 * 100% / var(--column-count));
+        left: calc(5 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 7) td:after
     {
-        left: calc(6 * 100% / var(--column-count));
+        left: calc(6 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 8) td:after
     {
-        left: calc(7 * 100% / var(--column-count));
+        left: calc(7 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 9) td:after
     {
-        left: calc(8 * 100% / var(--column-count));
+        left: calc(8 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
     .charts-column.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
     .charts-column.multiple tbody tr:nth-child(10n + 10) td:after
     {
-        left: calc(9 * 100% / var(--column-count));
+        left: calc(9 * 100% / var(--item-count));
 
-        width: calc(100% / var(--column-count) - var(--column-buffer));
+        width: calc(100% / var(--item-count) - var(--column-buffer));
     }
 
 
@@ -9309,79 +9308,79 @@ pre
     {
         top: 0;
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 2) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 2) td:after
     {
-        top: calc(100% / var(--bar-count));
+        top: calc(100% / var(--item-count));
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 3) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 3) td:after
     {
-        top: calc(2 * 100% / var(--bar-count));
+        top: calc(2 * 100% / var(--item-count));
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 4) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 4) td:after
     {
-        top: calc(3 * 100% / var(--bar-count));
+        top: calc(3 * 100% / var(--item-count));
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 5) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 5) td:after
     {
-        top: calc(4 * 100% / var(--bar-count));
+        top: calc(4 * 100% / var(--item-count));
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 6) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 6) td:after
     {
-        top: calc(5 * 100% / var(--bar-count));
+        top: calc(5 * 100% / var(--item-count));
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 7) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 7) td:after
     {
-        top: calc(6 * 100% / var(--bar-count));
+        top: calc(6 * 100% / var(--item-count));
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 8) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 8) td:after
     {
-        top: calc(7 * 100% / var(--bar-count));
+        top: calc(7 * 100% / var(--item-count));
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 9) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 9) td:after
     {
-        top: calc(8 * 100% / var(--bar-count));
+        top: calc(8 * 100% / var(--item-count));
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
     .charts-bar.multiple.show-values tbody tr:nth-child(10n + 10) td::before,
     .charts-bar.multiple tbody tr:nth-child(10n + 10) td:after
     {
-        top: calc(9 * 100% / var(--bar-count));
+        top: calc(9 * 100% / var(--item-count));
 
-        height: calc(100% / var(--bar-count) - var(--bar-buffer));
+        height: calc(100% / var(--item-count) - var(--bar-buffer));
     }
 
 
