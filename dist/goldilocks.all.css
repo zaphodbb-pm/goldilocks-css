@@ -9119,6 +9119,11 @@ pre
         bottom: 0;
         left: -.5ch;
 
+        height: calc(100% - var(--caption-size) - var(--bar-buffer-td));
+    }
+
+    .charts-bar.show-labels.multiple thead
+    {
         height: calc(100% - var(--caption-size));
     }
 
@@ -9131,6 +9136,11 @@ pre
 
         justify-content: space-between;
         align-items: flex-end;
+    }
+
+    .charts-bar.show-labels.multiple thead tr
+    {
+        justify-content: space-evenly;
     }
 
     .charts-bar.show-labels thead tr th
