@@ -6,6 +6,12 @@ const autoprefixer = require('gulp-autoprefixer');
 const concat = require("gulp-concat");
 const csso = require('gulp-csso');
 
+const minifyCss = () => csso({
+    comments: false,
+    forceMediaMerge: true,
+    restructure: true
+});
+
 function buildCore() {
     console.log("Building Core");
     return gulpit
@@ -18,7 +24,7 @@ function buildCore() {
         .pipe(concat("goldilocks.core.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
-        .pipe(csso())
+        .pipe(minifyCss())
         .pipe(rename({
             suffix: '.min'
         }))
@@ -38,7 +44,7 @@ function buildCoreElements() {
         .pipe(concat("goldilocks.core-elements.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
-        .pipe(csso())
+        .pipe(minifyCss())
         .pipe(rename({
             suffix: '.min'
         }))
@@ -53,7 +59,7 @@ function buildExtended() {
         .pipe(concat("goldilocks.extended.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
-        .pipe(csso())
+        .pipe(minifyCss())
         .pipe(rename({
             suffix: '.min'
         }))
@@ -68,7 +74,7 @@ function buildExtras() {
         .pipe(concat("goldilocks.extras.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
-        .pipe(csso())
+        .pipe(minifyCss())
         .pipe(rename({
             suffix: '.min'
         }))
@@ -89,7 +95,7 @@ function buildCoreExtended() {
         .pipe(concat("goldilocks.core-extended.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
-        .pipe(csso())
+        .pipe(minifyCss())
         .pipe(rename({
             suffix: '.min'
         }))
@@ -111,7 +117,7 @@ function buildAll() {
         .pipe(concat("goldilocks.all.css"))
         .pipe(csscomb())
         .pipe(gulpit.dest('./dist'))
-        .pipe(csso())
+        .pipe(minifyCss())
         .pipe(rename({
             suffix: '.min'
         }))
