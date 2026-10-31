@@ -32,7 +32,7 @@
         align-items: center;
 
         position: relative;
-        height: var(--navbar-height);
+        height: 100%;
         margin: 0;
         padding: 0;
     }

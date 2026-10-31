@@ -5295,7 +5295,7 @@ pre
 
         display: flex;
 
-        height: var(--navbar-height);
+        height: 100%;
         margin: 0;
         padding: 0;
 
@@ -10902,7 +10902,6 @@ pre
         z-index: var(--widget-z);
 
         display: flex;
-        /*width: calc(100% - 2 * var(--pad-horz));*/
 
         width: 100%;
         height: var(--widgetbar-height);

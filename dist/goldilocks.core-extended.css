@@ -5295,7 +5295,7 @@ pre
 
         display: flex;
 
-        height: var(--navbar-height);
+        height: 100%;
         margin: 0;
         padding: 0;
 
