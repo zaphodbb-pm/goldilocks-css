@@ -5,6 +5,7 @@
         margin: 0;
         padding: 0 var(--pad-horz);
         height: var(--navbar-height);
+        width: 100%;
         max-width: 100%;
         z-index: var(--navbar-z);
 
@@ -27,7 +28,7 @@
         row-gap: var(--gap-row);
 
         font-size: var(--size-7);
-        font-weight: var(--weight-semibold);
+        font-weight: var(--weight-medium);
         align-items: center;
 
         position: relative;
@@ -125,6 +126,13 @@
         padding-left: 0.25rem;
         padding-right: 2.25rem;
         border-bottom: none;
+    }
+
+    .navbar .dropdown .dropdown-trigger button,
+    .navbar .dropdown .dropdown-trigger .button {
+        color: inherit;
+        background-color: inherit;
+        border-color: transparent;
     }
 
     .navbar .dropdown .dropdown-trigger > button:not(.no-chevron):first-child::after,

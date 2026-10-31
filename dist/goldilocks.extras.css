@@ -2445,8 +2445,9 @@
         z-index: var(--widget-z);
 
         display: flex;
+        /*width: calc(100% - 2 * var(--pad-horz));*/
 
-        width: calc(100% - 2 * var(--pad-horz));
+        width: 100%;
         height: var(--widgetbar-height);
         padding: 0 var(--pad-horz);
 

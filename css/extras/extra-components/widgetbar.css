@@ -8,7 +8,8 @@
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
 
-        width: calc(100% - 2 * var(--pad-horz));
+        /*width: calc(100% - 2 * var(--pad-horz));*/
+        width: 100%;
         height: var(--widgetbar-height);
         padding: 0 var(--pad-horz);
         z-index: var(--widget-z);
