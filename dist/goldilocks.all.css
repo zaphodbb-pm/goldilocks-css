@@ -5368,7 +5368,7 @@ pre
     {
         display: flex;
 
-        height: var(--navbar-height);
+        height: calc(var(--navbar-height) - 2px);
         padding: 0 var(--pad-vert);
 
         text-decoration: none;
@@ -5399,7 +5399,7 @@ pre
     {
         display: flex;
 
-        height: var(--navbar-height);
+        height: calc(var(--navbar-height) - 2px);
 
         align-items: center;
     }
@@ -5412,7 +5412,7 @@ pre
     .navbar .dropdown .dropdown-trigger > button:first-child,
     .navbar .dropdown .dropdown-trigger > .button:first-child
     {
-        height: calc(100% - 1px);
+        height: calc(100% - 2px);
         padding-right: 2.25rem;
         padding-left: .25rem;
 

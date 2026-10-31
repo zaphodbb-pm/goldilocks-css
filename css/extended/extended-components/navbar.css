@@ -92,7 +92,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: var(--navbar-height);
+        height: calc(var(--navbar-height) - 2px);
     }
 
     .navbar-center > nav > ul > li > a:not(.button):hover,
@@ -112,7 +112,7 @@
     .navbar .dropdown {
         align-items: center;
         display: flex;
-        height: var(--navbar-height);
+        height: calc(var(--navbar-height) - 2px);
     }
 
     .navbar .dropdown .dropdown-trigger {
@@ -121,7 +121,7 @@
 
     .navbar .dropdown .dropdown-trigger > button:first-child,
     .navbar .dropdown .dropdown-trigger > .button:first-child {
-        height: calc(100% - 1px);
+        height: calc(100% - 2px);
         border-radius: unset;
         padding-left: 0.25rem;
         padding-right: 2.25rem;
