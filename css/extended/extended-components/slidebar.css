@@ -122,6 +122,7 @@
     .sidebarMenuInner a.icon-nav-horz,
     .sidebarMenuInner .sidebar-block a.icon-nav-horz [class*=icon-bg-] {
         margin-left: 0;
+        padding-right: calc(var(--pad-horz) - 2px);
     }
 
     .sidebarMenuInner a.is-active,
