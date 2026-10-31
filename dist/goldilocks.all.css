@@ -6209,8 +6209,6 @@ pre
 
         transition: transform 250ms ease-in-out;
         transform: translateX(-30rem);
-
-        background: var(--bg-component);
     }
 
     .sidebarMenuInner
@@ -6221,12 +6219,12 @@ pre
         overflow: hidden;
         flex-direction: column;
 
+        width: max-content;
         margin: 0;
         padding: var(--padding-medium) 0 var(--padding-medium) var(--padding-medium);
 
         border-top: 1px solid rgba(255, 255, 255, .10);
-        background: var(--bg-container);
-        background-color: var(--bg-element);
+        background-color: var(--bg-container);
 
         row-gap: .5rem;
         justify-content: flex-start;
@@ -6265,16 +6263,8 @@ pre
     .sidebarMenuInner a.is-active,
     .sidebarMenuInner a:hover
     {
-        width: 100%;
-        padding-right: calc(.5rem - 2px);
-
         border-right: 2px solid var(--link);
-        background-color: var(--bg-component);
-    }
-
-    .sidebarMenuInner .sidenavs a.is-active
-    {
-        width: auto;
+        background-color: var(--bg-element);
     }
 
     /* Content area for block of links */
