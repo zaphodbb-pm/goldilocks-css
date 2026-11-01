@@ -6049,7 +6049,7 @@ pre
         padding-right: calc(var(--pad-horz) - 2px);
 
         border-right: 2px solid var(--link);
-        background-color: var(--link-light);
+        background-color: var(--link-lightest);
     }
 
     .sidenav-block > label:hover
