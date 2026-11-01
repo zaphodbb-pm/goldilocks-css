@@ -78,8 +78,8 @@
     .sidebarMenu {
         position: absolute;
         height: auto;
-        width: 20rem;
-        left: 4.5rem;
+        width: auto;
+        left: 3.5rem;
         top: calc(0.75 * var(--navbar-height));
         max-height: calc(100vh - var(--navbar-height) - var(--widgetbar-height));
         overflow-y: scroll;
@@ -129,7 +129,7 @@
     .sidebarMenuInner a.is-active,
     .sidebarMenuInner a:hover {
         border-right: 2px solid var(--link);
-        background-color: var(--bg-element);
+        background-color: var(--link-light);
     }
 
     /* Content area for block of links */

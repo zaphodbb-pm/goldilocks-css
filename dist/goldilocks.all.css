@@ -6049,7 +6049,7 @@ pre
         padding-right: calc(var(--pad-horz) - 2px);
 
         border-right: 2px solid var(--link);
-        background-color: var(--bg-element);
+        background-color: var(--link-light);
     }
 
     .sidenav-block > label:hover
@@ -6199,11 +6199,11 @@ pre
         position: absolute;
         z-index: 10;
         top: calc(.75 * var(--navbar-height));
-        left: 4.5rem;
+        left: 3.5rem;
 
         overflow-y: scroll;
 
-        width: 20rem;
+        width: auto;
         height: auto;
         max-height: calc(100vh - var(--navbar-height) - var(--widgetbar-height));
 
@@ -6266,7 +6266,7 @@ pre
     .sidebarMenuInner a:hover
     {
         border-right: 2px solid var(--link);
-        background-color: var(--bg-element);
+        background-color: var(--link-light);
     }
 
     /* Content area for block of links */

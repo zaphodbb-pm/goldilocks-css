@@ -105,7 +105,7 @@
     .sidenavs a:hover,
     .sidenav-block a:hover {
         border-right: 2px solid var(--link);
-        background-color: var(--bg-element);
+        background-color: var(--link-light);
         padding-right: calc(var(--pad-horz) - 2px);
     }
 
