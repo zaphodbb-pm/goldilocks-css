@@ -5423,6 +5423,8 @@ pre
     .navbar .dropdown .dropdown-trigger button,
     .navbar .dropdown .dropdown-trigger .button
     {
+        font-weight: inherit;
+
         color: inherit;
         border-color: transparent;
         background-color: inherit;

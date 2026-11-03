@@ -133,6 +133,7 @@
         color: inherit;
         background-color: inherit;
         border-color: transparent;
+        font-weight: inherit;
     }
 
     .navbar .dropdown .dropdown-trigger > button:not(.no-chevron):first-child::after,
