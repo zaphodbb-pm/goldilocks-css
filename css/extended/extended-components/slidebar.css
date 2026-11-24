@@ -33,12 +33,32 @@
 
     /* hamburger target */
     .sidebarIconToggle {
-        position: absolute;
+        position: relative;
+        appearance: none;
+        -webkit-appearance: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        display: block;
         transition: all 0.3s;
         box-sizing: border-box;
         cursor: pointer;
         height: auto;
         width: calc(0.5 * var(--navbar-height));
+    }
+
+    .sidebarIconToggle:hover {
+        background: transparent;
+        color: inherit;
+    }
+
+    .sidebarIconToggle:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 4px;
     }
 
     .sidebarIconToggle > span {
@@ -159,7 +179,8 @@
         cursor: pointer;
 
         position: relative;
-        padding: 0;
+        padding-block: 0;
+        padding-inline: 0 2.5rem;
         list-style: none;
     }
 
@@ -254,21 +275,32 @@
     .sidebarMenu[popover],
     .sidebarMenuRight[popover] {
         position: fixed;
-        inset-block: 0;
-        height: 100dvh;
-        max-height: 100dvh;
+        inset-block-start: var(--navbar-height);
+        inset-block-end: auto;
+        height: auto;
+        max-height: calc(100dvh - var(--navbar-height));
         margin: 0;
+        padding: 0;
+        border: 0;
+        background-color: var(--bg-container);
+        color: var(--text);
         overflow-block: auto;
+        overflow-y: auto;
         opacity: 0;
         z-index: 300;
         transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, display 250ms, overlay 250ms;
     }
 
+    :is(.page-wrapper-widgets, .page-wrapper-widgets-right-panel) :is(.sidebarMenu, .sidebarMenuRight)[popover] {
+        inset-block-start: calc(var(--widgetbar-height) + var(--navbar-height));
+        max-height: calc(100dvh - var(--widgetbar-height) - var(--navbar-height));
+    }
+
     .sidebarMenu[popover] {
         inset-inline-start: 0;
         inset-inline-end: auto;
-        width: min(20rem, 85vw);
-        max-width: 85vw;
+        width: max-content;
+        max-width: min(20rem, 85vw);
         transform: translateX(-100%);
     }
 
