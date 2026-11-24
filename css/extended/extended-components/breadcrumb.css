@@ -80,12 +80,14 @@
 
     /* control for background icon */
     .breadcrumb li span:last-child {
-        margin: 0 0 0 0.5em;
+        margin-block: 0 0;
+        margin-inline: 0.5em 0;
         font-size: 1em;
     }
 
     .breadcrumb li span:first-child {
-        margin: 0 0.5em 0 0;
+        margin-block: 0 0;
+        margin-inline: 0 0.5em;
         font-size: 1em;
     }
 }

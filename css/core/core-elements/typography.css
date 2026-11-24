@@ -10,19 +10,19 @@
 
     @media screen and (min-width: 75em) {
         :root{
-            --base-font-size: calc(var(--base-rem) * 1.125) !important;
+            --base-font-size: calc(var(--base-rem) * 1.125);
         }
     }
 
     @media screen and (min-width: 115em ) {
         :root{
-            --base-font-size: calc(var(--base-rem) * 1.5) !important;
+            --base-font-size: calc(var(--base-rem) * 1.5);
         }
     }
 
     @media screen and (min-width: 150em) {
         :root{
-            --base-font-size: calc(var(--base-rem) * 2 ) !important;
+            --base-font-size: calc(var(--base-rem) * 2 );
         }
     }
 
@@ -30,68 +30,70 @@
     h1, h2, h3, h4, h5, h6 {
         color: var(--text-darker);
         font-weight: var(--weight-semibold);
-        margin: 0 0 0 0;
+        margin-block: 0 0;
+        margin-inline: 0 0;
         padding: 0;
         line-height: 1.2;
+        text-wrap: balance;
     }
 
     h1 {
         font-size: var(--size-1);
-        margin-bottom: var(--size-1);
+        margin-block-end: var(--size-1);
     }
 
     h2 {
         font-size: var(--size-2);
-        margin-bottom: var(--size-2);
+        margin-block-end: var(--size-2);
     }
 
     h3 {
         font-size: var(--size-3);
-        margin-bottom: var(--size-3);
+        margin-block-end: var(--size-3);
     }
 
     h4 {
         font-size: var(--size-4);
-        margin-bottom: var(--size-4);
+        margin-block-end: var(--size-4);
     }
 
     h5 {
         font-size: var(--size-5);
-        margin-bottom: var(--size-5);
+        margin-block-end: var(--size-5);
     }
 
     h6 {
         font-size: var(--size-6);
-        margin-bottom: var(--size-6);
+        margin-block-end: var(--size-6);
     }
 
     /* sub-titles for headings for only three top headings */
     h1 + .sub-title,
     .is-title-1 + .sub-title {
         font-size: var(--size-3);
-        margin-top: -0.5em;
-        margin-bottom: var(--size-1);
+        margin-block-start: -0.5em;
+        margin-block-end: var(--size-1);
     }
 
     h2 + .sub-title,
     .is-title-2 + .sub-title {
         font-size: var(--size-4);
-        margin-top: -0.5em;
-        margin-bottom: var(--size-2);
+        margin-block-start: -0.5em;
+        margin-block-end: var(--size-2);
     }
 
     h3 + .sub-title,
     .is-title-3 + .sub-title {
         font-size: var(--size-5);
-        margin-top: -0.5em;
-        margin-bottom: var(--size-3);
+        margin-block-start: -0.5em;
+        margin-block-end: var(--size-3);
     }
 
     h4 + .sub-title,
     .is-title-4 + .sub-title {
         font-size: var(--size-6);
-        margin-top: -0.5em;
-        margin-bottom: var(--size-4);
+        margin-block-start: -0.5em;
+        margin-block-end: var(--size-4);
     }
 
 
@@ -117,7 +119,8 @@
     .is-title-6,
     .is-title-7 {
         font-weight: var(--weight-semibold);
-        margin: 0 0 1rem 0;
+        margin-block: 0 1rem;
+        margin-inline: 0 0;
     }
 
     .is-title-1,
@@ -157,27 +160,27 @@
 
     /* defines margin controls */
     .is-indented-1 {
-        margin-left: calc(2 * var(--margin));
+        margin-inline-start: calc(2 * var(--margin));
     }
 
     .is-indented-1:dir(rtl) {
-        margin-right: calc(2 * var(--margin));
+        margin-inline-end: calc(2 * var(--margin));
     }
 
     .is-indented-2 {
-        margin-left: calc(4 * var(--margin));
+        margin-inline-start: calc(4 * var(--margin));
     }
 
     .is-indented-2:dir(rtl) {
-        margin-right: calc(4 * var(--margin));
+        margin-inline-end: calc(4 * var(--margin));
     }
 
     .is-indented-3 {
-        margin-left: calc(6 * var(--margin));
+        margin-inline-start: calc(6 * var(--margin));
     }
 
     .is-indented-3:dir(rtl) {
-        margin-right: calc(6 * var(--margin));
+        margin-inline-end: calc(6 * var(--margin));
     }
 
 

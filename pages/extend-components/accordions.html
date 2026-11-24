@@ -23,6 +23,11 @@ nav: Accordions
                 This body can be a <code>p</code>, 	<code>div</code> or <code>article</code> child.
                 This allows you to add any other element or component to the accordion ... and no JavaScript is required to make it work.
             </p>
+
+            <p>Give each item in an exclusive group the same <code>name</code> to let the browser keep only one item open at a time.
+                Smooth opening is a progressive enhancement using <code>::details-content</code> and
+                <code>interpolate-size</code>; unsupported browsers retain the native disclosure behavior.
+            </p>
         </section>
 
         <section class="column">
@@ -246,6 +251,39 @@ nav: Accordions
                     &lt;details class="accordion [is-expander-complement]"&gt;
                         &lt;summary&gt;Three - Accordion Details&lt;/summary&gt;
                         &lt;p&gt;Three Something small enough to escape casual notice.&lt;/p&gt;
+                    &lt;/details&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-items-medium "></div>
+
+    <h3>Exclusive Accordion Group</h3>
+    <div class="row has-5x-minwidth">
+        <div class="column">
+            <div class="accordions">
+                <details class="accordion" name="faq" open>
+                    <summary>How does the exclusive group work?</summary>
+                    <div><p>Opening another item with the same name closes this one.</p></div>
+                </details>
+                <details class="accordion" name="faq">
+                    <summary>Does this need JavaScript?</summary>
+                    <div><p>No. The browser manages the exclusive group.</p></div>
+                </details>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="accordions"&gt;
+                    &lt;details class="accordion" name="faq" open&gt;
+                        &lt;summary&gt;How does the exclusive group work?&lt;/summary&gt;
+                        &lt;div&gt;&lt;p&gt;Opening another item with the same name closes this one.&lt;/p&gt;&lt;/div&gt;
+                    &lt;/details&gt;
+                    &lt;details class="accordion" name="faq"&gt;
+                        &lt;summary&gt;Does this need JavaScript?&lt;/summary&gt;
+                        &lt;div&gt;&lt;p&gt;No. The browser manages the exclusive group.&lt;/p&gt;&lt;/div&gt;
                     &lt;/details&gt;
                 &lt;/div&gt;
             </code></pre>

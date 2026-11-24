@@ -1,6 +1,5 @@
-<div class="sidenav-block">
-    <input type="checkbox" id="extra-components" {% if page.parent-tab == 'extra-components' %}checked{% endif %}>
-    <label for="extra-components">Extra Components</label>
+<details class="sidenav-block sidebar-block" {% if page.parent-tab == 'extra-components' %}open{% endif %}>
+    <summary>Extra Components</summary>
     <nav>
         <ul>
             <li><a href="{{site.url}}/pages/extra-components/blockquote.html" class="{% if page.nav == "Blockquote" %}is-active{% endif %}">Blockquote</a></li>
@@ -17,4 +16,4 @@
             <li><a href="{{site.url}}/pages/extra-components/widget-bar.html" class="{% if page.nav == "Widget Bar" %}is-active{% endif %}">Widget Bar</a></li>
         </ul>
     </nav>
-</div>
+</details>

@@ -1,6 +1,5 @@
-<div class="sidenav-block">
-    <input type="checkbox" id="get-started" {% if page.parent-tab == 'get-started' %}checked{% endif %}>
-    <label for="get-started">Getting Started</label>
+<details class="sidenav-block sidebar-block" {% if page.parent-tab == 'get-started' %}open{% endif %}>
+    <summary>Getting Started</summary>
     <nav>
         <ul>
             <li><a href="{{site.url}}/pages/get-started/why-yacs.html" class="{% if page.nav == "Why YACS" %}is-active{% endif %}">Why YACS</a></li>
@@ -13,4 +12,4 @@
             <li><a href="{{site.url}}/pages/get-started/verification.html" class="{% if page.nav == "Verification" %}is-active{% endif %}">Verification</a></li>
         </ul>
     </nav>
-</div>
+</details>

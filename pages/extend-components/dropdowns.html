@@ -49,6 +49,11 @@ nav: Dropdowns
                 The <strong>dropdown</strong> can be triggered by hovering on the dropdown button (default) or by clicking if the
                 <code>.is-click-open</code> class is added to the main container.  The <code>.dropdown-menu</code> can be left (default)
                 right or up oriented.</p>
+
+            <p>A native <code>.dropdown-menu[popover]</code> can be opened by a button's <code>popovertarget</code> attribute.
+                The default auto popover light-dismisses on outside click and closes with Escape. Anchor positioning is a
+                progressive enhancement; without it, the menu uses the existing absolute-position fallback and alignment modifiers.
+            </p>
         </section>
 
         <section class="column">
@@ -235,6 +240,57 @@ nav: Dropdowns
             </code></pre>
         </div>
 
+    </div>
+
+    <h3>Native popover dropdown</h3>
+    <div class="row has-5x-minwidth">
+        <div class="column">
+            <div class="dropdown">
+                <div class="dropdown-trigger">
+                    <button class="button-default-inverted" popovertarget="native-dropdown-menu">
+                        <span>Open native menu</span>
+                    </button>
+                </div>
+
+                <div class="dropdown-menu" id="native-dropdown-menu" popover="auto">
+                    <p>Native popovers open in the top layer.</p>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Dropdown item</a></li>
+                            <li><a href="#" class="is-active">Active item</a></li>
+                            <li><a href="#">Other dropdown item</a></li>
+                        </ul>
+                    </nav>
+                    <hr>
+                    <button class="button-complement">Call To Action</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="dropdown"&gt;
+                    &lt;div class="dropdown-trigger"&gt;
+                        &lt;button class="button-default-inverted" popovertarget="native-dropdown-menu"&gt;
+                            &lt;span&gt;Open native menu&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="dropdown-menu" id="native-dropdown-menu" popover="auto"&gt;
+                        &lt;p&gt;Native popovers open in the top layer.&lt;/p&gt;
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Dropdown item&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#" class="is-active"&gt;Active item&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#"&gt;Other dropdown item&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                        &lt;hr&gt;
+                        &lt;button class="button-complement"&gt;Call To Action&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
     </div>
 
     <div class="space-items-medium "></div>

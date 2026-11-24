@@ -1,15 +1,56 @@
 const gulpit = require("gulp");
-//const cleancss = require('gulp-clean-css');
-const csscomb = require('gulp-csscomb');
+const { Transform } = require("stream");
+const browserslist = require("browserslist");
+const { transform: transformCss, browserslistToTargets } = require("lightningcss");
 const rename = require('gulp-rename');
-const autoprefixer = require('gulp-autoprefixer');
 const concat = require("gulp-concat");
-const csso = require('gulp-csso');
 
-const minifyCss = () => csso({
-    comments: false,
-    forceMediaMerge: true,
-    restructure: true
+const targets = browserslistToTargets(browserslist("baseline newly available"));
+
+const setupBaseFirst = () => {
+    const files = [];
+
+    return new Transform({
+        objectMode: true,
+        transform(file, encoding, callback) {
+            files.push(file);
+            callback();
+        },
+        flush(callback) {
+            const setupIndex = files.findIndex(file => file.path.endsWith('/setup_base_html.css'));
+            if (setupIndex > 0) {
+                files.unshift(files.splice(setupIndex, 1)[0]);
+            }
+            files.forEach(file => this.push(file));
+            callback();
+        }
+    });
+};
+
+const lightningCss = (minify = false) => new Transform({
+    objectMode: true,
+    transform(file, encoding, callback) {
+        if (file.isNull()) {
+            return callback(null, file);
+        }
+
+        if (file.isStream()) {
+            return callback(new Error("Streaming CSS files are not supported."));
+        }
+
+        try {
+            const result = transformCss({
+                filename: file.path,
+                code: file.contents,
+                minify,
+                targets
+            });
+            file.contents = Buffer.from(result.code);
+            callback(null, file);
+        } catch (error) {
+            callback(error);
+        }
+    }
 });
 
 function buildCore() {
@@ -20,11 +61,11 @@ function buildCore() {
             './css/core/core-layout/*.css',
             './css/core/core-helpers/*.css'
         ])
-        //.pipe(autoprefixer())
+        .pipe(setupBaseFirst())
         .pipe(concat("goldilocks.core.css"))
-        .pipe(csscomb())
+        .pipe(lightningCss())
         .pipe(gulpit.dest('./dist'))
-        .pipe(minifyCss())
+        .pipe(lightningCss(true))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -40,11 +81,11 @@ function buildCoreElements() {
             './css/core/core-helpers/*.css',
             './css/core/core-elements/*.css'
         ])
-        //.pipe(autoprefixer())
+        .pipe(setupBaseFirst())
         .pipe(concat("goldilocks.core-elements.css"))
-        .pipe(csscomb())
+        .pipe(lightningCss())
         .pipe(gulpit.dest('./dist'))
-        .pipe(minifyCss())
+        .pipe(lightningCss(true))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -55,11 +96,10 @@ function buildExtended() {
     console.log("Building Extended");
     return gulpit
         .src('./css/extended/**/*.css')
-        //.pipe(autoprefixer())
         .pipe(concat("goldilocks.extended.css"))
-        .pipe(csscomb())
+        .pipe(lightningCss())
         .pipe(gulpit.dest('./dist'))
-        .pipe(minifyCss())
+        .pipe(lightningCss(true))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -70,11 +110,10 @@ function buildExtras() {
     console.log("Building Extras");
     return gulpit
         .src('./css/extras/**/*.css')
-        //.pipe(autoprefixer())
         .pipe(concat("goldilocks.extras.css"))
-        .pipe(csscomb())
+        .pipe(lightningCss())
         .pipe(gulpit.dest('./dist'))
-        .pipe(minifyCss())
+        .pipe(lightningCss(true))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -91,11 +130,11 @@ function buildCoreExtended() {
             './css/core/core-elements/*.css',
             './css/extended/**/*.css'
         ])
-        //.pipe(autoprefixer())
+        .pipe(setupBaseFirst())
         .pipe(concat("goldilocks.core-extended.css"))
-        .pipe(csscomb())
+        .pipe(lightningCss())
         .pipe(gulpit.dest('./dist'))
-        .pipe(minifyCss())
+        .pipe(lightningCss(true))
         .pipe(rename({
             suffix: '.min'
         }))
@@ -113,11 +152,11 @@ function buildAll() {
             './css/extended/**/*.css',
             './css/extras/**/*.css',
         ])
-        //.pipe(autoprefixer())
+        .pipe(setupBaseFirst())
         .pipe(concat("goldilocks.all.css"))
-        .pipe(csscomb())
+        .pipe(lightningCss())
         .pipe(gulpit.dest('./dist'))
-        .pipe(minifyCss())
+        .pipe(lightningCss(true))
         .pipe(rename({
             suffix: '.min'
         }))

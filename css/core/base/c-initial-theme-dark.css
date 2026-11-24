@@ -2,62 +2,77 @@
 
 /**  main dark theme color definitions / overrides **/
 
-.main-theme-dark {
+@layer tokens {
+    :root {
+        color-scheme: light dark;
 
-    --black: var(--g-50);
-    --black-850: var(--g-100);
-    --black-800: var(--g-200);
-    --black-700: var(--g-300);
+        --black: light-dark(var(--g-950), var(--g-50));
+        --black-850: light-dark(var(--g-900), var(--g-100));
+        --black-800: light-dark(var(--g-800), var(--g-200));
+        --black-700: light-dark(var(--g-700), var(--g-300));
 
-    --grey-darker: var(--g-200);
-    --grey-dark: var(--g-300);
-    --grey: var(--g-400);
-    --grey-light: var(--g-500);
-    --grey-lighter: var(--g-600);
-    --grey-lightest: var(--g-700);
-    --grey-white: var(--g-900);
-    --white: var(--g-1k);
+        --grey-darker: light-dark(var(--g-600), var(--g-200));
+        --grey-dark: light-dark(var(--g-500), var(--g-300));
+        --grey: var(--g-400);
+        --grey-light: light-dark(var(--g-300), var(--g-500));
+        --grey-lighter: light-dark(var(--g-200), var(--g-600));
+        --grey-lightest: light-dark(var(--g-100), var(--g-700));
+        --grey-white: light-dark(var(--g-50), var(--g-900));
+        --white: light-dark(var(--g-0), var(--g-1k));
 
-    --bg-main: oklch(11.8% 0.022 262);
-    --bg-main-invert: var(--g-200);
-    --bg-grid: var(--g-600);
-    --bg-container: oklch(23.5% 0.028 182);
-    --bg-component: oklch(27.5% 0.030 182);
-    --bg-element: oklch(31.5% 0.032 182);
-    --bg-highlight: var(--warning-darkest);
+        --bg-main: light-dark(var(--bg-page), oklch(11.8% 0.022 var(--p-h)));
+        --bg-main-invert: light-dark(var(--black-850), var(--g-200));
+        --bg-grid: light-dark(var(--g-100), var(--g-600));
+        --bg-container: light-dark(var(--bg-elevated-1), oklch(23.5% 0.028 var(--g-h)));
+        --bg-component: light-dark(var(--bg-elevated-2), oklch(27.5% 0.030 var(--g-h)));
+        --bg-element: light-dark(var(--bg-elevated-3), oklch(31.5% 0.032 var(--g-h)));
+        --bg-highlight: light-dark(var(--warning-lightest), var(--warning-darkest));
 
-    --link: oklch(64.0% 0.200 225);
-    --link-visited: oklch(67.5% 0.165 278);
+        --link: light-dark(var(--lnk-600), oklch(64.0% 0.200 var(--lnk-h)));
+        --link-visited: light-dark(oklch(37.5% 0.165 278), oklch(67.5% 0.165 278));
 
-    --primary: var(--p-400);
-    --primary-text: var(--p-400);
-    --primary-text-invert: var(--p-900);
-    --secondary: var(--s-400);
-    --secondary-text: var(--s-400);
-    --secondary-text-invert: var(--s-900);
-    --complement: var(--c-400);
-    --complement-text: var(--c-400);
-    --complement-text-invert: var(--c-900);
-    --link-text: var(--lnk-400);
-    --link-text-invert: var(--lnk-900);
-    --success-dark: var(--ok-500);
+        --primary: light-dark(var(--p-600), var(--p-400));
+        --primary-text: light-dark(var(--p-700), var(--p-400));
+        --primary-text-invert: light-dark(var(--p-50), var(--p-900));
+        --secondary: light-dark(var(--s-500), var(--s-400));
+        --secondary-text: light-dark(var(--s-600), var(--s-400));
+        --secondary-text-invert: light-dark(var(--g-50), var(--s-900));
+        --complement: light-dark(var(--c-500), var(--c-400));
+        --complement-text: light-dark(var(--c-700), var(--c-400));
+        --complement-text-invert: light-dark(var(--c-50), var(--c-900));
+        --link-text: light-dark(var(--lnk-800), var(--lnk-400));
+        --link-text-invert: light-dark(var(--lnk-50), var(--lnk-900));
+        --success-dark: light-dark(var(--ok-600), var(--ok-500));
 
-    --text: var(--g-100);
-    --text-light: var(--g-400);
-    --text-darker: var(--g-50);
-    --text-elem: var(--g-100);
-    --text-comp: var(--g-100);
-    --text-btn-invert: var(--g-950);
-    --text-code: var(--c-400);
+        --text: light-dark(var(--g-800), var(--g-100));
+        --text-light: light-dark(var(--g-500), var(--g-400));
+        --text-darker: light-dark(var(--g-950), var(--g-50));
+        --text-elem: light-dark(var(--g-800), var(--g-100));
+        --text-comp: light-dark(var(--g-800), var(--g-100));
+        --text-btn-invert: light-dark(var(--g-50), var(--g-950));
+        --text-code: light-dark(var(--c-700), var(--c-400));
 
-    --border-main: var(--g-400);
-    --border-main-light: var(--g-300);
-    --border-main-darker: var(--g-500);
+        --border-main: light-dark(var(--g-300), var(--g-400));
+        --border-main-light: light-dark(var(--g-100), var(--g-300));
+        --border-main-darker: light-dark(var(--g-400), var(--g-500));
 
-    --sh-sm: 0 1px 2px oklch(0% 0 0 / .30), 0 2px 4px oklch(0% 0 0 / .20), inset 0 1px 0 oklch(100% 0 0 / .06);
-    --sh-md: 0 2px 3px oklch(0% 0 0 / .28), 0 4px 10px oklch(0% 0 0 / .28), inset 0 1px 0 oklch(100% 0 0 / .05);
-    --sh-lg: 0 4px 6px oklch(0% 0 0 / .28), 0 10px 24px oklch(0% 0 0 / .36), inset 0 1px 0 oklch(100% 0 0 / .04);
+        --sh-sm: 0 1px 2px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.08), oklch(0% 0 0 / .30)), 0 2px 4px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.05), oklch(0% 0 0 / .20)), inset 0 1px 0 light-dark(oklch(100% 0 0 / 0.55), oklch(100% 0 0 / .06));
+        --sh-md: 0 2px 3px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.10), oklch(0% 0 0 / .28)), 0 4px 10px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.08), oklch(0% 0 0 / .28)), inset 0 1px 0 light-dark(oklch(100% 0 0 / 0.48), oklch(100% 0 0 / .05));
+        --sh-lg: 0 4px 6px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.10), oklch(0% 0 0 / .28)), 0 10px 24px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.12), oklch(0% 0 0 / .36)), inset 0 1px 0 light-dark(oklch(100% 0 0 / 0.40), oklch(100% 0 0 / .04));
+    }
 
-    --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);
+    @media (prefers-color-scheme: dark) {
+        :root:not(.main-theme-light) {
+            color-scheme: dark;
+        }
+    }
 
+    .main-theme-dark,
+    :root:has(.theme-toggle:checked) {
+        color-scheme: dark;
+    }
+
+    .main-theme-light {
+        color-scheme: light;
+    }
 }

@@ -451,8 +451,8 @@ nav: Page
     <div class="magazine space-container-vert">
         <h3>Basic Page with Fixed Bottom and Sliding Sidebar</h3>
 
-        <p>Page Layout with a sliding side nav for mobile widths. For mobile width (typically less than 576px),
-            a hamburger target will appear.  Clicking on the hamburger will slide in a vertical sidebar.
+        <p>Page Layout with a sliding side nav when the navbar container is narrower than 576px.
+            At that width, a hamburger target appears. Clicking on it will slide in a vertical sidebar.
             Note that the hamburger and slidebar navigation are setup in the <code>.navbar</code> component.</p>
 
         <p> By using the <code>.has-slidebar</code> class on the parent <code>.page-wrapper</code> component, the page child
@@ -941,5 +941,82 @@ nav: Page
                 &lt;/div&gt;
             &lt;/footer&gt;
         </code></pre>
+    </div>
+
+    <div class="space-items-medium"></div>
+
+    <h3>Native right drawer and details submenu</h3>
+    <p>The existing checkbox slidebar remains available as the classic pattern. The native right drawer uses
+        <code>.sidebarMenuRight[popover]</code>; the page sidenav submenu can use <code>&lt;details&gt;</code> with
+        <code>.sidenav-block</code> instead of a checkbox.
+    </p>
+    <div class="row has-5x-minwidth">
+        <div class="column">
+            <div class="main-slide-bar show-always is-right">
+                <button type="button" class="sidebarIconToggle" popovertarget="page-native-sidebar-right"
+                        aria-label="Open right navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="sidebarMenuRight" id="page-native-sidebar-right" popover="auto">
+                    <div class="sidebarMenuInner" role="region" aria-label="Native right sliding side bar">
+                        <nav aria-label="Right drawer links">
+                            <ul>
+                                <li><a href="#page-layout-top">Overview</a></li>
+                                <li><a href="#page-layout-top">Components</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidenavs">
+                <details class="sidenav-block sidebar-block">
+                    <summary>Page sections</summary>
+                    <nav>
+                        <ul>
+                            <li><a href="#page-layout-top">Overview</a></li>
+                            <li><a href="#page-layout-top">Examples</a></li>
+                        </ul>
+                    </nav>
+                </details>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="main-slide-bar show-always is-right"&gt;
+                    &lt;button type="button" class="sidebarIconToggle" popovertarget="page-native-sidebar-right"
+                            aria-label="Open right navigation"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class="sidebarMenuRight" id="page-native-sidebar-right" popover="auto"&gt;
+                        &lt;div class="sidebarMenuInner" role="region" aria-label="Native right sliding side bar"&gt;
+                            &lt;nav aria-label="Right drawer links"&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="#page-layout-top"&gt;Overview&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#page-layout-top"&gt;Components&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/nav&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="sidenavs"&gt;
+                    &lt;details class="sidenav-block sidebar-block"&gt;
+                        &lt;summary&gt;Page sections&lt;/summary&gt;
+                        &lt;nav&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href="#page-layout-top"&gt;Overview&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href="#page-layout-top"&gt;Examples&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/nav&gt;
+                    &lt;/details&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
     </div>
 </main>

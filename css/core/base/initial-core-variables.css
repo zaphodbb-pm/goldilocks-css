@@ -1,4 +1,5 @@
-:root {
+@layer tokens {
+    :root {
     /* version 1.0.0 - Sept 13, 2026 */
 
     /* awareness variables - for info only */
@@ -165,4 +166,5 @@
     fill='none'%20stroke='currentColor'%20stroke-width='3'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%20\
     %3Cpolyline%20points='9%2018%2015%2012%209%206'/%3E\
     %3C/svg%3E");
+    }
 }

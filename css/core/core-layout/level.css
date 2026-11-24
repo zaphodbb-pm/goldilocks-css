@@ -10,6 +10,13 @@
         flex-wrap: wrap;
         column-gap: var(--gap-col);
         row-gap: var(--gap-row);
+        container-type: inline-size;
+        container-name: level navbar;
+    }
+
+    .column:has(.level, .level-centered, .level-start, .level-end) {
+        container-type: inline-size;
+        container-name: level navbar;
     }
 
     .level {
@@ -75,7 +82,7 @@
     }
 
 
-    @media screen and (max-width: 576px) {
+    @container level (max-width: 576px) {
         .level:not(.is-mobile),
         .level:not(.is-mobile) .level-left,
         .level:not(.is-mobile) .level-right,
@@ -88,7 +95,7 @@
             column-gap: var(--gap-col);
             row-gap: var(--gap-row);
             align-items: flex-start;
-            padding-left: var(--gap-col);
+            padding-inline-start: var(--gap-col);
         }
 
         .level:not(.is-mobile) > *,
@@ -111,7 +118,7 @@
         .level-start:not(.is-mobile) .icon-nav,
         .level-centered:not(.is-mobile) .icon-nav,
         .level-end:not(.is-mobile) .icon-nav {
-            padding-right: var(--pad-horz);
+            padding-inline-end: var(--pad-horz);
         }
 
 

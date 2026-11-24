@@ -2,8 +2,8 @@
 
     .table {
         border-spacing: 0;
-        overflow-x: auto;
-        text-align: left;
+        overflow-inline: auto;
+        text-align: start;
         border-collapse: collapse;
 
         background-color: inherit;
@@ -13,7 +13,7 @@
     .table > caption {
         font-size: var(--size-5);
         font-weight: var(--weight-semibold);
-        padding-bottom: var(--pad-vert);
+        padding-block-end: var(--pad-vert);
     }
 
     .table td, .table th {
@@ -28,19 +28,19 @@
 
     .table thead th {
         font-weight: var(--weight-semibold);
-        border-bottom: 2px solid var(--border-main-darker);
+        border-block-end: 2px solid var(--border-main-darker);
     }
 
     .table tbody td {
-        border-bottom: 1px solid var(--border-main-darker);
+        border-block-end: 1px solid var(--border-main-darker);
     }
 
     .table tbody tr:last-child td {
-        border-bottom: none;
+        border-block-end: none;
     }
 
     .table tfoot td {
-        border-top: 2px solid var(--border-main-darker);
+        border-block-start: 2px solid var(--border-main-darker);
         font-weight: var(--weight-semibold);
     }
 
@@ -77,8 +77,7 @@
     .table-scroll {
         display: grid;
         grid-template-columns: repeat(auto-fit, 0);
-        -webkit-overflow-scrolling: touch;
-        overflow-x: auto;
+        overflow-inline: auto;
         max-width: 100%;
     }
 
@@ -104,11 +103,12 @@
         align-items: center;
         justify-content: space-between;
         padding: var(--pad-horz);
-        margin: calc(-1 * var(--padding)) calc(-1 * var(--padding)) var(--padding) calc(-1 * var(--padding));
+        margin-block: calc(-1 * var(--padding)) var(--padding);
+        margin-inline: calc(-1 * var(--padding)) calc(-1 * var(--padding));
         font-size: var(--size-5);
         font-weight: var(--weight-semibold);
-        border-top-left-radius: inherit;
-        border-top-right-radius: inherit;
+        border-start-start-radius: inherit;
+        border-start-end-radius: inherit;
     }
 
 

@@ -52,11 +52,11 @@
     }
 
     .sidebarIconToggle > span:nth-child(2) {
-        margin-top: 6px;
+        margin-block-start: 6px;
     }
 
     .sidebarIconToggle > span:nth-child(3) {
-        margin-top: 6px;
+        margin-block-start: 6px;
     }
 
     .main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > span:nth-child(2) {
@@ -65,12 +65,12 @@
 
     .main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > span:nth-child(1) {
         transform: rotate(135deg);
-        margin-top: 9px;
+        margin-block-start: 9px;
     }
 
     .main-slide-bar input[type=checkbox]:checked ~ .sidebarIconToggle > span:nth-child(3) {
         transform: rotate(-135deg);
-        margin-top: -12px;
+        margin-block-start: -12px;
     }
 
 
@@ -79,10 +79,10 @@
         position: absolute;
         height: auto;
         width: auto;
-        left: 3.5rem;
-        top: calc(0.75 * var(--navbar-height));
-        max-height: calc(100vh - var(--navbar-height) - var(--widgetbar-height));
-        overflow-y: scroll;
+        inset-inline-start: 3.5rem;
+        inset-block-start: calc(0.75 * var(--navbar-height));
+        max-height: calc(100dvh - var(--navbar-height) - var(--widgetbar-height));
+        overflow-block: scroll;
         transform: translateX(-30rem);
         transition: transform 250ms ease-in-out;
         z-index: 10;
@@ -90,8 +90,9 @@
 
     .sidebarMenuInner {
         margin: 0;
-        padding: var(--padding-medium) 0 var(--padding-medium) var(--padding-medium);
-        border-top: 1px solid rgba(255, 255, 255, 0.10);
+        padding-block: var(--padding-medium) var(--padding-medium);
+        padding-inline: var(--padding-medium) 0;
+        border-block-start: 1px solid rgba(255, 255, 255, 0.10);
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
@@ -109,8 +110,10 @@
     .sidebarMenuInner a {
         font-size: var(--size-7);
         color: var(--link);
-        padding: 0.25rem 0 0.25rem 0.5rem;
-        margin: 0 0 0 calc(0.5 * var(--mar-horz));
+        padding-block: 0.25rem 0.25rem;
+        padding-inline: 0.5rem 0;
+        margin-block: 0 0;
+        margin-inline: calc(0.5 * var(--mar-horz)) 0;
         background: transparent;
         overflow: hidden;
         text-indent: 0;
@@ -122,13 +125,13 @@
 
     .sidebarMenuInner a.icon-nav-horz,
     .sidebarMenuInner .sidebar-block a.icon-nav-horz [class*=icon-bg-] {
-        margin-left: 0;
-        padding-right: calc(var(--pad-horz) - 2px);
+        margin-inline-start: 0;
+        padding-inline-end: calc(var(--pad-horz) - 2px);
     }
 
     .sidebarMenuInner a.is-active,
     .sidebarMenuInner a:hover {
-        border-right: 2px solid var(--link);
+        border-inline-end: 2px solid var(--link);
         background-color: var(--link-light);
     }
 
@@ -137,7 +140,8 @@
         position: relative;
         color: var(--text);
         padding: 0;
-        margin: var(--mar-horz) 0 0 0;
+        margin-block: var(--mar-horz) 0;
+        margin-inline: 0 0;
         width: 100%;
         background: transparent;
         overflow: hidden;
@@ -146,23 +150,30 @@
         flex-direction: column;
     }
 
-    .sidebar-block > label {
+    .sidebar-block > label,
+    .sidebar-block > summary,
+    .sidebar-block > details > summary,
+    details.sidebar-block > summary {
         margin: 0;
         font-weight: var(--weight-semibold);
         cursor: pointer;
 
         position: relative;
         padding: 0;
+        list-style: none;
     }
 
 
-    .sidebar-block > label::after {
+    .sidebar-block > label::after,
+    .sidebar-block > summary::after,
+    .sidebar-block > details > summary::after,
+    details.sidebar-block > summary::after {
         content: "";
         height: 1.5rem;
         width: 2.5rem;
         position: absolute;
-        top: 0;
-        right: 0;
+        inset-block-start: 0;
+        inset-inline-end: 0;
 
         /* adds right chevron */
         transition: all 0.3s;
@@ -176,20 +187,53 @@
     }
 
 
-    .sidebar-block > label:hover {
+    .sidebar-block > label:hover,
+    .sidebar-block > summary:hover,
+    .sidebar-block > details > summary:hover,
+    details.sidebar-block > summary:hover {
         background-color: var(--bg-component);
         color: inherit;
     }
 
     .sidebar-block > nav {
-        max-height: 0;
+        display: none;
         padding: 0;
         color: var(--text);
         background-color: inherit;
         transition: all 0.5s;
-        display: flex;
         flex-direction: column;
         row-gap: calc(0.5 * var(--gap-row));
+    }
+
+    .sidebar-block input:checked + label::after,
+    .sidebar-block > details[open] > summary::after,
+    details.sidebar-block[open] > summary::after {
+        transform: rotate(90deg);
+    }
+
+    :is(.sidenav-block, .sidebar-block) input:checked ~ nav,
+    :is(.sidenav-block, .sidebar-block)[open] > nav,
+    :is(.sidenav-block, .sidebar-block) > details[open] > nav {
+        display: flex;
+    }
+
+    @supports (interpolate-size: allow-keywords) and selector(::details-content) {
+        :is(.sidenav-block, .sidebar-block) > details,
+        details:is(.sidenav-block, .sidebar-block) {
+            interpolate-size: allow-keywords;
+        }
+
+        :is(.sidenav-block, .sidebar-block) > details::details-content,
+        details:is(.sidenav-block, .sidebar-block)::details-content {
+            height: 0;
+            overflow: clip;
+            transition: height 300ms ease, content-visibility 300ms allow-discrete;
+        }
+
+        :is(.sidenav-block, .sidebar-block) > details[open]::details-content,
+        details:is(.sidenav-block, .sidebar-block)[open]::details-content {
+            height: auto;
+        }
     }
 
 
@@ -198,69 +242,150 @@
         position: absolute;
         height: auto;
         width: 15rem;
-        right: 4.5rem;
-        top: calc(0.75 * var(--navbar-height));
+        inset-inline-end: 4.5rem;
+        inset-block-start: calc(0.75 * var(--navbar-height));
         background: var(--bg-component);
-        max-height: calc(100vh - var(--navbar-height));
-        overflow-y: scroll;
+        max-height: calc(100dvh - var(--navbar-height));
+        overflow-block: scroll;
         transform: translateX(30rem);
         transition: transform 250ms ease-in-out;
+    }
+
+    .sidebarMenu[popover],
+    .sidebarMenuRight[popover] {
+        position: fixed;
+        inset-block: 0;
+        height: 100dvh;
+        max-height: 100dvh;
+        margin: 0;
+        overflow-block: auto;
+        opacity: 0;
+        z-index: 300;
+        transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, display 250ms, overlay 250ms;
+    }
+
+    .sidebarMenu[popover] {
+        inset-inline-start: 0;
+        inset-inline-end: auto;
+        width: min(20rem, 85vw);
+        max-width: 85vw;
+        transform: translateX(-100%);
+    }
+
+    .sidebarMenuRight[popover] {
+        inset-inline-start: auto;
+        inset-inline-end: 0;
+        width: min(15rem, 85vw);
+        max-width: 85vw;
+        transform: translateX(100%);
+    }
+
+    .sidebarMenu[popover]:dir(rtl) {
+        transform: translateX(100%);
+    }
+
+    .sidebarMenuRight[popover]:dir(rtl) {
+        transform: translateX(-100%);
+    }
+
+    .sidebarMenu[popover]:popover-open,
+    .sidebarMenuRight[popover]:popover-open {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .sidebarIconToggle:has(+ .sidebarMenu:popover-open) > span:nth-child(2),
+    .sidebarIconToggle:has(+ .sidebarMenuRight:popover-open) > span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .sidebarIconToggle:has(+ .sidebarMenu:popover-open) > span:nth-child(1),
+    .sidebarIconToggle:has(+ .sidebarMenuRight:popover-open) > span:nth-child(1) {
+        transform: rotate(135deg);
+        margin-block-start: 9px;
+    }
+
+    .sidebarIconToggle:has(+ .sidebarMenu:popover-open) > span:nth-child(3),
+    .sidebarIconToggle:has(+ .sidebarMenuRight:popover-open) > span:nth-child(3) {
+        transform: rotate(-135deg);
+        margin-block-start: -12px;
+    }
+
+    @starting-style {
+        .sidebarMenu[popover]:popover-open {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        .sidebarMenuRight[popover]:popover-open {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        .sidebarMenu[popover]:popover-open:dir(rtl) {
+            transform: translateX(100%);
+        }
+
+        .sidebarMenuRight[popover]:popover-open:dir(rtl) {
+            transform: translateX(-100%);
+        }
     }
 
     .main-slide-bar.is-right .sidebar-block {
         width: calc(15rem - var(--padding-medium));
         position: relative;
-        left: -1.5rem;
-        padding-left: 0;
+        inset-inline-start: -1.5rem;
+        padding-inline-start: 0;
     }
 
     .main-slide-bar.is-right .sidebar-block > label {
-        padding-left: 0;
-        margin-left: 2rem;
+        padding-inline-start: 0;
+        margin-inline-start: 2rem;
     }
 
     .main-slide-bar.is-right .sidebar-block > nav {
-        margin-left: 0;
-        padding-left: 0;
+        margin-inline-start: 0;
+        padding-inline-start: 0;
     }
 
     .main-slide-bar.is-right .sidebar-block > nav a {
-        margin-left: 0;
-        padding-left: calc(2rem + var(--pad-horz));
+        margin-inline-start: 0;
+        padding-inline-start: calc(2rem + var(--pad-horz));
     }
 
     .main-slide-bar.is-right .sidebar-block > nav a:hover {
-        margin-left: 0;
-        border-left: 2px solid var(--link);
-        padding-left: calc(2rem + var(--pad-horz) - 2px);
+        margin-inline-start: 0;
+        border-inline-start: 2px solid var(--link);
+        padding-inline-start: calc(2rem + var(--pad-horz) - 2px);
     }
 
     .main-slide-bar.is-right .sidebar-block > nav a.icon-nav-horz {
-        margin-left: 0;
+        margin-inline-start: 0;
     }
 
     .main-slide-bar.is-right .sidebarMenuInner {
-        padding-left: 0.5rem;
+        padding-inline-start: 0.5rem;
     }
 
     .main-slide-bar.is-right .sidebarMenuInner a {
-        padding: 0 0 0 2rem;
-        margin-left: calc(8px - 2rem);
+        padding-block: 0 0;
+        padding-inline: 2rem 0;
+        margin-inline-start: calc(8px - 2rem);
     }
 
     .main-slide-bar.is-right .sidebarMenuInner a.icon-nav-horz {
-        margin-left: calc(8px - 2rem);
+        margin-inline-start: calc(8px - 2rem);
     }
 
     .main-slide-bar.is-right .sidebarMenuInner a:hover {
-        border-left: 2px solid var(--link);
-        border-right: none;
+        border-inline-start: 2px solid var(--link);
+        border-inline-end: none;
         background-color: var(--bg-component);
-        padding-left: calc(2rem - 2px);
+        padding-inline-start: calc(2rem - 2px);
     }
 
     .main-slide-bar.is-right .sidebarMenuInner .sidebar-block li {
-        margin-left: 0;
+        margin-inline-start: 0;
     }
 
 
@@ -276,8 +401,8 @@
 
     .sidebar-block input:checked + label::after {
         transform: rotate(90deg);
-        top: 0;
-        right: 0.5em
+        inset-block-start: 0;
+        inset-inline-end: 0.5em
     }
 
     .sidebar-block input:checked + label:hover {
@@ -286,14 +411,21 @@
     }
 
     .sidebar-block input:checked ~ nav {
-        max-height: 100vh;
-        padding: var(--pad-vert) 0 var(--pad-vert) var(--pad-vert);
+        padding-block: var(--pad-vert) var(--pad-vert);
+        padding-inline: var(--pad-vert) 0;
     }
 
 
-    @media screen and (max-width: 576px) {
+    @container navbar (max-width: 576px) {
         .main-slide-bar {
             display: flex;
+        }
+    }
+
+    @supports (transition-behavior: allow-discrete) {
+        .sidebarMenu[popover],
+        .sidebarMenuRight[popover] {
+            transition-behavior: allow-discrete;
         }
     }
 }

@@ -29,13 +29,13 @@ nav: Level
                 in order to vertically align elements.
             </p>
 
-            <p>For device viewports less than (nominally) 576px, the children will be stacked vertically and left adjusted.
+            <p>When the level container is narrower than 576px, the children are stacked vertically and left adjusted.
                 By using the <code>.is-mobile</code> modifier, the children will maintain their layout set by their parent.
             </p>
 
             <p>The <strong>.level</strong> element can be used to house navigation items that have both an icon and associated text.
                 The <code>.icon-nav</code> modifier can control an anchor <code>a</code> containing icons and text.
-                At the nominal breakpoint, the anchor text will be hidden in order to afford more room for navigation icons and to keep
+                When the level container is narrower than 576px, the anchor text is hidden to afford more room for navigation icons and keep
                 them from wrapping.
             </p>
 
@@ -83,7 +83,7 @@ nav: Level
 
                     <tr>
                         <td><code>.is-mobile</code></td>
-                        <td>Normally items will be a vertical block layout if viewport width is less then (nominally) 576px.
+                        <td>Normally items use a vertical block layout when the level container is narrower than 576px.
                             This modifier maintains the horizontal orientation of the child items.</td>
                     </tr>
 

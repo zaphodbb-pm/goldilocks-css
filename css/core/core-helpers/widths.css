@@ -1,132 +1,132 @@
-@layer layout {
+@layer utilities {
 
     /* absolute widths */
     .has-width-1rem {
-        width: 1rem !important;
+        width: 1rem;
     }
 
     .has-width-2rem {
-        width: 2rem !important;
+        width: 2rem;
     }
 
     .has-width-3rem {
-        width: 3rem !important;
+        width: 3rem;
     }
 
     .has-width-4rem {
-        width: 4rem !important;
+        width: 4rem;
     }
 
     .has-width-5rem {
-        width: 5rem !important;
+        width: 5rem;
     }
 
     .has-width-6rem {
-        width: 6rem !important;
+        width: 6rem;
     }
 
     .has-width-8rem {
-        width: 8rem !important;
+        width: 8rem;
     }
 
     .has-width-10rem {
-        width: 10rem !important;
+        width: 10rem;
     }
 
     .has-width-15rem {
-        width: 15rem !important;
+        width: 15rem;
     }
 
     .has-width-20rem {
-        width: 20rem !important;
+        width: 20rem;
     }
 
     .has-width-25rem {
-        width: 25rem !important;
+        width: 25rem;
     }
 
     .has-width-30rem {
-        width: 30rem !important;
+        width: 30rem;
     }
 
     .has-width-40rem {
-        width: 40rem !important;
+        width: 40rem;
     }
 
 
     /* responsive widths */
     .has-max-width-1rem {
-        max-width: 1rem !important;
+        max-width: 1rem;
     }
 
     .has-max-width-2rem {
-        max-width: 2rem !important;
+        max-width: 2rem;
     }
 
     .has-max-width-3rem {
-        max-width: 3rem !important;
+        max-width: 3rem;
     }
 
     .has-max-width-4rem {
-        max-width: 4rem !important;
+        max-width: 4rem;
     }
 
     .has-max-width-5rem {
-        max-width: 5rem !important;
+        max-width: 5rem;
     }
 
     .has-max-width-6rem {
-        max-width: 6rem !important;
+        max-width: 6rem;
     }
 
     .has-max-width-8rem {
-        max-width: 8rem !important;
+        max-width: 8rem;
     }
 
     .has-max-width-10rem {
-        max-width: 10rem !important;
+        max-width: 10rem;
     }
 
     .has-max-width-15rem {
-        max-width: 15rem !important;
+        max-width: 15rem;
     }
 
     .has-max-width-20rem {
-        max-width: 20rem !important;
+        max-width: 20rem;
     }
 
     .has-max-width-25rem {
-        max-width: 25rem !important;
+        max-width: 25rem;
     }
 
     .has-max-width-30rem {
-        max-width: 30rem !important;
+        max-width: 30rem;
     }
 
     .has-max-width-40rem {
-        max-width: 40rem !important;
+        max-width: 40rem;
     }
 
 
     /* relative widths */
     .width-75 {
-        width: 75% !important;
+        width: 75%;
     }
 
     .width-50 {
-        width: 50% !important;
+        width: 50%;
     }
 
     .width-33 {
-        width: 33% !important;
+        width: 33%;
     }
 
     .width-25 {
-        width: 25% !important;
+        width: 25%;
     }
 
     .width-full {
-        width: 100% !important;
+        width: 100%;
     }
 
 }

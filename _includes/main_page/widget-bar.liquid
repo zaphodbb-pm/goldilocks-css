@@ -7,13 +7,13 @@
             <legend>Choose Light or Dark Theme</legend>
 
             <label>
-                <input type="radio" name="theme-setting" id="theme-mode-light" checked onchange="setTheme('Light')">
+                <input type="radio" name="theme-setting" id="theme-mode-light" value="Light" onchange="setTheme('Light')">
                 <span class="icon-bg-day"></span>
                 <span class="sr-only">Light / day mode</span>
             </label>
 
             <label>
-                <input type="radio" name="theme-setting" id="theme-mode-dark" onchange="setTheme('Dark')">
+                <input type="radio" name="theme-setting" id="theme-mode-dark" value="Dark" onchange="setTheme('Dark')">
                 <span class="icon-bg-night"></span>
                 <span class="sr-only">Dark / night mode</span>
             </label>
@@ -21,22 +21,20 @@
     </form>
 
     <script>
-        //*** check local storage for any light / dark theme mode setting
-        let theme = localStorage.getItem("site-theme-mode") || "Light";
-        setTheme(theme);
-
-        function setTheme(theme){
-            if(theme === "Dark"){
-                document.body.classList.add('main-theme-dark');
-                localStorage.setItem("site-theme-mode", "Dark");
-                let radiobtn = document.getElementById("theme-mode-dark");
-                radiobtn.checked = true;
-            }else{
-                document.body.classList.remove('main-theme-dark');
-                localStorage.setItem("site-theme-mode", "Light");
-                let radiobtn = document.getElementById("theme-mode-light");
-                radiobtn.checked = true;
+        (function () {
+            const storedTheme = localStorage.getItem("site-theme-mode");
+            if (storedTheme) {
+                setTheme(storedTheme);
             }
+        })();
+
+        function setTheme(theme) {
+            const root = document.documentElement;
+            const isDark = theme === "Dark";
+            root.classList.toggle('main-theme-dark', isDark);
+            root.classList.toggle('main-theme-light', !isDark);
+            localStorage.setItem("site-theme-mode", isDark ? "Dark" : "Light");
+            document.getElementById(isDark ? "theme-mode-dark" : "theme-mode-light").checked = true;
         }
     </script>
 

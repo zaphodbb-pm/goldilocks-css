@@ -1,6 +1,5 @@
-<div class="sidenav-block">
-    <input type="checkbox" id="slide-extend-components" {% if page.parent-tab == 'extend-components' %}checked{% endif %}>
-    <label for="slide-extend-components">Extend Comp'ts</label>
+<details class="sidenav-block sidebar-block" {% if page.parent-tab == 'extend-components' %}open{% endif %}>
+    <summary>Extend Comp'ts</summary>
     <nav>
         <ul>
             <li><a href="{{site.url}}/pages/extend-components/accordions.html" class="{% if page.nav == "Accordions" %}is-active{% endif %}">Accordions</a></li>
@@ -13,4 +12,4 @@
             <li><a href="{{site.url}}/pages/extend-components/tabs.html" class="{% if page.nav == "Tabs" %}is-active{% endif %}">Tabs</a></li>
         </ul>
     </nav>
-</div>
+</details>

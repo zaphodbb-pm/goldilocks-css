@@ -14,7 +14,7 @@
 
         border-radius: var(--radius-comp);
         background-color: var(--bg-component);
-        overflow-x: scroll;
+        overflow-inline: scroll;
     }
 
     /* position info text */
@@ -39,7 +39,7 @@
     .infobox > div > p span:first-child {
         font-size: calc(2 * var(--size-3));
         font-weight: var(--weight-bold);
-        margin-bottom: var(--mar-vert);
+        margin-block-end: var(--mar-vert);
     }
 
     .infobox > div > p span:first-child sup {
@@ -87,7 +87,7 @@
 
     .infobox > a > span {
         position: relative;
-        padding-right: 2rem;
+        padding-inline-end: 2rem;
         margin: var(--mar-vert) var(--mar-horz);
     }
 

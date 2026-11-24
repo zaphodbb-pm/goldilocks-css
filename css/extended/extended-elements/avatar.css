@@ -88,9 +88,9 @@
     .avatar[data-initials]::before {
         color: currentColor;
         content: attr(data-initials);
-        left: 50%;
+        inset-inline-start: 50%;
         position: absolute;
-        top: 50%;
+        inset-block-start: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
     }
@@ -106,8 +106,8 @@
 
         display: block;
         position: absolute;
-        bottom: 14.64%;
-        right: 14.64%;
+        inset-block-end: 14.64%;
+        inset-inline-end: 14.64%;
         transform: translate(50%, 50%);
 
         border-radius: 50%;

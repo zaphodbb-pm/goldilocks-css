@@ -15,12 +15,12 @@
         justify-content: flex-start;
         flex-wrap: nowrap;
         column-gap: var(--gap-col);
-        padding-top: var(--pad-horz);
-        padding-bottom: var(--padding-normal);
+        padding-block-start: var(--pad-horz);
+        padding-block-end: var(--padding-normal);
     }
 
     .comments > li.comment:last-child {
-        border-bottom: 1px solid var(--border-main);
+        border-block-end: 1px solid var(--border-main);
     }
 
     /* layout content parts */
@@ -30,7 +30,8 @@
 
     .comments > li.comment > div > * {
         padding: 0;
-        margin: 0 0 var(--mar-vert) 0;
+        margin-block: 0 var(--mar-vert);
+        margin-inline: 0 0;
     }
 
     .comments > li.comment > div > p > a > span {
@@ -40,7 +41,7 @@
     .comments > li.comment > div > time {
         font-size: 0.8em;
         font-style: italic;
-        margin-top: -0.75rem;
+        margin-block-start: -0.75rem;
         display: block;
     }
 
@@ -53,9 +54,10 @@
 
     /* recursive comments list */
     .comments > li > ul {
-        border-top: 1px solid var(--border-main);
-        padding-top: var(--padding);
-        margin: var(--mar-vert) 0 0 3rem;
+        border-block-start: 1px solid var(--border-main);
+        padding-block-start: var(--padding);
+        margin-block: var(--mar-vert) 0;
+        margin-inline: 3rem 0;
     }
 
 
@@ -65,6 +67,6 @@
     }
 
     .comments > li.with-form > figure {
-        margin-top: 1.5rem;
+        margin-block-start: 1.5rem;
     }
 }

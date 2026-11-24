@@ -11,8 +11,8 @@
         height: 2em;
         justify-content: center;
         line-height: var(--line-height-150);
-        padding-left: 1em;
-        padding-right: 1em;
+        padding-inline-start: 1em;
+        padding-inline-end: 1em;
         white-space: nowrap;
     }
 
@@ -36,8 +36,8 @@
 
     /* adjust icon layout */
     .tag [class*="icon-bg"] {
-        margin-left: auto;
-        margin-right: auto;
+        margin-inline-start: auto;
+        margin-inline-end: auto;
         font-size: inherit;
         display: inline-flex;
     }
@@ -51,7 +51,8 @@
 
     .tag .delete {
         position: relative;
-        margin: 0 -0.75em 0 1em;
+        margin-block: 0 0;
+        margin-inline: 1em -0.75em;
         padding: 0;
 
         height: 1.5em;
@@ -72,8 +73,8 @@
         background-color: currentColor;
 
         position: absolute;
-        top: 50%;
-        left: 50%;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
         transform-origin: center center;
     }
@@ -111,7 +112,7 @@
     }
 
     .tag.is-rounded .delete{
-        margin-right: -0.75em;
+        margin-inline-end: -0.75em;
     }
 
     a.tag:hover {
@@ -129,7 +130,7 @@
     }
 
     .tags .tag:not(:last-child) {
-        margin-right: var(--mar-horz);
+        margin-inline-end: var(--mar-horz);
     }
 
     .tags.is-rounded .tag {
@@ -147,18 +148,18 @@
 
     /* compound tag  and lists */
     .tags.is-compound .tag {
-        margin-right: 0;
+        margin-inline-end: 0;
     }
 
     .tags.is-compound .tag:not(:first-child) {
-        margin-left: 0;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        margin-inline-start: 0;
+        border-start-start-radius: 0;
+        border-end-start-radius: 0;
     }
 
     .tags.is-compound .tag:not(:last-child) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-start-end-radius: 0;
+        border-end-end-radius: 0;
     }
 
 

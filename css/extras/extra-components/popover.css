@@ -7,8 +7,8 @@
 
     .popover .popover-container {
         position: absolute;
-        left: 50%;
-        top: 0;
+        inset-inline-start: 50%;
+        inset-block-start: 0;
         opacity: 0;
         padding: var(--pad-horz);
         margin: var(--mar-vert) var(--mar-horz);
@@ -25,10 +25,10 @@
     }
 
 
-    .popover *:focus + .popover-container,
-    .popover:hover .popover-container,
-    .popover:focus .popover-container,
-    .popover:active .popover-container {
+    .popover *:focus + .popover-container:not([popover]),
+    .popover:hover .popover-container:not([popover]),
+    .popover:focus .popover-container:not([popover]),
+    .popover:active .popover-container:not([popover]) {
         z-index: 300;
         display: block;
         opacity: 1;
@@ -36,52 +36,139 @@
     }
 
     .popover.pop-bottom .popover-container {
-        left: 50%;
-        top: 100%;
+        inset-inline-start: 50%;
+        inset-block-start: 100%;
     }
 
-    .popover.pop-bottom *:focus + .popover-container,
-    .popover.pop-bottom:hover .popover-container {
+    .popover.pop-bottom *:focus + .popover-container:not([popover]),
+    .popover.pop-bottom:hover .popover-container:not([popover]) {
         transform: translate(-50%, 0) scale(1);
     }
 
     .popover.pop-right .popover-container {
-        left: 100%;
-        top: 50%;
+        inset-inline-start: 100%;
+        inset-block-start: 50%;
     }
 
-    .popover.pop-right *:focus + .popover-container,
-    .popover.pop-right:hover .popover-container {
+    .popover.pop-right *:focus + .popover-container:not([popover]),
+    .popover.pop-right:hover .popover-container:not([popover]) {
         transform: translate(0, -50%) scale(1);
     }
 
     .popover.pop-left .popover-container {
-        left: 0;
-        top: 50%;
+        inset-inline-start: 0;
+        inset-block-start: 50%;
     }
 
-    .popover.pop-left *:focus + .popover-container,
-    .popover.pop-left:hover .popover-container {
+    .popover.pop-left *:focus + .popover-container:not([popover]),
+    .popover.pop-left:hover .popover-container:not([popover]) {
         transform: translate(calc(-100% - 2 * var(--mar-horz)), -50%) scale(1);
     }
 
 
-    [popover]:popover-open {
+    .popover-container[popover] {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+        transition: opacity 0.2s, transform 0.2s, display 0.2s, overlay 0.2s;
+    }
+
+    .popover-container[popover]:popover-open {
+        display: block;
+        opacity: 1;
+        transform: translate(-50%, calc(-100% - 2 * var(--mar-vert))) scale(1);
+    }
+
+    .dropdown-menu[popover] {
+        opacity: 0;
+        transform: scaleX(0);
+        transition: opacity 0.2s, transform 0.2s, display 0.2s, overlay 0.2s;
+    }
+
+    .dropdown-menu[popover]:popover-open {
         opacity: 1;
         transform: scaleX(1);
     }
 
-    [popover] {
+    .popover.pop-bottom .popover-container[popover]:popover-open {
+        transform: translate(-50%, 0) scale(1);
+    }
 
-        /* Final state of the exit animation */
-        opacity: 0;
-        transform: scaleX(0);
+    .popover.pop-right .popover-container[popover]:popover-open {
+        transform: translate(0, -50%) scale(1);
+    }
 
-        transition:
-                opacity 0.7s,
-                transform 0.7s,
-                overlay 0.7s allow-discrete,
-                display 0.7s allow-discrete;
-        /* Equivalent to transition: all 0.7s allow-discrete; */
+    .popover.pop-left .popover-container[popover]:popover-open {
+        transform: translate(calc(-100% - 2 * var(--mar-horz)), -50%) scale(1);
+    }
+
+    @starting-style {
+        .popover-container[popover]:popover-open {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .dropdown-menu[popover]:popover-open {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+    }
+
+    @supports (anchor-name: --a) and (anchor-scope: --a) {
+        .popover {
+            anchor-scope: --popover-anchor;
+        }
+
+        .popover > button[popovertarget] {
+            anchor-name: --popover-anchor;
+        }
+
+        .popover .popover-container[popover] {
+            position: fixed;
+            inset: auto;
+            margin: 0;
+            position-anchor: --popover-anchor;
+            position-area: block-start;
+            position-try-fallbacks: flip-block, flip-inline;
+            transform: scale(0);
+        }
+
+        .popover .popover-container[popover]:popover-open {
+            transform: scale(1);
+        }
+
+        .popover.pop-bottom .popover-container[popover] {
+            position-area: block-end;
+        }
+
+        .popover.pop-right .popover-container[popover] {
+            position-area: inline-end;
+        }
+
+        .popover.pop-left .popover-container[popover] {
+            position-area: inline-start;
+        }
+
+        .popover.pop-bottom .popover-container[popover]:popover-open,
+        .popover.pop-right .popover-container[popover]:popover-open,
+        .popover.pop-left .popover-container[popover]:popover-open {
+            transform: scale(1);
+        }
+
+        @starting-style {
+            .popover .popover-container[popover]:popover-open,
+            .popover.pop-bottom .popover-container[popover]:popover-open,
+            .popover.pop-right .popover-container[popover]:popover-open,
+            .popover.pop-left .popover-container[popover]:popover-open {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+    }
+
+    @supports (transition-behavior: allow-discrete) {
+        .popover-container[popover],
+        .dropdown-menu[popover] {
+            transition-behavior: allow-discrete;
+        }
     }
 }

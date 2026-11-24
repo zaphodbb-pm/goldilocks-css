@@ -18,7 +18,8 @@ nav: Tabs
                 styles and provide a basic responsive horizontal list that displays segmented content. <strong>Tabs</strong> allows
                 for the addition of icons in the tab label. Note that a maximum of nine tab labels is supported. More than nine tabs
                 make the element cluttered and hard for the user to comprehend.  Break a long list of items into two tabbed sections
-                or combine some items if you can.
+                or combine some items if you can. This same nine-tab maximum applies to both the radio and
+                <code>details[name]</code> versions.
             </p>
 
             <p><strong>Tabs</strong> maintains the semantic HTML structure for screen readers of the user relevant content.
@@ -606,10 +607,10 @@ nav: Tabs
             <div>
                 <h3>.tabs .is-boxed .is-large .is-fullwidth with icons</h3>
                 <div class="tabs is-large is-boxed is-fullwidth">
-                    <input type="radio" name="tab_unit_ 8" id="tabs_content_81" hidden  checked>
-                    <input type="radio" name="tab_unit_ 8" id="tabs_content_82" hidden  >
-                    <input type="radio" name="tab_unit_ 8" id="tabs_content_83" hidden  >
-                    <input type="radio" name="tab_unit_ 8" id="tabs_content_84" hidden  >
+                    <input type="radio" name="tab_unit_8" id="tabs_content_81" hidden  checked>
+                    <input type="radio" name="tab_unit_8" id="tabs_content_82" hidden  >
+                    <input type="radio" name="tab_unit_8" id="tabs_content_83" hidden  >
+                    <input type="radio" name="tab_unit_8" id="tabs_content_84" hidden  >
 
                     <ul hidden >
                         <li>
@@ -669,6 +670,48 @@ nav: Tabs
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="space-items-medium "></div>
+
+    <h3>Native details tabs</h3>
+    <p>The native version uses the same limit of nine tabs as the classic radio version.</p>
+    <div class="row has-5x-minwidth">
+        <div class="column">
+            <div class="tabs">
+                <details name="native-tabs" open>
+                    <summary>Overview</summary>
+                    <section><h2 class="sr-only">Overview</h2><p>Overview panel content.</p></section>
+                </details>
+                <details name="native-tabs">
+                    <summary>Features</summary>
+                    <section><h2 class="sr-only">Features</h2><p>Features panel content.</p></section>
+                </details>
+                <details name="native-tabs">
+                    <summary>Details</summary>
+                    <section><h2 class="sr-only">Details</h2><p>Details panel content.</p></section>
+                </details>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="tabs"&gt;
+                    &lt;details name="native-tabs" open&gt;
+                        &lt;summary&gt;Overview&lt;/summary&gt;
+                        &lt;section&gt;&lt;h2 class="sr-only"&gt;Overview&lt;/h2&gt;&lt;p&gt;Overview panel content.&lt;/p&gt;&lt;/section&gt;
+                    &lt;/details&gt;
+                    &lt;details name="native-tabs"&gt;
+                        &lt;summary&gt;Features&lt;/summary&gt;
+                        &lt;section&gt;&lt;h2 class="sr-only"&gt;Features&lt;/h2&gt;&lt;p&gt;Features panel content.&lt;/p&gt;&lt;/section&gt;
+                    &lt;/details&gt;
+                    &lt;details name="native-tabs"&gt;
+                        &lt;summary&gt;Details&lt;/summary&gt;
+                        &lt;section&gt;&lt;h2 class="sr-only"&gt;Details&lt;/h2&gt;&lt;p&gt;Details panel content.&lt;/p&gt;&lt;/section&gt;
+                    &lt;/details&gt;
+                &lt;/div&gt;
+            </code></pre>
         </div>
     </div>
 

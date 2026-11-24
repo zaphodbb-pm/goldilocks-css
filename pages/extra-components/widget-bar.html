@@ -39,9 +39,9 @@ nav: Widget Bar
                 <a href="https://www.toptal.com/designers/ui/dark-ui-design" target=_blank>The Principles of Dark UI Design</a>
             </p>
 
-            <p>CSS variables of parents (ie <code>:root</code>) cannot be changed by children elements.  The variables in <code>:root</code> must,
-                unfortunately be changed through JavaScript.  A simple, plain vanilla script has been included for each widget that needs to
-                change a key CSS variable.
+            <p>With no saved theme choice, the page follows the operating system preference. Choosing Light or Dark stores that choice and
+                applies <code>.main-theme-light</code> or <code>.main-theme-dark</code> to the root <code>&lt;html&gt;</code> element.
+                JavaScript is needed only to apply and remember explicit choices across page loads; without one, CSS does not force Light or Dark.
             </p>
 
             <p>Since the <strong>WidgetBar</strong> component is general purpose, you can add your own widgets to improve the use of your application.</p>
@@ -290,13 +290,13 @@ nav: Widget Bar
                         <legend>Choose Light or Dark Theme</legend>
 
                         <label>
-                            <input type="radio" name="theme-setting" checked onchange="setTheme('Light')">
+                            <input type="radio" name="theme-setting-demo" id="widget-demo-light" value="Light" onchange="setDemoTheme('Light')">
                             <span class="icon-bg-day"></span>
                             <span class="sr-only">Light / day mode</span>
                         </label>
 
                         <label>
-                            <input type="radio" name="theme-setting" onchange="setTheme('Dark')">
+                            <input type="radio" name="theme-setting-demo" id="widget-demo-dark" value="Dark" onchange="setDemoTheme('Dark')">
                             <span class="icon-bg-night"></span>
                             <span class="sr-only">Dark / night mode</span>
                         </label>
@@ -304,12 +304,20 @@ nav: Widget Bar
                 </form>
 
                 <script>
-                    function setTheme(theme){
-                        if(theme === "Dark"){
-                            document.body.classList.add('main-theme-dark');
-                        }else{
-                            document.body.classList.remove('main-theme-dark');
+                    (function () {
+                        const storedTheme = localStorage.getItem("site-theme-mode");
+                        if (storedTheme) {
+                            setDemoTheme(storedTheme);
                         }
+                    })();
+
+                    function setDemoTheme(theme) {
+                        const root = document.documentElement;
+                        const isDark = theme === "Dark";
+                        root.classList.toggle('main-theme-dark', isDark);
+                        root.classList.toggle('main-theme-light', !isDark);
+                        localStorage.setItem("site-theme-mode", isDark ? "Dark" : "Light");
+                        document.getElementById(isDark ? "widget-demo-dark" : "widget-demo-light").checked = true;
                     }
                 </script>
             </div>
@@ -325,13 +333,13 @@ nav: Widget Bar
                             &lt;legend&gt;Choose Light or Dark Theme&lt;/legend&gt;
 
                             &lt;label&gt;
-                                &lt;input type="radio" name="theme-setting" checked onchange="setTheme('Light')"&gt;
+                                &lt;input type="radio" name="theme-setting-demo" id="widget-demo-light" value="Light" onchange="setDemoTheme('Light')"&gt;
                                 &lt;span class="icon-bg-day"&gt;&lt;/span&gt;
                                 &lt;span class="sr-only"&gt;Light / day mode&lt;/span&gt;
                             &lt;/label&gt;
 
                             &lt;label&gt;
-                                &lt;input type="radio" name="theme-setting" onchange="setTheme('Dark')"&gt;
+                                &lt;input type="radio" name="theme-setting-demo" id="widget-demo-dark" value="Dark" onchange="setDemoTheme('Dark')"&gt;
                                 &lt;span class="icon-bg-night"&gt;&lt;/span&gt;
                                 &lt;span class="sr-only"&gt;Dark / night mode&lt;/span&gt;
                             &lt;/label&gt;
@@ -339,22 +347,20 @@ nav: Widget Bar
                     &lt;/form&gt;
 
                     &lt;script&gt;
-                        //*** check local storage for any light / dark theme mode setting
-                        let theme = localStorage.getItem("site-theme-mode") || "Light";
-                        setTheme(theme);
-
-                        function setTheme(theme){
-                            if(theme === "Dark"){
-                                document.body.classList.add('main-theme-dark');
-                                localStorage.setItem("site-theme-mode", "Dark");
-                                let radiobtn = document.getElementById("theme-mode-dark");
-                                radiobtn.checked = true;
-                            }else{
-                                document.body.classList.remove('main-theme-dark');
-                                localStorage.setItem("site-theme-mode", "Light");
-                                let radiobtn = document.getElementById("theme-mode-light");
-                                radiobtn.checked = true;
+                        (function () {
+                            const storedTheme = localStorage.getItem("site-theme-mode");
+                            if (storedTheme) {
+                                setDemoTheme(storedTheme);
                             }
+                        })();
+
+                        function setDemoTheme(theme) {
+                            const root = document.documentElement;
+                            const isDark = theme === "Dark";
+                            root.classList.toggle('main-theme-dark', isDark);
+                            root.classList.toggle('main-theme-light', !isDark);
+                            localStorage.setItem("site-theme-mode", isDark ? "Dark" : "Light");
+                            document.getElementById(isDark ? "widget-demo-dark" : "widget-demo-light").checked = true;
                         }
                     &lt;/script&gt;
                 &lt;/div&gt;
@@ -429,13 +435,13 @@ nav: Widget Bar
                 <legend>Choose Light or Dark Theme</legend>
 
                 <label>
-                    <input type="radio" name="heading-sizes" checked onchange="setTheme('Light')">
+                    <input type="radio" name="theme-setting-full" id="full-widget-theme-light" value="Light" onchange="setFullWidgetTheme('Light')">
                     <span class="icon-bg-day"></span>
                     <span class="sr-only">Light / day mode</span>
                 </label>
 
                 <label>
-                    <input type="radio" name="heading-sizes" onchange="setTheme('Dark')">
+                    <input type="radio" name="theme-setting-full" id="full-widget-theme-dark" value="Dark" onchange="setFullWidgetTheme('Dark')">
                     <span class="icon-bg-night"></span>
                     <span class="sr-only">Dark / night mode</span>
                 </label>
@@ -443,12 +449,20 @@ nav: Widget Bar
         </form>
 
         <script>
-            function setTheme(theme){
-                if(theme === "Dark"){
-                    document.body.classList.add('main-theme-dark');
-                }else{
-                    document.body.classList.remove('main-theme-dark');
+            (function () {
+                const storedTheme = localStorage.getItem("site-theme-mode");
+                if (storedTheme) {
+                    setFullWidgetTheme(storedTheme);
                 }
+            })();
+
+            function setFullWidgetTheme(theme) {
+                const root = document.documentElement;
+                const isDark = theme === "Dark";
+                root.classList.toggle('main-theme-dark', isDark);
+                root.classList.toggle('main-theme-light', !isDark);
+                localStorage.setItem("site-theme-mode", isDark ? "Dark" : "Light");
+                document.getElementById(isDark ? "full-widget-theme-dark" : "full-widget-theme-light").checked = true;
             }
         </script>
 

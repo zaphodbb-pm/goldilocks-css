@@ -22,7 +22,7 @@
     }
 
     .divider {
-        border-top: 1px solid var(--border-main-darker);
+        border-block-start: 1px solid var(--border-main-darker);
         height: 1px;
         margin: var(--margin-form) 0;
         text-align: center;
@@ -53,17 +53,17 @@
         content: "";
         display: block;
         position: absolute;
-        top: .4rem;
-        bottom: .4rem;
-        left: 50%;
+        inset-block-start: .4rem;
+        inset-block-end: .4rem;
+        inset-inline-start: 50%;
         transform: translateX(-50%);
-        border-left: 1px solid var(--border-main-darker);
+        border-inline-start: 1px solid var(--border-main-darker);
     }
 
     .divider-vert[data-content]::after {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
         padding: .2rem 0;
         transform: translate(-50%, -50%);
     }

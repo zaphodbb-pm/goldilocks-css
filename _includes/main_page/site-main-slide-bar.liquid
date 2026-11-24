@@ -1,14 +1,11 @@
 <div class="main-slide-bar">
-    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu-main">
+    <button type="button" class="sidebarIconToggle" popovertarget="site-slidebar" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-    <label for="openSidebarMenu-main" class="sidebarIconToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="sr-only">Slide nav toggle</span>
-    </label>
-
-    <div class="sidebarMenu">
+    <div class="sidebarMenu" id="site-slidebar" popover="auto">
         <div class="sidebarMenuInner">
             {% include slide-navs/get-started.liquid %}
             {% include slide-navs/core-layout.liquid %}

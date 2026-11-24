@@ -29,7 +29,7 @@
     }
 
     .sidenavs > nav {
-        margin-bottom: var(--margin);
+        margin-block-end: var(--margin);
     }
 
     .sidenavs > nav li {
@@ -42,7 +42,7 @@
 
     .sidenavs > nav a.icon-nav-horz [class*=icon-bg-],
     .sidenav-block nav a.icon-nav-horz [class*=icon-bg-] {
-        margin-left: 0;
+        margin-inline-start: 0;
     }
 
     .sidenav-block {
@@ -57,23 +57,31 @@
         flex-direction: column;
     }
 
-    .sidenav-block > label {
+    .sidenav-block > label,
+    .sidenav-block > summary,
+    .sidenav-block > details > summary,
+    details.sidenav-block > summary {
         margin: 0;
         font-weight: var(--weight-medium);
         cursor: pointer;
         position: relative;
-        padding: var(--pad-vert) 2.5rem var(--pad-vert) var(--pad-horz);
+        padding-block: var(--pad-vert) var(--pad-vert);
+        padding-inline: var(--pad-horz) 2.5rem;
+        list-style: none;
     }
 
-    .sidenav-block > label::after {
+    .sidenav-block > label::after,
+    .sidenav-block > summary::after,
+    .sidenav-block > details > summary::after,
+    details.sidenav-block > summary::after {
         content: "";
         height: 1.5rem;
         width: 2.5rem;
         position: absolute;
 
         /* adds right chevron */
-        right: 0;
-        top: 0.75rem;
+        inset-inline-end: 0;
+        inset-block-start: 0.75rem;
         background-color: currentColor;
         mask-image: var(--indicator-right);
         mask-repeat: no-repeat;
@@ -85,7 +93,7 @@
     }
 
     .sidenav-block > nav {
-        max-height: 0;
+        display: none;
         padding: 0;
         color: var(--text-elem);
         background-color: inherit;
@@ -104,12 +112,15 @@
     .sidenavs a.is-active,
     .sidenavs a:hover,
     .sidenav-block a:hover {
-        border-right: 2px solid var(--link);
+        border-inline-end: 2px solid var(--link);
         background-color: var(--link-lightest);
-        padding-right: calc(var(--pad-horz) - 2px);
+        padding-inline-end: calc(var(--pad-horz) - 2px);
     }
 
-    .sidenav-block > label:hover {
+    .sidenav-block > label:hover,
+    .sidenav-block > summary:hover,
+    .sidenav-block > details > summary:hover,
+    details.sidenav-block > summary:hover {
         background-color: var(--bg-element);
         color: inherit;
     }
@@ -126,8 +137,13 @@
 
     .sidenav-block input:checked + label::after {
         transform: rotate(90deg);
-        top: 0.75em;
-        right: 0;
+        inset-block-start: 0.75em;
+        inset-inline-end: 0;
+    }
+
+    .sidenav-block > details[open] > summary::after,
+    details.sidenav-block[open] > summary::after {
+        transform: rotate(90deg);
     }
 
     .sidenav-block input:checked + label:hover {
@@ -135,9 +151,11 @@
         color: inherit;
     }
 
-    .sidenav-block input:checked ~ nav {
-        max-height: 100vh;
-        padding: var(--pad-vert) 0 var(--pad-vert) var(--pad-vert);
-        margin-bottom: 1rem;
+    .sidenav-block input:checked ~ nav,
+    .sidenav-block > details[open] > nav,
+    details.sidenav-block[open] > nav {
+        padding-block: var(--pad-vert) var(--pad-vert);
+        padding-inline: var(--pad-vert) 0;
+        margin-block-end: 1rem;
     }
 }

@@ -21,11 +21,6 @@
         cursor: pointer;
     }
 
-    button:focus, .button:focus {
-        outline: none;
-    }
-
-
     a.button {
         height: auto;
         text-decoration: none;
@@ -365,48 +360,48 @@
 
     .buttons button:not(:last-child),
     .buttons .button:not(:last-child) {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-        margin-right: -1px;
+        border-end-end-radius: 0;
+        border-start-end-radius: 0;
+        margin-inline-end: -1px;
     }
 
     .buttons button:not(:first-child),
     .buttons .button:not(:first-child) {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
+        border-end-start-radius: 0;
+        border-start-start-radius: 0;
     }
 
     /** ensure that hover doesn't distort button size **/
     .button[class*="outlined"].is-small:not(.has-no-hover):hover {
-        padding-top: calc(var(--pad-vert-small) + 1px);
-        padding-bottom: calc(var(--pad-vert-small) + 1px);
+        padding-block-start: calc(var(--pad-vert-small) + 1px);
+        padding-block-end: calc(var(--pad-vert-small) + 1px);
     }
 
     button .icon:first-child,
     .button .icon:first-child {
-        margin-left: calc(-0.25em - 1px);
-        margin-right: 0.25em;
+        margin-inline-start: calc(-0.25em - 1px);
+        margin-inline-end: 0.25em;
         font-size: 1em;
     }
 
     button .icon:last-child,
     .button .icon:last-child {
-        margin-right: calc(-0.25em - 1px);
-        margin-left: 0.25em;
+        margin-inline-end: calc(-0.25em - 1px);
+        margin-inline-start: 0.25em;
         font-size: 1em;
     }
 
     button .icon:only-child,
     .button .icon:only-child {
-        margin-right: 0.25em;
-        margin-left: 0.25em;
+        margin-inline-end: 0.25em;
+        margin-inline-start: 0.25em;
         font-size: 1em;
     }
 
     /* set-up for waiting spinner */
     button.is-loading,
     .button.is-loading {
-        color: transparent !important;
+        color: transparent;
         pointer-events: none;
     }
 
@@ -423,13 +418,12 @@
 
     button.is-loading::after,
     .button.is-loading::after {
-        -webkit-animation: spinAround .5s infinite linear;
         animation: spinAround .5s infinite linear;
         border-radius: 200px;
 
         border: 2px solid var(--bg-main);
-        border-right-color: transparent;
-        border-top-color: transparent;
+        border-inline-end-color: transparent;
+        border-block-start-color: transparent;
 
         content: "";
         display: block;
@@ -437,8 +431,8 @@
         width: 1em;
 
         position: relative;
-        right: calc(50% - (1em / 2) - 4px);
-        top: calc(50% - (1em / 2) - 2px);
+        inset-inline-end: calc(50% - (1em / 2) - 4px);
+        inset-block-start: calc(50% - (1em / 2) - 2px);
     }
 
     /*** floating action buttons ***/
@@ -545,10 +539,10 @@
     button.fab-primary > [class*="icon-bg-"],
     button.fab-secondary > [class*="icon-bg-"],
     button.fab-complement > [class*="icon-bg-"] {
-        width: 67% !important;
-        height: 67% !important;
-        margin:0 !important;
-        background-color: currentColor !important;
+        width: 67%;
+        height: 67%;
+        margin:0;
+        background-color: currentColor;
     }
 
     /*** position controls ***/
@@ -557,8 +551,8 @@
     .fab-secondary.is-top-left,
     .fab-complement.is-top-left {
         position: fixed;
-        top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
-        left: var(--base-rem);
+        inset-block-start: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
+        inset-inline-start: var(--base-rem);
         z-index: var(--navbar-z);
     }
 
@@ -567,8 +561,8 @@
     .fab-secondary.is-top-right,
     .fab-complement.is-top-right {
         position: fixed;
-        top: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
-        right: var(--base-rem);
+        inset-block-start: calc( var(--base-rem) + var(--navbar-height) + var(--widgetbar-height));
+        inset-inline-end: var(--base-rem);
         z-index: var(--navbar-z);
     }
 
@@ -577,8 +571,8 @@
     .fab-secondary.is-bottom-left,
     .fab-complement.is-bottom-left {
         position: fixed;
-        bottom: var(--base-rem);
-        left: var(--base-rem);
+        inset-block-end: var(--base-rem);
+        inset-inline-start: var(--base-rem);
         z-index: var(--navbar-z);
     }
 
@@ -587,8 +581,8 @@
     .fab-secondary.is-bottom-right,
     .fab-complement.is-bottom-right {
         position: fixed;
-        bottom: var(--base-rem);
-        right: var(--base-rem);
+        inset-block-end: var(--base-rem);
+        inset-inline-end: var(--base-rem);
         z-index: var(--navbar-z);
     }
 

@@ -2,10 +2,10 @@
 
     .modal-overlay {
         position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        inset-block-start: 0;
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        inset-inline-end: 0;
         background-color: rgba(10, 10, 10, 0.6);
         transition: opacity 200ms;
         visibility: hidden;
@@ -23,7 +23,7 @@
         flex-direction: column;
         justify-content: center;
         overflow: hidden;
-        height: 100vh;
+        height: 100dvh;
         width: 100vw;
     }
 
@@ -32,9 +32,8 @@
         flex-direction: column;
 
         margin: 0 20px;
-        max-height: calc(100vh - 160px);
+        max-height: calc(100dvh - 160px);
         overflow: hidden;
-        -ms-overflow-y: visible;
         position: relative;
         width: 100%;
     }
@@ -50,6 +49,21 @@
         color: inherit;
         margin: auto;
         width: calc(100vw - 40px);
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: opacity 200ms ease, transform 200ms ease, display 200ms, overlay 200ms;
+    }
+
+    dialog.modal-card[open] {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @starting-style {
+        dialog.modal-card[open] {
+            opacity: 0;
+            transform: translateY(1rem);
+        }
     }
 
     @media screen and (min-width: 640px) {
@@ -60,12 +74,24 @@
 
     dialog.modal-card::backdrop {
         background-color: rgba(10, 10, 10, 0.6);
+        opacity: 0;
+        transition: opacity 200ms ease, display 200ms, overlay 200ms;
+    }
+
+    dialog.modal-card[open]::backdrop {
+        opacity: 1;
+    }
+
+    @starting-style {
+        dialog.modal-card[open]::backdrop {
+            opacity: 0;
+        }
     }
 
     @media screen and (min-width: 640px) {
         .modal-card {
             margin: 0 auto;
-            max-height: calc(100vh - 40px);
+            max-height: calc(100dvh - 40px);
             width: 640px;
         }
     }
@@ -82,9 +108,9 @@
 
     .modal-card > header {
         justify-content: flex-start;
-        border-bottom: 1px solid var(--border-main-darker);
-        border-top-left-radius: var(--radius-comp);
-        border-top-right-radius: var(--radius-comp);
+        border-block-end: 1px solid var(--border-main-darker);
+        border-start-start-radius: var(--radius-comp);
+        border-start-end-radius: var(--radius-comp);
     }
 
     .modal-card > header > :is(h2, h3, h4 ,h5, h6) {
@@ -100,8 +126,8 @@
     /** close button **/
     .modal-card > header > .delete {
         position: absolute;
-        right: .5em;
-        top: .5em;
+        inset-inline-end: .5em;
+        inset-block-start: .5em;
 
         height: 1.25em;
         width: 1.25em;
@@ -126,8 +152,8 @@
         background-color: currentColor;
 
         position: absolute;
-        top: 50%;
-        left: 50%;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
         transform-origin: center center;
     }
@@ -158,17 +184,16 @@
     /** footer **/
     .modal-card > footer {
         justify-content: space-between;
-        border-bottom-left-radius: var(--radius-comp);
-        border-bottom-right-radius: var(--radius-comp);
-        border-top: 1px solid var(--border-main-darker);
+        border-end-start-radius: var(--radius-comp);
+        border-end-end-radius: var(--radius-comp);
+        border-block-start: 1px solid var(--border-main-darker);
     }
 
     .modal-card > footer .button:not(:last-child) {
-        margin-right: var(--mar-horz);
+        margin-inline-end: var(--mar-horz);
     }
 
     .modal-card > div {
-        -webkit-overflow-scrolling: touch;
         background-color: var(--bg-main);
         flex-grow: 1;
         flex-shrink: 1;
@@ -177,7 +202,14 @@
     }
 
     .modal-card > div:last-child {
-        border-bottom-left-radius: var(--radius-comp);
-        border-bottom-right-radius: var(--radius-comp);
+        border-end-start-radius: var(--radius-comp);
+        border-end-end-radius: var(--radius-comp);
+    }
+
+    @supports (transition-behavior: allow-discrete) {
+        dialog.modal-card,
+        dialog.modal-card::backdrop {
+            transition-behavior: allow-discrete;
+        }
     }
 }

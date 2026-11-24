@@ -31,23 +31,28 @@ nav: Navbar
                 Note that drop-down menus should be used carefully and infrequently.
             </p>
 
-            <p>For a mobile sized screen (ie less than 576px), the order is changed where left and right flexboxes appear first and
+            <p>When the navbar container is narrower than 576px, the order changes so the left and right flexboxes appear first and
                 the center flexbox changes its direction to column with its children row aligned.
             </p>
 
             <p>By using the <code>.is-mobile</code> class on the parent <code>.navbar</code> element, the navbar children sections will
                 not be re-ordered.  The left, center and right children flex boxes will maintain their row orientation.
-                Navbar supports preserving the layout for mobile-sized screens (ie typically less than 576px) as well.
+                Navbar supports preserving the layout when its container is narrower than 576px as well.
                 In this case, care should be taken to ensure that the children will still fit in a row, otherwise they will be wrapped.
             </p>
 
             <p>The <strong>navbar</strong> component supports a <strong>slide-out bar</strong> component activated by a
-                classic hamburger element.  The hamburger will be hidden until the mobile break-point is reached.
+                classic hamburger element. The hamburger appears when the navbar container is narrower than 576px.
                 The hamburger can be forced to display always by adding the <code>.show-always</code> class.
                 The <strong>slide-out bar</strong> component can be left (default) slide in or right slide in.
             </p>
 
-            <p>For mobile sized screens (ie typically less than 576px) a sliding sidebar can be used to provide better screen usage
+            <p>The checkbox-driven drawer remains the classic option. A native button with <code>popovertarget</code> can
+                open <code>.sidebarMenu[popover]</code> or <code>.sidebarMenuRight[popover]</code> as a JavaScript-free,
+                light-dismiss drawer.
+            </p>
+
+            <p>When the navbar container is narrower than 576px, a sliding sidebar can be used to provide better screen usage
                 and more complete navigation.  By using the <code>.has-sliding-sidebar</code> class on the parent <code>.navbar</code> element, the navbar child
                 <code>.navbar-center</code> section will not display.  The navigation menu will instead slide out.
                 This menu can hold many more navigation links than the horizontal navbar section.
@@ -91,12 +96,12 @@ nav: Navbar
                 <tr>
                     <td><code>.show-bottom-nav</code></td>
                     <td><code>.navbar-center</code> modifier that emulates a typical mobile app menu.
-                        At mobile breakpoint, fixes item's children at viewport bottom and removes labels.</td>
+                        When the navbar container is narrower than 576px, it fixes the items at the viewport bottom and removes labels.</td>
                 </tr>
 
                 <tr>
                     <td><code>.navbar-burger</code></td>
-                    <td>styles classic hamburger component in mobile widths</td>
+                    <td>styles the classic hamburger component for narrow navbar containers</td>
                 </tr>
 
                 <tr>
@@ -116,7 +121,7 @@ nav: Navbar
 
                 <tr>
                     <td><code>.show-always</code></td>
-                    <td>modifier that always displays hamburger, otherwise hidden for non-mobile width viewports</td>
+                    <td>modifier that always displays the hamburger, otherwise it appears when the navbar container is narrower than 576px</td>
                 </tr>
 
                 <tr>
@@ -1077,5 +1082,72 @@ nav: Navbar
                 &lt;/div&gt;
             &lt;/div&gt;
         </code></pre>
+    </div>
+
+    <div class="space-items-medium"></div>
+
+    <h3>Native popover drawer</h3>
+    <div class="row has-5x-minwidth">
+        <div class="column">
+            <div class="main-slide-bar show-always">
+                <button type="button" class="sidebarIconToggle" popovertarget="navbar-native-sidebar"
+                        aria-label="Open navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="sidebarMenu" id="navbar-native-sidebar" popover="auto">
+                    <div class="sidebarMenuInner" role="region" aria-label="Native sliding side bar">
+                        <nav aria-label="Drawer links">
+                            <ul>
+                                <li><a href="#navbar-left-sidebar">Home</a></li>
+                                <li><a href="#navbar-left-sidebar">About</a></li>
+                            </ul>
+                        </nav>
+                        <details class="sidebar-block">
+                            <summary>More Links</summary>
+                            <nav aria-label="More drawer links">
+                                <ul>
+                                    <li><a href="#navbar-left-sidebar">Contact</a></li>
+                                    <li><a href="#navbar-left-sidebar">Jobs</a></li>
+                                </ul>
+                            </nav>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;div class="main-slide-bar show-always"&gt;
+                    &lt;button type="button" class="sidebarIconToggle" popovertarget="navbar-native-sidebar"
+                            aria-label="Open navigation"&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                        &lt;span&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class="sidebarMenu" id="navbar-native-sidebar" popover="auto"&gt;
+                        &lt;div class="sidebarMenuInner" role="region" aria-label="Native sliding side bar"&gt;
+                            &lt;nav aria-label="Drawer links"&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="#navbar-left-sidebar"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#navbar-left-sidebar"&gt;About&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/nav&gt;
+                            &lt;details class="sidebar-block"&gt;
+                                &lt;summary&gt;More Links&lt;/summary&gt;
+                                &lt;nav aria-label="More drawer links"&gt;
+                                    &lt;ul&gt;
+                                        &lt;li&gt;&lt;a href="#navbar-left-sidebar"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li&gt;&lt;a href="#navbar-left-sidebar"&gt;Jobs&lt;/a&gt;&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/nav&gt;
+                            &lt;/details&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code></pre>
+        </div>
     </div>
 </main>

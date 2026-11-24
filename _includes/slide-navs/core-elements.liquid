@@ -1,6 +1,5 @@
-<div class="sidenav-block">
-    <input type="checkbox" id="slide-core-elements" {% if page.parent-tab == 'core-elements' %}checked{% endif %}>
-    <label for="slide-core-elements">Core Elements</label>
+<details class="sidenav-block sidebar-block" {% if page.parent-tab == 'core-elements' %}open{% endif %}>
+    <summary>Core Elements</summary>
     <nav>
         <ul>
             <li><a href="{{site.url}}/pages/core-elements/buttons.html" class="{% if page.nav == "Buttons" %}is-active{% endif %}">Buttons</a></li>
@@ -12,4 +11,4 @@
             <li><a href="{{site.url}}/pages/core-elements/typography.html" class="{% if page.nav == "Typography" %}is-active{% endif %}">Typography</a></li>
         </ul>
     </nav>
-</div>
+</details>

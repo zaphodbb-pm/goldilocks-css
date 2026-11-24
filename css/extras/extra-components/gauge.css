@@ -21,7 +21,7 @@
     }
 
     .gauge-meter figcaption {
-        margin-top: 0;
+        margin-block-start: 0;
     }
 
 
@@ -60,8 +60,8 @@
     .gauge-donut data:after {
         content: "";
         position: absolute;
-        top: 0.5rem;
-        left: 0.5rem;
+        inset-block-start: 0.5rem;
+        inset-inline-start: 0.5rem;
         z-index: 1;
         border-radius: 50%;
         height: calc(100% - 1rem);
@@ -90,8 +90,8 @@
     .gauge-ring data:after {
         content: "";
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        inset-block-start: 1rem;
+        inset-inline-start: 1rem;
         z-index: 1;
         border-radius: 50%;
         height: calc(100% - 2rem);
@@ -121,8 +121,8 @@
     .gauge-meter data:after {
         content: "";
         position: absolute;
-        top: 1rem;
-        left: 1rem;
+        inset-block-start: 1rem;
+        inset-inline-start: 1rem;
         z-index: 1;
         border-radius: 50%;
         height: calc(100% - 2rem);
@@ -148,7 +148,7 @@
     }
 
     .gauge-meter data span {
-        top: -0.25rem;
+        inset-block-start: -0.25rem;
     }
 
     .gauge-donut data span sup,
@@ -166,7 +166,7 @@
     .gauge-ring data span:has(sub),
     .gauge-meter data span:has(sup),
     .gauge-meter data span:has(sub) {
-        margin-left: 0.5ch;
+        margin-inline-start: 0.5ch;
     }
 
 

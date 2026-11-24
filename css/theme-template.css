@@ -1,0 +1,41 @@
+/* Copy these overrides into a stylesheet loaded after Goldilocks CSS. */
+@layer custom {
+    :root {
+        --p-h: 262;
+        --s-h: 182;
+        --c-h: 45;
+        --g-h: 182;
+        --lnk-h: 225;
+        --ok-h: 140;
+        --warn-h: 84;
+        --err-h: 8;
+    }
+}
+
+/* Palette shades that can be overridden individually:
+   Primary: --p-50, --p-100, --p-200, --p-300, --p-400, --p-500, --p-600, --p-700, --p-800, --p-900, --p-950
+   Secondary: --s-50, --s-100, --s-200, --s-300, --s-400, --s-500, --s-600, --s-700, --s-800, --s-900, --s-950
+   Complement: --c-50, --c-100, --c-200, --c-300, --c-400, --c-500, --c-600, --c-700, --c-800, --c-900
+   Grey: --g-0, --g-50, --g-100, --g-200, --g-300, --g-400, --g-500, --g-600, --g-700, --g-800, --g-900, --g-950, --g-1k
+   Link: --lnk-50, --lnk-100, --lnk-200, --lnk-300, --lnk-400, --lnk-500, --lnk-600, --lnk-700, --lnk-800, --lnk-900
+   Success: --ok-50, --ok-100, --ok-200, --ok-300, --ok-400, --ok-500, --ok-600, --ok-700, --ok-800
+   Warning: --warn-50, --warn-100, --warn-200, --warn-300, --warn-400, --warn-500, --warn-600, --warn-700, --warn-800, --warn-900
+   Danger: --err-50, --err-100, --err-200, --err-300, --err-400, --err-500, --err-600, --err-700, --err-800
+   Palette adjuncts: --sh-sm, --sh-md, --sh-lg, --bg-page, --bg-elevated-1, --bg-elevated-2, --bg-elevated-3
+*/
+
+/* Semantic tokens that can also be overridden:
+   General: --action-offset, --chart-color-offset, --chart-color-start, --bq-border
+   Primary: --primary, --primary-light, --primary-dark, --primary-darkest, --primary-text, --primary-text-element, --primary-text-invert, --primary-hover, --primary-hover-text, --primary-active
+   Secondary: --secondary, --secondary-light, --secondary-lightest, --secondary-dark, --secondary-darkest, --secondary-text, --secondary-text-element, --secondary-text-invert, --secondary-hover, --secondary-hover-text, --secondary-active
+   Complement: --complement, --complement-light, --complement-lightest, --complement-dark, --complement-darkest, --complement-text, --complement-text-element, --complement-text-invert, --complement-hover, --complement-hover-text, --complement-active
+   Link: --link, --link-hover, --link-visited, --link-light, --link-lightest, --link-dark, --link-text, --link-text-element, --link-text-invert
+   Success: --success, --success-light, --success-lightest, --success-dark, --success-darkest, --success-text, --success-text-invert
+   Warning: --warning, --warning-light, --warning-lightest, --warning-dark, --warning-darkest, --warning-text, --warning-text-invert, --warning-text-invert-dark
+   Danger: --danger, --danger-light, --danger-lightest, --danger-dark, --danger-darkest, --danger-text, --danger-text-invert, --danger-text-invert-dark
+   Neutrals: --black, --black-850, --black-800, --black-700, --grey-darker, --grey-dark, --grey, --grey-light, --grey-lighter, --grey-lightest, --grey-white, --white
+   Backgrounds: --bg-main, --bg-main-invert, --bg-grid, --bg-container, --bg-component, --bg-element, --bg-highlight
+   Borders: --border-main, --border-main-light, --border-main-darker
+   Text: --text, --text-light, --text-darker, --text-elem, --text-comp, --text-btn-invert, --text-code
+   Shadows: --shadow-container, --shadow-component, --shadow-element
+*/

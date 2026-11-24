@@ -97,6 +97,35 @@ nav: Theme Control
             <strong>Goldilocks-CSS</strong> theme was created.  The various CSS variables can be seen at
             <a href="{{site.url}}/pages/get-started/customization.html">Customization</a>.</p>
 
+        <h3>Theme Control and Re-theming</h3>
+
+        <p>By default, the page follows the operating system preference through <code>color-scheme: light dark</code>,
+            <code>prefers-color-scheme</code> and the theme's <code>light-dark()</code> tokens. Add
+            <code>.main-theme-dark</code> or <code>.main-theme-light</code> to the root element to force a theme. The
+            <code>.theme-toggle</code> checkbox is a JavaScript-free way to force dark mode when checked:
+        </p>
+
+        <pre><code class="language-html">
+&lt;html class="main-theme-dark"&gt;...&lt;/html&gt;
+&lt;html class="main-theme-light"&gt;...&lt;/html&gt;
+&lt;label&gt;&lt;input class="theme-toggle" type="checkbox"&gt; Dark theme&lt;/label&gt;
+        </code></pre>
+
+        <p>To re-theme the palette, override one or more hue tokens in the <code>custom</code> layer. The available hues are
+            <code>--p-h</code>, <code>--s-h</code>, <code>--c-h</code>, <code>--g-h</code>, <code>--lnk-h</code>,
+            <code>--ok-h</code>, <code>--warn-h</code> and <code>--err-h</code>. For the full set of palette and semantic
+            overrides, copy <code>css/theme-template.css</code> and load your customized file after the library.
+        </p>
+
+        <pre><code class="language-css">
+@layer custom {
+    :root {
+        --p-h: 300;
+        --s-h: 165;
+    }
+}
+        </code></pre>
+
     </article>
 
 

@@ -9,7 +9,7 @@
         font-family: var(--family-sans-serif), sans-serif;
         font-size: 1.125rem;
         font-weight: var(--weight-medium);
-        margin-top: var(--mar-vert);
+        margin-block-start: var(--mar-vert);
         text-align: center;
     }
 
@@ -110,9 +110,9 @@
     /** make sure that any (optional) caption remains under the image **/
     @media screen and (max-width: 576px) {
         figure {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 0 !important;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
 
         .img-as-content {

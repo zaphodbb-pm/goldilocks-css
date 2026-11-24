@@ -32,6 +32,10 @@ nav: Form
                 for screen readers, the tab controls are hidden and the full form is semantically structured to be readable by
                 assistive technologies.
             </p>
+
+            <p>Checkboxes, radio buttons, range inputs and progress bars use the primary <code>accent-color</code>. Form fields also
+                retain a visible <code>:focus-visible</code> style for keyboard navigation.
+            </p>
         </section>
 
         <section class="column">
@@ -1079,6 +1083,58 @@ nav: Form
                         window.alert( `${preamble} ${JSON.stringify(out, null, '  ')}`);
                     })
                 &lt;/script&gt;
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="space-items-medium"></div>
+
+    <h3>Native details form tabs</h3>
+    <p>The <code>.form-tabs</code> native version also supports up to nine tabs, matching the classic radio version.</p>
+    <div class="row">
+        <div class="column">
+            <form class="form is-form-tabbed">
+                <header class="is-secondary-dark">Contact Form</header>
+                <div class="form-tabs">
+                    <details name="form-sections" open>
+                        <summary>Personal</summary>
+                        <label>
+                            <span>Name</span>
+                            <input type="text" name="name">
+                        </label>
+                    </details>
+                    <details name="form-sections">
+                        <summary>Address</summary>
+                        <label>
+                            <span>City</span>
+                            <input type="text" name="city">
+                        </label>
+                    </details>
+                </div>
+            </form>
+        </div>
+
+        <div class="column">
+            <pre><code class="language-html">
+                &lt;form class="form is-form-tabbed"&gt;
+                    &lt;header class="is-secondary-dark"&gt;Contact Form&lt;/header&gt;
+                    &lt;div class="form-tabs"&gt;
+                        &lt;details name="form-sections" open&gt;
+                            &lt;summary&gt;Personal&lt;/summary&gt;
+                            &lt;label&gt;
+                                &lt;span&gt;Name&lt;/span&gt;
+                                &lt;input type="text" name="name"&gt;
+                            &lt;/label&gt;
+                        &lt;/details&gt;
+                        &lt;details name="form-sections"&gt;
+                            &lt;summary&gt;Address&lt;/summary&gt;
+                            &lt;label&gt;
+                                &lt;span&gt;City&lt;/span&gt;
+                                &lt;input type="text" name="city"&gt;
+                            &lt;/label&gt;
+                        &lt;/details&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
             </code></pre>
         </div>
     </div>

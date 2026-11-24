@@ -1,6 +1,5 @@
-<div class="sidenav-block">
-    <input type="checkbox" id="core-layout" {% if page.parent-tab == 'core-layout' %}checked{% endif %}>
-    <label for="core-layout">Core Layout</label>
+<details class="sidenav-block sidebar-block" {% if page.parent-tab == 'core-layout' %}open{% endif %}>
+    <summary>Core Layout</summary>
     <nav>
         <ul>
             <li><a href="{{site.url}}/pages/core-layout/box.html" class="{% if page.nav == "Box" %}is-active{% endif %}">Box</a></li>
@@ -11,4 +10,4 @@
             <li><a href="{{site.url}}/pages/core-layout/stack.html" class="{% if page.nav == "Stack" %}is-active{% endif %}">Stack</a></li>
         </ul>
     </nav>
-</div>
+</details>

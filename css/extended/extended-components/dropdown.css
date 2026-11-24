@@ -9,7 +9,7 @@
     .dropdown .dropdown-trigger > button:first-child,
     .dropdown .dropdown-trigger button.has-hover:first-child {
         margin: 0;
-        padding-right: 3rem;
+        padding-inline-end: 3rem;
     }
 
     .dropdown .dropdown-trigger button:not(.no-chevron)::after {
@@ -17,8 +17,8 @@
         height: 1.5rem;
         width: 1.5rem;
         position: absolute;
-        top: 0.5em;
-        right: 0.5em;
+        inset-block-start: 0.5em;
+        inset-inline-end: 0.5em;
         transition: all 0.3s;
 
         /* adds down chevron */
@@ -32,14 +32,14 @@
 
     .dropdown-menu {
         display: none;
-        padding-top: var(--pad-vert);
-        padding-bottom: var(--pad-vert);
+        padding-block-start: var(--pad-vert);
+        padding-block-end: var(--pad-vert);
         width: max-content;
         min-width: 12rem;
         max-width: 18rem;
         position: absolute;
-        left: 0;
-        top: 100%;
+        inset-inline-start: 0;
+        inset-block-start: 100%;
         z-index: 40;
 
         background-color: var(--bg-component);
@@ -47,21 +47,25 @@
         box-shadow: var(--shadow-container);
     }
 
-    .dropdown:not(.is-click-open):hover .dropdown-menu,
-    .dropdown.is-click-open > .dropdown-trigger:focus-within + .dropdown-menu {
+    .dropdown:not(.is-click-open):hover .dropdown-menu:not([popover]),
+    .dropdown.is-click-open > .dropdown-trigger:focus-within + .dropdown-menu:not([popover]) {
+        display: block;
+    }
+
+    .dropdown-menu[popover]:popover-open {
         display: block;
     }
 
     .dropdown.is-right .dropdown-menu {
-        left: auto;
-        right: 0;
+        inset-inline-start: auto;
+        inset-inline-end: 0;
     }
 
     .dropdown.is-up .dropdown-menu {
-        bottom: 100%;
-        padding-bottom: var(--pad-vert);
-        padding-top: initial;
-        top: auto;
+        inset-block-end: 100%;
+        padding-block-end: var(--pad-vert);
+        padding-block-start: initial;
+        inset-block-start: auto;
     }
 
     .dropdown-menu p {
@@ -69,7 +73,8 @@
     }
 
     .dropdown-menu button {
-        margin: 1rem auto calc(1rem - var(--pad-vert)) auto;
+        margin-block: 1rem calc(1rem - var(--pad-vert));
+        margin-inline: auto auto;
         display: block;
     }
 
@@ -110,5 +115,36 @@
     .dropdown-menu > nav > ul > li a.is-active {
         background-color: var(--link);
         color: var(--link-text-invert);
+    }
+
+    @supports (anchor-name: --a) and (anchor-scope: --a) {
+        .dropdown {
+            anchor-scope: --dropdown-anchor;
+        }
+
+        .dropdown .dropdown-trigger {
+            anchor-name: --dropdown-anchor;
+        }
+
+        .dropdown .dropdown-menu[popover] {
+            position: fixed;
+            inset: auto;
+            margin: 0;
+            position-anchor: --dropdown-anchor;
+            position-area: block-end span-inline-end;
+            position-try-fallbacks: flip-block, flip-inline;
+        }
+
+        .dropdown.is-right .dropdown-menu[popover] {
+            position-area: block-end span-inline-start;
+        }
+
+        .dropdown.is-up .dropdown-menu[popover] {
+            position-area: block-start span-inline-end;
+        }
+
+        .dropdown.is-up.is-right .dropdown-menu[popover] {
+            position-area: block-start span-inline-start;
+        }
     }
 }

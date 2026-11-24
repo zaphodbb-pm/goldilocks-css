@@ -5,7 +5,8 @@
     .notification {
         border-radius: var(--radius);
         position: relative;
-        padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+        padding-block: 1.25rem 1.25rem;
+        padding-inline: 1.5rem 2.5rem;
         pointer-events: none;
 
         display: flex;
@@ -34,8 +35,8 @@
 
     .notification > .delete {
         position: absolute;
-        right: .5em;
-        top: .5em;
+        inset-inline-end: .5em;
+        inset-block-start: .5em;
 
         height: 1.25em;
         width: 1.25em;
@@ -60,8 +61,8 @@
         background-color: currentColor;
 
         position: absolute;
-        top: 50%;
-        left: 50%;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
         transform: translateX(-50%) translateY(-50%) rotate(45deg);
         transform-origin: center center;
     }

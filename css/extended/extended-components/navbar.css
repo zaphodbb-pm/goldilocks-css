@@ -16,6 +16,13 @@
 
         align-items: center;
         justify-content: space-between;
+        container-type: inline-size;
+        container-name: navbar level;
+    }
+
+    :where(body, main, header, nav, section, article, div):has(> .navbar) {
+        container-type: inline-size;
+        container-name: navbar level;
     }
 
 
@@ -39,11 +46,11 @@
 
 
     .navbar[class*=is-] {
-        border-bottom: none;
+        border-block-end: none;
     }
 
     .navbar:not([class*=is-]){
-        border-bottom: solid 2px var(--primary);
+        border-block-end: solid 2px var(--primary);
         background-color: var(--bg-container);
     }
 
@@ -123,9 +130,9 @@
     .navbar .dropdown .dropdown-trigger > .button:first-child {
         height: calc(100% - 2px);
         border-radius: unset;
-        padding-left: 0.25rem;
-        padding-right: 2.25rem;
-        border-bottom: none;
+        padding-inline-start: 0.25rem;
+        padding-inline-end: 2.25rem;
+        border-block-end: none;
     }
 
     .navbar .dropdown .dropdown-trigger button,
@@ -144,7 +151,7 @@
         height: 100%;
         width: 1.5rem;
         position: absolute;
-        top: 0;
+        inset-block-start: 0;
         transition: none;
 
         /* adds down chevron */
@@ -204,11 +211,11 @@
 
     .navbar .dropdown-menu {
         z-index: calc(var(--navbar-z) + 1);
-        padding-top: 0;
+        padding-block-start: 0;
         opacity: 1;
     }
 
-    @media screen and (max-width: 576px) {
+    @container navbar (max-width: 576px) {
         .navbar {
             justify-content: flex-start;
             flex-wrap: wrap;
@@ -232,18 +239,19 @@
         .navbar:not(.is-mobile) .navbar-center > nav > ul {
             flex-direction: column;
             align-items: flex-start;
-            margin: 0 0 1rem 0;
+            margin-block: 0 1rem;
+            margin-inline: 0 0;
             row-gap: var(--gap-row);
             flex-wrap: nowrap;
             justify-content: flex-start;
         }
 
         .navbar:not(.is-mobile) .navbar-center > nav > ul [class*="icon-bg-"] {
-            margin-left: 0;
+            margin-inline-start: 0;
         }
 
         .navbar:not(.is-mobile) .navbar-center > nav > ul .dropdown {
-            margin-left: var(--padding);
+            margin-inline-start: var(--padding);
         }
 
         .navbar:not(.is-mobile) .navbar-center > nav > ul > li > a {
@@ -256,7 +264,7 @@
         }
 
         .navbar:not(.is-mobile) .navbar-center > nav > ul > li > a .icon {
-            margin-left: 0;
+            margin-inline-start: 0;
         }
 
         .navbar:not(.is-mobile) .navbar-center.show-bottom-nav > nav > ul {
@@ -276,8 +284,8 @@
 
         .navbar:not(.is-mobile) .navbar-center.show-bottom-nav > nav > ul > li > * {
             height: 3em;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding-block-start: 0;
+            padding-block-end: 0;
         }
 
         .navbar:not(.is-mobile) .navbar-center.show-bottom-nav > nav > ul .dropdown {
@@ -291,7 +299,7 @@
 
         .navbar:not(.is-mobile) .dropdown button {
             height: auto;
-            padding-left: var(--pad-horz);
+            padding-inline-start: var(--pad-horz);
         }
 
         .navbar:not(.is-mobile) .navbar-center .icon-nav {
@@ -299,7 +307,8 @@
         }
 
         .navbar:not(.is-mobile) .dropdown .dropdown-trigger > button:first-child .icon {
-            padding: 0 0 0 0.25rem;
+            padding-block: 0 0;
+            padding-inline: 0.25rem 0;
             margin: 0 var(--padding);
         }
 
@@ -328,11 +337,11 @@
 
         .navbar .navbar-center.show-bottom-nav {
             position: fixed;
-            bottom: 0;
-            right: 0;
+            inset-block-end: 0;
+            inset-inline-end: 0;
             height: auto;
 
-            display: flex !important;
+            display: flex;
             flex-direction: row;
             justify-content: center;
             column-gap: 0;
@@ -342,10 +351,10 @@
         }
 
         .navbar .navbar-center.show-bottom-nav .dropdown .dropdown-menu {
-            bottom: 100%;
-            padding-bottom: var(--pad-vert);
-            padding-top: initial;
-            top: auto;
+            inset-block-end: 100%;
+            padding-block-end: var(--pad-vert);
+            padding-block-start: initial;
+            inset-block-start: auto;
         }
 
 

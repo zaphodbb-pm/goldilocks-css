@@ -14,7 +14,8 @@
         align-items: center;
 
         margin: 0;
-        padding: var(--padding-normal) 3em var(--padding-normal) var(--padding-normal);
+        padding-block: var(--padding-normal) var(--padding-normal);
+        padding-inline: var(--padding-normal) 3em;
         background: var(--bg-component);
 
         color: var(--text-comp);
@@ -28,9 +29,6 @@
         overflow: hidden;
     }
 
-    details.accordion summary::-webkit-details-marker {
-        display: none;
-    }
 
 
     /* add our own spinner marker */
@@ -39,7 +37,7 @@
         content: "❯";
         width: 1em;
         height: 1em;
-        right: 0.5em;
+        inset-inline-end: 0.5em;
         transform: translate(0, -50%);
         transition: all 0.35s;
     }
@@ -48,8 +46,8 @@
     details.accordion > div,
     details.accordion > article {
         padding: var(--padding-normal);
-        border-bottom-right-radius: var(--radius-comp);
-        border-bottom-left-radius: var(--radius-comp);
+        border-end-end-radius: var(--radius-comp);
+        border-end-start-radius: var(--radius-comp);
         color: var(--text);
     }
 
@@ -59,8 +57,8 @@
 
     /* style accordion when open */
     details.accordion[open] summary {
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
+        border-end-end-radius: 0;
+        border-end-start-radius: 0;
         filter: invert(2%);
     }
 
@@ -71,20 +69,24 @@
     details.accordion[open] summary::after {
         transform: translate(0, -50%) rotate(90deg);
         transition: all 0.35s;
-        top: 2em;
+        inset-block-start: 2em;
     }
 
 
     /* second type of expander accordion */
-    details.accordion[class*="is-expander"] {
+    details.accordion:is(.is-expander-primary, .is-expander-secondary, .is-expander-complement, .is-expander-success, .is-expander-warning, .is-expander-danger) {
         box-shadow: none;
     }
 
-    details.accordion[class*="is-expander"] summary {
+    details.accordion:is(.is-expander-primary, .is-expander-secondary, .is-expander-complement, .is-expander-success, .is-expander-warning, .is-expander-danger) summary {
         background: var(--bg-main);
-        padding: var(--padding-normal) 3em var(--padding-normal) var(--padding-normal);
-        border-bottom: 2px solid var(--border-main-darker);
-        border-radius: var(--radius-comp) var(--radius-comp) 0 0;
+        padding-block: var(--padding-normal) var(--padding-normal);
+        padding-inline: var(--padding-normal) 3em;
+        border-block-end: 2px solid var(--border-main-darker);
+        border-start-start-radius: var(--radius-comp);
+        border-start-end-radius: var(--radius-comp);
+        border-end-end-radius: 0;
+        border-end-start-radius: 0;
         list-style: none;
     }
 
@@ -113,7 +115,7 @@
     }
 
 
-    /* grouped set of accordions */
+    /* Details elements with the same name form an exclusive accordion group. */
     .accordions {
         overflow: hidden;
         margin: var(--mar-vert) 0;
@@ -127,15 +129,15 @@
     .accordions .accordion[open]:not(:last-child) > p,
     .accordions .accordion[open]:not(:last-child) > div,
     .accordions .accordion[open]:not(:last-child) > article {
-        padding-bottom: calc(2 * var(--padding-normal));
+        padding-block-end: calc(2 * var(--padding-normal));
     }
 
-    .accordions .accordion[open][class*="is-expander"] > p,
-    .accordions .accordion[open][class*="is-expander"] > div,
-    .accordions .accordion[open][class*="is-expander"] > article {
+    .accordions .accordion[open]:is(.is-expander-primary, .is-expander-secondary, .is-expander-complement, .is-expander-success, .is-expander-warning, .is-expander-danger) > p,
+    .accordions .accordion[open]:is(.is-expander-primary, .is-expander-secondary, .is-expander-complement, .is-expander-success, .is-expander-warning, .is-expander-danger) > div,
+    .accordions .accordion[open]:is(.is-expander-primary, .is-expander-secondary, .is-expander-complement, .is-expander-success, .is-expander-warning, .is-expander-danger) > article {
         border: 1px solid var(--border-main);
-        border-top: none;
-        padding-bottom: var(--padding-normal);
+        border-block-start: none;
+        padding-block-end: var(--padding-normal);
         background-color: var(--bg-container);
     }
 
@@ -144,19 +146,19 @@
     }
 
     .accordions .accordion:first-child summary {
-        border-top-right-radius: var(--radius-comp);
-        border-top-left-radius: var(--radius-comp);
+        border-start-end-radius: var(--radius-comp);
+        border-start-start-radius: var(--radius-comp);
     }
 
 
-    .accordions .accordion[class*="is-expander"] {
+    .accordions .accordion:is(.is-expander-primary, .is-expander-secondary, .is-expander-complement, .is-expander-success, .is-expander-warning, .is-expander-danger) {
         box-shadow: none;
         margin: var(--margin);
     }
 
-    .accordions .accordion:last-child:not([class*="is-expander"]) summary {
-        border-bottom-right-radius: var(--radius-comp);
-        border-bottom-left-radius: var(--radius-comp);
+    .accordions .accordion:last-child:not(:is(.is-expander-primary, .is-expander-secondary, .is-expander-complement, .is-expander-success, .is-expander-warning, .is-expander-danger)) summary {
+        border-end-end-radius: var(--radius-comp);
+        border-end-start-radius: var(--radius-comp);
     }
 
     .accordions .accordion[open] {
@@ -164,11 +166,27 @@
     }
 
     .accordions .accordion:last-child[open] {
-        border-bottom-right-radius: var(--radius-comp);
-        border-bottom-left-radius: var(--radius-comp);
+        border-end-end-radius: var(--radius-comp);
+        border-end-start-radius: var(--radius-comp);
     }
 
-    .accordions .accordion:last-child[open]:not([class*="is-expander"]) summary {
+    .accordions .accordion:last-child[open]:not(:is(.is-expander-primary, .is-expander-secondary, .is-expander-complement, .is-expander-success, .is-expander-warning, .is-expander-danger)) summary {
         border-radius: 0;
+    }
+
+    @supports (interpolate-size: allow-keywords) and selector(::details-content) {
+        details.accordion {
+            interpolate-size: allow-keywords;
+        }
+
+        details.accordion::details-content {
+            height: 0;
+            overflow: clip;
+            transition: height 250ms ease, content-visibility 250ms allow-discrete;
+        }
+
+        details.accordion[open]::details-content {
+            height: auto;
+        }
     }
 }

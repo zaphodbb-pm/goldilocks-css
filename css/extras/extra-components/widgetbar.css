@@ -64,7 +64,8 @@
 
     /* text size selector widget */
     .widgetbar-radios > span {
-        padding: 0 var(--pad-vert) 0 var(--pad-horz);
+        padding-block: 0 0;
+        padding-inline: var(--pad-horz) var(--pad-vert);
     }
 
     .widgetbar-radios label {
@@ -107,7 +108,7 @@
     }
 
     .widgetbar-link a span {
-        margin-left: 0.5em;
+        margin-inline-start: 0.5em;
     }
 
     .widgetbar-link a :is([class*=".icon-bg-"]) {

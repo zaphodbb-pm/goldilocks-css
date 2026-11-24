@@ -1,6 +1,5 @@
-<div class="sidenav-block">
-    <input type="checkbox" id="slide-core-helpers" {% if page.parent-tab == 'core-helpers' %}checked{% endif %}>
-    <label for="slide-core-helpers">Core Helpers</label>
+<details class="sidenav-block sidebar-block" {% if page.parent-tab == 'core-helpers' %}open{% endif %}>
+    <summary>Core Helpers</summary>
     <nav>
         <ul>
             <li><a href="{{site.url}}/pages/core-helpers/colours.html" class="{% if page.nav == "Colour Palette" %}is-active{% endif %}">Colour Palette</a></li>
@@ -9,4 +8,4 @@
             <li><a href="{{site.url}}/pages/core-helpers/widths.html" class="{% if page.nav == "Widths" %}is-active{% endif %}">Widths</a></li>
         </ul>
     </nav>
-</div>
+</details>

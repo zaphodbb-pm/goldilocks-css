@@ -3,6 +3,8 @@
     .pagination {
         font-size: var(--size-6);
         width: 100%;
+        container-type: inline-size;
+        container-name: pagination;
     }
 
     .pagination > ul {
@@ -41,7 +43,6 @@
 
     .pagination > ul a,
     .pagination > ul button {
-        -webkit-appearance: none;
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -107,16 +108,11 @@
         color: var(--text-light);
         pointer-events: none;
         position: relative;
-        top: -0.25rem;
+        inset-block-start: -0.25rem;
         order: 3;
     }
 
-    @media screen and (max-width: 576px) {
-        .pagination {
-            margin-bottom: 0;
-            margin-top: 0;
-        }
-
+    @container pagination (max-width: 576px) {
         .pagination > ul {
             justify-content: center;
             flex-wrap: wrap;
@@ -125,14 +121,14 @@
         .pagination > ul li.prev {
             order: 1;
             width: 42%;
-            margin-bottom: var(--mar-vert);
-            margin-right: 5%;
+            margin-block-end: var(--mar-vert);
+            margin-inline-end: 5%;
         }
 
         .pagination > ul li.next {
             order: 2;
             width: 42%;
-            margin-bottom: var(--mar-vert);
+            margin-block-end: var(--mar-vert);
         }
 
         .pagination > ul li.next a,
@@ -143,15 +139,11 @@
             margin: 0;
         }
 
-        .pagination.is-right {
-            justify-content: center;
-        }
-
-        .pagination.is-medium {
+        .pagination.is-medium > ul {
             font-size: var(--size-6);
         }
 
-        .pagination.is-large {
+        .pagination.is-large > ul {
             font-size: var(--size-5);
         }
     }

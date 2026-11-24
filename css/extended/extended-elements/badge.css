@@ -41,19 +41,19 @@
 
     button > [class*="badge"] {
         position: absolute;
-        right: -0.5rem;
-        top: 0;
+        inset-inline-end: -0.5rem;
+        inset-block-start: 0;
     }
 
     figure > [class*="badge"] {
         position: absolute;
-        right: -0.5rem;
-        top: 0.5rem;
+        inset-inline-end: -0.5rem;
+        inset-block-start: 0.5rem;
         z-index: 2;
     }
 
     figure:not(.avatar) > [class*="badge"] {
-        top: 0.25rem;
+        inset-block-start: 0.25rem;
     }
 
 

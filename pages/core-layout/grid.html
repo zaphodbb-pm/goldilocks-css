@@ -25,11 +25,14 @@ nav: Grid
             </p>
 
             <p>Rather than trying to map your layout into a fixed grid (typically 12 columns and consequently spans thereof) think of your
-                desired minimum content width first and let <strong>grid</strong> figure how to best display it for a given viewport.
+                desired minimum content width first and let <strong>grid</strong> figure how to best display it within the row's container.
                 This then means that you only need to think about how many columns of content you require and what minimum width is needed for each
                 column.
             </p>
 
+            <p>Each <code>.row</code> responds to its own container width: it stays single-column while the container is narrower than
+                576px and switches to auto-fit columns when it reaches that width.
+            </p>
 
             <details class="accordion is-expander-primary">
                 <summary>Bootstrap Style Breakpoint Impact on Column Width</summary>
@@ -127,7 +130,7 @@ nav: Grid
                         </div>
                     </div>
 
-                    <p>Using the content column width allows for tracking more closely to the available browser viewport and ensures that the content
+                    <p>Using the content column width allows for tracking more closely to the available row container and ensures that the content
                         layout remains consistent for all users.  The developer / designer is also freed from the width calculation and the
                         limitations of fixed breakpoints.
                     </p>

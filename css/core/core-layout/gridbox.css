@@ -1,7 +1,8 @@
 @layer layout {
 
-    /* Sadly, grid needs some help for columns at mobile widths  */
+    /* Grid needs some help for columns at mobile widths. */
     .row {
+        --min-grid-width: var(--grid-min-width);
         display: grid;
         grid-template-columns: 100%;
         row-gap: var(--gutter);
@@ -9,6 +10,13 @@
         justify-items: stretch;
         align-items: stretch;
         max-width: 100vw;
+        container-type: inline-size;
+        container-name: gridbox;
+    }
+
+    :where(body, main, div, section, article):has(> .row) {
+        container-type: inline-size;
+        container-name: gridbox;
     }
 
     .row.is-centered-vert {
@@ -30,63 +38,54 @@
     }
 
 
-    /* Also sadly, @media does not support variables and so we need to hard code the mobile breakpoint */
-    @media screen and (min-width: 576px) {
+    @container gridbox (min-width: 576px) {
         .row {
-            --min-grid-width: var(--grid-min-width);
-            grid-template-columns: repeat( auto-fit, minmax(var(--grid-min-width), 1fr) );
+            grid-template-columns: repeat(auto-fit, minmax(var(--min-grid-width), 1fr));
         }
 
         .row.abs-width {
             --min-grid-width: var(--grid-min-px-width);
-            grid-template-columns: repeat( auto-fit, minmax(var(--min-grid-width), 1fr) );
+            grid-template-columns: repeat(auto-fit, minmax(var(--min-grid-width), 1fr));
+        }
+
+        .row.has-2x-minwidth {
+            grid-template-columns: repeat(auto-fit, minmax(calc(var(--min-grid-width) * 2), 1fr));
+        }
+
+        .row.has-3x-minwidth {
+            grid-template-columns: repeat(auto-fit, minmax(calc(var(--min-grid-width) * 3), 1fr));
+        }
+
+        .row.has-4x-minwidth {
+            grid-template-columns: repeat(auto-fit, minmax(calc(var(--min-grid-width) * 4), 1fr));
+        }
+
+        .row.has-5x-minwidth {
+            grid-template-columns: repeat(auto-fit, minmax(calc(var(--min-grid-width) * 5), 1fr));
+        }
+
+        .row.has-6x-minwidth {
+            grid-template-columns: repeat(auto-fit, minmax(calc(var(--min-grid-width) * 6), 1fr));
+        }
+
+        .row.has-7x-minwidth {
+            grid-template-columns: repeat(auto-fit, minmax(calc(var(--min-grid-width) * 7), 1fr));
+        }
+
+        .row.has-8x-minwidth {
+            grid-template-columns: repeat(auto-fit, minmax(calc(var(--min-grid-width) * 8), 1fr));
+        }
+
+        .row.has-9x-minwidth {
+            grid-template-columns: repeat(auto-fit, minmax(calc(var(--min-grid-width) * 9), 1fr));
+        }
+
+        .row.has-10x-minwidth {
+            grid-template-columns: repeat(auto-fit, minmax(calc(var(--min-grid-width) * 10), 1fr));
         }
 
         .row .column {
             min-width: var(--min-grid-width);
-        }
-
-        /** This is a shortcut for making all columns the same width **/
-        /** uses a multiple of minimum width; nominally 5rem **/
-        /** if .row.abs-width, then minimum width is nominally 100px **/
-        .row.has-1x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(var(--min-grid-width), 1fr) );
-        }
-
-        .row.has-2x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 2), 1fr) );
-        }
-
-        .row.has-3x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 3), 1fr) );
-        }
-
-        .row.has-4x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 4), 1fr) );
-        }
-
-        .row.has-5x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 5), 1fr) );
-        }
-
-        .row.has-6x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 6), 1fr) );
-        }
-
-        .row.has-7x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 7), 1fr) );
-        }
-
-        .row.has-8x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 8), 1fr) );
-        }
-
-        .row.has-9x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 9), 1fr) );
-        }
-
-        .row.has-10x-minwidth {
-            grid-template-columns: repeat( auto-fit, minmax(calc(var(--min-grid-width) * 10), 1fr) );
         }
 
         /** control each column span independently **/

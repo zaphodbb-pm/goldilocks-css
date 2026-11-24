@@ -1,6 +1,5 @@
-<div class="sidenav-block">
-    <input type="checkbox" id="extend-elements" {% if page.parent-tab == 'extend-elements' %}checked{% endif %}>
-    <label for="extend-elements">Extend Elements</label>
+<details class="sidenav-block sidebar-block" {% if page.parent-tab == 'extend-elements' %}open{% endif %}>
+    <summary>Extend Elements</summary>
     <nav>
         <ul>
             <li><a href="{{site.url}}/pages/extend-elements/avatars.html" class="{% if page.nav == "Avatars" %}is-active{% endif %}">Avatars</a></li>
@@ -10,4 +9,4 @@
             <li><a href="{{site.url}}/pages/extend-elements/tags.html" class="{% if page.nav == "Tags" %}is-active{% endif %}">Tags</a></li>
         </ul>
     </nav>
-</div>
+</details>

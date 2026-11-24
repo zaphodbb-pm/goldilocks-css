@@ -1,6 +1,7 @@
 /* b-initial-theme-colors.css */
 
-:root {
+@layer tokens {
+    :root {
 
     /** map project theme colours into working variables **/
     /** adjust for WCAG compliance **/
@@ -10,62 +11,48 @@
     --action-offset: 0.075;
 
     /*** define primary usage variables ***/
-    --primary: var(--p-600);
     --primary-light:  var(--p-100);
     --primary-dark:  var(--p-700);
     --primary-darkest: var(--p-800);
-    --primary-text: var(--p-700);
     --primary-text-element: var(--p-700);
-    --primary-text-invert: var(--p-50);
     --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
     --primary-hover-text: var(--p-200);
     --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
 
 
     /*** define secondary usage variables ***/
-    --secondary: var(--s-500);
     --secondary-light:  var(--s-100);
     --secondary-lightest:  var(--s-50);
     --secondary-dark:  var(--s-600);
     --secondary-darkest: var(--s-800);
-    --secondary-text: var(--s-600);
     --secondary-text-element: var(--s-600);
-    --secondary-text-invert: var(--g-50);
     --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
     --secondary-hover-text: var(--g-900);
     --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
 
 
     /*** define complement / cta usage variables ***/
-    --complement: var(--c-500);
     --complement-light:  var(--c-100);
     --complement-lightest:  var(--c-50);
     --complement-dark:  var(--c-600);
     --complement-darkest: var(--c-800);
-    --complement-text: var(--c-700);
     --complement-text-element: var(--c-700);
-    --complement-text-invert: var(--c-50);
     --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
     --complement-hover-text: var(--c-900);
     --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
 
 
     /*** define key link colours ***/
-    --link: var(--lnk-600);
     --link-hover: var(--lnk-700);
-    --link-visited: oklch(37.5% 0.165 278);
     --link-light: var(--lnk-100);
     --link-lightest: var(--lnk-50);
     --link-dark: var(--lnk-700);
-    --link-text: var(--lnk-800);
     --link-text-element: var(--lnk-800);
-    --link-text-invert: var(--lnk-50);
 
     /*** define key success colours ***/
     --success: var(--ok-500);
     --success-light: var(--ok-100);
     --success-lightest: var(--ok-50);
-    --success-dark: var(--ok-600);
     --success-darkest: var(--ok-800);
     --success-text: var(--ok-700);
     --success-text-invert: var(--ok-800);
@@ -91,41 +78,6 @@
     --danger-text-invert-dark: var(--err-50);
 
     /*** additional greys ***/
-    --black: var(--g-950);
-    --black-850: var(--g-900);
-    --black-800: var(--g-800);
-    --black-700: var(--g-700);
-
-    --grey-darker: var(--g-600);
-    --grey-dark: var(--g-500);
-    --grey: var(--g-400);
-    --grey-light: var(--g-300);
-    --grey-lighter: var(--g-200);
-    --grey-lightest: var(--g-100);
-    --grey-white: var(--g-50);
-    --white: var(--g-0);
-
-    /*** set the body level colours for light mode ***/
-    --bg-main: var(--bg-page);
-    --bg-main-invert: var(--black-850);
-    --bg-grid: var(--g-100);
-    --bg-container: var(--bg-elevated-1);
-    --bg-component: var(--bg-elevated-2);
-    --bg-element: var(--bg-elevated-3);
-    --bg-highlight: var(--warning-lightest);
-
-    --border-main: var(--grey-light);
-    --border-main-light: var(--g-100);
-    --border-main-darker: var(--grey);
-
-    --text: var(--black-800);
-    --text-light: var(--grey-dark);
-    --text-darker: var(--black);
-
-    --text-elem: var(--black-800);
-    --text-comp: var(--black-800);
-    --text-btn-invert: var(--g-50);
-    --text-code: var(--c-700);
 
 
     /*** Common shadow treatment for containers, components and elements ***/
@@ -140,4 +92,5 @@
     --chart-color-offset: 95;                                           /**** helps build 9 other colours ****/
 
     --bq-border: var(--primary);                                        /**** defines blockquote left border ****/
+    }
 }

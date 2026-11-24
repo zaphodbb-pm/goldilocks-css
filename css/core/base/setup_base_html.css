@@ -2,7 +2,7 @@
 /** note that some HTML tags are set in other element files **/
 
 /* Define layers organization for all subsequent files */
-@layer base, elements, extended, extras, layout, custom;
+@layer reset, tokens, base, elements, layout, extended, extras, utilities, custom;
 
 
 @layer base {
@@ -14,12 +14,16 @@
 
         font-size: var(--base-html-factor);
         box-sizing: border-box;
-        overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-inline: hidden;
+        overflow-block: scroll;
 
-        -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--link);
+        outline-offset: 2px;
     }
 
     *,
@@ -44,7 +48,7 @@
     main,
     header {
         margin: 0;
-        overflow-x: hidden;
+        overflow-inline: hidden;
     }
 
     main {
@@ -78,21 +82,20 @@
 
     p {
         padding: 0;
-        margin: 0 0 1.5rem 0;
+        margin-block: 0 1.5rem;
+        margin-inline: 0 0;
+        text-wrap: pretty;
     }
 
     p:last-child {
-        margin-bottom: 0;
+        margin-block-end: 0;
     }
 
     p.scrollable {
-        overflow-x: auto;
+        overflow-inline: auto;
         scrollbar-width: none;
     }
 
-    p.scrollable::-webkit-scrollbar {
-        display: none;
-    }
 
     a {
         color: var(--link);
@@ -112,12 +115,13 @@
     }
 
     p + ul, p + ol, p + dl {
-        margin-bottom: 1.5rem;
+        margin-block-end: 1.5rem;
     }
 
     ul > li {
         list-style: disc;
-        margin: 0 0 0.75rem 1rem;
+        margin-block: 0 0.75rem;
+        margin-inline: 1rem 0;
     }
 
     ul > li li {
@@ -126,13 +130,14 @@
 
     ol > li {
         list-style: decimal;
-        margin: 0 0 0.75rem 1.5rem;
+        margin-block: 0 0.75rem;
+        margin-inline: 1.5rem 0;
     }
 
     dl > dd {
         list-style: none;
         padding: 0;
-        margin-bottom: 0.75rem;
+        margin-block-end: 0.75rem;
         margin-inline-start: 1rem;
     }
 
@@ -169,9 +174,9 @@
         font-family: var(--family-monospace), monospace;
         font-size: var(--base-font-size);
         background-color: var(--bg-container);
-        border-left: 0.25rem solid var(--complement);
-        overflow-y: hidden;
-        overflow-x: scroll;
+        border-inline-start: 0.25rem solid var(--complement);
+        overflow-block: hidden;
+        overflow-inline: scroll;
         margin: 0;
         padding: 0;
     }
@@ -199,6 +204,28 @@
         display: block;
         white-space: pre;
         max-width: 100%;
-        overflow-x: scroll;
+        overflow-inline: scroll;
+    }
+}
+
+@layer utilities {
+    input[type="checkbox"],
+    input[type="radio"],
+    input[type="range"],
+    progress {
+        accent-color: var(--primary);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms;
+            animation-delay: 0ms;
+            animation-iteration-count: 1;
+            transition-duration: 0.01ms;
+            transition-delay: 0ms;
+            scroll-behavior: auto;
+        }
     }
 }

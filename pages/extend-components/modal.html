@@ -19,10 +19,15 @@ nav: Modal
             </p>
 
             <p>The recommended pattern is the native <code>&lt;dialog&gt;</code> element with the
-                <code>.modal-card</code> class, opened via <code>showModal()</code> and closed via
-                <code>close()</code>. The browser provides focus trap, ESC-to-close, top-layer stacking,
-                and <code>::backdrop</code> for free. The <code>.modal-overlay:target</code> pattern is
-                retained as a CSS-only fallback.
+                <code>.modal-card</code> class. The browser provides a focus trap, Escape-to-close, top-layer stacking,
+                and <code>::backdrop</code> for free. The <code>commandfor</code>/<code>command</code> buttons are a
+                progressive enhancement; inline <code>showModal()</code>/<code>close()</code> handlers remain as a
+                fallback, and the <code>.modal-overlay:target</code> pattern is retained as a CSS-only alternative.
+            </p>
+
+            <p>The dialog animates its entry and exit with opacity and position transitions; <code>@starting-style</code>
+                and discrete transitions are used where supported. Its maximum height uses <code>dvh</code> so it fits
+                the dynamic viewport on mobile browsers.
             </p>
 
             <p>There are three containers inside <code>.modal-card</code>; these can be ordered any way you like.</p>
@@ -122,8 +127,10 @@ nav: Modal
     <div class="row">
         <div class="column">
 
-            <button type="button" id="modal-opener" class="button button-primary-outlined"
-                    onclick="document.getElementById('modal-one').showModal()">Open Modal</button>
+            <button type="button" class="button button-primary-outlined"
+                    commandfor="modal-one" command="show-modal">Open Modal</button>
+            <button type="button" class="button button-secondary-outlined"
+                    onclick="document.getElementById('modal-one').showModal()">Open Modal (fallback)</button>
 
             <p class="is-size-5 is-text-semibold" style="margin-top: 5rem;">Basic Modal Form</p>
 
@@ -150,7 +157,7 @@ nav: Modal
             <header>
                 <h2 id="modal-one-title">Modal title</h2>
                 <button type="button" class="delete" aria-label="Close"
-                        onclick="document.getElementById('modal-one').close()"></button>
+                        commandfor="modal-one" command="close"></button>
             </header>
 
             <div>
@@ -166,14 +173,16 @@ nav: Modal
 
         <div class="column">
             <pre><code class="language-html">
-                &lt;button type="button" id="modal-opener" class="button button-primary-outlined"
-                        onclick="document.getElementById('modal-one').showModal()"&gt;Open Modal&lt;/button&gt;
+                &lt;button type="button" class="button button-primary-outlined"
+                        commandfor="modal-one" command="show-modal"&gt;Open Modal&lt;/button&gt;
+                &lt;button type="button" class="button button-secondary-outlined"
+                        onclick="document.getElementById('modal-one').showModal()"&gt;Open Modal (fallback)&lt;/button&gt;
 
                 &lt;dialog id="modal-one" class="modal-card" aria-labelledby="modal-one-title"&gt;
                     &lt;header&gt;
                         &lt;h2 id="modal-one-title"&gt;Modal title&lt;/h2&gt;
                         &lt;button type="button" class="delete" aria-label="Close"
-                                onclick="document.getElementById('modal-one').close()"&gt;&lt;/button&gt;
+                                commandfor="modal-one" command="close"&gt;&lt;/button&gt;
                     &lt;/header&gt;
 
                     &lt;div&gt;

@@ -26,6 +26,11 @@ nav: Popovers
                 displaying popover content. Popover content is controlled using HTML attributes.  JavaScript control is also possible with
                 <code>HTMLElement.showPopover()</code> or <code>HTMLElement.togglePopover()</code> methods.
             </p>
+
+            <p>Goldilocks-CSS popover styling is scoped to <code>.popover-container[popover]</code>; it does not apply to every
+                element with a <code>popover</code> attribute. Anchor positioning is a progressive enhancement, and the existing
+                absolute offsets remain as the fallback.
+            </p>
         </section>
 
         <section class="column">
@@ -102,7 +107,7 @@ nav: Popovers
                 </aside>
 
                 <aside class="popover pop-right">
-                    <button   class="button-secondary" popovertarget="right-popover">.popover .popover-right</button>
+                    <button type="button" class="button-secondary" popovertarget="right-popover">.popover .popover-right</button>
                     <div class="popover-container" popover="auto" id="right-popover">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
@@ -158,7 +163,7 @@ nav: Popovers
                 &lt;/aside&gt;
 
                 &lt;aside class="popover pop-bottom"&gt;
-                    &lt;button type="button" class="button-secondary" popovertarget="bottom-popover"&gt;.popover .popover-bottom&lt;/button&gt;
+                    &lt;button type="button" class="button-complement-outlined" popovertarget="bottom-popover"&gt;.popover .popover-bottom&lt;/button&gt;
                     &lt;div class="popover-container" popover="auto" id="bottom-popover"&gt;
                         &lt;p&gt;
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
@@ -168,7 +173,7 @@ nav: Popovers
                 &lt;/aside&gt;
 
                 &lt;aside class="popover pop-left"&gt;
-                    &lt;button type="button" class="button-secondary" popovertarget="left-popover"&gt;.popover .popover-left&lt;/button&gt;
+                    &lt;button type="button" class="button-secondary-inverted" popovertarget="left-popover"&gt;.popover .popover-left&lt;/button&gt;
                     &lt;div class="popover-container" popover="auto" id="left-popover"&gt;
                         &lt;p&gt;
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi,
@@ -240,9 +245,9 @@ nav: Popovers
                             &lt;/div&gt;
 
                             &lt;footer class="card-footer"&gt;
-                                &lt;button class="button-primary is-small"&gt;Save;&lt;/button&gt;
+                                &lt;button class="button-primary is-small"&gt;Save&lt;/button&gt;
                                 &lt;button class="button-secondary-outlined is-small"&gt;Edit&lt;/button&gt;
-                                &lt;button class="button-complement-outlined is-small"&gt;Delete;&lt;/button&gt;
+                                &lt;button class="button-complement-outlined is-small"&gt;Delete&lt;/button&gt;
                             &lt;/footer&gt;
                         &lt;/article&gt;
                     &lt;/div&gt;

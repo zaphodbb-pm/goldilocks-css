@@ -9,8 +9,8 @@
 
         position: absolute;
         display: block;
-        bottom: 100%;
-        left: 50%;
+        inset-block-end: 100%;
+        inset-inline-start: 50%;
         background-color: var(--bg-main-invert);
         border-radius: calc(0.5 * var(--radius));
         padding: .2rem .4rem;
@@ -45,14 +45,17 @@
         position: absolute;
         transform: translate(-50%, 0);
         transition: opacity .2s, transform .2s;
-        top: 0;
-        left: 50%;
+        inset-block-start: 0;
+        inset-inline-start: 50%;
 
         height: 0;
         width: 0;
         border-width: 0.5rem;
         border-style: solid;
-        border-color: var(--bg-main-invert) transparent transparent transparent;
+        border-block-start-color: var(--bg-main-invert);
+        border-inline-end-color: transparent;
+        border-block-end-color: transparent;
+        border-inline-start-color: transparent;
         z-index: 300;
     }
 
@@ -69,17 +72,20 @@
 
     /** controls tooltip going right plus arrow **/
     .tooltip.tooltip-right::before {
-        bottom: 50%;
-        right: auto;
-        left: 100%;
-        top: auto;
+        inset-block-end: 50%;
+        inset-inline-end: auto;
+        inset-inline-start: 100%;
+        inset-block-start: auto;
         transform: translate(-1.25rem, 50%);
-        border-color: transparent var(--bg-main-invert) transparent transparent;
+        border-block-start-color: transparent;
+        border-inline-end-color: var(--bg-main-invert);
+        border-block-end-color: transparent;
+        border-inline-start-color: transparent;
     }
 
     .tooltip.tooltip-right::after {
-        left: 100%;
-        bottom: 50%;
+        inset-inline-start: 100%;
+        inset-block-end: 50%;
         transform: translate(-.25rem, 50%);
     }
 
@@ -96,17 +102,20 @@
 
     /** controls tooltip going left plus arrow **/
     .tooltip.tooltip-left::before {
-        bottom: 50%;
-        left: auto;
-        right: 100%;
+        inset-block-end: 50%;
+        inset-inline-start: auto;
+        inset-inline-end: 100%;
         transform: translate(1rem, 50%);
-        border-color: transparent transparent transparent var(--bg-main-invert);
+        border-block-start-color: transparent;
+        border-inline-end-color: transparent;
+        border-block-end-color: transparent;
+        border-inline-start-color: var(--bg-main-invert);
     }
 
     .tooltip.tooltip-left::after {
-        bottom: 50%;
-        left: auto;
-        right: 100%;
+        inset-block-end: 50%;
+        inset-inline-start: auto;
+        inset-inline-end: 100%;
         transform: translate(1.5rem, 50%);
     }
 
@@ -123,16 +132,19 @@
 
     /** controls tooltip going down plus arrow **/
     .tooltip.tooltip-bottom::before {
-        bottom: auto;
-        top: 100%;
-        left: 50%;
+        inset-block-end: auto;
+        inset-block-start: 100%;
+        inset-inline-start: 50%;
         transform: translate(-50%, -1rem);
-        border-color: transparent transparent var(--bg-main-invert) transparent;
+        border-block-start-color: transparent;
+        border-inline-end-color: transparent;
+        border-block-end-color: var(--bg-main-invert);
+        border-inline-start-color: transparent;
     }
 
     .tooltip.tooltip-bottom::after {
-        bottom: auto;
-        top: 100%;
+        inset-block-end: auto;
+        inset-block-start: 100%;
         transform: translate(-50%, -.4rem);
     }
 

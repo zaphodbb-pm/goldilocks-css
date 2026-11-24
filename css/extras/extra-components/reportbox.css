@@ -16,7 +16,7 @@
         border: solid 1px var(--border-main);
         border-radius: var(--radius-comp);
         background-color: var(--bg-container);
-        overflow-x: scroll;
+        overflow-inline: scroll;
     }
 
     .reportbox p {
@@ -85,7 +85,7 @@
 
     /* controls for progress bar */
     .reportbox > label > span:first-child {
-        margin-bottom: var(--mar-vert);
+        margin-block-end: var(--mar-vert);
     }
 
     .reportbox > p > span:nth-child(2),
@@ -96,30 +96,14 @@
 
     .reportbox > label > progress + span {
         font-size: 0.9em;
-        margin-top: var(--mar-horz);
+        margin-block-start: var(--mar-horz);
         color: var(--text-light)
     }
 
     .reportbox label progress {
-        margin-top: var(--margin);
+        margin-block-start: var(--margin);
         height: calc(var(--size-6) / 2);
-    }
-
-    .reportbox label progress::-webkit-progress-bar {
-        background-color: var(--grey-light);
-    }
-
-    .reportbox label progress::-moz-progress-bar {
-        background-color: var(--grey-dark);
-    }
-
-    .reportbox label progress::-webkit-progress-value {
-        background-color: var(--grey-dark);
-    }
-
-    .reportbox label progress::-ms-fill {
-        background-color: var(--grey-dark);
-        border: none;
+        accent-color: var(--grey-dark);
     }
 
 
@@ -184,41 +168,17 @@
 
 
     /* progress bar colours */
-    .report-success label progress::-webkit-progress-value {
-        background-color: var(--success-dark);
-    }
-
-    .report-success label progress::-moz-progress-bar {
-        background-color: var(--success-dark);
-    }
-
-    .report-success label progress::-ms-fill {
-        background-color: var(--success-dark);
+    .report-success label progress {
+        accent-color: var(--success-dark);
     }
 
 
-    .report-warning label progress::-webkit-progress-value {
-        background-color: var(--warning);
-    }
-
-    .report-warning label progress::-moz-progress-bar {
-        background-color: var(--warning);
-    }
-
-    .report-warning label progress::-ms-fill {
-        background-color: var(--warning);
+    .report-warning label progress {
+        accent-color: var(--warning);
     }
 
 
-    .report-danger label progress::-webkit-progress-value {
-        background-color: var(--danger);
-    }
-
-    .report-danger label progress::-moz-progress-bar {
-        background-color: var(--danger);
-    }
-
-    .report-danger label progress::-ms-fill {
-        background-color: var(--danger);
+    .report-danger label progress {
+        accent-color: var(--danger);
     }
 }

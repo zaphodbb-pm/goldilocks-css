@@ -61,13 +61,13 @@
     }
 
     .adjust-label {
-        left: 3.5rem;
+        inset-inline-start: 3.5rem;
     }
 
     .form label > span:first-child {
         position: absolute;
-        left: var(--margin);
-        top: calc(-0.75 * var(--margin));
+        inset-inline-start: var(--margin);
+        inset-block-start: calc(-0.75 * var(--margin));
         background-color: var(--form-background-color);
         padding: 0 calc(0.5 * var(--pad-horz));
         font-weight: var(--weight-medium);
@@ -102,8 +102,6 @@
         box-sizing: border-box;
 
         appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
 
         box-shadow: none;
         margin: 0;
@@ -117,7 +115,7 @@
     .form .has-help-text label select,
     .form .field-group > label select,
     .form .field-group .has-help-text label select {
-        padding-right: 2.5rem;
+        padding-inline-end: 2.5rem;
     }
 
     .form label input[type="checkbox"],
@@ -125,7 +123,6 @@
     .form label input[type="radio"],
     .form .field-group label input[type="radio"] {
         appearance: auto;
-        -webkit-appearance: auto;
         width: auto;
         height: auto;
     }
@@ -160,7 +157,8 @@
         gap: var(--gap-row) var(--gap-col);
 
         position: relative;
-        padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+        padding-block: 0.75rem 0.5rem;
+        padding-inline: 0.75rem 0.75rem;
         margin: var(--margin-form) 0;
 
         background-color: var(--form-background-color);
@@ -190,8 +188,8 @@
     }
 
     .form fieldset .form-help-icon {
-        top:-1.5rem;
-        right: -.5rem;
+        inset-block-start:-1.5rem;
+        inset-inline-end: -.5rem;
     }
 
 
@@ -199,7 +197,6 @@
     .form label textarea:focus-visible,
     .form label select:focus-visible,
     .form label div:focus-visible {
-        outline: none;
         border: 2px solid var(--primary);
     }
 
@@ -210,27 +207,27 @@
 
     .form fieldset input[type="checkbox"] + span,
     .form fieldset input[type="radio"] + span {
-        margin-left: var(--mar-horz);
+        margin-inline-start: var(--mar-horz);
     }
 
 
     .field-error {
-        border: 1px solid var(--danger) !important;
+        border: 1px solid var(--danger);
         border-radius: var(--radius-elem);
     }
 
     .field-error > input,
     .field-error > textarea,
     .field-error > select {
-        border: none !important;
+        border: none;
     }
 
     .form input:invalid {
-        border: 2px solid var(--danger) !important;
+        border: 2px solid var(--danger);
     }
 
     .form input:valid {
-        border: 2px solid var(--success) !important;
+        border: 2px solid var(--success);
     }
 
     .form .has-field-addons {
@@ -245,8 +242,6 @@
 
     .form .has-field-addons > * {
         appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
 
         box-shadow: none;
         font-size: var(--size-6);
@@ -266,9 +261,9 @@
 
 
     .form .has-field-addons > :first-child {
-        border-top-left-radius: var(--radius-elem);
-        border-bottom-left-radius: var(--radius-elem);
-        border-right: none;
+        border-start-start-radius: var(--radius-elem);
+        border-end-start-radius: var(--radius-elem);
+        border-inline-end: none;
         padding: 0;
     }
 
@@ -282,22 +277,28 @@
     }
 
     .form .has-field-addons > :first-child input {
-        border-radius: var(--radius-elem) 0 0 var(--radius-elem);
+        border-start-start-radius: var(--radius-elem);
+        border-start-end-radius: 0;
+        border-end-end-radius: 0;
+        border-end-start-radius: var(--radius-elem);
         height: calc(2.5 * var(--base-font-size) + 2px);
         border: 1px solid var(--border-main-darker);
     }
 
     .form .has-field-addons > :last-child input {
-        border-radius: 0 var(--radius-elem) var(--radius-elem) 0;
+        border-start-start-radius: 0;
+        border-start-end-radius: var(--radius-elem);
+        border-end-end-radius: var(--radius-elem);
+        border-end-start-radius: 0;
         height: calc(2.5 * var(--base-font-size) + 2px);
         border: 1px solid var(--border-main-darker);
     }
 
 
     .form .has-field-addons > :last-child {
-        border-top-right-radius: var(--radius-elem);
-        border-bottom-right-radius: var(--radius-elem);
-        border-left: none;
+        border-start-end-radius: var(--radius-elem);
+        border-end-end-radius: var(--radius-elem);
+        border-inline-start: none;
     }
 
     .form .has-field-addons label > * {
@@ -319,12 +320,11 @@
         box-sizing: border-box;
 
         appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
 
         box-shadow: none;
         margin: 0;
-        padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+        padding-block: 0.5rem 0.5rem;
+        padding-inline: 0.75rem 0.75rem;
 
         width: 100%;
     }
@@ -336,7 +336,7 @@
         }
 
     .form .has-field-addons > label select {
-        padding-right: 3.5rem;
+        padding-inline-end: 3.5rem;
         width: auto;
     }
 
@@ -372,15 +372,7 @@
     }
 
     /* remove number arrows */
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
 
-    input[type=number] {
-        -moz-appearance: textfield; /* Firefox */
-    }
 
 
     /* controls and decoration for switch /toggle element */
@@ -388,7 +380,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+        padding-block: 0.75rem 0.5rem;
+        padding-inline: 0.75rem 0.75rem;
 
         background-color: var(--form-background-color);
         border: 1px solid var(--border-main-darker);
@@ -396,14 +389,14 @@
     }
 
     .form .switch input {
-        display: none !important;
+        display: none;
     }
 
 
     .form .switch span {
         display: flex;
         align-items: center;
-        padding-left: 4.5rem;
+        padding-inline-start: 4.5rem;
         border: none;
         height: 1.5rem;
     }
@@ -411,7 +404,7 @@
     .form .switch span::before {
         position: absolute;
         display: block;
-        left: 2rem;
+        inset-inline-start: 2rem;
         width: 3rem;
         height: 1.5rem;
         border-radius: var(--radius-elem);
@@ -424,7 +417,7 @@
     .form .switch span::after {
         display: block;
         position: absolute;
-        left: 1.25rem;
+        inset-inline-start: 1.25rem;
         width: 1rem;
         height: 1rem;
         transform: translate(0, 0);
@@ -440,7 +433,7 @@
     }
 
     .form .switch input:checked + span::after {
-        left: 2.75rem;
+        inset-inline-start: 2.75rem;
     }
 
     /* adds a help icon to top right part of field */
@@ -448,8 +441,8 @@
         position: absolute;
         height: 1.5em;
         width: 1.5em;
-        top: -0.75rem;
-        right: -0.25rem;
+        inset-block-start: -0.75rem;
+        inset-inline-end: -0.25rem;
 
         display: inline-flex;
         margin: 0;
@@ -461,7 +454,7 @@
         color: var(--complement-text);
         background-color: var(--form-background-color);
         border-radius: 50%;
-        border: 1px solid var(--complement-text) !important;
+        border: 1px solid var(--complement-text);
         cursor: pointer;
         z-index: 11;
     }
@@ -474,14 +467,17 @@
         position: absolute;
         transform: translate(-50%, 0);
         transition: opacity .2s, transform .2s;
-        top: 0;
-        right: 1em;
+        inset-block-start: 0;
+        inset-inline-end: 1em;
 
         height: 0;
         width: 0;
         border-width: 0.5rem;
         border-style: solid;
-        border-color: var(--secondary-light) transparent transparent transparent;
+        border-block-start-color: var(--secondary-light);
+        border-inline-end-color: transparent;
+        border-block-end-color: transparent;
+        border-inline-start-color: transparent;
         z-index: 300;
     }
 
@@ -493,7 +489,7 @@
         background-color: var(--secondary-light);
         padding: 0.5rem 1rem;
         position: absolute;
-        bottom: 100%;
+        inset-block-end: 100%;
 
         color: var(--secondary-dark);
         font-size: var(--size-7);
@@ -525,10 +521,82 @@
 
 
     /* optional tabbed form controls */
+    .form .form-tabs:has(> details[name]) {
+        display: grid;
+        grid-template-columns: repeat(9, minmax(max-content, 1fr));
+        grid-template-rows: auto auto;
+        border-block-end: 1px solid var(--border-main-darker);
+    }
+
+    .form .form-tabs:has(> details[name]) > details[name] {
+        display: contents;
+    }
+
+    .form .form-tabs:has(> details[name]) > details[name]:nth-of-type(n+10) {
+        display: none;
+    }
+
+    .form .form-tabs:has(> details[name]) > details > summary {
+        display: inline-flex;
+        align-items: center;
+        grid-column: auto;
+        grid-row: 1;
+        margin: 0;
+        padding: 0.5em 1em;
+        border: 1px solid transparent;
+        border-block-end: 2px solid var(--form-background-color);
+        border-start-start-radius: var(--radius);
+        border-start-end-radius: var(--radius);
+        border-end-end-radius: 0;
+        border-end-start-radius: 0;
+        color: var(--text-comp);
+        line-height: 1;
+        cursor: pointer;
+        list-style: none;
+        white-space: nowrap;
+    }
+
+    .form .form-tabs:has(> details[name]) > details > summary::marker {
+        content: "";
+    }
+
+
+    .form .form-tabs:has(> details[name]) > details > summary:hover {
+        background-color: var(--bg-component);
+        color: var(--text-darker);
+    }
+
+    .form .form-tabs:has(> details[name]) > details[open] > summary {
+        border-color: var(--border-main-darker);
+        border-block-end-color: var(--form-background-color);
+        color: var(--secondary);
+        font-weight: var(--weight-semibold);
+        background-color: inherit;
+    }
+
+    .form .form-tabs:has(> details[name]) > details > :not(summary) {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    @supports selector(::details-content) {
+        .form .form-tabs:has(> details[name]) > details::details-content {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            padding: var(--padding-medium);
+        }
+    }
+
+    @supports not selector(::details-content) {
+        .form .form-tabs:has(> details[name]) > details > :not(summary) {
+            padding: var(--padding-medium);
+        }
+    }
+
     .form .form-tabs > input {
         display: block; /* "enable" hidden elements in IE/edge */
         position: absolute; /* then hide them off-screen */
-        left: -100vw;
+        inset-inline-start: -100vw;
     }
 
     .form .form-tabs > ul {
@@ -537,7 +605,7 @@
         list-style: none;
         display: flex;
         flex-wrap: wrap;
-        border-bottom: 1px solid var(--border-main-darker);
+        border-block-end: 1px solid var(--border-main-darker);
         margin: 0;
         padding: 0 var(--padding-medium);
         font-size: var(--size-6);
@@ -559,24 +627,26 @@
         display: inline-flex;
         align-items: center;
         padding: 0.5em 1em;
-        border-right-width: 0;
+        border-inline-end-width: 0;
         cursor: pointer;
         margin: 0;
     }
 
     .form .form-tabs > ul label:hover {
         background-color: var(--bg-component);
-        margin-bottom: 0;
+        margin-block-end: 0;
         color: var(--text-darker);
     }
 
     .form .form-tabs > ul label span:last-child {
-        margin: 0 0 0 0.5em;
+        margin-block: 0 0;
+        margin-inline: 0.5em 0;
         font-size: 1em;
     }
 
     .form .form-tabs > ul label span:first-child {
-        margin: 0 0.5em 0 0;
+        margin-block: 0 0;
+        margin-inline: 0 0.5em;
         font-size: 1em;
     }
 
@@ -588,40 +658,47 @@
 
     .form .form-group-container .form-group {
         position: absolute;
-        top: -999em;
-        left: -999em;
+        inset-block-start: -999em;
+        inset-inline-start: -999em;
     }
 
-    .form .form-tabs > input:nth-child(1):checked ~ ul li:nth-child(1) label,
-    .form .form-tabs > input:nth-child(2):checked ~ ul li:nth-child(2) label,
-    .form .form-tabs > input:nth-child(3):checked ~ ul li:nth-child(3) label,
-    .form .form-tabs > input:nth-child(4):checked ~ ul li:nth-child(4) label,
-    .form .form-tabs > input:nth-child(5):checked ~ ul li:nth-child(5) label,
-    .form .form-tabs > input:nth-child(6):checked ~ ul li:nth-child(6) label,
-    .form .form-tabs > input:nth-child(7):checked ~ ul li:nth-child(7) label,
-    .form .form-tabs > input:nth-child(8):checked ~ ul li:nth-child(8) label,
-    .form .form-tabs > input:nth-child(9):checked ~ ul li:nth-child(9) label {
-        border-radius: var(--radius) var(--radius) 0 0;
-        border-left: 1px solid var(--border-main-darker) !important;
-        border-top: 1px solid var(--border-main-darker) !important;
-        border-right: 1px solid var(--border-main-darker) !important;
-        border-bottom: 2px solid var(--form-background-color) !important;
+    :is(
+        .form .form-tabs > input:nth-child(1):checked ~ ul li:nth-child(1) label,
+        .form .form-tabs > input:nth-child(2):checked ~ ul li:nth-child(2) label,
+        .form .form-tabs > input:nth-child(3):checked ~ ul li:nth-child(3) label,
+        .form .form-tabs > input:nth-child(4):checked ~ ul li:nth-child(4) label,
+        .form .form-tabs > input:nth-child(5):checked ~ ul li:nth-child(5) label,
+        .form .form-tabs > input:nth-child(6):checked ~ ul li:nth-child(6) label,
+        .form .form-tabs > input:nth-child(7):checked ~ ul li:nth-child(7) label,
+        .form .form-tabs > input:nth-child(8):checked ~ ul li:nth-child(8) label,
+        .form .form-tabs > input:nth-child(9):checked ~ ul li:nth-child(9) label
+    ) {
+        border-start-start-radius: var(--radius);
+        border-start-end-radius: var(--radius);
+        border-end-end-radius: 0;
+        border-end-start-radius: 0;
+        border-inline-start: 1px solid var(--border-main-darker);
+        border-block-start: 1px solid var(--border-main-darker);
+        border-inline-end: 1px solid var(--border-main-darker);
+        border-block-end: 2px solid var(--form-background-color);
         color: var(--secondary);
         font-weight: var(--weight-semibold);
-        margin-bottom: -1px;
+        margin-block-end: -1px;
         background-color: inherit;
     }
 
 
-    .form.is-form-tabbed > .form-tabs input:nth-child(1):checked ~ div.form-group-container > div.form-group:nth-child(1),
-    .form.is-form-tabbed > .form-tabs input:nth-child(2):checked ~ div.form-group-container > div.form-group:nth-child(2),
-    .form.is-form-tabbed > .form-tabs input:nth-child(3):checked ~ div.form-group-container > div.form-group:nth-child(3),
-    .form.is-form-tabbed > .form-tabs input:nth-child(4):checked ~ div.form-group-container > div.form-group:nth-child(4),
-    .form.is-form-tabbed > .form-tabs input:nth-child(5):checked ~ div.form-group-container > div.form-group:nth-child(5),
-    .form.is-form-tabbed > .form-tabs input:nth-child(6):checked ~ div.form-group-container > div.form-group:nth-child(6),
-    .form.is-form-tabbed > .form-tabs input:nth-child(7):checked ~ div.form-group-container > div.form-group:nth-child(7),
-    .form.is-form-tabbed > .form-tabs input:nth-child(8):checked ~ div.form-group-container > div.form-group:nth-child(8),
-    .form.is-form-tabbed > .form-tabs input:nth-child(9):checked ~ div.form-group-container > div.form-group:nth-child(9) {
+    :is(
+        .form.is-form-tabbed > .form-tabs input:nth-child(1):checked ~ div.form-group-container > div.form-group:nth-child(1),
+        .form.is-form-tabbed > .form-tabs input:nth-child(2):checked ~ div.form-group-container > div.form-group:nth-child(2),
+        .form.is-form-tabbed > .form-tabs input:nth-child(3):checked ~ div.form-group-container > div.form-group:nth-child(3),
+        .form.is-form-tabbed > .form-tabs input:nth-child(4):checked ~ div.form-group-container > div.form-group:nth-child(4),
+        .form.is-form-tabbed > .form-tabs input:nth-child(5):checked ~ div.form-group-container > div.form-group:nth-child(5),
+        .form.is-form-tabbed > .form-tabs input:nth-child(6):checked ~ div.form-group-container > div.form-group:nth-child(6),
+        .form.is-form-tabbed > .form-tabs input:nth-child(7):checked ~ div.form-group-container > div.form-group:nth-child(7),
+        .form.is-form-tabbed > .form-tabs input:nth-child(8):checked ~ div.form-group-container > div.form-group:nth-child(8),
+        .form.is-form-tabbed > .form-tabs input:nth-child(9):checked ~ div.form-group-container > div.form-group:nth-child(9)
+    ) {
         position: static;
     }
 
@@ -635,9 +712,9 @@
         padding: var(--pad-horz);
         font-size: var(--size-5);
         font-weight: var(--weight-semibold);
-        border-top-left-radius: inherit;
-        border-top-right-radius: inherit;
-        margin-bottom: 0;
+        border-start-start-radius: inherit;
+        border-start-end-radius: inherit;
+        margin-block-end: 0;
     }
 
     .form.has-form-shadow > header {
@@ -645,7 +722,8 @@
     }
 
     .form.is-form-tabbed > header {
-        margin: 0 0 var(--padding-large) 0;
+        margin-block: 0 var(--padding-large);
+        margin-inline: 0 0;
     }
 
     .form.has-form-shadow > header:not([class*='is-']) {
