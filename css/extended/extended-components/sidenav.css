@@ -98,7 +98,6 @@
         color: var(--text-elem);
         background-color: inherit;
         transition: all 0.3s;
-        display: flex;
         flex-direction: column;
     }
 
@@ -154,6 +153,7 @@
     .sidenav-block input:checked ~ nav,
     .sidenav-block > details[open] > nav,
     details.sidenav-block[open] > nav {
+        display: flex;
         padding-block: var(--pad-vert) var(--pad-vert);
         padding-inline: var(--pad-vert) 0;
         margin-block-end: 1rem;
