@@ -13,6 +13,7 @@
         column-gap: calc(1.5 * var(--gutter));
         orphans: 2;
         widows: 3;
+        width: 100%;
     }
 
     .magazine h2,
