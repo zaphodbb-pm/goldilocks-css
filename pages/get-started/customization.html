@@ -37,7 +37,176 @@ nav: Customization
 
     <p>File <b>initial-core-variables.css</b> contains the CSS variables that drive all the elements and components.</p>
 
-    <pre><code class="language-css">{% capture initial_core_css %}{% include_relative ../../css/core/base/initial-core-variables.css %}{% endcapture %}{{ initial_core_css | escape }}</code></pre>
+    <pre><code class="language-css">@layer tokens {
+    :root {
+    /* version 1.0.0 - Sept 13, 2026 */
+
+    /* awareness variables - for info only */
+    /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
+    /** files affected: gridbox.css, level.css, page.css, pagination.css, blockquote.css, navbar.css, sidebar.css, image.css, media.css  **/
+    --mobile-breakpoint: 576px;     /* or 36rem at 16px base size */
+
+
+
+    /* Base measurement unit to be used for font, margins and padding */
+    /* changing the base html factor allows a user to change the font sizes to meet accessibility needs */
+    --base-html-factor: 100%;
+    --base-rem: 1rem;
+
+
+    /* Typography */
+    /** Note: text colors are set in file: initial-colors.css **/
+
+    /** Default is to use system fonts as much as possible **/
+    --family-sans-serif: &quot;Tahoma&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;Segoe UI&quot;, &quot;Roboto&quot;;
+    --family-serif: &quot;Georgia&quot;, &quot;Times New Roman&quot;;
+    --family-monospace: monospace;
+    --render-mode: optimizeLegibility;
+
+    /** Define font weights here **/
+    --weight-light: 300;
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /** note: adjustable typography is set in the file: typography.css **/
+    --base-font-size: var(--base-rem);
+
+    /** Text line heights to match size **/
+    --line-height-125: 125%;
+    --line-height-150: 150%;
+    --line-height-175: 175%;
+    --line-height-200: 200%;
+
+    /** Sizing pattern - typically for text **/
+    /*** typical factors: (see https://typescale.com)
+        1.125 (Major Second) - A balanced choice for most UI designs.
+        1.2 (Minor Third) - Suitable for more information-dense UI designs.
+        1.25 (Major Third) - A very popular choice that provides enough distinction between heading levels.
+        1.333 (Perfect Fourth) - Offers a slightly larger, more dramatic scale.
+    ***/
+
+    --size-factor: 1.125;
+
+    --size-7: calc( var(--base-font-size) * 0.875 );                /* Example 1.125 scale factor:  --size-7 = 0.875rem; */
+    --size-6: var(--base-font-size);                                /* Example 1.125 scale factor:  --size-6 = 1 rem; */
+    --size-5: calc( var(--size-6) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-5 = 1.13rem; */
+    --size-4: calc( var(--size-5) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-4 = 1.27rem; */
+    --size-3: calc( var(--size-4) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-3 = 1.42rem; */
+    --size-2: calc( var(--size-3) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-2 = 1.6rem; */
+    --size-1: calc( var(--size-2) * var(--size-factor) );           /* Example 1.125 scale factor:  --size-1 = 1.8rem; */
+
+
+
+    /* Grid Key Variables */
+    --gutter: calc(3 * var(--base-rem));                    /** grid column gutter **/
+    --grid-min-px-width: 100px;                             /** minimum absolute column width in a grid layout **/
+    --grid-min-width: calc(5 * var(--base-font-size));      /** minimum relative column width in a grid layout **/
+
+
+    /* basic spacing values */
+    /* based on https://medium.com/user-experience-design-1/ui-cheat-sheet-spacing-friendships-e37a6fccc407*/
+    --space-element: var(--base-rem);
+    --space-block: calc(2 * var(--base-rem));
+    --space-collection: calc(4 * var(--base-rem));
+    --space-container: calc(5 * var(--base-rem));
+
+
+    /* Flexbox element spacing */
+    --gap-row: calc( 0.75 * var(--base-font-size) );
+    --gap-col: calc( 0.75 * var(--base-font-size) );
+
+
+
+    /* Elements Controls */
+    --pad-horz: var(--base-font-size);
+    --pad-vert: calc( 0.5 * var(--base-font-size) );
+    --pad-horz-small: calc( 0.5 * var(--base-font-size) );
+    --pad-vert-small: calc( 0.25 * var(--base-font-size) );
+
+    --padding: calc(0.75 * var(--base-font-size));
+    --padding-normal: var(--base-font-size);
+    --padding-medium: calc( 1.5 * var(--base-font-size) );
+    --padding-large: calc( 3 * var(--base-font-size) );
+
+    --mar-horz: calc( 0.5 * var(--base-font-size) );
+    --mar-vert: calc( 0.5 * var(--base-font-size) );
+    --margin: var(--base-font-size);
+    --margin-form: calc(1.5 * var(--base-font-size));
+    --margin-medium: calc(3 * var(--base-font-size));
+    --margin-large: calc(5 * var(--base-font-size));
+
+
+
+    /* Component Controls */
+    --radius: calc(0.5 * var(--base-font-size));
+    --radius-small: calc(0.5 * var(--radius));
+    --radius-comp: calc(1 * var(--radius));
+    --radius-elem: calc(1.5 * var(--radius));
+    --radius-rounded: 10000px;
+
+
+    /* Navbar settings */
+    --navbar-height: calc(4 * var(--base-font-size));
+    --navbar-offset: 0;
+    --navbar-z: 30;                 /* z-index to ensure that navbar gets priority */
+
+
+
+    /* Widgetbar settings */
+    --widgetbar-height: calc(2 * var(--base-font-size) + 0.75rem);
+    --widget-z: 30;                 /* z-index to ensure that navbar gets priority */
+
+
+    /* Breadcrumb setting */
+    /* other options are: arrow-separator = &quot;&gt;&quot;, bullet-separator = &quot;\02022&quot; or quote-separator = &quot;\BB&quot; */
+    --breadcrumb-separator: &quot;/&quot;;
+
+
+    /* magazine normal width */
+    --magazine-width: 40ch;
+
+
+    /* carousel image height */
+    --carousel-image-height: calc(8 * var(--base-font-size));
+    --carousel-image-width: calc( 4 / 3 * 8 * var(--base-font-size));            /* aspect ratio of image */
+
+
+
+    /* uri encoded icon for select and dropdown - chevron down and initially set to primary color */
+    --indicator: url(&quot;data:image/svg+xml;charset=utf8,\
+    %3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;\
+    %20viewBox=&#39;0%200%2024%2024&#39;%20\
+    fill=&#39;none&#39;%20stroke=&#39;currentColor&#39;%20stroke-width=&#39;3&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;%3E\
+    %3Cpolyline%20points=&#39;6%209%2012%2015%2018%209&#39;/%3E\
+    %3C/svg%3E&quot;);
+
+    --indicator-down: url(&quot;data:image/svg+xml;charset=utf8,\
+    %3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;\
+    %20viewBox=&#39;0%200%2024%2024&#39;%20\
+    %20width=&#39;24&#39;%20height=&#39;24&#39;%20\
+    fill=&#39;none&#39;%20stroke=&#39;currentColor&#39;%20stroke-width=&#39;3&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;%3E%20\
+    %3Cpolyline%20points=&#39;6%209%2012%2015%2018%209&#39;/%3E\
+    %3C/svg%3E&quot;);
+
+    --indicator-up: url(&quot;data:image/svg+xml;charset=utf8,\
+    %3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;\
+    %20viewBox=&#39;0%200%2024%2024&#39;%20\
+    %20width=&#39;24&#39;%20height=&#39;24&#39;%20\
+    fill=&#39;none&#39;%20stroke=&#39;currentColor&#39;%20stroke-width=&#39;3&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;%3E%20\
+    %3Cpolyline%20points=&#39;18%2015%2012%209%206%2015&#39;/%3E\
+    %3C/svg%3E&quot;);
+
+    --indicator-right: url(&quot;data:image/svg+xml;charset=utf8,\
+    %3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;\
+    %20viewBox=&#39;0%200%2024%2024&#39;%20\
+    %20width=&#39;24&#39;%20height=&#39;24&#39;%20\
+    fill=&#39;none&#39;%20stroke=&#39;currentColor&#39;%20stroke-width=&#39;3&#39;%20stroke-linecap=&#39;round&#39;%20stroke-linejoin=&#39;round&#39;%3E%20\
+    %3Cpolyline%20points=&#39;9%2018%2015%2012%209%206&#39;/%3E\
+    %3C/svg%3E&quot;);
+    }
+}</code></pre>
 
     <div class="space-items-medium "></div>
 
@@ -45,9 +214,230 @@ nav: Customization
 
     <p><b>a-project-theme-colors.css</b> defines the hue-based palette, and <b>b-initial-theme-colors.css</b> maps those palette values to component and semantic tokens.</p>
 
-    <pre><code class="language-css">{% capture project_theme_css %}{% include_relative ../../css/core/base/a-project-theme-colors.css %}{% endcapture %}{{ project_theme_css | escape }}</code></pre>
+    <pre><code class="language-css">/* a-project-theme-colors.css */
 
-    <pre><code class="language-css">{% capture initial_theme_colors_css %}{% include_relative ../../css/core/base/b-initial-theme-colors.css %}{% endcapture %}{{ initial_theme_colors_css | escape }}</code></pre>
+@layer tokens {
+    :root {
+
+    /** main project colour theme definitions generated by designer **/
+
+    --p-h: 262;
+    --s-h: 182;
+    --c-h: 45;
+    --g-h: 182;
+    --lnk-h: 225;
+    --ok-h: 140;
+    --warn-h: 84;
+    --err-h: 8;
+
+    /*** primary - Violet Indigo ***/
+    --p-50: oklch(97.5% 0.010 var(--p-h));
+    --p-100: oklch(94.0% 0.028 var(--p-h));
+    --p-200: oklch(87.5% 0.068 var(--p-h));
+    --p-300: oklch(75.8% 0.118 var(--p-h));
+    --p-400: oklch(63.0% 0.172 var(--p-h));
+    --p-500: oklch(51.5% 0.210 var(--p-h));
+    --p-600: oklch(42.2% 0.220 var(--p-h));
+    --p-700: oklch(32.2% 0.192 var(--p-h));
+    --p-800: oklch(22.2% 0.152 var(--p-h));
+    --p-900: oklch(14.0% 0.108 var(--p-h));
+    --p-950: oklch(8.5% 0.070 var(--p-h));
+
+    /*** secondary - blue teal ***/
+    --s-50: oklch(97.5% 0.014 var(--s-h));
+    --s-100: oklch(93.8% 0.035 var(--s-h));
+    --s-200: oklch(87.2% 0.082 var(--s-h));
+    --s-300: oklch(75.8% 0.138 var(--s-h));
+    --s-400: oklch(62.8% 0.185 var(--s-h));
+    --s-500: oklch(50.5% 0.205 var(--s-h));
+    --s-600: oklch(40.8% 0.210 var(--s-h));
+    --s-700: oklch(31.0% 0.182 var(--s-h));
+    --s-800: oklch(21.5% 0.140 var(--s-h));
+    --s-900: oklch(13.8% 0.098 var(--s-h));
+    --s-950: oklch(8.2% 0.062 var(--s-h));
+
+    /*** complementary - amber orange ***/
+    --c-50: oklch(97.8% 0.012 var(--c-h));
+    --c-100: oklch(94.5% 0.032 var(--c-h));
+    --c-200: oklch(88.5% 0.078 var(--c-h));
+    --c-300: oklch(79.0% 0.138 var(--c-h));
+    --c-400: oklch(67.2% 0.190 var(--c-h));
+    --c-500: oklch(55.8% 0.205 var(--c-h));
+    --c-600: oklch(45.5% 0.215 var(--c-h));
+    --c-700: oklch(35.0% 0.188 var(--c-h));
+    --c-800: oklch(24.5% 0.145 var(--c-h));
+    --c-900: oklch(15.5% 0.098 var(--c-h));
+
+
+    /*** grey scale - teal hint · near-achromatic ***/
+    --g-0: oklch(100.0% 0.000 var(--g-h));
+    --g-50: oklch(98.5% 0.005 var(--g-h));
+    --g-100: oklch(95.8% 0.008 var(--g-h));
+    --g-200: oklch(91.2% 0.012 var(--g-h));
+    --g-300: oklch(82.0% 0.013 var(--g-h));
+    --g-400: oklch(66.8% 0.014 var(--g-h));
+    --g-500: oklch(52.8% 0.014 var(--g-h));
+    --g-600: oklch(40.2% 0.013 var(--g-h));
+    --g-700: oklch(29.5% 0.011 var(--g-h));
+    --g-800: oklch(19.2% 0.009 var(--g-h));
+    --g-900: oklch(11.5% 0.006 var(--g-h));
+    --g-950: oklch(6.6% 0.004 var(--g-h));
+    --g-1k: oklch(0.0% 0.000 var(--g-h));
+
+
+    /*** link - cerulean ***/
+    --lnk-50:  oklch(97% 0.015 var(--lnk-h));
+    --lnk-100: oklch(92% 0.040 var(--lnk-h));
+    --lnk-200: oklch(84% 0.080 var(--lnk-h));
+    --lnk-300: oklch(74% 0.120 var(--lnk-h));
+    --lnk-400: oklch(62% 0.180 var(--lnk-h));
+    --lnk-500: oklch(54% 0.210 var(--lnk-h));
+    --lnk-600: oklch(45.5% 0.222 var(--lnk-h));
+    --lnk-700: oklch(38% 0.190 var(--lnk-h));
+    --lnk-800: oklch(30% 0.150 var(--lnk-h));
+    --lnk-900: oklch(22% 0.110 var(--lnk-h));
+
+    /*** success - vivant pure green ***/
+    --ok-50: oklch(97.0% 0.018 var(--ok-h));
+    --ok-100: oklch(92.5% 0.045 var(--ok-h));
+    --ok-200: oklch(85.0% 0.100 var(--ok-h));
+    --ok-300: oklch(85.0% 0.133 var(--ok-h));
+    --ok-400: oklch(74.0% 0.166 var(--ok-h));
+    --ok-500: oklch(63.0% 0.212 var(--ok-h));
+    --ok-600: oklch(44.0% 0.220 var(--ok-h));
+    --ok-700: oklch(34.5% 0.192 var(--ok-h));
+    --ok-800: oklch(25.0% 0.148 var(--ok-h));
+
+    /*** warning - gold yellow ***/
+    --warn-50: oklch(98.2% 0.020 var(--warn-h));
+    --warn-100: oklch(94.5% 0.048 var(--warn-h));
+    --warn-200: oklch(88.5% 0.092 var(--warn-h));
+    --warn-300: oklch(80.0% 0.142 var(--warn-h));
+    --warn-400: oklch(78.0% 0.163 var(--warn-h));
+    --warn-500: oklch(65.0% 0.185 var(--warn-h));
+    --warn-600: oklch(56.0% 0.180 var(--warn-h));
+    --warn-700: oklch(47.8% 0.175 var(--warn-h));
+    --warn-800: oklch(35.5% 0.132 var(--warn-h));
+    --warn-900: oklch(24.0% 0.112 var(--warn-h));
+
+    /*** danger - pure crimson ***/
+    --err-50: oklch(97.5% 0.016 var(--err-h));
+    --err-100: oklch(93.5% 0.042 var(--err-h));
+    --err-200: oklch(86.5% 0.092 var(--err-h));
+    --err-300: oklch(76.5% 0.133 var(--err-h));
+    --err-400: oklch(66.5% 0.174 var(--err-h));
+    --err-500: oklch(55.0% 0.225 var(--err-h));
+    --err-600: oklch(44.5% 0.230 var(--err-h));
+    --err-700: oklch(35.0% 0.200 var(--err-h));
+    --err-800: oklch(25.5% 0.158 var(--err-h));
+
+
+    /*** shadows - whisper of secondary ***/
+
+    /*** backgrounds - whisper of secondary ***/
+    --bg-page: oklch(98.8% 0.002 var(--s-h));
+    --bg-elevated-1: oklch(98.9% 0.007 var(--s-h));
+    --bg-elevated-2: oklch(97.4% 0.012 var(--s-h));
+    --bg-elevated-3: oklch(96.6% 0.015 var(--s-h));
+    }
+}</code></pre>
+
+    <pre><code class="language-css">/* b-initial-theme-colors.css */
+
+@layer tokens {
+    :root {
+
+    /** map project theme colours into working variables **/
+    /** adjust for WCAG compliance **/
+    /** this allows for final tweaking of theme to site display **/
+
+    /*** controls for colour adjusts for hover / active state of buttons and other elements ***/
+    --action-offset: 0.075;
+
+    /*** define primary usage variables ***/
+    --primary-light:  var(--p-100);
+    --primary-dark:  var(--p-700);
+    --primary-darkest: var(--p-800);
+    --primary-text-element: var(--p-700);
+    --primary-hover: oklch(from var(--primary) calc(l + var(--action-offset)) c h);
+    --primary-hover-text: var(--p-200);
+    --primary-active: oklch(from var(--primary) calc(l - var(--action-offset)) c h);
+
+
+    /*** define secondary usage variables ***/
+    --secondary-light:  var(--s-100);
+    --secondary-lightest:  var(--s-50);
+    --secondary-dark:  var(--s-600);
+    --secondary-darkest: var(--s-800);
+    --secondary-text-element: var(--s-600);
+    --secondary-hover: oklch(from var(--secondary) calc(l + var(--action-offset)) c h);
+    --secondary-hover-text: var(--g-900);
+    --secondary-active: oklch(from var(--secondary) calc(l - var(--action-offset)) c h);
+
+
+    /*** define complement / cta usage variables ***/
+    --complement-light:  var(--c-100);
+    --complement-lightest:  var(--c-50);
+    --complement-dark:  var(--c-600);
+    --complement-darkest: var(--c-800);
+    --complement-text-element: var(--c-700);
+    --complement-hover: oklch(from var(--complement) calc(l + var(--action-offset)) c h);
+    --complement-hover-text: var(--c-900);
+    --complement-active: oklch(from var(--complement) calc(l - var(--action-offset)) c h);
+
+
+    /*** define key link colours ***/
+    --link-hover: var(--lnk-700);
+    --link-light: var(--lnk-100);
+    --link-lightest: var(--lnk-50);
+    --link-dark: var(--lnk-700);
+    --link-text-element: var(--lnk-800);
+
+    /*** define key success colours ***/
+    --success: var(--ok-500);
+    --success-light: var(--ok-100);
+    --success-lightest: var(--ok-50);
+    --success-darkest: var(--ok-800);
+    --success-text: var(--ok-700);
+    --success-text-invert: var(--ok-800);
+
+    /*** define key warning colours ***/
+    --warning: var(--warn-400);
+    --warning-light:  var(--warn-100);
+    --warning-lightest:  var(--warn-50);
+    --warning-dark: var(--warn-700);
+    --warning-darkest: var(--warn-900);
+    --warning-text: var(--warn-700);
+    --warning-text-invert: var(--warn-800);
+    --warning-text-invert-dark: var(--warn-50);
+
+    /*** define key danger colours ***/
+    --danger: var(--err-500);
+    --danger-light:  var(--err-100);
+    --danger-lightest:  var(--err-50);
+    --danger-dark: var(--err-600);
+    --danger-darkest: var(--err-800);
+    --danger-text: var(--err-700);
+    --danger-text-invert: var(--err-50);
+    --danger-text-invert-dark: var(--err-50);
+
+    /*** additional greys ***/
+
+
+    /*** Common shadow treatment for containers, components and elements ***/
+    /*** see https://www.joshwcomeau.com/css/designing-shadows/ ***/
+
+    --shadow-container: var(--sh-sm);
+    --shadow-component: var(--sh-md);
+    --shadow-element:  var(--sh-lg);
+
+    /*** other common variables for use in components ***/
+    --chart-color-start: oklch(from var(--primary) l calc(c + .1) h);   /**** brighten primary ****/
+    --chart-color-offset: 95;                                           /**** helps build 9 other colours ****/
+
+    --bq-border: var(--primary);                                        /**** defines blockquote left border ****/
+    }
+}</code></pre>
 
     <div class="space-items-medium "></div>
 
@@ -55,7 +445,84 @@ nav: Customization
 
     <p>File <b>c-initial-theme-dark.css</b> defines light and dark token values, follows <code>prefers-color-scheme: dark</code> by default, and supports explicit <code>.main-theme-dark</code> and <code>.main-theme-light</code> overrides.</p>
 
-    <pre><code class="language-css">{% capture dark_theme_css %}{% include_relative ../../css/core/base/c-initial-theme-dark.css %}{% endcapture %}{{ dark_theme_css | escape }}</code></pre>
+    <pre><code class="language-css">/* c-initial-theme-dark.css */
+
+/**  main dark theme color definitions / overrides **/
+
+@layer tokens {
+    :root {
+        color-scheme: light dark;
+
+        --black: light-dark(var(--g-950), var(--g-50));
+        --black-850: light-dark(var(--g-900), var(--g-100));
+        --black-800: light-dark(var(--g-800), var(--g-200));
+        --black-700: light-dark(var(--g-700), var(--g-300));
+
+        --grey-darker: light-dark(var(--g-600), var(--g-200));
+        --grey-dark: light-dark(var(--g-500), var(--g-300));
+        --grey: var(--g-400);
+        --grey-light: light-dark(var(--g-300), var(--g-500));
+        --grey-lighter: light-dark(var(--g-200), var(--g-600));
+        --grey-lightest: light-dark(var(--g-100), var(--g-700));
+        --grey-white: light-dark(var(--g-50), var(--g-900));
+        --white: light-dark(var(--g-0), var(--g-1k));
+
+        --bg-main: light-dark(var(--bg-page), oklch(11.8% 0.022 var(--p-h)));
+        --bg-main-invert: light-dark(var(--black-850), var(--g-200));
+        --bg-grid: light-dark(var(--g-100), var(--g-600));
+        --bg-container: light-dark(var(--bg-elevated-1), oklch(23.5% 0.028 var(--g-h)));
+        --bg-component: light-dark(var(--bg-elevated-2), oklch(27.5% 0.030 var(--g-h)));
+        --bg-element: light-dark(var(--bg-elevated-3), oklch(31.5% 0.032 var(--g-h)));
+        --bg-highlight: light-dark(var(--warning-lightest), var(--warning-darkest));
+
+        --link: light-dark(var(--lnk-600), oklch(64.0% 0.200 var(--lnk-h)));
+        --link-visited: light-dark(oklch(37.5% 0.165 278), oklch(67.5% 0.165 278));
+
+        --primary: light-dark(var(--p-600), var(--p-400));
+        --primary-text: light-dark(var(--p-700), var(--p-400));
+        --primary-text-invert: light-dark(var(--p-50), var(--p-900));
+        --secondary: light-dark(var(--s-500), var(--s-400));
+        --secondary-text: light-dark(var(--s-600), var(--s-400));
+        --secondary-text-invert: light-dark(var(--g-50), var(--s-900));
+        --complement: light-dark(var(--c-500), var(--c-400));
+        --complement-text: light-dark(var(--c-700), var(--c-400));
+        --complement-text-invert: light-dark(var(--c-50), var(--c-900));
+        --link-text: light-dark(var(--lnk-800), var(--lnk-400));
+        --link-text-invert: light-dark(var(--lnk-50), var(--lnk-900));
+        --success-dark: light-dark(var(--ok-600), var(--ok-500));
+
+        --text: light-dark(var(--g-800), var(--g-100));
+        --text-light: light-dark(var(--g-500), var(--g-400));
+        --text-darker: light-dark(var(--g-950), var(--g-50));
+        --text-elem: light-dark(var(--g-800), var(--g-100));
+        --text-comp: light-dark(var(--g-800), var(--g-100));
+        --text-btn-invert: light-dark(var(--g-50), var(--g-950));
+        --text-code: light-dark(var(--c-700), var(--c-400));
+
+        --border-main: light-dark(var(--g-300), var(--g-400));
+        --border-main-light: light-dark(var(--g-100), var(--g-300));
+        --border-main-darker: light-dark(var(--g-400), var(--g-500));
+
+        --sh-sm: 0 1px 2px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.08), oklch(0% 0 0 / .30)), 0 2px 4px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.05), oklch(0% 0 0 / .20)), inset 0 1px 0 light-dark(oklch(100% 0 0 / 0.55), oklch(100% 0 0 / .06));
+        --sh-md: 0 2px 3px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.10), oklch(0% 0 0 / .28)), 0 4px 10px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.08), oklch(0% 0 0 / .28)), inset 0 1px 0 light-dark(oklch(100% 0 0 / 0.48), oklch(100% 0 0 / .05));
+        --sh-lg: 0 4px 6px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.10), oklch(0% 0 0 / .28)), 0 10px 24px light-dark(oklch(40.8% 0.210 var(--s-h) / 0.12), oklch(0% 0 0 / .36)), inset 0 1px 0 light-dark(oklch(100% 0 0 / 0.40), oklch(100% 0 0 / .04));
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root:not(.main-theme-light) {
+            color-scheme: dark;
+        }
+    }
+
+    .main-theme-dark,
+    :root:has(.theme-toggle:checked) {
+        color-scheme: dark;
+    }
+
+    .main-theme-light {
+        color-scheme: light;
+    }
+}</code></pre>
 
 
 
