@@ -10,36 +10,40 @@ nav: Customization
 </header>
 
 <main class="main-content">
-    <h2>Layers</h2>
-    <p>
-        <strong>Goldilocks-CSS</strong> is designed to allow customization of the theme through the use of layers.
-        CSS layers make the cascade order explicit and let defaults, components, helpers and project overrides coexist
-        without specificity tricks. The layer order is
-        reset, tokens, base, elements, layout, extended, extras, utilities and custom:
-    </p>
+    <article class="magazine has-serif">
 
-    <ul class="is-indented-1">
-        <li><b>Reset</b>: normalizes browser defaults;</li>
-        <li><b>Tokens</b>: provides the default design variables and theme values. Keeping defaults in a layer means
-            an unlayered stylesheet or a later layer can override them without <code>!important</code>;</li>
-        <li><b>Base</b>: sets up global HTML styles and foundations;</li>
-        <li><b>Elements</b>: styles typography, buttons, forms, tables, images and other common elements;</li>
-        <li><b>Layout</b>: defines layout primitives and responsive helpers;</li>
-        <li><b>Extended</b>: defines common components such as accordions, breadcrumbs, cards and navigation;</li>
-        <li><b>Extras</b>: defines additional elements and components such as progress bars, modals, popovers and charts;</li>
-        <li><b>Utilities</b>: contains helper classes. It comes after component layers, so utilities override their normal
-            declarations without <code>!important</code>;</li>
-        <li><b>Custom</b>: reserved for project overrides and additions. Later normal layers take precedence over earlier ones.</li>
-    </ul>
+        <div class="mag-block">
+            <h2>Layers</h2>
+            <p>
+                <strong>Goldilocks-CSS</strong> is designed to allow customization of the theme through the use of layers.
+                CSS layers make the cascade order explicit and let defaults, components, helpers and project overrides coexist
+                without specificity tricks. The layer order is
+                reset, tokens, base, elements, layout, extended, extras, utilities and custom:
+            </p>
 
+            <ul class="is-indented-1">
+                <li><b>Reset</b>: normalizes browser defaults;</li>
+                <li><b>Tokens</b>: provides the default design variables and theme values. Keeping defaults in a layer means
+                    an unlayered stylesheet or a later layer can override them without <code>!important</code>;</li>
+                <li><b>Base</b>: sets up global HTML styles and foundations;</li>
+                <li><b>Elements</b>: styles typography, buttons, forms, tables, images and other common elements;</li>
+                <li><b>Layout</b>: defines layout primitives and responsive helpers;</li>
+                <li><b>Extended</b>: defines common components such as accordions, breadcrumbs, cards and navigation;</li>
+                <li><b>Extras</b>: defines additional elements and components such as progress bars, modals, popovers and charts;</li>
+                <li><b>Utilities</b>: contains helper classes. It comes after component layers, so utilities override their normal
+                    declarations without <code>!important</code>;</li>
+                <li><b>Custom</b>: reserved for project overrides and additions. Later normal layers take precedence over earlier ones.</li>
+            </ul>
+        </div>
 
-    <h2>Initial Variables with Default Settings</h2>
+        <div class="mag-block">
+            <h2>Initial Variables with Default Settings</h2>
 
-    <p>File <b>initial-core-variables.css</b> contains the CSS variables that drive all the elements and components.</p>
+            <p>File <b>initial-core-variables.css</b> contains the CSS variables that drive all the elements and components.</p>
 
-    <pre><code class="language-css">@layer tokens {
+            <pre><code class="language-css">@layer tokens {
     :root {
-    /* version 1.0.0 - Sept 13, 2026 */
+    /* version 1.0.0 - Nov 24, 2026 */
 
     /* awareness variables - for info only */
     /** typically (and sadly) @media does not support variables; so we need to hard code the mobile breakpoint **/
@@ -207,14 +211,15 @@ nav: Customization
     %3C/svg%3E&quot;);
     }
 }</code></pre>
+        </div>
 
-    <div class="space-items-medium "></div>
 
-    <h2>Initial Colour Settings with Default Settings</h2>
+    <div class="mag-block">
+        <h2>Initial Colour Settings with Default Settings</h2>
 
-    <p><b>a-project-theme-colors.css</b> defines the hue-based palette, and <b>b-initial-theme-colors.css</b> maps those palette values to component and semantic tokens.</p>
+        <p><b>a-project-theme-colors.css</b> defines the hue-based palette, and <b>b-initial-theme-colors.css</b> maps those palette values to component and semantic tokens.</p>
 
-    <pre><code class="language-css">/* a-project-theme-colors.css */
+        <pre><code class="language-css">/* a-project-theme-colors.css */
 
 @layer tokens {
     :root {
@@ -342,7 +347,7 @@ nav: Customization
     }
 }</code></pre>
 
-    <pre><code class="language-css">/* b-initial-theme-colors.css */
+        <pre><code class="language-css">/* b-initial-theme-colors.css */
 
 @layer tokens {
     :root {
@@ -438,14 +443,15 @@ nav: Customization
     --bq-border: var(--primary);                                        /**** defines blockquote left border ****/
     }
 }</code></pre>
+    </div>
 
-    <div class="space-items-medium "></div>
 
-    <h2>Alternate Dark Colour Settings with Default Settings</h2>
+    <div class="mag-block">
+        <h2>Alternate Dark Colour Settings with Default Settings</h2>
 
-    <p>File <b>c-initial-theme-dark.css</b> defines light and dark token values, follows <code>prefers-color-scheme: dark</code> by default, and supports explicit <code>.main-theme-dark</code> and <code>.main-theme-light</code> overrides.</p>
+        <p>File <b>c-initial-theme-dark.css</b> defines light and dark token values, follows <code>prefers-color-scheme: dark</code> by default, and supports explicit <code>.main-theme-dark</code> and <code>.main-theme-light</code> overrides.</p>
 
-    <pre><code class="language-css">/* c-initial-theme-dark.css */
+        <pre><code class="language-css">/* c-initial-theme-dark.css */
 
 /**  main dark theme color definitions / overrides **/
 
@@ -523,18 +529,18 @@ nav: Customization
         color-scheme: light;
     }
 }</code></pre>
+    </div>
 
+    <div class="mag-block">
+        <h2>Re-theming</h2>
 
+        <p>The palette uses hue custom properties for primary, secondary, complement, grey, link, success, warning and danger colours:
+            <code>--p-h</code>, <code>--s-h</code>, <code>--c-h</code>, <code>--g-h</code>, <code>--lnk-h</code>,
+            <code>--ok-h</code>, <code>--warn-h</code> and <code>--err-h</code>. Change a hue in the later <code>custom</code>
+            layer to generate a coordinated palette, or override individual palette or semantic tokens instead.
+        </p>
 
-    <h2>Re-theming</h2>
-
-    <p>The palette uses hue custom properties for primary, secondary, complement, grey, link, success, warning and danger colours:
-        <code>--p-h</code>, <code>--s-h</code>, <code>--c-h</code>, <code>--g-h</code>, <code>--lnk-h</code>,
-        <code>--ok-h</code>, <code>--warn-h</code> and <code>--err-h</code>. Change a hue in the later <code>custom</code>
-        layer to generate a coordinated palette, or override individual palette or semantic tokens instead.
-    </p>
-
-    <pre><code class="language-css">
+        <pre><code class="language-css">
 @layer custom {
     :root {
         --p-h: 300;
@@ -543,8 +549,11 @@ nav: Customization
 }
     </code></pre>
 
-    <p>Use <code>css/theme-template.css</code> as the starting point; it lists the default hue values and the palette and
-        semantic tokens that can be overridden. Load your customized theme stylesheet after the Goldilocks-CSS bundle.
-        <a href="{{site.url}}/css/theme-template.css">View the theme template</a>.
-    </p>
+        <p>Use <code>css/theme-template.css</code> as the starting point; it lists the default hue values and the palette and
+            semantic tokens that can be overridden. Load your customized theme stylesheet after the Goldilocks-CSS bundle.
+            <a href="{{site.url}}/css/theme-template.css">View the theme template</a>.
+        </p>
+    </div>
+
+    </article>
 </main>

@@ -106,9 +106,12 @@ nav: Theme Control
         </p>
 
         <pre><code class="language-html">
-&lt;html class="main-theme-dark"&gt;...&lt;/html&gt;
-&lt;html class="main-theme-light"&gt;...&lt;/html&gt;
-&lt;label&gt;&lt;input class="theme-toggle" type="checkbox"&gt; Dark theme&lt;/label&gt;
+            &lt;html class="main-theme-dark"&gt;...&lt;/html&gt;
+            &lt;html class="main-theme-light"&gt;...&lt;/html&gt;
+            &lt;label&gt;
+                &lt;input class="theme-toggle" type="checkbox"&gt;
+                Dark theme
+            &lt;/label&gt;
         </code></pre>
 
         <p>To re-theme the palette, override one or more hue tokens in the <code>custom</code> layer. The available hues are
@@ -120,8 +123,8 @@ nav: Theme Control
         <pre><code class="language-css">
 @layer custom {
     :root {
-        --p-h: 300;
-        --s-h: 165;
+        --p-h: 300;     /* primary hue */
+        --s-h: 165;     /* secondary hue */
     }
 }
         </code></pre>
