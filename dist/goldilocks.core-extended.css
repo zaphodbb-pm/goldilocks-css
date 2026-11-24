@@ -3828,7 +3828,8 @@
   }
 
   .sidenavs {
-    padding: var(--padding) 0;
+    max-inline-size: 30ch;
+    padding: var(--padding) 0 var(--padding) var(--padding-medium);
     flex-direction: column;
     justify-content: flex-start;
     row-gap: .5rem;
@@ -3882,17 +3883,18 @@
     overflow: hidden;
   }
 
-  .sidenav-block > label, .sidenav-block > summary, .sidenav-block > details > summary, details.sidenav-block > summary {
+  .sidenavs .sidenav-block > label, .sidenavs .sidenav-block > summary, .sidenavs .sidenav-block > details > summary, .sidenavs details.sidenav-block > summary, .sidenav-block > label, .sidenav-block > summary, .sidenav-block > details > summary, details.sidenav-block > summary {
     font-weight: var(--weight-medium);
     cursor: pointer;
     padding-block: var(--pad-vert) var(--pad-vert);
     padding-inline: var(--pad-horz) 2.5rem;
+    overflow-wrap: break-word;
     margin: 0;
     list-style: none;
     position: relative;
   }
 
-  .sidenav-block > label:after, .sidenav-block > summary:after, .sidenav-block > details > summary:after, details.sidenav-block > summary:after {
+  .sidenavs .sidenav-block > label:after, .sidenavs .sidenav-block > summary:after, .sidenavs .sidenav-block > details > summary:after, .sidenavs details.sidenav-block > summary:after, .sidenav-block > label:after, .sidenav-block > summary:after, .sidenav-block > details > summary:after, details.sidenav-block > summary:after {
     content: "";
     width: 2.5rem;
     height: 1.5rem;
@@ -3922,6 +3924,10 @@
     margin: 0;
     list-style: none;
     display: flex;
+  }
+
+  .sidenavs a {
+    overflow-wrap: break-word;
   }
 
   .sidenavs a.is-active, .sidenavs a:hover, .sidenav-block a:hover {

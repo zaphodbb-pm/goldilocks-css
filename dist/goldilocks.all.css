@@ -3828,7 +3828,7 @@
   }
 
   .sidenavs {
-    max-inline-size: 15rem;
+    max-inline-size: 30ch;
     padding: var(--padding) 0 var(--padding) var(--padding-medium);
     flex-direction: column;
     justify-content: flex-start;
