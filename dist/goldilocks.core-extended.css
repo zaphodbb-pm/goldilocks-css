@@ -3833,6 +3833,7 @@
     flex-direction: column;
     justify-content: flex-start;
     row-gap: .5rem;
+    width: max-content;
     margin: 0;
     display: flex;
     overflow: hidden;
@@ -3998,12 +3999,31 @@
   }
 
   .sidebarIconToggle {
+    appearance: none;
+    color: inherit;
+    font: inherit;
     box-sizing: border-box;
     cursor: pointer;
     height: auto;
     width: calc(.5 * var(--navbar-height));
+    background: none;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
     transition: all .3s;
-    position: absolute;
+    display: block;
+    position: relative;
+  }
+
+  .sidebarIconToggle:hover {
+    color: inherit;
+    background: none;
+  }
+
+  .sidebarIconToggle:focus-visible {
+    outline-offset: 4px;
+    outline: 2px solid;
   }
 
   .sidebarIconToggle > span {
@@ -4110,7 +4130,8 @@
     font-weight: var(--weight-semibold);
     cursor: pointer;
     margin: 0;
-    padding: 0;
+    padding-block: 0;
+    padding-inline: 0 2.5rem;
     list-style: none;
     position: relative;
   }
@@ -4185,20 +4206,31 @@
   }
 
   .sidebarMenu[popover], .sidebarMenuRight[popover] {
+    height: auto;
+    max-height: calc(100dvh - var(--navbar-height));
+    background-color: var(--bg-container);
+    color: var(--text);
     overflow-block: auto;
     opacity: 0;
     z-index: 300;
-    height: 100dvh;
-    max-height: 100dvh;
+    border: 0;
     margin: 0;
+    padding: 0;
     transition: transform .25s ease-in-out, opacity .25s ease-in-out, display .25s, overlay .25s;
     position: fixed;
-    inset-block: 0;
+    inset-block-start: var(--navbar-height);
+    inset-block-end: auto;
+    overflow-y: auto;
+  }
+
+  :is(.page-wrapper-widgets, .page-wrapper-widgets-right-panel) :is(.sidebarMenu, .sidebarMenuRight)[popover] {
+    max-height: calc(100dvh - var(--widgetbar-height) - var(--navbar-height));
+    inset-block-start: calc(var(--widgetbar-height) + var(--navbar-height));
   }
 
   .sidebarMenu[popover] {
-    width: min(20rem, 85vw);
-    max-width: 85vw;
+    width: max-content;
+    max-width: min(20rem, 85vw);
     inset-inline: 0 auto;
     transform: translateX(-100%);
   }

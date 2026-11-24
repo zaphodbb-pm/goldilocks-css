@@ -10,6 +10,7 @@
         flex-direction: column;
         justify-content: flex-start;
         row-gap: 0.5rem;
+        width: max-content;
     }
 
     .sidenavs li {

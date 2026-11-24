@@ -3833,6 +3833,7 @@
     flex-direction: column;
     justify-content: flex-start;
     row-gap: .5rem;
+    width: max-content;
     margin: 0;
     display: flex;
     overflow: hidden;
