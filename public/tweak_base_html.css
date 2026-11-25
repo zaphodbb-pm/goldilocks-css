@@ -1,6 +1,10 @@
 /* fix for prism code highlighter */
 
-    pre > code .tag {
+.code-toolbar {
+    margin: 2.5rem 0;
+}
+
+pre > code .tag {
         font-size: var(--size-6);
         font-weight: var(--weight-normal);
         white-space: nowrap;

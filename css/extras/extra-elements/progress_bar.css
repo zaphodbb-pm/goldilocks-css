@@ -1,9 +1,17 @@
 @layer extras {
 
     progress {
-        accent-color: var(--grey-dark);
+        --progress-color: var(--grey-dark);
+        --progress-track: var(--bg-element);
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        accent-color: var(--progress-color);
+        background-color: var(--progress-track);
         border: none;
         border-radius: 9999px;
+        color: var(--progress-color);
         display: block;
         height: var(--size-6);
         overflow: hidden;
@@ -11,12 +19,46 @@
         width: 100%;
     }
 
-    progress.is-progress-primary { accent-color: var(--primary); }
-    progress.is-progress-secondary { accent-color: var(--secondary); }
-    progress.is-progress-complement { accent-color: var(--complement); }
-    progress.is-progress-success { accent-color: var(--success); }
-    progress.is-progress-warning { accent-color: var(--warning); }
-    progress.is-progress-danger { accent-color: var(--danger); }
+    progress::-webkit-progress-bar {
+        background-color: var(--progress-track);
+        border-radius: 9999px;
+    }
+
+    progress::-webkit-progress-value {
+        background-color: var(--progress-color);
+        border-radius: 9999px;
+    }
+
+    progress::-moz-progress-bar {
+        background-color: var(--progress-color);
+        border-radius: 9999px;
+    }
+
+    progress:indeterminate {
+        background-image: linear-gradient(90deg, var(--progress-track) 0%, var(--progress-color) 50%, var(--progress-track) 100%);
+        background-size: 200% 100%;
+        animation: progress-indeterminate 1.5s linear infinite;
+    }
+
+    progress:indeterminate::-webkit-progress-bar {
+        background-color: transparent;
+    }
+
+    progress:indeterminate::-moz-progress-bar {
+        background-color: transparent;
+    }
+
+    @keyframes progress-indeterminate {
+        from { background-position: 200% 0; }
+        to { background-position: 0 0; }
+    }
+
+    progress.is-progress-primary { --progress-color: var(--primary); }
+    progress.is-progress-secondary { --progress-color: var(--secondary); }
+    progress.is-progress-complement { --progress-color: var(--complement); }
+    progress.is-progress-success { --progress-color: var(--success); }
+    progress.is-progress-warning { --progress-color: var(--warning); }
+    progress.is-progress-danger { --progress-color: var(--danger); }
 
 
     .progress-wrapper {
