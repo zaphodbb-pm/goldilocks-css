@@ -615,6 +615,10 @@
     container: level navbar / inline-size;
   }
 
+  :is(.level, .level-centered, .level-start, .level-end) :is(.level, .level-centered, .level-start, .level-end) {
+    container-type: normal;
+  }
+
   .level {
     justify-content: space-between;
   }

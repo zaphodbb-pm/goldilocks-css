@@ -19,6 +19,13 @@
         container-name: level navbar;
     }
 
+    /* nested (second) level: must not be a size container, otherwise inline-size containment
+       collapses its width and forces its items to wrap into a column; it keeps the row layout
+       and responds to the outer level container instead */
+    :is(.level, .level-centered, .level-start, .level-end) :is(.level, .level-centered, .level-start, .level-end) {
+        container-type: normal;
+    }
+
     .level {
         justify-content: space-between;
     }
