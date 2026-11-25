@@ -7274,7 +7274,7 @@
 
   progress {
     --progress-color: var(--grey-dark);
-    --progress-track: var(--bg-element);
+    --progress-track: var(--grey-lightest);
     appearance: none;
     accent-color: var(--progress-color);
     background-color: var(--progress-track);
@@ -7295,12 +7295,12 @@
 
   progress::-webkit-progress-value {
     background-color: var(--progress-color);
-    border-radius: 9999px;
+    border-radius: 9999px 0 0 9999px;
   }
 
   progress::-moz-progress-bar {
     background-color: var(--progress-color);
-    border-radius: 9999px;
+    border-radius: 9999px 0 0 9999px;
   }
 
   progress:indeterminate {
