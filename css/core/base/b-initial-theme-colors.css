@@ -77,7 +77,10 @@
     --danger-text-invert: var(--err-50);
     --danger-text-invert-dark: var(--err-50);
 
-    /*** additional greys ***/
+    /*** additional greys
+        These are set in the file c-initial-theme-dark.css to beable to use the light-dark function
+        to select the colour variant for each colour variant.
+    ***/
 
 
     /*** Common shadow treatment for containers, components and elements ***/
