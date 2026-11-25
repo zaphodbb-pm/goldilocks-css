@@ -24,6 +24,12 @@
         align-items: flex-end;
     }
 
+    /* level children: a stack sizes its children to their content, so a level child must not be
+       a size container, otherwise inline-size containment collapses its width to zero */
+    :is(.stack, .stack-centered, .stack-right) > :is(.level, .level-centered, .level-start, .level-end) {
+        container-type: normal;
+    }
+
     .stack-gap-small {
         row-gap: calc(0.5 * var(--gap-row));
     }

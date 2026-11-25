@@ -933,6 +933,10 @@
     align-items: flex-end;
   }
 
+  :is(.stack, .stack-centered, .stack-right) > :is(.level, .level-centered, .level-start, .level-end) {
+    container-type: normal;
+  }
+
   .stack-gap-small {
     row-gap: calc(.5 * var(--gap-row));
   }
