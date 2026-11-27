@@ -52,6 +52,25 @@
         display: block;
     }
 
+    /*
+        touch devices (iOS / iPadOS): hover and focus are only released when a "clickable"
+        element is tapped. Making the page clickable releases the dropdown on any tap outside.
+    */
+    @media (hover: none) {
+        html:has(.dropdown) {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html:has(.dropdown) body * {
+            -webkit-tap-highlight-color: initial;
+        }
+    }
+
+    .dropdown-menu[popover] {
+        border: none;
+    }
+
     .dropdown-menu[popover]:popover-open {
         display: block;
     }

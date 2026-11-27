@@ -387,6 +387,21 @@
     display: block;
   }
 
+  @media (hover: none) {
+    html:has(.dropdown) {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html:has(.dropdown) body * {
+      -webkit-tap-highlight-color: initial;
+    }
+  }
+
+  .dropdown-menu[popover] {
+    border: none;
+  }
+
   .dropdown-menu[popover]:popover-open {
     display: block;
   }
@@ -1131,10 +1146,12 @@
   }
 
   .sidenavs {
-    padding: var(--padding) 0;
+    max-inline-size: 30ch;
+    padding: var(--padding) 0 var(--padding) var(--padding-medium);
     flex-direction: column;
     justify-content: flex-start;
     row-gap: .5rem;
+    width: max-content;
     margin: 0;
     display: flex;
     overflow: hidden;
@@ -1185,17 +1202,18 @@
     overflow: hidden;
   }
 
-  .sidenav-block > label, .sidenav-block > summary, .sidenav-block > details > summary, details.sidenav-block > summary {
+  .sidenavs .sidenav-block > label, .sidenavs .sidenav-block > summary, .sidenavs .sidenav-block > details > summary, .sidenavs details.sidenav-block > summary, .sidenav-block > label, .sidenav-block > summary, .sidenav-block > details > summary, details.sidenav-block > summary {
     font-weight: var(--weight-medium);
     cursor: pointer;
     padding-block: var(--pad-vert) var(--pad-vert);
     padding-inline: var(--pad-horz) 2.5rem;
+    overflow-wrap: break-word;
     margin: 0;
     list-style: none;
     position: relative;
   }
 
-  .sidenav-block > label:after, .sidenav-block > summary:after, .sidenav-block > details > summary:after, details.sidenav-block > summary:after {
+  .sidenavs .sidenav-block > label:after, .sidenavs .sidenav-block > summary:after, .sidenavs .sidenav-block > details > summary:after, .sidenavs details.sidenav-block > summary:after, .sidenav-block > label:after, .sidenav-block > summary:after, .sidenav-block > details > summary:after, details.sidenav-block > summary:after {
     content: "";
     width: 2.5rem;
     height: 1.5rem;
@@ -1225,6 +1243,10 @@
     margin: 0;
     list-style: none;
     display: flex;
+  }
+
+  .sidenavs a {
+    overflow-wrap: break-word;
   }
 
   .sidenavs a.is-active, .sidenavs a:hover, .sidenav-block a:hover {
@@ -1295,12 +1317,31 @@
   }
 
   .sidebarIconToggle {
+    appearance: none;
+    color: inherit;
+    font: inherit;
     box-sizing: border-box;
     cursor: pointer;
     height: auto;
     width: calc(.5 * var(--navbar-height));
+    background: none;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
     transition: all .3s;
-    position: absolute;
+    display: block;
+    position: relative;
+  }
+
+  .sidebarIconToggle:hover {
+    color: inherit;
+    background: none;
+  }
+
+  .sidebarIconToggle:focus-visible {
+    outline-offset: 4px;
+    outline: 2px solid;
   }
 
   .sidebarIconToggle > span {
@@ -1407,7 +1448,8 @@
     font-weight: var(--weight-semibold);
     cursor: pointer;
     margin: 0;
-    padding: 0;
+    padding-block: 0;
+    padding-inline: 0 2.5rem;
     list-style: none;
     position: relative;
   }
@@ -1482,20 +1524,31 @@
   }
 
   .sidebarMenu[popover], .sidebarMenuRight[popover] {
+    height: auto;
+    max-height: calc(100dvh - var(--navbar-height));
+    background-color: var(--bg-container);
+    color: var(--text);
     overflow-block: auto;
     opacity: 0;
     z-index: 300;
-    height: 100dvh;
-    max-height: 100dvh;
+    border: 0;
     margin: 0;
+    padding: 0;
     transition: transform .25s ease-in-out, opacity .25s ease-in-out, display .25s, overlay .25s;
     position: fixed;
-    inset-block: 0;
+    inset-block-start: var(--navbar-height);
+    inset-block-end: auto;
+    overflow-y: auto;
+  }
+
+  :is(.page-wrapper-widgets, .page-wrapper-widgets-right-panel) :is(.sidebarMenu, .sidebarMenuRight)[popover] {
+    max-height: calc(100dvh - var(--widgetbar-height) - var(--navbar-height));
+    inset-block-start: calc(var(--widgetbar-height) + var(--navbar-height));
   }
 
   .sidebarMenu[popover] {
-    width: min(20rem, 85vw);
-    max-width: 85vw;
+    width: max-content;
+    max-width: min(20rem, 85vw);
     inset-inline: 0 auto;
     transform: translateX(-100%);
   }
