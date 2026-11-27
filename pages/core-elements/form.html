@@ -33,9 +33,55 @@ nav: Form
                 assistive technologies.
             </p>
 
-            <p>Checkboxes, radio buttons, range inputs and progress bars use the primary <code>accent-color</code>. Form fields also
+            <p><em>Radio-Button Driven Tabs (<code>.is-form-tabbed</code>):</em> This classic CSS-only pattern uses hidden
+                <code>input type="radio"</code> elements paired with <code>label</code> and general sibling combinators
+                (~) to toggle visibility of separate <code>.form-group</code> containers.
+                Checkboxes, radio buttons, range inputs and progress bars use the primary <code>accent-color</code>. Form fields also
                 retain a visible <code>:focus-visible</code> style for keyboard navigation.
             </p>
+
+            <p><em>Native <code>details</code> Driven Tabs:</em> This modern approach leverages the HTML
+                <code>details</code> element with a shared name attribute (exclusive accordion behaviour)
+                to turn native disclosure widgets into tabs via CSS positioning.  This provides full WAI-ARIA compliance.
+            </p>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Radio-Button Tabs</th>
+                        <th>&lt;details&gt; Tabs</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>HTML Complexity</td>
+                        <td>Verbose (requires <code>id/for</code> linking)</td>
+                        <td>Clean, self-contained blocks</td>
+                    </tr>
+
+                    <tr>
+                        <td>Form Payload</td>
+                        <td>Submits extra radio state data</td>
+                        <td>Clean (only actual inputs submit)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Screen Readers</td>
+                        <td>Reads as one flat, untabbed form</td>
+                        <td>Announces interactive tab states</td>
+                    </tr>
+
+                    <tr>
+                        <td>Browser Support</td>
+                        <td>Universal (including legacy)</td>
+                        <td>Modern browsers only</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </section>
 
         <section class="column">
