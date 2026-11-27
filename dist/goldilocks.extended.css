@@ -484,6 +484,7 @@
   }
 
   .modal-overlay {
+    z-index: 1000;
     visibility: hidden;
     opacity: 0;
     background-color: #0a0a0a99;
@@ -491,6 +492,7 @@
     position: fixed;
     inset-block: 0;
     inset-inline: 0;
+    overflow: auto;
   }
 
   .modal-overlay:target {
@@ -510,7 +512,7 @@
 
   .modal-card {
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 40px);
     max-height: calc(100dvh - 160px);
     margin: 0 20px;
     display: flex;
@@ -531,6 +533,8 @@
     margin: auto;
     padding: 0;
     transition: opacity .2s, transform .2s, display .2s, overlay .2s;
+    position: fixed;
+    inset: 0;
     transform: translateY(1rem);
   }
 

@@ -18,16 +18,9 @@ nav: Modal
                 the footer is typically reserved for call-to-action buttons.
             </p>
 
-            <p>The recommended pattern is the native <code>&lt;dialog&gt;</code> element with the
-                <code>.modal-card</code> class. The browser provides a focus trap, Escape-to-close, top-layer stacking,
-                and <code>::backdrop</code> for free. The <code>commandfor</code>/<code>command</code> buttons are a
-                progressive enhancement; inline <code>showModal()</code>/<code>close()</code> handlers remain as a
-                fallback, and the <code>.modal-overlay:target</code> pattern is retained as a CSS-only alternative.
-            </p>
-
-            <p>The dialog animates its entry and exit with opacity and position transitions; <code>@starting-style</code>
-                and discrete transitions are used where supported. Its maximum height uses <code>dvh</code> so it fits
-                the dynamic viewport on mobile browsers.
+            <p>This example uses <code>.modal-overlay:target</code> to show a modal with CSS only. An anchor opens the
+                modal by targeting its ID, and a close link targets the open trigger to hide it. Unlike a native
+                dialog, this pattern does not provide a focus trap or close on Escape.
             </p>
 
             <p>There are three containers inside <code>.modal-card</code>; these can be ordered any way you like.</p>
@@ -52,13 +45,13 @@ nav: Modal
 
                 <tbody>
                 <tr>
-                    <td><code>dialog.modal-card</code></td>
-                    <td>Recommended. Native <code>&lt;dialog&gt;</code> with card styling; resets browser defaults and styles <code>::backdrop</code>.</td>
+                    <td><code>.modal-overlay:target</code></td>
+                    <td>CSS-only overlay shown when its ID matches the URL fragment.</td>
                 </tr>
 
                 <tr>
-                    <td><code>.modal-overlay</code>, <code>.modal-overlay:target</code>, <code>.modal</code></td>
-                    <td>Legacy CSS-only fallback triggered by anchor link. Prefer <code>&lt;dialog&gt;</code> for new work.</td>
+                    <td><code>.modal-overlay</code>, <code>.modal</code></td>
+                    <td>Fixed viewport overlay and flex container that centers the modal card.</td>
                 </tr>
 
                 <tr>
@@ -78,7 +71,7 @@ nav: Modal
 
                 <tr>
                     <td><code>.delete</code></td>
-                    <td>Close control in the header (top-right). Use on a <code>&lt;button type="button"&gt;</code> with <code>aria-label="Close"</code>.</td>
+                    <td>Close control in the header (top-right). Use on an anchor that links back to the open trigger (e.g. <code>href="#modal-one-open"</code>) with <code>aria-label="Close"</code>.</td>
                 </tr>
 
                 <tr>
@@ -127,18 +120,15 @@ nav: Modal
     <div class="row">
         <div class="column">
 
-            <button type="button" class="button button-primary-outlined"
-                    commandfor="modal-one" command="show-modal">Open Modal</button>
-            <button type="button" class="button button-secondary-outlined"
-                    onclick="document.getElementById('modal-one').showModal()">Open Modal (fallback)</button>
+            <a class="button button-primary-outlined" id="modal-one-open" href="#modal-one">Open Modal</a>
+        </div>
 
-            <p class="is-size-5 is-text-semibold" style="margin-top: 5rem;">Basic Modal Form</p>
-
-            <div id="no-modal-one">
-                <article class="modal-card" aria-labelledby="no-modal-one-title" style="width: 100%">
+        <div id="modal-one" class="modal-overlay">
+            <div class="modal">
+                <article class="modal-card" aria-labelledby="modal-one-title">
                     <header>
-                        <h3 id="no-modal-one-title">Modal title</h3>
-                        <button type="button" class="delete" aria-label="Close"></button>
+                        <h2 id="modal-one-title">Modal title</h2>
+                        <a class="delete" href="#modal-one-open" aria-label="Close"></a>
                     </header>
 
                     <div>
@@ -146,55 +136,36 @@ nav: Modal
                     </div>
 
                     <footer>
-                        <button type="button" class="button-primary">Save</button>
-                        <button type="button" class="button button-secondary-outlined">Cancel</button>
+                        <button type="button" class="button-primary">Save Changes</button>
+                        <a class="button button-secondary-outlined" href="#modal-one-open">Cancel Action</a>
                     </footer>
                 </article>
             </div>
         </div>
 
-        <dialog id="modal-one" class="modal-card" aria-labelledby="modal-one-title">
-            <header>
-                <h2 id="modal-one-title">Modal title</h2>
-                <button type="button" class="delete" aria-label="Close"
-                        commandfor="modal-one" command="close"></button>
-            </header>
-
-            <div>
-                <p>Content</p>
-            </div>
-
-            <footer>
-                <button type="button" class="button-primary">Save Changes</button>
-                <button type="button" class="button button-secondary-outlined"
-                        onclick="document.getElementById('modal-one').close()">Cancel Action</button>
-            </footer>
-        </dialog>
-
         <div class="column">
             <pre><code class="language-html">
-                &lt;button type="button" class="button button-primary-outlined"
-                        commandfor="modal-one" command="show-modal"&gt;Open Modal&lt;/button&gt;
-                &lt;button type="button" class="button button-secondary-outlined"
-                        onclick="document.getElementById('modal-one').showModal()"&gt;Open Modal (fallback)&lt;/button&gt;
+                &lt;a class="button button-primary-outlined" id="modal-one-open" href="#modal-one"&gt;Open Modal&lt;/a&gt;
 
-                &lt;dialog id="modal-one" class="modal-card" aria-labelledby="modal-one-title"&gt;
-                    &lt;header&gt;
-                        &lt;h2 id="modal-one-title"&gt;Modal title&lt;/h2&gt;
-                        &lt;button type="button" class="delete" aria-label="Close"
-                                commandfor="modal-one" command="close"&gt;&lt;/button&gt;
-                    &lt;/header&gt;
+                &lt;div id="modal-one" class="modal-overlay"&gt;
+                    &lt;div class="modal"&gt;
+                        &lt;article class="modal-card" aria-labelledby="modal-one-title"&gt;
+                            &lt;header&gt;
+                                &lt;h2 id="modal-one-title"&gt;Modal title&lt;/h2&gt;
+                                &lt;a class="delete" href="#modal-one-open" aria-label="Close"&gt;&lt;/a&gt;
+                            &lt;/header&gt;
 
-                    &lt;div&gt;
-                        &lt;p&gt;Content&lt;/p&gt;
+                            &lt;div&gt;
+                                &lt;p&gt;Content&lt;/p&gt;
+                            &lt;/div&gt;
+
+                            &lt;footer&gt;
+                                &lt;button type="button" class="button-primary"&gt;Save Changes&lt;/button&gt;
+                                &lt;a class="button button-secondary-outlined" href="#modal-one-open"&gt;Cancel Action&lt;/a&gt;
+                            &lt;/footer&gt;
+                        &lt;/article&gt;
                     &lt;/div&gt;
-
-                    &lt;footer&gt;
-                        &lt;button type="button" class="button-primary"&gt;Save Changes&lt;/button&gt;
-                        &lt;button type="button" class="button button-secondary-outlined"
-                                onclick="document.getElementById('modal-one').close()"&gt;Cancel Action&lt;/button&gt;
-                    &lt;/footer&gt;
-                &lt;/dialog&gt;
+                &lt;/div&gt;
             </code></pre>
         </div>
 
