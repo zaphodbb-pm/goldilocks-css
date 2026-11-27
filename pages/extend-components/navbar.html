@@ -28,7 +28,8 @@ nav: Navbar
             </p>
 
             <p>The <code>.navbar</code> direct children can also support dropdown menus.
-                Note that drop-down menus should be used carefully and infrequently.
+                Use a native button with <code>popovertarget</code> to open a <code>.dropdown-menu[popover="auto"]</code>;
+                the browser handles outside click or tap dismissal and Escape. Drop-down menus should be used carefully and infrequently.
             </p>
 
             <p>When the navbar container is narrower than 576px, the order changes so the left and right flexboxes appear first and
@@ -265,13 +266,13 @@ nav: Navbar
 
                     <li>
                         <div class="dropdown indicator-white">
-                            <div class="dropdown-trigger" tabindex="0">
-                                <button class="button-primary" aria-haspopup="true" aria-controls="navbar-dropdown-menu2">
+                            <div class="dropdown-trigger">
+                                <button class="button-primary" popovertarget="navbar-dropdown-menu2">
                                     <span>More</span>
                                 </button>
                             </div>
 
-                            <div class="dropdown-menu" id="navbar-dropdown-menu2">
+                            <div class="dropdown-menu" id="navbar-dropdown-menu2" popover="auto">
                                 <nav aria-label="Section Dropdown Menu">
                                     <ul>
                                         <li><a href="#common-navbar">Contact</a></li>
@@ -317,13 +318,13 @@ nav: Navbar
 
                             &lt;li&gt;
                                 &lt;div class="dropdown indicator-white"&gt;
-                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
-                                        &lt;button class="button-primary" aria-haspopup="true" aria-controls="navbar-dropdown-menu2"&gt;
+                                    &lt;div class="dropdown-trigger"&gt;
+                                        &lt;button class="button-primary" popovertarget="navbar-dropdown-menu2"&gt;
                                             &lt;span&gt;More&lt;/span&gt;
                                         &lt;/button&gt;
                                     &lt;/div&gt;
 
-                                    &lt;div class="dropdown-menu" id="navbar-dropdown-menu2"&gt;
+                                    &lt;div class="dropdown-menu" id="navbar-dropdown-menu2" popover="auto"&gt;
                                         &lt;nav aria-label="Dropdown Menu"&gt;
                                             &lt;ul&gt;
                                                 &lt;li&gt;&lt;a href="#common-navbar"&gt;Contact&lt;/a&gt;&lt;/li&gt;
@@ -392,16 +393,16 @@ nav: Navbar
                 <ul>
                     <li>
                         <div class="dropdown is-right">
-                            <div class="dropdown-trigger" tabindex="0">
-                                <div class="button no-chevron" aria-haspopup="true" aria-controls="navbar-dropdown-notification">
+                            <div class="dropdown-trigger">
+                                <button type="button" class="button no-chevron" popovertarget="navbar-dropdown-notification" aria-label="Notifications">
                                     <figure>
                                         <span class="icon-bg-bell"></span>
                                         <span class="badge badge-danger no-border" role="status" aria-label="New notifications">3</span>
                                     </figure>
-                                </div>
+                                </button>
                             </div>
 
-                            <div class="dropdown-menu" id="navbar-dropdown-notification">
+                            <div class="dropdown-menu" id="navbar-dropdown-notification" popover="auto">
                                 <nav aria-label="Dropdown Menu">
                                     <ul>
                                         <li><a href="#navbar-with-icons">One</a></li>
@@ -416,17 +417,15 @@ nav: Navbar
                     <li>
                         <div class="dropdown is-right">
 
-                            <div class="dropdown-trigger" tabindex="0">
-                                <div class="dropdown-trigger" tabindex="0">
-                                    <div class="button no-chevron" aria-haspopup="true" aria-controls="navbar-dropdown-menu2">
-                                        <figure class="avatar avatar-nm">
-                                            <img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal">
-                                        </figure>
-                                    </div>
-                                </div>
+                            <div class="dropdown-trigger">
+                                <button type="button" class="button no-chevron" popovertarget="navbar-dropdown-profile" aria-label="Profile menu">
+                                    <figure class="avatar avatar-nm">
+                                        <img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal">
+                                    </figure>
+                                </button>
                             </div>
 
-                            <div class="dropdown-menu" id="navbar-dropdown-profile">
+                            <div class="dropdown-menu" id="navbar-dropdown-profile" popover="auto">
                                 <nav aria-label="Dropdown Menu">
                                     <ul>
                                         <li><a href="#navbar-with-icons">My Profile</a></li>
@@ -482,16 +481,16 @@ nav: Navbar
                         &lt;ul&gt;
                             &lt;li&gt;
                                 &lt;div class="dropdown is-right"&gt;
-                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
-                                        &lt;div class="button no-chevron" aria-haspopup="true" aria-controls="navbar-dropdown-notification"&gt;
+                                    &lt;div class="dropdown-trigger"&gt;
+                                        &lt;button type="button" class="button no-chevron" popovertarget="navbar-dropdown-notification" aria-label="Notifications"&gt;
                                             &lt;figure&gt;
                                                 &lt;span class="icon-bg-bell"&gt;&lt;/span&gt;
                                                 &lt;span class="badge badge-danger no-border" role="status" aria-label="New notifications"&gt;3&lt;/span&gt;
                                             &lt;/figure&gt;
-                                        &lt;/div&gt;
+                                        &lt;/button&gt;
                                     &lt;/div&gt;
         
-                                    &lt;div class="dropdown-menu" id="navbar-dropdown-notification"&gt;
+                                    &lt;div class="dropdown-menu" id="navbar-dropdown-notification" popover="auto"&gt;
                                         &lt;nav aria-label="Dropdown Menu"&gt;
                                             &lt;ul&gt;
                                                 &lt;li&gt;&lt;a href="#navbar-with-icons"&gt;One&lt;/a&gt;&lt;/li&gt;
@@ -506,17 +505,15 @@ nav: Navbar
                             &lt;li&gt;
                                 &lt;div class="dropdown is-right"&gt;
         
-                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
-                                        &lt;div class="dropdown-trigger" tabindex="0"&gt;
-                                            &lt;div class="button no-chevron" aria-haspopup="true" aria-controls="navbar-dropdown-menu2"&gt;
-                                                &lt;figure class="avatar avatar-nm"&gt;
-                                                    &lt;img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal"&gt;
-                                                &lt;/figure&gt;
-                                            &lt;/div&gt;
-                                        &lt;/div&gt;
+                                    &lt;div class="dropdown-trigger"&gt;
+                                        &lt;button type="button" class="button no-chevron" popovertarget="navbar-dropdown-profile" aria-label="Profile menu"&gt;
+                                            &lt;figure class="avatar avatar-nm"&gt;
+                                                &lt;img src="{{site.url}}/img/demo/gl-woman3.png" alt="Avatar Normal"&gt;
+                                            &lt;/figure&gt;
+                                        &lt;/button&gt;
                                     &lt;/div&gt;
         
-                                    &lt;div class="dropdown-menu" id="navbar-dropdown-profile"&gt;
+                                    &lt;div class="dropdown-menu" id="navbar-dropdown-profile" popover="auto"&gt;
                                         &lt;nav aria-label="Dropdown Menu"&gt;
                                             &lt;ul&gt;
                                                 &lt;li&gt;&lt;a href="#navbar-with-icons"&gt;My Profile&lt;/a&gt;&lt;/li&gt;
@@ -710,14 +707,14 @@ nav: Navbar
                         </a>
                     <li>
                         <div class="dropdown indicator-white">
-                            <div class="dropdown-trigger" tabindex="0">
-                                <button class="button-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu3">
+                            <div class="dropdown-trigger">
+                                <button class="button-primary icon-nav" popovertarget="navbar-dropdown-menu3">
                                     <span class="icon-bg-link"></span>
                                     <span>More</span>
                                 </button>
                             </div>
 
-                            <div class="dropdown-menu" id="navbar-dropdown-menu3">
+                            <div class="dropdown-menu" id="navbar-dropdown-menu3" popover="auto">
                                 <nav>
                                     <ul>
                                         <li><a href="#navbar-left-sidebar">Contact</a></li>
@@ -821,14 +818,14 @@ nav: Navbar
                                 &lt;/a&gt;
                             &lt;li&gt;
                                 &lt;div class="dropdown indicator-white"&gt;
-                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
-                                        &lt;button class="button-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu3"&gt;
+                                    &lt;div class="dropdown-trigger"&gt;
+                                        &lt;button class="button-primary icon-nav" popovertarget="navbar-dropdown-menu3"&gt;
                                             &lt;span class="icon-bg-link"&gt;&lt;/span&gt;
                                             &lt;span&gt;More&lt;/span&gt;
                                         &lt;/button&gt;
                                     &lt;/div&gt;
 
-                                    &lt;div class="dropdown-menu" id="navbar-dropdown-menu3"&gt;
+                                    &lt;div class="dropdown-menu" id="navbar-dropdown-menu3" popover="auto"&gt;
                                         &lt;nav&gt;
                                             &lt;ul&gt;
                                                 &lt;li&gt;&lt;a href="#navbar-left-sidebar"&gt;Contact&lt;/a&gt;&lt;/li&gt;
@@ -879,14 +876,14 @@ nav: Navbar
                         </a>
                     <li>
                         <div class="dropdown indicator-white">
-                            <div class="dropdown-trigger" tabindex="0">
-                                <button class="button-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu4">
+                            <div class="dropdown-trigger">
+                                <button class="button-primary icon-nav" popovertarget="navbar-dropdown-menu4">
                                     <span class="icon-bg-link"></span>
                                     <span>More</span>
                                 </button>
                             </div>
 
-                            <div class="dropdown-menu" id="navbar-dropdown-menu4">
+                            <div class="dropdown-menu" id="navbar-dropdown-menu4" popover="auto">
                                 <nav>
                                     <ul>
                                         <li><a href="#navbar-right-sidebar">Contact</a></li>
@@ -993,14 +990,14 @@ nav: Navbar
                                 &lt;/a&gt;
                             &lt;li&gt;
                                 &lt;div class="dropdown indicator-white"&gt;
-                                    &lt;div class="dropdown-trigger" tabindex="0"&gt;
-                                        &lt;button class="button-primary icon-nav"  aria-haspopup="true" aria-controls="navbar-dropdown-menu4"&gt;
+                                    &lt;div class="dropdown-trigger"&gt;
+                                        &lt;button class="button-primary icon-nav" popovertarget="navbar-dropdown-menu4"&gt;
                                             &lt;span class="icon-bg-link"&gt;&lt;/span&gt;
                                             &lt;span&gt;More&lt;/span&gt;
                                         &lt;/button&gt;
                                     &lt;/div&gt;
 
-                                    &lt;div class="dropdown-menu" id="navbar-dropdown-menu4"&gt;
+                                    &lt;div class="dropdown-menu" id="navbar-dropdown-menu4" popover="auto"&gt;
                                         &lt;nav&gt;
                                             &lt;ul&gt;
                                                 &lt;li&gt;&lt;a href="#navbar-right-sidebar"&gt;Contact&lt;/a&gt;&lt;/li&gt;

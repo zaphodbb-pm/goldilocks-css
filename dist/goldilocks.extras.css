@@ -1376,17 +1376,6 @@
     display: block;
   }
 
-  .dropdown-menu[popover] {
-    opacity: 0;
-    transition: opacity .2s, transform .2s, display .2s, overlay .2s;
-    transform: scaleX(0);
-  }
-
-  .dropdown-menu[popover]:popover-open {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-
   .popover.pop-bottom .popover-container[popover]:popover-open {
     transform: translate(-50%) scale(1);
   }
@@ -1403,11 +1392,6 @@
     .popover-container[popover]:popover-open {
       opacity: 0;
       transform: translate(-50%, -50%) scale(0);
-    }
-
-    .dropdown-menu[popover]:popover-open {
-      opacity: 0;
-      transform: scaleX(0);
     }
   }
 
@@ -1474,7 +1458,7 @@
   }
 
   @supports (transition-behavior: allow-discrete) {
-    .popover-container[popover], .dropdown-menu[popover] {
+    .popover-container[popover] {
       transition-behavior: allow-discrete;
     }
   }

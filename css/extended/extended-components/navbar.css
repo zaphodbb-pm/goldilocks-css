@@ -144,9 +144,7 @@
     }
 
     .navbar .dropdown .dropdown-trigger > button:not(.no-chevron):first-child::after,
-    .navbar .dropdown .dropdown-trigger > .button:not(.no-chevron):first-child::after,
-    .navbar .dropdown:hover .dropdown-trigger > button:not(.no-chevron):first-child::after,
-    .navbar .dropdown:hover .dropdown-trigger > .button:not(.no-chevron):first-child::after {
+    .navbar .dropdown .dropdown-trigger > .button:not(.no-chevron):first-child::after {
         content: "";
         height: 100%;
         width: 1.5rem;
@@ -165,23 +163,21 @@
     }
 
     .navbar .dropdown .dropdown-trigger > button.no-chevron,
-    .navbar .dropdown .dropdown-trigger > .button.no-chevron,
-    .navbar .dropdown:hover .dropdown-trigger > button.no-chevron,
-    .navbar .dropdown:hover .dropdown-trigger > .button.no-chevron {
+    .navbar .dropdown .dropdown-trigger > .button.no-chevron {
         padding: 0;
     }
 
     .navbar .dropdown .dropdown-trigger > button.no-chevron [class*="icon-bg-"]:not(.icon-nav),
-    .navbar .dropdown .dropdown-trigger > .button.no-chevron [class*="icon-bg-"]:not(.icon-nav),
-    .navbar .dropdown:hover .dropdown-trigger > button.no-chevron [class*="icon-bg-"]:not(.icon-nav),
-    .navbar .dropdown:hover .dropdown-trigger > .button.no-chevron [class*="icon-bg-"]:not(.icon-nav) {
+    .navbar .dropdown .dropdown-trigger > .button.no-chevron [class*="icon-bg-"]:not(.icon-nav) {
         padding: 0;
         font-size: calc(var(--navbar-height) * 0.5);
     }
 
 
-    .navbar .dropdown:hover .dropdown-trigger > button:first-child,
-    .navbar .dropdown:hover .dropdown-trigger > .button:first-child {
+    .navbar .dropdown .dropdown-trigger > button:first-child:hover,
+    .navbar .dropdown .dropdown-trigger > .button:first-child:hover,
+    .navbar .dropdown:has(.dropdown-menu:popover-open) .dropdown-trigger > button:first-child,
+    .navbar .dropdown:has(.dropdown-menu:popover-open) .dropdown-trigger > .button:first-child {
         background-color: var(--bg-grid);
         color: var(--text-comp);
         opacity: 80%;
@@ -210,9 +206,7 @@
     }
 
     .navbar .dropdown-menu {
-        z-index: calc(var(--navbar-z) + 1);
         padding-block-start: 0;
-        opacity: 1;
     }
 
     @container navbar (max-width: 576px) {
@@ -350,11 +344,10 @@
             background-color: inherit;
         }
 
-        .navbar .navbar-center.show-bottom-nav .dropdown .dropdown-menu {
-            inset-block-end: 100%;
-            padding-block-end: var(--pad-vert);
-            padding-block-start: initial;
-            inset-block-start: auto;
+        @supports (anchor-name: --a) and (anchor-scope: --a) {
+            .navbar .navbar-center.show-bottom-nav .dropdown .dropdown-menu[popover] {
+                position-area: block-start span-inline-end;
+            }
         }
 
 

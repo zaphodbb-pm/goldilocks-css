@@ -3082,7 +3082,6 @@
   .dropdown {
     vertical-align: top;
     display: inline-flex;
-    position: relative;
   }
 
   .dropdown .dropdown-trigger > button:first-child, .dropdown .dropdown-trigger button.has-hover:first-child {
@@ -3106,52 +3105,34 @@
   }
 
   .dropdown-menu {
-    z-index: 40;
     background-color: var(--bg-component);
-    border-radius: var(--radius-comp);
     width: max-content;
     min-width: 12rem;
     max-width: 18rem;
+    color: var(--text);
+    border-radius: var(--radius-comp);
     box-shadow: var(--shadow-container);
     padding-block-start: var(--pad-vert);
     padding-block-end: var(--pad-vert);
-    display: none;
-    position: absolute;
-    inset-block-start: 100%;
-    inset-inline-start: 0;
-  }
-
-  .dropdown:not(.is-click-open):hover .dropdown-menu:not([popover]), .dropdown.is-click-open > .dropdown-trigger:focus-within + .dropdown-menu:not([popover]) {
-    display: block;
-  }
-
-  @media (hover: none) {
-    html:has(.dropdown) {
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    html:has(.dropdown) body * {
-      -webkit-tap-highlight-color: initial;
-    }
   }
 
   .dropdown-menu[popover] {
+    opacity: 0;
     border: none;
+    transition: opacity .2s, transform .2s, display .2s, overlay .2s;
+    transform: scaleX(0);
   }
 
   .dropdown-menu[popover]:popover-open {
-    display: block;
+    opacity: 1;
+    transform: scaleX(1);
   }
 
-  .dropdown.is-right .dropdown-menu {
-    inset-inline: auto 0;
-  }
-
-  .dropdown.is-up .dropdown-menu {
-    padding-block-start: initial;
-    padding-block-end: var(--pad-vert);
-    inset-block: auto 100%;
+  @starting-style {
+    .dropdown-menu[popover]:popover-open {
+      opacity: 0;
+      transform: scaleX(0);
+    }
   }
 
   .dropdown-menu p {
@@ -3231,6 +3212,12 @@
 
     .dropdown.is-up.is-right .dropdown-menu[popover] {
       position-area: block-start span-inline-start;
+    }
+  }
+
+  @supports (transition-behavior: allow-discrete) {
+    .dropdown-menu[popover] {
+      transition-behavior: allow-discrete;
     }
   }
 
@@ -3549,7 +3536,7 @@
     border-color: #0000;
   }
 
-  .navbar .dropdown .dropdown-trigger > button:not(.no-chevron):first-child:after, .navbar .dropdown .dropdown-trigger > .button:not(.no-chevron):first-child:after, .navbar .dropdown:hover .dropdown-trigger > button:not(.no-chevron):first-child:after, .navbar .dropdown:hover .dropdown-trigger > .button:not(.no-chevron):first-child:after {
+  .navbar .dropdown .dropdown-trigger > button:not(.no-chevron):first-child:after, .navbar .dropdown .dropdown-trigger > .button:not(.no-chevron):first-child:after {
     content: "";
     width: 1.5rem;
     height: 100%;
@@ -3565,16 +3552,28 @@
     -webkit-mask-repeat: no-repeat;
   }
 
-  .navbar .dropdown .dropdown-trigger > button.no-chevron, .navbar .dropdown .dropdown-trigger > .button.no-chevron, .navbar .dropdown:hover .dropdown-trigger > button.no-chevron, .navbar .dropdown:hover .dropdown-trigger > .button.no-chevron {
+  .navbar .dropdown .dropdown-trigger > button.no-chevron, .navbar .dropdown .dropdown-trigger > .button.no-chevron {
     padding: 0;
   }
 
-  .navbar .dropdown .dropdown-trigger > button.no-chevron [class*="icon-bg-"]:not(.icon-nav), .navbar .dropdown .dropdown-trigger > .button.no-chevron [class*="icon-bg-"]:not(.icon-nav), .navbar .dropdown:hover .dropdown-trigger > button.no-chevron [class*="icon-bg-"]:not(.icon-nav), .navbar .dropdown:hover .dropdown-trigger > .button.no-chevron [class*="icon-bg-"]:not(.icon-nav) {
+  .navbar .dropdown .dropdown-trigger > button.no-chevron [class*="icon-bg-"]:not(.icon-nav), .navbar .dropdown .dropdown-trigger > .button.no-chevron [class*="icon-bg-"]:not(.icon-nav) {
     font-size: calc(var(--navbar-height) * .5);
     padding: 0;
   }
 
-  .navbar .dropdown:hover .dropdown-trigger > button:first-child, .navbar .dropdown:hover .dropdown-trigger > .button:first-child {
+  .navbar .dropdown .dropdown-trigger > button:first-child:hover, .navbar .dropdown .dropdown-trigger > .button:first-child:hover {
+    background-color: var(--bg-grid);
+    color: var(--text-comp);
+    opacity: .8;
+  }
+
+  .navbar .dropdown:has(.dropdown-menu:popover-open) .dropdown-trigger > button:first-child {
+    background-color: var(--bg-grid);
+    color: var(--text-comp);
+    opacity: .8;
+  }
+
+  .navbar .dropdown:has(.dropdown-menu:popover-open) .dropdown-trigger > .button:first-child {
     background-color: var(--bg-grid);
     color: var(--text-comp);
     opacity: .8;
@@ -3600,8 +3599,6 @@
   }
 
   .navbar .dropdown-menu {
-    z-index: calc(var(--navbar-z) + 1);
-    opacity: 1;
     padding-block-start: 0;
   }
 
@@ -3735,10 +3732,10 @@
       inset-inline-end: 0;
     }
 
-    .navbar .navbar-center.show-bottom-nav .dropdown .dropdown-menu {
-      padding-block-start: initial;
-      padding-block-end: var(--pad-vert);
-      inset-block: auto 100%;
+    @supports (anchor-name: --a) and (anchor-scope: --a) {
+      .navbar .navbar-center.show-bottom-nav .dropdown .dropdown-menu[popover] {
+        position-area: block-start span-inline-end;
+      }
     }
 
     .navbar:not(.is-mobile) .navbar-center.show-bottom-nav .icon-nav > span:not([class*="icon-bg-"]) {
@@ -6955,17 +6952,6 @@
     display: block;
   }
 
-  .dropdown-menu[popover] {
-    opacity: 0;
-    transition: opacity .2s, transform .2s, display .2s, overlay .2s;
-    transform: scaleX(0);
-  }
-
-  .dropdown-menu[popover]:popover-open {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-
   .popover.pop-bottom .popover-container[popover]:popover-open {
     transform: translate(-50%) scale(1);
   }
@@ -6982,11 +6968,6 @@
     .popover-container[popover]:popover-open {
       opacity: 0;
       transform: translate(-50%, -50%) scale(0);
-    }
-
-    .dropdown-menu[popover]:popover-open {
-      opacity: 0;
-      transform: scaleX(0);
     }
   }
 
@@ -7053,7 +7034,7 @@
   }
 
   @supports (transition-behavior: allow-discrete) {
-    .popover-container[popover], .dropdown-menu[popover] {
+    .popover-container[popover] {
       transition-behavior: allow-discrete;
     }
   }

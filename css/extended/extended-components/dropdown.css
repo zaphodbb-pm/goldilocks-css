@@ -2,7 +2,6 @@
 
     .dropdown {
         display: inline-flex;
-        position: relative;
         vertical-align: top;
     }
 
@@ -31,60 +30,35 @@
 
 
     .dropdown-menu {
-        display: none;
         padding-block-start: var(--pad-vert);
         padding-block-end: var(--pad-vert);
         width: max-content;
         min-width: 12rem;
         max-width: 18rem;
-        position: absolute;
-        inset-inline-start: 0;
-        inset-block-start: 100%;
-        z-index: 40;
 
         background-color: var(--bg-component);
+        color: var(--text);
         border-radius: var(--radius-comp);
         box-shadow: var(--shadow-container);
     }
 
-    .dropdown:not(.is-click-open):hover .dropdown-menu:not([popover]),
-    .dropdown.is-click-open > .dropdown-trigger:focus-within + .dropdown-menu:not([popover]) {
-        display: block;
-    }
-
-    /*
-        touch devices (iOS / iPadOS): hover and focus are only released when a "clickable"
-        element is tapped. Making the page clickable releases the dropdown on any tap outside.
-    */
-    @media (hover: none) {
-        html:has(.dropdown) {
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        html:has(.dropdown) body * {
-            -webkit-tap-highlight-color: initial;
-        }
-    }
-
     .dropdown-menu[popover] {
         border: none;
+        opacity: 0;
+        transform: scaleX(0);
+        transition: opacity 0.2s, transform 0.2s, display 0.2s, overlay 0.2s;
     }
 
     .dropdown-menu[popover]:popover-open {
-        display: block;
+        opacity: 1;
+        transform: scaleX(1);
     }
 
-    .dropdown.is-right .dropdown-menu {
-        inset-inline-start: auto;
-        inset-inline-end: 0;
-    }
-
-    .dropdown.is-up .dropdown-menu {
-        inset-block-end: 100%;
-        padding-block-end: var(--pad-vert);
-        padding-block-start: initial;
-        inset-block-start: auto;
+    @starting-style {
+        .dropdown-menu[popover]:popover-open {
+            opacity: 0;
+            transform: scaleX(0);
+        }
     }
 
     .dropdown-menu p {
@@ -164,6 +138,12 @@
 
         .dropdown.is-up.is-right .dropdown-menu[popover] {
             position-area: block-start span-inline-start;
+        }
+    }
+
+    @supports (transition-behavior: allow-discrete) {
+        .dropdown-menu[popover] {
+            transition-behavior: allow-discrete;
         }
     }
 }
