@@ -7144,7 +7144,7 @@
 
   .reportbox label progress {
     height: calc(var(--size-6) / 2);
-    accent-color: var(--grey-dark);
+    --progress-color: var(--grey-dark);
     margin-block-start: var(--margin);
   }
 
@@ -7200,15 +7200,15 @@
   }
 
   .report-success label progress {
-    accent-color: var(--success-dark);
+    --progress-color: var(--success-dark);
   }
 
   .report-warning label progress {
-    accent-color: var(--warning);
+    --progress-color: var(--warning);
   }
 
   .report-danger label progress {
-    accent-color: var(--danger);
+    --progress-color: var(--danger);
   }
 
   .widgetbar, .widgetbar-bordered {
