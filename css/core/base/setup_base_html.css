@@ -21,7 +21,8 @@
         text-rendering: optimizeLegibility;
     }
 
-    :focus-visible {
+    /* forms manage their own focus ring on the <label> (see form.css) */
+    :focus-visible:not(form *) {
         outline: 2px solid var(--link);
         outline-offset: 2px;
     }
