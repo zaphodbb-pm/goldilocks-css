@@ -197,7 +197,13 @@
     .form label textarea:focus-visible,
     .form label select:focus-visible,
     .form label div:focus-visible {
-        border: 2px solid var(--primary);
+        outline: none;
+    }
+
+    .form label:has(:focus-visible) {
+        outline: 2px solid var(--link);
+        outline-offset: 2px;
+        border-radius: var(--radius-elem);
     }
 
     .form label .icon:last-child,
@@ -389,7 +395,19 @@
     }
 
     .form .switch input {
-        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .form label:has(> .switch) {
+        pointer-events: none;
     }
 
 
@@ -412,6 +430,7 @@
         content: '';
         transform: translate(-1rem, 0);
         cursor: pointer;
+        pointer-events: auto;
     }
 
     .form .switch span::after {
@@ -426,6 +445,7 @@
         transition: all 0.25s ease-out;
         content: '';
         cursor: pointer;
+        pointer-events: auto;
     }
 
     .form .switch input:checked + span::before {
@@ -434,6 +454,10 @@
 
     .form .switch input:checked + span::after {
         inset-inline-start: 2.75rem;
+    }
+
+    .form label:has(> .switch) .form-help-icon {
+        pointer-events: auto;
     }
 
     /* adds a help icon to top right part of field */
