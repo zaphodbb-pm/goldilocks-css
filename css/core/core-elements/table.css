@@ -19,6 +19,7 @@
     .table td, .table th {
         padding: var(--pad-vert) var(--pad-horz);
         vertical-align: top;
+        text-align: start;
     }
 
     .table td span, .table th span {
