@@ -3221,33 +3221,6 @@
     }
   }
 
-  .modal-overlay {
-    z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    background-color: #0a0a0a99;
-    transition: opacity .2s;
-    position: fixed;
-    inset-block: 0;
-    inset-inline: 0;
-    overflow: auto;
-  }
-
-  .modal-overlay:target {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .modal {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100dvh;
-    display: flex;
-    overflow: hidden;
-  }
-
   .modal-card {
     flex-direction: column;
     width: calc(100% - 40px);
@@ -3274,6 +3247,10 @@
     position: fixed;
     inset: 0;
     transform: translateY(1rem);
+  }
+
+  html:has(dialog.modal-card[open]) {
+    overflow: hidden;
   }
 
   dialog.modal-card[open] {
@@ -3380,7 +3357,7 @@
     height: 50%;
   }
 
-  .modal-card > header > .delete:hover, .modal-card > header > .delete:focus {
+  .modal-card > header > .delete:hover, .modal-card > header > .delete:focus-visible {
     background-color: var(--grey-light);
     border: 1px solid var(--grey-light);
     color: var(--black-700);

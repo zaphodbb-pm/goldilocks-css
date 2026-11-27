@@ -1,34 +1,5 @@
 @layer extended {
 
-    .modal-overlay {
-        position: fixed;
-        inset-block-start: 0;
-        inset-block-end: 0;
-        inset-inline-start: 0;
-        inset-inline-end: 0;
-        overflow: auto;
-        z-index: 1000;
-        background-color: rgba(10, 10, 10, 0.6);
-        transition: opacity 200ms;
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    .modal-overlay:target {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .modal {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        overflow: hidden;
-        height: 100dvh;
-        width: 100vw;
-    }
-
     .modal-card {
         display: flex;
         flex-direction: column;
@@ -56,6 +27,10 @@
         opacity: 0;
         transform: translateY(1rem);
         transition: opacity 200ms ease, transform 200ms ease, display 200ms, overlay 200ms;
+    }
+
+    html:has(dialog.modal-card[open]) {
+        overflow: hidden;
     }
 
     dialog.modal-card[open] {
@@ -173,7 +148,7 @@
     }
 
     .modal-card > header > .delete:hover,
-    .modal-card > header > .delete:focus {
+    .modal-card > header > .delete:focus-visible {
         background-color: var(--grey-light);
         border: 1px solid var(--grey-light);
         color: var(--black-700);
