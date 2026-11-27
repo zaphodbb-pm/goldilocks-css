@@ -8,9 +8,8 @@
     }
 
     .tabs:has(> details[name]) {
-        display: grid;
-        grid-template-columns: repeat(9, minmax(max-content, 1fr));
-        grid-template-rows: auto auto;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .tabs:has(> details[name]) > details[name] {
@@ -24,9 +23,11 @@
     .tabs:has(> details[name]) > details > summary {
         display: inline-flex;
         align-items: center;
-        grid-column: auto;
-        grid-row: 1;
+        order: 0;
+        position: relative;
+        z-index: 1;
         margin: 0;
+        margin-block-end: -2px;
         padding: 0.5em 1em;
         border-block-end: 4px solid transparent;
         color: var(--text-comp);
@@ -64,27 +65,59 @@
         border-color: var(--border-main-darker);
         border-block-end-color: var(--bg-main);
         background-color: inherit;
+        margin-block-end: -1px;
+    }
+
+    .tabs:has(> details[name])::before {
+        content: "";
+        order: 1;
+        flex-basis: 100%;
+        border-block-start: 1px solid var(--border-main-darker);
     }
 
     .tabs:has(> details[name]) > details > :not(summary) {
-        grid-column: 1 / -1;
-        grid-row: 2;
+        order: 2;
+        flex-basis: 100%;
     }
 
     @supports selector(::details-content) {
-        .tabs:has(> details[name]) > details::details-content {
-            grid-column: 1 / -1;
-            grid-row: 2;
+        .tabs:has(> details[name]) > details[open]::details-content {
+            order: 2;
+            flex-basis: 100%;
             padding: var(--padding);
             border-block-start: 1px solid var(--border-main-darker);
         }
     }
 
     @supports not selector(::details-content) {
-        .tabs:has(> details[name]) > details > :not(summary) {
+        .tabs:has(> details[name]) > details[open] > :not(summary) {
             padding: var(--padding);
             border-block-start: 1px solid var(--border-main-darker);
         }
+    }
+
+    .tabs.tabs-centered:has(> details[name]) {
+        justify-content: center;
+    }
+
+    .tabs.tabs-right:has(> details[name]) {
+        justify-content: flex-end;
+    }
+
+    .tabs.is-fullwidth:has(> details[name]) > details > summary {
+        flex-grow: 1;
+    }
+
+    .tabs.is-small:has(> details[name]) > details > summary {
+        font-size: var(--size-7);
+    }
+
+    .tabs.is-medium:has(> details[name]) > details > summary {
+        font-size: var(--size-5);
+    }
+
+    .tabs.is-large:has(> details[name]) > details > summary {
+        font-size: var(--size-4);
     }
 
     .tabs > input {
