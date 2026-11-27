@@ -23,8 +23,7 @@ nav: Tooltips
                 Multiline text will wrap to the next line. Try to keep the text short and to the point.
             </p>
 
-            <p>Note: Mobile / touch devices do not respond to a <code>:hover</code> user action.
-                Mobile / touch devices do respond to <code>ontouchstart</code> event that can use JavaScript to emulate a hover user action.
+            <p>On mobile / touch devices, tap a tooltip to show it. Non-interactive elements are keyboard and touch focusable with <code>tabindex="0"</code>; links and other interactive elements are already focusable.
             </p>
         </section>
 
@@ -82,15 +81,15 @@ nav: Tooltips
         <div class="column">
             <div class="stack-centered stack-gap-medium">
 
-                <strong class="has-text-primary tooltip" data-tooltip="Top Tooltip Text" role="tooltip">
+                <strong class="has-text-primary tooltip" data-tooltip="Top Tooltip Text" role="tooltip" tabindex="0">
                     .tooltip (default top)
                 </strong>
 
-                <strong class="has-text-secondary tooltip tooltip-right" data-tooltip="Right Tooltip Text" role="tooltip">
+                <strong class="has-text-secondary tooltip tooltip-right" data-tooltip="Right Tooltip Text" role="tooltip" tabindex="0">
                     .tooltip .tooltip-right
                 </strong>
 
-                <strong class="has-text-complement tooltip tooltip-bottom" data-tooltip="Bottom Tooltip Text" role="tooltip">
+                <strong class="has-text-complement tooltip tooltip-bottom" data-tooltip="Bottom Tooltip Text" role="tooltip" tabindex="0">
                     .tooltip .tooltip-bottom
                 </strong>
 
@@ -99,7 +98,7 @@ nav: Tooltips
                 </span>
 
                 <p class="tooltip"
-                      data-tooltip="This tooltip has multiline text that can be shown" role="tooltip">
+                      data-tooltip="This tooltip has multiline text that can be shown" role="tooltip" tabindex="0">
                     .tooltip multiline
                 </p>
 
@@ -109,24 +108,24 @@ nav: Tooltips
         <div class="column">
             <pre><code class="language-html">
 
-                &lt;strong class="has-text-primary tooltip"  data-tooltip="Top Tooltip Text" role="tooltip" &gt;
+                &lt;strong class="has-text-primary tooltip"  data-tooltip="Top Tooltip Text" role="tooltip" tabindex="0" &gt;
                     .tooltip (default top)
                 &lt;/strong&gt;
 
-                &lt;strong class="has-text-secondary tooltip tooltip-right"  data-tooltip="Right Tooltip Text" role="tooltip" &gt;
+                &lt;strong class="has-text-secondary tooltip tooltip-right"  data-tooltip="Right Tooltip Text" role="tooltip" tabindex="0" &gt;
                     .tooltip .tooltip-right
                 &lt;/strong&gt;
 
-                &lt;strong class="has-text-complement tooltip tooltip-bottom"  data-tooltip="Bottom Tooltip Text" role="tooltip" &gt;
+                &lt;strong class="has-text-complement tooltip tooltip-bottom"  data-tooltip="Bottom Tooltip Text" role="tooltip" tabindex="0" &gt;
                     .tooltip .tooltip-bottom
                 &lt;/strong&gt;
 
-                &lt;span class="tooltip tooltip-left" data-tooltip="Left Tooltip Text role="tooltip" "&gt;
+                &lt;span class="tooltip tooltip-left" data-tooltip="Left Tooltip Text" role="tooltip"&gt;
                     &lt;a href="#page-top"&gt;.tooltip .tooltip-left&lt;/a&gt;
                 &lt;/span&gt;
 
                 &lt;p class="tooltip"
-                    data-tooltip="This tooltip has multiline text that can be shown" role="tooltip" &gt;
+                    data-tooltip="This tooltip has multiline text that can be shown" role="tooltip" tabindex="0" &gt;
                     .tooltip multiline
                 &lt;/p&gt;
 

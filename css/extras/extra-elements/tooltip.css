@@ -2,6 +2,8 @@
 
     .tooltip {
         position: relative;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .tooltip::after {
@@ -60,9 +62,11 @@
     }
 
     .tooltip:focus::after,
+    .tooltip:focus-within::after,
     .tooltip:active::after,
     .tooltip:hover::after,
     .tooltip:focus::before,
+    .tooltip:focus-within::before,
     .tooltip:active::before,
     .tooltip:hover::before {
         opacity: 1;
@@ -90,11 +94,15 @@
     }
 
     .tooltip.tooltip-right:focus::after,
+    .tooltip.tooltip-right:focus-within::after,
+    .tooltip.tooltip-right:active::after,
     .tooltip.tooltip-right:hover::after {
         transform: translate(1.5rem, 50%);
     }
 
     .tooltip.tooltip-right:focus::before,
+    .tooltip.tooltip-right:focus-within::before,
+    .tooltip.tooltip-right:active::before,
     .tooltip.tooltip-right:hover::before {
         transform: translate(.5rem, 50%);
     }
@@ -120,11 +128,15 @@
     }
 
     .tooltip.tooltip-left:focus::after,
+    .tooltip.tooltip-left:focus-within::after,
+    .tooltip.tooltip-left:active::after,
     .tooltip.tooltip-left:hover::after {
         transform: translate(-0.75rem, 50%);
     }
 
     .tooltip.tooltip-left:focus::before,
+    .tooltip.tooltip-left:focus-within::before,
+    .tooltip.tooltip-left:active::before,
     .tooltip.tooltip-left:hover::before {
         transform: translate(0.25rem, calc(50% + -0.25rem));
     }
@@ -149,12 +161,14 @@
     }
 
     .tooltip.tooltip-bottom:focus::after,
+    .tooltip.tooltip-bottom:focus-within::after,
     .tooltip.tooltip-bottom:hover::after,
     .tooltip.tooltip-bottom:active::after {
         transform: translate(-50%, 0.75rem);
     }
 
     .tooltip.tooltip-bottom:focus::before,
+    .tooltip.tooltip-bottom:focus-within::before,
     .tooltip.tooltip-bottom:hover::before,
     .tooltip.tooltip-bottom:active::before {
         transform: translate(-50%, -0.25rem);
