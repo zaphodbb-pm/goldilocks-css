@@ -1598,7 +1598,6 @@
   }
 
   .form .form-tabs:has( > details[name]) {
-    border-block-end: 1px solid var(--border-main-darker);
     grid-template-rows: auto auto;
     grid-template-columns: repeat(9, minmax(max-content, 1fr));
     display: grid;
@@ -1614,7 +1613,7 @@
 
   .form .form-tabs:has( > details[name]) > details > summary {
     border: 1px solid #0000;
-    border-block-end: 2px solid var(--form-background-color);
+    border-block-end: 1px solid var(--border-main-darker);
     color: var(--text-comp);
     cursor: pointer;
     white-space: nowrap;
@@ -1631,6 +1630,10 @@
     display: inline-flex;
   }
 
+  .form .form-tabs:has( > details[name]) > details:first-of-type > summary {
+    margin-inline-start: var(--padding-medium);
+  }
+
   .form .form-tabs:has( > details[name]) > details > summary::marker {
     content: "";
   }
@@ -1642,10 +1645,13 @@
 
   .form .form-tabs:has( > details[name]) > details[open] > summary {
     border-color: var(--border-main-darker);
-    border-block-end-color: var(--form-background-color);
+    border-block-end: 2px solid var(--form-background-color);
     color: var(--secondary);
     font-weight: var(--weight-semibold);
     background-color: inherit;
+    z-index: 1;
+    margin-block-end: -1px;
+    position: relative;
   }
 
   .form .form-tabs:has( > details[name]) > details > :not(summary) {
@@ -1655,6 +1661,7 @@
   @supports selector(::details-content) {
     .form .form-tabs:has( > details[name]) > details::details-content {
       padding: var(--padding-medium);
+      border-block-start: 1px solid var(--border-main-darker);
       grid-area: 2 / 1 / auto / -1;
     }
   }
@@ -1662,6 +1669,7 @@
   @supports not selector(::details-content) {
     .form .form-tabs:has( > details[name]) > details > :not(summary) {
       padding: var(--padding-medium);
+      border-block-start: 1px solid var(--border-main-darker);
     }
   }
 

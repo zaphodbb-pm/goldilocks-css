@@ -549,7 +549,6 @@
         display: grid;
         grid-template-columns: repeat(9, minmax(max-content, 1fr));
         grid-template-rows: auto auto;
-        border-block-end: 1px solid var(--border-main-darker);
     }
 
     .form .form-tabs:has(> details[name]) > details[name] {
@@ -568,7 +567,7 @@
         margin: 0;
         padding: 0.5em 1em;
         border: 1px solid transparent;
-        border-block-end: 2px solid var(--form-background-color);
+        border-block-end: 1px solid var(--border-main-darker);
         border-start-start-radius: var(--radius);
         border-start-end-radius: var(--radius);
         border-end-end-radius: 0;
@@ -578,6 +577,11 @@
         cursor: pointer;
         list-style: none;
         white-space: nowrap;
+    }
+
+    /* indent the tab strip like the radio button version */
+    .form .form-tabs:has(> details[name]) > details:first-of-type > summary {
+        margin-inline-start: var(--padding-medium);
     }
 
     .form .form-tabs:has(> details[name]) > details > summary::marker {
@@ -592,10 +596,13 @@
 
     .form .form-tabs:has(> details[name]) > details[open] > summary {
         border-color: var(--border-main-darker);
-        border-block-end-color: var(--form-background-color);
+        border-block-end: 2px solid var(--form-background-color);
         color: var(--secondary);
         font-weight: var(--weight-semibold);
         background-color: inherit;
+        position: relative;
+        z-index: 1;
+        margin-block-end: -1px;
     }
 
     .form .form-tabs:has(> details[name]) > details > :not(summary) {
@@ -603,17 +610,20 @@
         grid-row: 2;
     }
 
+    /* full width line under the tab strip; the open tab overlaps it */
     @supports selector(::details-content) {
         .form .form-tabs:has(> details[name]) > details::details-content {
             grid-column: 1 / -1;
             grid-row: 2;
             padding: var(--padding-medium);
+            border-block-start: 1px solid var(--border-main-darker);
         }
     }
 
     @supports not selector(::details-content) {
         .form .form-tabs:has(> details[name]) > details > :not(summary) {
             padding: var(--padding-medium);
+            border-block-start: 1px solid var(--border-main-darker);
         }
     }
 
