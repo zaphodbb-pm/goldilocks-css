@@ -232,57 +232,6 @@ nav: Dropdowns
 
     </div>
 
-    <h3>Native popover dropdown</h3>
-    <div class="row has-5x-minwidth">
-        <div class="column">
-            <div class="dropdown">
-                <div class="dropdown-trigger">
-                    <button class="button-default-inverted" popovertarget="native-dropdown-menu">
-                        <span>Open native menu</span>
-                    </button>
-                </div>
-
-                <div class="dropdown-menu" id="native-dropdown-menu" popover="auto">
-                    <p>Native popovers open in the top layer.</p>
-                    <nav>
-                        <ul>
-                            <li><a href="#">Dropdown item</a></li>
-                            <li><a href="#" class="is-active">Active item</a></li>
-                            <li><a href="#">Other dropdown item</a></li>
-                        </ul>
-                    </nav>
-                    <hr>
-                    <button class="button-complement">Call To Action</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="column">
-            <pre><code class="language-html">
-                &lt;div class="dropdown"&gt;
-                    &lt;div class="dropdown-trigger"&gt;
-                        &lt;button class="button-default-inverted" popovertarget="native-dropdown-menu"&gt;
-                            &lt;span&gt;Open native menu&lt;/span&gt;
-                        &lt;/button&gt;
-                    &lt;/div&gt;
-
-                    &lt;div class="dropdown-menu" id="native-dropdown-menu" popover="auto"&gt;
-                        &lt;p&gt;Native popovers open in the top layer.&lt;/p&gt;
-                        &lt;nav&gt;
-                            &lt;ul&gt;
-                                &lt;li&gt;&lt;a href="#"&gt;Dropdown item&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href="#" class="is-active"&gt;Active item&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href="#"&gt;Other dropdown item&lt;/a&gt;&lt;/li&gt;
-                            &lt;/ul&gt;
-                        &lt;/nav&gt;
-                        &lt;hr&gt;
-                        &lt;button class="button-complement"&gt;Call To Action&lt;/button&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            </code></pre>
-        </div>
-    </div>
-
     <div class="space-items-medium "></div>
 
     <h3>Dropdown Alignments</h3>
@@ -291,7 +240,7 @@ nav: Dropdowns
             <div class="stack-centered stack-gap-large">
                 <div class="dropdown">
                     <div class="dropdown-trigger">
-                        <button popovertarget="dropdown-menu5">
+                        <button class="button-primary" popovertarget="dropdown-menu5">
                             <span>Left aligned</span>
                         </button>
                     </div>
@@ -303,7 +252,7 @@ nav: Dropdowns
 
                 <div class="dropdown is-right">
                     <div class="dropdown-trigger">
-                        <button popovertarget="dropdown-menu6">
+                        <button class="button-secondary" popovertarget="dropdown-menu6">
                             <span>Right aligned</span>
                         </button>
                     </div>
@@ -336,7 +285,7 @@ nav: Dropdowns
             <pre><code class="language-html">
                 &lt;div class="dropdown is-right"&gt;
                     &lt;div class="dropdown-trigger"&gt;
-                        &lt;button popovertarget="dropdown-menu9"&gt;
+                        &lt;button class="button-secondary" popovertarget="dropdown-menu9"&gt;
                             &lt;span&gt;Right aligned&lt;/span&gt;
                         &lt;/button&gt;
                     &lt;/div&gt;
