@@ -38,15 +38,9 @@
         {% include main_page/footer.liquid %}
     </div>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX8YSGNGED"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-RX8YSGNGED');
-    </script>
+    <!-- Cloudflare Web Analytics -->
+    <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a1a7d6b76e4242c0bd8d0893d4a2f268"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </body>
 
 </html>
